@@ -102,7 +102,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.reepay.com/';
+    protected $host = 'https://api.reepay.com';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout
@@ -326,7 +326,7 @@ class Configuration
      */
     public function setHost($host)
     {
-        $this->host = $host;
+        $this->host = rtrim($host, '/');
         return $this;
     }
 
