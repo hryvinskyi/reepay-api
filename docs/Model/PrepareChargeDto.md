@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **customer** | [**\Reepay\Model\CreateCustomer**](CreateCustomer.md) | Optional create customer object. An alternative to using a reference to an already created customer either by the &#x60;customer_handle&#x60; parameter or implicitly given if using a saved payment method as source. If this object is provided and the customer already exists, the existing customer will be used. Notice that customer cannot be changed for existing charge/invoice so if handle is provided it must match the customer handle for existing customer. | [optional] 
 **metadata** | **map[string,object]** | Custom metadata. | [optional] 
 **ordertext** | **string** | Optional order text. Used in conjunction with &#x60;amount&#x60;. Ignored if &#x60;order_lines&#x60; is provided. | [optional] 
-**order_lines** | [**\Reepay\Model\CreateOrderLine[]**](CreateOrderLine.md) | Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted. | [optional] 
-**customer_handle** | **string** | Customer reference. If charge does not already exist either this reference must be provided, a create customer object must be provided or the source must be a payment method reference (e.g. &#x60;ca_..&#x60;) identifying customer. Notice that customer cannot be changed for existing charge/invoice so if handle is provided it must match the customer handle for existing customer. | [optional] 
-**billing_address** | [**\Reepay\Model\InvoiceBillingAddress**](InvoiceBillingAddress.md) | Optional billing address | [optional] 
-**shipping_address** | [**\Reepay\Model\InvoiceShippingAddress**](InvoiceShippingAddress.md) | Optional shipping address | [optional] 
+**orderLines** | [**\Reepay\Model\CreateOrderLine[]**](CreateOrderLine.md) | Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted. | [optional] 
+**customerHandle** | **string** | Customer reference. If charge does not already exist either this reference must be provided, a create customer object must be provided or the source must be a payment method reference (e.g. &#x60;ca_..&#x60;) identifying customer. Notice that customer cannot be changed for existing charge/invoice so if handle is provided it must match the customer handle for existing customer. | [optional] 
+**billingAddress** | [**\Reepay\Model\InvoiceBillingAddress**](InvoiceBillingAddress.md) | Optional billing address | [optional] 
+**shippingAddress** | [**\Reepay\Model\InvoiceShippingAddress**](InvoiceShippingAddress.md) | Optional shipping address | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

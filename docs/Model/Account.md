@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 **organisation** | **string** | Organisation by subdomain | 
 **created** | [**\DateTime**](\DateTime.md) | Date when the account was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **state** | **string** | Status of the account one of the following &#x60;test&#x60;, &#x60;live&#x60;, &#x60;closed&#x60;. | 
-**postal_code** | **string** | Account postal code | [optional] 
-**default_vat** | **float** | Default vat for account | 
-**subscription_invoice_prefix** | **string** |  | [optional] 
+**postalCode** | **string** | Account postal code | [optional] 
+**defaultVat** | **float** | Default vat for account | 
+**subscriptionInvoicePrefix** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

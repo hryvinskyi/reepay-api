@@ -73,7 +73,7 @@ class PaymentmethodApi
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.reepay.com/');
+            $apiClient->getConfig()->setHost('https://api.reepay.com');
         }
 
         $this->apiClient = $apiClient;

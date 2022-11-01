@@ -1,6 +1,6 @@
 # Reepay\SubscriptionApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,9 +22,8 @@ Method | HTTP request | Description
 [**getSubscriptionAddOns**](SubscriptionApi.md#getSubscriptionAddOns) | **GET** /v1/subscription/{handle}/add_on | Get subscription add-ons
 [**getSubscriptionDiscount**](SubscriptionApi.md#getSubscriptionDiscount) | **GET** /v1/subscription/{handle}/discount/{sdHandle} | Get subscription discount
 [**getSubscriptionDiscounts**](SubscriptionApi.md#getSubscriptionDiscounts) | **GET** /v1/subscription/{handle}/discount | Get subscription discounts
-[**getSubscriptionPaymentMethods**](SubscriptionApi.md#getSubscriptionPaymentMethods) | **GET** /v1/subscription/{handle}/payment_method | Get payment methods
+[**getSubscriptionPaymentMethod**](SubscriptionApi.md#getSubscriptionPaymentMethod) | **GET** /v1/subscription/{handle}/pm | Get payment method
 [**getSubscriptionPeriodBalance**](SubscriptionApi.md#getSubscriptionPeriodBalance) | **GET** /v1/subscription/{handle}/period_balance | Get the period balance for subscription
-[**getSubscriptions**](SubscriptionApi.md#getSubscriptions) | **GET** /v1/subscription | Get list of subscriptions
 [**intervalAmount**](SubscriptionApi.md#intervalAmount) | **GET** /v1/subscription/{handle}/interval_amount | Calculate interval amount
 [**onHold**](SubscriptionApi.md#onHold) | **POST** /v1/subscription/{handle}/on_hold | Subscription on hold
 [**prepareSubscription**](SubscriptionApi.md#prepareSubscription) | **POST** /v1/subscription/prepare | Prepare pending subscription
@@ -32,9 +31,9 @@ Method | HTTP request | Description
 [**previewSubscription**](SubscriptionApi.md#previewSubscription) | **POST** /v1/subscription/preview | Preview subscription
 [**reactivateSubscription**](SubscriptionApi.md#reactivateSubscription) | **POST** /v1/subscription/{handle}/reactivate | Reactivate subscription on hold
 [**redeemCouponCode**](SubscriptionApi.md#redeemCouponCode) | **POST** /v1/subscription/{handle}/coupon | Redeem coupon code for subscription
-[**removeAllPaymentMethods**](SubscriptionApi.md#removeAllPaymentMethods) | **DELETE** /v1/subscription/{handle}/payment_method | Remove all payment methods
-[**removePaymentMethod**](SubscriptionApi.md#removePaymentMethod) | **DELETE** /v1/subscription/{handle}/payment_method/{method_id} | Remove payment method
-[**setPaymentMethod**](SubscriptionApi.md#setPaymentMethod) | **POST** /v1/subscription/{handle}/payment_method | Set payment method
+[**removeAllSubscriptionPaymentMethods**](SubscriptionApi.md#removeAllSubscriptionPaymentMethods) | **DELETE** /v1/subscription/{handle}/pm | Remove all payment methods
+[**removeSubscriptionPaymentMethod**](SubscriptionApi.md#removeSubscriptionPaymentMethod) | **DELETE** /v1/subscription/{handle}/pm/{method_id} | Remove payment method
+[**setSubscriptionPaymentMethod**](SubscriptionApi.md#setSubscriptionPaymentMethod) | **POST** /v1/subscription/{handle}/pm | Set payment method
 [**uncancel**](SubscriptionApi.md#uncancel) | **POST** /v1/subscription/{handle}/uncancel | Uncancel subscription
 [**updateMetadata4**](SubscriptionApi.md#updateMetadata4) | **PUT** /v1/subscription/{handle}/metadata | Create or update metadata
 
@@ -52,15 +51,22 @@ Activate pending subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ActivateSubscription(); // \Reepay\Model\ActivateSubscription | 
 
 try {
-    $result = $api_instance->activate($handle, $body);
+    $result = $apiInstance->activate($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->activate: ', $e->getMessage(), PHP_EOL;
@@ -73,7 +79,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ActivateSubscription**](../Model/\Reepay\Model\ActivateSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ActivateSubscription**](../Model/ActivateSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -103,15 +109,22 @@ Cancel subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\CancelSubscription(); // \Reepay\Model\CancelSubscription | 
 
 try {
-    $result = $api_instance->cancelSubscription($handle, $body);
+    $result = $apiInstance->cancelSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->cancelSubscription: ', $e->getMessage(), PHP_EOL;
@@ -124,7 +137,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\CancelSubscription**](../Model/\Reepay\Model\CancelSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CancelSubscription**](../Model/CancelSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -154,15 +167,22 @@ Change next renewal date
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ChangeNextPeriodStart(); // \Reepay\Model\ChangeNextPeriodStart | 
 
 try {
-    $result = $api_instance->changeNextPeriodStartJson($handle, $body);
+    $result = $apiInstance->changeNextPeriodStartJson($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->changeNextPeriodStartJson: ', $e->getMessage(), PHP_EOL;
@@ -175,7 +195,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ChangeNextPeriodStart**](../Model/\Reepay\Model\ChangeNextPeriodStart.md)|  | [optional]
+ **body** | [**\Reepay\Model\ChangeNextPeriodStart**](../Model/ChangeNextPeriodStart.md)|  | [optional]
 
 ### Return type
 
@@ -205,15 +225,22 @@ Change subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ChangeSubscription(); // \Reepay\Model\ChangeSubscription | 
 
 try {
-    $result = $api_instance->changeSubscription($handle, $body);
+    $result = $apiInstance->changeSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->changeSubscription: ', $e->getMessage(), PHP_EOL;
@@ -226,7 +253,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ChangeSubscription**](../Model/\Reepay\Model\ChangeSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -256,15 +283,22 @@ Add subscription discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\CreateSubscriptionDiscount(); // \Reepay\Model\CreateSubscriptionDiscount | 
 
 try {
-    $result = $api_instance->createSubscriptionDiscount($handle, $body);
+    $result = $apiInstance->createSubscriptionDiscount($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -277,7 +311,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\CreateSubscriptionDiscount**](../Model/\Reepay\Model\CreateSubscriptionDiscount.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionDiscount**](../Model/CreateSubscriptionDiscount.md)|  | [optional]
 
 ### Return type
 
@@ -307,15 +341,22 @@ Create invoice ondemand for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\CreateSubscriptionInvoice(); // \Reepay\Model\CreateSubscriptionInvoice | 
 
 try {
-    $result = $api_instance->createSubscriptionInvoice($handle, $body);
+    $result = $apiInstance->createSubscriptionInvoice($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionInvoice: ', $e->getMessage(), PHP_EOL;
@@ -328,7 +369,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\CreateSubscriptionInvoice**](../Model/\Reepay\Model\CreateSubscriptionInvoice.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionInvoice**](../Model/CreateSubscriptionInvoice.md)|  | [optional]
 
 ### Return type
 
@@ -358,14 +399,21 @@ Create subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreateSubscription(); // \Reepay\Model\CreateSubscription | 
 
 try {
-    $result = $api_instance->createSubscriptionJson($body);
+    $result = $apiInstance->createSubscriptionJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionJson: ', $e->getMessage(), PHP_EOL;
@@ -377,7 +425,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateSubscription**](../Model/\Reepay\Model\CreateSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscription**](../Model/CreateSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -407,14 +455,21 @@ Delete metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Resource handle
 
 try {
-    $api_instance->deleteMetadata4($handle);
+    $apiInstance->deleteMetadata4($handle);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deleteMetadata4: ', $e->getMessage(), PHP_EOL;
 }
@@ -455,14 +510,21 @@ Delete pending subscription. A pending subscription can only be deleted if no tr
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $api_instance->deletePending($handle);
+    $apiInstance->deletePending($handle);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deletePending: ', $e->getMessage(), PHP_EOL;
 }
@@ -491,7 +553,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscriptionDiscount**
-> \Reepay\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sd_handle)
+> \Reepay\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sdHandle)
 
 Delete subscription discount
 
@@ -503,15 +565,22 @@ Delete subscription discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
-$sd_handle = "sd_handle_example"; // string | Subscription discount handle
+$sdHandle = "sdHandle_example"; // string | Subscription discount handle
 
 try {
-    $result = $api_instance->deleteSubscriptionDiscount($handle, $sd_handle);
+    $result = $apiInstance->deleteSubscriptionDiscount($handle, $sdHandle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deleteSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -524,7 +593,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **sd_handle** | **string**| Subscription discount handle |
+ **sdHandle** | **string**| Subscription discount handle |
 
 ### Return type
 
@@ -554,15 +623,22 @@ Expire subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ExpireSubscription(); // \Reepay\Model\ExpireSubscription | 
 
 try {
-    $result = $api_instance->expire($handle, $body);
+    $result = $apiInstance->expire($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->expire: ', $e->getMessage(), PHP_EOL;
@@ -575,7 +651,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ExpireSubscription**](../Model/\Reepay\Model\ExpireSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ExpireSubscription**](../Model/ExpireSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -605,14 +681,21 @@ Get metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $api_instance->getMetadata4($handle);
+    $result = $apiInstance->getMetadata4($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getMetadata4: ', $e->getMessage(), PHP_EOL;
@@ -628,7 +711,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
+**map[string,object]**
 
 ### Authorization
 
@@ -654,14 +737,21 @@ Get most relevant payable invoice for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getPayableInvoice($handle);
+    $result = $apiInstance->getPayableInvoice($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getPayableInvoice: ', $e->getMessage(), PHP_EOL;
@@ -703,14 +793,21 @@ Get subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscription($handle);
+    $result = $apiInstance->getSubscription($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscription: ', $e->getMessage(), PHP_EOL;
@@ -740,7 +837,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOn**
-> \Reepay\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $sa_handle)
+> \Reepay\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $saHandle)
 
 Get subscription add-on
 
@@ -752,15 +849,22 @@ Get subscription add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
-$sa_handle = "sa_handle_example"; // string | Subscription add-on handle
+$saHandle = "saHandle_example"; // string | Subscription add-on handle
 
 try {
-    $result = $api_instance->getSubscriptionAddOn($handle, $sa_handle);
+    $result = $apiInstance->getSubscriptionAddOn($handle, $saHandle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionAddOn: ', $e->getMessage(), PHP_EOL;
@@ -773,7 +877,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **sa_handle** | **string**| Subscription add-on handle |
+ **saHandle** | **string**| Subscription add-on handle |
 
 ### Return type
 
@@ -803,14 +907,21 @@ Get subscription add-ons
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscriptionAddOns($handle);
+    $result = $apiInstance->getSubscriptionAddOns($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionAddOns: ', $e->getMessage(), PHP_EOL;
@@ -840,7 +951,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscount**
-> \Reepay\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sd_handle)
+> \Reepay\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sdHandle)
 
 Get subscription discount
 
@@ -852,15 +963,22 @@ Get subscription discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
-$sd_handle = "sd_handle_example"; // string | Subscription discount handle
+$sdHandle = "sdHandle_example"; // string | Subscription discount handle
 
 try {
-    $result = $api_instance->getSubscriptionDiscount($handle, $sd_handle);
+    $result = $apiInstance->getSubscriptionDiscount($handle, $sdHandle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -873,7 +991,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **sd_handle** | **string**| Subscription discount handle |
+ **sdHandle** | **string**| Subscription discount handle |
 
 ### Return type
 
@@ -903,14 +1021,21 @@ Get subscription discounts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscriptionDiscounts($handle);
+    $result = $apiInstance->getSubscriptionDiscounts($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -939,10 +1064,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getSubscriptionPaymentMethods**
-> \Reepay\Model\PaymentMethods getSubscriptionPaymentMethods($handle)
+# **getSubscriptionPaymentMethod**
+> \Reepay\Model\PaymentMethodV2[] getSubscriptionPaymentMethod($handle)
 
-Get payment methods
+Get payment method
 
 
 
@@ -952,17 +1077,24 @@ Get payment methods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscriptionPaymentMethods($handle);
+    $result = $apiInstance->getSubscriptionPaymentMethod($handle);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->getSubscriptionPaymentMethods: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionApi->getSubscriptionPaymentMethod: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -975,7 +1107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethodV2[]**](../Model/PaymentMethodV2.md)
 
 ### Authorization
 
@@ -1001,15 +1133,22 @@ Get the period balance for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $date = "date_example"; // string | Optional period date (default now) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
 
 try {
-    $result = $api_instance->getSubscriptionPeriodBalance($handle, $date);
+    $result = $apiInstance->getSubscriptionPeriodBalance($handle, $date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionPeriodBalance: ', $e->getMessage(), PHP_EOL;
@@ -1039,59 +1178,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getSubscriptions**
-> \Reepay\Model\SubscriptionSearch getSubscriptions($page, $size, $search)
-
-Get list of subscriptions
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Reepay\Api\SubscriptionApi();
-$page = 1; // int | Page number to get
-$size = 20; // int | Page size to use (default 20)
-$search = "state:active"; // string | Optional search expression. See https://reference.reepay.com/api/#searching-and-pagination
-
-try {
-    $result = $api_instance->getSubscriptions($page, $size, $search);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->getSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number to get | [optional] [default to 1]
- **size** | **int**| Page size to use (default 20) | [optional] [default to 20]
- **search** | **string**| Optional search expression. See https://reference.reepay.com/api/#searching-and-pagination | [optional]
-
-### Return type
-
-[**\Reepay\Model\SubscriptionSearch**](../Model/SubscriptionSearch.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **intervalAmount**
 > \Reepay\Model\IntervalAmount intervalAmount($handle, $from, $to)
 
@@ -1105,16 +1191,23 @@ Calculate interval amount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
-$from = "2015-05-30"; // string | From date on the form yyyy-MM-dd
-$to = "2015-07-15"; // string | To date on the form yyyy-MM-dd
+$from = "from_example"; // string | From date on the form yyyy-MM-dd
+$to = "to_example"; // string | To date on the form yyyy-MM-dd
 
 try {
-    $result = $api_instance->intervalAmount($handle, $from, $to);
+    $result = $apiInstance->intervalAmount($handle, $from, $to);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->intervalAmount: ', $e->getMessage(), PHP_EOL;
@@ -1158,15 +1251,22 @@ Subscription on hold
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\OnHoldSubscription(); // \Reepay\Model\OnHoldSubscription | 
 
 try {
-    $result = $api_instance->onHold($handle, $body);
+    $result = $apiInstance->onHold($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->onHold: ', $e->getMessage(), PHP_EOL;
@@ -1179,7 +1279,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\OnHoldSubscription**](../Model/\Reepay\Model\OnHoldSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\OnHoldSubscription**](../Model/OnHoldSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -1209,14 +1309,21 @@ Prepare pending subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreatePreparedSubscription(); // \Reepay\Model\CreatePreparedSubscription | 
 
 try {
-    $result = $api_instance->prepareSubscription($body);
+    $result = $apiInstance->prepareSubscription($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->prepareSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1228,7 +1335,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/\Reepay\Model\CreatePreparedSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/CreatePreparedSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -1258,15 +1365,22 @@ Preview change subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ChangeSubscription(); // \Reepay\Model\ChangeSubscription | 
 
 try {
-    $result = $api_instance->previewChangeSubscription($handle, $body);
+    $result = $apiInstance->previewChangeSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->previewChangeSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1279,7 +1393,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ChangeSubscription**](../Model/\Reepay\Model\ChangeSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -1309,14 +1423,21 @@ Preview subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreatePreparedSubscription(); // \Reepay\Model\CreatePreparedSubscription | 
 
 try {
-    $result = $api_instance->previewSubscription($body);
+    $result = $apiInstance->previewSubscription($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->previewSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1328,7 +1449,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/\Reepay\Model\CreatePreparedSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/CreatePreparedSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -1358,15 +1479,22 @@ Reactivate subscription on hold
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ReactivateSubscription(); // \Reepay\Model\ReactivateSubscription | 
 
 try {
-    $result = $api_instance->reactivateSubscription($handle, $body);
+    $result = $apiInstance->reactivateSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->reactivateSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1379,7 +1507,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ReactivateSubscription**](../Model/\Reepay\Model\ReactivateSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ReactivateSubscription**](../Model/ReactivateSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -1409,15 +1537,22 @@ Redeem coupon code for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\RedeemCouponCode(); // \Reepay\Model\RedeemCouponCode | 
 
 try {
-    $result = $api_instance->redeemCouponCode($handle, $body);
+    $result = $apiInstance->redeemCouponCode($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->redeemCouponCode: ', $e->getMessage(), PHP_EOL;
@@ -1430,7 +1565,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\RedeemCouponCode**](../Model/\Reepay\Model\RedeemCouponCode.md)|  | [optional]
+ **body** | [**\Reepay\Model\RedeemCouponCode**](../Model/RedeemCouponCode.md)|  | [optional]
 
 ### Return type
 
@@ -1447,8 +1582,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removeAllPaymentMethods**
-> \Reepay\Model\PaymentMethods removeAllPaymentMethods($handle)
+# **removeAllSubscriptionPaymentMethods**
+> \Reepay\Model\PaymentMethodV2[] removeAllSubscriptionPaymentMethods($handle)
 
 Remove all payment methods
 
@@ -1460,17 +1595,24 @@ Remove all payment methods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->removeAllPaymentMethods($handle);
+    $result = $apiInstance->removeAllSubscriptionPaymentMethods($handle);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->removeAllPaymentMethods: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionApi->removeAllSubscriptionPaymentMethods: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1483,7 +1625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethodV2[]**](../Model/PaymentMethodV2.md)
 
 ### Authorization
 
@@ -1496,8 +1638,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removePaymentMethod**
-> \Reepay\Model\PaymentMethods removePaymentMethod($handle, $method_id)
+# **removeSubscriptionPaymentMethod**
+> \Reepay\Model\PaymentMethodV2[] removeSubscriptionPaymentMethod($handle, $methodId)
 
 Remove payment method
 
@@ -1509,18 +1651,25 @@ Remove payment method
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
-$method_id = "method_id_example"; // string | Payment method id
+$methodId = "methodId_example"; // string | Payment method id
 
 try {
-    $result = $api_instance->removePaymentMethod($handle, $method_id);
+    $result = $apiInstance->removeSubscriptionPaymentMethod($handle, $methodId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->removePaymentMethod: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionApi->removeSubscriptionPaymentMethod: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1530,11 +1679,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **method_id** | **string**| Payment method id |
+ **methodId** | **string**| Payment method id |
 
 ### Return type
 
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethodV2[]**](../Model/PaymentMethodV2.md)
 
 ### Authorization
 
@@ -1547,8 +1696,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **setPaymentMethod**
-> \Reepay\Model\PaymentMethods setPaymentMethod($handle, $body)
+# **setSubscriptionPaymentMethod**
+> \Reepay\Model\PaymentMethodV2[] setSubscriptionPaymentMethod($handle, $body)
 
 Set payment method
 
@@ -1560,18 +1709,25 @@ Set payment method
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\SetPaymentMethod(); // \Reepay\Model\SetPaymentMethod | 
 
 try {
-    $result = $api_instance->setPaymentMethod($handle, $body);
+    $result = $apiInstance->setSubscriptionPaymentMethod($handle, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->setPaymentMethod: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionApi->setSubscriptionPaymentMethod: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1581,11 +1737,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\SetPaymentMethod**](../Model/\Reepay\Model\SetPaymentMethod.md)|  | [optional]
+ **body** | [**\Reepay\Model\SetPaymentMethod**](../Model/SetPaymentMethod.md)|  | [optional]
 
 ### Return type
 
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethodV2[]**](../Model/PaymentMethodV2.md)
 
 ### Authorization
 
@@ -1611,14 +1767,21 @@ Uncancel subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->uncancel($handle);
+    $result = $apiInstance->uncancel($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->uncancel: ', $e->getMessage(), PHP_EOL;
@@ -1660,15 +1823,22 @@ Create or update metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\SubscriptionApi();
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Resource handle
-$body = NULL; // object | 
+$body = new \stdClass; // object | 
 
 try {
-    $result = $api_instance->updateMetadata4($handle, $body);
+    $result = $apiInstance->updateMetadata4($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->updateMetadata4: ', $e->getMessage(), PHP_EOL;
@@ -1685,7 +1855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
+**map[string,object]**
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # Reepay\InvoiceApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,14 +18,12 @@ Method | HTTP request | Description
 [**extendKlarnaTransaction**](InvoiceApi.md#extendKlarnaTransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna | Extend Klarna authorization transaction
 [**failInvoice**](InvoiceApi.md#failInvoice) | **POST** /v1/invoice/{id}/fail | Fail invoice
 [**getInvoice**](InvoiceApi.md#getInvoice) | **GET** /v1/invoice/{id} | Get invoice
-[**getInvoices**](InvoiceApi.md#getInvoices) | **GET** /v1/invoice | Get list of invoices
 [**getMetadata2**](InvoiceApi.md#getMetadata2) | **GET** /v1/invoice/{handle}/metadata | Get metadata
 [**manualSettle**](InvoiceApi.md#manualSettle) | **POST** /v1/invoice/{id}/manual_settle | Manual settle
 [**reactivateInvoice**](InvoiceApi.md#reactivateInvoice) | **POST** /v1/invoice/{id}/reactivate | Reactivate invoice
 [**settle**](InvoiceApi.md#settle) | **POST** /v1/invoice/{id}/settle | Settle
 [**transaction**](InvoiceApi.md#transaction) | **GET** /v1/invoice/{id}/transaction/{transaction} | Get transaction
 [**transactionDetails**](InvoiceApi.md#transactionDetails) | **GET** /v1/invoice/{id}/transaction/{transaction}/details | Get transaction details
-[**transactionList**](InvoiceApi.md#transactionList) | **GET** /v1/invoice/{id}/transaction | Get transaction list
 [**updateMetadata2**](InvoiceApi.md#updateMetadata2) | **PUT** /v1/invoice/{handle}/metadata | Create or update metadata
 
 
@@ -42,14 +40,21 @@ Cancel all dunning and pending
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->cancelAllDunningPending($handle);
+    $result = $apiInstance->cancelAllDunningPending($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelAllDunningPending: ', $e->getMessage(), PHP_EOL;
@@ -91,14 +96,21 @@ Cancel invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->cancelInvoice($id);
+    $result = $apiInstance->cancelInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelInvoice: ', $e->getMessage(), PHP_EOL;
@@ -140,14 +152,21 @@ Cancel settle later
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->cancelSettleLater($id);
+    $result = $apiInstance->cancelSettleLater($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelSettleLater: ', $e->getMessage(), PHP_EOL;
@@ -189,15 +208,22 @@ Cancel transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->cancelTransaction($id, $transaction);
+    $result = $apiInstance->cancelTransaction($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelTransaction: ', $e->getMessage(), PHP_EOL;
@@ -240,15 +266,22 @@ Create or update invoice billing address
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\InvoiceBillingAddress(); // \Reepay\Model\InvoiceBillingAddress | 
 
 try {
-    $result = $api_instance->createOrUpdateBillingAddress($id, $body);
+    $result = $apiInstance->createOrUpdateBillingAddress($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->createOrUpdateBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -261,7 +294,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\InvoiceBillingAddress**](../Model/\Reepay\Model\InvoiceBillingAddress.md)|  | [optional]
+ **body** | [**\Reepay\Model\InvoiceBillingAddress**](../Model/InvoiceBillingAddress.md)|  | [optional]
 
 ### Return type
 
@@ -291,15 +324,22 @@ Create or update invoice shipping address
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\InvoiceShippingAddress(); // \Reepay\Model\InvoiceShippingAddress | 
 
 try {
-    $result = $api_instance->createOrUpdateShippingAddress($id, $body);
+    $result = $apiInstance->createOrUpdateShippingAddress($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->createOrUpdateShippingAddress: ', $e->getMessage(), PHP_EOL;
@@ -312,7 +352,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\InvoiceShippingAddress**](../Model/\Reepay\Model\InvoiceShippingAddress.md)|  | [optional]
+ **body** | [**\Reepay\Model\InvoiceShippingAddress**](../Model/InvoiceShippingAddress.md)|  | [optional]
 
 ### Return type
 
@@ -342,14 +382,21 @@ Delete invoice billing address
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->deleteBillingAddress($id);
+    $result = $apiInstance->deleteBillingAddress($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->deleteBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -391,14 +438,21 @@ Delete metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Resource handle
 
 try {
-    $api_instance->deleteMetadata2($handle);
+    $apiInstance->deleteMetadata2($handle);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->deleteMetadata2: ', $e->getMessage(), PHP_EOL;
 }
@@ -439,14 +493,21 @@ Delete invoice shipping address
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->deleteShippingAddress($id);
+    $result = $apiInstance->deleteShippingAddress($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->deleteShippingAddress: ', $e->getMessage(), PHP_EOL;
@@ -488,14 +549,21 @@ Detach from subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->detachFromSubscription($id);
+    $result = $apiInstance->detachFromSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->detachFromSubscription: ', $e->getMessage(), PHP_EOL;
@@ -537,15 +605,22 @@ Extend authorization transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->extendKAuthTransaction($id, $transaction);
+    $result = $apiInstance->extendKAuthTransaction($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->extendKAuthTransaction: ', $e->getMessage(), PHP_EOL;
@@ -588,15 +663,22 @@ Extend Klarna authorization transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->extendKlarnaTransaction($id, $transaction);
+    $result = $apiInstance->extendKlarnaTransaction($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->extendKlarnaTransaction: ', $e->getMessage(), PHP_EOL;
@@ -639,14 +721,21 @@ Fail invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->failInvoice($id);
+    $result = $apiInstance->failInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->failInvoice: ', $e->getMessage(), PHP_EOL;
@@ -688,14 +777,21 @@ Get invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->getInvoice($id);
+    $result = $apiInstance->getInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->getInvoice: ', $e->getMessage(), PHP_EOL;
@@ -724,65 +820,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getInvoices**
-> \Reepay\Model\InvoiceSearch getInvoices($page, $size, $search, $created_from, $created_to, $created_interval)
-
-Get list of invoices
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Reepay\Api\InvoiceApi();
-$page = 1; // int | Page number to get
-$size = 20; // int | Page size to use (default 20)
-$search = "state:active"; // string | Optional search expression. See https://reference.reepay.com/api/#searching-and-pagination
-$created_from = "2019-12-01"; // string | Limit by created from (inclusive). Recommended to speed up queries. Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` or `yyyy-MM-ddTHH:mm:ss`
-$created_to = "2020-01-01"; // string | Limit by created to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` or `yyyy-MM-ddTHH:mm:ss`
-$created_interval = "P1W"; // string | Limit by created from now and interval back in time. E.g. one week. Will take precedence over the other created limiters. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-
-try {
-    $result = $api_instance->getInvoices($page, $size, $search, $created_from, $created_to, $created_interval);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling InvoiceApi->getInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number to get | [optional] [default to 1]
- **size** | **int**| Page size to use (default 20) | [optional] [default to 20]
- **search** | **string**| Optional search expression. See https://reference.reepay.com/api/#searching-and-pagination | [optional]
- **created_from** | **string**| Limit by created from (inclusive). Recommended to speed up queries. Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
- **created_to** | **string**| Limit by created to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
- **created_interval** | **string**| Limit by created from now and interval back in time. E.g. one week. Will take precedence over the other created limiters. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations | [optional]
-
-### Return type
-
-[**\Reepay\Model\InvoiceSearch**](../Model/InvoiceSearch.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **getMetadata2**
 > map[string,object] getMetadata2($handle)
 
@@ -796,14 +833,21 @@ Get metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $api_instance->getMetadata2($handle);
+    $result = $apiInstance->getMetadata2($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->getMetadata2: ', $e->getMessage(), PHP_EOL;
@@ -819,7 +863,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
+**map[string,object]**
 
 ### Authorization
 
@@ -845,15 +889,22 @@ Manual settle
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\ManualSettleTransfer(); // \Reepay\Model\ManualSettleTransfer | 
 
 try {
-    $result = $api_instance->manualSettle($id, $body);
+    $result = $apiInstance->manualSettle($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->manualSettle: ', $e->getMessage(), PHP_EOL;
@@ -866,7 +917,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\ManualSettleTransfer**](../Model/\Reepay\Model\ManualSettleTransfer.md)|  | [optional]
+ **body** | [**\Reepay\Model\ManualSettleTransfer**](../Model/ManualSettleTransfer.md)|  | [optional]
 
 ### Return type
 
@@ -896,14 +947,21 @@ Reactivate invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->reactivateInvoice($id);
+    $result = $apiInstance->reactivateInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->reactivateInvoice: ', $e->getMessage(), PHP_EOL;
@@ -945,15 +1003,22 @@ Settle
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\Settle(); // \Reepay\Model\Settle | 
 
 try {
-    $result = $api_instance->settle($id, $body);
+    $result = $apiInstance->settle($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->settle: ', $e->getMessage(), PHP_EOL;
@@ -966,7 +1031,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\Settle**](../Model/\Reepay\Model\Settle.md)|  | [optional]
+ **body** | [**\Reepay\Model\Settle**](../Model/Settle.md)|  | [optional]
 
 ### Return type
 
@@ -996,15 +1061,22 @@ Get transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->transaction($id, $transaction);
+    $result = $apiInstance->transaction($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->transaction: ', $e->getMessage(), PHP_EOL;
@@ -1047,15 +1119,22 @@ Get transaction details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->transactionDetails($id, $transaction);
+    $result = $apiInstance->transactionDetails($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->transactionDetails: ', $e->getMessage(), PHP_EOL;
@@ -1072,62 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **transactionList**
-> \Reepay\Model\TransactionSearch transactionList($id, $page, $size, $search)
-
-Get transaction list
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Reepay\Api\InvoiceApi();
-$id = "id_example"; // string | Invoice id or handle
-$page = 1; // int | Page number to get
-$size = 20; // int | Page size to use (default 20)
-$search = "state:active"; // string | Optional search expression. See https://reference.reepay.com/api/#searching-and-pagination
-
-try {
-    $result = $api_instance->transactionList($id, $page, $size, $search);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling InvoiceApi->transactionList: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Invoice id or handle |
- **page** | **int**| Page number to get | [optional] [default to 1]
- **size** | **int**| Page size to use (default 20) | [optional] [default to 20]
- **search** | **string**| Optional search expression. See https://reference.reepay.com/api/#searching-and-pagination | [optional]
-
-### Return type
-
-[**\Reepay\Model\TransactionSearch**](../Model/TransactionSearch.md)
+**map[string,object]**
 
 ### Authorization
 
@@ -1153,15 +1177,22 @@ Create or update metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\InvoiceApi();
+
+$apiInstance = new Reepay\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Resource handle
-$body = NULL; // object | 
+$body = new \stdClass; // object | 
 
 try {
-    $result = $api_instance->updateMetadata2($handle, $body);
+    $result = $apiInstance->updateMetadata2($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->updateMetadata2: ', $e->getMessage(), PHP_EOL;
@@ -1178,7 +1209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
+**map[string,object]**
 
 ### Authorization
 

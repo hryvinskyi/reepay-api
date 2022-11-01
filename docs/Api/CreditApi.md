@@ -1,6 +1,6 @@
 # Reepay\CreditApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,14 +23,21 @@ Cancel credit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\CreditApi();
+
+$apiInstance = new Reepay\Api\CreditApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Credit handle
 
 try {
-    $result = $api_instance->cancelCredit($handle);
+    $result = $apiInstance->cancelCredit($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreditApi->cancelCredit: ', $e->getMessage(), PHP_EOL;
@@ -72,14 +79,21 @@ Create credit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\CreditApi();
+
+$apiInstance = new Reepay\Api\CreditApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreateCredit(); // \Reepay\Model\CreateCredit | 
 
 try {
-    $result = $api_instance->createCreditJson($body);
+    $result = $apiInstance->createCreditJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreditApi->createCreditJson: ', $e->getMessage(), PHP_EOL;
@@ -91,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCredit**](../Model/\Reepay\Model\CreateCredit.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCredit**](../Model/CreateCredit.md)|  | [optional]
 
 ### Return type
 
@@ -121,14 +135,21 @@ Get credit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\CreditApi();
+
+$apiInstance = new Reepay\Api\CreditApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Credit handle
 
 try {
-    $result = $api_instance->getCredit($handle);
+    $result = $apiInstance->getCredit($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreditApi->getCredit: ', $e->getMessage(), PHP_EOL;
@@ -170,14 +191,21 @@ Get credits for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\CreditApi();
+
+$apiInstance = new Reepay\Api\CreditApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getCredits($handle);
+    $result = $apiInstance->getCredits($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreditApi->getCredits: ', $e->getMessage(), PHP_EOL;

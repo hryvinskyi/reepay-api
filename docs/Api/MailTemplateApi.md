@@ -1,6 +1,6 @@
 # Reepay\MailTemplateApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,13 +20,20 @@ Get sample data
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\MailTemplateApi();
+
+$apiInstance = new Reepay\Api\MailTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getSample();
+    $result = $apiInstance->getSample();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailTemplateApi->getSample: ', $e->getMessage(), PHP_EOL;
@@ -39,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
+**map[string,object]**
 
 ### Authorization
 

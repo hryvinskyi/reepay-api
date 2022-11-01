@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **created** | [**\DateTime**](\DateTime.md) | Creation date in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **success** | [**\DateTime**](\DateTime.md) | Date of successful invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 **count** | **int** | Number of invocations performed | 
-**last_fail** | [**\DateTime**](\DateTime.md) | Date of last failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**first_fail** | [**\DateTime**](\DateTime.md) | Date of first failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**alert_count** | **int** | Number of failed invocations before an alert email is sent | [optional] 
-**alert_sent** | [**\DateTime**](\DateTime.md) | Date when an optional alert email sending was requested in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**lastFail** | [**\DateTime**](\DateTime.md) | Date of last failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**firstFail** | [**\DateTime**](\DateTime.md) | Date of first failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**alertCount** | **int** | Number of failed invocations before an alert email is sent | [optional] 
+**alertSent** | [**\DateTime**](\DateTime.md) | Date when an optional alert email sending was requested in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

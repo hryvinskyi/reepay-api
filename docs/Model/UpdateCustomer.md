@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **phone** | **string** | Customer phone number | [optional] 
 **company** | **string** | Customer company | [optional] 
 **vat** | **string** | Customer vat number | [optional] 
-**first_name** | **string** | Customer first name | [optional] 
-**last_name** | **string** | Customer last name | [optional] 
-**postal_code** | **string** | Customer postal code | [optional] 
+**firstName** | **string** | Customer first name | [optional] 
+**lastName** | **string** | Customer last name | [optional] 
+**postalCode** | **string** | Customer postal code | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

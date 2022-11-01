@@ -21,31 +21,31 @@ Name | Type | Description | Notes
 **authorized** | [**\DateTime**](\DateTime.md) | When the invoice was authorized, if the invoice went through an authorize and settle flow, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 **credits** | [**\Reepay\Model\CreditInvoice[]**](CreditInvoice.md) | Credits applied to invoice | 
 **created** | [**\DateTime**](\DateTime.md) | When the invoice was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
-**plan_version** | **int** | Subscription plan version | [optional] 
-**dunning_plan** | **string** | Dunning plan handle | [optional] 
-**discount_amount** | **int** | The potential discount amount deducted from the invoice amount including VAT | 
-**org_amount** | **int** | The invoice original amount including VAT, may differ from amount if adjustments have been applied for the invoice | 
-**amount_vat** | **int** | The invoice vat amount calculated as rounded summed fractional vats for each orderline | 
-**amount_ex_vat** | **int** | The invoice amount without vat | 
-**settled_amount** | **int** | Settled amount | 
-**refunded_amount** | **int** | Refunded amount | 
-**authorized_amount** | **int** | Authorized amount | [optional] 
-**credited_amount** | **int** | Credited amount | [optional] 
-**period_number** | **int** | The subscription period this invoice is for | [optional] 
-**recurring_payment_method** | **string** | Optional reference to recurring payment method created in conjunction with charging | [optional] 
-**order_lines** | [**\Reepay\Model\OrderLine[]**](OrderLine.md) | Order lines for invoice sorted by descending timestamp | 
-**additional_costs** | **string[]** | Additional cost handles for any additional costs added to this invoice | 
+**planVersion** | **int** | Subscription plan version | [optional] 
+**dunningPlan** | **string** | Dunning plan handle | [optional] 
+**discountAmount** | **int** | The potential discount amount deducted from the invoice amount including VAT | 
+**orgAmount** | **int** | The invoice original amount including VAT, may differ from amount if adjustments have been applied for the invoice | 
+**amountVat** | **int** | The invoice vat amount calculated as rounded summed fractional vats for each orderline | 
+**amountExVat** | **int** | The invoice amount without vat | 
+**settledAmount** | **int** | Settled amount | 
+**refundedAmount** | **int** | Refunded amount | 
+**authorizedAmount** | **int** | Authorized amount | [optional] 
+**creditedAmount** | **int** | Credited amount | [optional] 
+**periodNumber** | **int** | The subscription period this invoice is for | [optional] 
+**recurringPaymentMethod** | **string** | Optional reference to recurring payment method created in conjunction with charging | [optional] 
+**orderLines** | [**\Reepay\Model\OrderLine[]**](OrderLine.md) | Order lines for invoice sorted by descending timestamp | 
+**additionalCosts** | **string[]** | Additional cost handles for any additional costs added to this invoice | 
 **transactions** | [**\Reepay\Model\Transaction[]**](Transaction.md) | Invoice transactions | 
-**credit_notes** | [**\Reepay\Model\InvoiceCreditNote[]**](InvoiceCreditNote.md) | Invoice credit notes | [optional] 
-**dunning_start** | [**\DateTime**](\DateTime.md) | When dunning for the invoice was started, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**dunning_count** | **int** | Number of dunning events for invoice (number of reminders sent) | [optional] 
-**dunning_expired** | [**\DateTime**](\DateTime.md) | When dunning for the invoice expired, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**period_from** | [**\DateTime**](\DateTime.md) | The start of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**period_to** | [**\DateTime**](\DateTime.md) | The end of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**settle_later** | **bool** | Whether this is a customer one-time invoice that will be settled later | [optional] 
-**settle_later_payment_method** | **string** | The payment method to use for a later settle of a one-time customer invoice | [optional] 
-**billing_address** | [**\Reepay\Model\InvoiceBillingAddress**](InvoiceBillingAddress.md) | Optional billing address | [optional] 
-**shipping_address** | [**\Reepay\Model\InvoiceShippingAddress**](InvoiceShippingAddress.md) | Optional shipping address | [optional] 
+**creditNotes** | [**\Reepay\Model\InvoiceCreditNote[]**](InvoiceCreditNote.md) | Invoice credit notes | [optional] 
+**dunningStart** | [**\DateTime**](\DateTime.md) | When dunning for the invoice was started, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**dunningCount** | **int** | Number of dunning events for invoice (number of reminders sent) | [optional] 
+**dunningExpired** | [**\DateTime**](\DateTime.md) | When dunning for the invoice expired, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**periodFrom** | [**\DateTime**](\DateTime.md) | The start of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**periodTo** | [**\DateTime**](\DateTime.md) | The end of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
+**settleLater** | **bool** | Whether this is a customer one-time invoice that will be settled later | [optional] 
+**settleLaterPaymentMethod** | **string** | The payment method to use for a later settle of a one-time customer invoice | [optional] 
+**billingAddress** | [**\Reepay\Model\InvoiceBillingAddress**](InvoiceBillingAddress.md) | Optional billing address | [optional] 
+**shippingAddress** | [**\Reepay\Model\InvoiceShippingAddress**](InvoiceShippingAddress.md) | Optional shipping address | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

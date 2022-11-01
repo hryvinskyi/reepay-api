@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **error** | **string** | Reepay error code if failed. See [transaction errors](https://reference.reepay.com/api/#transaction-errors). | [optional] 
 **type** | **string** | Type of refund, either &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60; or &#x60;mobilepay_subscriptions&#x60; | 
 **created** | [**\DateTime**](\DateTime.md) | When the refund was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
-**credit_note_id** | **string** | Credit note id for successful refund | [optional] 
-**ref_transaction** | **string** | Id of a possible settled transaction that has been refunded | [optional] 
-**error_state** | **string** | Reepay error state if failed: &#x60;hard_declined&#x60; or &#x60;processing_error&#x60;. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay and the acquirer. | [optional] 
-**acquirer_message** | **string** | Acquirer message in case of error | [optional] 
+**creditNoteId** | **string** | Credit note id for successful refund | [optional] 
+**refTransaction** | **string** | Id of a possible settled transaction that has been refunded | [optional] 
+**errorState** | **string** | Reepay error state if failed: &#x60;hard_declined&#x60; or &#x60;processing_error&#x60;. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay and the acquirer. | [optional] 
+**acquirerMessage** | **string** | Acquirer message in case of error | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

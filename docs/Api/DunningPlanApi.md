@@ -1,6 +1,6 @@
 # Reepay\DunningPlanApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,14 +24,21 @@ Create dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\DunningPlanApi();
+
+$apiInstance = new Reepay\Api\DunningPlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreateDunningPlan(); // \Reepay\Model\CreateDunningPlan | 
 
 try {
-    $result = $api_instance->createDunningPlanJson($body);
+    $result = $apiInstance->createDunningPlanJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->createDunningPlanJson: ', $e->getMessage(), PHP_EOL;
@@ -43,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateDunningPlan**](../Model/\Reepay\Model\CreateDunningPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateDunningPlan**](../Model/CreateDunningPlan.md)|  | [optional]
 
 ### Return type
 
@@ -73,14 +80,21 @@ Delete dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\DunningPlanApi();
+
+$apiInstance = new Reepay\Api\DunningPlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Dunning plan handle
 
 try {
-    $result = $api_instance->deleteDunningPlan($handle);
+    $result = $apiInstance->deleteDunningPlan($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->deleteDunningPlan: ', $e->getMessage(), PHP_EOL;
@@ -122,14 +136,21 @@ Get dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\DunningPlanApi();
+
+$apiInstance = new Reepay\Api\DunningPlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Dunning plan handle
 
 try {
-    $result = $api_instance->getDunningPlan($handle);
+    $result = $apiInstance->getDunningPlan($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->getDunningPlan: ', $e->getMessage(), PHP_EOL;
@@ -171,13 +192,20 @@ Get list of dunning plans
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\DunningPlanApi();
+
+$apiInstance = new Reepay\Api\DunningPlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getDunningPlans();
+    $result = $apiInstance->getDunningPlans();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->getDunningPlans: ', $e->getMessage(), PHP_EOL;
@@ -216,15 +244,22 @@ Update dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\DunningPlanApi();
+
+$apiInstance = new Reepay\Api\DunningPlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Dunning plan handle
 $body = new \Reepay\Model\UpdateDunningPlan(); // \Reepay\Model\UpdateDunningPlan | 
 
 try {
-    $result = $api_instance->updateJson($handle, $body);
+    $result = $apiInstance->updateJson($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->updateJson: ', $e->getMessage(), PHP_EOL;
@@ -237,7 +272,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Dunning plan handle |
- **body** | [**\Reepay\Model\UpdateDunningPlan**](../Model/\Reepay\Model\UpdateDunningPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateDunningPlan**](../Model/UpdateDunningPlan.md)|  | [optional]
 
 ### Return type
 

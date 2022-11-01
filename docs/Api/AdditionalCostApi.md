@@ -1,6 +1,6 @@
 # Reepay\AdditionalCostApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,14 +23,21 @@ Cancel pending additional cost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AdditionalCostApi();
+
+$apiInstance = new Reepay\Api\AdditionalCostApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Additonal cost handle
 
 try {
-    $result = $api_instance->cancelAdditionalCost($handle);
+    $result = $apiInstance->cancelAdditionalCost($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->cancelAdditionalCost: ', $e->getMessage(), PHP_EOL;
@@ -72,14 +79,21 @@ Create additional cost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AdditionalCostApi();
+
+$apiInstance = new Reepay\Api\AdditionalCostApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreateAdditionalCost(); // \Reepay\Model\CreateAdditionalCost | 
 
 try {
-    $result = $api_instance->createAdditionalCostJson($body);
+    $result = $apiInstance->createAdditionalCostJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->createAdditionalCostJson: ', $e->getMessage(), PHP_EOL;
@@ -91,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateAdditionalCost**](../Model/\Reepay\Model\CreateAdditionalCost.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateAdditionalCost**](../Model/CreateAdditionalCost.md)|  | [optional]
 
 ### Return type
 
@@ -121,14 +135,21 @@ Get additional cost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AdditionalCostApi();
+
+$apiInstance = new Reepay\Api\AdditionalCostApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Additonal cost handle
 
 try {
-    $result = $api_instance->getAdditionalCost($handle);
+    $result = $apiInstance->getAdditionalCost($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->getAdditionalCost: ', $e->getMessage(), PHP_EOL;
@@ -170,14 +191,21 @@ Get additional costs for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AdditionalCostApi();
+
+$apiInstance = new Reepay\Api\AdditionalCostApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getAdditionalCosts($handle);
+    $result = $apiInstance->getAdditionalCosts($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->getAdditionalCosts: ', $e->getMessage(), PHP_EOL;

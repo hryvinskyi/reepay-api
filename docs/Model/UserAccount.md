@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **state** | **string** | State of user for account: &#x60;active&#x60;, &#x60;invited&#x60; | 
 **groups** | **string[]** | List of user groups | 
 **permissions** | **string[]** | List of user permissions | 
-**verified_email** | **bool** | Email verified | 
-**mfa_method** | **string** | MFA method | [optional] 
-**invite_expires** | [**\DateTime**](\DateTime.md) | Expiry date for invite | [optional] 
+**verifiedEmail** | **bool** | Email verified | 
+**mfaMethod** | **string** | MFA method | [optional] 
+**inviteExpires** | [**\DateTime**](\DateTime.md) | Expiry date for invite | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

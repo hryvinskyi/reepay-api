@@ -1,6 +1,6 @@
 # Reepay\WebhookApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,14 +25,21 @@ Disable webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\WebhookDisableRequest(); // \Reepay\Model\WebhookDisableRequest | 
 
 try {
-    $result = $api_instance->disableWebhooks($body);
+    $result = $apiInstance->disableWebhooks($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->disableWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +51,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/\Reepay\Model\WebhookDisableRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  | [optional]
 
 ### Return type
 
@@ -74,14 +81,21 @@ Get webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Webhook id or event id
 
 try {
-    $result = $api_instance->getWebhook($id);
+    $result = $apiInstance->getWebhook($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhook: ', $e->getMessage(), PHP_EOL;
@@ -123,14 +137,21 @@ Get webhook requests
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Webhook id
 
 try {
-    $result = $api_instance->getWebhookRequests($id);
+    $result = $apiInstance->getWebhookRequests($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhookRequests: ', $e->getMessage(), PHP_EOL;
@@ -160,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Reepay\Model\Webhook[] getWebhooks($created_before, $size, $state, $created_after)
+> \Reepay\Model\Webhook[] getWebhooks($createdBefore, $size, $state, $createdAfter)
 
 Get list of webhooks
 
@@ -172,17 +193,24 @@ Get list of webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\WebhookApi();
-$created_before = "2015-06-14T08:12:19.558+00:00"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$createdBefore = "createdBefore_example"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
 $size = 100; // int | Page size. A maximum of 100 is allowed.
-$state = "pending"; // string | Optional state to filter on, one of the following: `pending`, `retrying`, `disabled`, `failed`, `completed`
-$created_after = "2010-06-14T08:12:19.558+00:00"; // string | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
+$state = "state_example"; // string | Optional state to filter on, one of the following: `pending`, `retrying`, `disabled`, `failed`, `completed`
+$createdAfter = "createdAfter_example"; // string | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
 
 try {
-    $result = $api_instance->getWebhooks($created_before, $size, $state, $created_after);
+    $result = $apiInstance->getWebhooks($createdBefore, $size, $state, $createdAfter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -194,10 +222,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_before** | **string**| Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
+ **createdBefore** | **string**| Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
  **size** | **int**| Page size. A maximum of 100 is allowed. | [optional] [default to 100]
  **state** | **string**| Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; | [optional]
- **created_after** | **string**| Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. | [optional]
+ **createdAfter** | **string**| Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. | [optional]
 
 ### Return type
 
@@ -227,14 +255,21 @@ Re-send webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\WebhookResendRequest(); // \Reepay\Model\WebhookResendRequest | 
 
 try {
-    $result = $api_instance->resendJson($body);
+    $result = $apiInstance->resendJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->resendJson: ', $e->getMessage(), PHP_EOL;
@@ -246,7 +281,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/\Reepay\Model\WebhookResendRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  | [optional]
 
 ### Return type
 
@@ -276,14 +311,21 @@ Update and resend webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\WebhookUpdateRequest(); // \Reepay\Model\WebhookUpdateRequest | 
 
 try {
-    $result = $api_instance->updateWebhooks($body);
+    $result = $apiInstance->updateWebhooks($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->updateWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -295,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/\Reepay\Model\WebhookUpdateRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  | [optional]
 
 ### Return type
 

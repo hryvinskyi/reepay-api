@@ -1,12 +1,13 @@
 # Reepay\UserApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelInvitation**](UserApi.md#cancelInvitation) | **DELETE** /v1/user/invite/{id} | Cancel invitation
 [**deleteUser**](UserApi.md#deleteUser) | **DELETE** /v1/user/{id} | Delete user
 [**getUser**](UserApi.md#getUser) | **GET** /v1/user/{id} | Get user
+[**getUserInfo**](UserApi.md#getUserInfo) | **GET** /v1/user/{id}/info | Get user info
 [**getUserMfa**](UserApi.md#getUserMfa) | **GET** /v1/user/{id}/mfa | Get MFA setup details
 [**getUsers**](UserApi.md#getUsers) | **GET** /v1/user | Get users
 [**inviteUser**](UserApi.md#inviteUser) | **POST** /v1/user/invite | Invite user
@@ -34,11 +35,15 @@ Cancel invitation
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Reepay\Api\UserApi();
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | User id
 
 try {
-    $api_instance->cancelInvitation($id);
+    $apiInstance->cancelInvitation($id);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->cancelInvitation: ', $e->getMessage(), PHP_EOL;
 }
@@ -79,14 +84,21 @@ Delete user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 
 try {
-    $api_instance->deleteUser($id);
+    $apiInstance->deleteUser($id);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->deleteUser: ', $e->getMessage(), PHP_EOL;
 }
@@ -127,14 +139,21 @@ Get user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 
 try {
-    $result = $api_instance->getUser($id);
+    $result = $apiInstance->getUser($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->getUser: ', $e->getMessage(), PHP_EOL;
@@ -163,6 +182,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getUserInfo**
+> \Reepay\Model\UserInfo getUserInfo($id)
+
+Get user info
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | User id
+
+try {
+    $result = $apiInstance->getUserInfo($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->getUserInfo: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| User id |
+
+### Return type
+
+[**\Reepay\Model\UserInfo**](../Model/UserInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getUserMfa**
 > \Reepay\Model\UserAccountMfa getUserMfa($id)
 
@@ -176,14 +244,21 @@ Get MFA setup details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 
 try {
-    $result = $api_instance->getUserMfa($id);
+    $result = $apiInstance->getUserMfa($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->getUserMfa: ', $e->getMessage(), PHP_EOL;
@@ -225,13 +300,20 @@ Get users
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getUsers();
+    $result = $apiInstance->getUsers();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->getUsers: ', $e->getMessage(), PHP_EOL;
@@ -270,14 +352,21 @@ Invite user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\InviteUser(); // \Reepay\Model\InviteUser | 
 
 try {
-    $result = $api_instance->inviteUser($body);
+    $result = $apiInstance->inviteUser($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->inviteUser: ', $e->getMessage(), PHP_EOL;
@@ -289,7 +378,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\InviteUser**](../Model/\Reepay\Model\InviteUser.md)|  | [optional]
+ **body** | [**\Reepay\Model\InviteUser**](../Model/InviteUser.md)|  | [optional]
 
 ### Return type
 
@@ -318,12 +407,16 @@ Accept invite
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Reepay\Api\UserApi();
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $token = "token_example"; // string | Invite token
 $body = new \Reepay\Model\InviteUserAccept(); // \Reepay\Model\InviteUserAccept | 
 
 try {
-    $result = $api_instance->inviteUserAccept($token, $body);
+    $result = $apiInstance->inviteUserAccept($token, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->inviteUserAccept: ', $e->getMessage(), PHP_EOL;
@@ -336,7 +429,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Invite token |
- **body** | [**\Reepay\Model\InviteUserAccept**](../Model/\Reepay\Model\InviteUserAccept.md)|  | [optional]
+ **body** | [**\Reepay\Model\InviteUserAccept**](../Model/InviteUserAccept.md)|  | [optional]
 
 ### Return type
 
@@ -365,11 +458,15 @@ Get invite
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Reepay\Api\UserApi();
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $token = "token_example"; // string | Invite token
 
 try {
-    $result = $api_instance->inviteUserGet($token);
+    $result = $apiInstance->inviteUserGet($token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->inviteUserGet: ', $e->getMessage(), PHP_EOL;
@@ -410,12 +507,16 @@ Reset password request
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Reepay\Api\UserApi();
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $version = 56; // int | 
 $body = new \Reepay\Model\UserResetRequestPassword(); // \Reepay\Model\UserResetRequestPassword | 
 
 try {
-    $api_instance->resetPassword($version, $body);
+    $apiInstance->resetPassword($version, $body);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->resetPassword: ', $e->getMessage(), PHP_EOL;
 }
@@ -427,7 +528,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **int**|  | [optional]
- **body** | [**\Reepay\Model\UserResetRequestPassword**](../Model/\Reepay\Model\UserResetRequestPassword.md)|  | [optional]
+ **body** | [**\Reepay\Model\UserResetRequestPassword**](../Model/UserResetRequestPassword.md)|  | [optional]
 
 ### Return type
 
@@ -456,12 +557,16 @@ Reset password
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Reepay\Api\UserApi();
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $token = "token_example"; // string | Reset password token
 $body = new \Reepay\Model\ResetUserPassword(); // \Reepay\Model\ResetUserPassword | 
 
 try {
-    $result = $api_instance->resetPasswordWithToken($token, $body);
+    $result = $apiInstance->resetPasswordWithToken($token, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->resetPasswordWithToken: ', $e->getMessage(), PHP_EOL;
@@ -474,7 +579,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Reset password token |
- **body** | [**\Reepay\Model\ResetUserPassword**](../Model/\Reepay\Model\ResetUserPassword.md)|  | [optional]
+ **body** | [**\Reepay\Model\ResetUserPassword**](../Model/ResetUserPassword.md)|  | [optional]
 
 ### Return type
 
@@ -504,15 +609,22 @@ Set user MFA
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 $body = new \Reepay\Model\UserSetMfa(); // \Reepay\Model\UserSetMfa | 
 
 try {
-    $result = $api_instance->setMfa($id, $body);
+    $result = $apiInstance->setMfa($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->setMfa: ', $e->getMessage(), PHP_EOL;
@@ -525,7 +637,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Reepay\Model\UserSetMfa**](../Model/\Reepay\Model\UserSetMfa.md)|  | [optional]
+ **body** | [**\Reepay\Model\UserSetMfa**](../Model/UserSetMfa.md)|  | [optional]
 
 ### Return type
 
@@ -555,15 +667,22 @@ Update user groups
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 $body = new \Reepay\Model\UpdateUserGroups(); // \Reepay\Model\UpdateUserGroups | 
 
 try {
-    $result = $api_instance->updateAuth($id, $body);
+    $result = $apiInstance->updateAuth($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->updateAuth: ', $e->getMessage(), PHP_EOL;
@@ -576,7 +695,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Reepay\Model\UpdateUserGroups**](../Model/\Reepay\Model\UpdateUserGroups.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateUserGroups**](../Model/UpdateUserGroups.md)|  | [optional]
 
 ### Return type
 
@@ -606,15 +725,22 @@ Change password
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 $body = new \Reepay\Model\UpdateUserPassword(); // \Reepay\Model\UpdateUserPassword | 
 
 try {
-    $result = $api_instance->updatePassword($id, $body);
+    $result = $apiInstance->updatePassword($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->updatePassword: ', $e->getMessage(), PHP_EOL;
@@ -627,7 +753,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Reepay\Model\UpdateUserPassword**](../Model/\Reepay\Model\UpdateUserPassword.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateUserPassword**](../Model/UpdateUserPassword.md)|  | [optional]
 
 ### Return type
 
@@ -657,15 +783,22 @@ Update user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 $body = new \Reepay\Model\UpdateUser(); // \Reepay\Model\UpdateUser | 
 
 try {
-    $result = $api_instance->updateUser($id, $body);
+    $result = $apiInstance->updateUser($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->updateUser: ', $e->getMessage(), PHP_EOL;
@@ -678,7 +811,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Reepay\Model\UpdateUser**](../Model/\Reepay\Model\UpdateUser.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateUser**](../Model/UpdateUser.md)|  | [optional]
 
 ### Return type
 
@@ -707,11 +840,15 @@ Verify email
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Reepay\Api\UserApi();
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $token = "token_example"; // string | Verify email token
 
 try {
-    $result = $api_instance->verifyEmail($token);
+    $result = $apiInstance->verifyEmail($token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->verifyEmail: ', $e->getMessage(), PHP_EOL;
@@ -753,14 +890,21 @@ Send verification email
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\UserApi();
+
+$apiInstance = new Reepay\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | User id
 
 try {
-    $api_instance->verifyEmailRequest($id);
+    $apiInstance->verifyEmailRequest($id);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->verifyEmailRequest: ', $e->getMessage(), PHP_EOL;
 }

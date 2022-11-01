@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **reference** | **string** | Optional reference provided when creating the payment method. For payment methods created with Reepay Checkout the reference will correspond to the session id for the Checkout session that created the payment method. | [optional] 
 **failed** | [**\DateTime**](\DateTime.md) | Date when the payment method failed. In ISO-8601 extended offset date-time format. | [optional] 
 **created** | [**\DateTime**](\DateTime.md) | Date when the payment method was created. In ISO-8601 extended offset date-time format. | 
-**external_id** | **string** | Optional external id at MobilePay defined when creating the subscription | [optional] 
+**externalId** | **string** | Optional external id at MobilePay defined when creating the subscription | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

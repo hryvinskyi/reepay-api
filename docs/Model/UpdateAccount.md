@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **vat** | **string** | Account vat number | [optional] 
 **website** | **string** | Account website | [optional] 
 **logo** | **string** | Account logo url | [optional] 
-**postal_code** | **string** | Account postal code | [optional] 
-**default_vat** | **float** | Default vat for account | 
-**subscription_invoice_prefix** | **string** |  | [optional] 
+**postalCode** | **string** | Account postal code | [optional] 
+**defaultVat** | **float** | Default vat for account | 
+**subscriptionInvoicePrefix** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

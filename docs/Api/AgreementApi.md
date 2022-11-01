@@ -1,10 +1,11 @@
 # Reepay\AgreementApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**activateMpsAgreement**](AgreementApi.md#activateMpsAgreement) | **POST** /v1/agreement/{id}/mps_activate | Activate mps agreement by selecting provider
+[**createAnydayAgreement**](AgreementApi.md#createAnydayAgreement) | **POST** /v1/agreement/anyday | Create Anyday agreement
 [**createApplepayAgreement**](AgreementApi.md#createApplepayAgreement) | **POST** /v1/agreement/applepay | Create ApplePay agreement
 [**createCardGatewayAgreement**](AgreementApi.md#createCardGatewayAgreement) | **POST** /v1/agreement/card_gateway | Create card gateway agreement
 [**createGooglepayAgreement**](AgreementApi.md#createGooglepayAgreement) | **POST** /v1/agreement/googlepay | Create GooglePay agreement
@@ -12,18 +13,19 @@ Method | HTTP request | Description
 [**createMpoAgreement**](AgreementApi.md#createMpoAgreement) | **POST** /v1/agreement/mpo | Create MobilePay Online agreement
 [**createMpsAgreement**](AgreementApi.md#createMpsAgreement) | **POST** /v1/agreement/mps | Create pending MobilePay Subscriptions agreement
 [**createPaypalAgreement**](AgreementApi.md#createPaypalAgreement) | **POST** /v1/agreement/paypal | Create PayPal agreement
-[**createPgwAgreement**](AgreementApi.md#createPgwAgreement) | **POST** /v1/agreement/pgw | Create payment gateway agreement
 [**createPproAgreement**](AgreementApi.md#createPproAgreement) | **POST** /v1/agreement/ppro | Create ppro agreement
 [**createResursAgreement**](AgreementApi.md#createResursAgreement) | **POST** /v1/agreement/resurs | Create Resurs agreement
 [**createSwishAgreement**](AgreementApi.md#createSwishAgreement) | **POST** /v1/agreement/swish | Create Swish agreement
 [**createViabillAgreement**](AgreementApi.md#createViabillAgreement) | **POST** /v1/agreement/viabill | Create ViaBill agreement
 [**createVippsAgreement**](AgreementApi.md#createVippsAgreement) | **POST** /v1/agreement/vipps | Create Vipps agreement
+[**createVippsRecurringAgreement**](AgreementApi.md#createVippsRecurringAgreement) | **POST** /v1/agreement/vipps_recurring | Create Vipps Recurring agreement
 [**deleteGatewayAgreement**](AgreementApi.md#deleteGatewayAgreement) | **DELETE** /v1/agreement/{id} | Delete gateway agreement
 [**disableGatewayAgreement**](AgreementApi.md#disableGatewayAgreement) | **POST** /v1/agreement/{id}/disable | Disable gateway agreement
 [**enableGatewayAgreement**](AgreementApi.md#enableGatewayAgreement) | **POST** /v1/agreement/{id}/enable | Enable gateway agreement
 [**getCardGatewayAgreements**](AgreementApi.md#getCardGatewayAgreements) | **GET** /v1/agreement/card_gateway | Get all card gateway agreements
 [**getGatewayAgreement**](AgreementApi.md#getGatewayAgreement) | **GET** /v1/agreement/{id} | Get gateway agreement
 [**getGatewayAgreements**](AgreementApi.md#getGatewayAgreements) | **GET** /v1/agreement | Get all agreements
+[**updateAnydayAgreement**](AgreementApi.md#updateAnydayAgreement) | **PUT** /v1/agreement/anyday/{id} | Update Anyday agreement
 [**updateApplepayAgreement**](AgreementApi.md#updateApplepayAgreement) | **PUT** /v1/agreement/applepay/{id} | Update ApplePay agreement
 [**updateCardGatewayAgreement**](AgreementApi.md#updateCardGatewayAgreement) | **PUT** /v1/agreement/card_gateway/{id} | Update card gateway agreement
 [**updateGooglepayAgreement**](AgreementApi.md#updateGooglepayAgreement) | **PUT** /v1/agreement/googlepay/{id} | Update GooglePay agreement
@@ -31,12 +33,12 @@ Method | HTTP request | Description
 [**updateMpoAgreement**](AgreementApi.md#updateMpoAgreement) | **PUT** /v1/agreement/mpo/{id} | Update MobilePay Online agreement
 [**updateMpsAgreement**](AgreementApi.md#updateMpsAgreement) | **PUT** /v1/agreement/mps/{id} | Update mps agreement
 [**updatePaypalAgreement**](AgreementApi.md#updatePaypalAgreement) | **PUT** /v1/agreement/paypal/{id} | Update PayPal agreement
-[**updatePgwAgreement**](AgreementApi.md#updatePgwAgreement) | **PUT** /v1/agreement/pgw/{id} | Update pgw agreement
 [**updatePproAgreement**](AgreementApi.md#updatePproAgreement) | **PUT** /v1/agreement/ppro/{id} | Update ppro agreement
 [**updateResursAgreement**](AgreementApi.md#updateResursAgreement) | **PUT** /v1/agreement/resurs/{id} | Update Resurs agreement
 [**updateSwishAgreement**](AgreementApi.md#updateSwishAgreement) | **PUT** /v1/agreement/swish/{id} | Update Swish agreement
 [**updateViabillAgreement**](AgreementApi.md#updateViabillAgreement) | **PUT** /v1/agreement/viabill/{id} | Update ViaBill agreement
 [**updateVippsAgreement**](AgreementApi.md#updateVippsAgreement) | **PUT** /v1/agreement/vipps/{id} | Update Vipps agreement
+[**updateVippsRecurringAgreement**](AgreementApi.md#updateVippsRecurringAgreement) | **PUT** /v1/agreement/vipps_recurring/{id} | Update Vipps Recurring agreement
 
 
 # **activateMpsAgreement**
@@ -52,15 +54,22 @@ Activate mps agreement by selecting provider
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\ActivateMpsAgreement(); // \Reepay\Model\ActivateMpsAgreement | 
 
 try {
-    $result = $api_instance->activateMpsAgreement($id, $body);
+    $result = $apiInstance->activateMpsAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->activateMpsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -73,7 +82,63 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\ActivateMpsAgreement**](../Model/\Reepay\Model\ActivateMpsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ActivateMpsAgreement**](../Model/ActivateMpsAgreement.md)|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createAnydayAgreement**
+> \Reepay\Model\GatewayAgreement createAnydayAgreement($body)
+
+Create Anyday agreement
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\AnydayAgreement(); // \Reepay\Model\AnydayAgreement | 
+
+try {
+    $result = $apiInstance->createAnydayAgreement($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->createAnydayAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\AnydayAgreement**](../Model/AnydayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -103,14 +168,21 @@ Create ApplePay agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\ApplepayAgreement(); // \Reepay\Model\ApplepayAgreement | 
 
 try {
-    $result = $api_instance->createApplepayAgreement($body);
+    $result = $apiInstance->createApplepayAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createApplepayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -122,7 +194,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/\Reepay\Model\ApplepayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/ApplepayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -152,14 +224,21 @@ Create card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreateCardGatewayAgreement(); // \Reepay\Model\CreateCardGatewayAgreement | 
 
 try {
-    $result = $api_instance->createCardGatewayAgreement($body);
+    $result = $apiInstance->createCardGatewayAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -171,7 +250,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCardGatewayAgreement**](../Model/\Reepay\Model\CreateCardGatewayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCardGatewayAgreement**](../Model/CreateCardGatewayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -201,14 +280,21 @@ Create GooglePay agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\GooglepayAgreement(); // \Reepay\Model\GooglepayAgreement | 
 
 try {
-    $result = $api_instance->createGooglepayAgreement($body);
+    $result = $apiInstance->createGooglepayAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createGooglepayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -220,7 +306,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\GooglepayAgreement**](../Model/\Reepay\Model\GooglepayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\GooglepayAgreement**](../Model/GooglepayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -250,14 +336,21 @@ Create Klarna agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\KlarnaAgreement(); // \Reepay\Model\KlarnaAgreement | 
 
 try {
-    $result = $api_instance->createKlarnaAgreement($body);
+    $result = $apiInstance->createKlarnaAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createKlarnaAgreement: ', $e->getMessage(), PHP_EOL;
@@ -269,7 +362,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\KlarnaAgreement**](../Model/\Reepay\Model\KlarnaAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\KlarnaAgreement**](../Model/KlarnaAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -299,14 +392,21 @@ Create MobilePay Online agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\MpoAgreement(); // \Reepay\Model\MpoAgreement | 
 
 try {
-    $result = $api_instance->createMpoAgreement($body);
+    $result = $apiInstance->createMpoAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createMpoAgreement: ', $e->getMessage(), PHP_EOL;
@@ -318,7 +418,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\MpoAgreement**](../Model/\Reepay\Model\MpoAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\MpoAgreement**](../Model/MpoAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -348,14 +448,21 @@ Create pending MobilePay Subscriptions agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\CreateMpsAgreement(); // \Reepay\Model\CreateMpsAgreement | 
 
 try {
-    $result = $api_instance->createMpsAgreement($body);
+    $result = $apiInstance->createMpsAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createMpsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -367,7 +474,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateMpsAgreement**](../Model/\Reepay\Model\CreateMpsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateMpsAgreement**](../Model/CreateMpsAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -397,14 +504,21 @@ Create PayPal agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\PaypalAgreement(); // \Reepay\Model\PaypalAgreement | 
 
 try {
-    $result = $api_instance->createPaypalAgreement($body);
+    $result = $apiInstance->createPaypalAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createPaypalAgreement: ', $e->getMessage(), PHP_EOL;
@@ -416,56 +530,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\PaypalAgreement**](../Model/\Reepay\Model\PaypalAgreement.md)|  | [optional]
-
-### Return type
-
-[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **createPgwAgreement**
-> \Reepay\Model\GatewayAgreement createPgwAgreement($body)
-
-Create payment gateway agreement
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Reepay\Api\AgreementApi();
-$body = new \Reepay\Model\PgwAgreement(); // \Reepay\Model\PgwAgreement | 
-
-try {
-    $result = $api_instance->createPgwAgreement($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AgreementApi->createPgwAgreement: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\PgwAgreement**](../Model/\Reepay\Model\PgwAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\PaypalAgreement**](../Model/PaypalAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -495,14 +560,21 @@ Create ppro agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\PproAgreement(); // \Reepay\Model\PproAgreement | 
 
 try {
-    $result = $api_instance->createPproAgreement($body);
+    $result = $apiInstance->createPproAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createPproAgreement: ', $e->getMessage(), PHP_EOL;
@@ -514,7 +586,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\PproAgreement**](../Model/\Reepay\Model\PproAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\PproAgreement**](../Model/PproAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -544,14 +616,21 @@ Create Resurs agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\ResursAgreement(); // \Reepay\Model\ResursAgreement | 
 
 try {
-    $result = $api_instance->createResursAgreement($body);
+    $result = $apiInstance->createResursAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createResursAgreement: ', $e->getMessage(), PHP_EOL;
@@ -563,7 +642,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\ResursAgreement**](../Model/\Reepay\Model\ResursAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ResursAgreement**](../Model/ResursAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -593,14 +672,21 @@ Create Swish agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\SwishAgreement(); // \Reepay\Model\SwishAgreement | 
 
 try {
-    $result = $api_instance->createSwishAgreement($body);
+    $result = $apiInstance->createSwishAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createSwishAgreement: ', $e->getMessage(), PHP_EOL;
@@ -612,7 +698,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\SwishAgreement**](../Model/\Reepay\Model\SwishAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\SwishAgreement**](../Model/SwishAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -642,14 +728,21 @@ Create ViaBill agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\ViabillAgreement(); // \Reepay\Model\ViabillAgreement | 
 
 try {
-    $result = $api_instance->createViabillAgreement($body);
+    $result = $apiInstance->createViabillAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createViabillAgreement: ', $e->getMessage(), PHP_EOL;
@@ -661,7 +754,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\ViabillAgreement**](../Model/\Reepay\Model\ViabillAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ViabillAgreement**](../Model/ViabillAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -691,14 +784,21 @@ Create Vipps agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Reepay\Model\VippsAgreement(); // \Reepay\Model\VippsAgreement | 
 
 try {
-    $result = $api_instance->createVippsAgreement($body);
+    $result = $apiInstance->createVippsAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createVippsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -710,7 +810,63 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\VippsAgreement**](../Model/\Reepay\Model\VippsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\VippsAgreement**](../Model/VippsAgreement.md)|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createVippsRecurringAgreement**
+> \Reepay\Model\GatewayAgreement createVippsRecurringAgreement($body)
+
+Create Vipps Recurring agreement
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\VippsRecurringAgreement(); // \Reepay\Model\VippsRecurringAgreement | 
+
+try {
+    $result = $apiInstance->createVippsRecurringAgreement($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->createVippsRecurringAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\VippsRecurringAgreement**](../Model/VippsRecurringAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -740,14 +896,21 @@ Delete gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->deleteGatewayAgreement($id);
+    $result = $apiInstance->deleteGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->deleteGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -789,14 +952,21 @@ Disable gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->disableGatewayAgreement($id);
+    $result = $apiInstance->disableGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->disableGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -838,14 +1008,21 @@ Enable gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->enableGatewayAgreement($id);
+    $result = $apiInstance->enableGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->enableGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -875,7 +1052,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreements**
-> \Reepay\Model\GatewayAgreement[] getCardGatewayAgreements($only_active, $non_deleted)
+> \Reepay\Model\GatewayAgreement[] getCardGatewayAgreements($onlyActive, $nonDeleted)
 
 Get all card gateway agreements
 
@@ -887,15 +1064,22 @@ Get all card gateway agreements
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
-$only_active = false; // bool | Get only active
-$non_deleted = false; // bool | Get only non-deleted
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$onlyActive = false; // bool | Get only active
+$nonDeleted = false; // bool | Get only non-deleted
 
 try {
-    $result = $api_instance->getCardGatewayAgreements($only_active, $non_deleted);
+    $result = $apiInstance->getCardGatewayAgreements($onlyActive, $nonDeleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getCardGatewayAgreements: ', $e->getMessage(), PHP_EOL;
@@ -907,8 +1091,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **only_active** | **bool**| Get only active | [optional] [default to false]
- **non_deleted** | **bool**| Get only non-deleted | [optional] [default to false]
+ **onlyActive** | **bool**| Get only active | [optional] [default to false]
+ **nonDeleted** | **bool**| Get only non-deleted | [optional] [default to false]
 
 ### Return type
 
@@ -938,14 +1122,21 @@ Get gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->getGatewayAgreement($id);
+    $result = $apiInstance->getGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -975,7 +1166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGatewayAgreements**
-> \Reepay\Model\GatewayAgreement[] getGatewayAgreements($only_active, $non_deleted)
+> \Reepay\Model\GatewayAgreement[] getGatewayAgreements($onlyActive, $nonDeleted)
 
 Get all agreements
 
@@ -987,15 +1178,22 @@ Get all agreements
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
-$only_active = false; // bool | Get only active
-$non_deleted = false; // bool | Get only non-deleted
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$onlyActive = false; // bool | Get only active
+$nonDeleted = false; // bool | Get only non-deleted
 
 try {
-    $result = $api_instance->getGatewayAgreements($only_active, $non_deleted);
+    $result = $apiInstance->getGatewayAgreements($onlyActive, $nonDeleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getGatewayAgreements: ', $e->getMessage(), PHP_EOL;
@@ -1007,12 +1205,70 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **only_active** | **bool**| Get only active | [optional] [default to false]
- **non_deleted** | **bool**| Get only non-deleted | [optional] [default to false]
+ **onlyActive** | **bool**| Get only active | [optional] [default to false]
+ **nonDeleted** | **bool**| Get only non-deleted | [optional] [default to false]
 
 ### Return type
 
 [**\Reepay\Model\GatewayAgreement[]**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateAnydayAgreement**
+> \Reepay\Model\GatewayAgreement updateAnydayAgreement($id, $body)
+
+Update Anyday agreement
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Agreement id
+$body = new \Reepay\Model\AnydayAgreement(); // \Reepay\Model\AnydayAgreement | 
+
+try {
+    $result = $apiInstance->updateAnydayAgreement($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updateAnydayAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Agreement id |
+ **body** | [**\Reepay\Model\AnydayAgreement**](../Model/AnydayAgreement.md)|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
 
 ### Authorization
 
@@ -1038,15 +1294,22 @@ Update ApplePay agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\ApplepayAgreement(); // \Reepay\Model\ApplepayAgreement | 
 
 try {
-    $result = $api_instance->updateApplepayAgreement($id, $body);
+    $result = $apiInstance->updateApplepayAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateApplepayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1059,7 +1322,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/\Reepay\Model\ApplepayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/ApplepayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1089,15 +1352,22 @@ Update card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateCardGatewayAgreement(); // \Reepay\Model\UpdateCardGatewayAgreement | 
 
 try {
-    $result = $api_instance->updateCardGatewayAgreement($id, $body);
+    $result = $apiInstance->updateCardGatewayAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1110,7 +1380,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateCardGatewayAgreement**](../Model/\Reepay\Model\UpdateCardGatewayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateCardGatewayAgreement**](../Model/UpdateCardGatewayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1140,15 +1410,22 @@ Update GooglePay agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateGooglepayAgreement(); // \Reepay\Model\UpdateGooglepayAgreement | 
 
 try {
-    $result = $api_instance->updateGooglepayAgreement($id, $body);
+    $result = $apiInstance->updateGooglepayAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateGooglepayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1161,7 +1438,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateGooglepayAgreement**](../Model/\Reepay\Model\UpdateGooglepayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateGooglepayAgreement**](../Model/UpdateGooglepayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1191,15 +1468,22 @@ Update Klarna agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateKlarnaAgreement(); // \Reepay\Model\UpdateKlarnaAgreement | 
 
 try {
-    $result = $api_instance->updateKlarnaAgreement($id, $body);
+    $result = $apiInstance->updateKlarnaAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateKlarnaAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1212,7 +1496,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateKlarnaAgreement**](../Model/\Reepay\Model\UpdateKlarnaAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateKlarnaAgreement**](../Model/UpdateKlarnaAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1242,15 +1526,22 @@ Update MobilePay Online agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\MpoAgreement(); // \Reepay\Model\MpoAgreement | 
 
 try {
-    $result = $api_instance->updateMpoAgreement($id, $body);
+    $result = $apiInstance->updateMpoAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateMpoAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1263,7 +1554,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\MpoAgreement**](../Model/\Reepay\Model\MpoAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\MpoAgreement**](../Model/MpoAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1293,15 +1584,22 @@ Update mps agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateMpsAgreement(); // \Reepay\Model\UpdateMpsAgreement | 
 
 try {
-    $result = $api_instance->updateMpsAgreement($id, $body);
+    $result = $apiInstance->updateMpsAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateMpsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1314,7 +1612,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateMpsAgreement**](../Model/\Reepay\Model\UpdateMpsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateMpsAgreement**](../Model/UpdateMpsAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1344,15 +1642,22 @@ Update PayPal agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\PaypalAgreement(); // \Reepay\Model\PaypalAgreement | 
 
 try {
-    $result = $api_instance->updatePaypalAgreement($id, $body);
+    $result = $apiInstance->updatePaypalAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updatePaypalAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1365,58 +1670,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\PaypalAgreement**](../Model/\Reepay\Model\PaypalAgreement.md)|  | [optional]
-
-### Return type
-
-[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updatePgwAgreement**
-> \Reepay\Model\GatewayAgreement updatePgwAgreement($id, $body)
-
-Update pgw agreement
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Reepay\Api\AgreementApi();
-$id = "id_example"; // string | Agreement id
-$body = new \Reepay\Model\UpdatePgwAgreement(); // \Reepay\Model\UpdatePgwAgreement | 
-
-try {
-    $result = $api_instance->updatePgwAgreement($id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AgreementApi->updatePgwAgreement: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdatePgwAgreement**](../Model/\Reepay\Model\UpdatePgwAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\PaypalAgreement**](../Model/PaypalAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1446,15 +1700,22 @@ Update ppro agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdatePproAgreement(); // \Reepay\Model\UpdatePproAgreement | 
 
 try {
-    $result = $api_instance->updatePproAgreement($id, $body);
+    $result = $apiInstance->updatePproAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updatePproAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1467,7 +1728,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdatePproAgreement**](../Model/\Reepay\Model\UpdatePproAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdatePproAgreement**](../Model/UpdatePproAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1497,15 +1758,22 @@ Update Resurs agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateResursAgreement(); // \Reepay\Model\UpdateResursAgreement | 
 
 try {
-    $result = $api_instance->updateResursAgreement($id, $body);
+    $result = $apiInstance->updateResursAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateResursAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1518,7 +1786,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateResursAgreement**](../Model/\Reepay\Model\UpdateResursAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateResursAgreement**](../Model/UpdateResursAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1548,15 +1816,22 @@ Update Swish agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\SwishAgreement(); // \Reepay\Model\SwishAgreement | 
 
 try {
-    $result = $api_instance->updateSwishAgreement($id, $body);
+    $result = $apiInstance->updateSwishAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateSwishAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1569,7 +1844,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\SwishAgreement**](../Model/\Reepay\Model\SwishAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\SwishAgreement**](../Model/SwishAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1599,15 +1874,22 @@ Update ViaBill agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateViabillAgreement(); // \Reepay\Model\UpdateViabillAgreement | 
 
 try {
-    $result = $api_instance->updateViabillAgreement($id, $body);
+    $result = $apiInstance->updateViabillAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateViabillAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1620,7 +1902,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateViabillAgreement**](../Model/\Reepay\Model\UpdateViabillAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateViabillAgreement**](../Model/UpdateViabillAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1650,15 +1932,22 @@ Update Vipps agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Reepay\Api\AgreementApi();
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\VippsAgreement(); // \Reepay\Model\VippsAgreement | 
 
 try {
-    $result = $api_instance->updateVippsAgreement($id, $body);
+    $result = $apiInstance->updateVippsAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateVippsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1671,7 +1960,65 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\VippsAgreement**](../Model/\Reepay\Model\VippsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\VippsAgreement**](../Model/VippsAgreement.md)|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateVippsRecurringAgreement**
+> \Reepay\Model\GatewayAgreement updateVippsRecurringAgreement($id, $body)
+
+Update Vipps Recurring agreement
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Agreement id
+$body = new \Reepay\Model\VippsRecurringAgreement(); // \Reepay\Model\VippsRecurringAgreement | 
+
+try {
+    $result = $apiInstance->updateVippsRecurringAgreement($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updateVippsRecurringAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Agreement id |
+ **body** | [**\Reepay\Model\VippsRecurringAgreement**](../Model/VippsRecurringAgreement.md)|  | [optional]
 
 ### Return type
 
