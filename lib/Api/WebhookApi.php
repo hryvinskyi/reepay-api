@@ -75,7 +75,7 @@ class WebhookApi
         HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
+        $this->config = $config ?: Configuration::getDefaultConfiguration();
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
