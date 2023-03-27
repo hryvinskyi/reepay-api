@@ -12,6 +12,5 @@ Name | Type | Description | Notes
 **alertCount** | **int** | Number of requests to perform before alert email is sent, must be greater than or equal to four (1 hour) | [optional] 
 **eventTypes** | **string[]** | List of event types to receive. See documentation for valid event types. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

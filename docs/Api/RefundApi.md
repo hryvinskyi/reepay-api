@@ -1,25 +1,21 @@
 # Reepay\RefundApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createRefund**](RefundApi.md#createRefund) | **POST** /v1/refund | Create refund
-[**getRefund**](RefundApi.md#getRefund) | **GET** /v1/refund/{id} | Get refund
-
+ Method                                        | HTTP request            | Description   
+-----------------------------------------------|-------------------------|---------------
+ [**createRefund**](RefundApi.md#createrefund) | **POST** /v1/refund     | Create refund 
+ [**getRefund**](RefundApi.md#getrefund)       | **GET** /v1/refund/{id} | Get refund    
 
 # **createRefund**
 > \Reepay\Model\Refund createRefund($body)
 
 Create refund
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -69,13 +65,10 @@ Name | Type | Description  | Notes
 
 Get refund
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

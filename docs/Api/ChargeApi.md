@@ -1,29 +1,25 @@
 # Reepay\ChargeApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelCharge**](ChargeApi.md#cancelCharge) | **POST** /v1/charge/{handle}/cancel | Cancel charge
-[**createCharge**](ChargeApi.md#createCharge) | **POST** /v1/charge | Create charge
-[**deleteCreatedInvoice**](ChargeApi.md#deleteCreatedInvoice) | **DELETE** /v1/charge/{id} | Delete created charge
-[**getCharge**](ChargeApi.md#getCharge) | **GET** /v1/charge/{handle} | Get charge
-[**prepareCharge**](ChargeApi.md#prepareCharge) | **POST** /v1/charge/prepare | Prepare charge
-[**settleCharge**](ChargeApi.md#settleCharge) | **POST** /v1/charge/{handle}/settle | Settle charge
-
+ Method                                                        | HTTP request                        | Description           
+---------------------------------------------------------------|-------------------------------------|-----------------------
+ [**cancelCharge**](ChargeApi.md#cancelcharge)                 | **POST** /v1/charge/{handle}/cancel | Cancel charge         
+ [**createCharge**](ChargeApi.md#createcharge)                 | **POST** /v1/charge                 | Create charge         
+ [**deleteCreatedInvoice**](ChargeApi.md#deletecreatedinvoice) | **DELETE** /v1/charge/{id}          | Delete created charge 
+ [**getCharge**](ChargeApi.md#getcharge)                       | **GET** /v1/charge/{handle}         | Get charge            
+ [**prepareCharge**](ChargeApi.md#preparecharge)               | **POST** /v1/charge/prepare         | Prepare charge        
+ [**settleCharge**](ChargeApi.md#settlecharge)                 | **POST** /v1/charge/{handle}/settle | Settle charge         
 
 # **cancelCharge**
 > \Reepay\Model\Charge cancelCharge($handle)
 
 Cancel charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -63,8 +59,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -73,13 +69,10 @@ Name | Type | Description  | Notes
 
 Create charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -129,13 +122,10 @@ Name | Type | Description  | Notes
 
 Delete created charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -184,13 +174,10 @@ void (empty response body)
 
 Get charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -240,13 +227,10 @@ Name | Type | Description  | Notes
 
 Prepare charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -296,13 +280,10 @@ Name | Type | Description  | Notes
 
 Settle charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

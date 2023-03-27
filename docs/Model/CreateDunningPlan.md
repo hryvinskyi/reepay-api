@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **gracePeriod** | **string** | Optional grace period before starting dunning process. Also see &#x60;no_grace_hard_decline&#x60;. If eligible re-trying will be attempted in the grace period. The period is defined as an ISO-8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations | [optional] 
 **noGraceHardDecline** | **bool** | If a grace period has been defined, this parameter can be used to control whether the grace period is only for soft failing invoices. That is, the used payment method is actually eligible for retrying. Default is true. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

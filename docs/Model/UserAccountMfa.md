@@ -14,6 +14,5 @@ Name | Type | Description | Notes
 **inviteExpires** | [**\DateTime**](\DateTime.md) | Expiry date for invite | [optional] 
 **totpQr** | **string** | TOTP QR code | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

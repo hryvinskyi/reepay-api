@@ -1,28 +1,24 @@
 # Reepay\DiscountApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createDiscount**](DiscountApi.md#createDiscount) | **POST** /v1/discount | Create discount
-[**deleteDiscount**](DiscountApi.md#deleteDiscount) | **DELETE** /v1/discount/{handle} | Delete discount
-[**getDiscount**](DiscountApi.md#getDiscount) | **GET** /v1/discount/{handle} | Get discount
-[**undeleteDiscount**](DiscountApi.md#undeleteDiscount) | **POST** /v1/discount/{handle}/undelete | Undelete discount
-[**updateDiscount**](DiscountApi.md#updateDiscount) | **PUT** /v1/discount/{handle} | Update discount
-
+ Method                                                  | HTTP request                            | Description       
+---------------------------------------------------------|-----------------------------------------|-------------------
+ [**createDiscount**](DiscountApi.md#creatediscount)     | **POST** /v1/discount                   | Create discount   
+ [**deleteDiscount**](DiscountApi.md#deletediscount)     | **DELETE** /v1/discount/{handle}        | Delete discount   
+ [**getDiscount**](DiscountApi.md#getdiscount)           | **GET** /v1/discount/{handle}           | Get discount      
+ [**undeleteDiscount**](DiscountApi.md#undeletediscount) | **POST** /v1/discount/{handle}/undelete | Undelete discount 
+ [**updateDiscount**](DiscountApi.md#updatediscount)     | **PUT** /v1/discount/{handle}           | Update discount   
 
 # **createDiscount**
 > \Reepay\Model\Discount createDiscount($body)
 
 Create discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -72,13 +68,10 @@ Name | Type | Description  | Notes
 
 Delete discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -128,13 +121,10 @@ Name | Type | Description  | Notes
 
 Get discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -184,13 +174,10 @@ Name | Type | Description  | Notes
 
 Undelete discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -240,13 +227,10 @@ Name | Type | Description  | Notes
 
 Update discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

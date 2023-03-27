@@ -1,29 +1,25 @@
 # Reepay\WebhookApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**disableWebhooks**](WebhookApi.md#disableWebhooks) | **POST** /v1/webhook/disable | Disable webhooks
-[**getWebhook**](WebhookApi.md#getWebhook) | **GET** /v1/webhook/{id} | Get webhooks
-[**getWebhookRequests**](WebhookApi.md#getWebhookRequests) | **GET** /v1/webhook/{id}/request | Get webhook requests
-[**getWebhooks**](WebhookApi.md#getWebhooks) | **GET** /v1/webhook | Get list of webhooks
-[**resendJson**](WebhookApi.md#resendJson) | **POST** /v1/webhook/resend | Re-send webhooks
-[**updateWebhooks**](WebhookApi.md#updateWebhooks) | **POST** /v1/webhook/update | Update and resend webhooks
-
+ Method                                                     | HTTP request                     | Description                
+------------------------------------------------------------|----------------------------------|----------------------------
+ [**disableWebhooks**](WebhookApi.md#disablewebhooks)       | **POST** /v1/webhook/disable     | Disable webhooks           
+ [**getWebhook**](WebhookApi.md#getwebhook)                 | **GET** /v1/webhook/{id}         | Get webhooks               
+ [**getWebhookRequests**](WebhookApi.md#getwebhookrequests) | **GET** /v1/webhook/{id}/request | Get webhook requests       
+ [**getWebhooks**](WebhookApi.md#getwebhooks)               | **GET** /v1/webhook              | Get list of webhooks       
+ [**resendJson**](WebhookApi.md#resendjson)                 | **POST** /v1/webhook/resend      | Re-send webhooks           
+ [**updateWebhooks**](WebhookApi.md#updatewebhooks)         | **POST** /v1/webhook/update      | Update and resend webhooks 
 
 # **disableWebhooks**
 > \Reepay\Model\Webhook[] disableWebhooks($body)
 
 Disable webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -73,13 +69,10 @@ Name | Type | Description  | Notes
 
 Get webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -129,13 +122,10 @@ Name | Type | Description  | Notes
 
 Get webhook requests
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -185,13 +175,10 @@ Name | Type | Description  | Notes
 
 Get list of webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -247,13 +234,10 @@ Name | Type | Description  | Notes
 
 Re-send webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -303,13 +287,10 @@ Name | Type | Description  | Notes
 
 Update and resend webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

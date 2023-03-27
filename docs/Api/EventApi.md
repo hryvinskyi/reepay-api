@@ -1,25 +1,21 @@
 # Reepay\EventApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getEvent**](EventApi.md#getEvent) | **GET** /v1/event/{id} | Get event
-[**getEvents**](EventApi.md#getEvents) | **GET** /v1/event | Get list of events
-
+ Method                                 | HTTP request           | Description        
+----------------------------------------|------------------------|--------------------
+ [**getEvent**](EventApi.md#getevent)   | **GET** /v1/event/{id} | Get event          
+ [**getEvents**](EventApi.md#getevents) | **GET** /v1/event      | Get list of events 
 
 # **getEvent**
 > \Reepay\Model\Event getEvent($id)
 
 Get event
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -69,13 +65,10 @@ Name | Type | Description  | Notes
 
 Get list of events
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

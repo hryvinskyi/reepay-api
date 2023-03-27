@@ -1,27 +1,23 @@
 # Reepay\CreditApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelCredit**](CreditApi.md#cancelCredit) | **POST** /v1/credit/{handle}/cancel | Cancel credit
-[**createCreditJson**](CreditApi.md#createCreditJson) | **POST** /v1/credit | Create credit
-[**getCredit**](CreditApi.md#getCredit) | **GET** /v1/credit/{handle} | Get credit
-[**getCredits**](CreditApi.md#getCredits) | **GET** /v1/credit/subscription/{handle} | Get credits for subscription
-
+ Method                                                | HTTP request                             | Description                  
+-------------------------------------------------------|------------------------------------------|------------------------------
+ [**cancelCredit**](CreditApi.md#cancelcredit)         | **POST** /v1/credit/{handle}/cancel      | Cancel credit                
+ [**createCreditJson**](CreditApi.md#createcreditjson) | **POST** /v1/credit                      | Create credit                
+ [**getCredit**](CreditApi.md#getcredit)               | **GET** /v1/credit/{handle}              | Get credit                   
+ [**getCredits**](CreditApi.md#getcredits)             | **GET** /v1/credit/subscription/{handle} | Get credits for subscription 
 
 # **cancelCredit**
 > \Reepay\Model\Credit cancelCredit($handle)
 
 Cancel credit
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -71,13 +67,10 @@ Name | Type | Description  | Notes
 
 Create credit
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -127,13 +120,10 @@ Name | Type | Description  | Notes
 
 Get credit
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -183,13 +173,10 @@ Name | Type | Description  | Notes
 
 Get credits for subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

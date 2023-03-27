@@ -7,6 +7,5 @@ Name | Type | Description | Notes
 **defaultFrom** | **string** | Default email sender address. Rfc 822 address. | 
 **replyTo** | **string** | Optional Reply-To email address. Rfc 822 address. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -46,6 +46,5 @@ Name | Type | Description | Notes
 **transferredCredits** | **int** | Number of credits that have fully been applied to invoices | 
 **transferredCreditAmount** | **int** | Summed credit amount that have been applied to invoices | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

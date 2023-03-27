@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **acquirerMessage** | **string** | Acquirer message in case of error | [optional] 
 **klarnaId** | **string** | Klarna id | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

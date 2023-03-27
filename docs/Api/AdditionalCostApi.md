@@ -1,27 +1,23 @@
 # Reepay\AdditionalCostApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelAdditionalCost**](AdditionalCostApi.md#cancelAdditionalCost) | **POST** /v1/additional_cost/{handle}/cancel | Cancel pending additional cost
-[**createAdditionalCostJson**](AdditionalCostApi.md#createAdditionalCostJson) | **POST** /v1/additional_cost | Create additional cost
-[**getAdditionalCost**](AdditionalCostApi.md#getAdditionalCost) | **GET** /v1/additional_cost/{handle} | Get additional cost
-[**getAdditionalCosts**](AdditionalCostApi.md#getAdditionalCosts) | **GET** /v1/additional_cost/subscription/{handle} | Get additional costs for subscription
-
+ Method                                                                        | HTTP request                                      | Description                           
+-------------------------------------------------------------------------------|---------------------------------------------------|---------------------------------------
+ [**cancelAdditionalCost**](AdditionalCostApi.md#canceladditionalcost)         | **POST** /v1/additional_cost/{handle}/cancel      | Cancel pending additional cost        
+ [**createAdditionalCostJson**](AdditionalCostApi.md#createadditionalcostjson) | **POST** /v1/additional_cost                      | Create additional cost                
+ [**getAdditionalCost**](AdditionalCostApi.md#getadditionalcost)               | **GET** /v1/additional_cost/{handle}              | Get additional cost                   
+ [**getAdditionalCosts**](AdditionalCostApi.md#getadditionalcosts)             | **GET** /v1/additional_cost/subscription/{handle} | Get additional costs for subscription 
 
 # **cancelAdditionalCost**
 > \Reepay\Model\AdditionalCost cancelAdditionalCost($handle)
 
 Cancel pending additional cost
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -71,13 +67,10 @@ Name | Type | Description  | Notes
 
 Create additional cost
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -127,13 +120,10 @@ Name | Type | Description  | Notes
 
 Get additional cost
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -183,13 +173,10 @@ Name | Type | Description  | Notes
 
 Get additional costs for subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

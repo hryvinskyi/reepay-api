@@ -7,6 +7,5 @@ Name | Type | Description | Notes
 **discountPercentageApply** | **string** | The rule for applying multiple percentage discounts, one of the following: &#x60;full&#x60;, &#x60;compound&#x60; | 
 **multipleAllowed** | **bool** | If multiple discounts per subscription is allowed | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

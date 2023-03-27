@@ -1,33 +1,29 @@
 # Reepay\CustomerApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createCustomerInvoice**](CustomerApi.md#createCustomerInvoice) | **POST** /v1/customer/{handle}/invoice | Create invoice for customer
-[**createCustomerJson**](CustomerApi.md#createCustomerJson) | **POST** /v1/customer | Create customer
-[**createCustomerNoteJson**](CustomerApi.md#createCustomerNoteJson) | **POST** /v1/customer/{handle}/note | Create customer note
-[**deleteCustomer**](CustomerApi.md#deleteCustomer) | **DELETE** /v1/customer/{handle} | Delete customer
-[**deleteMetadata1**](CustomerApi.md#deleteMetadata1) | **DELETE** /v1/customer/{handle}/metadata | Delete metadata
-[**getCustomer**](CustomerApi.md#getCustomer) | **GET** /v1/customer/{handle} | Get customer
-[**getCustomerNotes**](CustomerApi.md#getCustomerNotes) | **GET** /v1/customer/{handle}/note | Get customer notes
-[**getMetadata1**](CustomerApi.md#getMetadata1) | **GET** /v1/customer/{handle}/metadata | Get metadata
-[**updateCustomerJson**](CustomerApi.md#updateCustomerJson) | **PUT** /v1/customer/{handle} | Update customer
-[**updateMetadata1**](CustomerApi.md#updateMetadata1) | **PUT** /v1/customer/{handle}/metadata | Create or update metadata
-
+ Method                                                              | HTTP request                              | Description                 
+---------------------------------------------------------------------|-------------------------------------------|-----------------------------
+ [**createCustomerInvoice**](CustomerApi.md#createcustomerinvoice)   | **POST** /v1/customer/{handle}/invoice    | Create invoice for customer 
+ [**createCustomerJson**](CustomerApi.md#createcustomerjson)         | **POST** /v1/customer                     | Create customer             
+ [**createCustomerNoteJson**](CustomerApi.md#createcustomernotejson) | **POST** /v1/customer/{handle}/note       | Create customer note        
+ [**deleteCustomer**](CustomerApi.md#deletecustomer)                 | **DELETE** /v1/customer/{handle}          | Delete customer             
+ [**deleteMetadata1**](CustomerApi.md#deletemetadata1)               | **DELETE** /v1/customer/{handle}/metadata | Delete metadata             
+ [**getCustomer**](CustomerApi.md#getcustomer)                       | **GET** /v1/customer/{handle}             | Get customer                
+ [**getCustomerNotes**](CustomerApi.md#getcustomernotes)             | **GET** /v1/customer/{handle}/note        | Get customer notes          
+ [**getMetadata1**](CustomerApi.md#getmetadata1)                     | **GET** /v1/customer/{handle}/metadata    | Get metadata                
+ [**updateCustomerJson**](CustomerApi.md#updatecustomerjson)         | **PUT** /v1/customer/{handle}             | Update customer             
+ [**updateMetadata1**](CustomerApi.md#updatemetadata1)               | **PUT** /v1/customer/{handle}/metadata    | Create or update metadata   
 
 # **createCustomerInvoice**
 > \Reepay\Model\Invoice createCustomerInvoice($handle, $body)
 
 Create invoice for customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -79,13 +75,10 @@ Name | Type | Description  | Notes
 
 Create customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -135,13 +128,10 @@ Name | Type | Description  | Notes
 
 Create customer note
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -193,13 +183,10 @@ Name | Type | Description  | Notes
 
 Delete customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -249,13 +236,10 @@ Name | Type | Description  | Notes
 
 Delete metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -304,13 +288,10 @@ void (empty response body)
 
 Get customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -360,13 +341,10 @@ Name | Type | Description  | Notes
 
 Get customer notes
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -416,13 +394,10 @@ Name | Type | Description  | Notes
 
 Get metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -472,13 +447,10 @@ Name | Type | Description  | Notes
 
 Update customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -530,13 +502,10 @@ Name | Type | Description  | Notes
 
 Create or update metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -550,7 +519,7 @@ $apiInstance = new Reepay\Api\CustomerApi(
     $config
 );
 $handle = "handle_example"; // string | Resource handle
-$body = new \stdClass; // object | 
+$body = new \Reepay\Model\map(); // map[string,object] | 
 
 try {
     $result = $apiInstance->updateMetadata1($handle, $body);
@@ -563,10 +532,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Resource handle |
- **body** | **object**|  | [optional]
+ Name       | Type                                      | Description     | Notes      
+------------|-------------------------------------------|-----------------|------------
+ **handle** | **string**                                | Resource handle |
+ **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
 
 ### Return type
 
@@ -578,8 +547,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

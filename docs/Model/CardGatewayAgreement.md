@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **defaultRequireSca** | **bool** | Default behaviour if no specific SCA handing is defined in payment sessions. If enabled SCA will be required and un-enrolled cards will be declined. | [optional] 
 **disallowThreedSecureAttempted** | **bool** | Disallow 3D Secure status attempted which means that card issuer does not support 3D Secure so authentication could not be performed. An attempted 3D Secure flow normally results in liability shift. | [optional] 
 **payout** | **bool** | Use agreement for payout (if supported by provider) | [optional] 
-**gwRef** | **string** | Card gateway reference id | 
+**vtsConfiguration** | [**\Reepay\Model\VtsConfiguration**](VtsConfiguration.md) |  | [optional] 
+**gwRef** | **string** | Card gateway reference id |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

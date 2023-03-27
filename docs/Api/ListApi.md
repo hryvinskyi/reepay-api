@@ -1,34 +1,30 @@
 # Reepay\ListApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAddOnList**](ListApi.md#getAddOnList) | **GET** /v1/list/add_on | Get list of add-ons
-[**getChargeList**](ListApi.md#getChargeList) | **GET** /v1/list/charge | Get list of charges
-[**getCouponList**](ListApi.md#getCouponList) | **GET** /v1/list/coupon | Get list of coupons
-[**getCustomerList**](ListApi.md#getCustomerList) | **GET** /v1/list/customer | Get list of customers
-[**getDiscountList**](ListApi.md#getDiscountList) | **GET** /v1/list/discount | Get list of discounts
-[**getInvoiceList**](ListApi.md#getInvoiceList) | **GET** /v1/list/invoice | Get list of invoices
-[**getPaymentMethodList**](ListApi.md#getPaymentMethodList) | **GET** /v1/list/payment_method | Get list of payment methods
-[**getPayoutList**](ListApi.md#getPayoutList) | **GET** /v1/list/payout | Get list of payouts
-[**getPlanList**](ListApi.md#getPlanList) | **GET** /v1/list/plan | Get list of plans
-[**getSubscriptionList**](ListApi.md#getSubscriptionList) | **GET** /v1/list/subscription | Get list of subscriptions
-[**getTransactionList**](ListApi.md#getTransactionList) | **GET** /v1/list/transaction | Get list of transactions
-
+ Method                                                      | HTTP request                    | Description                 
+-------------------------------------------------------------|---------------------------------|-----------------------------
+ [**getAddOnList**](ListApi.md#getaddonlist)                 | **GET** /v1/list/add_on         | Get list of add-ons         
+ [**getChargeList**](ListApi.md#getchargelist)               | **GET** /v1/list/charge         | Get list of charges         
+ [**getCouponList**](ListApi.md#getcouponlist)               | **GET** /v1/list/coupon         | Get list of coupons         
+ [**getCustomerList**](ListApi.md#getcustomerlist)           | **GET** /v1/list/customer       | Get list of customers       
+ [**getDiscountList**](ListApi.md#getdiscountlist)           | **GET** /v1/list/discount       | Get list of discounts       
+ [**getInvoiceList**](ListApi.md#getinvoicelist)             | **GET** /v1/list/invoice        | Get list of invoices        
+ [**getPaymentMethodList**](ListApi.md#getpaymentmethodlist) | **GET** /v1/list/payment_method | Get list of payment methods 
+ [**getPayoutList**](ListApi.md#getpayoutlist)               | **GET** /v1/list/payout         | Get list of payouts         
+ [**getPlanList**](ListApi.md#getplanlist)                   | **GET** /v1/list/plan           | Get list of plans           
+ [**getSubscriptionList**](ListApi.md#getsubscriptionlist)   | **GET** /v1/list/subscription   | Get list of subscriptions   
+ [**getTransactionList**](ListApi.md#gettransactionlist)     | **GET** /v1/list/transaction    | Get list of transactions    
 
 # **getAddOnList**
 > \Reepay\Model\AddOnList getAddOnList($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $type, $name, $description, $amount, $amountInclVat, $allPlans)
 
 Get list of add-ons
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -104,13 +100,10 @@ Name | Type | Description  | Notes
 
 Get list of charges
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -190,13 +183,10 @@ Name | Type | Description  | Notes
 
 Get list of coupons
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -276,13 +266,10 @@ Name | Type | Description  | Notes
 
 Get list of customers
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -372,13 +359,10 @@ Name | Type | Description  | Notes
 
 Get list of discounts
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -454,13 +438,10 @@ Name | Type | Description  | Notes
 
 Get list of invoices
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -554,13 +535,10 @@ Name | Type | Description  | Notes
 
 Get list of payment methods
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -652,13 +630,10 @@ Name | Type | Description  | Notes
 
 Get list of payouts
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -740,13 +715,10 @@ Name | Type | Description  | Notes
 
 Get list of plans
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -808,45 +780,45 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **string**| Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]
- **to** | **string**| Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. | [optional]
- **interval** | **string**| Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations | [optional]
- **size** | **int**| Page size between 10 and 100 (default 20) | [optional] [default to 20]
- **nextPageToken** | **string**| Next page token from previous response to get next page | [optional]
- **range** | **string**| Time and date attribute for time limit. Accepted value &#x60;created&#x60; | [optional] [default to created]
- **handle** | **string**| Plan handle prefix | [optional]
- **state** | [**string[]**](../Model/string.md)| State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. | [optional]
- **scheduleType** | [**string[]**](../Model/string.md)| Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. | [optional]
- **partialPeriodHandling** | [**string[]**](../Model/string.md)| The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. | [optional]
- **setupFeeHandling** | [**string[]**](../Model/string.md)| How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. | [optional]
- **fixedLifeTimeUnit** | [**string[]**](../Model/string.md)| Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; | [optional]
- **trialIntervalUnit** | [**string[]**](../Model/string.md)| Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; | [optional]
- **dunningPlanHandle** | **string**| Dunning plan handle | [optional]
- **name** | **string**| Name of plan. Used as order line text. | [optional]
- **description** | **string**| Optional description of plan | [optional]
- **setupFeeText** | **string**| Optional invoice order text for the setup fee | [optional]
- **amount** | **string**| Fixed amount plan deducted from order line amounts including VAT. | [optional]
- **quantity** | **string**| Optional default quantity of the subscription plan product for new subscriptions. Default is 1. | [optional]
- **fixedCount** | **string**| Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. | [optional]
- **fixedLifeTimeLength** | **string**| The number of days/months for which the subscription is live. | [optional]
- **trialIntervalLength** | **string**| The number of days/months for how long the free trial period lasts | [optional]
- **intervalLength** | **string**| The length of subscription intervals. E.g. every second month or every 14 days. | [optional]
- **scheduleFixedDay** | **string**| The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 | [optional]
- **renewalReminderEmailDays** | **string**| Number of days before next billing to send a reminder email. | [optional]
- **trialReminderEmailDays** | **string**| Number of days before end of trial to send a reminder email. | [optional]
- **baseMonth** | **string**| Base month for fixed month schedule type | [optional]
- **noticePeriods** | **string**| Number of notice periods before a cancellation. | [optional]
- **minimumProratedAmount** | **string**| Minimum amount for prorated invoice. If the amount is less, 0 is charged | [optional]
- **fixationPeriods** | **string**| Number of paid periods before expiring after a cancellation. | [optional]
- **setupFee** | **string**| Optional one-time setup fee billed with the first invoice. | [optional]
- **amountInclVat** | **string**| Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **noticePeriodsAfterCurrent** | **string**| Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **fixationPeriodsFull** | **string**| If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **includeZeroAmount** | **string**| Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **partialProrationDays** | **string**| If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **fixedTrialDays** | **string**| Controls if trial expires at midnight or it&#39;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
+ Name                          | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
+-------------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
+ **from**                      | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
+ **to**                        | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
+ **interval**                  | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
+ **size**                      | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
+ **nextPageToken**             | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
+ **range**                     | **string**                         | Time and date attribute for time limit. Accepted value &#x60;created&#x60;                                                                                                                                                                                                                                                                                                                                                                                                      | [optional] [default to created] 
+ **handle**                    | **string**                         | Plan handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
+ **state**                     | [**string[]**](../Model/string.md) | State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **scheduleType**              | [**string[]**](../Model/string.md) | Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                         | [optional]                      
+ **partialPeriodHandling**     | [**string[]**](../Model/string.md) | The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                                               | [optional]                      
+ **setupFeeHandling**          | [**string[]**](../Model/string.md) | How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                                                           | [optional]                      
+ **fixedLifeTimeUnit**         | [**string[]**](../Model/string.md) | Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60;                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
+ **trialIntervalUnit**         | [**string[]**](../Model/string.md) | Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60;                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
+ **dunningPlanHandle**         | **string**                         | Dunning plan handle                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
+ **name**                      | **string**                         | Name of plan. Used as order line text.                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
+ **description**               | **string**                         | Optional description of plan                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **setupFeeText**              | **string**                         | Optional invoice order text for the setup fee                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+ **amount**                    | **string**                         | Fixed amount plan deducted from order line amounts including VAT.                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **quantity**                  | **string**                         | Optional default quantity of the subscription plan product for new subscriptions. Default is 1.                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **fixedCount**                | **string**                         | Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices.                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
+ **fixedLifeTimeLength**       | **string**                         | The number of days/months for which the subscription is live.                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+ **trialIntervalLength**       | **string**                         | The number of days/months for how long the free trial period lasts                                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
+ **intervalLength**            | **string**                         | The length of subscription intervals. E.g. every second month or every 14 days.                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **scheduleFixedDay**          | **string**                         | The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7                                                                                                                                                                                                                                                                                                                           | [optional]                      
+ **renewalReminderEmailDays**  | **string**                         | Number of days before next billing to send a reminder email.                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **trialReminderEmailDays**    | **string**                         | Number of days before end of trial to send a reminder email.                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **baseMonth**                 | **string**                         | Base month for fixed month schedule type                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **noticePeriods**             | **string**                         | Number of notice periods before a cancellation.                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **minimumProratedAmount**     | **string**                         | Minimum amount for prorated invoice. If the amount is less, 0 is charged                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **fixationPeriods**           | **string**                         | Number of paid periods before expiring after a cancellation.                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **setupFee**                  | **string**                         | Optional one-time setup fee billed with the first invoice.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
+ **amountInclVat**             | **string**                         | Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
+ **noticePeriodsAfterCurrent** | **string**                         | Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+ **fixationPeriodsFull**       | **string**                         | If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                         | [optional]                      
+ **includeZeroAmount**         | **string**                         | Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **partialProrationDays**      | **string**                         | If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
+ **fixedTrialDays**            | **string**                         | Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
 
 ### Return type
 
@@ -864,17 +836,24 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionList**
-> \Reepay\Model\SubscriptionList getSubscriptionList($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelledDate, $reactivated, $created, $renewing, $planVersion, $amountInclVat, $startDate, $endDate, $graceDuration, $currentPeriodStart, $nextPeriodStart, $firstPeriodStart, $lastPeriodStart, $trialStart, $trialEnd, $inTrial, $hasStarted, $renewalCount, $expiredDate, $expireReason, $onHoldDate, $onHoldReason, $paymentMethodAdded, $reminderEmailSent, $failedInvoices, $failedAmount, $cancelledInvoices, $cancelledAmount, $pendingInvoices, $pendingAmount, $dunningInvoices, $dunningAmount, $settledInvoices, $settledAmount, $refundedAmount, $pendingAdditionalCosts, $pendingAdditionalCostAmount, $transferredAdditionalCosts, $transferredAdditionalCostAmount, $pendingCredits, $pendingCreditAmount, $transferredCredits, $transferredCreditAmount, $subscriptionAddOnHandle, $addOnHandle, $subscriptionDiscountHandle)
+
+> \Reepay\Model\SubscriptionList getSubscriptionList($from, $to, $interval, $size, $nextPageToken, $range, $handle,
+> $handleContains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelledDate, $reactivated, $created,
+> $renewing, $planVersion, $amountInclVat, $startDate, $endDate, $graceDuration, $currentPeriodStart, $nextPeriodStart,
+> $firstPeriodStart, $lastPeriodStart, $trialStart, $trialEnd, $inTrial, $hasStarted, $renewalCount, $expiredDate,
+> $expireReason, $onHoldDate, $onHoldReason, $paymentMethodAdded, $reminderEmailSent, $failedInvoices, $failedAmount,
+> $cancelledInvoices, $cancelledAmount, $pendingInvoices, $pendingAmount, $dunningInvoices, $dunningAmount,
+> $settledInvoices, $settledAmount, $refundedAmount, $pendingAdditionalCosts, $pendingAdditionalCostAmount,
+> $transferredAdditionalCosts, $transferredAdditionalCostAmount, $pendingCredits, $pendingCreditAmount,
+> $transferredCredits, $transferredCreditAmount, $subscriptionAddOnHandle, $addOnHandle, $subscriptionDiscountHandle,
+> $discountHandle, $couponHandle)
 
 Get list of subscriptions
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -892,7 +871,7 @@ $to = "to_example"; // string | Time range to (exclusive). Local date and time (
 $interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
 $size = 20; // int | Page size between 10 and 100 (default 20)
 $nextPageToken = "nextPageToken_example"; // string | Next page token from previous response to get next page
-$range = "activated"; // string | Time and date attribute to time limit. Can be the `activated`, `expired`, `cancelled`, `on_hold` or `reactivated`
+$range = "created"; // string | Time and date attribute to time limit. Can be the `created`, `activated`, `expired`, `cancelled`, `on_hold` or `reactivated`
 $handle = "handle_example"; // string | Subscription handle prefix
 $handleContains = "handleContains_example"; // string | Subscription handle contains
 $customer = "customer_example"; // string | Customer owning subscription
@@ -947,9 +926,11 @@ $transferredCreditAmount = "transferredCreditAmount_example"; // string | Transf
 $subscriptionAddOnHandle = "subscriptionAddOnHandle_example"; // string | Subscription add-on handle
 $addOnHandle = "addOnHandle_example"; // string | Add-on handle
 $subscriptionDiscountHandle = "subscriptionDiscountHandle_example"; // string | Subscription discount handle
+$discountHandle = "discountHandle_example"; // string | Discount handle
+$couponHandle = "couponHandle_example"; // string | Coupon handle
 
 try {
-    $result = $apiInstance->getSubscriptionList($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelledDate, $reactivated, $created, $renewing, $planVersion, $amountInclVat, $startDate, $endDate, $graceDuration, $currentPeriodStart, $nextPeriodStart, $firstPeriodStart, $lastPeriodStart, $trialStart, $trialEnd, $inTrial, $hasStarted, $renewalCount, $expiredDate, $expireReason, $onHoldDate, $onHoldReason, $paymentMethodAdded, $reminderEmailSent, $failedInvoices, $failedAmount, $cancelledInvoices, $cancelledAmount, $pendingInvoices, $pendingAmount, $dunningInvoices, $dunningAmount, $settledInvoices, $settledAmount, $refundedAmount, $pendingAdditionalCosts, $pendingAdditionalCostAmount, $transferredAdditionalCosts, $transferredAdditionalCostAmount, $pendingCredits, $pendingCreditAmount, $transferredCredits, $transferredCreditAmount, $subscriptionAddOnHandle, $addOnHandle, $subscriptionDiscountHandle);
+    $result = $apiInstance->getSubscriptionList($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelledDate, $reactivated, $created, $renewing, $planVersion, $amountInclVat, $startDate, $endDate, $graceDuration, $currentPeriodStart, $nextPeriodStart, $firstPeriodStart, $lastPeriodStart, $trialStart, $trialEnd, $inTrial, $hasStarted, $renewalCount, $expiredDate, $expireReason, $onHoldDate, $onHoldReason, $paymentMethodAdded, $reminderEmailSent, $failedInvoices, $failedAmount, $cancelledInvoices, $cancelledAmount, $pendingInvoices, $pendingAmount, $dunningInvoices, $dunningAmount, $settledInvoices, $settledAmount, $refundedAmount, $pendingAdditionalCosts, $pendingAdditionalCostAmount, $transferredAdditionalCosts, $transferredAdditionalCostAmount, $pendingCredits, $pendingCreditAmount, $transferredCredits, $transferredCreditAmount, $subscriptionAddOnHandle, $addOnHandle, $subscriptionDiscountHandle, $discountHandle, $couponHandle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getSubscriptionList: ', $e->getMessage(), PHP_EOL;
@@ -959,68 +940,70 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **string**| Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]
- **to** | **string**| Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. | [optional]
- **interval** | **string**| Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations | [optional]
- **size** | **int**| Page size between 10 and 100 (default 20) | [optional] [default to 20]
- **nextPageToken** | **string**| Next page token from previous response to get next page | [optional]
- **range** | **string**| Time and date attribute to time limit. Can be the &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60; | [optional] [default to activated]
- **handle** | **string**| Subscription handle prefix | [optional]
- **handleContains** | **string**| Subscription handle contains | [optional]
- **customer** | **string**| Customer owning subscription | [optional]
- **plan** | **string**| Plan owning subscription | [optional]
- **state** | [**string[]**](../Model/string.md)| Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60; | [optional]
- **amount** | **string**| Custom amount in minor unit interval. See documentation of intervals. | [optional]
- **quantity** | **string**| Quantity. See documentation of intervals. | [optional]
- **activated** | **string**| Activated date interval | [optional]
- **cancelledDate** | **string**| Cancelled date interval | [optional]
- **reactivated** | **string**| Reactivated date interval | [optional]
- **created** | **string**| Created date interval | [optional]
- **renewing** | **string**| Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **planVersion** | **int**| Plan version | [optional]
- **amountInclVat** | **string**| Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **startDate** | **string**| Start date interval | [optional]
- **endDate** | **string**| End date interval | [optional]
- **graceDuration** | **string**| Grace duration in seconds. See documentation of intervals. | [optional]
- **currentPeriodStart** | **string**| Current period start date interval | [optional]
- **nextPeriodStart** | **string**| Next period start date interval | [optional]
- **firstPeriodStart** | **string**| First period start date interval | [optional]
- **lastPeriodStart** | **string**| Last period start date interval | [optional]
- **trialStart** | **string**| Trial period start date interval | [optional]
- **trialEnd** | **string**| Trial period end date interval | [optional]
- **inTrial** | **string**| In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **hasStarted** | **string**| Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **renewalCount** | **string**| Renewal Count. See documentation of intervals. | [optional]
- **expiredDate** | **string**| Expired period date interval | [optional]
- **expireReason** | [**string[]**](../Model/string.md)| On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; | [optional]
- **onHoldDate** | **string**| On hold period date interval | [optional]
- **onHoldReason** | [**string[]**](../Model/string.md)| On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; | [optional]
- **paymentMethodAdded** | **string**| Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; | [optional]
- **reminderEmailSent** | **string**| Reminder email sent period date interval | [optional]
- **failedInvoices** | **string**| Failed invoices. See documentation of intervals. | [optional]
- **failedAmount** | **string**| Failed amount. See documentation of intervals. | [optional]
- **cancelledInvoices** | **string**| Cancelled invoices. See documentation of intervals. | [optional]
- **cancelledAmount** | **string**| Cancelled amount. See documentation of intervals. | [optional]
- **pendingInvoices** | **string**| Pending invoices. See documentation of intervals. | [optional]
- **pendingAmount** | **string**| Pending amount invoices. See documentation of intervals. | [optional]
- **dunningInvoices** | **string**| Dunning invoices. See documentation of intervals. | [optional]
- **dunningAmount** | **string**| Dunning amount. See documentation of intervals. | [optional]
- **settledInvoices** | **string**| Settled invoices. See documentation of intervals. | [optional]
- **settledAmount** | **string**| Settled amount. See documentation of intervals. | [optional]
- **refundedAmount** | **string**| Refunded amount. See documentation of intervals. | [optional]
- **pendingAdditionalCosts** | **string**| Pending additional costs. See documentation of intervals. | [optional]
- **pendingAdditionalCostAmount** | **string**| Pending additional cost amount. See documentation of intervals. | [optional]
- **transferredAdditionalCosts** | **string**| Transferred additional costs. See documentation of intervals. | [optional]
- **transferredAdditionalCostAmount** | **string**| Transferred additional cost amount. See documentation of intervals. | [optional]
- **pendingCredits** | **string**| Pending credits. See documentation of intervals. | [optional]
- **pendingCreditAmount** | **string**| Pending credit amount. See documentation of intervals. | [optional]
- **transferredCredits** | **string**| Transferred credits. See documentation of intervals. | [optional]
- **transferredCreditAmount** | **string**| Transferred credit amount. See documentation of intervals. | [optional]
- **subscriptionAddOnHandle** | **string**| Subscription add-on handle | [optional]
- **addOnHandle** | **string**| Add-on handle | [optional]
- **subscriptionDiscountHandle** | **string**| Subscription discount handle | [optional]
+ Name                                | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
+-------------------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
+ **from**                            | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
+ **to**                              | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
+ **interval**                        | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
+ **size**                            | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
+ **nextPageToken**                   | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
+ **range**                           | **string**                         | Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60;                                                                                                                                                                                                                                                                                        | [optional] [default to created] 
+ **handle**                          | **string**                         | Subscription handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
+ **handleContains**                  | **string**                         | Subscription handle contains                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **customer**                        | **string**                         | Customer owning subscription                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **plan**                            | **string**                         | Plan owning subscription                                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **state**                           | [**string[]**](../Model/string.md) | Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60;                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **amount**                          | **string**                         | Custom amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
+ **quantity**                        | **string**                         | Quantity. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
+ **activated**                       | **string**                         | Activated date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
+ **cancelledDate**                   | **string**                         | Cancelled date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
+ **reactivated**                     | **string**                         | Reactivated date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
+ **created**                         | **string**                         | Created date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
+ **renewing**                        | **string**                         | Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **planVersion**                     | **int**                            | Plan version                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **amountInclVat**                   | **string**                         | Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **startDate**                       | **string**                         | Start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
+ **endDate**                         | **string**                         | End date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **graceDuration**                   | **string**                         | Grace duration in seconds. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
+ **currentPeriodStart**              | **string**                         | Current period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
+ **nextPeriodStart**                 | **string**                         | Next period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **firstPeriodStart**                | **string**                         | First period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+ **lastPeriodStart**                 | **string**                         | Last period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **trialStart**                      | **string**                         | Trial period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+ **trialEnd**                        | **string**                         | Trial period end date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
+ **inTrial**                         | **string**                         | In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **hasStarted**                      | **string**                         | Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **renewalCount**                    | **string**                         | Renewal Count. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
+ **expiredDate**                     | **string**                         | Expired period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **expireReason**                    | [**string[]**](../Model/string.md) | On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60;                                                                                                                                                                                                                                                                                                                                          | [optional]                      
+ **onHoldDate**                      | **string**                         | On hold period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **onHoldReason**                    | [**string[]**](../Model/string.md) | On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60;                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+ **paymentMethodAdded**              | **string**                         | Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **reminderEmailSent**               | **string**                         | Reminder email sent period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **failedInvoices**                  | **string**                         | Failed invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+ **failedAmount**                    | **string**                         | Failed amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
+ **cancelledInvoices**               | **string**                         | Cancelled invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
+ **cancelledAmount**                 | **string**                         | Cancelled amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **pendingInvoices**                 | **string**                         | Pending invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **pendingAmount**                   | **string**                         | Pending amount invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+ **dunningInvoices**                 | **string**                         | Dunning invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **dunningAmount**                   | **string**                         | Dunning amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **settledInvoices**                 | **string**                         | Settled invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
+ **settledAmount**                   | **string**                         | Settled amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **refundedAmount**                  | **string**                         | Refunded amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+ **pendingAdditionalCosts**          | **string**                         | Pending additional costs. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
+ **pendingAdditionalCostAmount**     | **string**                         | Pending additional cost amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **transferredAdditionalCosts**      | **string**                         | Transferred additional costs. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+ **transferredAdditionalCostAmount** | **string**                         | Transferred additional cost amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
+ **pendingCredits**                  | **string**                         | Pending credits. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+ **pendingCreditAmount**             | **string**                         | Pending credit amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
+ **transferredCredits**              | **string**                         | Transferred credits. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
+ **transferredCreditAmount**         | **string**                         | Transferred credit amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
+ **subscriptionAddOnHandle**         | **string**                         | Subscription add-on handle                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
+ **addOnHandle**                     | **string**                         | Add-on handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+ **subscriptionDiscountHandle**      | **string**                         | Subscription discount handle                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+ **discountHandle**                  | **string**                         | Discount handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
+ **couponHandle**                    | **string**                         | Coupon handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
 
 ### Return type
 
@@ -1042,13 +1025,10 @@ Name | Type | Description  | Notes
 
 Get list of transactions
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

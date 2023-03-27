@@ -1,22 +1,20 @@
 # Reepay\AuthenticateApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**login**](AuthenticateApi.md#login) | **POST** /v1/authenticate/login | User login
-[**renew**](AuthenticateApi.md#renew) | **POST** /v1/authenticate/renew | Renew user login
-[**verifyAuthentication**](AuthenticateApi.md#verifyAuthentication) | **GET** /v1/authenticate/verify | Verify authentication
-
+ Method                                                              | HTTP request                    | Description           
+---------------------------------------------------------------------|---------------------------------|-----------------------
+ [**login**](AuthenticateApi.md#login)                               | **POST** /v1/authenticate/login | User login            
+ [**renew**](AuthenticateApi.md#renew)                               | **POST** /v1/authenticate/renew | Renew user login      
+ [**verifyAuthentication**](AuthenticateApi.md#verifyauthentication) | **GET** /v1/authenticate/verify | Verify authentication 
 
 # **login**
 > \Reepay\Model\UserLogin login($email, $password, $organisation, $account, $mfaCode)
 
 User login
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,11 +24,11 @@ $apiInstance = new Reepay\Api\AuthenticateApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$email = "email_example"; // string | User email
-$password = "password_example"; // string | User password
-$organisation = "organisation_example"; // string | Organisation subdomain to login to
-$account = "account_example"; // string | Account handle or id to login to
-$mfaCode = "mfaCode_example"; // string | MFA verification code
+$email = "email_example"; // string | 
+$password = "password_example"; // string | 
+$organisation = "organisation_example"; // string | 
+$account = "account_example"; // string | 
+$mfaCode = "mfaCode_example"; // string | 
 
 try {
     $result = $apiInstance->login($email, $password, $organisation, $account, $mfaCode);
@@ -43,13 +41,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string**| User email | [optional]
- **password** | **string**| User password | [optional]
- **organisation** | **string**| Organisation subdomain to login to | [optional]
- **account** | **string**| Account handle or id to login to | [optional]
- **mfaCode** | **string**| MFA verification code | [optional]
+ Name             | Type       | Description | Notes      
+------------------|------------|-------------|------------
+ **email**        | **string** |             | [optional] 
+ **password**     | **string** |             | [optional] 
+ **organisation** | **string** |             | [optional] 
+ **account**      | **string** |             | [optional] 
+ **mfaCode**      | **string** |             | [optional] 
 
 ### Return type
 
@@ -70,8 +68,6 @@ No authorization required
 > \Reepay\Model\UserRenew renew()
 
 Renew user login
-
-
 
 ### Example
 ```php
@@ -116,13 +112,10 @@ No authorization required
 
 Verify authentication
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

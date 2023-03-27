@@ -1,29 +1,25 @@
 # Reepay\CouponApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createCoupon**](CouponApi.md#createCoupon) | **POST** /v1/coupon | Create coupon
-[**deleteCoupon**](CouponApi.md#deleteCoupon) | **DELETE** /v1/coupon/{handle} | Delete coupon
-[**expireCoupon**](CouponApi.md#expireCoupon) | **POST** /v1/coupon/{handle}/expire | Expire coupon
-[**getCoupon**](CouponApi.md#getCoupon) | **GET** /v1/coupon/{handle} | Get coupon
-[**updateCoupon**](CouponApi.md#updateCoupon) | **PUT** /v1/coupon/{handle} | Update coupon
-[**validateCode**](CouponApi.md#validateCode) | **GET** /v1/coupon/code/validate | Validate coupon
-
+ Method                                        | HTTP request                        | Description     
+-----------------------------------------------|-------------------------------------|-----------------
+ [**createCoupon**](CouponApi.md#createcoupon) | **POST** /v1/coupon                 | Create coupon   
+ [**deleteCoupon**](CouponApi.md#deletecoupon) | **DELETE** /v1/coupon/{handle}      | Delete coupon   
+ [**expireCoupon**](CouponApi.md#expirecoupon) | **POST** /v1/coupon/{handle}/expire | Expire coupon   
+ [**getCoupon**](CouponApi.md#getcoupon)       | **GET** /v1/coupon/{handle}         | Get coupon      
+ [**updateCoupon**](CouponApi.md#updatecoupon) | **PUT** /v1/coupon/{handle}         | Update coupon   
+ [**validateCode**](CouponApi.md#validatecode) | **GET** /v1/coupon/code/validate    | Validate coupon 
 
 # **createCoupon**
 > \Reepay\Model\Coupon createCoupon($body)
 
 Create coupon
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -73,13 +69,10 @@ Name | Type | Description  | Notes
 
 Delete coupon
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -129,13 +122,10 @@ Name | Type | Description  | Notes
 
 Expire coupon
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -185,13 +175,10 @@ Name | Type | Description  | Notes
 
 Get coupon
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -241,13 +228,10 @@ Name | Type | Description  | Notes
 
 Update coupon
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -299,13 +283,10 @@ Name | Type | Description  | Notes
 
 Validate coupon
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

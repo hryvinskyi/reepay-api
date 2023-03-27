@@ -14,6 +14,5 @@ Name | Type | Description | Notes
 **subscriptionAddOns** | [**\Reepay\Model\SubscriptionAddOn[]**](SubscriptionAddOn.md) | List of subscription add-ons to create in change | [optional] 
 **removeAddOns** | **string[]** | Subscription add-ons to remove from subscription by subscription add-on handle | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

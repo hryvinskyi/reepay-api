@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **amount** | **int** | Fixed amount discount deducted from order line amounts including VAT | [optional] 
 **percentage** | **int** | Percentage discount applied to each applicable order line | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

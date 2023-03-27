@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **quantity** | **int** | Quantity | 
 **orderLineId** | **string** | Optional reference to invoice order line for which this refund line is related | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

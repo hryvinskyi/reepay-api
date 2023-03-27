@@ -1,34 +1,31 @@
 # Reepay\UserApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelInvitation**](UserApi.md#cancelInvitation) | **DELETE** /v1/user/invite/{id} | Cancel invitation
-[**deleteUser**](UserApi.md#deleteUser) | **DELETE** /v1/user/{id} | Delete user
-[**getUser**](UserApi.md#getUser) | **GET** /v1/user/{id} | Get user
-[**getUserInfo**](UserApi.md#getUserInfo) | **GET** /v1/user/{id}/info | Get user info
-[**getUserMfa**](UserApi.md#getUserMfa) | **GET** /v1/user/{id}/mfa | Get MFA setup details
-[**getUsers**](UserApi.md#getUsers) | **GET** /v1/user | Get users
-[**inviteUser**](UserApi.md#inviteUser) | **POST** /v1/user/invite | Invite user
-[**inviteUserAccept**](UserApi.md#inviteUserAccept) | **POST** /v1/user/invite/{token} | Accept invite
-[**inviteUserGet**](UserApi.md#inviteUserGet) | **GET** /v1/user/invite/{token} | Get invite
-[**resetPassword**](UserApi.md#resetPassword) | **POST** /v1/user/reset_password | Reset password request
-[**resetPasswordWithToken**](UserApi.md#resetPasswordWithToken) | **POST** /v1/user/reset_password/{token} | Reset password
-[**setMfa**](UserApi.md#setMfa) | **PUT** /v1/user/{id}/mfa | Set user MFA
-[**updateAuth**](UserApi.md#updateAuth) | **PUT** /v1/user/{id}/groups | Update user groups
-[**updatePassword**](UserApi.md#updatePassword) | **PUT** /v1/user/{id}/password | Change password
-[**updateUser**](UserApi.md#updateUser) | **PUT** /v1/user/{id} | Update user
-[**verifyEmail**](UserApi.md#verifyEmail) | **POST** /v1/user/verify_email/{token} | Verify email
-[**verifyEmailRequest**](UserApi.md#verifyEmailRequest) | **POST** /v1/user/{id}/verify_email | Send verification email
-
+ Method                                                          | HTTP request                             | Description             
+-----------------------------------------------------------------|------------------------------------------|-------------------------
+ [**cancelInvitation**](UserApi.md#cancelinvitation)             | **DELETE** /v1/user/invite/{id}          | Cancel invitation       
+ [**deleteUser**](UserApi.md#deleteuser)                         | **DELETE** /v1/user/{id}                 | Delete user             
+ [**getUser**](UserApi.md#getuser)                               | **GET** /v1/user/{id}                    | Get user                
+ [**getUserInfo**](UserApi.md#getuserinfo)                       | **GET** /v1/user/{id}/info               | Get user info           
+ [**getUserMfa**](UserApi.md#getusermfa)                         | **GET** /v1/user/{id}/mfa                | Get MFA setup details   
+ [**getUsers**](UserApi.md#getusers)                             | **GET** /v1/user                         | Get users               
+ [**inviteUser**](UserApi.md#inviteuser)                         | **POST** /v1/user/invite                 | Invite user             
+ [**inviteUserAccept**](UserApi.md#inviteuseraccept)             | **POST** /v1/user/invite/{token}         | Accept invite           
+ [**inviteUserGet**](UserApi.md#inviteuserget)                   | **GET** /v1/user/invite/{token}          | Get invite              
+ [**resetPassword**](UserApi.md#resetpassword)                   | **POST** /v1/user/reset_password         | Reset password request  
+ [**resetPasswordWithToken**](UserApi.md#resetpasswordwithtoken) | **POST** /v1/user/reset_password/{token} | Reset password          
+ [**setMfa**](UserApi.md#setmfa)                                 | **PUT** /v1/user/{id}/mfa                | Set user MFA            
+ [**updateAuth**](UserApi.md#updateauth)                         | **PUT** /v1/user/{id}/groups             | Update user groups      
+ [**updatePassword**](UserApi.md#updatepassword)                 | **PUT** /v1/user/{id}/password           | Change password         
+ [**updateUser**](UserApi.md#updateuser)                         | **PUT** /v1/user/{id}                    | Update user             
+ [**verifyEmail**](UserApi.md#verifyemail)                       | **POST** /v1/user/verify_email/{token}   | Verify email            
+ [**verifyEmailRequest**](UserApi.md#verifyemailrequest)         | **POST** /v1/user/{id}/verify_email      | Send verification email 
 
 # **cancelInvitation**
 > cancelInvitation($id)
 
 Cancel invitation
-
-
 
 ### Example
 ```php
@@ -66,8 +63,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -76,13 +73,10 @@ No authorization required
 
 Delete user
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -131,13 +125,10 @@ void (empty response body)
 
 Get user
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -187,8 +178,6 @@ Name | Type | Description  | Notes
 
 Get user info
 
-
-
 ### Example
 ```php
 <?php
@@ -236,13 +225,10 @@ No authorization required
 
 Get MFA setup details
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -292,13 +278,10 @@ Name | Type | Description  | Notes
 
 Get users
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -344,13 +327,10 @@ This endpoint does not need any parameter.
 
 Invite user
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -399,8 +379,6 @@ Name | Type | Description  | Notes
 > \Reepay\Model\UserAccount inviteUserAccept($token, $body)
 
 Accept invite
-
-
 
 ### Example
 ```php
@@ -451,8 +429,6 @@ No authorization required
 
 Get invite
 
-
-
 ### Example
 ```php
 <?php
@@ -496,11 +472,10 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resetPassword**
-> resetPassword($version, $body)
+
+> resetPassword($body, $version)
 
 Reset password request
-
-
 
 ### Example
 ```php
@@ -512,11 +487,11 @@ $apiInstance = new Reepay\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$version = 56; // int | 
 $body = new \Reepay\Model\UserResetRequestPassword(); // \Reepay\Model\UserResetRequestPassword | 
+$version = 56; // int | 
 
 try {
-    $apiInstance->resetPassword($version, $body);
+    $apiInstance->resetPassword($body, $version);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->resetPassword: ', $e->getMessage(), PHP_EOL;
 }
@@ -525,10 +500,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **version** | **int**|  | [optional]
- **body** | [**\Reepay\Model\UserResetRequestPassword**](../Model/UserResetRequestPassword.md)|  | [optional]
+ Name        | Type                                                                               | Description | Notes      
+-------------|------------------------------------------------------------------------------------|-------------|------------
+ **body**    | [**\Reepay\Model\UserResetRequestPassword**](../Model/UserResetRequestPassword.md) |             | [optional] 
+ **version** | **int**                                                                            |             | [optional] 
 
 ### Return type
 
@@ -549,8 +524,6 @@ No authorization required
 > \Reepay\Model\User resetPasswordWithToken($token, $body)
 
 Reset password
-
-
 
 ### Example
 ```php
@@ -601,13 +574,10 @@ No authorization required
 
 Set user MFA
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -649,8 +619,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -659,13 +629,10 @@ Name | Type | Description  | Notes
 
 Update user groups
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -717,13 +684,10 @@ Name | Type | Description  | Notes
 
 Change password
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -775,13 +739,10 @@ Name | Type | Description  | Notes
 
 Update user
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -833,8 +794,6 @@ Name | Type | Description  | Notes
 
 Verify email
 
-
-
 ### Example
 ```php
 <?php
@@ -882,13 +841,10 @@ No authorization required
 
 Send verification email
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

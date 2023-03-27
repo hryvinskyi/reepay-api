@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **ordertext** | **string** | Optional alternative order text to use in conjunction with &#x60;amount&#x60;. Ignored if &#x60;order_lines&#x60; is provided. If new &#x60;amount&#x60; is provided either &#x60;ordertext&#x60; or &#x60;order_lines&#x60; must be provided, otherwise order lines will default to a single empty line. | [optional] 
 **orderLines** | [**\Reepay\Model\CreateOrderLine[]**](CreateOrderLine.md) | Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount. See &#x60;amount&#x60;. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

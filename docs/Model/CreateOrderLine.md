@@ -9,6 +9,5 @@ Name | Type | Description | Notes
 **quantity** | **int** | Quantity. Default 1. | [optional] 
 **amountInclVat** | **bool** | Whether the per quantity amount is including VAT. Defaults to true. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

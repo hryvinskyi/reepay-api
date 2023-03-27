@@ -1,28 +1,24 @@
 # Reepay\DunningPlanApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createDunningPlanJson**](DunningPlanApi.md#createDunningPlanJson) | **POST** /v1/dunning_plan | Create dunning plan
-[**deleteDunningPlan**](DunningPlanApi.md#deleteDunningPlan) | **DELETE** /v1/dunning_plan/{handle} | Delete dunning plan
-[**getDunningPlan**](DunningPlanApi.md#getDunningPlan) | **GET** /v1/dunning_plan/{handle} | Get dunning plan
-[**getDunningPlans**](DunningPlanApi.md#getDunningPlans) | **GET** /v1/dunning_plan | Get list of dunning plans
-[**updateJson**](DunningPlanApi.md#updateJson) | **PUT** /v1/dunning_plan/{handle} | Update dunning plan
-
+ Method                                                               | HTTP request                         | Description               
+----------------------------------------------------------------------|--------------------------------------|---------------------------
+ [**createDunningPlanJson**](DunningPlanApi.md#createdunningplanjson) | **POST** /v1/dunning_plan            | Create dunning plan       
+ [**deleteDunningPlan**](DunningPlanApi.md#deletedunningplan)         | **DELETE** /v1/dunning_plan/{handle} | Delete dunning plan       
+ [**getDunningPlan**](DunningPlanApi.md#getdunningplan)               | **GET** /v1/dunning_plan/{handle}    | Get dunning plan          
+ [**getDunningPlans**](DunningPlanApi.md#getdunningplans)             | **GET** /v1/dunning_plan             | Get list of dunning plans 
+ [**updateJson**](DunningPlanApi.md#updatejson)                       | **PUT** /v1/dunning_plan/{handle}    | Update dunning plan       
 
 # **createDunningPlanJson**
 > \Reepay\Model\DunningPlan createDunningPlanJson($body)
 
 Create dunning plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -72,13 +68,10 @@ Name | Type | Description  | Notes
 
 Delete dunning plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -128,13 +121,10 @@ Name | Type | Description  | Notes
 
 Get dunning plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -184,13 +174,10 @@ Name | Type | Description  | Notes
 
 Get list of dunning plans
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -236,13 +223,10 @@ This endpoint does not need any parameter.
 
 Update dunning plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

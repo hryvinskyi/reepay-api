@@ -1,34 +1,30 @@
 # Reepay\PlanApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPlanJson**](PlanApi.md#createPlanJson) | **POST** /v1/plan | Create plan
-[**deleteMetadata3**](PlanApi.md#deleteMetadata3) | **DELETE** /v1/plan/{handle}/metadata | Delete metadata
-[**deletePlan**](PlanApi.md#deletePlan) | **DELETE** /v1/plan/{handle} | Delete plan
-[**getCurrentPlan**](PlanApi.md#getCurrentPlan) | **GET** /v1/plan/{handle}/current | Get plan
-[**getMetadata3**](PlanApi.md#getMetadata3) | **GET** /v1/plan/{handle}/metadata | Get metadata
-[**getPlan**](PlanApi.md#getPlan) | **GET** /v1/plan/{handle}/{version} | Get plan version
-[**getPlans**](PlanApi.md#getPlans) | **GET** /v1/plan/{handle} | Get list of plan versions
-[**supersedePlanJson**](PlanApi.md#supersedePlanJson) | **POST** /v1/plan/{handle} | Supersede plan
-[**unDeletePlan**](PlanApi.md#unDeletePlan) | **POST** /v1/plan/{handle}/undelete | Undelete plan
-[**updateMetadata3**](PlanApi.md#updateMetadata3) | **PUT** /v1/plan/{handle}/metadata | Create or update metadata
-[**updatePlanJson**](PlanApi.md#updatePlanJson) | **PUT** /v1/plan/{handle} | Update plan
-
+ Method                                                | HTTP request                          | Description               
+-------------------------------------------------------|---------------------------------------|---------------------------
+ [**createPlanJson**](PlanApi.md#createplanjson)       | **POST** /v1/plan                     | Create plan               
+ [**deleteMetadata3**](PlanApi.md#deletemetadata3)     | **DELETE** /v1/plan/{handle}/metadata | Delete metadata           
+ [**deletePlan**](PlanApi.md#deleteplan)               | **DELETE** /v1/plan/{handle}          | Delete plan               
+ [**getCurrentPlan**](PlanApi.md#getcurrentplan)       | **GET** /v1/plan/{handle}/current     | Get plan                  
+ [**getMetadata3**](PlanApi.md#getmetadata3)           | **GET** /v1/plan/{handle}/metadata    | Get metadata              
+ [**getPlan**](PlanApi.md#getplan)                     | **GET** /v1/plan/{handle}/{version}   | Get plan version          
+ [**getPlans**](PlanApi.md#getplans)                   | **GET** /v1/plan/{handle}             | Get list of plan versions 
+ [**supersedePlanJson**](PlanApi.md#supersedeplanjson) | **POST** /v1/plan/{handle}            | Supersede plan            
+ [**unDeletePlan**](PlanApi.md#undeleteplan)           | **POST** /v1/plan/{handle}/undelete   | Undelete plan             
+ [**updateMetadata3**](PlanApi.md#updatemetadata3)     | **PUT** /v1/plan/{handle}/metadata    | Create or update metadata 
+ [**updatePlanJson**](PlanApi.md#updateplanjson)       | **PUT** /v1/plan/{handle}             | Update plan               
 
 # **createPlanJson**
 > \Reepay\Model\Plan createPlanJson($body)
 
 Create plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -78,13 +74,10 @@ Name | Type | Description  | Notes
 
 Delete metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -133,13 +126,10 @@ void (empty response body)
 
 Delete plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -189,13 +179,10 @@ Name | Type | Description  | Notes
 
 Get plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -245,13 +232,10 @@ Name | Type | Description  | Notes
 
 Get metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -301,13 +285,10 @@ Name | Type | Description  | Notes
 
 Get plan version
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -359,13 +340,10 @@ Name | Type | Description  | Notes
 
 Get list of plan versions
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -415,13 +393,10 @@ Name | Type | Description  | Notes
 
 Supersede plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -473,13 +448,10 @@ Name | Type | Description  | Notes
 
 Undelete plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -529,13 +501,10 @@ Name | Type | Description  | Notes
 
 Create or update metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -549,7 +518,7 @@ $apiInstance = new Reepay\Api\PlanApi(
     $config
 );
 $handle = "handle_example"; // string | Resource handle
-$body = new \stdClass; // object | 
+$body = new \Reepay\Model\map(); // map[string,object] | 
 
 try {
     $result = $apiInstance->updateMetadata3($handle, $body);
@@ -562,10 +531,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Resource handle |
- **body** | **object**|  | [optional]
+ Name       | Type                                      | Description     | Notes      
+------------|-------------------------------------------|-----------------|------------
+ **handle** | **string**                                | Resource handle |
+ **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
 
 ### Return type
 
@@ -577,8 +546,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -587,13 +556,10 @@ Name | Type | Description  | Notes
 
 Update plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

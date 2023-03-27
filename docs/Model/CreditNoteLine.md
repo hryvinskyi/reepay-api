@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **quantity** | **int** | Credit note line quantity | 
 **orderLineId** | **string** | Reference to invoice orderline this credit note line relates to | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

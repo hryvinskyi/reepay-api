@@ -1,42 +1,38 @@
 # Reepay\AccountApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPrivateKey**](AccountApi.md#createPrivateKey) | **POST** /v1/account/privkey | Create private key
-[**createPublicKey**](AccountApi.md#createPublicKey) | **POST** /v1/account/pubkey | Create public key
-[**expirePrivateKey**](AccountApi.md#expirePrivateKey) | **POST** /v1/account/privkey/{key}/expire | Expire private key
-[**expirePublicKey**](AccountApi.md#expirePublicKey) | **POST** /v1/account/pubkey/{key}/expire | Expire public key
-[**generateWebhookSecret**](AccountApi.md#generateWebhookSecret) | **POST** /v1/account/webhook_settings/secret | Generate new webhook secret
-[**getCurrentAccount**](AccountApi.md#getCurrentAccount) | **GET** /v1/account | Get account
-[**getDiscountSettings**](AccountApi.md#getDiscountSettings) | **GET** /v1/account/discount_settings | Get discount settings
-[**getMailSettings**](AccountApi.md#getMailSettings) | **GET** /v1/account/mail_settings | Get mail settings
-[**getMfaSettings**](AccountApi.md#getMfaSettings) | **GET** /v1/account/mfa_settings | Get account MFA settings
-[**getPrivateKeys**](AccountApi.md#getPrivateKeys) | **GET** /v1/account/privkey | Get list of private keys
-[**getPublicKeys**](AccountApi.md#getPublicKeys) | **GET** /v1/account/pubkey | Get list of public keys
-[**getTerms**](AccountApi.md#getTerms) | **GET** /v1/account/terms | Get terms
-[**getWebhookSettings**](AccountApi.md#getWebhookSettings) | **GET** /v1/account/webhook_settings | Get webhook settings
-[**updateAccountJson**](AccountApi.md#updateAccountJson) | **PUT** /v1/account | Update account
-[**updateDiscountSettings**](AccountApi.md#updateDiscountSettings) | **PUT** /v1/account/discount_settings | Update discount settings
-[**updateMailSettingsJson**](AccountApi.md#updateMailSettingsJson) | **PUT** /v1/account/mail_settings | Update mail settings
-[**updateMfaSettings**](AccountApi.md#updateMfaSettings) | **PUT** /v1/account/mfa_settings | Update account MFA settings
-[**updateTerms**](AccountApi.md#updateTerms) | **POST** /v1/account/terms | Create or update terms
-[**updateWebhookSettingsJson**](AccountApi.md#updateWebhookSettingsJson) | **PUT** /v1/account/webhook_settings | Update webhook settings
-
+ Method                                                                   | HTTP request                                 | Description                 
+--------------------------------------------------------------------------|----------------------------------------------|-----------------------------
+ [**createPrivateKey**](AccountApi.md#createprivatekey)                   | **POST** /v1/account/privkey                 | Create private key          
+ [**createPublicKey**](AccountApi.md#createpublickey)                     | **POST** /v1/account/pubkey                  | Create public key           
+ [**expirePrivateKey**](AccountApi.md#expireprivatekey)                   | **POST** /v1/account/privkey/{key}/expire    | Expire private key          
+ [**expirePublicKey**](AccountApi.md#expirepublickey)                     | **POST** /v1/account/pubkey/{key}/expire     | Expire public key           
+ [**generateWebhookSecret**](AccountApi.md#generatewebhooksecret)         | **POST** /v1/account/webhook_settings/secret | Generate new webhook secret 
+ [**getCurrentAccount**](AccountApi.md#getcurrentaccount)                 | **GET** /v1/account                          | Get account                 
+ [**getDiscountSettings**](AccountApi.md#getdiscountsettings)             | **GET** /v1/account/discount_settings        | Get discount settings       
+ [**getMailSettings**](AccountApi.md#getmailsettings)                     | **GET** /v1/account/mail_settings            | Get mail settings           
+ [**getMfaSettings**](AccountApi.md#getmfasettings)                       | **GET** /v1/account/mfa_settings             | Get account MFA settings    
+ [**getPrivateKeys**](AccountApi.md#getprivatekeys)                       | **GET** /v1/account/privkey                  | Get list of private keys    
+ [**getPublicKeys**](AccountApi.md#getpublickeys)                         | **GET** /v1/account/pubkey                   | Get list of public keys     
+ [**getTerms**](AccountApi.md#getterms)                                   | **GET** /v1/account/terms                    | Get terms                   
+ [**getWebhookSettings**](AccountApi.md#getwebhooksettings)               | **GET** /v1/account/webhook_settings         | Get webhook settings        
+ [**updateAccountJson**](AccountApi.md#updateaccountjson)                 | **PUT** /v1/account                          | Update account              
+ [**updateDiscountSettings**](AccountApi.md#updatediscountsettings)       | **PUT** /v1/account/discount_settings        | Update discount settings    
+ [**updateMailSettingsJson**](AccountApi.md#updatemailsettingsjson)       | **PUT** /v1/account/mail_settings            | Update mail settings        
+ [**updateMfaSettings**](AccountApi.md#updatemfasettings)                 | **PUT** /v1/account/mfa_settings             | Update account MFA settings 
+ [**updateTerms**](AccountApi.md#updateterms)                             | **POST** /v1/account/terms                   | Create or update terms      
+ [**updateWebhookSettingsJson**](AccountApi.md#updatewebhooksettingsjson) | **PUT** /v1/account/webhook_settings         | Update webhook settings     
 
 # **createPrivateKey**
 > \Reepay\Model\Key createPrivateKey()
 
 Create private key
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -82,13 +78,10 @@ This endpoint does not need any parameter.
 
 Create public key
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -134,13 +127,10 @@ This endpoint does not need any parameter.
 
 Expire private key
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -189,13 +179,10 @@ void (empty response body)
 
 Expire public key
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -244,13 +231,10 @@ void (empty response body)
 
 Generate new webhook secret
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -296,13 +280,10 @@ This endpoint does not need any parameter.
 
 Get account
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -348,13 +329,10 @@ This endpoint does not need any parameter.
 
 Get discount settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -400,13 +378,10 @@ This endpoint does not need any parameter.
 
 Get mail settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -452,13 +427,10 @@ This endpoint does not need any parameter.
 
 Get account MFA settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -504,13 +476,10 @@ This endpoint does not need any parameter.
 
 Get list of private keys
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -556,13 +525,10 @@ This endpoint does not need any parameter.
 
 Get list of public keys
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -608,13 +574,10 @@ This endpoint does not need any parameter.
 
 Get terms
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -660,13 +623,10 @@ This endpoint does not need any parameter.
 
 Get webhook settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -712,13 +672,10 @@ This endpoint does not need any parameter.
 
 Update account
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -768,13 +725,10 @@ Name | Type | Description  | Notes
 
 Update discount settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -824,13 +778,10 @@ Name | Type | Description  | Notes
 
 Update mail settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -880,13 +831,10 @@ Name | Type | Description  | Notes
 
 Update account MFA settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -926,8 +874,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -936,13 +884,10 @@ Name | Type | Description  | Notes
 
 Create or update terms
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -992,13 +937,10 @@ Name | Type | Description  | Notes
 
 Update webhook settings
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

@@ -14,6 +14,5 @@ Name | Type | Description | Notes
 **fixedPeriodUnit** | **string** | Optional overriding discount settings | [optional] 
 **fixedPeriod** | **int** | Optional overriding discount settings | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

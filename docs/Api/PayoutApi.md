@@ -1,26 +1,22 @@
 # Reepay\PayoutApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPayout**](PayoutApi.md#createPayout) | **POST** /v1/payout | Create payout
-[**getPayout**](PayoutApi.md#getPayout) | **GET** /v1/payout/{handle} | Get payout
-[**transactionDetails1**](PayoutApi.md#transactionDetails1) | **GET** /v1/payout/{id}/transaction/{transaction}/details | Get transaction details
-
+ Method                                                      | HTTP request                                              | Description             
+-------------------------------------------------------------|-----------------------------------------------------------|-------------------------
+ [**createPayout**](PayoutApi.md#createpayout)               | **POST** /v1/payout                                       | Create payout           
+ [**getPayout**](PayoutApi.md#getpayout)                     | **GET** /v1/payout/{handle}                               | Get payout              
+ [**transactionDetails1**](PayoutApi.md#transactiondetails1) | **GET** /v1/payout/{id}/transaction/{transaction}/details | Get transaction details 
 
 # **createPayout**
 > \Reepay\Model\Payout createPayout($body)
 
 Create payout
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -70,13 +66,10 @@ Name | Type | Description  | Notes
 
 Get payout
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -126,13 +119,10 @@ Name | Type | Description  | Notes
 
 Get transaction details
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')

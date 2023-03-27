@@ -1,44 +1,40 @@
 # Reepay\InvoiceApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelAllDunningPending**](InvoiceApi.md#cancelAllDunningPending) | **POST** /v1/invoice/cancel_all_dunning_pending/subscription/{handle} | Cancel all dunning and pending
-[**cancelInvoice**](InvoiceApi.md#cancelInvoice) | **POST** /v1/invoice/{id}/cancel | Cancel invoice
-[**cancelSettleLater**](InvoiceApi.md#cancelSettleLater) | **POST** /v1/invoice/{id}/settle/cancel | Cancel settle later
-[**cancelTransaction**](InvoiceApi.md#cancelTransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/cancel | Cancel transaction
-[**createOrUpdateBillingAddress**](InvoiceApi.md#createOrUpdateBillingAddress) | **PUT** /v1/invoice/{id}/billing_address | Create or update invoice billing address
-[**createOrUpdateShippingAddress**](InvoiceApi.md#createOrUpdateShippingAddress) | **PUT** /v1/invoice/{id}/shipping_address | Create or update invoice shipping address
-[**deleteBillingAddress**](InvoiceApi.md#deleteBillingAddress) | **DELETE** /v1/invoice/{id}/billing_address | Delete invoice billing address
-[**deleteMetadata2**](InvoiceApi.md#deleteMetadata2) | **DELETE** /v1/invoice/{handle}/metadata | Delete metadata
-[**deleteShippingAddress**](InvoiceApi.md#deleteShippingAddress) | **DELETE** /v1/invoice/{id}/shipping_address | Delete invoice shipping address
-[**detachFromSubscription**](InvoiceApi.md#detachFromSubscription) | **POST** /v1/invoice/{id}/detach | Detach from subscription
-[**extendKAuthTransaction**](InvoiceApi.md#extendKAuthTransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend | Extend authorization transaction
-[**extendKlarnaTransaction**](InvoiceApi.md#extendKlarnaTransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna | Extend Klarna authorization transaction
-[**failInvoice**](InvoiceApi.md#failInvoice) | **POST** /v1/invoice/{id}/fail | Fail invoice
-[**getInvoice**](InvoiceApi.md#getInvoice) | **GET** /v1/invoice/{id} | Get invoice
-[**getMetadata2**](InvoiceApi.md#getMetadata2) | **GET** /v1/invoice/{handle}/metadata | Get metadata
-[**manualSettle**](InvoiceApi.md#manualSettle) | **POST** /v1/invoice/{id}/manual_settle | Manual settle
-[**reactivateInvoice**](InvoiceApi.md#reactivateInvoice) | **POST** /v1/invoice/{id}/reactivate | Reactivate invoice
-[**settle**](InvoiceApi.md#settle) | **POST** /v1/invoice/{id}/settle | Settle
-[**transaction**](InvoiceApi.md#transaction) | **GET** /v1/invoice/{id}/transaction/{transaction} | Get transaction
-[**transactionDetails**](InvoiceApi.md#transactionDetails) | **GET** /v1/invoice/{id}/transaction/{transaction}/details | Get transaction details
-[**updateMetadata2**](InvoiceApi.md#updateMetadata2) | **PUT** /v1/invoice/{handle}/metadata | Create or update metadata
-
+ Method                                                                           | HTTP request                                                          | Description                               
+----------------------------------------------------------------------------------|-----------------------------------------------------------------------|-------------------------------------------
+ [**cancelAllDunningPending**](InvoiceApi.md#cancelalldunningpending)             | **POST** /v1/invoice/cancel_all_dunning_pending/subscription/{handle} | Cancel all dunning and pending            
+ [**cancelInvoice**](InvoiceApi.md#cancelinvoice)                                 | **POST** /v1/invoice/{id}/cancel                                      | Cancel invoice                            
+ [**cancelSettleLater**](InvoiceApi.md#cancelsettlelater)                         | **POST** /v1/invoice/{id}/settle/cancel                               | Cancel settle later                       
+ [**cancelTransaction**](InvoiceApi.md#canceltransaction)                         | **POST** /v1/invoice/{id}/transaction/{transaction}/cancel            | Cancel transaction                        
+ [**createOrUpdateBillingAddress**](InvoiceApi.md#createorupdatebillingaddress)   | **PUT** /v1/invoice/{id}/billing_address                              | Create or update invoice billing address  
+ [**createOrUpdateShippingAddress**](InvoiceApi.md#createorupdateshippingaddress) | **PUT** /v1/invoice/{id}/shipping_address                             | Create or update invoice shipping address 
+ [**deleteBillingAddress**](InvoiceApi.md#deletebillingaddress)                   | **DELETE** /v1/invoice/{id}/billing_address                           | Delete invoice billing address            
+ [**deleteMetadata2**](InvoiceApi.md#deletemetadata2)                             | **DELETE** /v1/invoice/{handle}/metadata                              | Delete metadata                           
+ [**deleteShippingAddress**](InvoiceApi.md#deleteshippingaddress)                 | **DELETE** /v1/invoice/{id}/shipping_address                          | Delete invoice shipping address           
+ [**detachFromSubscription**](InvoiceApi.md#detachfromsubscription)               | **POST** /v1/invoice/{id}/detach                                      | Detach from subscription                  
+ [**extendKAuthTransaction**](InvoiceApi.md#extendkauthtransaction)               | **POST** /v1/invoice/{id}/transaction/{transaction}/extend            | Extend authorization transaction          
+ [**extendKlarnaTransaction**](InvoiceApi.md#extendklarnatransaction)             | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna     | Extend Klarna authorization transaction   
+ [**failInvoice**](InvoiceApi.md#failinvoice)                                     | **POST** /v1/invoice/{id}/fail                                        | Fail invoice                              
+ [**getInvoice**](InvoiceApi.md#getinvoice)                                       | **GET** /v1/invoice/{id}                                              | Get invoice                               
+ [**getMetadata2**](InvoiceApi.md#getmetadata2)                                   | **GET** /v1/invoice/{handle}/metadata                                 | Get metadata                              
+ [**manualSettle**](InvoiceApi.md#manualsettle)                                   | **POST** /v1/invoice/{id}/manual_settle                               | Manual settle                             
+ [**reactivateInvoice**](InvoiceApi.md#reactivateinvoice)                         | **POST** /v1/invoice/{id}/reactivate                                  | Reactivate invoice                        
+ [**settle**](InvoiceApi.md#settle)                                               | **POST** /v1/invoice/{id}/settle                                      | Settle                                    
+ [**transaction**](InvoiceApi.md#transaction)                                     | **GET** /v1/invoice/{id}/transaction/{transaction}                    | Get transaction                           
+ [**transactionDetails**](InvoiceApi.md#transactiondetails)                       | **GET** /v1/invoice/{id}/transaction/{transaction}/details            | Get transaction details                   
+ [**updateMetadata2**](InvoiceApi.md#updatemetadata2)                             | **PUT** /v1/invoice/{handle}/metadata                                 | Create or update metadata                 
 
 # **cancelAllDunningPending**
 > \Reepay\Model\Invoice[] cancelAllDunningPending($handle)
 
 Cancel all dunning and pending
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -88,13 +84,10 @@ Name | Type | Description  | Notes
 
 Cancel invoice
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -144,13 +137,10 @@ Name | Type | Description  | Notes
 
 Cancel settle later
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -190,8 +180,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -200,13 +190,10 @@ Name | Type | Description  | Notes
 
 Cancel transaction
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -258,13 +245,10 @@ Name | Type | Description  | Notes
 
 Create or update invoice billing address
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -316,13 +300,10 @@ Name | Type | Description  | Notes
 
 Create or update invoice shipping address
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -374,13 +355,10 @@ Name | Type | Description  | Notes
 
 Delete invoice billing address
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -430,13 +408,10 @@ Name | Type | Description  | Notes
 
 Delete metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -485,13 +460,10 @@ void (empty response body)
 
 Delete invoice shipping address
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -541,13 +513,10 @@ Name | Type | Description  | Notes
 
 Detach from subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -587,8 +556,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -597,13 +566,10 @@ Name | Type | Description  | Notes
 
 Extend authorization transaction
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -655,13 +621,10 @@ Name | Type | Description  | Notes
 
 Extend Klarna authorization transaction
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -713,13 +676,10 @@ Name | Type | Description  | Notes
 
 Fail invoice
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -769,13 +729,10 @@ Name | Type | Description  | Notes
 
 Get invoice
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -825,13 +782,10 @@ Name | Type | Description  | Notes
 
 Get metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -881,13 +835,10 @@ Name | Type | Description  | Notes
 
 Manual settle
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -939,13 +890,10 @@ Name | Type | Description  | Notes
 
 Reactivate invoice
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -985,8 +933,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -995,13 +943,10 @@ Name | Type | Description  | Notes
 
 Settle
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1053,13 +998,10 @@ Name | Type | Description  | Notes
 
 Get transaction
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1111,13 +1053,10 @@ Name | Type | Description  | Notes
 
 Get transaction details
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1169,13 +1108,10 @@ Name | Type | Description  | Notes
 
 Create or update metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1189,7 +1125,7 @@ $apiInstance = new Reepay\Api\InvoiceApi(
     $config
 );
 $handle = "handle_example"; // string | Resource handle
-$body = new \stdClass; // object | 
+$body = new \Reepay\Model\map(); // map[string,object] | 
 
 try {
     $result = $apiInstance->updateMetadata2($handle, $body);
@@ -1202,10 +1138,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Resource handle |
- **body** | **object**|  | [optional]
+ Name       | Type                                      | Description     | Notes      
+------------|-------------------------------------------|-----------------|------------
+ **handle** | **string**                                | Resource handle |
+ **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
 
 ### Return type
 
@@ -1217,8 +1153,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

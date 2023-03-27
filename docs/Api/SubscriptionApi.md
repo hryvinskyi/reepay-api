@@ -1,55 +1,51 @@
 # Reepay\SubscriptionApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**activate**](SubscriptionApi.md#activate) | **POST** /v1/subscription/{handle}/activate | Activate pending subscription
-[**cancelSubscription**](SubscriptionApi.md#cancelSubscription) | **POST** /v1/subscription/{handle}/cancel | Cancel subscription
-[**changeNextPeriodStartJson**](SubscriptionApi.md#changeNextPeriodStartJson) | **POST** /v1/subscription/{handle}/change_next_period_start | Change next renewal date
-[**changeSubscription**](SubscriptionApi.md#changeSubscription) | **PUT** /v1/subscription/{handle} | Change subscription
-[**createSubscriptionDiscount**](SubscriptionApi.md#createSubscriptionDiscount) | **POST** /v1/subscription/{handle}/discount | Add subscription discount
-[**createSubscriptionInvoice**](SubscriptionApi.md#createSubscriptionInvoice) | **POST** /v1/subscription/{handle}/invoice | Create invoice ondemand for subscription
-[**createSubscriptionJson**](SubscriptionApi.md#createSubscriptionJson) | **POST** /v1/subscription | Create subscription
-[**deleteMetadata4**](SubscriptionApi.md#deleteMetadata4) | **DELETE** /v1/subscription/{handle}/metadata | Delete metadata
-[**deletePending**](SubscriptionApi.md#deletePending) | **DELETE** /v1/subscription/{handle} | Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice.
-[**deleteSubscriptionDiscount**](SubscriptionApi.md#deleteSubscriptionDiscount) | **DELETE** /v1/subscription/{handle}/discount/{sdHandle} | Delete subscription discount
-[**expire**](SubscriptionApi.md#expire) | **POST** /v1/subscription/{handle}/expire | Expire subscription
-[**getMetadata4**](SubscriptionApi.md#getMetadata4) | **GET** /v1/subscription/{handle}/metadata | Get metadata
-[**getPayableInvoice**](SubscriptionApi.md#getPayableInvoice) | **GET** /v1/subscription/{handle}/invoice | Get most relevant payable invoice for subscription
-[**getSubscription**](SubscriptionApi.md#getSubscription) | **GET** /v1/subscription/{handle} | Get subscription
-[**getSubscriptionAddOn**](SubscriptionApi.md#getSubscriptionAddOn) | **GET** /v1/subscription/{handle}/add_on/{saHandle} | Get subscription add-on
-[**getSubscriptionAddOns**](SubscriptionApi.md#getSubscriptionAddOns) | **GET** /v1/subscription/{handle}/add_on | Get subscription add-ons
-[**getSubscriptionDiscount**](SubscriptionApi.md#getSubscriptionDiscount) | **GET** /v1/subscription/{handle}/discount/{sdHandle} | Get subscription discount
-[**getSubscriptionDiscounts**](SubscriptionApi.md#getSubscriptionDiscounts) | **GET** /v1/subscription/{handle}/discount | Get subscription discounts
-[**getSubscriptionPaymentMethod**](SubscriptionApi.md#getSubscriptionPaymentMethod) | **GET** /v1/subscription/{handle}/pm | Get payment method
-[**getSubscriptionPeriodBalance**](SubscriptionApi.md#getSubscriptionPeriodBalance) | **GET** /v1/subscription/{handle}/period_balance | Get the period balance for subscription
-[**intervalAmount**](SubscriptionApi.md#intervalAmount) | **GET** /v1/subscription/{handle}/interval_amount | Calculate interval amount
-[**onHold**](SubscriptionApi.md#onHold) | **POST** /v1/subscription/{handle}/on_hold | Subscription on hold
-[**prepareSubscription**](SubscriptionApi.md#prepareSubscription) | **POST** /v1/subscription/prepare | Prepare pending subscription
-[**previewChangeSubscription**](SubscriptionApi.md#previewChangeSubscription) | **PUT** /v1/subscription/{handle}/preview | Preview change subscription
-[**previewSubscription**](SubscriptionApi.md#previewSubscription) | **POST** /v1/subscription/preview | Preview subscription
-[**reactivateSubscription**](SubscriptionApi.md#reactivateSubscription) | **POST** /v1/subscription/{handle}/reactivate | Reactivate subscription on hold
-[**redeemCouponCode**](SubscriptionApi.md#redeemCouponCode) | **POST** /v1/subscription/{handle}/coupon | Redeem coupon code for subscription
-[**removeAllSubscriptionPaymentMethods**](SubscriptionApi.md#removeAllSubscriptionPaymentMethods) | **DELETE** /v1/subscription/{handle}/pm | Remove all payment methods
-[**removeSubscriptionPaymentMethod**](SubscriptionApi.md#removeSubscriptionPaymentMethod) | **DELETE** /v1/subscription/{handle}/pm/{method_id} | Remove payment method
-[**setSubscriptionPaymentMethod**](SubscriptionApi.md#setSubscriptionPaymentMethod) | **POST** /v1/subscription/{handle}/pm | Set payment method
-[**uncancel**](SubscriptionApi.md#uncancel) | **POST** /v1/subscription/{handle}/uncancel | Uncancel subscription
-[**updateMetadata4**](SubscriptionApi.md#updateMetadata4) | **PUT** /v1/subscription/{handle}/metadata | Create or update metadata
-
+ Method                                                                                            | HTTP request                                                | Description                                                                                                                                 
+---------------------------------------------------------------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+ [**activate**](SubscriptionApi.md#activate)                                                       | **POST** /v1/subscription/{handle}/activate                 | Activate pending subscription                                                                                                               
+ [**cancelSubscription**](SubscriptionApi.md#cancelsubscription)                                   | **POST** /v1/subscription/{handle}/cancel                   | Cancel subscription                                                                                                                         
+ [**changeNextPeriodStartJson**](SubscriptionApi.md#changenextperiodstartjson)                     | **POST** /v1/subscription/{handle}/change_next_period_start | Change next renewal date                                                                                                                    
+ [**changeSubscription**](SubscriptionApi.md#changesubscription)                                   | **PUT** /v1/subscription/{handle}                           | Change subscription                                                                                                                         
+ [**createSubscriptionDiscount**](SubscriptionApi.md#createsubscriptiondiscount)                   | **POST** /v1/subscription/{handle}/discount                 | Add subscription discount                                                                                                                   
+ [**createSubscriptionInvoice**](SubscriptionApi.md#createsubscriptioninvoice)                     | **POST** /v1/subscription/{handle}/invoice                  | Create invoice ondemand for subscription                                                                                                    
+ [**createSubscriptionJson**](SubscriptionApi.md#createsubscriptionjson)                           | **POST** /v1/subscription                                   | Create subscription                                                                                                                         
+ [**deleteMetadata4**](SubscriptionApi.md#deletemetadata4)                                         | **DELETE** /v1/subscription/{handle}/metadata               | Delete metadata                                                                                                                             
+ [**deletePending**](SubscriptionApi.md#deletepending)                                             | **DELETE** /v1/subscription/{handle}                        | Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice. 
+ [**deleteSubscriptionDiscount**](SubscriptionApi.md#deletesubscriptiondiscount)                   | **DELETE** /v1/subscription/{handle}/discount/{sdHandle}    | Delete subscription discount                                                                                                                
+ [**expire**](SubscriptionApi.md#expire)                                                           | **POST** /v1/subscription/{handle}/expire                   | Expire subscription                                                                                                                         
+ [**getMetadata4**](SubscriptionApi.md#getmetadata4)                                               | **GET** /v1/subscription/{handle}/metadata                  | Get metadata                                                                                                                                
+ [**getPayableInvoice**](SubscriptionApi.md#getpayableinvoice)                                     | **GET** /v1/subscription/{handle}/invoice                   | Get most relevant payable invoice for subscription                                                                                          
+ [**getSubscription**](SubscriptionApi.md#getsubscription)                                         | **GET** /v1/subscription/{handle}                           | Get subscription                                                                                                                            
+ [**getSubscriptionAddOn**](SubscriptionApi.md#getsubscriptionaddon)                               | **GET** /v1/subscription/{handle}/add_on/{saHandle}         | Get subscription add-on                                                                                                                     
+ [**getSubscriptionAddOns**](SubscriptionApi.md#getsubscriptionaddons)                             | **GET** /v1/subscription/{handle}/add_on                    | Get subscription add-ons                                                                                                                    
+ [**getSubscriptionDiscount**](SubscriptionApi.md#getsubscriptiondiscount)                         | **GET** /v1/subscription/{handle}/discount/{sdHandle}       | Get subscription discount                                                                                                                   
+ [**getSubscriptionDiscounts**](SubscriptionApi.md#getsubscriptiondiscounts)                       | **GET** /v1/subscription/{handle}/discount                  | Get subscription discounts                                                                                                                  
+ [**getSubscriptionPaymentMethod**](SubscriptionApi.md#getsubscriptionpaymentmethod)               | **GET** /v1/subscription/{handle}/pm                        | Get payment method                                                                                                                          
+ [**getSubscriptionPeriodBalance**](SubscriptionApi.md#getsubscriptionperiodbalance)               | **GET** /v1/subscription/{handle}/period_balance            | Get the period balance for subscription                                                                                                     
+ [**intervalAmount**](SubscriptionApi.md#intervalamount)                                           | **GET** /v1/subscription/{handle}/interval_amount           | Calculate interval amount                                                                                                                   
+ [**onHold**](SubscriptionApi.md#onhold)                                                           | **POST** /v1/subscription/{handle}/on_hold                  | Subscription on hold                                                                                                                        
+ [**prepareSubscription**](SubscriptionApi.md#preparesubscription)                                 | **POST** /v1/subscription/prepare                           | Prepare pending subscription                                                                                                                
+ [**previewChangeSubscription**](SubscriptionApi.md#previewchangesubscription)                     | **PUT** /v1/subscription/{handle}/preview                   | Preview change subscription                                                                                                                 
+ [**previewSubscription**](SubscriptionApi.md#previewsubscription)                                 | **POST** /v1/subscription/preview                           | Preview subscription                                                                                                                        
+ [**reactivateSubscription**](SubscriptionApi.md#reactivatesubscription)                           | **POST** /v1/subscription/{handle}/reactivate               | Reactivate subscription on hold                                                                                                             
+ [**redeemCouponCode**](SubscriptionApi.md#redeemcouponcode)                                       | **POST** /v1/subscription/{handle}/coupon                   | Redeem coupon code for subscription                                                                                                         
+ [**removeAllSubscriptionPaymentMethods**](SubscriptionApi.md#removeallsubscriptionpaymentmethods) | **DELETE** /v1/subscription/{handle}/pm                     | Remove all payment methods                                                                                                                  
+ [**removeSubscriptionPaymentMethod**](SubscriptionApi.md#removesubscriptionpaymentmethod)         | **DELETE** /v1/subscription/{handle}/pm/{method_id}         | Remove payment method                                                                                                                       
+ [**setSubscriptionPaymentMethod**](SubscriptionApi.md#setsubscriptionpaymentmethod)               | **POST** /v1/subscription/{handle}/pm                       | Set payment method                                                                                                                          
+ [**uncancel**](SubscriptionApi.md#uncancel)                                                       | **POST** /v1/subscription/{handle}/uncancel                 | Uncancel subscription                                                                                                                       
+ [**updateMetadata4**](SubscriptionApi.md#updatemetadata4)                                         | **PUT** /v1/subscription/{handle}/metadata                  | Create or update metadata                                                                                                                   
 
 # **activate**
 > \Reepay\Model\Subscription activate($handle, $body)
 
 Activate pending subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -101,13 +97,10 @@ Name | Type | Description  | Notes
 
 Cancel subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -149,8 +142,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -159,13 +152,10 @@ Name | Type | Description  | Notes
 
 Change next renewal date
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -217,13 +207,10 @@ Name | Type | Description  | Notes
 
 Change subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -275,13 +262,10 @@ Name | Type | Description  | Notes
 
 Add subscription discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -323,8 +307,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -333,13 +317,10 @@ Name | Type | Description  | Notes
 
 Create invoice ondemand for subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -391,13 +372,10 @@ Name | Type | Description  | Notes
 
 Create subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -447,13 +425,10 @@ Name | Type | Description  | Notes
 
 Delete metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -502,13 +477,10 @@ void (empty response body)
 
 Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice.
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -557,13 +529,10 @@ void (empty response body)
 
 Delete subscription discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -615,13 +584,10 @@ Name | Type | Description  | Notes
 
 Expire subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -663,8 +629,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -673,13 +639,10 @@ Name | Type | Description  | Notes
 
 Get metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -729,13 +692,10 @@ Name | Type | Description  | Notes
 
 Get most relevant payable invoice for subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -785,13 +745,10 @@ Name | Type | Description  | Notes
 
 Get subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -841,13 +798,10 @@ Name | Type | Description  | Notes
 
 Get subscription add-on
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -899,13 +853,10 @@ Name | Type | Description  | Notes
 
 Get subscription add-ons
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -955,13 +906,10 @@ Name | Type | Description  | Notes
 
 Get subscription discount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1013,13 +961,10 @@ Name | Type | Description  | Notes
 
 Get subscription discounts
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1069,13 +1014,10 @@ Name | Type | Description  | Notes
 
 Get payment method
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1125,13 +1067,10 @@ Name | Type | Description  | Notes
 
 Get the period balance for subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1183,13 +1122,10 @@ Name | Type | Description  | Notes
 
 Calculate interval amount
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1243,13 +1179,10 @@ Name | Type | Description  | Notes
 
 Subscription on hold
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1291,8 +1224,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1301,13 +1234,10 @@ Name | Type | Description  | Notes
 
 Prepare pending subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1357,13 +1287,10 @@ Name | Type | Description  | Notes
 
 Preview change subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1415,13 +1342,10 @@ Name | Type | Description  | Notes
 
 Preview subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1471,13 +1395,10 @@ Name | Type | Description  | Notes
 
 Reactivate subscription on hold
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1519,8 +1440,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1529,13 +1450,10 @@ Name | Type | Description  | Notes
 
 Redeem coupon code for subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1577,8 +1495,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1587,13 +1505,10 @@ Name | Type | Description  | Notes
 
 Remove all payment methods
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1643,13 +1558,10 @@ Name | Type | Description  | Notes
 
 Remove payment method
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1701,13 +1613,10 @@ Name | Type | Description  | Notes
 
 Set payment method
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1759,13 +1668,10 @@ Name | Type | Description  | Notes
 
 Uncancel subscription
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1815,13 +1721,10 @@ Name | Type | Description  | Notes
 
 Create or update metadata
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1835,7 +1738,7 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     $config
 );
 $handle = "handle_example"; // string | Resource handle
-$body = new \stdClass; // object | 
+$body = new \Reepay\Model\map(); // map[string,object] | 
 
 try {
     $result = $apiInstance->updateMetadata4($handle, $body);
@@ -1848,10 +1751,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Resource handle |
- **body** | **object**|  | [optional]
+ Name       | Type                                      | Description     | Notes      
+------------|-------------------------------------------|-----------------|------------
+ **handle** | **string**                                | Resource handle |
+ **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
 
 ### Return type
 
@@ -1863,8 +1766,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

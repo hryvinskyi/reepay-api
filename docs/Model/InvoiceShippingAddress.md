@@ -17,6 +17,5 @@ Name | Type | Description | Notes
 **postalCode** | **string** | Postal code | [optional] 
 **stateOrProvince** | **string** | State or province. Should be in country subdivision code defined in ISO 3166-2. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -13,6 +13,5 @@ Name | Type | Description | Notes
 **mfaMethod** | **string** | MFA method | [optional] 
 **inviteExpires** | [**\DateTime**](\DateTime.md) | Expiry date for invite | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

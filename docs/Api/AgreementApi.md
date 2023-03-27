@@ -1,58 +1,57 @@
 # Reepay\AgreementApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**activateMpsAgreement**](AgreementApi.md#activateMpsAgreement) | **POST** /v1/agreement/{id}/mps_activate | Activate mps agreement by selecting provider
-[**createAnydayAgreement**](AgreementApi.md#createAnydayAgreement) | **POST** /v1/agreement/anyday | Create Anyday agreement
-[**createApplepayAgreement**](AgreementApi.md#createApplepayAgreement) | **POST** /v1/agreement/applepay | Create ApplePay agreement
-[**createCardGatewayAgreement**](AgreementApi.md#createCardGatewayAgreement) | **POST** /v1/agreement/card_gateway | Create card gateway agreement
-[**createGooglepayAgreement**](AgreementApi.md#createGooglepayAgreement) | **POST** /v1/agreement/googlepay | Create GooglePay agreement
-[**createKlarnaAgreement**](AgreementApi.md#createKlarnaAgreement) | **POST** /v1/agreement/klarna | Create Klarna agreement
-[**createMpoAgreement**](AgreementApi.md#createMpoAgreement) | **POST** /v1/agreement/mpo | Create MobilePay Online agreement
-[**createMpsAgreement**](AgreementApi.md#createMpsAgreement) | **POST** /v1/agreement/mps | Create pending MobilePay Subscriptions agreement
-[**createPaypalAgreement**](AgreementApi.md#createPaypalAgreement) | **POST** /v1/agreement/paypal | Create PayPal agreement
-[**createPproAgreement**](AgreementApi.md#createPproAgreement) | **POST** /v1/agreement/ppro | Create ppro agreement
-[**createResursAgreement**](AgreementApi.md#createResursAgreement) | **POST** /v1/agreement/resurs | Create Resurs agreement
-[**createSwishAgreement**](AgreementApi.md#createSwishAgreement) | **POST** /v1/agreement/swish | Create Swish agreement
-[**createViabillAgreement**](AgreementApi.md#createViabillAgreement) | **POST** /v1/agreement/viabill | Create ViaBill agreement
-[**createVippsAgreement**](AgreementApi.md#createVippsAgreement) | **POST** /v1/agreement/vipps | Create Vipps agreement
-[**createVippsRecurringAgreement**](AgreementApi.md#createVippsRecurringAgreement) | **POST** /v1/agreement/vipps_recurring | Create Vipps Recurring agreement
-[**deleteGatewayAgreement**](AgreementApi.md#deleteGatewayAgreement) | **DELETE** /v1/agreement/{id} | Delete gateway agreement
-[**disableGatewayAgreement**](AgreementApi.md#disableGatewayAgreement) | **POST** /v1/agreement/{id}/disable | Disable gateway agreement
-[**enableGatewayAgreement**](AgreementApi.md#enableGatewayAgreement) | **POST** /v1/agreement/{id}/enable | Enable gateway agreement
-[**getCardGatewayAgreements**](AgreementApi.md#getCardGatewayAgreements) | **GET** /v1/agreement/card_gateway | Get all card gateway agreements
-[**getGatewayAgreement**](AgreementApi.md#getGatewayAgreement) | **GET** /v1/agreement/{id} | Get gateway agreement
-[**getGatewayAgreements**](AgreementApi.md#getGatewayAgreements) | **GET** /v1/agreement | Get all agreements
-[**updateAnydayAgreement**](AgreementApi.md#updateAnydayAgreement) | **PUT** /v1/agreement/anyday/{id} | Update Anyday agreement
-[**updateApplepayAgreement**](AgreementApi.md#updateApplepayAgreement) | **PUT** /v1/agreement/applepay/{id} | Update ApplePay agreement
-[**updateCardGatewayAgreement**](AgreementApi.md#updateCardGatewayAgreement) | **PUT** /v1/agreement/card_gateway/{id} | Update card gateway agreement
-[**updateGooglepayAgreement**](AgreementApi.md#updateGooglepayAgreement) | **PUT** /v1/agreement/googlepay/{id} | Update GooglePay agreement
-[**updateKlarnaAgreement**](AgreementApi.md#updateKlarnaAgreement) | **PUT** /v1/agreement/klarna/{id} | Update Klarna agreement
-[**updateMpoAgreement**](AgreementApi.md#updateMpoAgreement) | **PUT** /v1/agreement/mpo/{id} | Update MobilePay Online agreement
-[**updateMpsAgreement**](AgreementApi.md#updateMpsAgreement) | **PUT** /v1/agreement/mps/{id} | Update mps agreement
-[**updatePaypalAgreement**](AgreementApi.md#updatePaypalAgreement) | **PUT** /v1/agreement/paypal/{id} | Update PayPal agreement
-[**updatePproAgreement**](AgreementApi.md#updatePproAgreement) | **PUT** /v1/agreement/ppro/{id} | Update ppro agreement
-[**updateResursAgreement**](AgreementApi.md#updateResursAgreement) | **PUT** /v1/agreement/resurs/{id} | Update Resurs agreement
-[**updateSwishAgreement**](AgreementApi.md#updateSwishAgreement) | **PUT** /v1/agreement/swish/{id} | Update Swish agreement
-[**updateViabillAgreement**](AgreementApi.md#updateViabillAgreement) | **PUT** /v1/agreement/viabill/{id} | Update ViaBill agreement
-[**updateVippsAgreement**](AgreementApi.md#updateVippsAgreement) | **PUT** /v1/agreement/vipps/{id} | Update Vipps agreement
-[**updateVippsRecurringAgreement**](AgreementApi.md#updateVippsRecurringAgreement) | **PUT** /v1/agreement/vipps_recurring/{id} | Update Vipps Recurring agreement
-
+ Method                                                                             | HTTP request                                   | Description                                      
+------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------------------------
+ [**activateMpsAgreement**](AgreementApi.md#activatempsagreement)                   | **POST** /v1/agreement/{id}/mps_activate       | Activate mps agreement by selecting provider     
+ [**createAnydayAgreement**](AgreementApi.md#createanydayagreement)                 | **POST** /v1/agreement/anyday                  | Create Anyday agreement                          
+ [**createApplepayAgreement**](AgreementApi.md#createapplepayagreement)             | **POST** /v1/agreement/applepay                | Create ApplePay agreement                        
+ [**createCardGatewayAgreement**](AgreementApi.md#createcardgatewayagreement)       | **POST** /v1/agreement/card_gateway            | Create card gateway agreement                    
+ [**createGooglepayAgreement**](AgreementApi.md#creategooglepayagreement)           | **POST** /v1/agreement/googlepay               | Create GooglePay agreement                       
+ [**createKlarnaAgreement**](AgreementApi.md#createklarnaagreement)                 | **POST** /v1/agreement/klarna                  | Create Klarna agreement                          
+ [**createMpoAgreement**](AgreementApi.md#creatempoagreement)                       | **POST** /v1/agreement/mpo                     | Create MobilePay Online agreement                
+ [**createMpsAgreement**](AgreementApi.md#creatempsagreement)                       | **POST** /v1/agreement/mps                     | Create pending MobilePay Subscriptions agreement 
+ [**createPaypalAgreement**](AgreementApi.md#createpaypalagreement)                 | **POST** /v1/agreement/paypal                  | Create PayPal agreement                          
+ [**createPproAgreement**](AgreementApi.md#createpproagreement)                     | **POST** /v1/agreement/ppro                    | Create ppro agreement                            
+ [**createResursAgreement**](AgreementApi.md#createresursagreement)                 | **POST** /v1/agreement/resurs                  | Create Resurs agreement                          
+ [**createSwishAgreement**](AgreementApi.md#createswishagreement)                   | **POST** /v1/agreement/swish                   | Create Swish agreement                           
+ [**createTokenRequestor**](AgreementApi.md#createtokenrequestor)                   | **POST** /v1/agreement/token_requestor/onboard | Create token requestor                           
+ [**createViabillAgreement**](AgreementApi.md#createviabillagreement)               | **POST** /v1/agreement/viabill                 | Create ViaBill agreement                         
+ [**createVippsAgreement**](AgreementApi.md#createvippsagreement)                   | **POST** /v1/agreement/vipps                   | Create Vipps agreement                           
+ [**createVippsRecurringAgreement**](AgreementApi.md#createvippsrecurringagreement) | **POST** /v1/agreement/vipps_recurring         | Create Vipps Recurring agreement                 
+ [**deleteGatewayAgreement**](AgreementApi.md#deletegatewayagreement)               | **DELETE** /v1/agreement/{id}                  | Delete gateway agreement                         
+ [**deleteTokenRequestor**](AgreementApi.md#deletetokenrequestor)                   | **DELETE** /v1/agreement/token_requestor       | Delete token requestor by id for card type       
+ [**disableGatewayAgreement**](AgreementApi.md#disablegatewayagreement)             | **POST** /v1/agreement/{id}/disable            | Disable gateway agreement                        
+ [**enableGatewayAgreement**](AgreementApi.md#enablegatewayagreement)               | **POST** /v1/agreement/{id}/enable             | Enable gateway agreement                         
+ [**getCardGatewayAgreements**](AgreementApi.md#getcardgatewayagreements)           | **GET** /v1/agreement/card_gateway             | Get all card gateway agreements                  
+ [**getGatewayAgreement**](AgreementApi.md#getgatewayagreement)                     | **GET** /v1/agreement/{id}                     | Get gateway agreement                            
+ [**getGatewayAgreements**](AgreementApi.md#getgatewayagreements)                   | **GET** /v1/agreement                          | Get all agreements                               
+ [**getTokenRequestor**](AgreementApi.md#gettokenrequestor)                         | **GET** /v1/agreement/token_requestor          | Get token requestors for card type               
+ [**updateAnydayAgreement**](AgreementApi.md#updateanydayagreement)                 | **PUT** /v1/agreement/anyday/{id}              | Update Anyday agreement                          
+ [**updateApplepayAgreement**](AgreementApi.md#updateapplepayagreement)             | **PUT** /v1/agreement/applepay/{id}            | Update ApplePay agreement                        
+ [**updateCardGatewayAgreement**](AgreementApi.md#updatecardgatewayagreement)       | **PUT** /v1/agreement/card_gateway/{id}        | Update card gateway agreement                    
+ [**updateGooglepayAgreement**](AgreementApi.md#updategooglepayagreement)           | **PUT** /v1/agreement/googlepay/{id}           | Update GooglePay agreement                       
+ [**updateKlarnaAgreement**](AgreementApi.md#updateklarnaagreement)                 | **PUT** /v1/agreement/klarna/{id}              | Update Klarna agreement                          
+ [**updateMpoAgreement**](AgreementApi.md#updatempoagreement)                       | **PUT** /v1/agreement/mpo/{id}                 | Update MobilePay Online agreement                
+ [**updateMpsAgreement**](AgreementApi.md#updatempsagreement)                       | **PUT** /v1/agreement/mps/{id}                 | Update mps agreement                             
+ [**updatePaypalAgreement**](AgreementApi.md#updatepaypalagreement)                 | **PUT** /v1/agreement/paypal/{id}              | Update PayPal agreement                          
+ [**updatePproAgreement**](AgreementApi.md#updatepproagreement)                     | **PUT** /v1/agreement/ppro/{id}                | Update ppro agreement                            
+ [**updateResursAgreement**](AgreementApi.md#updateresursagreement)                 | **PUT** /v1/agreement/resurs/{id}              | Update Resurs agreement                          
+ [**updateSwishAgreement**](AgreementApi.md#updateswishagreement)                   | **PUT** /v1/agreement/swish/{id}               | Update Swish agreement                           
+ [**updateViabillAgreement**](AgreementApi.md#updateviabillagreement)               | **PUT** /v1/agreement/viabill/{id}             | Update ViaBill agreement                         
+ [**updateVippsAgreement**](AgreementApi.md#updatevippsagreement)                   | **PUT** /v1/agreement/vipps/{id}               | Update Vipps agreement                           
+ [**updateVippsRecurringAgreement**](AgreementApi.md#updatevippsrecurringagreement) | **PUT** /v1/agreement/vipps_recurring/{id}     | Update Vipps Recurring agreement                 
 
 # **activateMpsAgreement**
 > \Reepay\Model\GatewayAgreement activateMpsAgreement($id, $body)
 
 Activate mps agreement by selecting provider
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -94,8 +93,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -104,13 +103,10 @@ Name | Type | Description  | Notes
 
 Create Anyday agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -150,8 +146,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -160,13 +156,10 @@ Name | Type | Description  | Notes
 
 Create ApplePay agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -206,8 +199,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -216,13 +209,10 @@ Name | Type | Description  | Notes
 
 Create card gateway agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -262,8 +252,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -272,13 +262,10 @@ Name | Type | Description  | Notes
 
 Create GooglePay agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -318,8 +305,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -328,13 +315,10 @@ Name | Type | Description  | Notes
 
 Create Klarna agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -374,8 +358,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -384,13 +368,10 @@ Name | Type | Description  | Notes
 
 Create MobilePay Online agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -430,8 +411,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -440,13 +421,10 @@ Name | Type | Description  | Notes
 
 Create pending MobilePay Subscriptions agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -486,8 +464,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -496,13 +474,10 @@ Name | Type | Description  | Notes
 
 Create PayPal agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -542,8 +517,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -552,13 +527,10 @@ Name | Type | Description  | Notes
 
 Create ppro agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -598,8 +570,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -608,13 +580,10 @@ Name | Type | Description  | Notes
 
 Create Resurs agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -654,8 +623,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -664,13 +633,10 @@ Name | Type | Description  | Notes
 
 Create Swish agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -710,23 +676,76 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createTokenRequestor**
+
+> \Reepay\Model\TokenRequestorResponse createTokenRequestor($body)
+
+Create token requestor
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\TokenRequestorRequest(); // \Reepay\Model\TokenRequestorRequest | 
+
+try {
+    $result = $apiInstance->createTokenRequestor($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->createTokenRequestor: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+ Name     | Type                                                                         | Description | Notes      
+----------|------------------------------------------------------------------------------|-------------|------------
+ **body** | [**\Reepay\Model\TokenRequestorRequest**](../Model/TokenRequestorRequest.md) |             | [optional] 
+
+### Return type
+
+[**\Reepay\Model\TokenRequestorResponse**](../Model/TokenRequestorResponse.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createViabillAgreement**
+
 > \Reepay\Model\GatewayAgreement createViabillAgreement($body)
 
 Create ViaBill agreement
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -766,8 +785,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -776,13 +795,10 @@ Name | Type | Description  | Notes
 
 Create Vipps agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -822,8 +838,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -832,13 +848,10 @@ Name | Type | Description  | Notes
 
 Create Vipps Recurring agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -878,8 +891,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -888,13 +901,10 @@ Name | Type | Description  | Notes
 
 Delete gateway agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -934,23 +944,78 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **deleteTokenRequestor**
+
+> deleteTokenRequestor($cardScheme, $tokenRequestorId)
+
+Delete token requestor by id for card type
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$cardScheme = "cardScheme_example"; // string | Card Scheme
+$tokenRequestorId = "tokenRequestorId_example"; // string | Token Requestor Id
+
+try {
+    $apiInstance->deleteTokenRequestor($cardScheme, $tokenRequestorId);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->deleteTokenRequestor: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+ Name                 | Type       | Description        | Notes 
+----------------------|------------|--------------------|-------
+ **cardScheme**       | **string** | Card Scheme        |
+ **tokenRequestorId** | **string** | Token Requestor Id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **disableGatewayAgreement**
+
 > \Reepay\Model\GatewayAgreement disableGatewayAgreement($id)
 
 Disable gateway agreement
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1000,13 +1065,10 @@ Name | Type | Description  | Notes
 
 Enable gateway agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1056,13 +1118,10 @@ Name | Type | Description  | Notes
 
 Get all card gateway agreements
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1114,13 +1173,10 @@ Name | Type | Description  | Notes
 
 Get gateway agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1170,13 +1226,10 @@ Name | Type | Description  | Notes
 
 Get all agreements
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1203,10 +1256,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **onlyActive** | **bool**| Get only active | [optional] [default to false]
- **nonDeleted** | **bool**| Get only non-deleted | [optional] [default to false]
+ Name           | Type     | Description          | Notes                         
+----------------|----------|----------------------|-------------------------------
+ **onlyActive** | **bool** | Get only active      | [optional] [default to false] 
+ **nonDeleted** | **bool** | Get only non-deleted | [optional] [default to false] 
 
 ### Return type
 
@@ -1218,8 +1271,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getTokenRequestor**
+
+> \Reepay\Model\TokenRequestorResponse[] getTokenRequestor($cardScheme)
+
+Get token requestors for card type
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$cardScheme = "cardScheme_example"; // string | Card Scheme
+
+try {
+    $result = $apiInstance->getTokenRequestor($cardScheme);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->getTokenRequestor: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+ Name           | Type       | Description | Notes 
+----------------|------------|-------------|-------
+ **cardScheme** | **string** | Card Scheme |
+
+### Return type
+
+[**\Reepay\Model\TokenRequestorResponse[]**](../Model/TokenRequestorResponse.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1228,13 +1336,10 @@ Name | Type | Description  | Notes
 
 Update Anyday agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1276,8 +1381,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1286,13 +1391,10 @@ Name | Type | Description  | Notes
 
 Update ApplePay agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1334,8 +1436,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1344,13 +1446,10 @@ Name | Type | Description  | Notes
 
 Update card gateway agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1392,8 +1491,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1402,13 +1501,10 @@ Name | Type | Description  | Notes
 
 Update GooglePay agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1450,8 +1546,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1460,13 +1556,10 @@ Name | Type | Description  | Notes
 
 Update Klarna agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1508,8 +1601,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1518,13 +1611,10 @@ Name | Type | Description  | Notes
 
 Update MobilePay Online agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1566,8 +1656,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1576,13 +1666,10 @@ Name | Type | Description  | Notes
 
 Update mps agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1624,8 +1711,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1634,13 +1721,10 @@ Name | Type | Description  | Notes
 
 Update PayPal agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1682,8 +1766,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1692,13 +1776,10 @@ Name | Type | Description  | Notes
 
 Update ppro agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1740,8 +1821,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1750,13 +1831,10 @@ Name | Type | Description  | Notes
 
 Update Resurs agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1798,8 +1876,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1808,13 +1886,10 @@ Name | Type | Description  | Notes
 
 Update Swish agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1856,8 +1931,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1866,13 +1941,10 @@ Name | Type | Description  | Notes
 
 Update ViaBill agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1914,8 +1986,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1924,13 +1996,10 @@ Name | Type | Description  | Notes
 
 Update Vipps agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1972,8 +2041,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1982,13 +2051,10 @@ Name | Type | Description  | Notes
 
 Update Vipps Recurring agreement
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -2030,8 +2096,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

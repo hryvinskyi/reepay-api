@@ -19,6 +19,5 @@ Name | Type | Description | Notes
 **postalCode** | **string** | Customer postal code | [optional] 
 **generateHandle** | **bool** | Auto generate handle on the form cust-[sequence_number] | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

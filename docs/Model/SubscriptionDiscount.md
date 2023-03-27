@@ -22,6 +22,5 @@ Name | Type | Description | Notes
 **fixedUsageReached** | **bool** | Whether fixed usage for subscription discount has been reached | 
 **fixedPeriodPassed** | **bool** | Whether fixed period for subscription discount has been passed | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

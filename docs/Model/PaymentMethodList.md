@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **content** | [**\Reepay\Model\PaymentMethodV2[]**](PaymentMethodV2.md) | List of payment methods for current page | 
 **nextPageToken** | **string** | Pagination token to use to get the next page. Notice that page size and range should be the same for all page requests. If not present the last page has been reached. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

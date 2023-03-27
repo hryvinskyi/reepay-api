@@ -1,31 +1,28 @@
 # Reepay\AddOnApi
 
-All URIs are relative to *https://api.reepay.com*
+All URIs are relative to *https://api.reepay.com/*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAddOn**](AddOnApi.md#createAddOn) | **POST** /v1/add_on | Create add-on
-[**deleteAddOn**](AddOnApi.md#deleteAddOn) | **DELETE** /v1/add_on/{handle} | Delete add-on
-[**deleteMetadata**](AddOnApi.md#deleteMetadata) | **DELETE** /v1/add_on/{handle}/metadata | Delete metadata
-[**getAddOn**](AddOnApi.md#getAddOn) | **GET** /v1/add_on/{handle} | Get add-on
-[**getMetadata**](AddOnApi.md#getMetadata) | **GET** /v1/add_on/{handle}/metadata | Get metadata
-[**undeleteAddOn**](AddOnApi.md#undeleteAddOn) | **POST** /v1/add_on/{handle}/undelete | Un-delete add-on
-[**updateAddOn**](AddOnApi.md#updateAddOn) | **PUT** /v1/add_on/{handle} | Update add-on
-[**updateMetadata**](AddOnApi.md#updateMetadata) | **PUT** /v1/add_on/{handle}/metadata | Create or update metadata
-
+ Method                                           | HTTP request                            | Description               
+--------------------------------------------------|-----------------------------------------|---------------------------
+ [**createAddOn**](AddOnApi.md#createaddon)       | **POST** /v1/add_on                     | Create add-on             
+ [**deleteAddOn**](AddOnApi.md#deleteaddon)       | **DELETE** /v1/add_on/{handle}          | Delete add-on             
+ [**deleteMetadata**](AddOnApi.md#deletemetadata) | **DELETE** /v1/add_on/{handle}/metadata | Delete metadata           
+ [**getAddOn**](AddOnApi.md#getaddon)             | **GET** /v1/add_on/{handle}             | Get add-on                
+ [**getMetadata**](AddOnApi.md#getmetadata)       | **GET** /v1/add_on/{handle}/metadata    | Get metadata              
+ [**undeleteAddOn**](AddOnApi.md#undeleteaddon)   | **POST** /v1/add_on/{handle}/undelete   | Un-delete add-on          
+ [**updateAddOn**](AddOnApi.md#updateaddon)       | **PUT** /v1/add_on/{handle}             | Update add-on             
+ [**updateMetadata**](AddOnApi.md#updatemetadata) | **PUT** /v1/add_on/{handle}/metadata    | Create or update metadata 
 
 # **createAddOn**
 > \Reepay\Model\AddOn createAddOn($body)
 
 Create add-on
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -51,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateAddOn**](../Model/CreateAddOn.md)|  | [optional]
+ Name     | Type                                                     | Description | Notes      
+----------|----------------------------------------------------------|-------------|------------
+ **body** | [**\Reepay\Model\CreateAddOn**](../Model/CreateAddOn.md) |             | [optional] 
 
 ### Return type
 
@@ -75,13 +72,11 @@ Name | Type | Description  | Notes
 
 Delete add-on
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -131,13 +126,11 @@ Name | Type | Description  | Notes
 
 Delete metadata
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -186,13 +179,11 @@ void (empty response body)
 
 Get add-on
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -242,13 +233,11 @@ Name | Type | Description  | Notes
 
 Get metadata
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -298,13 +287,11 @@ Name | Type | Description  | Notes
 
 Un-delete add-on
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -354,13 +341,11 @@ Name | Type | Description  | Notes
 
 Update add-on
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -387,10 +372,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Add-on handle |
- **body** | [**\Reepay\Model\UpdateAddOn**](../Model/UpdateAddOn.md)|  | [optional]
+ Name       | Type                                                     | Description   | Notes      
+------------|----------------------------------------------------------|---------------|------------
+ **handle** | **string**                                               | Add-on handle |
+ **body**   | [**\Reepay\Model\UpdateAddOn**](../Model/UpdateAddOn.md) |               | [optional] 
 
 ### Return type
 
@@ -412,13 +397,11 @@ Name | Type | Description  | Notes
 
 Create or update metadata
 
-
-
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure HTTP basic authorization: basicAuth
 $config = Reepay\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -432,7 +415,7 @@ $apiInstance = new Reepay\Api\AddOnApi(
     $config
 );
 $handle = "handle_example"; // string | Resource handle
-$body = new \stdClass; // object | 
+$body = new \Reepay\Model\map(); // map[string,object] | 
 
 try {
     $result = $apiInstance->updateMetadata($handle, $body);
@@ -445,10 +428,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Resource handle |
- **body** | **object**|  | [optional]
+ Name       | Type                                      | Description     | Notes      
+------------|-------------------------------------------|-----------------|------------
+ **handle** | **string**                                | Resource handle |
+ **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
 
 ### Return type
 
@@ -460,8 +443,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

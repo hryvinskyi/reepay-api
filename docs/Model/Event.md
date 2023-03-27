@@ -12,6 +12,5 @@ Name | Type | Description | Notes
 **eventType** | **string** | The event type (see documentation) | 
 **principalType** | **string** | Principal type &#x60;api&#x60; or &#x60;user&#x60; | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
