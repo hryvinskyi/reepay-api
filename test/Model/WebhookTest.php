@@ -146,28 +146,28 @@ class WebhookTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "lastFail"
+     * Test attribute "last_fail"
      */
     public function testPropertyLastFail()
     {
     }
 
     /**
-     * Test attribute "firstFail"
+     * Test attribute "first_fail"
      */
     public function testPropertyFirstFail()
     {
     }
 
     /**
-     * Test attribute "alertCount"
+     * Test attribute "alert_count"
      */
     public function testPropertyAlertCount()
     {
     }
 
     /**
-     * Test attribute "alertSent"
+     * Test attribute "alert_sent"
      */
     public function testPropertyAlertSent()
     {

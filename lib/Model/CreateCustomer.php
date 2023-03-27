@@ -67,10 +67,10 @@ class CreateCustomer implements ModelInterface, ArrayAccess
         'handle' => 'string',
         'test' => 'bool',
         'metadata' => 'map[string,object]',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'postalCode' => 'string',
-        'generateHandle' => 'bool'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'postal_code' => 'string',
+        'generate_handle' => 'bool'
     ];
 
     /**
@@ -90,10 +90,10 @@ class CreateCustomer implements ModelInterface, ArrayAccess
         'handle' => null,
         'test' => null,
         'metadata' => null,
-        'firstName' => null,
-        'lastName' => null,
-        'postalCode' => null,
-        'generateHandle' => null
+        'first_name' => null,
+        'last_name' => null,
+        'postal_code' => null,
+        'generate_handle' => null
     ];
 
     /**
@@ -134,10 +134,10 @@ class CreateCustomer implements ModelInterface, ArrayAccess
         'handle' => 'handle',
         'test' => 'test',
         'metadata' => 'metadata',
-        'firstName' => 'first_name',
-        'lastName' => 'last_name',
-        'postalCode' => 'postal_code',
-        'generateHandle' => 'generate_handle'
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'postal_code' => 'postal_code',
+        'generate_handle' => 'generate_handle'
     ];
 
     /**
@@ -157,10 +157,10 @@ class CreateCustomer implements ModelInterface, ArrayAccess
         'handle' => 'setHandle',
         'test' => 'setTest',
         'metadata' => 'setMetadata',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'postalCode' => 'setPostalCode',
-        'generateHandle' => 'setGenerateHandle'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'postal_code' => 'setPostalCode',
+        'generate_handle' => 'setGenerateHandle'
     ];
 
     /**
@@ -180,10 +180,10 @@ class CreateCustomer implements ModelInterface, ArrayAccess
         'handle' => 'getHandle',
         'test' => 'getTest',
         'metadata' => 'getMetadata',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'postalCode' => 'getPostalCode',
-        'generateHandle' => 'getGenerateHandle'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'postal_code' => 'getPostalCode',
+        'generate_handle' => 'getGenerateHandle'
     ];
 
     /**
@@ -255,10 +255,10 @@ class CreateCustomer implements ModelInterface, ArrayAccess
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
-        $this->container['generateHandle'] = isset($data['generateHandle']) ? $data['generateHandle'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['generate_handle'] = isset($data['generate_handle']) ? $data['generate_handle'] : null;
     }
 
     /**
@@ -550,97 +550,97 @@ class CreateCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName Customer first name
+     * @param string $first_name Customer first name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName Customer last name
+     * @param string $last_name Customer last name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets postalCode
+     * Gets postal_code
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postalCode'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets postalCode
+     * Sets postal_code
      *
-     * @param string $postalCode Customer postal code
+     * @param string $postal_code Customer postal code
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postal_code)
     {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
 
     /**
-     * Gets generateHandle
+     * Gets generate_handle
      *
      * @return bool
      */
     public function getGenerateHandle()
     {
-        return $this->container['generateHandle'];
+        return $this->container['generate_handle'];
     }
 
     /**
-     * Sets generateHandle
+     * Sets generate_handle
      *
-     * @param bool $generateHandle Auto generate handle on the form cust-[sequence_number]
+     * @param bool $generate_handle Auto generate handle on the form cust-[sequence_number]
      *
      * @return $this
      */
-    public function setGenerateHandle($generateHandle)
+    public function setGenerateHandle($generate_handle)
     {
-        $this->container['generateHandle'] = $generateHandle;
+        $this->container['generate_handle'] = $generate_handle;
 
         return $this;
     }

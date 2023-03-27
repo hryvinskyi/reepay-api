@@ -91,28 +91,57 @@ class ListApi
      *
      * Get list of add-ons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Add-on handle prefix (optional)
-     * @param  string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
-     * @param  string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
-     * @param  string $name Name of add-on. Used as order line text. (optional)
-     * @param  string $description Optional description of add-on (optional)
-     * @param  string $amount Add-on amount interval. See documentation of intervals. (optional)
-     * @param  string $amountInclVat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $allPlans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Add-on handle prefix (optional)
+     * @param string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
+     * @param string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
+     * @param string $name Name of add-on. Used as order line text. (optional)
+     * @param string $description Optional description of add-on (optional)
+     * @param string $amount Add-on amount interval. See documentation of intervals. (optional)
+     * @param string $amount_incl_vat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $all_plans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\AddOnList
      */
-    public function getAddOnList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = 'active', $type = null, $name = null, $description = null, $amount = null, $amountInclVat = null, $allPlans = null)
-    {
-        list($response) = $this->getAddOnListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $type, $name, $description, $amount, $amountInclVat, $allPlans);
+    public function getAddOnList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = 'active',
+        $type = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $amount_incl_vat = null,
+        $all_plans = null
+    ) {
+        list($response) = $this->getAddOnListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $type,
+            $name,
+            $description,
+            $amount,
+            $amount_incl_vat,
+            $all_plans
+        );
         return $response;
     }
 
@@ -121,29 +150,58 @@ class ListApi
      *
      * Get list of add-ons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Add-on handle prefix (optional)
-     * @param  string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
-     * @param  string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
-     * @param  string $name Name of add-on. Used as order line text. (optional)
-     * @param  string $description Optional description of add-on (optional)
-     * @param  string $amount Add-on amount interval. See documentation of intervals. (optional)
-     * @param  string $amountInclVat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $allPlans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Add-on handle prefix (optional)
+     * @param string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
+     * @param string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
+     * @param string $name Name of add-on. Used as order line text. (optional)
+     * @param string $description Optional description of add-on (optional)
+     * @param string $amount Add-on amount interval. See documentation of intervals. (optional)
+     * @param string $amount_incl_vat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $all_plans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\AddOnList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddOnListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = 'active', $type = null, $name = null, $description = null, $amount = null, $amountInclVat = null, $allPlans = null)
-    {
+    public function getAddOnListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = 'active',
+        $type = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $amount_incl_vat = null,
+        $all_plans = null
+    ) {
         $returnType = '\Reepay\Model\AddOnList';
-        $request = $this->getAddOnListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $type, $name, $description, $amount, $amountInclVat, $allPlans);
+        $request = $this->getAddOnListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $type,
+            $name,
+            $description,
+            $amount,
+            $amount_incl_vat,
+            $all_plans
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -257,27 +315,56 @@ class ListApi
      *
      * Get list of add-ons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Add-on handle prefix (optional)
-     * @param  string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
-     * @param  string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
-     * @param  string $name Name of add-on. Used as order line text. (optional)
-     * @param  string $description Optional description of add-on (optional)
-     * @param  string $amount Add-on amount interval. See documentation of intervals. (optional)
-     * @param  string $amountInclVat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $allPlans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Add-on handle prefix (optional)
+     * @param string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
+     * @param string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
+     * @param string $name Name of add-on. Used as order line text. (optional)
+     * @param string $description Optional description of add-on (optional)
+     * @param string $amount Add-on amount interval. See documentation of intervals. (optional)
+     * @param string $amount_incl_vat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $all_plans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddOnListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = 'active', $type = null, $name = null, $description = null, $amount = null, $amountInclVat = null, $allPlans = null)
-    {
-        return $this->getAddOnListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $type, $name, $description, $amount, $amountInclVat, $allPlans)
+    public function getAddOnListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = 'active',
+        $type = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $amount_incl_vat = null,
+        $all_plans = null
+    ) {
+        return $this->getAddOnListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $type,
+            $name,
+            $description,
+            $amount,
+            $amount_incl_vat,
+            $all_plans
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -290,28 +377,57 @@ class ListApi
      *
      * Get list of add-ons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Add-on handle prefix (optional)
-     * @param  string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
-     * @param  string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
-     * @param  string $name Name of add-on. Used as order line text. (optional)
-     * @param  string $description Optional description of add-on (optional)
-     * @param  string $amount Add-on amount interval. See documentation of intervals. (optional)
-     * @param  string $amountInclVat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $allPlans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Add-on handle prefix (optional)
+     * @param string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
+     * @param string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
+     * @param string $name Name of add-on. Used as order line text. (optional)
+     * @param string $description Optional description of add-on (optional)
+     * @param string $amount Add-on amount interval. See documentation of intervals. (optional)
+     * @param string $amount_incl_vat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $all_plans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddOnListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = 'active', $type = null, $name = null, $description = null, $amount = null, $amountInclVat = null, $allPlans = null)
-    {
+    public function getAddOnListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = 'active',
+        $type = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $amount_incl_vat = null,
+        $all_plans = null
+    ) {
         $returnType = '\Reepay\Model\AddOnList';
-        $request = $this->getAddOnListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $type, $name, $description, $amount, $amountInclVat, $allPlans);
+        $request = $this->getAddOnListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $type,
+            $name,
+            $description,
+            $amount,
+            $amount_incl_vat,
+            $all_plans
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -353,27 +469,40 @@ class ListApi
     /**
      * Create request for operation 'getAddOnList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Add-on handle prefix (optional)
-     * @param  string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
-     * @param  string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
-     * @param  string $name Name of add-on. Used as order line text. (optional)
-     * @param  string $description Optional description of add-on (optional)
-     * @param  string $amount Add-on amount interval. See documentation of intervals. (optional)
-     * @param  string $amountInclVat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $allPlans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Add-on handle prefix (optional)
+     * @param string $state Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60; (optional, default to active)
+     * @param string $type Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60; (optional)
+     * @param string $name Name of add-on. Used as order line text. (optional)
+     * @param string $description Optional description of add-on (optional)
+     * @param string $amount Add-on amount interval. See documentation of intervals. (optional)
+     * @param string $amount_incl_vat Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $all_plans Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAddOnListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = 'active', $type = null, $name = null, $description = null, $amount = null, $amountInclVat = null, $allPlans = null)
-    {
-
+    protected function getAddOnListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = 'active',
+        $type = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $amount_incl_vat = null,
+        $all_plans = null
+    ) {
         $resourcePath = '/v1/list/add_on';
         $formParams = [];
         $queryParams = [];
@@ -398,8 +527,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -430,12 +559,12 @@ class ListApi
             $queryParams['amount'] = ObjectSerializer::toQueryValue($amount, null);
         }
         // query params
-        if ($amountInclVat !== null) {
-            $queryParams['amount_incl_vat'] = ObjectSerializer::toQueryValue($amountInclVat, null);
+        if ($amount_incl_vat !== null) {
+            $queryParams['amount_incl_vat'] = ObjectSerializer::toQueryValue($amount_incl_vat, null);
         }
         // query params
-        if ($allPlans !== null) {
-            $queryParams['all_plans'] = ObjectSerializer::toQueryValue($allPlans, null);
+        if ($all_plans !== null) {
+            $queryParams['all_plans'] = ObjectSerializer::toQueryValue($all_plans, null);
         }
 
 
@@ -512,30 +641,63 @@ class ListApi
      *
      * Get list of charges
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\ChargeList
      */
-    public function getChargeList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null)
-    {
-        list($response) = $this->getChargeListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled);
+    public function getChargeList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null
+    ) {
+        list($response) = $this->getChargeListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled
+        );
         return $response;
     }
 
@@ -544,31 +706,64 @@ class ListApi
      *
      * Get list of charges
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\ChargeList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChargeListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null)
-    {
+    public function getChargeListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null
+    ) {
         $returnType = '\Reepay\Model\ChargeList';
-        $request = $this->getChargeListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled);
+        $request = $this->getChargeListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -682,29 +877,62 @@ class ListApi
      *
      * Get list of charges
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChargeListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null)
-    {
-        return $this->getChargeListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled)
+    public function getChargeListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null
+    ) {
+        return $this->getChargeListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -717,30 +945,63 @@ class ListApi
      *
      * Get list of charges
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChargeListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null)
-    {
+    public function getChargeListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null
+    ) {
         $returnType = '\Reepay\Model\ChargeList';
-        $request = $this->getChargeListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled);
+        $request = $this->getChargeListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -782,29 +1043,44 @@ class ListApi
     /**
      * Create request for operation 'getChargeList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChargeListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null)
-    {
-
+    protected function getChargeListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null
+    ) {
         $resourcePath = '/v1/list/charge';
         $formParams = [];
         $queryParams = [];
@@ -829,8 +1105,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -841,8 +1117,8 @@ class ListApi
             $queryParams['handle'] = ObjectSerializer::toQueryValue($handle, null);
         }
         // query params
-        if ($handleContains !== null) {
-            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handleContains, null);
+        if ($handle_contains !== null) {
+            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handle_contains, null);
         }
         // query params
         if (is_array($state)) {
@@ -852,11 +1128,11 @@ class ListApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if (is_array($excludeState)) {
-            $excludeState = ObjectSerializer::serializeCollection($excludeState, 'multi', true);
+        if (is_array($exclude_state)) {
+            $exclude_state = ObjectSerializer::serializeCollection($exclude_state, 'multi', true);
         }
-        if ($excludeState !== null) {
-            $queryParams['exclude_state'] = ObjectSerializer::toQueryValue($excludeState, null);
+        if ($exclude_state !== null) {
+            $queryParams['exclude_state'] = ObjectSerializer::toQueryValue($exclude_state, null);
         }
         // query params
         if ($customer !== null) {
@@ -867,12 +1143,12 @@ class ListApi
             $queryParams['amount'] = ObjectSerializer::toQueryValue($amount, null);
         }
         // query params
-        if ($refundedAmount !== null) {
-            $queryParams['refunded_amount'] = ObjectSerializer::toQueryValue($refundedAmount, null);
+        if ($refunded_amount !== null) {
+            $queryParams['refunded_amount'] = ObjectSerializer::toQueryValue($refunded_amount, null);
         }
         // query params
-        if ($authorizedAmount !== null) {
-            $queryParams['authorized_amount'] = ObjectSerializer::toQueryValue($authorizedAmount, null);
+        if ($authorized_amount !== null) {
+            $queryParams['authorized_amount'] = ObjectSerializer::toQueryValue($authorized_amount, null);
         }
         // query params
         if (is_array($currency)) {
@@ -882,8 +1158,8 @@ class ListApi
             $queryParams['currency'] = ObjectSerializer::toQueryValue($currency, null);
         }
         // query params
-        if ($partialSettled !== null) {
-            $queryParams['partial_settled'] = ObjectSerializer::toQueryValue($partialSettled, null);
+        if ($partial_settled !== null) {
+            $queryParams['partial_settled'] = ObjectSerializer::toQueryValue($partial_settled, null);
         }
 
 
@@ -960,30 +1236,63 @@ class ListApi
      *
      * Get list of coupons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
-     * @param  string $handle Coupon handle prefix (optional)
-     * @param  string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
-     * @param  string[] $expireReason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
-     * @param  string $discountHandle Handle of discount to use for coupon (optional)
-     * @param  string $code The coupon code. Maximum 128 characters. (optional)
-     * @param  string $name Internal name for the coupon. (optional)
-     * @param  string $allPlans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $maxRedemptions Optional maximum number of times this coupon can be redeemed. (optional)
-     * @param  string $redemptions Number of times the coupon has been redeemed. (optional)
-     * @param  string $validUntil Valid-until period date interval (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
+     * @param string $handle Coupon handle prefix (optional)
+     * @param string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
+     * @param string[] $expire_reason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
+     * @param string $discount_handle Handle of discount to use for coupon (optional)
+     * @param string $code The coupon code. Maximum 128 characters. (optional)
+     * @param string $name Internal name for the coupon. (optional)
+     * @param string $all_plans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $max_redemptions Optional maximum number of times this coupon can be redeemed. (optional)
+     * @param string $redemptions Number of times the coupon has been redeemed. (optional)
+     * @param string $valid_until Valid-until period date interval (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\CouponList
      */
-    public function getCouponList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $type = null, $expireReason = null, $discountHandle = null, $code = null, $name = null, $allPlans = null, $maxRedemptions = null, $redemptions = null, $validUntil = null)
-    {
-        list($response) = $this->getCouponListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $type, $expireReason, $discountHandle, $code, $name, $allPlans, $maxRedemptions, $redemptions, $validUntil);
+    public function getCouponList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $type = null,
+        $expire_reason = null,
+        $discount_handle = null,
+        $code = null,
+        $name = null,
+        $all_plans = null,
+        $max_redemptions = null,
+        $redemptions = null,
+        $valid_until = null
+    ) {
+        list($response) = $this->getCouponListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $type,
+            $expire_reason,
+            $discount_handle,
+            $code,
+            $name,
+            $all_plans,
+            $max_redemptions,
+            $redemptions,
+            $valid_until
+        );
         return $response;
     }
 
@@ -992,31 +1301,64 @@ class ListApi
      *
      * Get list of coupons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
-     * @param  string $handle Coupon handle prefix (optional)
-     * @param  string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
-     * @param  string[] $expireReason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
-     * @param  string $discountHandle Handle of discount to use for coupon (optional)
-     * @param  string $code The coupon code. Maximum 128 characters. (optional)
-     * @param  string $name Internal name for the coupon. (optional)
-     * @param  string $allPlans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $maxRedemptions Optional maximum number of times this coupon can be redeemed. (optional)
-     * @param  string $redemptions Number of times the coupon has been redeemed. (optional)
-     * @param  string $validUntil Valid-until period date interval (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
+     * @param string $handle Coupon handle prefix (optional)
+     * @param string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
+     * @param string[] $expire_reason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
+     * @param string $discount_handle Handle of discount to use for coupon (optional)
+     * @param string $code The coupon code. Maximum 128 characters. (optional)
+     * @param string $name Internal name for the coupon. (optional)
+     * @param string $all_plans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $max_redemptions Optional maximum number of times this coupon can be redeemed. (optional)
+     * @param string $redemptions Number of times the coupon has been redeemed. (optional)
+     * @param string $valid_until Valid-until period date interval (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\CouponList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCouponListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $type = null, $expireReason = null, $discountHandle = null, $code = null, $name = null, $allPlans = null, $maxRedemptions = null, $redemptions = null, $validUntil = null)
-    {
+    public function getCouponListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $type = null,
+        $expire_reason = null,
+        $discount_handle = null,
+        $code = null,
+        $name = null,
+        $all_plans = null,
+        $max_redemptions = null,
+        $redemptions = null,
+        $valid_until = null
+    ) {
         $returnType = '\Reepay\Model\CouponList';
-        $request = $this->getCouponListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $type, $expireReason, $discountHandle, $code, $name, $allPlans, $maxRedemptions, $redemptions, $validUntil);
+        $request = $this->getCouponListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $type,
+            $expire_reason,
+            $discount_handle,
+            $code,
+            $name,
+            $all_plans,
+            $max_redemptions,
+            $redemptions,
+            $valid_until
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1130,29 +1472,62 @@ class ListApi
      *
      * Get list of coupons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
-     * @param  string $handle Coupon handle prefix (optional)
-     * @param  string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
-     * @param  string[] $expireReason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
-     * @param  string $discountHandle Handle of discount to use for coupon (optional)
-     * @param  string $code The coupon code. Maximum 128 characters. (optional)
-     * @param  string $name Internal name for the coupon. (optional)
-     * @param  string $allPlans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $maxRedemptions Optional maximum number of times this coupon can be redeemed. (optional)
-     * @param  string $redemptions Number of times the coupon has been redeemed. (optional)
-     * @param  string $validUntil Valid-until period date interval (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
+     * @param string $handle Coupon handle prefix (optional)
+     * @param string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
+     * @param string[] $expire_reason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
+     * @param string $discount_handle Handle of discount to use for coupon (optional)
+     * @param string $code The coupon code. Maximum 128 characters. (optional)
+     * @param string $name Internal name for the coupon. (optional)
+     * @param string $all_plans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $max_redemptions Optional maximum number of times this coupon can be redeemed. (optional)
+     * @param string $redemptions Number of times the coupon has been redeemed. (optional)
+     * @param string $valid_until Valid-until period date interval (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCouponListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $type = null, $expireReason = null, $discountHandle = null, $code = null, $name = null, $allPlans = null, $maxRedemptions = null, $redemptions = null, $validUntil = null)
-    {
-        return $this->getCouponListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $type, $expireReason, $discountHandle, $code, $name, $allPlans, $maxRedemptions, $redemptions, $validUntil)
+    public function getCouponListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $type = null,
+        $expire_reason = null,
+        $discount_handle = null,
+        $code = null,
+        $name = null,
+        $all_plans = null,
+        $max_redemptions = null,
+        $redemptions = null,
+        $valid_until = null
+    ) {
+        return $this->getCouponListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $type,
+            $expire_reason,
+            $discount_handle,
+            $code,
+            $name,
+            $all_plans,
+            $max_redemptions,
+            $redemptions,
+            $valid_until
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1165,30 +1540,63 @@ class ListApi
      *
      * Get list of coupons
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
-     * @param  string $handle Coupon handle prefix (optional)
-     * @param  string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
-     * @param  string[] $expireReason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
-     * @param  string $discountHandle Handle of discount to use for coupon (optional)
-     * @param  string $code The coupon code. Maximum 128 characters. (optional)
-     * @param  string $name Internal name for the coupon. (optional)
-     * @param  string $allPlans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $maxRedemptions Optional maximum number of times this coupon can be redeemed. (optional)
-     * @param  string $redemptions Number of times the coupon has been redeemed. (optional)
-     * @param  string $validUntil Valid-until period date interval (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
+     * @param string $handle Coupon handle prefix (optional)
+     * @param string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
+     * @param string[] $expire_reason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
+     * @param string $discount_handle Handle of discount to use for coupon (optional)
+     * @param string $code The coupon code. Maximum 128 characters. (optional)
+     * @param string $name Internal name for the coupon. (optional)
+     * @param string $all_plans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $max_redemptions Optional maximum number of times this coupon can be redeemed. (optional)
+     * @param string $redemptions Number of times the coupon has been redeemed. (optional)
+     * @param string $valid_until Valid-until period date interval (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCouponListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $type = null, $expireReason = null, $discountHandle = null, $code = null, $name = null, $allPlans = null, $maxRedemptions = null, $redemptions = null, $validUntil = null)
-    {
+    public function getCouponListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $type = null,
+        $expire_reason = null,
+        $discount_handle = null,
+        $code = null,
+        $name = null,
+        $all_plans = null,
+        $max_redemptions = null,
+        $redemptions = null,
+        $valid_until = null
+    ) {
         $returnType = '\Reepay\Model\CouponList';
-        $request = $this->getCouponListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $type, $expireReason, $discountHandle, $code, $name, $allPlans, $maxRedemptions, $redemptions, $validUntil);
+        $request = $this->getCouponListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $type,
+            $expire_reason,
+            $discount_handle,
+            $code,
+            $name,
+            $all_plans,
+            $max_redemptions,
+            $redemptions,
+            $valid_until
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1230,29 +1638,44 @@ class ListApi
     /**
      * Create request for operation 'getCouponList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
-     * @param  string $handle Coupon handle prefix (optional)
-     * @param  string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
-     * @param  string[] $expireReason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
-     * @param  string $discountHandle Handle of discount to use for coupon (optional)
-     * @param  string $code The coupon code. Maximum 128 characters. (optional)
-     * @param  string $name Internal name for the coupon. (optional)
-     * @param  string $allPlans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $maxRedemptions Optional maximum number of times this coupon can be redeemed. (optional)
-     * @param  string $redemptions Number of times the coupon has been redeemed. (optional)
-     * @param  string $validUntil Valid-until period date interval (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60; (optional, default to created)
+     * @param string $handle Coupon handle prefix (optional)
+     * @param string $type Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60; (optional)
+     * @param string[] $expire_reason The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60; (optional)
+     * @param string $discount_handle Handle of discount to use for coupon (optional)
+     * @param string $code The coupon code. Maximum 128 characters. (optional)
+     * @param string $name Internal name for the coupon. (optional)
+     * @param string $all_plans Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $max_redemptions Optional maximum number of times this coupon can be redeemed. (optional)
+     * @param string $redemptions Number of times the coupon has been redeemed. (optional)
+     * @param string $valid_until Valid-until period date interval (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCouponListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $type = null, $expireReason = null, $discountHandle = null, $code = null, $name = null, $allPlans = null, $maxRedemptions = null, $redemptions = null, $validUntil = null)
-    {
-
+    protected function getCouponListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $type = null,
+        $expire_reason = null,
+        $discount_handle = null,
+        $code = null,
+        $name = null,
+        $all_plans = null,
+        $max_redemptions = null,
+        $redemptions = null,
+        $valid_until = null
+    ) {
         $resourcePath = '/v1/list/coupon';
         $formParams = [];
         $queryParams = [];
@@ -1277,8 +1700,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -1293,15 +1716,15 @@ class ListApi
             $queryParams['type'] = ObjectSerializer::toQueryValue($type, null);
         }
         // query params
-        if (is_array($expireReason)) {
-            $expireReason = ObjectSerializer::serializeCollection($expireReason, 'multi', true);
+        if (is_array($expire_reason)) {
+            $expire_reason = ObjectSerializer::serializeCollection($expire_reason, 'multi', true);
         }
-        if ($expireReason !== null) {
-            $queryParams['expire_reason'] = ObjectSerializer::toQueryValue($expireReason, null);
+        if ($expire_reason !== null) {
+            $queryParams['expire_reason'] = ObjectSerializer::toQueryValue($expire_reason, null);
         }
         // query params
-        if ($discountHandle !== null) {
-            $queryParams['discount_handle'] = ObjectSerializer::toQueryValue($discountHandle, null);
+        if ($discount_handle !== null) {
+            $queryParams['discount_handle'] = ObjectSerializer::toQueryValue($discount_handle, null);
         }
         // query params
         if ($code !== null) {
@@ -1312,20 +1735,20 @@ class ListApi
             $queryParams['name'] = ObjectSerializer::toQueryValue($name, null);
         }
         // query params
-        if ($allPlans !== null) {
-            $queryParams['all_plans'] = ObjectSerializer::toQueryValue($allPlans, null);
+        if ($all_plans !== null) {
+            $queryParams['all_plans'] = ObjectSerializer::toQueryValue($all_plans, null);
         }
         // query params
-        if ($maxRedemptions !== null) {
-            $queryParams['max_redemptions'] = ObjectSerializer::toQueryValue($maxRedemptions, null);
+        if ($max_redemptions !== null) {
+            $queryParams['max_redemptions'] = ObjectSerializer::toQueryValue($max_redemptions, null);
         }
         // query params
         if ($redemptions !== null) {
             $queryParams['redemptions'] = ObjectSerializer::toQueryValue($redemptions, null);
         }
         // query params
-        if ($validUntil !== null) {
-            $queryParams['valid_until'] = ObjectSerializer::toQueryValue($validUntil, null);
+        if ($valid_until !== null) {
+            $queryParams['valid_until'] = ObjectSerializer::toQueryValue($valid_until, null);
         }
 
 
@@ -1402,35 +1825,78 @@ class ListApi
      *
      * Get list of customers
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Customer handle prefix (optional)
-     * @param  string $handleContains Customer handle contains (optional)
-     * @param  string $name Search for name contained in first name concatenated with last name (optional)
-     * @param  string $email Customer email (optional)
-     * @param  string $emailPrefix Customer email prefix (optional)
-     * @param  string $firstName Contained in customer first name (optional)
-     * @param  string $lastName Contained in customer last name (optional)
-     * @param  string $address Contained in customer address (optional)
-     * @param  string $address2 Contained in customer address2 (optional)
-     * @param  string $postalCode Contained in customer postal code (optional)
-     * @param  string $city Contained in customer city (optional)
-     * @param  string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
-     * @param  string $phone Contained in customer phone (optional)
-     * @param  string $company Contained in customer company (optional)
-     * @param  string $vat Contained in customer vat code (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Customer handle prefix (optional)
+     * @param string $handle_contains Customer handle contains (optional)
+     * @param string $name Search for name contained in first name concatenated with last name (optional)
+     * @param string $email Customer email (optional)
+     * @param string $email_prefix Customer email prefix (optional)
+     * @param string $first_name Contained in customer first name (optional)
+     * @param string $last_name Contained in customer last name (optional)
+     * @param string $address Contained in customer address (optional)
+     * @param string $address2 Contained in customer address2 (optional)
+     * @param string $postal_code Contained in customer postal code (optional)
+     * @param string $city Contained in customer city (optional)
+     * @param string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
+     * @param string $phone Contained in customer phone (optional)
+     * @param string $company Contained in customer company (optional)
+     * @param string $vat Contained in customer vat code (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\CustomerList
      */
-    public function getCustomerList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $name = null, $email = null, $emailPrefix = null, $firstName = null, $lastName = null, $address = null, $address2 = null, $postalCode = null, $city = null, $country = null, $phone = null, $company = null, $vat = null)
-    {
-        list($response) = $this->getCustomerListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $name, $email, $emailPrefix, $firstName, $lastName, $address, $address2, $postalCode, $city, $country, $phone, $company, $vat);
+    public function getCustomerList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $name = null,
+        $email = null,
+        $email_prefix = null,
+        $first_name = null,
+        $last_name = null,
+        $address = null,
+        $address2 = null,
+        $postal_code = null,
+        $city = null,
+        $country = null,
+        $phone = null,
+        $company = null,
+        $vat = null
+    ) {
+        list($response) = $this->getCustomerListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $name,
+            $email,
+            $email_prefix,
+            $first_name,
+            $last_name,
+            $address,
+            $address2,
+            $postal_code,
+            $city,
+            $country,
+            $phone,
+            $company,
+            $vat
+        );
         return $response;
     }
 
@@ -1439,36 +1905,79 @@ class ListApi
      *
      * Get list of customers
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Customer handle prefix (optional)
-     * @param  string $handleContains Customer handle contains (optional)
-     * @param  string $name Search for name contained in first name concatenated with last name (optional)
-     * @param  string $email Customer email (optional)
-     * @param  string $emailPrefix Customer email prefix (optional)
-     * @param  string $firstName Contained in customer first name (optional)
-     * @param  string $lastName Contained in customer last name (optional)
-     * @param  string $address Contained in customer address (optional)
-     * @param  string $address2 Contained in customer address2 (optional)
-     * @param  string $postalCode Contained in customer postal code (optional)
-     * @param  string $city Contained in customer city (optional)
-     * @param  string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
-     * @param  string $phone Contained in customer phone (optional)
-     * @param  string $company Contained in customer company (optional)
-     * @param  string $vat Contained in customer vat code (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Customer handle prefix (optional)
+     * @param string $handle_contains Customer handle contains (optional)
+     * @param string $name Search for name contained in first name concatenated with last name (optional)
+     * @param string $email Customer email (optional)
+     * @param string $email_prefix Customer email prefix (optional)
+     * @param string $first_name Contained in customer first name (optional)
+     * @param string $last_name Contained in customer last name (optional)
+     * @param string $address Contained in customer address (optional)
+     * @param string $address2 Contained in customer address2 (optional)
+     * @param string $postal_code Contained in customer postal code (optional)
+     * @param string $city Contained in customer city (optional)
+     * @param string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
+     * @param string $phone Contained in customer phone (optional)
+     * @param string $company Contained in customer company (optional)
+     * @param string $vat Contained in customer vat code (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\CustomerList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCustomerListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $name = null, $email = null, $emailPrefix = null, $firstName = null, $lastName = null, $address = null, $address2 = null, $postalCode = null, $city = null, $country = null, $phone = null, $company = null, $vat = null)
-    {
+    public function getCustomerListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $name = null,
+        $email = null,
+        $email_prefix = null,
+        $first_name = null,
+        $last_name = null,
+        $address = null,
+        $address2 = null,
+        $postal_code = null,
+        $city = null,
+        $country = null,
+        $phone = null,
+        $company = null,
+        $vat = null
+    ) {
         $returnType = '\Reepay\Model\CustomerList';
-        $request = $this->getCustomerListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $name, $email, $emailPrefix, $firstName, $lastName, $address, $address2, $postalCode, $city, $country, $phone, $company, $vat);
+        $request = $this->getCustomerListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $name,
+            $email,
+            $email_prefix,
+            $first_name,
+            $last_name,
+            $address,
+            $address2,
+            $postal_code,
+            $city,
+            $country,
+            $phone,
+            $company,
+            $vat
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1582,34 +2091,77 @@ class ListApi
      *
      * Get list of customers
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Customer handle prefix (optional)
-     * @param  string $handleContains Customer handle contains (optional)
-     * @param  string $name Search for name contained in first name concatenated with last name (optional)
-     * @param  string $email Customer email (optional)
-     * @param  string $emailPrefix Customer email prefix (optional)
-     * @param  string $firstName Contained in customer first name (optional)
-     * @param  string $lastName Contained in customer last name (optional)
-     * @param  string $address Contained in customer address (optional)
-     * @param  string $address2 Contained in customer address2 (optional)
-     * @param  string $postalCode Contained in customer postal code (optional)
-     * @param  string $city Contained in customer city (optional)
-     * @param  string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
-     * @param  string $phone Contained in customer phone (optional)
-     * @param  string $company Contained in customer company (optional)
-     * @param  string $vat Contained in customer vat code (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Customer handle prefix (optional)
+     * @param string $handle_contains Customer handle contains (optional)
+     * @param string $name Search for name contained in first name concatenated with last name (optional)
+     * @param string $email Customer email (optional)
+     * @param string $email_prefix Customer email prefix (optional)
+     * @param string $first_name Contained in customer first name (optional)
+     * @param string $last_name Contained in customer last name (optional)
+     * @param string $address Contained in customer address (optional)
+     * @param string $address2 Contained in customer address2 (optional)
+     * @param string $postal_code Contained in customer postal code (optional)
+     * @param string $city Contained in customer city (optional)
+     * @param string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
+     * @param string $phone Contained in customer phone (optional)
+     * @param string $company Contained in customer company (optional)
+     * @param string $vat Contained in customer vat code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCustomerListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $name = null, $email = null, $emailPrefix = null, $firstName = null, $lastName = null, $address = null, $address2 = null, $postalCode = null, $city = null, $country = null, $phone = null, $company = null, $vat = null)
-    {
-        return $this->getCustomerListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $name, $email, $emailPrefix, $firstName, $lastName, $address, $address2, $postalCode, $city, $country, $phone, $company, $vat)
+    public function getCustomerListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $name = null,
+        $email = null,
+        $email_prefix = null,
+        $first_name = null,
+        $last_name = null,
+        $address = null,
+        $address2 = null,
+        $postal_code = null,
+        $city = null,
+        $country = null,
+        $phone = null,
+        $company = null,
+        $vat = null
+    ) {
+        return $this->getCustomerListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $name,
+            $email,
+            $email_prefix,
+            $first_name,
+            $last_name,
+            $address,
+            $address2,
+            $postal_code,
+            $city,
+            $country,
+            $phone,
+            $company,
+            $vat
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1622,35 +2174,78 @@ class ListApi
      *
      * Get list of customers
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Customer handle prefix (optional)
-     * @param  string $handleContains Customer handle contains (optional)
-     * @param  string $name Search for name contained in first name concatenated with last name (optional)
-     * @param  string $email Customer email (optional)
-     * @param  string $emailPrefix Customer email prefix (optional)
-     * @param  string $firstName Contained in customer first name (optional)
-     * @param  string $lastName Contained in customer last name (optional)
-     * @param  string $address Contained in customer address (optional)
-     * @param  string $address2 Contained in customer address2 (optional)
-     * @param  string $postalCode Contained in customer postal code (optional)
-     * @param  string $city Contained in customer city (optional)
-     * @param  string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
-     * @param  string $phone Contained in customer phone (optional)
-     * @param  string $company Contained in customer company (optional)
-     * @param  string $vat Contained in customer vat code (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Customer handle prefix (optional)
+     * @param string $handle_contains Customer handle contains (optional)
+     * @param string $name Search for name contained in first name concatenated with last name (optional)
+     * @param string $email Customer email (optional)
+     * @param string $email_prefix Customer email prefix (optional)
+     * @param string $first_name Contained in customer first name (optional)
+     * @param string $last_name Contained in customer last name (optional)
+     * @param string $address Contained in customer address (optional)
+     * @param string $address2 Contained in customer address2 (optional)
+     * @param string $postal_code Contained in customer postal code (optional)
+     * @param string $city Contained in customer city (optional)
+     * @param string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
+     * @param string $phone Contained in customer phone (optional)
+     * @param string $company Contained in customer company (optional)
+     * @param string $vat Contained in customer vat code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCustomerListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $name = null, $email = null, $emailPrefix = null, $firstName = null, $lastName = null, $address = null, $address2 = null, $postalCode = null, $city = null, $country = null, $phone = null, $company = null, $vat = null)
-    {
+    public function getCustomerListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $name = null,
+        $email = null,
+        $email_prefix = null,
+        $first_name = null,
+        $last_name = null,
+        $address = null,
+        $address2 = null,
+        $postal_code = null,
+        $city = null,
+        $country = null,
+        $phone = null,
+        $company = null,
+        $vat = null
+    ) {
         $returnType = '\Reepay\Model\CustomerList';
-        $request = $this->getCustomerListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $name, $email, $emailPrefix, $firstName, $lastName, $address, $address2, $postalCode, $city, $country, $phone, $company, $vat);
+        $request = $this->getCustomerListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $name,
+            $email,
+            $email_prefix,
+            $first_name,
+            $last_name,
+            $address,
+            $address2,
+            $postal_code,
+            $city,
+            $country,
+            $phone,
+            $company,
+            $vat
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1692,34 +2287,54 @@ class ListApi
     /**
      * Create request for operation 'getCustomerList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Customer handle prefix (optional)
-     * @param  string $handleContains Customer handle contains (optional)
-     * @param  string $name Search for name contained in first name concatenated with last name (optional)
-     * @param  string $email Customer email (optional)
-     * @param  string $emailPrefix Customer email prefix (optional)
-     * @param  string $firstName Contained in customer first name (optional)
-     * @param  string $lastName Contained in customer last name (optional)
-     * @param  string $address Contained in customer address (optional)
-     * @param  string $address2 Contained in customer address2 (optional)
-     * @param  string $postalCode Contained in customer postal code (optional)
-     * @param  string $city Contained in customer city (optional)
-     * @param  string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
-     * @param  string $phone Contained in customer phone (optional)
-     * @param  string $company Contained in customer company (optional)
-     * @param  string $vat Contained in customer vat code (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Customer handle prefix (optional)
+     * @param string $handle_contains Customer handle contains (optional)
+     * @param string $name Search for name contained in first name concatenated with last name (optional)
+     * @param string $email Customer email (optional)
+     * @param string $email_prefix Customer email prefix (optional)
+     * @param string $first_name Contained in customer first name (optional)
+     * @param string $last_name Contained in customer last name (optional)
+     * @param string $address Contained in customer address (optional)
+     * @param string $address2 Contained in customer address2 (optional)
+     * @param string $postal_code Contained in customer postal code (optional)
+     * @param string $city Contained in customer city (optional)
+     * @param string $country Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (optional)
+     * @param string $phone Contained in customer phone (optional)
+     * @param string $company Contained in customer company (optional)
+     * @param string $vat Contained in customer vat code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCustomerListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $name = null, $email = null, $emailPrefix = null, $firstName = null, $lastName = null, $address = null, $address2 = null, $postalCode = null, $city = null, $country = null, $phone = null, $company = null, $vat = null)
-    {
-
+    protected function getCustomerListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $name = null,
+        $email = null,
+        $email_prefix = null,
+        $first_name = null,
+        $last_name = null,
+        $address = null,
+        $address2 = null,
+        $postal_code = null,
+        $city = null,
+        $country = null,
+        $phone = null,
+        $company = null,
+        $vat = null
+    ) {
         $resourcePath = '/v1/list/customer';
         $formParams = [];
         $queryParams = [];
@@ -1744,8 +2359,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -1756,8 +2371,8 @@ class ListApi
             $queryParams['handle'] = ObjectSerializer::toQueryValue($handle, null);
         }
         // query params
-        if ($handleContains !== null) {
-            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handleContains, null);
+        if ($handle_contains !== null) {
+            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handle_contains, null);
         }
         // query params
         if ($name !== null) {
@@ -1768,16 +2383,16 @@ class ListApi
             $queryParams['email'] = ObjectSerializer::toQueryValue($email, null);
         }
         // query params
-        if ($emailPrefix !== null) {
-            $queryParams['email_prefix'] = ObjectSerializer::toQueryValue($emailPrefix, null);
+        if ($email_prefix !== null) {
+            $queryParams['email_prefix'] = ObjectSerializer::toQueryValue($email_prefix, null);
         }
         // query params
-        if ($firstName !== null) {
-            $queryParams['first_name'] = ObjectSerializer::toQueryValue($firstName, null);
+        if ($first_name !== null) {
+            $queryParams['first_name'] = ObjectSerializer::toQueryValue($first_name, null);
         }
         // query params
-        if ($lastName !== null) {
-            $queryParams['last_name'] = ObjectSerializer::toQueryValue($lastName, null);
+        if ($last_name !== null) {
+            $queryParams['last_name'] = ObjectSerializer::toQueryValue($last_name, null);
         }
         // query params
         if ($address !== null) {
@@ -1788,8 +2403,8 @@ class ListApi
             $queryParams['address2'] = ObjectSerializer::toQueryValue($address2, null);
         }
         // query params
-        if ($postalCode !== null) {
-            $queryParams['postal_code'] = ObjectSerializer::toQueryValue($postalCode, null);
+        if ($postal_code !== null) {
+            $queryParams['postal_code'] = ObjectSerializer::toQueryValue($postal_code, null);
         }
         // query params
         if ($city !== null) {
@@ -1886,28 +2501,57 @@ class ListApi
      *
      * Get list of discounts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Discount handle prefix (optional)
-     * @param  string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
-     * @param  string[] $applyTo Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
-     * @param  string $name Name of discount. Used as order line text. (optional)
-     * @param  string $description Optional description of discount (optional)
-     * @param  string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
-     * @param  string $percentage Percentage discount applied to each applicable order line. (optional)
-     * @param  string $fixedCount Apply discount to a fixed number of invoices (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Discount handle prefix (optional)
+     * @param string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
+     * @param string[] $apply_to Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
+     * @param string $name Name of discount. Used as order line text. (optional)
+     * @param string $description Optional description of discount (optional)
+     * @param string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
+     * @param string $percentage Percentage discount applied to each applicable order line. (optional)
+     * @param string $fixed_count Apply discount to a fixed number of invoices (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\DiscountList
      */
-    public function getDiscountList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $applyTo = null, $name = null, $description = null, $amount = null, $percentage = null, $fixedCount = null)
-    {
-        list($response) = $this->getDiscountListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $applyTo, $name, $description, $amount, $percentage, $fixedCount);
+    public function getDiscountList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $apply_to = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $percentage = null,
+        $fixed_count = null
+    ) {
+        list($response) = $this->getDiscountListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $apply_to,
+            $name,
+            $description,
+            $amount,
+            $percentage,
+            $fixed_count
+        );
         return $response;
     }
 
@@ -1916,29 +2560,58 @@ class ListApi
      *
      * Get list of discounts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Discount handle prefix (optional)
-     * @param  string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
-     * @param  string[] $applyTo Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
-     * @param  string $name Name of discount. Used as order line text. (optional)
-     * @param  string $description Optional description of discount (optional)
-     * @param  string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
-     * @param  string $percentage Percentage discount applied to each applicable order line. (optional)
-     * @param  string $fixedCount Apply discount to a fixed number of invoices (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Discount handle prefix (optional)
+     * @param string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
+     * @param string[] $apply_to Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
+     * @param string $name Name of discount. Used as order line text. (optional)
+     * @param string $description Optional description of discount (optional)
+     * @param string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
+     * @param string $percentage Percentage discount applied to each applicable order line. (optional)
+     * @param string $fixed_count Apply discount to a fixed number of invoices (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\DiscountList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDiscountListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $applyTo = null, $name = null, $description = null, $amount = null, $percentage = null, $fixedCount = null)
-    {
+    public function getDiscountListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $apply_to = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $percentage = null,
+        $fixed_count = null
+    ) {
         $returnType = '\Reepay\Model\DiscountList';
-        $request = $this->getDiscountListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $applyTo, $name, $description, $amount, $percentage, $fixedCount);
+        $request = $this->getDiscountListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $apply_to,
+            $name,
+            $description,
+            $amount,
+            $percentage,
+            $fixed_count
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2052,27 +2725,56 @@ class ListApi
      *
      * Get list of discounts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Discount handle prefix (optional)
-     * @param  string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
-     * @param  string[] $applyTo Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
-     * @param  string $name Name of discount. Used as order line text. (optional)
-     * @param  string $description Optional description of discount (optional)
-     * @param  string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
-     * @param  string $percentage Percentage discount applied to each applicable order line. (optional)
-     * @param  string $fixedCount Apply discount to a fixed number of invoices (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Discount handle prefix (optional)
+     * @param string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
+     * @param string[] $apply_to Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
+     * @param string $name Name of discount. Used as order line text. (optional)
+     * @param string $description Optional description of discount (optional)
+     * @param string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
+     * @param string $percentage Percentage discount applied to each applicable order line. (optional)
+     * @param string $fixed_count Apply discount to a fixed number of invoices (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDiscountListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $applyTo = null, $name = null, $description = null, $amount = null, $percentage = null, $fixedCount = null)
-    {
-        return $this->getDiscountListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $applyTo, $name, $description, $amount, $percentage, $fixedCount)
+    public function getDiscountListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $apply_to = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $percentage = null,
+        $fixed_count = null
+    ) {
+        return $this->getDiscountListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $apply_to,
+            $name,
+            $description,
+            $amount,
+            $percentage,
+            $fixed_count
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2085,28 +2787,57 @@ class ListApi
      *
      * Get list of discounts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Discount handle prefix (optional)
-     * @param  string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
-     * @param  string[] $applyTo Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
-     * @param  string $name Name of discount. Used as order line text. (optional)
-     * @param  string $description Optional description of discount (optional)
-     * @param  string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
-     * @param  string $percentage Percentage discount applied to each applicable order line. (optional)
-     * @param  string $fixedCount Apply discount to a fixed number of invoices (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Discount handle prefix (optional)
+     * @param string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
+     * @param string[] $apply_to Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
+     * @param string $name Name of discount. Used as order line text. (optional)
+     * @param string $description Optional description of discount (optional)
+     * @param string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
+     * @param string $percentage Percentage discount applied to each applicable order line. (optional)
+     * @param string $fixed_count Apply discount to a fixed number of invoices (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDiscountListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $applyTo = null, $name = null, $description = null, $amount = null, $percentage = null, $fixedCount = null)
-    {
+    public function getDiscountListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $apply_to = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $percentage = null,
+        $fixed_count = null
+    ) {
         $returnType = '\Reepay\Model\DiscountList';
-        $request = $this->getDiscountListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $applyTo, $name, $description, $amount, $percentage, $fixedCount);
+        $request = $this->getDiscountListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $apply_to,
+            $name,
+            $description,
+            $amount,
+            $percentage,
+            $fixed_count
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2148,27 +2879,40 @@ class ListApi
     /**
      * Create request for operation 'getDiscountList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
-     * @param  string $handle Discount handle prefix (optional)
-     * @param  string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
-     * @param  string[] $applyTo Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
-     * @param  string $name Name of discount. Used as order line text. (optional)
-     * @param  string $description Optional description of discount (optional)
-     * @param  string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
-     * @param  string $percentage Percentage discount applied to each applicable order line. (optional)
-     * @param  string $fixedCount Apply discount to a fixed number of invoices (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60; (optional, default to created)
+     * @param string $handle Discount handle prefix (optional)
+     * @param string $state State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60; (optional)
+     * @param string[] $apply_to Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined. (optional)
+     * @param string $name Name of discount. Used as order line text. (optional)
+     * @param string $description Optional description of discount (optional)
+     * @param string $amount Fixed amount discount deducted from order line amounts including VAT. (optional)
+     * @param string $percentage Percentage discount applied to each applicable order line. (optional)
+     * @param string $fixed_count Apply discount to a fixed number of invoices (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDiscountListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $applyTo = null, $name = null, $description = null, $amount = null, $percentage = null, $fixedCount = null)
-    {
-
+    protected function getDiscountListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $apply_to = null,
+        $name = null,
+        $description = null,
+        $amount = null,
+        $percentage = null,
+        $fixed_count = null
+    ) {
         $resourcePath = '/v1/list/discount';
         $formParams = [];
         $queryParams = [];
@@ -2193,8 +2937,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -2209,11 +2953,11 @@ class ListApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if (is_array($applyTo)) {
-            $applyTo = ObjectSerializer::serializeCollection($applyTo, 'multi', true);
+        if (is_array($apply_to)) {
+            $apply_to = ObjectSerializer::serializeCollection($apply_to, 'multi', true);
         }
-        if ($applyTo !== null) {
-            $queryParams['apply_to'] = ObjectSerializer::toQueryValue($applyTo, null);
+        if ($apply_to !== null) {
+            $queryParams['apply_to'] = ObjectSerializer::toQueryValue($apply_to, null);
         }
         // query params
         if ($name !== null) {
@@ -2232,8 +2976,8 @@ class ListApi
             $queryParams['percentage'] = ObjectSerializer::toQueryValue($percentage, null);
         }
         // query params
-        if ($fixedCount !== null) {
-            $queryParams['fixed_count'] = ObjectSerializer::toQueryValue($fixedCount, null);
+        if ($fixed_count !== null) {
+            $queryParams['fixed_count'] = ObjectSerializer::toQueryValue($fixed_count, null);
         }
 
 
@@ -2310,37 +3054,84 @@ class ListApi
      *
      * Get list of invoices
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
-     * @param  string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
-     * @param  string $subscription Invoices for subscription by subscription handle (optional)
-     * @param  string $plan Invoices for subscription plan by subscription plan handle (optional)
-     * @param  string $dunningStart Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  string $dunningSuccess Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  int $number Invoice number if subscription invoice (optional)
-     * @param  string $due Due date if due date defined for subscription invoice (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
+     * @param string $subscription Invoices for subscription by subscription handle (optional)
+     * @param string $plan Invoices for subscription plan by subscription plan handle (optional)
+     * @param string $dunning_start Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param string $dunning_success Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param int $number Invoice number if subscription invoice (optional)
+     * @param string $due Due date if due date defined for subscription invoice (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\InvoiceList
      */
-    public function getInvoiceList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null, $type = null, $subscription = null, $plan = null, $dunningStart = null, $dunningSuccess = null, $number = null, $due = null)
-    {
-        list($response) = $this->getInvoiceListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled, $type, $subscription, $plan, $dunningStart, $dunningSuccess, $number, $due);
+    public function getInvoiceList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null,
+        $type = null,
+        $subscription = null,
+        $plan = null,
+        $dunning_start = null,
+        $dunning_success = null,
+        $number = null,
+        $due = null
+    ) {
+        list($response) = $this->getInvoiceListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled,
+            $type,
+            $subscription,
+            $plan,
+            $dunning_start,
+            $dunning_success,
+            $number,
+            $due
+        );
         return $response;
     }
 
@@ -2349,38 +3140,85 @@ class ListApi
      *
      * Get list of invoices
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
-     * @param  string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
-     * @param  string $subscription Invoices for subscription by subscription handle (optional)
-     * @param  string $plan Invoices for subscription plan by subscription plan handle (optional)
-     * @param  string $dunningStart Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  string $dunningSuccess Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  int $number Invoice number if subscription invoice (optional)
-     * @param  string $due Due date if due date defined for subscription invoice (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
+     * @param string $subscription Invoices for subscription by subscription handle (optional)
+     * @param string $plan Invoices for subscription plan by subscription plan handle (optional)
+     * @param string $dunning_start Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param string $dunning_success Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param int $number Invoice number if subscription invoice (optional)
+     * @param string $due Due date if due date defined for subscription invoice (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\InvoiceList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInvoiceListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null, $type = null, $subscription = null, $plan = null, $dunningStart = null, $dunningSuccess = null, $number = null, $due = null)
-    {
+    public function getInvoiceListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null,
+        $type = null,
+        $subscription = null,
+        $plan = null,
+        $dunning_start = null,
+        $dunning_success = null,
+        $number = null,
+        $due = null
+    ) {
         $returnType = '\Reepay\Model\InvoiceList';
-        $request = $this->getInvoiceListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled, $type, $subscription, $plan, $dunningStart, $dunningSuccess, $number, $due);
+        $request = $this->getInvoiceListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled,
+            $type,
+            $subscription,
+            $plan,
+            $dunning_start,
+            $dunning_success,
+            $number,
+            $due
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2494,36 +3332,83 @@ class ListApi
      *
      * Get list of invoices
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
-     * @param  string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
-     * @param  string $subscription Invoices for subscription by subscription handle (optional)
-     * @param  string $plan Invoices for subscription plan by subscription plan handle (optional)
-     * @param  string $dunningStart Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  string $dunningSuccess Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  int $number Invoice number if subscription invoice (optional)
-     * @param  string $due Due date if due date defined for subscription invoice (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
+     * @param string $subscription Invoices for subscription by subscription handle (optional)
+     * @param string $plan Invoices for subscription plan by subscription plan handle (optional)
+     * @param string $dunning_start Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param string $dunning_success Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param int $number Invoice number if subscription invoice (optional)
+     * @param string $due Due date if due date defined for subscription invoice (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvoiceListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null, $type = null, $subscription = null, $plan = null, $dunningStart = null, $dunningSuccess = null, $number = null, $due = null)
-    {
-        return $this->getInvoiceListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled, $type, $subscription, $plan, $dunningStart, $dunningSuccess, $number, $due)
+    public function getInvoiceListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null,
+        $type = null,
+        $subscription = null,
+        $plan = null,
+        $dunning_start = null,
+        $dunning_success = null,
+        $number = null,
+        $due = null
+    ) {
+        return $this->getInvoiceListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled,
+            $type,
+            $subscription,
+            $plan,
+            $dunning_start,
+            $dunning_success,
+            $number,
+            $due
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2536,37 +3421,84 @@ class ListApi
      *
      * Get list of invoices
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
-     * @param  string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
-     * @param  string $subscription Invoices for subscription by subscription handle (optional)
-     * @param  string $plan Invoices for subscription plan by subscription plan handle (optional)
-     * @param  string $dunningStart Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  string $dunningSuccess Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  int $number Invoice number if subscription invoice (optional)
-     * @param  string $due Due date if due date defined for subscription invoice (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
+     * @param string $subscription Invoices for subscription by subscription handle (optional)
+     * @param string $plan Invoices for subscription plan by subscription plan handle (optional)
+     * @param string $dunning_start Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param string $dunning_success Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param int $number Invoice number if subscription invoice (optional)
+     * @param string $due Due date if due date defined for subscription invoice (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvoiceListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null, $type = null, $subscription = null, $plan = null, $dunningStart = null, $dunningSuccess = null, $number = null, $due = null)
-    {
+    public function getInvoiceListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null,
+        $type = null,
+        $subscription = null,
+        $plan = null,
+        $dunning_start = null,
+        $dunning_success = null,
+        $number = null,
+        $due = null
+    ) {
         $returnType = '\Reepay\Model\InvoiceList';
-        $request = $this->getInvoiceListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $state, $excludeState, $customer, $amount, $refundedAmount, $authorizedAmount, $currency, $partialSettled, $type, $subscription, $plan, $dunningStart, $dunningSuccess, $number, $due);
+        $request = $this->getInvoiceListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $state,
+            $exclude_state,
+            $customer,
+            $amount,
+            $refunded_amount,
+            $authorized_amount,
+            $currency,
+            $partial_settled,
+            $type,
+            $subscription,
+            $plan,
+            $dunning_start,
+            $dunning_success,
+            $number,
+            $due
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2608,36 +3540,58 @@ class ListApi
     /**
      * Create request for operation 'getInvoiceList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Invoice handle prefix (optional)
-     * @param  string $handleContains Invoice handle contains (optional)
-     * @param  string[] $state Invoice state, multiple can be defined (optional)
-     * @param  string[] $excludeState Invoice state to exclude, multiple can be defined (optional)
-     * @param  string $customer Invoices for customer by customer handle (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string $authorizedAmount Authorized amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  bool $partialSettled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
-     * @param  string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
-     * @param  string $subscription Invoices for subscription by subscription handle (optional)
-     * @param  string $plan Invoices for subscription plan by subscription plan handle (optional)
-     * @param  string $dunningStart Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  string $dunningSuccess Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
-     * @param  int $number Invoice number if subscription invoice (optional)
-     * @param  string $due Due date if due date defined for subscription invoice (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Invoice handle prefix (optional)
+     * @param string $handle_contains Invoice handle contains (optional)
+     * @param string[] $state Invoice state, multiple can be defined (optional)
+     * @param string[] $exclude_state Invoice state to exclude, multiple can be defined (optional)
+     * @param string $customer Invoices for customer by customer handle (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string $authorized_amount Authorized amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param bool $partial_settled Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned. (optional)
+     * @param string[] $type Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge (optional)
+     * @param string $subscription Invoices for subscription by subscription handle (optional)
+     * @param string $plan Invoices for subscription plan by subscription plan handle (optional)
+     * @param string $dunning_start Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param string $dunning_success Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals. (optional)
+     * @param int $number Invoice number if subscription invoice (optional)
+     * @param string $due Due date if due date defined for subscription invoice (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getInvoiceListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $state = null, $excludeState = null, $customer = null, $amount = null, $refundedAmount = null, $authorizedAmount = null, $currency = null, $partialSettled = null, $type = null, $subscription = null, $plan = null, $dunningStart = null, $dunningSuccess = null, $number = null, $due = null)
-    {
-
+    protected function getInvoiceListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $state = null,
+        $exclude_state = null,
+        $customer = null,
+        $amount = null,
+        $refunded_amount = null,
+        $authorized_amount = null,
+        $currency = null,
+        $partial_settled = null,
+        $type = null,
+        $subscription = null,
+        $plan = null,
+        $dunning_start = null,
+        $dunning_success = null,
+        $number = null,
+        $due = null
+    ) {
         $resourcePath = '/v1/list/invoice';
         $formParams = [];
         $queryParams = [];
@@ -2662,8 +3616,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -2674,8 +3628,8 @@ class ListApi
             $queryParams['handle'] = ObjectSerializer::toQueryValue($handle, null);
         }
         // query params
-        if ($handleContains !== null) {
-            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handleContains, null);
+        if ($handle_contains !== null) {
+            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handle_contains, null);
         }
         // query params
         if (is_array($state)) {
@@ -2685,11 +3639,11 @@ class ListApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if (is_array($excludeState)) {
-            $excludeState = ObjectSerializer::serializeCollection($excludeState, 'multi', true);
+        if (is_array($exclude_state)) {
+            $exclude_state = ObjectSerializer::serializeCollection($exclude_state, 'multi', true);
         }
-        if ($excludeState !== null) {
-            $queryParams['exclude_state'] = ObjectSerializer::toQueryValue($excludeState, null);
+        if ($exclude_state !== null) {
+            $queryParams['exclude_state'] = ObjectSerializer::toQueryValue($exclude_state, null);
         }
         // query params
         if ($customer !== null) {
@@ -2700,12 +3654,12 @@ class ListApi
             $queryParams['amount'] = ObjectSerializer::toQueryValue($amount, null);
         }
         // query params
-        if ($refundedAmount !== null) {
-            $queryParams['refunded_amount'] = ObjectSerializer::toQueryValue($refundedAmount, null);
+        if ($refunded_amount !== null) {
+            $queryParams['refunded_amount'] = ObjectSerializer::toQueryValue($refunded_amount, null);
         }
         // query params
-        if ($authorizedAmount !== null) {
-            $queryParams['authorized_amount'] = ObjectSerializer::toQueryValue($authorizedAmount, null);
+        if ($authorized_amount !== null) {
+            $queryParams['authorized_amount'] = ObjectSerializer::toQueryValue($authorized_amount, null);
         }
         // query params
         if (is_array($currency)) {
@@ -2715,8 +3669,8 @@ class ListApi
             $queryParams['currency'] = ObjectSerializer::toQueryValue($currency, null);
         }
         // query params
-        if ($partialSettled !== null) {
-            $queryParams['partial_settled'] = ObjectSerializer::toQueryValue($partialSettled, null);
+        if ($partial_settled !== null) {
+            $queryParams['partial_settled'] = ObjectSerializer::toQueryValue($partial_settled, null);
         }
         // query params
         if (is_array($type)) {
@@ -2734,12 +3688,12 @@ class ListApi
             $queryParams['plan'] = ObjectSerializer::toQueryValue($plan, null);
         }
         // query params
-        if ($dunningStart !== null) {
-            $queryParams['dunning_start'] = ObjectSerializer::toQueryValue($dunningStart, null);
+        if ($dunning_start !== null) {
+            $queryParams['dunning_start'] = ObjectSerializer::toQueryValue($dunning_start, null);
         }
         // query params
-        if ($dunningSuccess !== null) {
-            $queryParams['dunning_success'] = ObjectSerializer::toQueryValue($dunningSuccess, null);
+        if ($dunning_success !== null) {
+            $queryParams['dunning_success'] = ObjectSerializer::toQueryValue($dunning_success, null);
         }
         // query params
         if ($number !== null) {
@@ -2824,36 +3778,81 @@ class ListApi
      *
      * Get list of payment methods
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $id Payment method id (optional)
-     * @param  string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
-     * @param  string[] $paymentType Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $customer Customer owning payment method (optional)
-     * @param  string $subscription Payment methods for subscription (optional)
-     * @param  string $reference Payment method reference (optional)
-     * @param  string $failed Failed date interval (optional)
-     * @param  string[] $cardType Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Card payment methods with card with prefix (optional)
-     * @param  string $cardPostfix Card payment methods with card number postfix (optional)
-     * @param  string $cardFingerprint Card payment methods with card number postfix (optional)
-     * @param  string[] $cardCountry Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Card payment methods tied to card gateway (optional)
-     * @param  string $cardAgreement Card payment methods tied to card agreement with id (optional)
-     * @param  string $mpsExternalId MobilePay Subscription external id (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $id Payment method id (optional)
+     * @param string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
+     * @param string[] $payment_type Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $customer Customer owning payment method (optional)
+     * @param string $subscription Payment methods for subscription (optional)
+     * @param string $reference Payment method reference (optional)
+     * @param string $failed Failed date interval (optional)
+     * @param string[] $card_type Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Card payment methods with card with prefix (optional)
+     * @param string $card_postfix Card payment methods with card number postfix (optional)
+     * @param string $card_fingerprint Card payment methods with card number postfix (optional)
+     * @param string[] $card_country Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Card payment methods tied to card gateway (optional)
+     * @param string $card_agreement Card payment methods tied to card agreement with id (optional)
+     * @param string $mps_external_id MobilePay Subscription external id (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\PaymentMethodList
      */
-    public function getPaymentMethodList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $id = null, $state = null, $paymentType = null, $customer = null, $subscription = null, $reference = null, $failed = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $cardAgreement = null, $mpsExternalId = null)
-    {
-        list($response) = $this->getPaymentMethodListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $id, $state, $paymentType, $customer, $subscription, $reference, $failed, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $cardAgreement, $mpsExternalId);
+    public function getPaymentMethodList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $id = null,
+        $state = null,
+        $payment_type = null,
+        $customer = null,
+        $subscription = null,
+        $reference = null,
+        $failed = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $card_agreement = null,
+        $mps_external_id = null
+    ) {
+        list($response) = $this->getPaymentMethodListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $id,
+            $state,
+            $payment_type,
+            $customer,
+            $subscription,
+            $reference,
+            $failed,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $card_agreement,
+            $mps_external_id
+        );
         return $response;
     }
 
@@ -2862,37 +3861,82 @@ class ListApi
      *
      * Get list of payment methods
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $id Payment method id (optional)
-     * @param  string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
-     * @param  string[] $paymentType Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $customer Customer owning payment method (optional)
-     * @param  string $subscription Payment methods for subscription (optional)
-     * @param  string $reference Payment method reference (optional)
-     * @param  string $failed Failed date interval (optional)
-     * @param  string[] $cardType Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Card payment methods with card with prefix (optional)
-     * @param  string $cardPostfix Card payment methods with card number postfix (optional)
-     * @param  string $cardFingerprint Card payment methods with card number postfix (optional)
-     * @param  string[] $cardCountry Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Card payment methods tied to card gateway (optional)
-     * @param  string $cardAgreement Card payment methods tied to card agreement with id (optional)
-     * @param  string $mpsExternalId MobilePay Subscription external id (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $id Payment method id (optional)
+     * @param string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
+     * @param string[] $payment_type Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $customer Customer owning payment method (optional)
+     * @param string $subscription Payment methods for subscription (optional)
+     * @param string $reference Payment method reference (optional)
+     * @param string $failed Failed date interval (optional)
+     * @param string[] $card_type Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Card payment methods with card with prefix (optional)
+     * @param string $card_postfix Card payment methods with card number postfix (optional)
+     * @param string $card_fingerprint Card payment methods with card number postfix (optional)
+     * @param string[] $card_country Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Card payment methods tied to card gateway (optional)
+     * @param string $card_agreement Card payment methods tied to card agreement with id (optional)
+     * @param string $mps_external_id MobilePay Subscription external id (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\PaymentMethodList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentMethodListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $id = null, $state = null, $paymentType = null, $customer = null, $subscription = null, $reference = null, $failed = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $cardAgreement = null, $mpsExternalId = null)
-    {
+    public function getPaymentMethodListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $id = null,
+        $state = null,
+        $payment_type = null,
+        $customer = null,
+        $subscription = null,
+        $reference = null,
+        $failed = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $card_agreement = null,
+        $mps_external_id = null
+    ) {
         $returnType = '\Reepay\Model\PaymentMethodList';
-        $request = $this->getPaymentMethodListRequest($from, $to, $interval, $size, $nextPageToken, $range, $id, $state, $paymentType, $customer, $subscription, $reference, $failed, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $cardAgreement, $mpsExternalId);
+        $request = $this->getPaymentMethodListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $id,
+            $state,
+            $payment_type,
+            $customer,
+            $subscription,
+            $reference,
+            $failed,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $card_agreement,
+            $mps_external_id
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3006,35 +4050,80 @@ class ListApi
      *
      * Get list of payment methods
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $id Payment method id (optional)
-     * @param  string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
-     * @param  string[] $paymentType Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $customer Customer owning payment method (optional)
-     * @param  string $subscription Payment methods for subscription (optional)
-     * @param  string $reference Payment method reference (optional)
-     * @param  string $failed Failed date interval (optional)
-     * @param  string[] $cardType Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Card payment methods with card with prefix (optional)
-     * @param  string $cardPostfix Card payment methods with card number postfix (optional)
-     * @param  string $cardFingerprint Card payment methods with card number postfix (optional)
-     * @param  string[] $cardCountry Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Card payment methods tied to card gateway (optional)
-     * @param  string $cardAgreement Card payment methods tied to card agreement with id (optional)
-     * @param  string $mpsExternalId MobilePay Subscription external id (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $id Payment method id (optional)
+     * @param string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
+     * @param string[] $payment_type Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $customer Customer owning payment method (optional)
+     * @param string $subscription Payment methods for subscription (optional)
+     * @param string $reference Payment method reference (optional)
+     * @param string $failed Failed date interval (optional)
+     * @param string[] $card_type Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Card payment methods with card with prefix (optional)
+     * @param string $card_postfix Card payment methods with card number postfix (optional)
+     * @param string $card_fingerprint Card payment methods with card number postfix (optional)
+     * @param string[] $card_country Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Card payment methods tied to card gateway (optional)
+     * @param string $card_agreement Card payment methods tied to card agreement with id (optional)
+     * @param string $mps_external_id MobilePay Subscription external id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPaymentMethodListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $id = null, $state = null, $paymentType = null, $customer = null, $subscription = null, $reference = null, $failed = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $cardAgreement = null, $mpsExternalId = null)
-    {
-        return $this->getPaymentMethodListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $id, $state, $paymentType, $customer, $subscription, $reference, $failed, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $cardAgreement, $mpsExternalId)
+    public function getPaymentMethodListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $id = null,
+        $state = null,
+        $payment_type = null,
+        $customer = null,
+        $subscription = null,
+        $reference = null,
+        $failed = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $card_agreement = null,
+        $mps_external_id = null
+    ) {
+        return $this->getPaymentMethodListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $id,
+            $state,
+            $payment_type,
+            $customer,
+            $subscription,
+            $reference,
+            $failed,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $card_agreement,
+            $mps_external_id
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3047,36 +4136,81 @@ class ListApi
      *
      * Get list of payment methods
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $id Payment method id (optional)
-     * @param  string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
-     * @param  string[] $paymentType Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $customer Customer owning payment method (optional)
-     * @param  string $subscription Payment methods for subscription (optional)
-     * @param  string $reference Payment method reference (optional)
-     * @param  string $failed Failed date interval (optional)
-     * @param  string[] $cardType Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Card payment methods with card with prefix (optional)
-     * @param  string $cardPostfix Card payment methods with card number postfix (optional)
-     * @param  string $cardFingerprint Card payment methods with card number postfix (optional)
-     * @param  string[] $cardCountry Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Card payment methods tied to card gateway (optional)
-     * @param  string $cardAgreement Card payment methods tied to card agreement with id (optional)
-     * @param  string $mpsExternalId MobilePay Subscription external id (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $id Payment method id (optional)
+     * @param string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
+     * @param string[] $payment_type Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $customer Customer owning payment method (optional)
+     * @param string $subscription Payment methods for subscription (optional)
+     * @param string $reference Payment method reference (optional)
+     * @param string $failed Failed date interval (optional)
+     * @param string[] $card_type Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Card payment methods with card with prefix (optional)
+     * @param string $card_postfix Card payment methods with card number postfix (optional)
+     * @param string $card_fingerprint Card payment methods with card number postfix (optional)
+     * @param string[] $card_country Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Card payment methods tied to card gateway (optional)
+     * @param string $card_agreement Card payment methods tied to card agreement with id (optional)
+     * @param string $mps_external_id MobilePay Subscription external id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPaymentMethodListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $id = null, $state = null, $paymentType = null, $customer = null, $subscription = null, $reference = null, $failed = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $cardAgreement = null, $mpsExternalId = null)
-    {
+    public function getPaymentMethodListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $id = null,
+        $state = null,
+        $payment_type = null,
+        $customer = null,
+        $subscription = null,
+        $reference = null,
+        $failed = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $card_agreement = null,
+        $mps_external_id = null
+    ) {
         $returnType = '\Reepay\Model\PaymentMethodList';
-        $request = $this->getPaymentMethodListRequest($from, $to, $interval, $size, $nextPageToken, $range, $id, $state, $paymentType, $customer, $subscription, $reference, $failed, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $cardAgreement, $mpsExternalId);
+        $request = $this->getPaymentMethodListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $id,
+            $state,
+            $payment_type,
+            $customer,
+            $subscription,
+            $reference,
+            $failed,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $card_agreement,
+            $mps_external_id
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3118,35 +4252,56 @@ class ListApi
     /**
      * Create request for operation 'getPaymentMethodList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
-     * @param  string $id Payment method id (optional)
-     * @param  string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
-     * @param  string[] $paymentType Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $customer Customer owning payment method (optional)
-     * @param  string $subscription Payment methods for subscription (optional)
-     * @param  string $reference Payment method reference (optional)
-     * @param  string $failed Failed date interval (optional)
-     * @param  string[] $cardType Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Card payment methods with card with prefix (optional)
-     * @param  string $cardPostfix Card payment methods with card number postfix (optional)
-     * @param  string $cardFingerprint Card payment methods with card number postfix (optional)
-     * @param  string[] $cardCountry Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Card payment methods tied to card gateway (optional)
-     * @param  string $cardAgreement Card payment methods tied to card agreement with id (optional)
-     * @param  string $mpsExternalId MobilePay Subscription external id (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Can only be the default &#x60;created&#x60; (optional, default to created)
+     * @param string $id Payment method id (optional)
+     * @param string[] $state Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60; (optional)
+     * @param string[] $payment_type Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $customer Customer owning payment method (optional)
+     * @param string $subscription Payment methods for subscription (optional)
+     * @param string $reference Payment method reference (optional)
+     * @param string $failed Failed date interval (optional)
+     * @param string[] $card_type Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Card payment methods with card with prefix (optional)
+     * @param string $card_postfix Card payment methods with card number postfix (optional)
+     * @param string $card_fingerprint Card payment methods with card number postfix (optional)
+     * @param string[] $card_country Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Card payment methods tied to card gateway (optional)
+     * @param string $card_agreement Card payment methods tied to card agreement with id (optional)
+     * @param string $mps_external_id MobilePay Subscription external id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPaymentMethodListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $id = null, $state = null, $paymentType = null, $customer = null, $subscription = null, $reference = null, $failed = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $cardAgreement = null, $mpsExternalId = null)
-    {
-
+    protected function getPaymentMethodListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $id = null,
+        $state = null,
+        $payment_type = null,
+        $customer = null,
+        $subscription = null,
+        $reference = null,
+        $failed = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $card_agreement = null,
+        $mps_external_id = null
+    ) {
         $resourcePath = '/v1/list/payment_method';
         $formParams = [];
         $queryParams = [];
@@ -3171,8 +4326,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -3190,11 +4345,11 @@ class ListApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if (is_array($paymentType)) {
-            $paymentType = ObjectSerializer::serializeCollection($paymentType, 'multi', true);
+        if (is_array($payment_type)) {
+            $payment_type = ObjectSerializer::serializeCollection($payment_type, 'multi', true);
         }
-        if ($paymentType !== null) {
-            $queryParams['payment_type'] = ObjectSerializer::toQueryValue($paymentType, null);
+        if ($payment_type !== null) {
+            $queryParams['payment_type'] = ObjectSerializer::toQueryValue($payment_type, null);
         }
         // query params
         if ($customer !== null) {
@@ -3213,49 +4368,49 @@ class ListApi
             $queryParams['failed'] = ObjectSerializer::toQueryValue($failed, null);
         }
         // query params
-        if (is_array($cardType)) {
-            $cardType = ObjectSerializer::serializeCollection($cardType, 'multi', true);
+        if (is_array($card_type)) {
+            $card_type = ObjectSerializer::serializeCollection($card_type, 'multi', true);
         }
-        if ($cardType !== null) {
-            $queryParams['card_type'] = ObjectSerializer::toQueryValue($cardType, null);
-        }
-        // query params
-        if (is_array($transactionCardType)) {
-            $transactionCardType = ObjectSerializer::serializeCollection($transactionCardType, 'multi', true);
-        }
-        if ($transactionCardType !== null) {
-            $queryParams['transaction_card_type'] = ObjectSerializer::toQueryValue($transactionCardType, null);
+        if ($card_type !== null) {
+            $queryParams['card_type'] = ObjectSerializer::toQueryValue($card_type, null);
         }
         // query params
-        if ($cardPrefix !== null) {
-            $queryParams['card_prefix'] = ObjectSerializer::toQueryValue($cardPrefix, null);
+        if (is_array($transaction_card_type)) {
+            $transaction_card_type = ObjectSerializer::serializeCollection($transaction_card_type, 'multi', true);
+        }
+        if ($transaction_card_type !== null) {
+            $queryParams['transaction_card_type'] = ObjectSerializer::toQueryValue($transaction_card_type, null);
         }
         // query params
-        if ($cardPostfix !== null) {
-            $queryParams['card_postfix'] = ObjectSerializer::toQueryValue($cardPostfix, null);
+        if ($card_prefix !== null) {
+            $queryParams['card_prefix'] = ObjectSerializer::toQueryValue($card_prefix, null);
         }
         // query params
-        if ($cardFingerprint !== null) {
-            $queryParams['card_fingerprint'] = ObjectSerializer::toQueryValue($cardFingerprint, null);
+        if ($card_postfix !== null) {
+            $queryParams['card_postfix'] = ObjectSerializer::toQueryValue($card_postfix, null);
         }
         // query params
-        if (is_array($cardCountry)) {
-            $cardCountry = ObjectSerializer::serializeCollection($cardCountry, 'multi', true);
-        }
-        if ($cardCountry !== null) {
-            $queryParams['card_country'] = ObjectSerializer::toQueryValue($cardCountry, null);
+        if ($card_fingerprint !== null) {
+            $queryParams['card_fingerprint'] = ObjectSerializer::toQueryValue($card_fingerprint, null);
         }
         // query params
-        if ($cardGateway !== null) {
-            $queryParams['card_gateway'] = ObjectSerializer::toQueryValue($cardGateway, null);
+        if (is_array($card_country)) {
+            $card_country = ObjectSerializer::serializeCollection($card_country, 'multi', true);
+        }
+        if ($card_country !== null) {
+            $queryParams['card_country'] = ObjectSerializer::toQueryValue($card_country, null);
         }
         // query params
-        if ($cardAgreement !== null) {
-            $queryParams['card_agreement'] = ObjectSerializer::toQueryValue($cardAgreement, null);
+        if ($card_gateway !== null) {
+            $queryParams['card_gateway'] = ObjectSerializer::toQueryValue($card_gateway, null);
         }
         // query params
-        if ($mpsExternalId !== null) {
-            $queryParams['mps_external_id'] = ObjectSerializer::toQueryValue($mpsExternalId, null);
+        if ($card_agreement !== null) {
+            $queryParams['card_agreement'] = ObjectSerializer::toQueryValue($card_agreement, null);
+        }
+        // query params
+        if ($mps_external_id !== null) {
+            $queryParams['mps_external_id'] = ObjectSerializer::toQueryValue($mps_external_id, null);
         }
 
 
@@ -3332,31 +4487,66 @@ class ListApi
      *
      * Get list of payouts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Payout handle prefix (optional)
-     * @param  string $handleContains Payout handle contains (optional)
-     * @param  string $customer Payouts for customer by customer handle (optional)
-     * @param  string[] $state Payout transaction state, multiple can be defined (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $card Payouts for saved card (optional)
-     * @param  string $cardType Payouts for card type (optional)
-     * @param  string $cardPrefix Payouts for card with prefix (optional)
-     * @param  string $cardPostfix Payouts for card with postfix (optional)
-     * @param  string $cardFingerprint Payouts for card with postfix (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Payout handle prefix (optional)
+     * @param string $handle_contains Payout handle contains (optional)
+     * @param string $customer Payouts for customer by customer handle (optional)
+     * @param string[] $state Payout transaction state, multiple can be defined (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $card Payouts for saved card (optional)
+     * @param string $card_type Payouts for card type (optional)
+     * @param string $card_prefix Payouts for card with prefix (optional)
+     * @param string $card_postfix Payouts for card with postfix (optional)
+     * @param string $card_fingerprint Payouts for card with postfix (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\PayoutList
      */
-    public function getPayoutList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $customer = null, $state = null, $amount = null, $currency = null, $card = null, $cardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null)
-    {
-        list($response) = $this->getPayoutListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $state, $amount, $currency, $card, $cardType, $cardPrefix, $cardPostfix, $cardFingerprint);
+    public function getPayoutList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $customer = null,
+        $state = null,
+        $amount = null,
+        $currency = null,
+        $card = null,
+        $card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null
+    ) {
+        list($response) = $this->getPayoutListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $customer,
+            $state,
+            $amount,
+            $currency,
+            $card,
+            $card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint
+        );
         return $response;
     }
 
@@ -3365,32 +4555,67 @@ class ListApi
      *
      * Get list of payouts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Payout handle prefix (optional)
-     * @param  string $handleContains Payout handle contains (optional)
-     * @param  string $customer Payouts for customer by customer handle (optional)
-     * @param  string[] $state Payout transaction state, multiple can be defined (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $card Payouts for saved card (optional)
-     * @param  string $cardType Payouts for card type (optional)
-     * @param  string $cardPrefix Payouts for card with prefix (optional)
-     * @param  string $cardPostfix Payouts for card with postfix (optional)
-     * @param  string $cardFingerprint Payouts for card with postfix (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Payout handle prefix (optional)
+     * @param string $handle_contains Payout handle contains (optional)
+     * @param string $customer Payouts for customer by customer handle (optional)
+     * @param string[] $state Payout transaction state, multiple can be defined (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $card Payouts for saved card (optional)
+     * @param string $card_type Payouts for card type (optional)
+     * @param string $card_prefix Payouts for card with prefix (optional)
+     * @param string $card_postfix Payouts for card with postfix (optional)
+     * @param string $card_fingerprint Payouts for card with postfix (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\PayoutList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPayoutListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $customer = null, $state = null, $amount = null, $currency = null, $card = null, $cardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null)
-    {
+    public function getPayoutListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $customer = null,
+        $state = null,
+        $amount = null,
+        $currency = null,
+        $card = null,
+        $card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null
+    ) {
         $returnType = '\Reepay\Model\PayoutList';
-        $request = $this->getPayoutListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $state, $amount, $currency, $card, $cardType, $cardPrefix, $cardPostfix, $cardFingerprint);
+        $request = $this->getPayoutListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $customer,
+            $state,
+            $amount,
+            $currency,
+            $card,
+            $card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3504,30 +4729,65 @@ class ListApi
      *
      * Get list of payouts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Payout handle prefix (optional)
-     * @param  string $handleContains Payout handle contains (optional)
-     * @param  string $customer Payouts for customer by customer handle (optional)
-     * @param  string[] $state Payout transaction state, multiple can be defined (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $card Payouts for saved card (optional)
-     * @param  string $cardType Payouts for card type (optional)
-     * @param  string $cardPrefix Payouts for card with prefix (optional)
-     * @param  string $cardPostfix Payouts for card with postfix (optional)
-     * @param  string $cardFingerprint Payouts for card with postfix (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Payout handle prefix (optional)
+     * @param string $handle_contains Payout handle contains (optional)
+     * @param string $customer Payouts for customer by customer handle (optional)
+     * @param string[] $state Payout transaction state, multiple can be defined (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $card Payouts for saved card (optional)
+     * @param string $card_type Payouts for card type (optional)
+     * @param string $card_prefix Payouts for card with prefix (optional)
+     * @param string $card_postfix Payouts for card with postfix (optional)
+     * @param string $card_fingerprint Payouts for card with postfix (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPayoutListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $customer = null, $state = null, $amount = null, $currency = null, $card = null, $cardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null)
-    {
-        return $this->getPayoutListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $state, $amount, $currency, $card, $cardType, $cardPrefix, $cardPostfix, $cardFingerprint)
+    public function getPayoutListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $customer = null,
+        $state = null,
+        $amount = null,
+        $currency = null,
+        $card = null,
+        $card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null
+    ) {
+        return $this->getPayoutListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $customer,
+            $state,
+            $amount,
+            $currency,
+            $card,
+            $card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3540,31 +4800,66 @@ class ListApi
      *
      * Get list of payouts
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Payout handle prefix (optional)
-     * @param  string $handleContains Payout handle contains (optional)
-     * @param  string $customer Payouts for customer by customer handle (optional)
-     * @param  string[] $state Payout transaction state, multiple can be defined (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $card Payouts for saved card (optional)
-     * @param  string $cardType Payouts for card type (optional)
-     * @param  string $cardPrefix Payouts for card with prefix (optional)
-     * @param  string $cardPostfix Payouts for card with postfix (optional)
-     * @param  string $cardFingerprint Payouts for card with postfix (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Payout handle prefix (optional)
+     * @param string $handle_contains Payout handle contains (optional)
+     * @param string $customer Payouts for customer by customer handle (optional)
+     * @param string[] $state Payout transaction state, multiple can be defined (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $card Payouts for saved card (optional)
+     * @param string $card_type Payouts for card type (optional)
+     * @param string $card_prefix Payouts for card with prefix (optional)
+     * @param string $card_postfix Payouts for card with postfix (optional)
+     * @param string $card_fingerprint Payouts for card with postfix (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPayoutListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $customer = null, $state = null, $amount = null, $currency = null, $card = null, $cardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null)
-    {
+    public function getPayoutListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $customer = null,
+        $state = null,
+        $amount = null,
+        $currency = null,
+        $card = null,
+        $card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null
+    ) {
         $returnType = '\Reepay\Model\PayoutList';
-        $request = $this->getPayoutListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $handleContains, $customer, $state, $amount, $currency, $card, $cardType, $cardPrefix, $cardPostfix, $cardFingerprint);
+        $request = $this->getPayoutListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $handle_contains,
+            $customer,
+            $state,
+            $amount,
+            $currency,
+            $card,
+            $card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3606,30 +4901,46 @@ class ListApi
     /**
      * Create request for operation 'getPayoutList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string $handle Payout handle prefix (optional)
-     * @param  string $handleContains Payout handle contains (optional)
-     * @param  string $customer Payouts for customer by customer handle (optional)
-     * @param  string[] $state Payout transaction state, multiple can be defined (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $card Payouts for saved card (optional)
-     * @param  string $cardType Payouts for card type (optional)
-     * @param  string $cardPrefix Payouts for card with prefix (optional)
-     * @param  string $cardPostfix Payouts for card with postfix (optional)
-     * @param  string $cardFingerprint Payouts for card with postfix (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string $handle Payout handle prefix (optional)
+     * @param string $handle_contains Payout handle contains (optional)
+     * @param string $customer Payouts for customer by customer handle (optional)
+     * @param string[] $state Payout transaction state, multiple can be defined (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $currency Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $card Payouts for saved card (optional)
+     * @param string $card_type Payouts for card type (optional)
+     * @param string $card_prefix Payouts for card with prefix (optional)
+     * @param string $card_postfix Payouts for card with postfix (optional)
+     * @param string $card_fingerprint Payouts for card with postfix (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPayoutListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $handleContains = null, $customer = null, $state = null, $amount = null, $currency = null, $card = null, $cardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null)
-    {
-
+    protected function getPayoutListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $handle_contains = null,
+        $customer = null,
+        $state = null,
+        $amount = null,
+        $currency = null,
+        $card = null,
+        $card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null
+    ) {
         $resourcePath = '/v1/list/payout';
         $formParams = [];
         $queryParams = [];
@@ -3654,8 +4965,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -3666,8 +4977,8 @@ class ListApi
             $queryParams['handle'] = ObjectSerializer::toQueryValue($handle, null);
         }
         // query params
-        if ($handleContains !== null) {
-            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handleContains, null);
+        if ($handle_contains !== null) {
+            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handle_contains, null);
         }
         // query params
         if ($customer !== null) {
@@ -3696,20 +5007,20 @@ class ListApi
             $queryParams['card'] = ObjectSerializer::toQueryValue($card, null);
         }
         // query params
-        if ($cardType !== null) {
-            $queryParams['card_type'] = ObjectSerializer::toQueryValue($cardType, null);
+        if ($card_type !== null) {
+            $queryParams['card_type'] = ObjectSerializer::toQueryValue($card_type, null);
         }
         // query params
-        if ($cardPrefix !== null) {
-            $queryParams['card_prefix'] = ObjectSerializer::toQueryValue($cardPrefix, null);
+        if ($card_prefix !== null) {
+            $queryParams['card_prefix'] = ObjectSerializer::toQueryValue($card_prefix, null);
         }
         // query params
-        if ($cardPostfix !== null) {
-            $queryParams['card_postfix'] = ObjectSerializer::toQueryValue($cardPostfix, null);
+        if ($card_postfix !== null) {
+            $queryParams['card_postfix'] = ObjectSerializer::toQueryValue($card_postfix, null);
         }
         // query params
-        if ($cardFingerprint !== null) {
-            $queryParams['card_fingerprint'] = ObjectSerializer::toQueryValue($cardFingerprint, null);
+        if ($card_fingerprint !== null) {
+            $queryParams['card_fingerprint'] = ObjectSerializer::toQueryValue($card_fingerprint, null);
         }
 
 
@@ -3786,51 +5097,126 @@ class ListApi
      *
      * Get list of plans
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Plan handle prefix (optional)
-     * @param  string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $scheduleType Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $partialPeriodHandling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $setupFeeHandling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $fixedLifeTimeUnit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string[] $trialIntervalUnit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string $dunningPlanHandle Dunning plan handle (optional)
-     * @param  string $name Name of plan. Used as order line text. (optional)
-     * @param  string $description Optional description of plan (optional)
-     * @param  string $setupFeeText Optional invoice order text for the setup fee (optional)
-     * @param  string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
-     * @param  string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
-     * @param  string $fixedCount Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
-     * @param  string $fixedLifeTimeLength The number of days/months for which the subscription is live. (optional)
-     * @param  string $trialIntervalLength The number of days/months for how long the free trial period lasts (optional)
-     * @param  string $intervalLength The length of subscription intervals. E.g. every second month or every 14 days. (optional)
-     * @param  string $scheduleFixedDay The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
-     * @param  string $renewalReminderEmailDays Number of days before next billing to send a reminder email. (optional)
-     * @param  string $trialReminderEmailDays Number of days before end of trial to send a reminder email. (optional)
-     * @param string $baseMonth Base month for fixed month schedule type (optional)
-     * @param string $noticePeriods Number of notice periods before a cancellation. (optional)
-     * @param string $minimumProratedAmount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
-     * @param string $fixationPeriods Number of paid periods before expiring after a cancellation. (optional)
-     * @param string $setupFee Optional one-time setup fee billed with the first invoice. (optional)
-     * @param string $amountInclVat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $noticePeriodsAfterCurrent Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixationPeriodsFull If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $includeZeroAmount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $partialProrationDays If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixedTrialDays Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Plan handle prefix (optional)
+     * @param string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
+     * @param string[] $schedule_type Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
+     * @param string[] $partial_period_handling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
+     * @param string[] $setup_fee_handling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
+     * @param string[] $fixed_life_time_unit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string[] $trial_interval_unit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string $dunning_plan_handle Dunning plan handle (optional)
+     * @param string $name Name of plan. Used as order line text. (optional)
+     * @param string $description Optional description of plan (optional)
+     * @param string $setup_fee_text Optional invoice order text for the setup fee (optional)
+     * @param string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
+     * @param string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
+     * @param string $fixed_count Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
+     * @param string $fixed_life_time_length The number of days/months for which the subscription is live. (optional)
+     * @param string $trial_interval_length The number of days/months for how long the free trial period lasts (optional)
+     * @param string $interval_length The length of subscription intervals. E.g. every second month or every 14 days. (optional)
+     * @param string $schedule_fixed_day The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
+     * @param string $renewal_reminder_email_days Number of days before next billing to send a reminder email. (optional)
+     * @param string $trial_reminder_email_days Number of days before end of trial to send a reminder email. (optional)
+     * @param string $base_month Base month for fixed month schedule type (optional)
+     * @param string $notice_periods Number of notice periods before a cancellation. (optional)
+     * @param string $minimum_prorated_amount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
+     * @param string $fixation_periods Number of paid periods before expiring after a cancellation. (optional)
+     * @param string $setup_fee Optional one-time setup fee billed with the first invoice. (optional)
+     * @param string $amount_incl_vat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $notice_periods_after_current Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixation_periods_full If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $include_zero_amount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $partial_proration_days If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixed_trial_days Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\PlanList
      */
-    public function getPlanList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $scheduleType = null, $partialPeriodHandling = null, $setupFeeHandling = null, $fixedLifeTimeUnit = null, $trialIntervalUnit = null, $dunningPlanHandle = null, $name = null, $description = null, $setupFeeText = null, $amount = null, $quantity = null, $fixedCount = null, $fixedLifeTimeLength = null, $trialIntervalLength = null, $intervalLength = null, $scheduleFixedDay = null, $renewalReminderEmailDays = null, $trialReminderEmailDays = null, $baseMonth = null, $noticePeriods = null, $minimumProratedAmount = null, $fixationPeriods = null, $setupFee = null, $amountInclVat = null, $noticePeriodsAfterCurrent = null, $fixationPeriodsFull = null, $includeZeroAmount = null, $partialProrationDays = null, $fixedTrialDays = null)
-    {
-        list($response) = $this->getPlanListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $scheduleType, $partialPeriodHandling, $setupFeeHandling, $fixedLifeTimeUnit, $trialIntervalUnit, $dunningPlanHandle, $name, $description, $setupFeeText, $amount, $quantity, $fixedCount, $fixedLifeTimeLength, $trialIntervalLength, $intervalLength, $scheduleFixedDay, $renewalReminderEmailDays, $trialReminderEmailDays, $baseMonth, $noticePeriods, $minimumProratedAmount, $fixationPeriods, $setupFee, $amountInclVat, $noticePeriodsAfterCurrent, $fixationPeriodsFull, $includeZeroAmount, $partialProrationDays, $fixedTrialDays);
+    public function getPlanList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $schedule_type = null,
+        $partial_period_handling = null,
+        $setup_fee_handling = null,
+        $fixed_life_time_unit = null,
+        $trial_interval_unit = null,
+        $dunning_plan_handle = null,
+        $name = null,
+        $description = null,
+        $setup_fee_text = null,
+        $amount = null,
+        $quantity = null,
+        $fixed_count = null,
+        $fixed_life_time_length = null,
+        $trial_interval_length = null,
+        $interval_length = null,
+        $schedule_fixed_day = null,
+        $renewal_reminder_email_days = null,
+        $trial_reminder_email_days = null,
+        $base_month = null,
+        $notice_periods = null,
+        $minimum_prorated_amount = null,
+        $fixation_periods = null,
+        $setup_fee = null,
+        $amount_incl_vat = null,
+        $notice_periods_after_current = null,
+        $fixation_periods_full = null,
+        $include_zero_amount = null,
+        $partial_proration_days = null,
+        $fixed_trial_days = null
+    ) {
+        list($response) = $this->getPlanListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $schedule_type,
+            $partial_period_handling,
+            $setup_fee_handling,
+            $fixed_life_time_unit,
+            $trial_interval_unit,
+            $dunning_plan_handle,
+            $name,
+            $description,
+            $setup_fee_text,
+            $amount,
+            $quantity,
+            $fixed_count,
+            $fixed_life_time_length,
+            $trial_interval_length,
+            $interval_length,
+            $schedule_fixed_day,
+            $renewal_reminder_email_days,
+            $trial_reminder_email_days,
+            $base_month,
+            $notice_periods,
+            $minimum_prorated_amount,
+            $fixation_periods,
+            $setup_fee,
+            $amount_incl_vat,
+            $notice_periods_after_current,
+            $fixation_periods_full,
+            $include_zero_amount,
+            $partial_proration_days,
+            $fixed_trial_days
+        );
         return $response;
     }
 
@@ -3839,52 +5225,127 @@ class ListApi
      *
      * Get list of plans
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Plan handle prefix (optional)
-     * @param  string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $scheduleType Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $partialPeriodHandling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $setupFeeHandling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $fixedLifeTimeUnit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string[] $trialIntervalUnit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string $dunningPlanHandle Dunning plan handle (optional)
-     * @param  string $name Name of plan. Used as order line text. (optional)
-     * @param  string $description Optional description of plan (optional)
-     * @param  string $setupFeeText Optional invoice order text for the setup fee (optional)
-     * @param  string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
-     * @param  string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
-     * @param  string $fixedCount Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
-     * @param  string $fixedLifeTimeLength The number of days/months for which the subscription is live. (optional)
-     * @param  string $trialIntervalLength The number of days/months for how long the free trial period lasts (optional)
-     * @param  string $intervalLength The length of subscription intervals. E.g. every second month or every 14 days. (optional)
-     * @param  string $scheduleFixedDay The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
-     * @param  string $renewalReminderEmailDays Number of days before next billing to send a reminder email. (optional)
-     * @param  string $trialReminderEmailDays Number of days before end of trial to send a reminder email. (optional)
-     * @param string $baseMonth Base month for fixed month schedule type (optional)
-     * @param string $noticePeriods Number of notice periods before a cancellation. (optional)
-     * @param string $minimumProratedAmount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
-     * @param string $fixationPeriods Number of paid periods before expiring after a cancellation. (optional)
-     * @param string $setupFee Optional one-time setup fee billed with the first invoice. (optional)
-     * @param string $amountInclVat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $noticePeriodsAfterCurrent Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixationPeriodsFull If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $includeZeroAmount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $partialProrationDays If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixedTrialDays Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Plan handle prefix (optional)
+     * @param string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
+     * @param string[] $schedule_type Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
+     * @param string[] $partial_period_handling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
+     * @param string[] $setup_fee_handling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
+     * @param string[] $fixed_life_time_unit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string[] $trial_interval_unit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string $dunning_plan_handle Dunning plan handle (optional)
+     * @param string $name Name of plan. Used as order line text. (optional)
+     * @param string $description Optional description of plan (optional)
+     * @param string $setup_fee_text Optional invoice order text for the setup fee (optional)
+     * @param string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
+     * @param string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
+     * @param string $fixed_count Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
+     * @param string $fixed_life_time_length The number of days/months for which the subscription is live. (optional)
+     * @param string $trial_interval_length The number of days/months for how long the free trial period lasts (optional)
+     * @param string $interval_length The length of subscription intervals. E.g. every second month or every 14 days. (optional)
+     * @param string $schedule_fixed_day The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
+     * @param string $renewal_reminder_email_days Number of days before next billing to send a reminder email. (optional)
+     * @param string $trial_reminder_email_days Number of days before end of trial to send a reminder email. (optional)
+     * @param string $base_month Base month for fixed month schedule type (optional)
+     * @param string $notice_periods Number of notice periods before a cancellation. (optional)
+     * @param string $minimum_prorated_amount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
+     * @param string $fixation_periods Number of paid periods before expiring after a cancellation. (optional)
+     * @param string $setup_fee Optional one-time setup fee billed with the first invoice. (optional)
+     * @param string $amount_incl_vat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $notice_periods_after_current Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixation_periods_full If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $include_zero_amount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $partial_proration_days If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixed_trial_days Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\PlanList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPlanListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $scheduleType = null, $partialPeriodHandling = null, $setupFeeHandling = null, $fixedLifeTimeUnit = null, $trialIntervalUnit = null, $dunningPlanHandle = null, $name = null, $description = null, $setupFeeText = null, $amount = null, $quantity = null, $fixedCount = null, $fixedLifeTimeLength = null, $trialIntervalLength = null, $intervalLength = null, $scheduleFixedDay = null, $renewalReminderEmailDays = null, $trialReminderEmailDays = null, $baseMonth = null, $noticePeriods = null, $minimumProratedAmount = null, $fixationPeriods = null, $setupFee = null, $amountInclVat = null, $noticePeriodsAfterCurrent = null, $fixationPeriodsFull = null, $includeZeroAmount = null, $partialProrationDays = null, $fixedTrialDays = null)
-    {
+    public function getPlanListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $schedule_type = null,
+        $partial_period_handling = null,
+        $setup_fee_handling = null,
+        $fixed_life_time_unit = null,
+        $trial_interval_unit = null,
+        $dunning_plan_handle = null,
+        $name = null,
+        $description = null,
+        $setup_fee_text = null,
+        $amount = null,
+        $quantity = null,
+        $fixed_count = null,
+        $fixed_life_time_length = null,
+        $trial_interval_length = null,
+        $interval_length = null,
+        $schedule_fixed_day = null,
+        $renewal_reminder_email_days = null,
+        $trial_reminder_email_days = null,
+        $base_month = null,
+        $notice_periods = null,
+        $minimum_prorated_amount = null,
+        $fixation_periods = null,
+        $setup_fee = null,
+        $amount_incl_vat = null,
+        $notice_periods_after_current = null,
+        $fixation_periods_full = null,
+        $include_zero_amount = null,
+        $partial_proration_days = null,
+        $fixed_trial_days = null
+    ) {
         $returnType = '\Reepay\Model\PlanList';
-        $request = $this->getPlanListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $scheduleType, $partialPeriodHandling, $setupFeeHandling, $fixedLifeTimeUnit, $trialIntervalUnit, $dunningPlanHandle, $name, $description, $setupFeeText, $amount, $quantity, $fixedCount, $fixedLifeTimeLength, $trialIntervalLength, $intervalLength, $scheduleFixedDay, $renewalReminderEmailDays, $trialReminderEmailDays, $baseMonth, $noticePeriods, $minimumProratedAmount, $fixationPeriods, $setupFee, $amountInclVat, $noticePeriodsAfterCurrent, $fixationPeriodsFull, $includeZeroAmount, $partialProrationDays, $fixedTrialDays);
+        $request = $this->getPlanListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $schedule_type,
+            $partial_period_handling,
+            $setup_fee_handling,
+            $fixed_life_time_unit,
+            $trial_interval_unit,
+            $dunning_plan_handle,
+            $name,
+            $description,
+            $setup_fee_text,
+            $amount,
+            $quantity,
+            $fixed_count,
+            $fixed_life_time_length,
+            $trial_interval_length,
+            $interval_length,
+            $schedule_fixed_day,
+            $renewal_reminder_email_days,
+            $trial_reminder_email_days,
+            $base_month,
+            $notice_periods,
+            $minimum_prorated_amount,
+            $fixation_periods,
+            $setup_fee,
+            $amount_incl_vat,
+            $notice_periods_after_current,
+            $fixation_periods_full,
+            $include_zero_amount,
+            $partial_proration_days,
+            $fixed_trial_days
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3998,50 +5459,125 @@ class ListApi
      *
      * Get list of plans
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Plan handle prefix (optional)
-     * @param  string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $scheduleType Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $partialPeriodHandling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $setupFeeHandling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $fixedLifeTimeUnit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string[] $trialIntervalUnit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string $dunningPlanHandle Dunning plan handle (optional)
-     * @param  string $name Name of plan. Used as order line text. (optional)
-     * @param  string $description Optional description of plan (optional)
-     * @param  string $setupFeeText Optional invoice order text for the setup fee (optional)
-     * @param  string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
-     * @param  string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
-     * @param  string $fixedCount Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
-     * @param  string $fixedLifeTimeLength The number of days/months for which the subscription is live. (optional)
-     * @param  string $trialIntervalLength The number of days/months for how long the free trial period lasts (optional)
-     * @param  string $intervalLength The length of subscription intervals. E.g. every second month or every 14 days. (optional)
-     * @param  string $scheduleFixedDay The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
-     * @param  string $renewalReminderEmailDays Number of days before next billing to send a reminder email. (optional)
-     * @param  string $trialReminderEmailDays Number of days before end of trial to send a reminder email. (optional)
-     * @param string $baseMonth Base month for fixed month schedule type (optional)
-     * @param string $noticePeriods Number of notice periods before a cancellation. (optional)
-     * @param string $minimumProratedAmount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
-     * @param string $fixationPeriods Number of paid periods before expiring after a cancellation. (optional)
-     * @param string $setupFee Optional one-time setup fee billed with the first invoice. (optional)
-     * @param string $amountInclVat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $noticePeriodsAfterCurrent Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixationPeriodsFull If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $includeZeroAmount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $partialProrationDays If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixedTrialDays Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Plan handle prefix (optional)
+     * @param string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
+     * @param string[] $schedule_type Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
+     * @param string[] $partial_period_handling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
+     * @param string[] $setup_fee_handling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
+     * @param string[] $fixed_life_time_unit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string[] $trial_interval_unit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string $dunning_plan_handle Dunning plan handle (optional)
+     * @param string $name Name of plan. Used as order line text. (optional)
+     * @param string $description Optional description of plan (optional)
+     * @param string $setup_fee_text Optional invoice order text for the setup fee (optional)
+     * @param string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
+     * @param string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
+     * @param string $fixed_count Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
+     * @param string $fixed_life_time_length The number of days/months for which the subscription is live. (optional)
+     * @param string $trial_interval_length The number of days/months for how long the free trial period lasts (optional)
+     * @param string $interval_length The length of subscription intervals. E.g. every second month or every 14 days. (optional)
+     * @param string $schedule_fixed_day The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
+     * @param string $renewal_reminder_email_days Number of days before next billing to send a reminder email. (optional)
+     * @param string $trial_reminder_email_days Number of days before end of trial to send a reminder email. (optional)
+     * @param string $base_month Base month for fixed month schedule type (optional)
+     * @param string $notice_periods Number of notice periods before a cancellation. (optional)
+     * @param string $minimum_prorated_amount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
+     * @param string $fixation_periods Number of paid periods before expiring after a cancellation. (optional)
+     * @param string $setup_fee Optional one-time setup fee billed with the first invoice. (optional)
+     * @param string $amount_incl_vat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $notice_periods_after_current Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixation_periods_full If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $include_zero_amount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $partial_proration_days If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixed_trial_days Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPlanListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $scheduleType = null, $partialPeriodHandling = null, $setupFeeHandling = null, $fixedLifeTimeUnit = null, $trialIntervalUnit = null, $dunningPlanHandle = null, $name = null, $description = null, $setupFeeText = null, $amount = null, $quantity = null, $fixedCount = null, $fixedLifeTimeLength = null, $trialIntervalLength = null, $intervalLength = null, $scheduleFixedDay = null, $renewalReminderEmailDays = null, $trialReminderEmailDays = null, $baseMonth = null, $noticePeriods = null, $minimumProratedAmount = null, $fixationPeriods = null, $setupFee = null, $amountInclVat = null, $noticePeriodsAfterCurrent = null, $fixationPeriodsFull = null, $includeZeroAmount = null, $partialProrationDays = null, $fixedTrialDays = null)
-    {
-        return $this->getPlanListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $scheduleType, $partialPeriodHandling, $setupFeeHandling, $fixedLifeTimeUnit, $trialIntervalUnit, $dunningPlanHandle, $name, $description, $setupFeeText, $amount, $quantity, $fixedCount, $fixedLifeTimeLength, $trialIntervalLength, $intervalLength, $scheduleFixedDay, $renewalReminderEmailDays, $trialReminderEmailDays, $baseMonth, $noticePeriods, $minimumProratedAmount, $fixationPeriods, $setupFee, $amountInclVat, $noticePeriodsAfterCurrent, $fixationPeriodsFull, $includeZeroAmount, $partialProrationDays, $fixedTrialDays)
+    public function getPlanListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $schedule_type = null,
+        $partial_period_handling = null,
+        $setup_fee_handling = null,
+        $fixed_life_time_unit = null,
+        $trial_interval_unit = null,
+        $dunning_plan_handle = null,
+        $name = null,
+        $description = null,
+        $setup_fee_text = null,
+        $amount = null,
+        $quantity = null,
+        $fixed_count = null,
+        $fixed_life_time_length = null,
+        $trial_interval_length = null,
+        $interval_length = null,
+        $schedule_fixed_day = null,
+        $renewal_reminder_email_days = null,
+        $trial_reminder_email_days = null,
+        $base_month = null,
+        $notice_periods = null,
+        $minimum_prorated_amount = null,
+        $fixation_periods = null,
+        $setup_fee = null,
+        $amount_incl_vat = null,
+        $notice_periods_after_current = null,
+        $fixation_periods_full = null,
+        $include_zero_amount = null,
+        $partial_proration_days = null,
+        $fixed_trial_days = null
+    ) {
+        return $this->getPlanListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $schedule_type,
+            $partial_period_handling,
+            $setup_fee_handling,
+            $fixed_life_time_unit,
+            $trial_interval_unit,
+            $dunning_plan_handle,
+            $name,
+            $description,
+            $setup_fee_text,
+            $amount,
+            $quantity,
+            $fixed_count,
+            $fixed_life_time_length,
+            $trial_interval_length,
+            $interval_length,
+            $schedule_fixed_day,
+            $renewal_reminder_email_days,
+            $trial_reminder_email_days,
+            $base_month,
+            $notice_periods,
+            $minimum_prorated_amount,
+            $fixation_periods,
+            $setup_fee,
+            $amount_incl_vat,
+            $notice_periods_after_current,
+            $fixation_periods_full,
+            $include_zero_amount,
+            $partial_proration_days,
+            $fixed_trial_days
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4054,51 +5590,126 @@ class ListApi
      *
      * Get list of plans
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Plan handle prefix (optional)
-     * @param  string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $scheduleType Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $partialPeriodHandling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $setupFeeHandling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $fixedLifeTimeUnit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string[] $trialIntervalUnit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string $dunningPlanHandle Dunning plan handle (optional)
-     * @param  string $name Name of plan. Used as order line text. (optional)
-     * @param  string $description Optional description of plan (optional)
-     * @param  string $setupFeeText Optional invoice order text for the setup fee (optional)
-     * @param  string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
-     * @param  string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
-     * @param  string $fixedCount Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
-     * @param  string $fixedLifeTimeLength The number of days/months for which the subscription is live. (optional)
-     * @param  string $trialIntervalLength The number of days/months for how long the free trial period lasts (optional)
-     * @param  string $intervalLength The length of subscription intervals. E.g. every second month or every 14 days. (optional)
-     * @param  string $scheduleFixedDay The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
-     * @param  string $renewalReminderEmailDays Number of days before next billing to send a reminder email. (optional)
-     * @param  string $trialReminderEmailDays Number of days before end of trial to send a reminder email. (optional)
-     * @param string $baseMonth Base month for fixed month schedule type (optional)
-     * @param string $noticePeriods Number of notice periods before a cancellation. (optional)
-     * @param string $minimumProratedAmount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
-     * @param string $fixationPeriods Number of paid periods before expiring after a cancellation. (optional)
-     * @param string $setupFee Optional one-time setup fee billed with the first invoice. (optional)
-     * @param string $amountInclVat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $noticePeriodsAfterCurrent Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixationPeriodsFull If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $includeZeroAmount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $partialProrationDays If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixedTrialDays Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Plan handle prefix (optional)
+     * @param string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
+     * @param string[] $schedule_type Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
+     * @param string[] $partial_period_handling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
+     * @param string[] $setup_fee_handling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
+     * @param string[] $fixed_life_time_unit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string[] $trial_interval_unit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string $dunning_plan_handle Dunning plan handle (optional)
+     * @param string $name Name of plan. Used as order line text. (optional)
+     * @param string $description Optional description of plan (optional)
+     * @param string $setup_fee_text Optional invoice order text for the setup fee (optional)
+     * @param string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
+     * @param string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
+     * @param string $fixed_count Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
+     * @param string $fixed_life_time_length The number of days/months for which the subscription is live. (optional)
+     * @param string $trial_interval_length The number of days/months for how long the free trial period lasts (optional)
+     * @param string $interval_length The length of subscription intervals. E.g. every second month or every 14 days. (optional)
+     * @param string $schedule_fixed_day The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
+     * @param string $renewal_reminder_email_days Number of days before next billing to send a reminder email. (optional)
+     * @param string $trial_reminder_email_days Number of days before end of trial to send a reminder email. (optional)
+     * @param string $base_month Base month for fixed month schedule type (optional)
+     * @param string $notice_periods Number of notice periods before a cancellation. (optional)
+     * @param string $minimum_prorated_amount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
+     * @param string $fixation_periods Number of paid periods before expiring after a cancellation. (optional)
+     * @param string $setup_fee Optional one-time setup fee billed with the first invoice. (optional)
+     * @param string $amount_incl_vat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $notice_periods_after_current Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixation_periods_full If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $include_zero_amount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $partial_proration_days If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixed_trial_days Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPlanListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $scheduleType = null, $partialPeriodHandling = null, $setupFeeHandling = null, $fixedLifeTimeUnit = null, $trialIntervalUnit = null, $dunningPlanHandle = null, $name = null, $description = null, $setupFeeText = null, $amount = null, $quantity = null, $fixedCount = null, $fixedLifeTimeLength = null, $trialIntervalLength = null, $intervalLength = null, $scheduleFixedDay = null, $renewalReminderEmailDays = null, $trialReminderEmailDays = null, $baseMonth = null, $noticePeriods = null, $minimumProratedAmount = null, $fixationPeriods = null, $setupFee = null, $amountInclVat = null, $noticePeriodsAfterCurrent = null, $fixationPeriodsFull = null, $includeZeroAmount = null, $partialProrationDays = null, $fixedTrialDays = null)
-    {
+    public function getPlanListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $schedule_type = null,
+        $partial_period_handling = null,
+        $setup_fee_handling = null,
+        $fixed_life_time_unit = null,
+        $trial_interval_unit = null,
+        $dunning_plan_handle = null,
+        $name = null,
+        $description = null,
+        $setup_fee_text = null,
+        $amount = null,
+        $quantity = null,
+        $fixed_count = null,
+        $fixed_life_time_length = null,
+        $trial_interval_length = null,
+        $interval_length = null,
+        $schedule_fixed_day = null,
+        $renewal_reminder_email_days = null,
+        $trial_reminder_email_days = null,
+        $base_month = null,
+        $notice_periods = null,
+        $minimum_prorated_amount = null,
+        $fixation_periods = null,
+        $setup_fee = null,
+        $amount_incl_vat = null,
+        $notice_periods_after_current = null,
+        $fixation_periods_full = null,
+        $include_zero_amount = null,
+        $partial_proration_days = null,
+        $fixed_trial_days = null
+    ) {
         $returnType = '\Reepay\Model\PlanList';
-        $request = $this->getPlanListRequest($from, $to, $interval, $size, $nextPageToken, $range, $handle, $state, $scheduleType, $partialPeriodHandling, $setupFeeHandling, $fixedLifeTimeUnit, $trialIntervalUnit, $dunningPlanHandle, $name, $description, $setupFeeText, $amount, $quantity, $fixedCount, $fixedLifeTimeLength, $trialIntervalLength, $intervalLength, $scheduleFixedDay, $renewalReminderEmailDays, $trialReminderEmailDays, $baseMonth, $noticePeriods, $minimumProratedAmount, $fixationPeriods, $setupFee, $amountInclVat, $noticePeriodsAfterCurrent, $fixationPeriodsFull, $includeZeroAmount, $partialProrationDays, $fixedTrialDays);
+        $request = $this->getPlanListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $handle,
+            $state,
+            $schedule_type,
+            $partial_period_handling,
+            $setup_fee_handling,
+            $fixed_life_time_unit,
+            $trial_interval_unit,
+            $dunning_plan_handle,
+            $name,
+            $description,
+            $setup_fee_text,
+            $amount,
+            $quantity,
+            $fixed_count,
+            $fixed_life_time_length,
+            $trial_interval_length,
+            $interval_length,
+            $schedule_fixed_day,
+            $renewal_reminder_email_days,
+            $trial_reminder_email_days,
+            $base_month,
+            $notice_periods,
+            $minimum_prorated_amount,
+            $fixation_periods,
+            $setup_fee,
+            $amount_incl_vat,
+            $notice_periods_after_current,
+            $fixation_periods_full,
+            $include_zero_amount,
+            $partial_proration_days,
+            $fixed_trial_days
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4140,50 +5751,86 @@ class ListApi
     /**
      * Create request for operation 'getPlanList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
-     * @param  string $handle Plan handle prefix (optional)
-     * @param  string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $scheduleType Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $partialPeriodHandling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $setupFeeHandling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
-     * @param  string[] $fixedLifeTimeUnit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string[] $trialIntervalUnit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
-     * @param  string $dunningPlanHandle Dunning plan handle (optional)
-     * @param  string $name Name of plan. Used as order line text. (optional)
-     * @param  string $description Optional description of plan (optional)
-     * @param  string $setupFeeText Optional invoice order text for the setup fee (optional)
-     * @param  string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
-     * @param  string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
-     * @param  string $fixedCount Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
-     * @param  string $fixedLifeTimeLength The number of days/months for which the subscription is live. (optional)
-     * @param  string $trialIntervalLength The number of days/months for how long the free trial period lasts (optional)
-     * @param  string $intervalLength The length of subscription intervals. E.g. every second month or every 14 days. (optional)
-     * @param  string $scheduleFixedDay The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
-     * @param  string $renewalReminderEmailDays Number of days before next billing to send a reminder email. (optional)
-     * @param  string $trialReminderEmailDays Number of days before end of trial to send a reminder email. (optional)
-     * @param string $baseMonth Base month for fixed month schedule type (optional)
-     * @param string $noticePeriods Number of notice periods before a cancellation. (optional)
-     * @param string $minimumProratedAmount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
-     * @param string $fixationPeriods Number of paid periods before expiring after a cancellation. (optional)
-     * @param string $setupFee Optional one-time setup fee billed with the first invoice. (optional)
-     * @param string $amountInclVat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $noticePeriodsAfterCurrent Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixationPeriodsFull If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $includeZeroAmount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $partialProrationDays If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param string $fixedTrialDays Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute for time limit. Accepted value &#x60;created&#x60; (optional, default to created)
+     * @param string $handle Plan handle prefix (optional)
+     * @param string[] $state State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined. (optional)
+     * @param string[] $schedule_type Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined. (optional)
+     * @param string[] $partial_period_handling The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined. (optional)
+     * @param string[] $setup_fee_handling How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined. (optional)
+     * @param string[] $fixed_life_time_unit Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string[] $trial_interval_unit Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60; (optional)
+     * @param string $dunning_plan_handle Dunning plan handle (optional)
+     * @param string $name Name of plan. Used as order line text. (optional)
+     * @param string $description Optional description of plan (optional)
+     * @param string $setup_fee_text Optional invoice order text for the setup fee (optional)
+     * @param string $amount Fixed amount plan deducted from order line amounts including VAT. (optional)
+     * @param string $quantity Optional default quantity of the subscription plan product for new subscriptions. Default is 1. (optional)
+     * @param string $fixed_count Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. (optional)
+     * @param string $fixed_life_time_length The number of days/months for which the subscription is live. (optional)
+     * @param string $trial_interval_length The number of days/months for how long the free trial period lasts (optional)
+     * @param string $interval_length The length of subscription intervals. E.g. every second month or every 14 days. (optional)
+     * @param string $schedule_fixed_day The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7 (optional)
+     * @param string $renewal_reminder_email_days Number of days before next billing to send a reminder email. (optional)
+     * @param string $trial_reminder_email_days Number of days before end of trial to send a reminder email. (optional)
+     * @param string $base_month Base month for fixed month schedule type (optional)
+     * @param string $notice_periods Number of notice periods before a cancellation. (optional)
+     * @param string $minimum_prorated_amount Minimum amount for prorated invoice. If the amount is less, 0 is charged (optional)
+     * @param string $fixation_periods Number of paid periods before expiring after a cancellation. (optional)
+     * @param string $setup_fee Optional one-time setup fee billed with the first invoice. (optional)
+     * @param string $amount_incl_vat Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $notice_periods_after_current Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixation_periods_full If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $include_zero_amount Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $partial_proration_days If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $fixed_trial_days Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPlanListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $handle = null, $state = null, $scheduleType = null, $partialPeriodHandling = null, $setupFeeHandling = null, $fixedLifeTimeUnit = null, $trialIntervalUnit = null, $dunningPlanHandle = null, $name = null, $description = null, $setupFeeText = null, $amount = null, $quantity = null, $fixedCount = null, $fixedLifeTimeLength = null, $trialIntervalLength = null, $intervalLength = null, $scheduleFixedDay = null, $renewalReminderEmailDays = null, $trialReminderEmailDays = null, $baseMonth = null, $noticePeriods = null, $minimumProratedAmount = null, $fixationPeriods = null, $setupFee = null, $amountInclVat = null, $noticePeriodsAfterCurrent = null, $fixationPeriodsFull = null, $includeZeroAmount = null, $partialProrationDays = null, $fixedTrialDays = null)
-    {
-
+    protected function getPlanListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $handle = null,
+        $state = null,
+        $schedule_type = null,
+        $partial_period_handling = null,
+        $setup_fee_handling = null,
+        $fixed_life_time_unit = null,
+        $trial_interval_unit = null,
+        $dunning_plan_handle = null,
+        $name = null,
+        $description = null,
+        $setup_fee_text = null,
+        $amount = null,
+        $quantity = null,
+        $fixed_count = null,
+        $fixed_life_time_length = null,
+        $trial_interval_length = null,
+        $interval_length = null,
+        $schedule_fixed_day = null,
+        $renewal_reminder_email_days = null,
+        $trial_reminder_email_days = null,
+        $base_month = null,
+        $notice_periods = null,
+        $minimum_prorated_amount = null,
+        $fixation_periods = null,
+        $setup_fee = null,
+        $amount_incl_vat = null,
+        $notice_periods_after_current = null,
+        $fixation_periods_full = null,
+        $include_zero_amount = null,
+        $partial_proration_days = null,
+        $fixed_trial_days = null
+    ) {
         $resourcePath = '/v1/list/plan';
         $formParams = [];
         $queryParams = [];
@@ -4208,8 +5855,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -4227,43 +5874,43 @@ class ListApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if (is_array($scheduleType)) {
-            $scheduleType = ObjectSerializer::serializeCollection($scheduleType, 'multi', true);
+        if (is_array($schedule_type)) {
+            $schedule_type = ObjectSerializer::serializeCollection($schedule_type, 'multi', true);
         }
-        if ($scheduleType !== null) {
-            $queryParams['schedule_type'] = ObjectSerializer::toQueryValue($scheduleType, null);
-        }
-        // query params
-        if (is_array($partialPeriodHandling)) {
-            $partialPeriodHandling = ObjectSerializer::serializeCollection($partialPeriodHandling, 'multi', true);
-        }
-        if ($partialPeriodHandling !== null) {
-            $queryParams['partial_period_handling'] = ObjectSerializer::toQueryValue($partialPeriodHandling, null);
+        if ($schedule_type !== null) {
+            $queryParams['schedule_type'] = ObjectSerializer::toQueryValue($schedule_type, null);
         }
         // query params
-        if (is_array($setupFeeHandling)) {
-            $setupFeeHandling = ObjectSerializer::serializeCollection($setupFeeHandling, 'multi', true);
+        if (is_array($partial_period_handling)) {
+            $partial_period_handling = ObjectSerializer::serializeCollection($partial_period_handling, 'multi', true);
         }
-        if ($setupFeeHandling !== null) {
-            $queryParams['setup_fee_handling'] = ObjectSerializer::toQueryValue($setupFeeHandling, null);
-        }
-        // query params
-        if (is_array($fixedLifeTimeUnit)) {
-            $fixedLifeTimeUnit = ObjectSerializer::serializeCollection($fixedLifeTimeUnit, 'multi', true);
-        }
-        if ($fixedLifeTimeUnit !== null) {
-            $queryParams['fixed_life_time_unit'] = ObjectSerializer::toQueryValue($fixedLifeTimeUnit, null);
+        if ($partial_period_handling !== null) {
+            $queryParams['partial_period_handling'] = ObjectSerializer::toQueryValue($partial_period_handling, null);
         }
         // query params
-        if (is_array($trialIntervalUnit)) {
-            $trialIntervalUnit = ObjectSerializer::serializeCollection($trialIntervalUnit, 'multi', true);
+        if (is_array($setup_fee_handling)) {
+            $setup_fee_handling = ObjectSerializer::serializeCollection($setup_fee_handling, 'multi', true);
         }
-        if ($trialIntervalUnit !== null) {
-            $queryParams['trial_interval_unit'] = ObjectSerializer::toQueryValue($trialIntervalUnit, null);
+        if ($setup_fee_handling !== null) {
+            $queryParams['setup_fee_handling'] = ObjectSerializer::toQueryValue($setup_fee_handling, null);
         }
         // query params
-        if ($dunningPlanHandle !== null) {
-            $queryParams['dunning_plan_handle'] = ObjectSerializer::toQueryValue($dunningPlanHandle, null);
+        if (is_array($fixed_life_time_unit)) {
+            $fixed_life_time_unit = ObjectSerializer::serializeCollection($fixed_life_time_unit, 'multi', true);
+        }
+        if ($fixed_life_time_unit !== null) {
+            $queryParams['fixed_life_time_unit'] = ObjectSerializer::toQueryValue($fixed_life_time_unit, null);
+        }
+        // query params
+        if (is_array($trial_interval_unit)) {
+            $trial_interval_unit = ObjectSerializer::serializeCollection($trial_interval_unit, 'multi', true);
+        }
+        if ($trial_interval_unit !== null) {
+            $queryParams['trial_interval_unit'] = ObjectSerializer::toQueryValue($trial_interval_unit, null);
+        }
+        // query params
+        if ($dunning_plan_handle !== null) {
+            $queryParams['dunning_plan_handle'] = ObjectSerializer::toQueryValue($dunning_plan_handle, null);
         }
         // query params
         if ($name !== null) {
@@ -4274,8 +5921,8 @@ class ListApi
             $queryParams['description'] = ObjectSerializer::toQueryValue($description, null);
         }
         // query params
-        if ($setupFeeText !== null) {
-            $queryParams['setup_fee_text'] = ObjectSerializer::toQueryValue($setupFeeText, null);
+        if ($setup_fee_text !== null) {
+            $queryParams['setup_fee_text'] = ObjectSerializer::toQueryValue($setup_fee_text, null);
         }
         // query params
         if ($amount !== null) {
@@ -4286,82 +5933,85 @@ class ListApi
             $queryParams['quantity'] = ObjectSerializer::toQueryValue($quantity, null);
         }
         // query params
-        if ($fixedCount !== null) {
-            $queryParams['fixed_count'] = ObjectSerializer::toQueryValue($fixedCount, null);
+        if ($fixed_count !== null) {
+            $queryParams['fixed_count'] = ObjectSerializer::toQueryValue($fixed_count, null);
         }
         // query params
-        if ($fixedLifeTimeLength !== null) {
-            $queryParams['fixed_life_time_length'] = ObjectSerializer::toQueryValue($fixedLifeTimeLength, null);
+        if ($fixed_life_time_length !== null) {
+            $queryParams['fixed_life_time_length'] = ObjectSerializer::toQueryValue($fixed_life_time_length, null);
         }
         // query params
-        if ($trialIntervalLength !== null) {
-            $queryParams['trial_interval_length'] = ObjectSerializer::toQueryValue($trialIntervalLength, null);
+        if ($trial_interval_length !== null) {
+            $queryParams['trial_interval_length'] = ObjectSerializer::toQueryValue($trial_interval_length, null);
         }
         // query params
-        if ($intervalLength !== null) {
-            $queryParams['interval_length'] = ObjectSerializer::toQueryValue($intervalLength, null);
+        if ($interval_length !== null) {
+            $queryParams['interval_length'] = ObjectSerializer::toQueryValue($interval_length, null);
         }
         // query params
-        if ($scheduleFixedDay !== null) {
-            $queryParams['schedule_fixed_day'] = ObjectSerializer::toQueryValue($scheduleFixedDay, null);
+        if ($schedule_fixed_day !== null) {
+            $queryParams['schedule_fixed_day'] = ObjectSerializer::toQueryValue($schedule_fixed_day, null);
         }
         // query params
-        if ($renewalReminderEmailDays !== null) {
+        if ($renewal_reminder_email_days !== null) {
             $queryParams['renewal_reminder_email_days'] = ObjectSerializer::toQueryValue(
-                $renewalReminderEmailDays,
+                $renewal_reminder_email_days,
                 null
             );
         }
         // query params
-        if ($trialReminderEmailDays !== null) {
-            $queryParams['trial_reminder_email_days'] = ObjectSerializer::toQueryValue($trialReminderEmailDays, null);
+        if ($trial_reminder_email_days !== null) {
+            $queryParams['trial_reminder_email_days'] = ObjectSerializer::toQueryValue(
+                $trial_reminder_email_days,
+                null
+            );
         }
         // query params
-        if ($baseMonth !== null) {
-            $queryParams['base_month'] = ObjectSerializer::toQueryValue($baseMonth, null);
+        if ($base_month !== null) {
+            $queryParams['base_month'] = ObjectSerializer::toQueryValue($base_month, null);
         }
         // query params
-        if ($noticePeriods !== null) {
-            $queryParams['notice_periods'] = ObjectSerializer::toQueryValue($noticePeriods, null);
+        if ($notice_periods !== null) {
+            $queryParams['notice_periods'] = ObjectSerializer::toQueryValue($notice_periods, null);
         }
         // query params
-        if ($minimumProratedAmount !== null) {
-            $queryParams['minimum_prorated_amount'] = ObjectSerializer::toQueryValue($minimumProratedAmount, null);
+        if ($minimum_prorated_amount !== null) {
+            $queryParams['minimum_prorated_amount'] = ObjectSerializer::toQueryValue($minimum_prorated_amount, null);
         }
         // query params
-        if ($fixationPeriods !== null) {
-            $queryParams['fixation_periods'] = ObjectSerializer::toQueryValue($fixationPeriods, null);
+        if ($fixation_periods !== null) {
+            $queryParams['fixation_periods'] = ObjectSerializer::toQueryValue($fixation_periods, null);
         }
         // query params
-        if ($setupFee !== null) {
-            $queryParams['setup_fee'] = ObjectSerializer::toQueryValue($setupFee, null);
+        if ($setup_fee !== null) {
+            $queryParams['setup_fee'] = ObjectSerializer::toQueryValue($setup_fee, null);
         }
         // query params
-        if ($amountInclVat !== null) {
-            $queryParams['amount_incl_vat'] = ObjectSerializer::toQueryValue($amountInclVat, null);
+        if ($amount_incl_vat !== null) {
+            $queryParams['amount_incl_vat'] = ObjectSerializer::toQueryValue($amount_incl_vat, null);
         }
         // query params
-        if ($noticePeriodsAfterCurrent !== null) {
+        if ($notice_periods_after_current !== null) {
             $queryParams['notice_periods_after_current'] = ObjectSerializer::toQueryValue(
-                $noticePeriodsAfterCurrent,
+                $notice_periods_after_current,
                 null
             );
         }
         // query params
-        if ($fixationPeriodsFull !== null) {
-            $queryParams['fixation_periods_full'] = ObjectSerializer::toQueryValue($fixationPeriodsFull, null);
+        if ($fixation_periods_full !== null) {
+            $queryParams['fixation_periods_full'] = ObjectSerializer::toQueryValue($fixation_periods_full, null);
         }
         // query params
-        if ($includeZeroAmount !== null) {
-            $queryParams['include_zero_amount'] = ObjectSerializer::toQueryValue($includeZeroAmount, null);
+        if ($include_zero_amount !== null) {
+            $queryParams['include_zero_amount'] = ObjectSerializer::toQueryValue($include_zero_amount, null);
         }
         // query params
-        if ($partialProrationDays !== null) {
-            $queryParams['partial_proration_days'] = ObjectSerializer::toQueryValue($partialProrationDays, null);
+        if ($partial_proration_days !== null) {
+            $queryParams['partial_proration_days'] = ObjectSerializer::toQueryValue($partial_proration_days, null);
         }
         // query params
-        if ($fixedTrialDays !== null) {
-            $queryParams['fixed_trial_days'] = ObjectSerializer::toQueryValue($fixedTrialDays, null);
+        if ($fixed_trial_days !== null) {
+            $queryParams['fixed_trial_days'] = ObjectSerializer::toQueryValue($fixed_trial_days, null);
         }
 
 
@@ -4442,64 +6092,64 @@ class ListApi
      * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
      * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
      * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param string $nextPageToken Next page token from previous response to get next page (optional)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
      * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60; (optional, default to created)
      * @param string $handle Subscription handle prefix (optional)
-     * @param string $handleContains Subscription handle contains (optional)
+     * @param string $handle_contains Subscription handle contains (optional)
      * @param string $customer Customer owning subscription (optional)
      * @param string $plan Plan owning subscription (optional)
      * @param string[] $state Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60; (optional)
      * @param string $amount Custom amount in minor unit interval. See documentation of intervals. (optional)
      * @param string $quantity Quantity. See documentation of intervals. (optional)
      * @param string $activated Activated date interval (optional)
-     * @param string $cancelledDate Cancelled date interval (optional)
+     * @param string $cancelled_date Cancelled date interval (optional)
      * @param string $reactivated Reactivated date interval (optional)
-     * @param  string $created Created date interval (optional)
-     * @param  string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  int $planVersion Plan version (optional)
-     * @param  string $amountInclVat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $startDate Start date interval (optional)
-     * @param  string $endDate End date interval (optional)
-     * @param  string $graceDuration Grace duration in seconds. See documentation of intervals. (optional)
-     * @param  string $currentPeriodStart Current period start date interval (optional)
-     * @param  string $nextPeriodStart Next period start date interval (optional)
-     * @param  string $firstPeriodStart First period start date interval (optional)
-     * @param  string $lastPeriodStart Last period start date interval (optional)
-     * @param  string $trialStart Trial period start date interval (optional)
-     * @param  string $trialEnd Trial period end date interval (optional)
-     * @param  string $inTrial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $hasStarted Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $renewalCount Renewal Count. See documentation of intervals. (optional)
-     * @param  string $expiredDate Expired period date interval (optional)
-     * @param  string[] $expireReason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
-     * @param  string $onHoldDate On hold period date interval (optional)
-     * @param  string[] $onHoldReason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
-     * @param  string $paymentMethodAdded Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $reminderEmailSent Reminder email sent period date interval (optional)
-     * @param  string $failedInvoices Failed invoices. See documentation of intervals. (optional)
-     * @param  string $failedAmount Failed amount. See documentation of intervals. (optional)
-     * @param  string $cancelledInvoices Cancelled invoices. See documentation of intervals. (optional)
-     * @param  string $cancelledAmount Cancelled amount. See documentation of intervals. (optional)
-     * @param  string $pendingInvoices Pending invoices. See documentation of intervals. (optional)
-     * @param  string $pendingAmount Pending amount invoices. See documentation of intervals. (optional)
-     * @param  string $dunningInvoices Dunning invoices. See documentation of intervals. (optional)
-     * @param  string $dunningAmount Dunning amount. See documentation of intervals. (optional)
-     * @param  string $settledInvoices Settled invoices. See documentation of intervals. (optional)
-     * @param  string $settledAmount Settled amount. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount. See documentation of intervals. (optional)
-     * @param  string $pendingAdditionalCosts Pending additional costs. See documentation of intervals. (optional)
-     * @param string $pendingAdditionalCostAmount Pending additional cost amount. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCosts Transferred additional costs. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCostAmount Transferred additional cost amount. See documentation of intervals. (optional)
-     * @param string $pendingCredits Pending credits. See documentation of intervals. (optional)
-     * @param string $pendingCreditAmount Pending credit amount. See documentation of intervals. (optional)
-     * @param string $transferredCredits Transferred credits. See documentation of intervals. (optional)
-     * @param string $transferredCreditAmount Transferred credit amount. See documentation of intervals. (optional)
-     * @param string $subscriptionAddOnHandle Subscription add-on handle (optional)
-     * @param string $addOnHandle Add-on handle (optional)
-     * @param string $subscriptionDiscountHandle Subscription discount handle (optional)
-     * @param string $discountHandle Discount handle (optional)
-     * @param string $couponHandle Coupon handle (optional)
+     * @param string $created Created date interval (optional)
+     * @param string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param int $plan_version Plan version (optional)
+     * @param string $amount_incl_vat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $start_date Start date interval (optional)
+     * @param string $end_date End date interval (optional)
+     * @param string $grace_duration Grace duration in seconds. See documentation of intervals. (optional)
+     * @param string $current_period_start Current period start date interval (optional)
+     * @param string $next_period_start Next period start date interval (optional)
+     * @param string $first_period_start First period start date interval (optional)
+     * @param string $last_period_start Last period start date interval (optional)
+     * @param string $trial_start Trial period start date interval (optional)
+     * @param string $trial_end Trial period end date interval (optional)
+     * @param string $in_trial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $has_started Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $renewal_count Renewal Count. See documentation of intervals. (optional)
+     * @param string $expired_date Expired period date interval (optional)
+     * @param string[] $expire_reason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
+     * @param string $on_hold_date On hold period date interval (optional)
+     * @param string[] $on_hold_reason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
+     * @param string $payment_method_added Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $reminder_email_sent Reminder email sent period date interval (optional)
+     * @param string $failed_invoices Failed invoices. See documentation of intervals. (optional)
+     * @param string $failed_amount Failed amount. See documentation of intervals. (optional)
+     * @param string $cancelled_invoices Cancelled invoices. See documentation of intervals. (optional)
+     * @param string $cancelled_amount Cancelled amount. See documentation of intervals. (optional)
+     * @param string $pending_invoices Pending invoices. See documentation of intervals. (optional)
+     * @param string $pending_amount Pending amount invoices. See documentation of intervals. (optional)
+     * @param string $dunning_invoices Dunning invoices. See documentation of intervals. (optional)
+     * @param string $dunning_amount Dunning amount. See documentation of intervals. (optional)
+     * @param string $settled_invoices Settled invoices. See documentation of intervals. (optional)
+     * @param string $settled_amount Settled amount. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount. See documentation of intervals. (optional)
+     * @param string $pending_additional_costs Pending additional costs. See documentation of intervals. (optional)
+     * @param string $pending_additional_cost_amount Pending additional cost amount. See documentation of intervals. (optional)
+     * @param string $transferred_additional_costs Transferred additional costs. See documentation of intervals. (optional)
+     * @param string $transferred_additional_cost_amount Transferred additional cost amount. See documentation of intervals. (optional)
+     * @param string $pending_credits Pending credits. See documentation of intervals. (optional)
+     * @param string $pending_credit_amount Pending credit amount. See documentation of intervals. (optional)
+     * @param string $transferred_credits Transferred credits. See documentation of intervals. (optional)
+     * @param string $transferred_credit_amount Transferred credit amount. See documentation of intervals. (optional)
+     * @param string $subscription_add_on_handle Subscription add-on handle (optional)
+     * @param string $add_on_handle Add-on handle (optional)
+     * @param string $subscription_discount_handle Subscription discount handle (optional)
+     * @param string $discount_handle Discount handle (optional)
+     * @param string $coupon_handle Coupon handle (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4510,128 +6160,128 @@ class ListApi
         $to = null,
         $interval = null,
         $size = '20',
-        $nextPageToken = null,
+        $next_page_token = null,
         $range = 'created',
         $handle = null,
-        $handleContains = null,
+        $handle_contains = null,
         $customer = null,
         $plan = null,
         $state = null,
         $amount = null,
         $quantity = null,
         $activated = null,
-        $cancelledDate = null,
+        $cancelled_date = null,
         $reactivated = null,
         $created = null,
         $renewing = null,
-        $planVersion = null,
-        $amountInclVat = null,
-        $startDate = null,
-        $endDate = null,
-        $graceDuration = null,
-        $currentPeriodStart = null,
-        $nextPeriodStart = null,
-        $firstPeriodStart = null,
-        $lastPeriodStart = null,
-        $trialStart = null,
-        $trialEnd = null,
-        $inTrial = null,
-        $hasStarted = null,
-        $renewalCount = null,
-        $expiredDate = null,
-        $expireReason = null,
-        $onHoldDate = null,
-        $onHoldReason = null,
-        $paymentMethodAdded = null,
-        $reminderEmailSent = null,
-        $failedInvoices = null,
-        $failedAmount = null,
-        $cancelledInvoices = null,
-        $cancelledAmount = null,
-        $pendingInvoices = null,
-        $pendingAmount = null,
-        $dunningInvoices = null,
-        $dunningAmount = null,
-        $settledInvoices = null,
-        $settledAmount = null,
-        $refundedAmount = null,
-        $pendingAdditionalCosts = null,
-        $pendingAdditionalCostAmount = null,
-        $transferredAdditionalCosts = null,
-        $transferredAdditionalCostAmount = null,
-        $pendingCredits = null,
-        $pendingCreditAmount = null,
-        $transferredCredits = null,
-        $transferredCreditAmount = null,
-        $subscriptionAddOnHandle = null,
-        $addOnHandle = null,
-        $subscriptionDiscountHandle = null,
-        $discountHandle = null,
-        $couponHandle = null
+        $plan_version = null,
+        $amount_incl_vat = null,
+        $start_date = null,
+        $end_date = null,
+        $grace_duration = null,
+        $current_period_start = null,
+        $next_period_start = null,
+        $first_period_start = null,
+        $last_period_start = null,
+        $trial_start = null,
+        $trial_end = null,
+        $in_trial = null,
+        $has_started = null,
+        $renewal_count = null,
+        $expired_date = null,
+        $expire_reason = null,
+        $on_hold_date = null,
+        $on_hold_reason = null,
+        $payment_method_added = null,
+        $reminder_email_sent = null,
+        $failed_invoices = null,
+        $failed_amount = null,
+        $cancelled_invoices = null,
+        $cancelled_amount = null,
+        $pending_invoices = null,
+        $pending_amount = null,
+        $dunning_invoices = null,
+        $dunning_amount = null,
+        $settled_invoices = null,
+        $settled_amount = null,
+        $refunded_amount = null,
+        $pending_additional_costs = null,
+        $pending_additional_cost_amount = null,
+        $transferred_additional_costs = null,
+        $transferred_additional_cost_amount = null,
+        $pending_credits = null,
+        $pending_credit_amount = null,
+        $transferred_credits = null,
+        $transferred_credit_amount = null,
+        $subscription_add_on_handle = null,
+        $add_on_handle = null,
+        $subscription_discount_handle = null,
+        $discount_handle = null,
+        $coupon_handle = null
     ) {
         list($response) = $this->getSubscriptionListWithHttpInfo(
             $from,
             $to,
             $interval,
             $size,
-            $nextPageToken,
+            $next_page_token,
             $range,
             $handle,
-            $handleContains,
+            $handle_contains,
             $customer,
             $plan,
             $state,
             $amount,
             $quantity,
             $activated,
-            $cancelledDate,
+            $cancelled_date,
             $reactivated,
             $created,
             $renewing,
-            $planVersion,
-            $amountInclVat,
-            $startDate,
-            $endDate,
-            $graceDuration,
-            $currentPeriodStart,
-            $nextPeriodStart,
-            $firstPeriodStart,
-            $lastPeriodStart,
-            $trialStart,
-            $trialEnd,
-            $inTrial,
-            $hasStarted,
-            $renewalCount,
-            $expiredDate,
-            $expireReason,
-            $onHoldDate,
-            $onHoldReason,
-            $paymentMethodAdded,
-            $reminderEmailSent,
-            $failedInvoices,
-            $failedAmount,
-            $cancelledInvoices,
-            $cancelledAmount,
-            $pendingInvoices,
-            $pendingAmount,
-            $dunningInvoices,
-            $dunningAmount,
-            $settledInvoices,
-            $settledAmount,
-            $refundedAmount,
-            $pendingAdditionalCosts,
-            $pendingAdditionalCostAmount,
-            $transferredAdditionalCosts,
-            $transferredAdditionalCostAmount,
-            $pendingCredits,
-            $pendingCreditAmount,
-            $transferredCredits,
-            $transferredCreditAmount,
-            $subscriptionAddOnHandle,
-            $addOnHandle,
-            $subscriptionDiscountHandle,
-            $discountHandle,
-            $couponHandle
+            $plan_version,
+            $amount_incl_vat,
+            $start_date,
+            $end_date,
+            $grace_duration,
+            $current_period_start,
+            $next_period_start,
+            $first_period_start,
+            $last_period_start,
+            $trial_start,
+            $trial_end,
+            $in_trial,
+            $has_started,
+            $renewal_count,
+            $expired_date,
+            $expire_reason,
+            $on_hold_date,
+            $on_hold_reason,
+            $payment_method_added,
+            $reminder_email_sent,
+            $failed_invoices,
+            $failed_amount,
+            $cancelled_invoices,
+            $cancelled_amount,
+            $pending_invoices,
+            $pending_amount,
+            $dunning_invoices,
+            $dunning_amount,
+            $settled_invoices,
+            $settled_amount,
+            $refunded_amount,
+            $pending_additional_costs,
+            $pending_additional_cost_amount,
+            $transferred_additional_costs,
+            $transferred_additional_cost_amount,
+            $pending_credits,
+            $pending_credit_amount,
+            $transferred_credits,
+            $transferred_credit_amount,
+            $subscription_add_on_handle,
+            $add_on_handle,
+            $subscription_discount_handle,
+            $discount_handle,
+            $coupon_handle
         );
         return $response;
     }
@@ -4645,64 +6295,64 @@ class ListApi
      * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
      * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
      * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param string $nextPageToken Next page token from previous response to get next page (optional)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
      * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60; (optional, default to created)
      * @param string $handle Subscription handle prefix (optional)
-     * @param string $handleContains Subscription handle contains (optional)
+     * @param string $handle_contains Subscription handle contains (optional)
      * @param string $customer Customer owning subscription (optional)
      * @param string $plan Plan owning subscription (optional)
      * @param string[] $state Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60; (optional)
      * @param string $amount Custom amount in minor unit interval. See documentation of intervals. (optional)
      * @param string $quantity Quantity. See documentation of intervals. (optional)
      * @param string $activated Activated date interval (optional)
-     * @param string $cancelledDate Cancelled date interval (optional)
+     * @param string $cancelled_date Cancelled date interval (optional)
      * @param string $reactivated Reactivated date interval (optional)
-     * @param  string $created Created date interval (optional)
-     * @param  string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  int $planVersion Plan version (optional)
-     * @param  string $amountInclVat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $startDate Start date interval (optional)
-     * @param  string $endDate End date interval (optional)
-     * @param  string $graceDuration Grace duration in seconds. See documentation of intervals. (optional)
-     * @param  string $currentPeriodStart Current period start date interval (optional)
-     * @param  string $nextPeriodStart Next period start date interval (optional)
-     * @param  string $firstPeriodStart First period start date interval (optional)
-     * @param  string $lastPeriodStart Last period start date interval (optional)
-     * @param  string $trialStart Trial period start date interval (optional)
-     * @param  string $trialEnd Trial period end date interval (optional)
-     * @param  string $inTrial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $hasStarted Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $renewalCount Renewal Count. See documentation of intervals. (optional)
-     * @param  string $expiredDate Expired period date interval (optional)
-     * @param  string[] $expireReason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
-     * @param  string $onHoldDate On hold period date interval (optional)
-     * @param  string[] $onHoldReason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
-     * @param  string $paymentMethodAdded Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $reminderEmailSent Reminder email sent period date interval (optional)
-     * @param  string $failedInvoices Failed invoices. See documentation of intervals. (optional)
-     * @param  string $failedAmount Failed amount. See documentation of intervals. (optional)
-     * @param  string $cancelledInvoices Cancelled invoices. See documentation of intervals. (optional)
-     * @param  string $cancelledAmount Cancelled amount. See documentation of intervals. (optional)
-     * @param  string $pendingInvoices Pending invoices. See documentation of intervals. (optional)
-     * @param  string $pendingAmount Pending amount invoices. See documentation of intervals. (optional)
-     * @param  string $dunningInvoices Dunning invoices. See documentation of intervals. (optional)
-     * @param  string $dunningAmount Dunning amount. See documentation of intervals. (optional)
-     * @param  string $settledInvoices Settled invoices. See documentation of intervals. (optional)
-     * @param  string $settledAmount Settled amount. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount. See documentation of intervals. (optional)
-     * @param  string $pendingAdditionalCosts Pending additional costs. See documentation of intervals. (optional)
-     * @param string $pendingAdditionalCostAmount Pending additional cost amount. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCosts Transferred additional costs. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCostAmount Transferred additional cost amount. See documentation of intervals. (optional)
-     * @param string $pendingCredits Pending credits. See documentation of intervals. (optional)
-     * @param string $pendingCreditAmount Pending credit amount. See documentation of intervals. (optional)
-     * @param string $transferredCredits Transferred credits. See documentation of intervals. (optional)
-     * @param string $transferredCreditAmount Transferred credit amount. See documentation of intervals. (optional)
-     * @param string $subscriptionAddOnHandle Subscription add-on handle (optional)
-     * @param string $addOnHandle Add-on handle (optional)
-     * @param string $subscriptionDiscountHandle Subscription discount handle (optional)
-     * @param string $discountHandle Discount handle (optional)
-     * @param string $couponHandle Coupon handle (optional)
+     * @param string $created Created date interval (optional)
+     * @param string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param int $plan_version Plan version (optional)
+     * @param string $amount_incl_vat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $start_date Start date interval (optional)
+     * @param string $end_date End date interval (optional)
+     * @param string $grace_duration Grace duration in seconds. See documentation of intervals. (optional)
+     * @param string $current_period_start Current period start date interval (optional)
+     * @param string $next_period_start Next period start date interval (optional)
+     * @param string $first_period_start First period start date interval (optional)
+     * @param string $last_period_start Last period start date interval (optional)
+     * @param string $trial_start Trial period start date interval (optional)
+     * @param string $trial_end Trial period end date interval (optional)
+     * @param string $in_trial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $has_started Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $renewal_count Renewal Count. See documentation of intervals. (optional)
+     * @param string $expired_date Expired period date interval (optional)
+     * @param string[] $expire_reason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
+     * @param string $on_hold_date On hold period date interval (optional)
+     * @param string[] $on_hold_reason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
+     * @param string $payment_method_added Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $reminder_email_sent Reminder email sent period date interval (optional)
+     * @param string $failed_invoices Failed invoices. See documentation of intervals. (optional)
+     * @param string $failed_amount Failed amount. See documentation of intervals. (optional)
+     * @param string $cancelled_invoices Cancelled invoices. See documentation of intervals. (optional)
+     * @param string $cancelled_amount Cancelled amount. See documentation of intervals. (optional)
+     * @param string $pending_invoices Pending invoices. See documentation of intervals. (optional)
+     * @param string $pending_amount Pending amount invoices. See documentation of intervals. (optional)
+     * @param string $dunning_invoices Dunning invoices. See documentation of intervals. (optional)
+     * @param string $dunning_amount Dunning amount. See documentation of intervals. (optional)
+     * @param string $settled_invoices Settled invoices. See documentation of intervals. (optional)
+     * @param string $settled_amount Settled amount. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount. See documentation of intervals. (optional)
+     * @param string $pending_additional_costs Pending additional costs. See documentation of intervals. (optional)
+     * @param string $pending_additional_cost_amount Pending additional cost amount. See documentation of intervals. (optional)
+     * @param string $transferred_additional_costs Transferred additional costs. See documentation of intervals. (optional)
+     * @param string $transferred_additional_cost_amount Transferred additional cost amount. See documentation of intervals. (optional)
+     * @param string $pending_credits Pending credits. See documentation of intervals. (optional)
+     * @param string $pending_credit_amount Pending credit amount. See documentation of intervals. (optional)
+     * @param string $transferred_credits Transferred credits. See documentation of intervals. (optional)
+     * @param string $transferred_credit_amount Transferred credit amount. See documentation of intervals. (optional)
+     * @param string $subscription_add_on_handle Subscription add-on handle (optional)
+     * @param string $add_on_handle Add-on handle (optional)
+     * @param string $subscription_discount_handle Subscription discount handle (optional)
+     * @param string $discount_handle Discount handle (optional)
+     * @param string $coupon_handle Coupon handle (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4713,64 +6363,64 @@ class ListApi
         $to = null,
         $interval = null,
         $size = '20',
-        $nextPageToken = null,
+        $next_page_token = null,
         $range = 'created',
         $handle = null,
-        $handleContains = null,
+        $handle_contains = null,
         $customer = null,
         $plan = null,
         $state = null,
         $amount = null,
         $quantity = null,
         $activated = null,
-        $cancelledDate = null,
+        $cancelled_date = null,
         $reactivated = null,
         $created = null,
         $renewing = null,
-        $planVersion = null,
-        $amountInclVat = null,
-        $startDate = null,
-        $endDate = null,
-        $graceDuration = null,
-        $currentPeriodStart = null,
-        $nextPeriodStart = null,
-        $firstPeriodStart = null,
-        $lastPeriodStart = null,
-        $trialStart = null,
-        $trialEnd = null,
-        $inTrial = null,
-        $hasStarted = null,
-        $renewalCount = null,
-        $expiredDate = null,
-        $expireReason = null,
-        $onHoldDate = null,
-        $onHoldReason = null,
-        $paymentMethodAdded = null,
-        $reminderEmailSent = null,
-        $failedInvoices = null,
-        $failedAmount = null,
-        $cancelledInvoices = null,
-        $cancelledAmount = null,
-        $pendingInvoices = null,
-        $pendingAmount = null,
-        $dunningInvoices = null,
-        $dunningAmount = null,
-        $settledInvoices = null,
-        $settledAmount = null,
-        $refundedAmount = null,
-        $pendingAdditionalCosts = null,
-        $pendingAdditionalCostAmount = null,
-        $transferredAdditionalCosts = null,
-        $transferredAdditionalCostAmount = null,
-        $pendingCredits = null,
-        $pendingCreditAmount = null,
-        $transferredCredits = null,
-        $transferredCreditAmount = null,
-        $subscriptionAddOnHandle = null,
-        $addOnHandle = null,
-        $subscriptionDiscountHandle = null,
-        $discountHandle = null,
-        $couponHandle = null
+        $plan_version = null,
+        $amount_incl_vat = null,
+        $start_date = null,
+        $end_date = null,
+        $grace_duration = null,
+        $current_period_start = null,
+        $next_period_start = null,
+        $first_period_start = null,
+        $last_period_start = null,
+        $trial_start = null,
+        $trial_end = null,
+        $in_trial = null,
+        $has_started = null,
+        $renewal_count = null,
+        $expired_date = null,
+        $expire_reason = null,
+        $on_hold_date = null,
+        $on_hold_reason = null,
+        $payment_method_added = null,
+        $reminder_email_sent = null,
+        $failed_invoices = null,
+        $failed_amount = null,
+        $cancelled_invoices = null,
+        $cancelled_amount = null,
+        $pending_invoices = null,
+        $pending_amount = null,
+        $dunning_invoices = null,
+        $dunning_amount = null,
+        $settled_invoices = null,
+        $settled_amount = null,
+        $refunded_amount = null,
+        $pending_additional_costs = null,
+        $pending_additional_cost_amount = null,
+        $transferred_additional_costs = null,
+        $transferred_additional_cost_amount = null,
+        $pending_credits = null,
+        $pending_credit_amount = null,
+        $transferred_credits = null,
+        $transferred_credit_amount = null,
+        $subscription_add_on_handle = null,
+        $add_on_handle = null,
+        $subscription_discount_handle = null,
+        $discount_handle = null,
+        $coupon_handle = null
     ) {
         $returnType = '\Reepay\Model\SubscriptionList';
         $request = $this->getSubscriptionListRequest(
@@ -4778,64 +6428,64 @@ class ListApi
             $to,
             $interval,
             $size,
-            $nextPageToken,
+            $next_page_token,
             $range,
             $handle,
-            $handleContains,
+            $handle_contains,
             $customer,
             $plan,
             $state,
             $amount,
             $quantity,
             $activated,
-            $cancelledDate,
+            $cancelled_date,
             $reactivated,
             $created,
             $renewing,
-            $planVersion,
-            $amountInclVat,
-            $startDate,
-            $endDate,
-            $graceDuration,
-            $currentPeriodStart,
-            $nextPeriodStart,
-            $firstPeriodStart,
-            $lastPeriodStart,
-            $trialStart,
-            $trialEnd,
-            $inTrial,
-            $hasStarted,
-            $renewalCount,
-            $expiredDate,
-            $expireReason,
-            $onHoldDate,
-            $onHoldReason,
-            $paymentMethodAdded,
-            $reminderEmailSent,
-            $failedInvoices,
-            $failedAmount,
-            $cancelledInvoices,
-            $cancelledAmount,
-            $pendingInvoices,
-            $pendingAmount,
-            $dunningInvoices,
-            $dunningAmount,
-            $settledInvoices,
-            $settledAmount,
-            $refundedAmount,
-            $pendingAdditionalCosts,
-            $pendingAdditionalCostAmount,
-            $transferredAdditionalCosts,
-            $transferredAdditionalCostAmount,
-            $pendingCredits,
-            $pendingCreditAmount,
-            $transferredCredits,
-            $transferredCreditAmount,
-            $subscriptionAddOnHandle,
-            $addOnHandle,
-            $subscriptionDiscountHandle,
-            $discountHandle,
-            $couponHandle
+            $plan_version,
+            $amount_incl_vat,
+            $start_date,
+            $end_date,
+            $grace_duration,
+            $current_period_start,
+            $next_period_start,
+            $first_period_start,
+            $last_period_start,
+            $trial_start,
+            $trial_end,
+            $in_trial,
+            $has_started,
+            $renewal_count,
+            $expired_date,
+            $expire_reason,
+            $on_hold_date,
+            $on_hold_reason,
+            $payment_method_added,
+            $reminder_email_sent,
+            $failed_invoices,
+            $failed_amount,
+            $cancelled_invoices,
+            $cancelled_amount,
+            $pending_invoices,
+            $pending_amount,
+            $dunning_invoices,
+            $dunning_amount,
+            $settled_invoices,
+            $settled_amount,
+            $refunded_amount,
+            $pending_additional_costs,
+            $pending_additional_cost_amount,
+            $transferred_additional_costs,
+            $transferred_additional_cost_amount,
+            $pending_credits,
+            $pending_credit_amount,
+            $transferred_credits,
+            $transferred_credit_amount,
+            $subscription_add_on_handle,
+            $add_on_handle,
+            $subscription_discount_handle,
+            $discount_handle,
+            $coupon_handle
         );
 
         try {
@@ -4954,64 +6604,64 @@ class ListApi
      * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
      * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
      * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param string $nextPageToken Next page token from previous response to get next page (optional)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
      * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60; (optional, default to created)
      * @param string $handle Subscription handle prefix (optional)
-     * @param string $handleContains Subscription handle contains (optional)
+     * @param string $handle_contains Subscription handle contains (optional)
      * @param string $customer Customer owning subscription (optional)
      * @param string $plan Plan owning subscription (optional)
      * @param string[] $state Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60; (optional)
      * @param string $amount Custom amount in minor unit interval. See documentation of intervals. (optional)
      * @param string $quantity Quantity. See documentation of intervals. (optional)
      * @param string $activated Activated date interval (optional)
-     * @param string $cancelledDate Cancelled date interval (optional)
+     * @param string $cancelled_date Cancelled date interval (optional)
      * @param string $reactivated Reactivated date interval (optional)
-     * @param  string $created Created date interval (optional)
-     * @param  string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  int $planVersion Plan version (optional)
-     * @param  string $amountInclVat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $startDate Start date interval (optional)
-     * @param  string $endDate End date interval (optional)
-     * @param  string $graceDuration Grace duration in seconds. See documentation of intervals. (optional)
-     * @param  string $currentPeriodStart Current period start date interval (optional)
-     * @param  string $nextPeriodStart Next period start date interval (optional)
-     * @param  string $firstPeriodStart First period start date interval (optional)
-     * @param  string $lastPeriodStart Last period start date interval (optional)
-     * @param  string $trialStart Trial period start date interval (optional)
-     * @param  string $trialEnd Trial period end date interval (optional)
-     * @param  string $inTrial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $hasStarted Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $renewalCount Renewal Count. See documentation of intervals. (optional)
-     * @param  string $expiredDate Expired period date interval (optional)
-     * @param  string[] $expireReason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
-     * @param  string $onHoldDate On hold period date interval (optional)
-     * @param  string[] $onHoldReason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
-     * @param  string $paymentMethodAdded Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $reminderEmailSent Reminder email sent period date interval (optional)
-     * @param  string $failedInvoices Failed invoices. See documentation of intervals. (optional)
-     * @param  string $failedAmount Failed amount. See documentation of intervals. (optional)
-     * @param  string $cancelledInvoices Cancelled invoices. See documentation of intervals. (optional)
-     * @param  string $cancelledAmount Cancelled amount. See documentation of intervals. (optional)
-     * @param  string $pendingInvoices Pending invoices. See documentation of intervals. (optional)
-     * @param  string $pendingAmount Pending amount invoices. See documentation of intervals. (optional)
-     * @param  string $dunningInvoices Dunning invoices. See documentation of intervals. (optional)
-     * @param  string $dunningAmount Dunning amount. See documentation of intervals. (optional)
-     * @param  string $settledInvoices Settled invoices. See documentation of intervals. (optional)
-     * @param  string $settledAmount Settled amount. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount. See documentation of intervals. (optional)
-     * @param  string $pendingAdditionalCosts Pending additional costs. See documentation of intervals. (optional)
-     * @param string $pendingAdditionalCostAmount Pending additional cost amount. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCosts Transferred additional costs. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCostAmount Transferred additional cost amount. See documentation of intervals. (optional)
-     * @param string $pendingCredits Pending credits. See documentation of intervals. (optional)
-     * @param string $pendingCreditAmount Pending credit amount. See documentation of intervals. (optional)
-     * @param string $transferredCredits Transferred credits. See documentation of intervals. (optional)
-     * @param string $transferredCreditAmount Transferred credit amount. See documentation of intervals. (optional)
-     * @param string $subscriptionAddOnHandle Subscription add-on handle (optional)
-     * @param string $addOnHandle Add-on handle (optional)
-     * @param string $subscriptionDiscountHandle Subscription discount handle (optional)
-     * @param string $discountHandle Discount handle (optional)
-     * @param string $couponHandle Coupon handle (optional)
+     * @param string $created Created date interval (optional)
+     * @param string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param int $plan_version Plan version (optional)
+     * @param string $amount_incl_vat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $start_date Start date interval (optional)
+     * @param string $end_date End date interval (optional)
+     * @param string $grace_duration Grace duration in seconds. See documentation of intervals. (optional)
+     * @param string $current_period_start Current period start date interval (optional)
+     * @param string $next_period_start Next period start date interval (optional)
+     * @param string $first_period_start First period start date interval (optional)
+     * @param string $last_period_start Last period start date interval (optional)
+     * @param string $trial_start Trial period start date interval (optional)
+     * @param string $trial_end Trial period end date interval (optional)
+     * @param string $in_trial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $has_started Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $renewal_count Renewal Count. See documentation of intervals. (optional)
+     * @param string $expired_date Expired period date interval (optional)
+     * @param string[] $expire_reason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
+     * @param string $on_hold_date On hold period date interval (optional)
+     * @param string[] $on_hold_reason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
+     * @param string $payment_method_added Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $reminder_email_sent Reminder email sent period date interval (optional)
+     * @param string $failed_invoices Failed invoices. See documentation of intervals. (optional)
+     * @param string $failed_amount Failed amount. See documentation of intervals. (optional)
+     * @param string $cancelled_invoices Cancelled invoices. See documentation of intervals. (optional)
+     * @param string $cancelled_amount Cancelled amount. See documentation of intervals. (optional)
+     * @param string $pending_invoices Pending invoices. See documentation of intervals. (optional)
+     * @param string $pending_amount Pending amount invoices. See documentation of intervals. (optional)
+     * @param string $dunning_invoices Dunning invoices. See documentation of intervals. (optional)
+     * @param string $dunning_amount Dunning amount. See documentation of intervals. (optional)
+     * @param string $settled_invoices Settled invoices. See documentation of intervals. (optional)
+     * @param string $settled_amount Settled amount. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount. See documentation of intervals. (optional)
+     * @param string $pending_additional_costs Pending additional costs. See documentation of intervals. (optional)
+     * @param string $pending_additional_cost_amount Pending additional cost amount. See documentation of intervals. (optional)
+     * @param string $transferred_additional_costs Transferred additional costs. See documentation of intervals. (optional)
+     * @param string $transferred_additional_cost_amount Transferred additional cost amount. See documentation of intervals. (optional)
+     * @param string $pending_credits Pending credits. See documentation of intervals. (optional)
+     * @param string $pending_credit_amount Pending credit amount. See documentation of intervals. (optional)
+     * @param string $transferred_credits Transferred credits. See documentation of intervals. (optional)
+     * @param string $transferred_credit_amount Transferred credit amount. See documentation of intervals. (optional)
+     * @param string $subscription_add_on_handle Subscription add-on handle (optional)
+     * @param string $add_on_handle Add-on handle (optional)
+     * @param string $subscription_discount_handle Subscription discount handle (optional)
+     * @param string $discount_handle Discount handle (optional)
+     * @param string $coupon_handle Coupon handle (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5021,128 +6671,128 @@ class ListApi
         $to = null,
         $interval = null,
         $size = '20',
-        $nextPageToken = null,
+        $next_page_token = null,
         $range = 'created',
         $handle = null,
-        $handleContains = null,
+        $handle_contains = null,
         $customer = null,
         $plan = null,
         $state = null,
         $amount = null,
         $quantity = null,
         $activated = null,
-        $cancelledDate = null,
+        $cancelled_date = null,
         $reactivated = null,
         $created = null,
         $renewing = null,
-        $planVersion = null,
-        $amountInclVat = null,
-        $startDate = null,
-        $endDate = null,
-        $graceDuration = null,
-        $currentPeriodStart = null,
-        $nextPeriodStart = null,
-        $firstPeriodStart = null,
-        $lastPeriodStart = null,
-        $trialStart = null,
-        $trialEnd = null,
-        $inTrial = null,
-        $hasStarted = null,
-        $renewalCount = null,
-        $expiredDate = null,
-        $expireReason = null,
-        $onHoldDate = null,
-        $onHoldReason = null,
-        $paymentMethodAdded = null,
-        $reminderEmailSent = null,
-        $failedInvoices = null,
-        $failedAmount = null,
-        $cancelledInvoices = null,
-        $cancelledAmount = null,
-        $pendingInvoices = null,
-        $pendingAmount = null,
-        $dunningInvoices = null,
-        $dunningAmount = null,
-        $settledInvoices = null,
-        $settledAmount = null,
-        $refundedAmount = null,
-        $pendingAdditionalCosts = null,
-        $pendingAdditionalCostAmount = null,
-        $transferredAdditionalCosts = null,
-        $transferredAdditionalCostAmount = null,
-        $pendingCredits = null,
-        $pendingCreditAmount = null,
-        $transferredCredits = null,
-        $transferredCreditAmount = null,
-        $subscriptionAddOnHandle = null,
-        $addOnHandle = null,
-        $subscriptionDiscountHandle = null,
-        $discountHandle = null,
-        $couponHandle = null
+        $plan_version = null,
+        $amount_incl_vat = null,
+        $start_date = null,
+        $end_date = null,
+        $grace_duration = null,
+        $current_period_start = null,
+        $next_period_start = null,
+        $first_period_start = null,
+        $last_period_start = null,
+        $trial_start = null,
+        $trial_end = null,
+        $in_trial = null,
+        $has_started = null,
+        $renewal_count = null,
+        $expired_date = null,
+        $expire_reason = null,
+        $on_hold_date = null,
+        $on_hold_reason = null,
+        $payment_method_added = null,
+        $reminder_email_sent = null,
+        $failed_invoices = null,
+        $failed_amount = null,
+        $cancelled_invoices = null,
+        $cancelled_amount = null,
+        $pending_invoices = null,
+        $pending_amount = null,
+        $dunning_invoices = null,
+        $dunning_amount = null,
+        $settled_invoices = null,
+        $settled_amount = null,
+        $refunded_amount = null,
+        $pending_additional_costs = null,
+        $pending_additional_cost_amount = null,
+        $transferred_additional_costs = null,
+        $transferred_additional_cost_amount = null,
+        $pending_credits = null,
+        $pending_credit_amount = null,
+        $transferred_credits = null,
+        $transferred_credit_amount = null,
+        $subscription_add_on_handle = null,
+        $add_on_handle = null,
+        $subscription_discount_handle = null,
+        $discount_handle = null,
+        $coupon_handle = null
     ) {
         return $this->getSubscriptionListAsyncWithHttpInfo(
             $from,
             $to,
             $interval,
             $size,
-            $nextPageToken,
+            $next_page_token,
             $range,
             $handle,
-            $handleContains,
+            $handle_contains,
             $customer,
             $plan,
             $state,
             $amount,
             $quantity,
             $activated,
-            $cancelledDate,
+            $cancelled_date,
             $reactivated,
             $created,
             $renewing,
-            $planVersion,
-            $amountInclVat,
-            $startDate,
-            $endDate,
-            $graceDuration,
-            $currentPeriodStart,
-            $nextPeriodStart,
-            $firstPeriodStart,
-            $lastPeriodStart,
-            $trialStart,
-            $trialEnd,
-            $inTrial,
-            $hasStarted,
-            $renewalCount,
-            $expiredDate,
-            $expireReason,
-            $onHoldDate,
-            $onHoldReason,
-            $paymentMethodAdded,
-            $reminderEmailSent,
-            $failedInvoices,
-            $failedAmount,
-            $cancelledInvoices,
-            $cancelledAmount,
-            $pendingInvoices,
-            $pendingAmount,
-            $dunningInvoices,
-            $dunningAmount,
-            $settledInvoices,
-            $settledAmount,
-            $refundedAmount,
-            $pendingAdditionalCosts,
-            $pendingAdditionalCostAmount,
-            $transferredAdditionalCosts,
-            $transferredAdditionalCostAmount,
-            $pendingCredits,
-            $pendingCreditAmount,
-            $transferredCredits,
-            $transferredCreditAmount,
-            $subscriptionAddOnHandle,
-            $addOnHandle,
-            $subscriptionDiscountHandle,
-            $discountHandle,
-            $couponHandle
+            $plan_version,
+            $amount_incl_vat,
+            $start_date,
+            $end_date,
+            $grace_duration,
+            $current_period_start,
+            $next_period_start,
+            $first_period_start,
+            $last_period_start,
+            $trial_start,
+            $trial_end,
+            $in_trial,
+            $has_started,
+            $renewal_count,
+            $expired_date,
+            $expire_reason,
+            $on_hold_date,
+            $on_hold_reason,
+            $payment_method_added,
+            $reminder_email_sent,
+            $failed_invoices,
+            $failed_amount,
+            $cancelled_invoices,
+            $cancelled_amount,
+            $pending_invoices,
+            $pending_amount,
+            $dunning_invoices,
+            $dunning_amount,
+            $settled_invoices,
+            $settled_amount,
+            $refunded_amount,
+            $pending_additional_costs,
+            $pending_additional_cost_amount,
+            $transferred_additional_costs,
+            $transferred_additional_cost_amount,
+            $pending_credits,
+            $pending_credit_amount,
+            $transferred_credits,
+            $transferred_credit_amount,
+            $subscription_add_on_handle,
+            $add_on_handle,
+            $subscription_discount_handle,
+            $discount_handle,
+            $coupon_handle
         )
             ->then(
                 function ($response) {
@@ -5160,64 +6810,64 @@ class ListApi
      * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
      * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
      * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param string $nextPageToken Next page token from previous response to get next page (optional)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
      * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60; (optional, default to created)
      * @param string $handle Subscription handle prefix (optional)
-     * @param string $handleContains Subscription handle contains (optional)
+     * @param string $handle_contains Subscription handle contains (optional)
      * @param string $customer Customer owning subscription (optional)
      * @param string $plan Plan owning subscription (optional)
      * @param string[] $state Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60; (optional)
      * @param string $amount Custom amount in minor unit interval. See documentation of intervals. (optional)
      * @param string $quantity Quantity. See documentation of intervals. (optional)
      * @param string $activated Activated date interval (optional)
-     * @param string $cancelledDate Cancelled date interval (optional)
+     * @param string $cancelled_date Cancelled date interval (optional)
      * @param string $reactivated Reactivated date interval (optional)
-     * @param  string $created Created date interval (optional)
-     * @param  string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  int $planVersion Plan version (optional)
-     * @param  string $amountInclVat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $startDate Start date interval (optional)
-     * @param  string $endDate End date interval (optional)
-     * @param  string $graceDuration Grace duration in seconds. See documentation of intervals. (optional)
-     * @param  string $currentPeriodStart Current period start date interval (optional)
-     * @param  string $nextPeriodStart Next period start date interval (optional)
-     * @param  string $firstPeriodStart First period start date interval (optional)
-     * @param  string $lastPeriodStart Last period start date interval (optional)
-     * @param  string $trialStart Trial period start date interval (optional)
-     * @param  string $trialEnd Trial period end date interval (optional)
-     * @param  string $inTrial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $hasStarted Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $renewalCount Renewal Count. See documentation of intervals. (optional)
-     * @param  string $expiredDate Expired period date interval (optional)
-     * @param  string[] $expireReason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
-     * @param  string $onHoldDate On hold period date interval (optional)
-     * @param  string[] $onHoldReason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
-     * @param  string $paymentMethodAdded Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $reminderEmailSent Reminder email sent period date interval (optional)
-     * @param  string $failedInvoices Failed invoices. See documentation of intervals. (optional)
-     * @param  string $failedAmount Failed amount. See documentation of intervals. (optional)
-     * @param  string $cancelledInvoices Cancelled invoices. See documentation of intervals. (optional)
-     * @param  string $cancelledAmount Cancelled amount. See documentation of intervals. (optional)
-     * @param  string $pendingInvoices Pending invoices. See documentation of intervals. (optional)
-     * @param  string $pendingAmount Pending amount invoices. See documentation of intervals. (optional)
-     * @param  string $dunningInvoices Dunning invoices. See documentation of intervals. (optional)
-     * @param  string $dunningAmount Dunning amount. See documentation of intervals. (optional)
-     * @param  string $settledInvoices Settled invoices. See documentation of intervals. (optional)
-     * @param  string $settledAmount Settled amount. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount. See documentation of intervals. (optional)
-     * @param  string $pendingAdditionalCosts Pending additional costs. See documentation of intervals. (optional)
-     * @param string $pendingAdditionalCostAmount Pending additional cost amount. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCosts Transferred additional costs. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCostAmount Transferred additional cost amount. See documentation of intervals. (optional)
-     * @param string $pendingCredits Pending credits. See documentation of intervals. (optional)
-     * @param string $pendingCreditAmount Pending credit amount. See documentation of intervals. (optional)
-     * @param string $transferredCredits Transferred credits. See documentation of intervals. (optional)
-     * @param string $transferredCreditAmount Transferred credit amount. See documentation of intervals. (optional)
-     * @param string $subscriptionAddOnHandle Subscription add-on handle (optional)
-     * @param string $addOnHandle Add-on handle (optional)
-     * @param string $subscriptionDiscountHandle Subscription discount handle (optional)
-     * @param string $discountHandle Discount handle (optional)
-     * @param string $couponHandle Coupon handle (optional)
+     * @param string $created Created date interval (optional)
+     * @param string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param int $plan_version Plan version (optional)
+     * @param string $amount_incl_vat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $start_date Start date interval (optional)
+     * @param string $end_date End date interval (optional)
+     * @param string $grace_duration Grace duration in seconds. See documentation of intervals. (optional)
+     * @param string $current_period_start Current period start date interval (optional)
+     * @param string $next_period_start Next period start date interval (optional)
+     * @param string $first_period_start First period start date interval (optional)
+     * @param string $last_period_start Last period start date interval (optional)
+     * @param string $trial_start Trial period start date interval (optional)
+     * @param string $trial_end Trial period end date interval (optional)
+     * @param string $in_trial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $has_started Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $renewal_count Renewal Count. See documentation of intervals. (optional)
+     * @param string $expired_date Expired period date interval (optional)
+     * @param string[] $expire_reason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
+     * @param string $on_hold_date On hold period date interval (optional)
+     * @param string[] $on_hold_reason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
+     * @param string $payment_method_added Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $reminder_email_sent Reminder email sent period date interval (optional)
+     * @param string $failed_invoices Failed invoices. See documentation of intervals. (optional)
+     * @param string $failed_amount Failed amount. See documentation of intervals. (optional)
+     * @param string $cancelled_invoices Cancelled invoices. See documentation of intervals. (optional)
+     * @param string $cancelled_amount Cancelled amount. See documentation of intervals. (optional)
+     * @param string $pending_invoices Pending invoices. See documentation of intervals. (optional)
+     * @param string $pending_amount Pending amount invoices. See documentation of intervals. (optional)
+     * @param string $dunning_invoices Dunning invoices. See documentation of intervals. (optional)
+     * @param string $dunning_amount Dunning amount. See documentation of intervals. (optional)
+     * @param string $settled_invoices Settled invoices. See documentation of intervals. (optional)
+     * @param string $settled_amount Settled amount. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount. See documentation of intervals. (optional)
+     * @param string $pending_additional_costs Pending additional costs. See documentation of intervals. (optional)
+     * @param string $pending_additional_cost_amount Pending additional cost amount. See documentation of intervals. (optional)
+     * @param string $transferred_additional_costs Transferred additional costs. See documentation of intervals. (optional)
+     * @param string $transferred_additional_cost_amount Transferred additional cost amount. See documentation of intervals. (optional)
+     * @param string $pending_credits Pending credits. See documentation of intervals. (optional)
+     * @param string $pending_credit_amount Pending credit amount. See documentation of intervals. (optional)
+     * @param string $transferred_credits Transferred credits. See documentation of intervals. (optional)
+     * @param string $transferred_credit_amount Transferred credit amount. See documentation of intervals. (optional)
+     * @param string $subscription_add_on_handle Subscription add-on handle (optional)
+     * @param string $add_on_handle Add-on handle (optional)
+     * @param string $subscription_discount_handle Subscription discount handle (optional)
+     * @param string $discount_handle Discount handle (optional)
+     * @param string $coupon_handle Coupon handle (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5227,64 +6877,64 @@ class ListApi
         $to = null,
         $interval = null,
         $size = '20',
-        $nextPageToken = null,
+        $next_page_token = null,
         $range = 'created',
         $handle = null,
-        $handleContains = null,
+        $handle_contains = null,
         $customer = null,
         $plan = null,
         $state = null,
         $amount = null,
         $quantity = null,
         $activated = null,
-        $cancelledDate = null,
+        $cancelled_date = null,
         $reactivated = null,
         $created = null,
         $renewing = null,
-        $planVersion = null,
-        $amountInclVat = null,
-        $startDate = null,
-        $endDate = null,
-        $graceDuration = null,
-        $currentPeriodStart = null,
-        $nextPeriodStart = null,
-        $firstPeriodStart = null,
-        $lastPeriodStart = null,
-        $trialStart = null,
-        $trialEnd = null,
-        $inTrial = null,
-        $hasStarted = null,
-        $renewalCount = null,
-        $expiredDate = null,
-        $expireReason = null,
-        $onHoldDate = null,
-        $onHoldReason = null,
-        $paymentMethodAdded = null,
-        $reminderEmailSent = null,
-        $failedInvoices = null,
-        $failedAmount = null,
-        $cancelledInvoices = null,
-        $cancelledAmount = null,
-        $pendingInvoices = null,
-        $pendingAmount = null,
-        $dunningInvoices = null,
-        $dunningAmount = null,
-        $settledInvoices = null,
-        $settledAmount = null,
-        $refundedAmount = null,
-        $pendingAdditionalCosts = null,
-        $pendingAdditionalCostAmount = null,
-        $transferredAdditionalCosts = null,
-        $transferredAdditionalCostAmount = null,
-        $pendingCredits = null,
-        $pendingCreditAmount = null,
-        $transferredCredits = null,
-        $transferredCreditAmount = null,
-        $subscriptionAddOnHandle = null,
-        $addOnHandle = null,
-        $subscriptionDiscountHandle = null,
-        $discountHandle = null,
-        $couponHandle = null
+        $plan_version = null,
+        $amount_incl_vat = null,
+        $start_date = null,
+        $end_date = null,
+        $grace_duration = null,
+        $current_period_start = null,
+        $next_period_start = null,
+        $first_period_start = null,
+        $last_period_start = null,
+        $trial_start = null,
+        $trial_end = null,
+        $in_trial = null,
+        $has_started = null,
+        $renewal_count = null,
+        $expired_date = null,
+        $expire_reason = null,
+        $on_hold_date = null,
+        $on_hold_reason = null,
+        $payment_method_added = null,
+        $reminder_email_sent = null,
+        $failed_invoices = null,
+        $failed_amount = null,
+        $cancelled_invoices = null,
+        $cancelled_amount = null,
+        $pending_invoices = null,
+        $pending_amount = null,
+        $dunning_invoices = null,
+        $dunning_amount = null,
+        $settled_invoices = null,
+        $settled_amount = null,
+        $refunded_amount = null,
+        $pending_additional_costs = null,
+        $pending_additional_cost_amount = null,
+        $transferred_additional_costs = null,
+        $transferred_additional_cost_amount = null,
+        $pending_credits = null,
+        $pending_credit_amount = null,
+        $transferred_credits = null,
+        $transferred_credit_amount = null,
+        $subscription_add_on_handle = null,
+        $add_on_handle = null,
+        $subscription_discount_handle = null,
+        $discount_handle = null,
+        $coupon_handle = null
     ) {
         $returnType = '\Reepay\Model\SubscriptionList';
         $request = $this->getSubscriptionListRequest(
@@ -5292,64 +6942,64 @@ class ListApi
             $to,
             $interval,
             $size,
-            $nextPageToken,
+            $next_page_token,
             $range,
             $handle,
-            $handleContains,
+            $handle_contains,
             $customer,
             $plan,
             $state,
             $amount,
             $quantity,
             $activated,
-            $cancelledDate,
+            $cancelled_date,
             $reactivated,
             $created,
             $renewing,
-            $planVersion,
-            $amountInclVat,
-            $startDate,
-            $endDate,
-            $graceDuration,
-            $currentPeriodStart,
-            $nextPeriodStart,
-            $firstPeriodStart,
-            $lastPeriodStart,
-            $trialStart,
-            $trialEnd,
-            $inTrial,
-            $hasStarted,
-            $renewalCount,
-            $expiredDate,
-            $expireReason,
-            $onHoldDate,
-            $onHoldReason,
-            $paymentMethodAdded,
-            $reminderEmailSent,
-            $failedInvoices,
-            $failedAmount,
-            $cancelledInvoices,
-            $cancelledAmount,
-            $pendingInvoices,
-            $pendingAmount,
-            $dunningInvoices,
-            $dunningAmount,
-            $settledInvoices,
-            $settledAmount,
-            $refundedAmount,
-            $pendingAdditionalCosts,
-            $pendingAdditionalCostAmount,
-            $transferredAdditionalCosts,
-            $transferredAdditionalCostAmount,
-            $pendingCredits,
-            $pendingCreditAmount,
-            $transferredCredits,
-            $transferredCreditAmount,
-            $subscriptionAddOnHandle,
-            $addOnHandle,
-            $subscriptionDiscountHandle,
-            $discountHandle,
-            $couponHandle
+            $plan_version,
+            $amount_incl_vat,
+            $start_date,
+            $end_date,
+            $grace_duration,
+            $current_period_start,
+            $next_period_start,
+            $first_period_start,
+            $last_period_start,
+            $trial_start,
+            $trial_end,
+            $in_trial,
+            $has_started,
+            $renewal_count,
+            $expired_date,
+            $expire_reason,
+            $on_hold_date,
+            $on_hold_reason,
+            $payment_method_added,
+            $reminder_email_sent,
+            $failed_invoices,
+            $failed_amount,
+            $cancelled_invoices,
+            $cancelled_amount,
+            $pending_invoices,
+            $pending_amount,
+            $dunning_invoices,
+            $dunning_amount,
+            $settled_invoices,
+            $settled_amount,
+            $refunded_amount,
+            $pending_additional_costs,
+            $pending_additional_cost_amount,
+            $transferred_additional_costs,
+            $transferred_additional_cost_amount,
+            $pending_credits,
+            $pending_credit_amount,
+            $transferred_credits,
+            $transferred_credit_amount,
+            $subscription_add_on_handle,
+            $add_on_handle,
+            $subscription_discount_handle,
+            $discount_handle,
+            $coupon_handle
         );
 
         return $this->client
@@ -5396,64 +7046,64 @@ class ListApi
      * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
      * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
      * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param string $nextPageToken Next page token from previous response to get next page (optional)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
      * @param string $range Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60; (optional, default to created)
      * @param string $handle Subscription handle prefix (optional)
-     * @param string $handleContains Subscription handle contains (optional)
+     * @param string $handle_contains Subscription handle contains (optional)
      * @param string $customer Customer owning subscription (optional)
      * @param string $plan Plan owning subscription (optional)
      * @param string[] $state Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60; (optional)
      * @param string $amount Custom amount in minor unit interval. See documentation of intervals. (optional)
      * @param string $quantity Quantity. See documentation of intervals. (optional)
      * @param string $activated Activated date interval (optional)
-     * @param string $cancelledDate Cancelled date interval (optional)
+     * @param string $cancelled_date Cancelled date interval (optional)
      * @param string $reactivated Reactivated date interval (optional)
-     * @param  string $created Created date interval (optional)
-     * @param  string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  int $planVersion Plan version (optional)
-     * @param  string $amountInclVat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $startDate Start date interval (optional)
-     * @param  string $endDate End date interval (optional)
-     * @param  string $graceDuration Grace duration in seconds. See documentation of intervals. (optional)
-     * @param  string $currentPeriodStart Current period start date interval (optional)
-     * @param  string $nextPeriodStart Next period start date interval (optional)
-     * @param  string $firstPeriodStart First period start date interval (optional)
-     * @param  string $lastPeriodStart Last period start date interval (optional)
-     * @param  string $trialStart Trial period start date interval (optional)
-     * @param  string $trialEnd Trial period end date interval (optional)
-     * @param  string $inTrial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $hasStarted Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $renewalCount Renewal Count. See documentation of intervals. (optional)
-     * @param  string $expiredDate Expired period date interval (optional)
-     * @param  string[] $expireReason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
-     * @param  string $onHoldDate On hold period date interval (optional)
-     * @param  string[] $onHoldReason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
-     * @param  string $paymentMethodAdded Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
-     * @param  string $reminderEmailSent Reminder email sent period date interval (optional)
-     * @param  string $failedInvoices Failed invoices. See documentation of intervals. (optional)
-     * @param  string $failedAmount Failed amount. See documentation of intervals. (optional)
-     * @param  string $cancelledInvoices Cancelled invoices. See documentation of intervals. (optional)
-     * @param  string $cancelledAmount Cancelled amount. See documentation of intervals. (optional)
-     * @param  string $pendingInvoices Pending invoices. See documentation of intervals. (optional)
-     * @param  string $pendingAmount Pending amount invoices. See documentation of intervals. (optional)
-     * @param  string $dunningInvoices Dunning invoices. See documentation of intervals. (optional)
-     * @param  string $dunningAmount Dunning amount. See documentation of intervals. (optional)
-     * @param  string $settledInvoices Settled invoices. See documentation of intervals. (optional)
-     * @param  string $settledAmount Settled amount. See documentation of intervals. (optional)
-     * @param  string $refundedAmount Refunded amount. See documentation of intervals. (optional)
-     * @param  string $pendingAdditionalCosts Pending additional costs. See documentation of intervals. (optional)
-     * @param string $pendingAdditionalCostAmount Pending additional cost amount. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCosts Transferred additional costs. See documentation of intervals. (optional)
-     * @param string $transferredAdditionalCostAmount Transferred additional cost amount. See documentation of intervals. (optional)
-     * @param string $pendingCredits Pending credits. See documentation of intervals. (optional)
-     * @param string $pendingCreditAmount Pending credit amount. See documentation of intervals. (optional)
-     * @param string $transferredCredits Transferred credits. See documentation of intervals. (optional)
-     * @param string $transferredCreditAmount Transferred credit amount. See documentation of intervals. (optional)
-     * @param string $subscriptionAddOnHandle Subscription add-on handle (optional)
-     * @param string $addOnHandle Add-on handle (optional)
-     * @param string $subscriptionDiscountHandle Subscription discount handle (optional)
-     * @param string $discountHandle Discount handle (optional)
-     * @param string $couponHandle Coupon handle (optional)
+     * @param string $created Created date interval (optional)
+     * @param string $renewing Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param int $plan_version Plan version (optional)
+     * @param string $amount_incl_vat Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $start_date Start date interval (optional)
+     * @param string $end_date End date interval (optional)
+     * @param string $grace_duration Grace duration in seconds. See documentation of intervals. (optional)
+     * @param string $current_period_start Current period start date interval (optional)
+     * @param string $next_period_start Next period start date interval (optional)
+     * @param string $first_period_start First period start date interval (optional)
+     * @param string $last_period_start Last period start date interval (optional)
+     * @param string $trial_start Trial period start date interval (optional)
+     * @param string $trial_end Trial period end date interval (optional)
+     * @param string $in_trial In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $has_started Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $renewal_count Renewal Count. See documentation of intervals. (optional)
+     * @param string $expired_date Expired period date interval (optional)
+     * @param string[] $expire_reason On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60; (optional)
+     * @param string $on_hold_date On hold period date interval (optional)
+     * @param string[] $on_hold_reason On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60; (optional)
+     * @param string $payment_method_added Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60; (optional)
+     * @param string $reminder_email_sent Reminder email sent period date interval (optional)
+     * @param string $failed_invoices Failed invoices. See documentation of intervals. (optional)
+     * @param string $failed_amount Failed amount. See documentation of intervals. (optional)
+     * @param string $cancelled_invoices Cancelled invoices. See documentation of intervals. (optional)
+     * @param string $cancelled_amount Cancelled amount. See documentation of intervals. (optional)
+     * @param string $pending_invoices Pending invoices. See documentation of intervals. (optional)
+     * @param string $pending_amount Pending amount invoices. See documentation of intervals. (optional)
+     * @param string $dunning_invoices Dunning invoices. See documentation of intervals. (optional)
+     * @param string $dunning_amount Dunning amount. See documentation of intervals. (optional)
+     * @param string $settled_invoices Settled invoices. See documentation of intervals. (optional)
+     * @param string $settled_amount Settled amount. See documentation of intervals. (optional)
+     * @param string $refunded_amount Refunded amount. See documentation of intervals. (optional)
+     * @param string $pending_additional_costs Pending additional costs. See documentation of intervals. (optional)
+     * @param string $pending_additional_cost_amount Pending additional cost amount. See documentation of intervals. (optional)
+     * @param string $transferred_additional_costs Transferred additional costs. See documentation of intervals. (optional)
+     * @param string $transferred_additional_cost_amount Transferred additional cost amount. See documentation of intervals. (optional)
+     * @param string $pending_credits Pending credits. See documentation of intervals. (optional)
+     * @param string $pending_credit_amount Pending credit amount. See documentation of intervals. (optional)
+     * @param string $transferred_credits Transferred credits. See documentation of intervals. (optional)
+     * @param string $transferred_credit_amount Transferred credit amount. See documentation of intervals. (optional)
+     * @param string $subscription_add_on_handle Subscription add-on handle (optional)
+     * @param string $add_on_handle Add-on handle (optional)
+     * @param string $subscription_discount_handle Subscription discount handle (optional)
+     * @param string $discount_handle Discount handle (optional)
+     * @param string $coupon_handle Coupon handle (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5463,64 +7113,64 @@ class ListApi
         $to = null,
         $interval = null,
         $size = '20',
-        $nextPageToken = null,
+        $next_page_token = null,
         $range = 'created',
         $handle = null,
-        $handleContains = null,
+        $handle_contains = null,
         $customer = null,
         $plan = null,
         $state = null,
         $amount = null,
         $quantity = null,
         $activated = null,
-        $cancelledDate = null,
+        $cancelled_date = null,
         $reactivated = null,
         $created = null,
         $renewing = null,
-        $planVersion = null,
-        $amountInclVat = null,
-        $startDate = null,
-        $endDate = null,
-        $graceDuration = null,
-        $currentPeriodStart = null,
-        $nextPeriodStart = null,
-        $firstPeriodStart = null,
-        $lastPeriodStart = null,
-        $trialStart = null,
-        $trialEnd = null,
-        $inTrial = null,
-        $hasStarted = null,
-        $renewalCount = null,
-        $expiredDate = null,
-        $expireReason = null,
-        $onHoldDate = null,
-        $onHoldReason = null,
-        $paymentMethodAdded = null,
-        $reminderEmailSent = null,
-        $failedInvoices = null,
-        $failedAmount = null,
-        $cancelledInvoices = null,
-        $cancelledAmount = null,
-        $pendingInvoices = null,
-        $pendingAmount = null,
-        $dunningInvoices = null,
-        $dunningAmount = null,
-        $settledInvoices = null,
-        $settledAmount = null,
-        $refundedAmount = null,
-        $pendingAdditionalCosts = null,
-        $pendingAdditionalCostAmount = null,
-        $transferredAdditionalCosts = null,
-        $transferredAdditionalCostAmount = null,
-        $pendingCredits = null,
-        $pendingCreditAmount = null,
-        $transferredCredits = null,
-        $transferredCreditAmount = null,
-        $subscriptionAddOnHandle = null,
-        $addOnHandle = null,
-        $subscriptionDiscountHandle = null,
-        $discountHandle = null,
-        $couponHandle = null
+        $plan_version = null,
+        $amount_incl_vat = null,
+        $start_date = null,
+        $end_date = null,
+        $grace_duration = null,
+        $current_period_start = null,
+        $next_period_start = null,
+        $first_period_start = null,
+        $last_period_start = null,
+        $trial_start = null,
+        $trial_end = null,
+        $in_trial = null,
+        $has_started = null,
+        $renewal_count = null,
+        $expired_date = null,
+        $expire_reason = null,
+        $on_hold_date = null,
+        $on_hold_reason = null,
+        $payment_method_added = null,
+        $reminder_email_sent = null,
+        $failed_invoices = null,
+        $failed_amount = null,
+        $cancelled_invoices = null,
+        $cancelled_amount = null,
+        $pending_invoices = null,
+        $pending_amount = null,
+        $dunning_invoices = null,
+        $dunning_amount = null,
+        $settled_invoices = null,
+        $settled_amount = null,
+        $refunded_amount = null,
+        $pending_additional_costs = null,
+        $pending_additional_cost_amount = null,
+        $transferred_additional_costs = null,
+        $transferred_additional_cost_amount = null,
+        $pending_credits = null,
+        $pending_credit_amount = null,
+        $transferred_credits = null,
+        $transferred_credit_amount = null,
+        $subscription_add_on_handle = null,
+        $add_on_handle = null,
+        $subscription_discount_handle = null,
+        $discount_handle = null,
+        $coupon_handle = null
     ) {
         $resourcePath = '/v1/list/subscription';
         $formParams = [];
@@ -5546,8 +7196,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -5558,8 +7208,8 @@ class ListApi
             $queryParams['handle'] = ObjectSerializer::toQueryValue($handle, null);
         }
         // query params
-        if ($handleContains !== null) {
-            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handleContains, null);
+        if ($handle_contains !== null) {
+            $queryParams['handle_contains'] = ObjectSerializer::toQueryValue($handle_contains, null);
         }
         // query params
         if ($customer !== null) {
@@ -5589,8 +7239,8 @@ class ListApi
             $queryParams['activated'] = ObjectSerializer::toQueryValue($activated, null);
         }
         // query params
-        if ($cancelledDate !== null) {
-            $queryParams['cancelled_date'] = ObjectSerializer::toQueryValue($cancelledDate, null);
+        if ($cancelled_date !== null) {
+            $queryParams['cancelled_date'] = ObjectSerializer::toQueryValue($cancelled_date, null);
         }
         // query params
         if ($reactivated !== null) {
@@ -5605,198 +7255,204 @@ class ListApi
             $queryParams['renewing'] = ObjectSerializer::toQueryValue($renewing, null);
         }
         // query params
-        if ($planVersion !== null) {
-            $queryParams['plan_version'] = ObjectSerializer::toQueryValue($planVersion, 'int32');
+        if ($plan_version !== null) {
+            $queryParams['plan_version'] = ObjectSerializer::toQueryValue($plan_version, 'int32');
         }
         // query params
-        if ($amountInclVat !== null) {
-            $queryParams['amount_incl_vat'] = ObjectSerializer::toQueryValue($amountInclVat, null);
+        if ($amount_incl_vat !== null) {
+            $queryParams['amount_incl_vat'] = ObjectSerializer::toQueryValue($amount_incl_vat, null);
         }
         // query params
-        if ($startDate !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($startDate, null);
+        if ($start_date !== null) {
+            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date, null);
         }
         // query params
-        if ($endDate !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($endDate, null);
+        if ($end_date !== null) {
+            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date, null);
         }
         // query params
-        if ($graceDuration !== null) {
-            $queryParams['grace_duration'] = ObjectSerializer::toQueryValue($graceDuration, null);
+        if ($grace_duration !== null) {
+            $queryParams['grace_duration'] = ObjectSerializer::toQueryValue($grace_duration, null);
         }
         // query params
-        if ($currentPeriodStart !== null) {
-            $queryParams['current_period_start'] = ObjectSerializer::toQueryValue($currentPeriodStart, null);
+        if ($current_period_start !== null) {
+            $queryParams['current_period_start'] = ObjectSerializer::toQueryValue($current_period_start, null);
         }
         // query params
-        if ($nextPeriodStart !== null) {
-            $queryParams['next_period_start'] = ObjectSerializer::toQueryValue($nextPeriodStart, null);
+        if ($next_period_start !== null) {
+            $queryParams['next_period_start'] = ObjectSerializer::toQueryValue($next_period_start, null);
         }
         // query params
-        if ($firstPeriodStart !== null) {
-            $queryParams['first_period_start'] = ObjectSerializer::toQueryValue($firstPeriodStart, null);
+        if ($first_period_start !== null) {
+            $queryParams['first_period_start'] = ObjectSerializer::toQueryValue($first_period_start, null);
         }
         // query params
-        if ($lastPeriodStart !== null) {
-            $queryParams['last_period_start'] = ObjectSerializer::toQueryValue($lastPeriodStart, null);
+        if ($last_period_start !== null) {
+            $queryParams['last_period_start'] = ObjectSerializer::toQueryValue($last_period_start, null);
         }
         // query params
-        if ($trialStart !== null) {
-            $queryParams['trial_start'] = ObjectSerializer::toQueryValue($trialStart, null);
+        if ($trial_start !== null) {
+            $queryParams['trial_start'] = ObjectSerializer::toQueryValue($trial_start, null);
         }
         // query params
-        if ($trialEnd !== null) {
-            $queryParams['trial_end'] = ObjectSerializer::toQueryValue($trialEnd, null);
+        if ($trial_end !== null) {
+            $queryParams['trial_end'] = ObjectSerializer::toQueryValue($trial_end, null);
         }
         // query params
-        if ($inTrial !== null) {
-            $queryParams['in_trial'] = ObjectSerializer::toQueryValue($inTrial, null);
+        if ($in_trial !== null) {
+            $queryParams['in_trial'] = ObjectSerializer::toQueryValue($in_trial, null);
         }
         // query params
-        if ($hasStarted !== null) {
-            $queryParams['has_started'] = ObjectSerializer::toQueryValue($hasStarted, null);
+        if ($has_started !== null) {
+            $queryParams['has_started'] = ObjectSerializer::toQueryValue($has_started, null);
         }
         // query params
-        if ($renewalCount !== null) {
-            $queryParams['renewal_count'] = ObjectSerializer::toQueryValue($renewalCount, null);
+        if ($renewal_count !== null) {
+            $queryParams['renewal_count'] = ObjectSerializer::toQueryValue($renewal_count, null);
         }
         // query params
-        if ($expiredDate !== null) {
-            $queryParams['expired_date'] = ObjectSerializer::toQueryValue($expiredDate, null);
+        if ($expired_date !== null) {
+            $queryParams['expired_date'] = ObjectSerializer::toQueryValue($expired_date, null);
         }
         // query params
-        if (is_array($expireReason)) {
-            $expireReason = ObjectSerializer::serializeCollection($expireReason, 'multi', true);
+        if (is_array($expire_reason)) {
+            $expire_reason = ObjectSerializer::serializeCollection($expire_reason, 'multi', true);
         }
-        if ($expireReason !== null) {
-            $queryParams['expire_reason'] = ObjectSerializer::toQueryValue($expireReason, null);
-        }
-        // query params
-        if ($onHoldDate !== null) {
-            $queryParams['on_hold_date'] = ObjectSerializer::toQueryValue($onHoldDate, null);
+        if ($expire_reason !== null) {
+            $queryParams['expire_reason'] = ObjectSerializer::toQueryValue($expire_reason, null);
         }
         // query params
-        if (is_array($onHoldReason)) {
-            $onHoldReason = ObjectSerializer::serializeCollection($onHoldReason, 'multi', true);
-        }
-        if ($onHoldReason !== null) {
-            $queryParams['on_hold_reason'] = ObjectSerializer::toQueryValue($onHoldReason, null);
+        if ($on_hold_date !== null) {
+            $queryParams['on_hold_date'] = ObjectSerializer::toQueryValue($on_hold_date, null);
         }
         // query params
-        if ($paymentMethodAdded !== null) {
-            $queryParams['payment_method_added'] = ObjectSerializer::toQueryValue($paymentMethodAdded, null);
+        if (is_array($on_hold_reason)) {
+            $on_hold_reason = ObjectSerializer::serializeCollection($on_hold_reason, 'multi', true);
+        }
+        if ($on_hold_reason !== null) {
+            $queryParams['on_hold_reason'] = ObjectSerializer::toQueryValue($on_hold_reason, null);
         }
         // query params
-        if ($reminderEmailSent !== null) {
-            $queryParams['reminder_email_sent'] = ObjectSerializer::toQueryValue($reminderEmailSent, null);
+        if ($payment_method_added !== null) {
+            $queryParams['payment_method_added'] = ObjectSerializer::toQueryValue($payment_method_added, null);
         }
         // query params
-        if ($failedInvoices !== null) {
-            $queryParams['failed_invoices'] = ObjectSerializer::toQueryValue($failedInvoices, null);
+        if ($reminder_email_sent !== null) {
+            $queryParams['reminder_email_sent'] = ObjectSerializer::toQueryValue($reminder_email_sent, null);
         }
         // query params
-        if ($failedAmount !== null) {
-            $queryParams['failed_amount'] = ObjectSerializer::toQueryValue($failedAmount, null);
+        if ($failed_invoices !== null) {
+            $queryParams['failed_invoices'] = ObjectSerializer::toQueryValue($failed_invoices, null);
         }
         // query params
-        if ($cancelledInvoices !== null) {
-            $queryParams['cancelled_invoices'] = ObjectSerializer::toQueryValue($cancelledInvoices, null);
+        if ($failed_amount !== null) {
+            $queryParams['failed_amount'] = ObjectSerializer::toQueryValue($failed_amount, null);
         }
         // query params
-        if ($cancelledAmount !== null) {
-            $queryParams['cancelled_amount'] = ObjectSerializer::toQueryValue($cancelledAmount, null);
+        if ($cancelled_invoices !== null) {
+            $queryParams['cancelled_invoices'] = ObjectSerializer::toQueryValue($cancelled_invoices, null);
         }
         // query params
-        if ($pendingInvoices !== null) {
-            $queryParams['pending_invoices'] = ObjectSerializer::toQueryValue($pendingInvoices, null);
+        if ($cancelled_amount !== null) {
+            $queryParams['cancelled_amount'] = ObjectSerializer::toQueryValue($cancelled_amount, null);
         }
         // query params
-        if ($pendingAmount !== null) {
-            $queryParams['pending_amount'] = ObjectSerializer::toQueryValue($pendingAmount, null);
+        if ($pending_invoices !== null) {
+            $queryParams['pending_invoices'] = ObjectSerializer::toQueryValue($pending_invoices, null);
         }
         // query params
-        if ($dunningInvoices !== null) {
-            $queryParams['dunning_invoices'] = ObjectSerializer::toQueryValue($dunningInvoices, null);
+        if ($pending_amount !== null) {
+            $queryParams['pending_amount'] = ObjectSerializer::toQueryValue($pending_amount, null);
         }
         // query params
-        if ($dunningAmount !== null) {
-            $queryParams['dunning_amount'] = ObjectSerializer::toQueryValue($dunningAmount, null);
+        if ($dunning_invoices !== null) {
+            $queryParams['dunning_invoices'] = ObjectSerializer::toQueryValue($dunning_invoices, null);
         }
         // query params
-        if ($settledInvoices !== null) {
-            $queryParams['settled_invoices'] = ObjectSerializer::toQueryValue($settledInvoices, null);
+        if ($dunning_amount !== null) {
+            $queryParams['dunning_amount'] = ObjectSerializer::toQueryValue($dunning_amount, null);
         }
         // query params
-        if ($settledAmount !== null) {
-            $queryParams['settled_amount'] = ObjectSerializer::toQueryValue($settledAmount, null);
+        if ($settled_invoices !== null) {
+            $queryParams['settled_invoices'] = ObjectSerializer::toQueryValue($settled_invoices, null);
         }
         // query params
-        if ($refundedAmount !== null) {
-            $queryParams['refunded_amount'] = ObjectSerializer::toQueryValue($refundedAmount, null);
+        if ($settled_amount !== null) {
+            $queryParams['settled_amount'] = ObjectSerializer::toQueryValue($settled_amount, null);
         }
         // query params
-        if ($pendingAdditionalCosts !== null) {
-            $queryParams['pending_additional_costs'] = ObjectSerializer::toQueryValue($pendingAdditionalCosts, null);
+        if ($refunded_amount !== null) {
+            $queryParams['refunded_amount'] = ObjectSerializer::toQueryValue($refunded_amount, null);
         }
         // query params
-        if ($pendingAdditionalCostAmount !== null) {
+        if ($pending_additional_costs !== null) {
+            $queryParams['pending_additional_costs'] = ObjectSerializer::toQueryValue($pending_additional_costs, null);
+        }
+        // query params
+        if ($pending_additional_cost_amount !== null) {
             $queryParams['pending_additional_cost_amount'] = ObjectSerializer::toQueryValue(
-                $pendingAdditionalCostAmount,
+                $pending_additional_cost_amount,
                 null
             );
         }
         // query params
-        if ($transferredAdditionalCosts !== null) {
+        if ($transferred_additional_costs !== null) {
             $queryParams['transferred_additional_costs'] = ObjectSerializer::toQueryValue(
-                $transferredAdditionalCosts,
+                $transferred_additional_costs,
                 null
             );
         }
         // query params
-        if ($transferredAdditionalCostAmount !== null) {
+        if ($transferred_additional_cost_amount !== null) {
             $queryParams['transferred_additional_cost_amount'] = ObjectSerializer::toQueryValue(
-                $transferredAdditionalCostAmount,
+                $transferred_additional_cost_amount,
                 null
             );
         }
         // query params
-        if ($pendingCredits !== null) {
-            $queryParams['pending_credits'] = ObjectSerializer::toQueryValue($pendingCredits, null);
+        if ($pending_credits !== null) {
+            $queryParams['pending_credits'] = ObjectSerializer::toQueryValue($pending_credits, null);
         }
         // query params
-        if ($pendingCreditAmount !== null) {
-            $queryParams['pending_credit_amount'] = ObjectSerializer::toQueryValue($pendingCreditAmount, null);
+        if ($pending_credit_amount !== null) {
+            $queryParams['pending_credit_amount'] = ObjectSerializer::toQueryValue($pending_credit_amount, null);
         }
         // query params
-        if ($transferredCredits !== null) {
-            $queryParams['transferred_credits'] = ObjectSerializer::toQueryValue($transferredCredits, null);
+        if ($transferred_credits !== null) {
+            $queryParams['transferred_credits'] = ObjectSerializer::toQueryValue($transferred_credits, null);
         }
         // query params
-        if ($transferredCreditAmount !== null) {
-            $queryParams['transferred_credit_amount'] = ObjectSerializer::toQueryValue($transferredCreditAmount, null);
+        if ($transferred_credit_amount !== null) {
+            $queryParams['transferred_credit_amount'] = ObjectSerializer::toQueryValue(
+                $transferred_credit_amount,
+                null
+            );
         }
         // query params
-        if ($subscriptionAddOnHandle !== null) {
-            $queryParams['subscription_add_on_handle'] = ObjectSerializer::toQueryValue($subscriptionAddOnHandle, null);
+        if ($subscription_add_on_handle !== null) {
+            $queryParams['subscription_add_on_handle'] = ObjectSerializer::toQueryValue(
+                $subscription_add_on_handle,
+                null
+            );
         }
         // query params
-        if ($addOnHandle !== null) {
-            $queryParams['add_on_handle'] = ObjectSerializer::toQueryValue($addOnHandle, null);
+        if ($add_on_handle !== null) {
+            $queryParams['add_on_handle'] = ObjectSerializer::toQueryValue($add_on_handle, null);
         }
         // query params
-        if ($subscriptionDiscountHandle !== null) {
+        if ($subscription_discount_handle !== null) {
             $queryParams['subscription_discount_handle'] = ObjectSerializer::toQueryValue(
-                $subscriptionDiscountHandle,
+                $subscription_discount_handle,
                 null
             );
         }
         // query params
-        if ($discountHandle !== null) {
-            $queryParams['discount_handle'] = ObjectSerializer::toQueryValue($discountHandle, null);
+        if ($discount_handle !== null) {
+            $queryParams['discount_handle'] = ObjectSerializer::toQueryValue($discount_handle, null);
         }
         // query params
-        if ($couponHandle !== null) {
-            $queryParams['coupon_handle'] = ObjectSerializer::toQueryValue($couponHandle, null);
+        if ($coupon_handle !== null) {
+            $queryParams['coupon_handle'] = ObjectSerializer::toQueryValue($coupon_handle, null);
         }
 
 
@@ -5873,39 +7529,90 @@ class ListApi
      *
      * Get list of transactions
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
-     * @param  string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
-     * @param  string[] $paymentType Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $invoice Transactions for invoice by invoice handle (optional)
-     * @param  string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $cardType Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Transactions for card with prefix (optional)
-     * @param  string $cardPostfix Transactions for card with postfix (optional)
-     * @param  string $cardFingerprint Transactions for card with postfix (optional)
-     * @param  string[] $cardCountry Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Transactions with card gateway. (optional)
-     * @param  string $paymentMethod Transactions using saved payment method (optional)
-     * @param  string $cardAcquirerCode Transaction using card acquirer code (optional)
-     * @param  string $cardErrorState Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
-     * @param  string $cardError Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
-     * @param  string $paymentContext Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
-     * @param  string $cardAcquirerReference Transaction with card acquirer reference (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
+     * @param string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
+     * @param string[] $payment_type Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $invoice Transactions for invoice by invoice handle (optional)
+     * @param string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $card_type Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Transactions for card with prefix (optional)
+     * @param string $card_postfix Transactions for card with postfix (optional)
+     * @param string $card_fingerprint Transactions for card with postfix (optional)
+     * @param string[] $card_country Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Transactions with card gateway. (optional)
+     * @param string $payment_method Transactions using saved payment method (optional)
+     * @param string $card_acquirer_code Transaction using card acquirer code (optional)
+     * @param string $card_error_state Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
+     * @param string $card_error Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
+     * @param string $payment_context Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
+     * @param string $card_acquirer_reference Transaction with card acquirer reference (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\TransactionList
      */
-    public function getTransactionList($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $type = null, $state = null, $paymentType = null, $invoice = null, $currency = null, $amount = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $paymentMethod = null, $cardAcquirerCode = null, $cardErrorState = null, $cardError = null, $paymentContext = null, $cardAcquirerReference = null)
-    {
-        list($response) = $this->getTransactionListWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $type, $state, $paymentType, $invoice, $currency, $amount, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $paymentMethod, $cardAcquirerCode, $cardErrorState, $cardError, $paymentContext, $cardAcquirerReference);
+    public function getTransactionList(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $type = null,
+        $state = null,
+        $payment_type = null,
+        $invoice = null,
+        $currency = null,
+        $amount = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $payment_method = null,
+        $card_acquirer_code = null,
+        $card_error_state = null,
+        $card_error = null,
+        $payment_context = null,
+        $card_acquirer_reference = null
+    ) {
+        list($response) = $this->getTransactionListWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $type,
+            $state,
+            $payment_type,
+            $invoice,
+            $currency,
+            $amount,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $payment_method,
+            $card_acquirer_code,
+            $card_error_state,
+            $card_error,
+            $payment_context,
+            $card_acquirer_reference
+        );
         return $response;
     }
 
@@ -5914,40 +7621,91 @@ class ListApi
      *
      * Get list of transactions
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
-     * @param  string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
-     * @param  string[] $paymentType Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $invoice Transactions for invoice by invoice handle (optional)
-     * @param  string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $cardType Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Transactions for card with prefix (optional)
-     * @param  string $cardPostfix Transactions for card with postfix (optional)
-     * @param  string $cardFingerprint Transactions for card with postfix (optional)
-     * @param  string[] $cardCountry Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Transactions with card gateway. (optional)
-     * @param  string $paymentMethod Transactions using saved payment method (optional)
-     * @param  string $cardAcquirerCode Transaction using card acquirer code (optional)
-     * @param  string $cardErrorState Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
-     * @param  string $cardError Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
-     * @param  string $paymentContext Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
-     * @param  string $cardAcquirerReference Transaction with card acquirer reference (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
+     * @param string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
+     * @param string[] $payment_type Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $invoice Transactions for invoice by invoice handle (optional)
+     * @param string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $card_type Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Transactions for card with prefix (optional)
+     * @param string $card_postfix Transactions for card with postfix (optional)
+     * @param string $card_fingerprint Transactions for card with postfix (optional)
+     * @param string[] $card_country Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Transactions with card gateway. (optional)
+     * @param string $payment_method Transactions using saved payment method (optional)
+     * @param string $card_acquirer_code Transaction using card acquirer code (optional)
+     * @param string $card_error_state Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
+     * @param string $card_error Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
+     * @param string $payment_context Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
+     * @param string $card_acquirer_reference Transaction with card acquirer reference (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\TransactionList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionListWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $type = null, $state = null, $paymentType = null, $invoice = null, $currency = null, $amount = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $paymentMethod = null, $cardAcquirerCode = null, $cardErrorState = null, $cardError = null, $paymentContext = null, $cardAcquirerReference = null)
-    {
+    public function getTransactionListWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $type = null,
+        $state = null,
+        $payment_type = null,
+        $invoice = null,
+        $currency = null,
+        $amount = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $payment_method = null,
+        $card_acquirer_code = null,
+        $card_error_state = null,
+        $card_error = null,
+        $payment_context = null,
+        $card_acquirer_reference = null
+    ) {
         $returnType = '\Reepay\Model\TransactionList';
-        $request = $this->getTransactionListRequest($from, $to, $interval, $size, $nextPageToken, $range, $type, $state, $paymentType, $invoice, $currency, $amount, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $paymentMethod, $cardAcquirerCode, $cardErrorState, $cardError, $paymentContext, $cardAcquirerReference);
+        $request = $this->getTransactionListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $type,
+            $state,
+            $payment_type,
+            $invoice,
+            $currency,
+            $amount,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $payment_method,
+            $card_acquirer_code,
+            $card_error_state,
+            $card_error,
+            $payment_context,
+            $card_acquirer_reference
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -6061,38 +7819,89 @@ class ListApi
      *
      * Get list of transactions
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
-     * @param  string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
-     * @param  string[] $paymentType Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $invoice Transactions for invoice by invoice handle (optional)
-     * @param  string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $cardType Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Transactions for card with prefix (optional)
-     * @param  string $cardPostfix Transactions for card with postfix (optional)
-     * @param  string $cardFingerprint Transactions for card with postfix (optional)
-     * @param  string[] $cardCountry Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Transactions with card gateway. (optional)
-     * @param  string $paymentMethod Transactions using saved payment method (optional)
-     * @param  string $cardAcquirerCode Transaction using card acquirer code (optional)
-     * @param  string $cardErrorState Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
-     * @param  string $cardError Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
-     * @param  string $paymentContext Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
-     * @param  string $cardAcquirerReference Transaction with card acquirer reference (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
+     * @param string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
+     * @param string[] $payment_type Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $invoice Transactions for invoice by invoice handle (optional)
+     * @param string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $card_type Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Transactions for card with prefix (optional)
+     * @param string $card_postfix Transactions for card with postfix (optional)
+     * @param string $card_fingerprint Transactions for card with postfix (optional)
+     * @param string[] $card_country Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Transactions with card gateway. (optional)
+     * @param string $payment_method Transactions using saved payment method (optional)
+     * @param string $card_acquirer_code Transaction using card acquirer code (optional)
+     * @param string $card_error_state Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
+     * @param string $card_error Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
+     * @param string $payment_context Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
+     * @param string $card_acquirer_reference Transaction with card acquirer reference (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionListAsync($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $type = null, $state = null, $paymentType = null, $invoice = null, $currency = null, $amount = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $paymentMethod = null, $cardAcquirerCode = null, $cardErrorState = null, $cardError = null, $paymentContext = null, $cardAcquirerReference = null)
-    {
-        return $this->getTransactionListAsyncWithHttpInfo($from, $to, $interval, $size, $nextPageToken, $range, $type, $state, $paymentType, $invoice, $currency, $amount, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $paymentMethod, $cardAcquirerCode, $cardErrorState, $cardError, $paymentContext, $cardAcquirerReference)
+    public function getTransactionListAsync(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $type = null,
+        $state = null,
+        $payment_type = null,
+        $invoice = null,
+        $currency = null,
+        $amount = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $payment_method = null,
+        $card_acquirer_code = null,
+        $card_error_state = null,
+        $card_error = null,
+        $payment_context = null,
+        $card_acquirer_reference = null
+    ) {
+        return $this->getTransactionListAsyncWithHttpInfo(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $type,
+            $state,
+            $payment_type,
+            $invoice,
+            $currency,
+            $amount,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $payment_method,
+            $card_acquirer_code,
+            $card_error_state,
+            $card_error,
+            $payment_context,
+            $card_acquirer_reference
+        )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6105,39 +7914,90 @@ class ListApi
      *
      * Get list of transactions
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
-     * @param  string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
-     * @param  string[] $paymentType Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $invoice Transactions for invoice by invoice handle (optional)
-     * @param  string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $cardType Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Transactions for card with prefix (optional)
-     * @param  string $cardPostfix Transactions for card with postfix (optional)
-     * @param  string $cardFingerprint Transactions for card with postfix (optional)
-     * @param  string[] $cardCountry Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Transactions with card gateway. (optional)
-     * @param  string $paymentMethod Transactions using saved payment method (optional)
-     * @param  string $cardAcquirerCode Transaction using card acquirer code (optional)
-     * @param  string $cardErrorState Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
-     * @param  string $cardError Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
-     * @param  string $paymentContext Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
-     * @param  string $cardAcquirerReference Transaction with card acquirer reference (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
+     * @param string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
+     * @param string[] $payment_type Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $invoice Transactions for invoice by invoice handle (optional)
+     * @param string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $card_type Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Transactions for card with prefix (optional)
+     * @param string $card_postfix Transactions for card with postfix (optional)
+     * @param string $card_fingerprint Transactions for card with postfix (optional)
+     * @param string[] $card_country Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Transactions with card gateway. (optional)
+     * @param string $payment_method Transactions using saved payment method (optional)
+     * @param string $card_acquirer_code Transaction using card acquirer code (optional)
+     * @param string $card_error_state Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
+     * @param string $card_error Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
+     * @param string $payment_context Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
+     * @param string $card_acquirer_reference Transaction with card acquirer reference (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionListAsyncWithHttpInfo($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $type = null, $state = null, $paymentType = null, $invoice = null, $currency = null, $amount = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $paymentMethod = null, $cardAcquirerCode = null, $cardErrorState = null, $cardError = null, $paymentContext = null, $cardAcquirerReference = null)
-    {
+    public function getTransactionListAsyncWithHttpInfo(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $type = null,
+        $state = null,
+        $payment_type = null,
+        $invoice = null,
+        $currency = null,
+        $amount = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $payment_method = null,
+        $card_acquirer_code = null,
+        $card_error_state = null,
+        $card_error = null,
+        $payment_context = null,
+        $card_acquirer_reference = null
+    ) {
         $returnType = '\Reepay\Model\TransactionList';
-        $request = $this->getTransactionListRequest($from, $to, $interval, $size, $nextPageToken, $range, $type, $state, $paymentType, $invoice, $currency, $amount, $cardType, $transactionCardType, $cardPrefix, $cardPostfix, $cardFingerprint, $cardCountry, $cardGateway, $paymentMethod, $cardAcquirerCode, $cardErrorState, $cardError, $paymentContext, $cardAcquirerReference);
+        $request = $this->getTransactionListRequest(
+            $from,
+            $to,
+            $interval,
+            $size,
+            $next_page_token,
+            $range,
+            $type,
+            $state,
+            $payment_type,
+            $invoice,
+            $currency,
+            $amount,
+            $card_type,
+            $transaction_card_type,
+            $card_prefix,
+            $card_postfix,
+            $card_fingerprint,
+            $card_country,
+            $card_gateway,
+            $payment_method,
+            $card_acquirer_code,
+            $card_error_state,
+            $card_error,
+            $payment_context,
+            $card_acquirer_reference
+        );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6179,38 +8039,62 @@ class ListApi
     /**
      * Create request for operation 'getTransactionList'
      *
-     * @param  string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
-     * @param  string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
-     * @param  string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
-     * @param  int $size Page size between 10 and 100 (default 20) (optional, default to 20)
-     * @param  string $nextPageToken Next page token from previous response to get next page (optional)
-     * @param  string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
-     * @param  string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
-     * @param  string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
-     * @param  string[] $paymentType Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
-     * @param  string $invoice Transactions for invoice by invoice handle (optional)
-     * @param  string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
-     * @param  string $amount Amount in minor unit interval. See documentation of intervals. (optional)
-     * @param  string[] $cardType Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string[] $transactionCardType Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
-     * @param  string $cardPrefix Transactions for card with prefix (optional)
-     * @param  string $cardPostfix Transactions for card with postfix (optional)
-     * @param  string $cardFingerprint Transactions for card with postfix (optional)
-     * @param  string[] $cardCountry Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
-     * @param  string $cardGateway Transactions with card gateway. (optional)
-     * @param  string $paymentMethod Transactions using saved payment method (optional)
-     * @param  string $cardAcquirerCode Transaction using card acquirer code (optional)
-     * @param  string $cardErrorState Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
-     * @param  string $cardError Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
-     * @param  string $paymentContext Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
-     * @param  string $cardAcquirerReference Transaction with card acquirer reference (optional)
+     * @param string $from Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; (optional)
+     * @param string $to Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now. (optional)
+     * @param string $interval Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations (optional)
+     * @param int $size Page size between 10 and 100 (default 20) (optional, default to 20)
+     * @param string $next_page_token Next page token from previous response to get next page (optional)
+     * @param string $range Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;. (optional, default to created)
+     * @param string[] $type Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60; (optional)
+     * @param string[] $state Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60; (optional)
+     * @param string[] $payment_type Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; (optional)
+     * @param string $invoice Transactions for invoice by invoice handle (optional)
+     * @param string[] $currency Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. (optional)
+     * @param string $amount Amount in minor unit interval. See documentation of intervals. (optional)
+     * @param string[] $card_type Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string[] $transaction_card_type Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60; (optional)
+     * @param string $card_prefix Transactions for card with prefix (optional)
+     * @param string $card_postfix Transactions for card with postfix (optional)
+     * @param string $card_fingerprint Transactions for card with postfix (optional)
+     * @param string[] $card_country Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). (optional)
+     * @param string $card_gateway Transactions with card gateway. (optional)
+     * @param string $payment_method Transactions using saved payment method (optional)
+     * @param string $card_acquirer_code Transaction using card acquirer code (optional)
+     * @param string $card_error_state Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60; (optional)
+     * @param string $card_error Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; (optional)
+     * @param string $payment_context Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated (optional)
+     * @param string $card_acquirer_reference Transaction with card acquirer reference (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransactionListRequest($from = null, $to = null, $interval = null, $size = '20', $nextPageToken = null, $range = 'created', $type = null, $state = null, $paymentType = null, $invoice = null, $currency = null, $amount = null, $cardType = null, $transactionCardType = null, $cardPrefix = null, $cardPostfix = null, $cardFingerprint = null, $cardCountry = null, $cardGateway = null, $paymentMethod = null, $cardAcquirerCode = null, $cardErrorState = null, $cardError = null, $paymentContext = null, $cardAcquirerReference = null)
-    {
-
+    protected function getTransactionListRequest(
+        $from = null,
+        $to = null,
+        $interval = null,
+        $size = '20',
+        $next_page_token = null,
+        $range = 'created',
+        $type = null,
+        $state = null,
+        $payment_type = null,
+        $invoice = null,
+        $currency = null,
+        $amount = null,
+        $card_type = null,
+        $transaction_card_type = null,
+        $card_prefix = null,
+        $card_postfix = null,
+        $card_fingerprint = null,
+        $card_country = null,
+        $card_gateway = null,
+        $payment_method = null,
+        $card_acquirer_code = null,
+        $card_error_state = null,
+        $card_error = null,
+        $payment_context = null,
+        $card_acquirer_reference = null
+    ) {
         $resourcePath = '/v1/list/transaction';
         $formParams = [];
         $queryParams = [];
@@ -6235,8 +8119,8 @@ class ListApi
             $queryParams['size'] = ObjectSerializer::toQueryValue($size, 'int32');
         }
         // query params
-        if ($nextPageToken !== null) {
-            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($nextPageToken, null);
+        if ($next_page_token !== null) {
+            $queryParams['next_page_token'] = ObjectSerializer::toQueryValue($next_page_token, null);
         }
         // query params
         if ($range !== null) {
@@ -6257,11 +8141,11 @@ class ListApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if (is_array($paymentType)) {
-            $paymentType = ObjectSerializer::serializeCollection($paymentType, 'multi', true);
+        if (is_array($payment_type)) {
+            $payment_type = ObjectSerializer::serializeCollection($payment_type, 'multi', true);
         }
-        if ($paymentType !== null) {
-            $queryParams['payment_type'] = ObjectSerializer::toQueryValue($paymentType, null);
+        if ($payment_type !== null) {
+            $queryParams['payment_type'] = ObjectSerializer::toQueryValue($payment_type, null);
         }
         // query params
         if ($invoice !== null) {
@@ -6279,65 +8163,65 @@ class ListApi
             $queryParams['amount'] = ObjectSerializer::toQueryValue($amount, null);
         }
         // query params
-        if (is_array($cardType)) {
-            $cardType = ObjectSerializer::serializeCollection($cardType, 'multi', true);
+        if (is_array($card_type)) {
+            $card_type = ObjectSerializer::serializeCollection($card_type, 'multi', true);
         }
-        if ($cardType !== null) {
-            $queryParams['card_type'] = ObjectSerializer::toQueryValue($cardType, null);
-        }
-        // query params
-        if (is_array($transactionCardType)) {
-            $transactionCardType = ObjectSerializer::serializeCollection($transactionCardType, 'multi', true);
-        }
-        if ($transactionCardType !== null) {
-            $queryParams['transaction_card_type'] = ObjectSerializer::toQueryValue($transactionCardType, null);
+        if ($card_type !== null) {
+            $queryParams['card_type'] = ObjectSerializer::toQueryValue($card_type, null);
         }
         // query params
-        if ($cardPrefix !== null) {
-            $queryParams['card_prefix'] = ObjectSerializer::toQueryValue($cardPrefix, null);
+        if (is_array($transaction_card_type)) {
+            $transaction_card_type = ObjectSerializer::serializeCollection($transaction_card_type, 'multi', true);
+        }
+        if ($transaction_card_type !== null) {
+            $queryParams['transaction_card_type'] = ObjectSerializer::toQueryValue($transaction_card_type, null);
         }
         // query params
-        if ($cardPostfix !== null) {
-            $queryParams['card_postfix'] = ObjectSerializer::toQueryValue($cardPostfix, null);
+        if ($card_prefix !== null) {
+            $queryParams['card_prefix'] = ObjectSerializer::toQueryValue($card_prefix, null);
         }
         // query params
-        if ($cardFingerprint !== null) {
-            $queryParams['card_fingerprint'] = ObjectSerializer::toQueryValue($cardFingerprint, null);
+        if ($card_postfix !== null) {
+            $queryParams['card_postfix'] = ObjectSerializer::toQueryValue($card_postfix, null);
         }
         // query params
-        if (is_array($cardCountry)) {
-            $cardCountry = ObjectSerializer::serializeCollection($cardCountry, 'multi', true);
-        }
-        if ($cardCountry !== null) {
-            $queryParams['card_country'] = ObjectSerializer::toQueryValue($cardCountry, null);
+        if ($card_fingerprint !== null) {
+            $queryParams['card_fingerprint'] = ObjectSerializer::toQueryValue($card_fingerprint, null);
         }
         // query params
-        if ($cardGateway !== null) {
-            $queryParams['card_gateway'] = ObjectSerializer::toQueryValue($cardGateway, null);
+        if (is_array($card_country)) {
+            $card_country = ObjectSerializer::serializeCollection($card_country, 'multi', true);
+        }
+        if ($card_country !== null) {
+            $queryParams['card_country'] = ObjectSerializer::toQueryValue($card_country, null);
         }
         // query params
-        if ($paymentMethod !== null) {
-            $queryParams['payment_method'] = ObjectSerializer::toQueryValue($paymentMethod, null);
+        if ($card_gateway !== null) {
+            $queryParams['card_gateway'] = ObjectSerializer::toQueryValue($card_gateway, null);
         }
         // query params
-        if ($cardAcquirerCode !== null) {
-            $queryParams['card_acquirer_code'] = ObjectSerializer::toQueryValue($cardAcquirerCode, null);
+        if ($payment_method !== null) {
+            $queryParams['payment_method'] = ObjectSerializer::toQueryValue($payment_method, null);
         }
         // query params
-        if ($cardErrorState !== null) {
-            $queryParams['card_error_state'] = ObjectSerializer::toQueryValue($cardErrorState, null);
+        if ($card_acquirer_code !== null) {
+            $queryParams['card_acquirer_code'] = ObjectSerializer::toQueryValue($card_acquirer_code, null);
         }
         // query params
-        if ($cardError !== null) {
-            $queryParams['card_error'] = ObjectSerializer::toQueryValue($cardError, null);
+        if ($card_error_state !== null) {
+            $queryParams['card_error_state'] = ObjectSerializer::toQueryValue($card_error_state, null);
         }
         // query params
-        if ($paymentContext !== null) {
-            $queryParams['payment_context'] = ObjectSerializer::toQueryValue($paymentContext, null);
+        if ($card_error !== null) {
+            $queryParams['card_error'] = ObjectSerializer::toQueryValue($card_error, null);
         }
         // query params
-        if ($cardAcquirerReference !== null) {
-            $queryParams['card_acquirer_reference'] = ObjectSerializer::toQueryValue($cardAcquirerReference, null);
+        if ($payment_context !== null) {
+            $queryParams['payment_context'] = ObjectSerializer::toQueryValue($payment_context, null);
+        }
+        // query params
+        if ($card_acquirer_reference !== null) {
+            $queryParams['card_acquirer_reference'] = ObjectSerializer::toQueryValue($card_acquirer_reference, null);
         }
 
 

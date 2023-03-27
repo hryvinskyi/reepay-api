@@ -97,7 +97,7 @@ class SettleChargeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "orderLines"
+     * Test attribute "order_lines"
      */
     public function testPropertyOrderLines()
     {

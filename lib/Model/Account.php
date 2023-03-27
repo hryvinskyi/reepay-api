@@ -74,9 +74,9 @@ class Account implements ModelInterface, ArrayAccess
         'organisation' => 'string',
         'created' => '\DateTime',
         'state' => 'string',
-        'postalCode' => 'string',
-        'defaultVat' => 'float',
-        'subscriptionInvoicePrefix' => 'string'
+        'postal_code' => 'string',
+        'default_vat' => 'float',
+        'subscription_invoice_prefix' => 'string'
     ];
 
     /**
@@ -103,9 +103,9 @@ class Account implements ModelInterface, ArrayAccess
         'organisation' => null,
         'created' => 'date-time',
         'state' => null,
-        'postalCode' => null,
-        'defaultVat' => 'float',
-        'subscriptionInvoicePrefix' => null
+        'postal_code' => null,
+        'default_vat' => 'float',
+        'subscription_invoice_prefix' => null
     ];
 
     /**
@@ -153,9 +153,9 @@ class Account implements ModelInterface, ArrayAccess
         'organisation' => 'organisation',
         'created' => 'created',
         'state' => 'state',
-        'postalCode' => 'postal_code',
-        'defaultVat' => 'default_vat',
-        'subscriptionInvoicePrefix' => 'subscription_invoice_prefix'
+        'postal_code' => 'postal_code',
+        'default_vat' => 'default_vat',
+        'subscription_invoice_prefix' => 'subscription_invoice_prefix'
     ];
 
     /**
@@ -182,9 +182,9 @@ class Account implements ModelInterface, ArrayAccess
         'organisation' => 'setOrganisation',
         'created' => 'setCreated',
         'state' => 'setState',
-        'postalCode' => 'setPostalCode',
-        'defaultVat' => 'setDefaultVat',
-        'subscriptionInvoicePrefix' => 'setSubscriptionInvoicePrefix'
+        'postal_code' => 'setPostalCode',
+        'default_vat' => 'setDefaultVat',
+        'subscription_invoice_prefix' => 'setSubscriptionInvoicePrefix'
     ];
 
     /**
@@ -211,9 +211,9 @@ class Account implements ModelInterface, ArrayAccess
         'organisation' => 'getOrganisation',
         'created' => 'getCreated',
         'state' => 'getState',
-        'postalCode' => 'getPostalCode',
-        'defaultVat' => 'getDefaultVat',
-        'subscriptionInvoicePrefix' => 'getSubscriptionInvoicePrefix'
+        'postal_code' => 'getPostalCode',
+        'default_vat' => 'getDefaultVat',
+        'subscription_invoice_prefix' => 'getSubscriptionInvoicePrefix'
     ];
 
     /**
@@ -308,9 +308,9 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['organisation'] = isset($data['organisation']) ? $data['organisation'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
-        $this->container['defaultVat'] = isset($data['defaultVat']) ? $data['defaultVat'] : null;
-        $this->container['subscriptionInvoicePrefix'] = isset($data['subscriptionInvoicePrefix']) ? $data['subscriptionInvoicePrefix'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['default_vat'] = isset($data['default_vat']) ? $data['default_vat'] : null;
+        $this->container['subscription_invoice_prefix'] = isset($data['subscription_invoice_prefix']) ? $data['subscription_invoice_prefix'] : null;
     }
 
     /**
@@ -360,8 +360,8 @@ class Account implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['defaultVat'] === null) {
-            $invalidProperties[] = "'defaultVat' can't be null";
+        if ($this->container['default_vat'] === null) {
+            $invalidProperties[] = "'default_vat' can't be null";
         }
         return $invalidProperties;
     }
@@ -820,73 +820,73 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets postalCode
+     * Gets postal_code
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postalCode'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets postalCode
+     * Sets postal_code
      *
-     * @param string $postalCode Account postal code
+     * @param string $postal_code Account postal code
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postal_code)
     {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
 
     /**
-     * Gets defaultVat
+     * Gets default_vat
      *
      * @return float
      */
     public function getDefaultVat()
     {
-        return $this->container['defaultVat'];
+        return $this->container['default_vat'];
     }
 
     /**
-     * Sets defaultVat
+     * Sets default_vat
      *
-     * @param float $defaultVat Default vat for account
+     * @param float $default_vat Default vat for account
      *
      * @return $this
      */
-    public function setDefaultVat($defaultVat)
+    public function setDefaultVat($default_vat)
     {
-        $this->container['defaultVat'] = $defaultVat;
+        $this->container['default_vat'] = $default_vat;
 
         return $this;
     }
 
     /**
-     * Gets subscriptionInvoicePrefix
+     * Gets subscription_invoice_prefix
      *
      * @return string
      */
     public function getSubscriptionInvoicePrefix()
     {
-        return $this->container['subscriptionInvoicePrefix'];
+        return $this->container['subscription_invoice_prefix'];
     }
 
     /**
-     * Sets subscriptionInvoicePrefix
+     * Sets subscription_invoice_prefix
      *
-     * @param string $subscriptionInvoicePrefix subscriptionInvoicePrefix
+     * @param string $subscription_invoice_prefix subscription_invoice_prefix
      *
      * @return $this
      */
-    public function setSubscriptionInvoicePrefix($subscriptionInvoicePrefix)
+    public function setSubscriptionInvoicePrefix($subscription_invoice_prefix)
     {
-        $this->container['subscriptionInvoicePrefix'] = $subscriptionInvoicePrefix;
+        $this->container['subscription_invoice_prefix'] = $subscription_invoice_prefix;
 
         return $this;
     }

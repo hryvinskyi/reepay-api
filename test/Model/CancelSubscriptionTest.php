@@ -76,28 +76,28 @@ class CancelSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "noticePeriods"
+     * Test attribute "notice_periods"
      */
     public function testPropertyNoticePeriods()
     {
     }
 
     /**
-     * Test attribute "noticePeriodsAfterCurrent"
+     * Test attribute "notice_periods_after_current"
      */
     public function testPropertyNoticePeriodsAfterCurrent()
     {
     }
 
     /**
-     * Test attribute "expireAt"
+     * Test attribute "expire_at"
      */
     public function testPropertyExpireAt()
     {
     }
 
     /**
-     * Test attribute "trialWithNoticeAndFixation"
+     * Test attribute "trial_with_notice_and_fixation"
      */
     public function testPropertyTrialWithNoticeAndFixation()
     {

@@ -62,10 +62,10 @@ class Credit implements ModelInterface, ArrayAccess
         'text' => 'string',
         'state' => 'string',
         'created' => '\DateTime',
-        'validFrom' => 'string',
-        'creditInvoices' => '\Reepay\Model\CreditInvoice[]',
-        'pendingAmount' => 'int',
-        'invoiceCreditNote' => '\Reepay\Model\InvoiceCreditNote'
+        'valid_from' => 'string',
+        'credit_invoices' => '\Reepay\Model\CreditInvoice[]',
+        'pending_amount' => 'int',
+        'invoice_credit_note' => '\Reepay\Model\InvoiceCreditNote'
     ];
 
     /**
@@ -80,10 +80,10 @@ class Credit implements ModelInterface, ArrayAccess
         'text' => null,
         'state' => null,
         'created' => 'date-time',
-        'validFrom' => null,
-        'creditInvoices' => null,
-        'pendingAmount' => 'int32',
-        'invoiceCreditNote' => null
+        'valid_from' => null,
+        'credit_invoices' => null,
+        'pending_amount' => 'int32',
+        'invoice_credit_note' => null
     ];
 
     /**
@@ -119,10 +119,10 @@ class Credit implements ModelInterface, ArrayAccess
         'text' => 'text',
         'state' => 'state',
         'created' => 'created',
-        'validFrom' => 'valid_from',
-        'creditInvoices' => 'credit_invoices',
-        'pendingAmount' => 'pending_amount',
-        'invoiceCreditNote' => 'invoice_credit_note'
+        'valid_from' => 'valid_from',
+        'credit_invoices' => 'credit_invoices',
+        'pending_amount' => 'pending_amount',
+        'invoice_credit_note' => 'invoice_credit_note'
     ];
 
     /**
@@ -137,10 +137,10 @@ class Credit implements ModelInterface, ArrayAccess
         'text' => 'setText',
         'state' => 'setState',
         'created' => 'setCreated',
-        'validFrom' => 'setValidFrom',
-        'creditInvoices' => 'setCreditInvoices',
-        'pendingAmount' => 'setPendingAmount',
-        'invoiceCreditNote' => 'setInvoiceCreditNote'
+        'valid_from' => 'setValidFrom',
+        'credit_invoices' => 'setCreditInvoices',
+        'pending_amount' => 'setPendingAmount',
+        'invoice_credit_note' => 'setInvoiceCreditNote'
     ];
 
     /**
@@ -155,10 +155,10 @@ class Credit implements ModelInterface, ArrayAccess
         'text' => 'getText',
         'state' => 'getState',
         'created' => 'getCreated',
-        'validFrom' => 'getValidFrom',
-        'creditInvoices' => 'getCreditInvoices',
-        'pendingAmount' => 'getPendingAmount',
-        'invoiceCreditNote' => 'getInvoiceCreditNote'
+        'valid_from' => 'getValidFrom',
+        'credit_invoices' => 'getCreditInvoices',
+        'pending_amount' => 'getPendingAmount',
+        'invoice_credit_note' => 'getInvoiceCreditNote'
     ];
 
     /**
@@ -241,10 +241,10 @@ class Credit implements ModelInterface, ArrayAccess
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['validFrom'] = isset($data['validFrom']) ? $data['validFrom'] : null;
-        $this->container['creditInvoices'] = isset($data['creditInvoices']) ? $data['creditInvoices'] : null;
-        $this->container['pendingAmount'] = isset($data['pendingAmount']) ? $data['pendingAmount'] : null;
-        $this->container['invoiceCreditNote'] = isset($data['invoiceCreditNote']) ? $data['invoiceCreditNote'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['credit_invoices'] = isset($data['credit_invoices']) ? $data['credit_invoices'] : null;
+        $this->container['pending_amount'] = isset($data['pending_amount']) ? $data['pending_amount'] : null;
+        $this->container['invoice_credit_note'] = isset($data['invoice_credit_note']) ? $data['invoice_credit_note'] : null;
     }
 
     /**
@@ -282,8 +282,8 @@ class Credit implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['pendingAmount'] === null) {
-            $invalidProperties[] = "'pendingAmount' can't be null";
+        if ($this->container['pending_amount'] === null) {
+            $invalidProperties[] = "'pending_amount' can't be null";
         }
         return $invalidProperties;
     }
@@ -454,97 +454,97 @@ class Credit implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets validFrom
+     * Gets valid_from
      *
      * @return string
      */
     public function getValidFrom()
     {
-        return $this->container['validFrom'];
+        return $this->container['valid_from'];
     }
 
     /**
-     * Sets validFrom
+     * Sets valid_from
      *
-     * @param string $validFrom Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
+     * @param string $valid_from Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
      *
      * @return $this
      */
-    public function setValidFrom($validFrom)
+    public function setValidFrom($valid_from)
     {
-        $this->container['validFrom'] = $validFrom;
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }
 
     /**
-     * Gets creditInvoices
+     * Gets credit_invoices
      *
      * @return \Reepay\Model\CreditInvoice[]
      */
     public function getCreditInvoices()
     {
-        return $this->container['creditInvoices'];
+        return $this->container['credit_invoices'];
     }
 
     /**
-     * Sets creditInvoices
+     * Sets credit_invoices
      *
-     * @param \Reepay\Model\CreditInvoice[] $creditInvoices List of invoices where the credit is applied
+     * @param \Reepay\Model\CreditInvoice[] $credit_invoices List of invoices where the credit is applied
      *
      * @return $this
      */
-    public function setCreditInvoices($creditInvoices)
+    public function setCreditInvoices($credit_invoices)
     {
-        $this->container['creditInvoices'] = $creditInvoices;
+        $this->container['credit_invoices'] = $credit_invoices;
 
         return $this;
     }
 
     /**
-     * Gets pendingAmount
+     * Gets pending_amount
      *
      * @return int
      */
     public function getPendingAmount()
     {
-        return $this->container['pendingAmount'];
+        return $this->container['pending_amount'];
     }
 
     /**
-     * Sets pendingAmount
+     * Sets pending_amount
      *
-     * @param int $pendingAmount Remaining amount not transferred to invoices
+     * @param int $pending_amount Remaining amount not transferred to invoices
      *
      * @return $this
      */
-    public function setPendingAmount($pendingAmount)
+    public function setPendingAmount($pending_amount)
     {
-        $this->container['pendingAmount'] = $pendingAmount;
+        $this->container['pending_amount'] = $pending_amount;
 
         return $this;
     }
 
     /**
-     * Gets invoiceCreditNote
+     * Gets invoice_credit_note
      *
      * @return \Reepay\Model\InvoiceCreditNote
      */
     public function getInvoiceCreditNote()
     {
-        return $this->container['invoiceCreditNote'];
+        return $this->container['invoice_credit_note'];
     }
 
     /**
-     * Sets invoiceCreditNote
+     * Sets invoice_credit_note
      *
-     * @param \Reepay\Model\InvoiceCreditNote $invoiceCreditNote invoiceCreditNote
+     * @param \Reepay\Model\InvoiceCreditNote $invoice_credit_note invoice_credit_note
      *
      * @return $this
      */
-    public function setInvoiceCreditNote($invoiceCreditNote)
+    public function setInvoiceCreditNote($invoice_credit_note)
     {
-        $this->container['invoiceCreditNote'] = $invoiceCreditNote;
+        $this->container['invoice_credit_note'] = $invoice_credit_note;
 
         return $this;
     }

@@ -125,21 +125,21 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "subscriptionAddOns"
+     * Test attribute "subscription_add_ons"
      */
     public function testPropertySubscriptionAddOns()
     {
     }
 
     /**
-     * Test attribute "removeAddOns"
+     * Test attribute "remove_add_ons"
      */
     public function testPropertyRemoveAddOns()
     {

@@ -83,21 +83,21 @@ class TokenRequestorResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "tokenRequestorId"
+     * Test attribute "token_requestor_id"
      */
     public function testPropertyTokenRequestorId()
     {
     }
 
     /**
-     * Test attribute "clientAppId"
+     * Test attribute "client_app_id"
      */
     public function testPropertyClientAppId()
     {
     }
 
     /**
-     * Test attribute "relationshipId"
+     * Test attribute "relationship_id"
      */
     public function testPropertyRelationshipId()
     {

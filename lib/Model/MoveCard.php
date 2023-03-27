@@ -58,7 +58,7 @@ class MoveCard implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'agreement' => 'string',
         'currency' => 'string',
-        'cardType' => 'string'
+        'card_type' => 'string'
     ];
 
     /**
@@ -69,7 +69,7 @@ class MoveCard implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'agreement' => null,
         'currency' => null,
-        'cardType' => null
+        'card_type' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class MoveCard implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'agreement' => 'agreement',
         'currency' => 'currency',
-        'cardType' => 'card_type'
+        'card_type' => 'card_type'
     ];
 
     /**
@@ -112,7 +112,7 @@ class MoveCard implements ModelInterface, ArrayAccess
     protected static $setters = [
         'agreement' => 'setAgreement',
         'currency' => 'setCurrency',
-        'cardType' => 'setCardType'
+        'card_type' => 'setCardType'
     ];
 
     /**
@@ -123,7 +123,7 @@ class MoveCard implements ModelInterface, ArrayAccess
     protected static $getters = [
         'agreement' => 'getAgreement',
         'currency' => 'getCurrency',
-        'cardType' => 'getCardType'
+        'card_type' => 'getCardType'
     ];
 
     /**
@@ -220,7 +220,7 @@ class MoveCard implements ModelInterface, ArrayAccess
     {
         $this->container['agreement'] = isset($data['agreement']) ? $data['agreement'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['cardType'] = isset($data['cardType']) ? $data['cardType'] : null;
+        $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
     }
 
     /**
@@ -233,9 +233,9 @@ class MoveCard implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
+        if (!is_null($this->container['card_type']) && !in_array($this->container['card_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'cardType', must be one of '%s'",
+                "invalid value for 'card_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -304,34 +304,34 @@ class MoveCard implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets cardType
+     * Gets card_type
      *
      * @return string
      */
     public function getCardType()
     {
-        return $this->container['cardType'];
+        return $this->container['card_type'];
     }
 
     /**
-     * Sets cardType
+     * Sets card_type
      *
-     * @param string $cardType Optional card type control agreement selection: `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @param string $card_type Optional card type control agreement selection: `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
      *
      * @return $this
      */
-    public function setCardType($cardType)
+    public function setCardType($card_type)
     {
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($cardType) && !in_array($cardType, $allowedValues, true)) {
+        if (!is_null($card_type) && !in_array($card_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'cardType', must be one of '%s'",
+                    "Invalid value for 'card_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['cardType'] = $cardType;
+        $this->container['card_type'] = $card_type;
 
         return $this;
     }

@@ -60,7 +60,7 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         'password' => 'string',
         'test' => 'bool',
         'currencies' => 'string[]',
-        'paymentType' => 'string'
+        'payment_type' => 'string'
     ];
 
     /**
@@ -73,7 +73,7 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         'password' => null,
         'test' => null,
         'currencies' => null,
-        'paymentType' => null
+        'payment_type' => null
     ];
 
     /**
@@ -107,7 +107,7 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         'password' => 'password',
         'test' => 'test',
         'currencies' => 'currencies',
-        'paymentType' => 'payment_type'
+        'payment_type' => 'payment_type'
     ];
 
     /**
@@ -120,7 +120,7 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         'password' => 'setPassword',
         'test' => 'setTest',
         'currencies' => 'setCurrencies',
-        'paymentType' => 'setPaymentType'
+        'payment_type' => 'setPaymentType'
     ];
 
     /**
@@ -133,7 +133,7 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         'password' => 'getPassword',
         'test' => 'getTest',
         'currencies' => 'getCurrencies',
-        'paymentType' => 'getPaymentType'
+        'payment_type' => 'getPaymentType'
     ];
 
     /**
@@ -218,7 +218,7 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
         $this->container['currencies'] = isset($data['currencies']) ? $data['currencies'] : null;
-        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['payment_type'] = isset($data['payment_type']) ? $data['payment_type'] : null;
     }
 
     /**
@@ -233,13 +233,17 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
         if ($this->container['currencies'] === null) {
             $invalidProperties[] = "'currencies' can't be null";
         }
-        if ($this->container['paymentType'] === null) {
-            $invalidProperties[] = "'paymentType' can't be null";
+        if ($this->container['payment_type'] === null) {
+            $invalidProperties[] = "'payment_type' can't be null";
         }
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!is_null($this->container['paymentType']) && !in_array($this->container['paymentType'], $allowedValues, true)) {
+        if (!is_null($this->container['payment_type']) && !in_array(
+                $this->container['payment_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'paymentType', must be one of '%s'",
+                "invalid value for 'payment_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -356,34 +360,34 @@ class KlarnaAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentType
+     * Gets payment_type
      *
      * @return string
      */
     public function getPaymentType()
     {
-        return $this->container['paymentType'];
+        return $this->container['payment_type'];
     }
 
     /**
-     * Sets paymentType
+     * Sets payment_type
      *
-     * @param string $paymentType Payment gateway payment type
+     * @param string $payment_type Payment gateway payment type
      *
      * @return $this
      */
-    public function setPaymentType($paymentType)
+    public function setPaymentType($payment_type)
     {
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!in_array($paymentType, $allowedValues, true)) {
+        if (!in_array($payment_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'paymentType', must be one of '%s'",
+                    "Invalid value for 'payment_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['paymentType'] = $paymentType;
+        $this->container['payment_type'] = $payment_type;
 
         return $this;
     }

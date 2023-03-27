@@ -56,7 +56,7 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'providerId' => 'string'
+        'provider_id' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'providerId' => null
+        'provider_id' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'providerId' => 'provider_id'
+        'provider_id' => 'provider_id'
     ];
 
     /**
@@ -104,7 +104,7 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'providerId' => 'setProviderId'
+        'provider_id' => 'setProviderId'
     ];
 
     /**
@@ -113,7 +113,7 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'providerId' => 'getProviderId'
+        'provider_id' => 'getProviderId'
     ];
 
     /**
@@ -174,7 +174,7 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['providerId'] = isset($data['providerId']) ? $data['providerId'] : null;
+        $this->container['provider_id'] = isset($data['provider_id']) ? $data['provider_id'] : null;
     }
 
     /**
@@ -202,25 +202,25 @@ class ActivateMpsAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets providerId
+     * Gets provider_id
      *
      * @return string
      */
     public function getProviderId()
     {
-        return $this->container['providerId'];
+        return $this->container['provider_id'];
     }
 
     /**
-     * Sets providerId
+     * Sets provider_id
      *
-     * @param string $providerId providerId
+     * @param string $provider_id provider_id
      *
      * @return $this
      */
-    public function setProviderId($providerId)
+    public function setProviderId($provider_id)
     {
-        $this->container['providerId'] = $providerId;
+        $this->container['provider_id'] = $provider_id;
 
         return $this;
     }

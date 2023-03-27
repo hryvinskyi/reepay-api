@@ -61,10 +61,10 @@ class DunningPlan implements ModelInterface, ArrayAccess
         'handle' => 'string',
         'state' => 'string',
         'created' => '\DateTime',
-        'defaultPlan' => 'bool',
-        'finalSubscriptionAction' => 'string',
-        'gracePeriod' => 'string',
-        'noGraceHardDecline' => 'bool'
+        'default_plan' => 'bool',
+        'final_subscription_action' => 'string',
+        'grace_period' => 'string',
+        'no_grace_hard_decline' => 'bool'
     ];
 
     /**
@@ -78,10 +78,10 @@ class DunningPlan implements ModelInterface, ArrayAccess
         'handle' => null,
         'state' => null,
         'created' => 'date-time',
-        'defaultPlan' => null,
-        'finalSubscriptionAction' => null,
-        'gracePeriod' => null,
-        'noGraceHardDecline' => null
+        'default_plan' => null,
+        'final_subscription_action' => null,
+        'grace_period' => null,
+        'no_grace_hard_decline' => null
     ];
 
     /**
@@ -116,10 +116,10 @@ class DunningPlan implements ModelInterface, ArrayAccess
         'handle' => 'handle',
         'state' => 'state',
         'created' => 'created',
-        'defaultPlan' => 'default_plan',
-        'finalSubscriptionAction' => 'final_subscription_action',
-        'gracePeriod' => 'grace_period',
-        'noGraceHardDecline' => 'no_grace_hard_decline'
+        'default_plan' => 'default_plan',
+        'final_subscription_action' => 'final_subscription_action',
+        'grace_period' => 'grace_period',
+        'no_grace_hard_decline' => 'no_grace_hard_decline'
     ];
 
     /**
@@ -133,10 +133,10 @@ class DunningPlan implements ModelInterface, ArrayAccess
         'handle' => 'setHandle',
         'state' => 'setState',
         'created' => 'setCreated',
-        'defaultPlan' => 'setDefaultPlan',
-        'finalSubscriptionAction' => 'setFinalSubscriptionAction',
-        'gracePeriod' => 'setGracePeriod',
-        'noGraceHardDecline' => 'setNoGraceHardDecline'
+        'default_plan' => 'setDefaultPlan',
+        'final_subscription_action' => 'setFinalSubscriptionAction',
+        'grace_period' => 'setGracePeriod',
+        'no_grace_hard_decline' => 'setNoGraceHardDecline'
     ];
 
     /**
@@ -150,10 +150,10 @@ class DunningPlan implements ModelInterface, ArrayAccess
         'handle' => 'getHandle',
         'state' => 'getState',
         'created' => 'getCreated',
-        'defaultPlan' => 'getDefaultPlan',
-        'finalSubscriptionAction' => 'getFinalSubscriptionAction',
-        'gracePeriod' => 'getGracePeriod',
-        'noGraceHardDecline' => 'getNoGraceHardDecline'
+        'default_plan' => 'getDefaultPlan',
+        'final_subscription_action' => 'getFinalSubscriptionAction',
+        'grace_period' => 'getGracePeriod',
+        'no_grace_hard_decline' => 'getNoGraceHardDecline'
     ];
 
     /**
@@ -249,10 +249,10 @@ class DunningPlan implements ModelInterface, ArrayAccess
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['defaultPlan'] = isset($data['defaultPlan']) ? $data['defaultPlan'] : null;
-        $this->container['finalSubscriptionAction'] = isset($data['finalSubscriptionAction']) ? $data['finalSubscriptionAction'] : null;
-        $this->container['gracePeriod'] = isset($data['gracePeriod']) ? $data['gracePeriod'] : null;
-        $this->container['noGraceHardDecline'] = isset($data['noGraceHardDecline']) ? $data['noGraceHardDecline'] : null;
+        $this->container['default_plan'] = isset($data['default_plan']) ? $data['default_plan'] : null;
+        $this->container['final_subscription_action'] = isset($data['final_subscription_action']) ? $data['final_subscription_action'] : null;
+        $this->container['grace_period'] = isset($data['grace_period']) ? $data['grace_period'] : null;
+        $this->container['no_grace_hard_decline'] = isset($data['no_grace_hard_decline']) ? $data['no_grace_hard_decline'] : null;
     }
 
     /**
@@ -287,16 +287,20 @@ class DunningPlan implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['defaultPlan'] === null) {
-            $invalidProperties[] = "'defaultPlan' can't be null";
+        if ($this->container['default_plan'] === null) {
+            $invalidProperties[] = "'default_plan' can't be null";
         }
-        if ($this->container['finalSubscriptionAction'] === null) {
-            $invalidProperties[] = "'finalSubscriptionAction' can't be null";
+        if ($this->container['final_subscription_action'] === null) {
+            $invalidProperties[] = "'final_subscription_action' can't be null";
         }
         $allowedValues = $this->getFinalSubscriptionActionAllowableValues();
-        if (!is_null($this->container['finalSubscriptionAction']) && !in_array($this->container['finalSubscriptionAction'], $allowedValues, true)) {
+        if (!is_null($this->container['final_subscription_action']) && !in_array(
+                $this->container['final_subscription_action'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'finalSubscriptionAction', must be one of '%s'",
+                "invalid value for 'final_subscription_action', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -446,106 +450,106 @@ class DunningPlan implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets defaultPlan
+     * Gets default_plan
      *
      * @return bool
      */
     public function getDefaultPlan()
     {
-        return $this->container['defaultPlan'];
+        return $this->container['default_plan'];
     }
 
     /**
-     * Sets defaultPlan
+     * Sets default_plan
      *
-     * @param bool $defaultPlan If this is default plan
+     * @param bool $default_plan If this is default plan
      *
      * @return $this
      */
-    public function setDefaultPlan($defaultPlan)
+    public function setDefaultPlan($default_plan)
     {
-        $this->container['defaultPlan'] = $defaultPlan;
+        $this->container['default_plan'] = $default_plan;
 
         return $this;
     }
 
     /**
-     * Gets finalSubscriptionAction
+     * Gets final_subscription_action
      *
      * @return string
      */
     public function getFinalSubscriptionAction()
     {
-        return $this->container['finalSubscriptionAction'];
+        return $this->container['final_subscription_action'];
     }
 
     /**
-     * Sets finalSubscriptionAction
+     * Sets final_subscription_action
      *
-     * @param string $finalSubscriptionAction Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
+     * @param string $final_subscription_action Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
      *
      * @return $this
      */
-    public function setFinalSubscriptionAction($finalSubscriptionAction)
+    public function setFinalSubscriptionAction($final_subscription_action)
     {
         $allowedValues = $this->getFinalSubscriptionActionAllowableValues();
-        if (!in_array($finalSubscriptionAction, $allowedValues, true)) {
+        if (!in_array($final_subscription_action, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'finalSubscriptionAction', must be one of '%s'",
+                    "Invalid value for 'final_subscription_action', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['finalSubscriptionAction'] = $finalSubscriptionAction;
+        $this->container['final_subscription_action'] = $final_subscription_action;
 
         return $this;
     }
 
     /**
-     * Gets gracePeriod
+     * Gets grace_period
      *
      * @return string
      */
     public function getGracePeriod()
     {
-        return $this->container['gracePeriod'];
+        return $this->container['grace_period'];
     }
 
     /**
-     * Sets gracePeriod
+     * Sets grace_period
      *
-     * @param string $gracePeriod Optional grace period before starting dunning process. Also see `no_grace_hard_decline`. If eligible re-trying will be attempted in the grace period. The period is defined as an ISO-8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * @param string $grace_period Optional grace period before starting dunning process. Also see `no_grace_hard_decline`. If eligible re-trying will be attempted in the grace period. The period is defined as an ISO-8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
      *
      * @return $this
      */
-    public function setGracePeriod($gracePeriod)
+    public function setGracePeriod($grace_period)
     {
-        $this->container['gracePeriod'] = $gracePeriod;
+        $this->container['grace_period'] = $grace_period;
 
         return $this;
     }
 
     /**
-     * Gets noGraceHardDecline
+     * Gets no_grace_hard_decline
      *
      * @return bool
      */
     public function getNoGraceHardDecline()
     {
-        return $this->container['noGraceHardDecline'];
+        return $this->container['no_grace_hard_decline'];
     }
 
     /**
-     * Sets noGraceHardDecline
+     * Sets no_grace_hard_decline
      *
-     * @param bool $noGraceHardDecline If a grace period has been defined, this parameter can be used to control whether the grace period is only for soft failing invoices. That is, the used payment method is actually eligible for retrying. Default is true.
+     * @param bool $no_grace_hard_decline If a grace period has been defined, this parameter can be used to control whether the grace period is only for soft failing invoices. That is, the used payment method is actually eligible for retrying. Default is true.
      *
      * @return $this
      */
-    public function setNoGraceHardDecline($noGraceHardDecline)
+    public function setNoGraceHardDecline($no_grace_hard_decline)
     {
-        $this->container['noGraceHardDecline'] = $noGraceHardDecline;
+        $this->container['no_grace_hard_decline'] = $no_grace_hard_decline;
 
         return $this;
     }

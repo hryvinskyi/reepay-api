@@ -56,7 +56,7 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'externalId' => 'string'
+        'external_id' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'externalId' => null
+        'external_id' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'externalId' => 'external_id'
+        'external_id' => 'external_id'
     ];
 
     /**
@@ -104,7 +104,7 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'externalId' => 'setExternalId'
+        'external_id' => 'setExternalId'
     ];
 
     /**
@@ -113,7 +113,7 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'externalId' => 'getExternalId'
+        'external_id' => 'getExternalId'
     ];
 
     /**
@@ -174,7 +174,7 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
     }
 
     /**
@@ -202,25 +202,25 @@ class MpsSubscriptionV2 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets externalId
+     * Gets external_id
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['externalId'];
+        return $this->container['external_id'];
     }
 
     /**
-     * Sets externalId
+     * Sets external_id
      *
-     * @param string $externalId Optional external id at MobilePay defined when creating the subscription
+     * @param string $external_id Optional external id at MobilePay defined when creating the subscription
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setExternalId($external_id)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }

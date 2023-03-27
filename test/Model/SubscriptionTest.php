@@ -174,329 +174,329 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "planVersion"
+     * Test attribute "plan_version"
      */
     public function testPropertyPlanVersion()
     {
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "startDate"
+     * Test attribute "start_date"
      */
     public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "endDate"
+     * Test attribute "end_date"
      */
     public function testPropertyEndDate()
     {
     }
 
     /**
-     * Test attribute "graceDuration"
+     * Test attribute "grace_duration"
      */
     public function testPropertyGraceDuration()
     {
     }
 
     /**
-     * Test attribute "currentPeriodStart"
+     * Test attribute "current_period_start"
      */
     public function testPropertyCurrentPeriodStart()
     {
     }
 
     /**
-     * Test attribute "nextPeriodStart"
+     * Test attribute "next_period_start"
      */
     public function testPropertyNextPeriodStart()
     {
     }
 
     /**
-     * Test attribute "firstPeriodStart"
+     * Test attribute "first_period_start"
      */
     public function testPropertyFirstPeriodStart()
     {
     }
 
     /**
-     * Test attribute "lastPeriodStart"
+     * Test attribute "last_period_start"
      */
     public function testPropertyLastPeriodStart()
     {
     }
 
     /**
-     * Test attribute "trialStart"
+     * Test attribute "trial_start"
      */
     public function testPropertyTrialStart()
     {
     }
 
     /**
-     * Test attribute "trialEnd"
+     * Test attribute "trial_end"
      */
     public function testPropertyTrialEnd()
     {
     }
 
     /**
-     * Test attribute "isCancelled"
+     * Test attribute "is_cancelled"
      */
     public function testPropertyIsCancelled()
     {
     }
 
     /**
-     * Test attribute "inTrial"
+     * Test attribute "in_trial"
      */
     public function testPropertyInTrial()
     {
     }
 
     /**
-     * Test attribute "hasStarted"
+     * Test attribute "has_started"
      */
     public function testPropertyHasStarted()
     {
     }
 
     /**
-     * Test attribute "renewalCount"
+     * Test attribute "renewal_count"
      */
     public function testPropertyRenewalCount()
     {
     }
 
     /**
-     * Test attribute "cancelledDate"
+     * Test attribute "cancelled_date"
      */
     public function testPropertyCancelledDate()
     {
     }
 
     /**
-     * Test attribute "expiredDate"
+     * Test attribute "expired_date"
      */
     public function testPropertyExpiredDate()
     {
     }
 
     /**
-     * Test attribute "expireReason"
+     * Test attribute "expire_reason"
      */
     public function testPropertyExpireReason()
     {
     }
 
     /**
-     * Test attribute "onHoldDate"
+     * Test attribute "on_hold_date"
      */
     public function testPropertyOnHoldDate()
     {
     }
 
     /**
-     * Test attribute "onHoldReason"
+     * Test attribute "on_hold_reason"
      */
     public function testPropertyOnHoldReason()
     {
     }
 
     /**
-     * Test attribute "paymentMethodAdded"
+     * Test attribute "payment_method_added"
      */
     public function testPropertyPaymentMethodAdded()
     {
     }
 
     /**
-     * Test attribute "scheduledPlanChange"
+     * Test attribute "scheduled_plan_change"
      */
     public function testPropertyScheduledPlanChange()
     {
     }
 
     /**
-     * Test attribute "reminderEmailSent"
+     * Test attribute "reminder_email_sent"
      */
     public function testPropertyReminderEmailSent()
     {
     }
 
     /**
-     * Test attribute "failedInvoices"
+     * Test attribute "failed_invoices"
      */
     public function testPropertyFailedInvoices()
     {
     }
 
     /**
-     * Test attribute "failedAmount"
+     * Test attribute "failed_amount"
      */
     public function testPropertyFailedAmount()
     {
     }
 
     /**
-     * Test attribute "cancelledInvoices"
+     * Test attribute "cancelled_invoices"
      */
     public function testPropertyCancelledInvoices()
     {
     }
 
     /**
-     * Test attribute "cancelledAmount"
+     * Test attribute "cancelled_amount"
      */
     public function testPropertyCancelledAmount()
     {
     }
 
     /**
-     * Test attribute "pendingInvoices"
+     * Test attribute "pending_invoices"
      */
     public function testPropertyPendingInvoices()
     {
     }
 
     /**
-     * Test attribute "pendingAmount"
+     * Test attribute "pending_amount"
      */
     public function testPropertyPendingAmount()
     {
     }
 
     /**
-     * Test attribute "dunningInvoices"
+     * Test attribute "dunning_invoices"
      */
     public function testPropertyDunningInvoices()
     {
     }
 
     /**
-     * Test attribute "dunningAmount"
+     * Test attribute "dunning_amount"
      */
     public function testPropertyDunningAmount()
     {
     }
 
     /**
-     * Test attribute "settledInvoices"
+     * Test attribute "settled_invoices"
      */
     public function testPropertySettledInvoices()
     {
     }
 
     /**
-     * Test attribute "settledAmount"
+     * Test attribute "settled_amount"
      */
     public function testPropertySettledAmount()
     {
     }
 
     /**
-     * Test attribute "refundedAmount"
+     * Test attribute "refunded_amount"
      */
     public function testPropertyRefundedAmount()
     {
     }
 
     /**
-     * Test attribute "pendingAdditionalCosts"
+     * Test attribute "pending_additional_costs"
      */
     public function testPropertyPendingAdditionalCosts()
     {
     }
 
     /**
-     * Test attribute "pendingAdditionalCostAmount"
+     * Test attribute "pending_additional_cost_amount"
      */
     public function testPropertyPendingAdditionalCostAmount()
     {
     }
 
     /**
-     * Test attribute "transferredAdditionalCosts"
+     * Test attribute "transferred_additional_costs"
      */
     public function testPropertyTransferredAdditionalCosts()
     {
     }
 
     /**
-     * Test attribute "transferredAdditionalCostAmount"
+     * Test attribute "transferred_additional_cost_amount"
      */
     public function testPropertyTransferredAdditionalCostAmount()
     {
     }
 
     /**
-     * Test attribute "pendingCredits"
+     * Test attribute "pending_credits"
      */
     public function testPropertyPendingCredits()
     {
     }
 
     /**
-     * Test attribute "pendingCreditAmount"
+     * Test attribute "pending_credit_amount"
      */
     public function testPropertyPendingCreditAmount()
     {
     }
 
     /**
-     * Test attribute "transferredCredits"
+     * Test attribute "transferred_credits"
      */
     public function testPropertyTransferredCredits()
     {
     }
 
     /**
-     * Test attribute "transferredCreditAmount"
+     * Test attribute "transferred_credit_amount"
      */
     public function testPropertyTransferredCreditAmount()
     {
     }
 
     /**
-     * Test attribute "hostedPageLinks"
+     * Test attribute "hosted_page_links"
      */
     public function testPropertyHostedPageLinks()
     {
     }
 
     /**
-     * Test attribute "subscriptionDiscounts"
+     * Test attribute "subscription_discounts"
      */
     public function testPropertySubscriptionDiscounts()
     {
     }
 
     /**
-     * Test attribute "pendingChange"
+     * Test attribute "pending_change"
      */
     public function testPropertyPendingChange()
     {
     }
 
     /**
-     * Test attribute "subscriptionChanges"
+     * Test attribute "subscription_changes"
      */
     public function testPropertySubscriptionChanges()
     {
     }
 
     /**
-     * Test attribute "subscriptionAddOns"
+     * Test attribute "subscription_add_ons"
      */
     public function testPropertySubscriptionAddOns()
     {

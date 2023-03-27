@@ -57,12 +57,12 @@ class MpsTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'error' => 'string',
-        'refTransaction' => 'string',
-        'errorState' => 'string',
-        'acquirerMessage' => 'string',
-        'mpsId' => 'string',
-        'mpsSubscription' => '\Reepay\Model\MpsSubscription',
-        'mpsPaymentType' => 'string'
+        'ref_transaction' => 'string',
+        'error_state' => 'string',
+        'acquirer_message' => 'string',
+        'mps_id' => 'string',
+        'mps_subscription' => '\Reepay\Model\MpsSubscription',
+        'mps_payment_type' => 'string'
     ];
 
     /**
@@ -72,12 +72,12 @@ class MpsTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'error' => null,
-        'refTransaction' => null,
-        'errorState' => null,
-        'acquirerMessage' => null,
-        'mpsId' => null,
-        'mpsSubscription' => null,
-        'mpsPaymentType' => null
+        'ref_transaction' => null,
+        'error_state' => null,
+        'acquirer_message' => null,
+        'mps_id' => null,
+        'mps_subscription' => null,
+        'mps_payment_type' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class MpsTransaction implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'error' => 'error',
-        'refTransaction' => 'ref_transaction',
-        'errorState' => 'error_state',
-        'acquirerMessage' => 'acquirer_message',
-        'mpsId' => 'mps_id',
-        'mpsSubscription' => 'mps_subscription',
-        'mpsPaymentType' => 'mps_payment_type'
+        'ref_transaction' => 'ref_transaction',
+        'error_state' => 'error_state',
+        'acquirer_message' => 'acquirer_message',
+        'mps_id' => 'mps_id',
+        'mps_subscription' => 'mps_subscription',
+        'mps_payment_type' => 'mps_payment_type'
     ];
 
     /**
@@ -123,12 +123,12 @@ class MpsTransaction implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'error' => 'setError',
-        'refTransaction' => 'setRefTransaction',
-        'errorState' => 'setErrorState',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'mpsId' => 'setMpsId',
-        'mpsSubscription' => 'setMpsSubscription',
-        'mpsPaymentType' => 'setMpsPaymentType'
+        'ref_transaction' => 'setRefTransaction',
+        'error_state' => 'setErrorState',
+        'acquirer_message' => 'setAcquirerMessage',
+        'mps_id' => 'setMpsId',
+        'mps_subscription' => 'setMpsSubscription',
+        'mps_payment_type' => 'setMpsPaymentType'
     ];
 
     /**
@@ -138,12 +138,12 @@ class MpsTransaction implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'error' => 'getError',
-        'refTransaction' => 'getRefTransaction',
-        'errorState' => 'getErrorState',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'mpsId' => 'getMpsId',
-        'mpsSubscription' => 'getMpsSubscription',
-        'mpsPaymentType' => 'getMpsPaymentType'
+        'ref_transaction' => 'getRefTransaction',
+        'error_state' => 'getErrorState',
+        'acquirer_message' => 'getAcquirerMessage',
+        'mps_id' => 'getMpsId',
+        'mps_subscription' => 'getMpsSubscription',
+        'mps_payment_type' => 'getMpsPaymentType'
     ];
 
     /**
@@ -239,12 +239,12 @@ class MpsTransaction implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['refTransaction'] = isset($data['refTransaction']) ? $data['refTransaction'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['mpsId'] = isset($data['mpsId']) ? $data['mpsId'] : null;
-        $this->container['mpsSubscription'] = isset($data['mpsSubscription']) ? $data['mpsSubscription'] : null;
-        $this->container['mpsPaymentType'] = isset($data['mpsPaymentType']) ? $data['mpsPaymentType'] : null;
+        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['mps_id'] = isset($data['mps_id']) ? $data['mps_id'] : null;
+        $this->container['mps_subscription'] = isset($data['mps_subscription']) ? $data['mps_subscription'] : null;
+        $this->container['mps_payment_type'] = isset($data['mps_payment_type']) ? $data['mps_payment_type'] : null;
     }
 
     /**
@@ -257,26 +257,34 @@ class MpsTransaction implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['mpsId'] === null) {
-            $invalidProperties[] = "'mpsId' can't be null";
+        if ($this->container['mps_id'] === null) {
+            $invalidProperties[] = "'mps_id' can't be null";
         }
-        if ($this->container['mpsSubscription'] === null) {
-            $invalidProperties[] = "'mpsSubscription' can't be null";
+        if ($this->container['mps_subscription'] === null) {
+            $invalidProperties[] = "'mps_subscription' can't be null";
         }
-        if ($this->container['mpsPaymentType'] === null) {
-            $invalidProperties[] = "'mpsPaymentType' can't be null";
+        if ($this->container['mps_payment_type'] === null) {
+            $invalidProperties[] = "'mps_payment_type' can't be null";
         }
         $allowedValues = $this->getMpsPaymentTypeAllowableValues();
-        if (!is_null($this->container['mpsPaymentType']) && !in_array($this->container['mpsPaymentType'], $allowedValues, true)) {
+        if (!is_null($this->container['mps_payment_type']) && !in_array(
+                $this->container['mps_payment_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'mpsPaymentType', must be one of '%s'",
+                "invalid value for 'mps_payment_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -321,163 +329,163 @@ class MpsTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets refTransaction
+     * Gets ref_transaction
      *
      * @return string
      */
     public function getRefTransaction()
     {
-        return $this->container['refTransaction'];
+        return $this->container['ref_transaction'];
     }
 
     /**
-     * Sets refTransaction
+     * Sets ref_transaction
      *
-     * @param string $refTransaction Id of a possible referenced transaction
+     * @param string $ref_transaction Id of a possible referenced transaction
      *
      * @return $this
      */
-    public function setRefTransaction($refTransaction)
+    public function setRefTransaction($ref_transaction)
     {
-        $this->container['refTransaction'] = $refTransaction;
+        $this->container['ref_transaction'] = $ref_transaction;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
+     * @param string $error_state Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets mpsId
+     * Gets mps_id
      *
      * @return string
      */
     public function getMpsId()
     {
-        return $this->container['mpsId'];
+        return $this->container['mps_id'];
     }
 
     /**
-     * Sets mpsId
+     * Sets mps_id
      *
-     * @param string $mpsId MobilePay Subscriptions id
+     * @param string $mps_id MobilePay Subscriptions id
      *
      * @return $this
      */
-    public function setMpsId($mpsId)
+    public function setMpsId($mps_id)
     {
-        $this->container['mpsId'] = $mpsId;
+        $this->container['mps_id'] = $mps_id;
 
         return $this;
     }
 
     /**
-     * Gets mpsSubscription
+     * Gets mps_subscription
      *
      * @return \Reepay\Model\MpsSubscription
      */
     public function getMpsSubscription()
     {
-        return $this->container['mpsSubscription'];
+        return $this->container['mps_subscription'];
     }
 
     /**
-     * Sets mpsSubscription
+     * Sets mps_subscription
      *
-     * @param \Reepay\Model\MpsSubscription $mpsSubscription mpsSubscription
+     * @param \Reepay\Model\MpsSubscription $mps_subscription mps_subscription
      *
      * @return $this
      */
-    public function setMpsSubscription($mpsSubscription)
+    public function setMpsSubscription($mps_subscription)
     {
-        $this->container['mpsSubscription'] = $mpsSubscription;
+        $this->container['mps_subscription'] = $mps_subscription;
 
         return $this;
     }
 
     /**
-     * Gets mpsPaymentType
+     * Gets mps_payment_type
      *
      * @return string
      */
     public function getMpsPaymentType()
     {
-        return $this->container['mpsPaymentType'];
+        return $this->container['mps_payment_type'];
     }
 
     /**
-     * Sets mpsPaymentType
+     * Sets mps_payment_type
      *
-     * @param string $mpsPaymentType MobilePay Subscriptions payment type: `regular`, `one_off_cit` (customer initiated), `one_off_mit` (merchant initiated auto reserve)
+     * @param string $mps_payment_type MobilePay Subscriptions payment type: `regular`, `one_off_cit` (customer initiated), `one_off_mit` (merchant initiated auto reserve)
      *
      * @return $this
      */
-    public function setMpsPaymentType($mpsPaymentType)
+    public function setMpsPaymentType($mps_payment_type)
     {
         $allowedValues = $this->getMpsPaymentTypeAllowableValues();
-        if (!in_array($mpsPaymentType, $allowedValues, true)) {
+        if (!in_array($mps_payment_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'mpsPaymentType', must be one of '%s'",
+                    "Invalid value for 'mps_payment_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['mpsPaymentType'] = $mpsPaymentType;
+        $this->container['mps_payment_type'] = $mps_payment_type;
 
         return $this;
     }

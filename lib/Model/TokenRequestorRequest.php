@@ -59,12 +59,12 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         'name' => 'string',
         'vat' => 'string',
         'test' => 'bool',
-        'companyPrimaryLegalName' => 'string',
-        'primaryContactEmail' => 'string',
-        'companyCountryCode' => 'string',
-        'companyCity' => 'string',
-        'primaryWebsiteUrl' => 'string',
-        'cardScheme' => 'string'
+        'company_primary_legal_name' => 'string',
+        'primary_contact_email' => 'string',
+        'company_country_code' => 'string',
+        'company_city' => 'string',
+        'primary_website_url' => 'string',
+        'card_scheme' => 'string'
     ];
 
     /**
@@ -76,12 +76,12 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         'name' => null,
         'vat' => null,
         'test' => null,
-        'companyPrimaryLegalName' => null,
-        'primaryContactEmail' => null,
-        'companyCountryCode' => null,
-        'companyCity' => null,
-        'primaryWebsiteUrl' => null,
-        'cardScheme' => null
+        'company_primary_legal_name' => null,
+        'primary_contact_email' => null,
+        'company_country_code' => null,
+        'company_city' => null,
+        'primary_website_url' => null,
+        'card_scheme' => null
     ];
 
     /**
@@ -114,12 +114,12 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         'name' => 'name',
         'vat' => 'vat',
         'test' => 'test',
-        'companyPrimaryLegalName' => 'company_primary_legal_name',
-        'primaryContactEmail' => 'primary_contact_email',
-        'companyCountryCode' => 'company_country_code',
-        'companyCity' => 'company_city',
-        'primaryWebsiteUrl' => 'primary_website_url',
-        'cardScheme' => 'card_scheme'
+        'company_primary_legal_name' => 'company_primary_legal_name',
+        'primary_contact_email' => 'primary_contact_email',
+        'company_country_code' => 'company_country_code',
+        'company_city' => 'company_city',
+        'primary_website_url' => 'primary_website_url',
+        'card_scheme' => 'card_scheme'
     ];
 
     /**
@@ -131,12 +131,12 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'vat' => 'setVat',
         'test' => 'setTest',
-        'companyPrimaryLegalName' => 'setCompanyPrimaryLegalName',
-        'primaryContactEmail' => 'setPrimaryContactEmail',
-        'companyCountryCode' => 'setCompanyCountryCode',
-        'companyCity' => 'setCompanyCity',
-        'primaryWebsiteUrl' => 'setPrimaryWebsiteUrl',
-        'cardScheme' => 'setCardScheme'
+        'company_primary_legal_name' => 'setCompanyPrimaryLegalName',
+        'primary_contact_email' => 'setPrimaryContactEmail',
+        'company_country_code' => 'setCompanyCountryCode',
+        'company_city' => 'setCompanyCity',
+        'primary_website_url' => 'setPrimaryWebsiteUrl',
+        'card_scheme' => 'setCardScheme'
     ];
 
     /**
@@ -148,12 +148,12 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'vat' => 'getVat',
         'test' => 'getTest',
-        'companyPrimaryLegalName' => 'getCompanyPrimaryLegalName',
-        'primaryContactEmail' => 'getPrimaryContactEmail',
-        'companyCountryCode' => 'getCompanyCountryCode',
-        'companyCity' => 'getCompanyCity',
-        'primaryWebsiteUrl' => 'getPrimaryWebsiteUrl',
-        'cardScheme' => 'getCardScheme'
+        'company_primary_legal_name' => 'getCompanyPrimaryLegalName',
+        'primary_contact_email' => 'getPrimaryContactEmail',
+        'company_country_code' => 'getCompanyCountryCode',
+        'company_city' => 'getCompanyCity',
+        'primary_website_url' => 'getPrimaryWebsiteUrl',
+        'card_scheme' => 'getCardScheme'
     ];
 
     /**
@@ -229,12 +229,12 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['companyPrimaryLegalName'] = isset($data['companyPrimaryLegalName']) ? $data['companyPrimaryLegalName'] : null;
-        $this->container['primaryContactEmail'] = isset($data['primaryContactEmail']) ? $data['primaryContactEmail'] : null;
-        $this->container['companyCountryCode'] = isset($data['companyCountryCode']) ? $data['companyCountryCode'] : null;
-        $this->container['companyCity'] = isset($data['companyCity']) ? $data['companyCity'] : null;
-        $this->container['primaryWebsiteUrl'] = isset($data['primaryWebsiteUrl']) ? $data['primaryWebsiteUrl'] : null;
-        $this->container['cardScheme'] = isset($data['cardScheme']) ? $data['cardScheme'] : null;
+        $this->container['company_primary_legal_name'] = isset($data['company_primary_legal_name']) ? $data['company_primary_legal_name'] : null;
+        $this->container['primary_contact_email'] = isset($data['primary_contact_email']) ? $data['primary_contact_email'] : null;
+        $this->container['company_country_code'] = isset($data['company_country_code']) ? $data['company_country_code'] : null;
+        $this->container['company_city'] = isset($data['company_city']) ? $data['company_city'] : null;
+        $this->container['primary_website_url'] = isset($data['primary_website_url']) ? $data['primary_website_url'] : null;
+        $this->container['card_scheme'] = isset($data['card_scheme']) ? $data['card_scheme'] : null;
     }
 
     /**
@@ -255,32 +255,32 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
         if ($this->container['test'] === null) {
             $invalidProperties[] = "'test' can't be null";
         }
-        if ($this->container['companyPrimaryLegalName'] === null) {
-            $invalidProperties[] = "'companyPrimaryLegalName' can't be null";
+        if ($this->container['company_primary_legal_name'] === null) {
+            $invalidProperties[] = "'company_primary_legal_name' can't be null";
         }
-        if ($this->container['primaryContactEmail'] === null) {
-            $invalidProperties[] = "'primaryContactEmail' can't be null";
+        if ($this->container['primary_contact_email'] === null) {
+            $invalidProperties[] = "'primary_contact_email' can't be null";
         }
-        if ($this->container['companyCountryCode'] === null) {
-            $invalidProperties[] = "'companyCountryCode' can't be null";
+        if ($this->container['company_country_code'] === null) {
+            $invalidProperties[] = "'company_country_code' can't be null";
         }
-        if ($this->container['companyCity'] === null) {
-            $invalidProperties[] = "'companyCity' can't be null";
+        if ($this->container['company_city'] === null) {
+            $invalidProperties[] = "'company_city' can't be null";
         }
-        if ($this->container['primaryWebsiteUrl'] === null) {
-            $invalidProperties[] = "'primaryWebsiteUrl' can't be null";
+        if ($this->container['primary_website_url'] === null) {
+            $invalidProperties[] = "'primary_website_url' can't be null";
         }
-        if ($this->container['cardScheme'] === null) {
-            $invalidProperties[] = "'cardScheme' can't be null";
+        if ($this->container['card_scheme'] === null) {
+            $invalidProperties[] = "'card_scheme' can't be null";
         }
         $allowedValues = $this->getCardSchemeAllowableValues();
-        if (!is_null($this->container['cardScheme']) && !in_array(
-                $this->container['cardScheme'],
+        if (!is_null($this->container['card_scheme']) && !in_array(
+                $this->container['card_scheme'],
                 $allowedValues,
                 true
             )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'cardScheme', must be one of '%s'",
+                "invalid value for 'card_scheme', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -373,158 +373,157 @@ class TokenRequestorRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets companyPrimaryLegalName
+     * Gets company_primary_legal_name
      *
      * @return string
      */
     public function getCompanyPrimaryLegalName()
     {
-        return $this->container['companyPrimaryLegalName'];
+        return $this->container['company_primary_legal_name'];
     }
 
     /**
-     * Sets companyPrimaryLegalName
+     * Sets company_primary_legal_name
      *
-     * @param string $companyPrimaryLegalName Company primary legal name
+     * @param string $company_primary_legal_name Company primary legal name
      *
      * @return $this
      */
-    public function setCompanyPrimaryLegalName($companyPrimaryLegalName)
+    public function setCompanyPrimaryLegalName($company_primary_legal_name)
     {
-        $this->container['companyPrimaryLegalName'] = $companyPrimaryLegalName;
+        $this->container['company_primary_legal_name'] = $company_primary_legal_name;
 
         return $this;
     }
 
     /**
-     * Gets primaryContactEmail
+     * Gets primary_contact_email
      *
      * @return string
      */
     public function getPrimaryContactEmail()
     {
-        return $this->container['primaryContactEmail'];
+        return $this->container['primary_contact_email'];
     }
 
     /**
-     * Sets primaryContactEmail
+     * Sets primary_contact_email
      *
-     * @param string $primaryContactEmail Company primary contact email
+     * @param string $primary_contact_email Company primary contact email
      *
      * @return $this
      */
-    public function setPrimaryContactEmail($primaryContactEmail)
+    public function setPrimaryContactEmail($primary_contact_email)
     {
-        $this->container['primaryContactEmail'] = $primaryContactEmail;
+        $this->container['primary_contact_email'] = $primary_contact_email;
 
         return $this;
     }
 
     /**
-     * Gets companyCountryCode
+     * Gets company_country_code
      *
      * @return string
      */
     public function getCompanyCountryCode()
     {
-        return $this->container['companyCountryCode'];
+        return $this->container['company_country_code'];
     }
 
     /**
-     * Sets companyCountryCode
+     * Sets company_country_code
      *
-     * @param string $companyCountryCode Company country code
+     * @param string $company_country_code Company country code
      *
      * @return $this
      */
-    public function setCompanyCountryCode($companyCountryCode)
+    public function setCompanyCountryCode($company_country_code)
     {
-        $this->container['companyCountryCode'] = $companyCountryCode;
+        $this->container['company_country_code'] = $company_country_code;
 
         return $this;
     }
 
     /**
-     * Gets companyCity
+     * Gets company_city
      *
      * @return string
      */
     public function getCompanyCity()
     {
-        return $this->container['companyCity'];
+        return $this->container['company_city'];
     }
 
     /**
-     * Sets companyCity
+     * Sets company_city
      *
-     * @param string $companyCity Company city
+     * @param string $company_city Company city
      *
      * @return $this
      */
-    public function setCompanyCity($companyCity)
+    public function setCompanyCity($company_city)
     {
-        $this->container['companyCity'] = $companyCity;
+        $this->container['company_city'] = $company_city;
 
         return $this;
     }
 
     /**
-     * Gets primaryWebsiteUrl
+     * Gets primary_website_url
      *
      * @return string
      */
     public function getPrimaryWebsiteUrl()
     {
-        return $this->container['primaryWebsiteUrl'];
+        return $this->container['primary_website_url'];
     }
 
     /**
-     * Sets primaryWebsiteUrl
+     * Sets primary_website_url
      *
-     * @param string $primaryWebsiteUrl Company primary website url
+     * @param string $primary_website_url Company primary website url
      *
      * @return $this
      */
-    public function setPrimaryWebsiteUrl($primaryWebsiteUrl)
+    public function setPrimaryWebsiteUrl($primary_website_url)
     {
-        $this->container['primaryWebsiteUrl'] = $primaryWebsiteUrl;
+        $this->container['primary_website_url'] = $primary_website_url;
 
         return $this;
     }
 
     /**
-     * Gets cardScheme
+     * Gets card_scheme
      *
      * @return string
      */
     public function getCardScheme()
     {
-        return $this->container['cardScheme'];
+        return $this->container['card_scheme'];
     }
 
     /**
-     * Sets cardScheme
+     * Sets card_scheme
      *
-     * @param string $cardScheme Card scheme
+     * @param string $card_scheme Card scheme
      *
      * @return $this
      */
-    public function setCardScheme($cardScheme)
+    public function setCardScheme($card_scheme)
     {
         $allowedValues = $this->getCardSchemeAllowableValues();
-        if (!in_array($cardScheme, $allowedValues, true)) {
+        if (!in_array($card_scheme, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'cardScheme', must be one of '%s'",
+                    "Invalid value for 'card_scheme', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['cardScheme'] = $cardScheme;
+        $this->container['card_scheme'] = $card_scheme;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

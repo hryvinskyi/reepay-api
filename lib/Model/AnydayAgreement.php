@@ -57,8 +57,8 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'test' => 'bool',
-        'apiKey' => 'string',
-        'privateKey' => 'string'
+        'api_key' => 'string',
+        'private_key' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'test' => null,
-        'apiKey' => null,
-        'privateKey' => null
+        'api_key' => null,
+        'private_key' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'test' => 'test',
-        'apiKey' => 'api_key',
-        'privateKey' => 'private_key'
+        'api_key' => 'api_key',
+        'private_key' => 'private_key'
     ];
 
     /**
@@ -111,8 +111,8 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'test' => 'setTest',
-        'apiKey' => 'setApiKey',
-        'privateKey' => 'setPrivateKey'
+        'api_key' => 'setApiKey',
+        'private_key' => 'setPrivateKey'
     ];
 
     /**
@@ -122,8 +122,8 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'test' => 'getTest',
-        'apiKey' => 'getApiKey',
-        'privateKey' => 'getPrivateKey'
+        'api_key' => 'getApiKey',
+        'private_key' => 'getPrivateKey'
     ];
 
     /**
@@ -185,8 +185,8 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['apiKey'] = isset($data['apiKey']) ? $data['apiKey'] : null;
-        $this->container['privateKey'] = isset($data['privateKey']) ? $data['privateKey'] : null;
+        $this->container['api_key'] = isset($data['api_key']) ? $data['api_key'] : null;
+        $this->container['private_key'] = isset($data['private_key']) ? $data['private_key'] : null;
     }
 
     /**
@@ -238,49 +238,49 @@ class AnydayAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets apiKey
+     * Gets api_key
      *
      * @return string
      */
     public function getApiKey()
     {
-        return $this->container['apiKey'];
+        return $this->container['api_key'];
     }
 
     /**
-     * Sets apiKey
+     * Sets api_key
      *
-     * @param string $apiKey Anyday API key
+     * @param string $api_key Anyday API key
      *
      * @return $this
      */
-    public function setApiKey($apiKey)
+    public function setApiKey($api_key)
     {
-        $this->container['apiKey'] = $apiKey;
+        $this->container['api_key'] = $api_key;
 
         return $this;
     }
 
     /**
-     * Gets privateKey
+     * Gets private_key
      *
      * @return string
      */
     public function getPrivateKey()
     {
-        return $this->container['privateKey'];
+        return $this->container['private_key'];
     }
 
     /**
-     * Sets privateKey
+     * Sets private_key
      *
-     * @param string $privateKey Anyday private key for callback verification
+     * @param string $private_key Anyday private key for callback verification
      *
      * @return $this
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey($private_key)
     {
-        $this->container['privateKey'] = $privateKey;
+        $this->container['private_key'] = $private_key;
 
         return $this;
     }

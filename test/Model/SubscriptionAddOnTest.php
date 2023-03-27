@@ -118,14 +118,14 @@ class SubscriptionAddOnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "addOn"
+     * Test attribute "add_on"
      */
     public function testPropertyAddOn()
     {
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {

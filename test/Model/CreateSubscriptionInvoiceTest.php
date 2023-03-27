@@ -111,56 +111,56 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "planManual"
+     * Test attribute "plan_manual"
      */
     public function testPropertyPlanManual()
     {
     }
 
     /**
-     * Test attribute "collectAdditionalCosts"
+     * Test attribute "collect_additional_costs"
      */
     public function testPropertyCollectAdditionalCosts()
     {
     }
 
     /**
-     * Test attribute "collectCredit"
+     * Test attribute "collect_credit"
      */
     public function testPropertyCollectCredit()
     {
     }
 
     /**
-     * Test attribute "applyDiscounts"
+     * Test attribute "apply_discounts"
      */
     public function testPropertyApplyDiscounts()
     {
     }
 
     /**
-     * Test attribute "orderLines"
+     * Test attribute "order_lines"
      */
     public function testPropertyOrderLines()
     {
     }
 
     /**
-     * Test attribute "manualTransfer"
+     * Test attribute "manual_transfer"
      */
     public function testPropertyManualTransfer()
     {
     }
 
     /**
-     * Test attribute "billingAddress"
+     * Test attribute "billing_address"
      */
     public function testPropertyBillingAddress()
     {
     }
 
     /**
-     * Test attribute "shippingAddress"
+     * Test attribute "shipping_address"
      */
     public function testPropertyShippingAddress()
     {

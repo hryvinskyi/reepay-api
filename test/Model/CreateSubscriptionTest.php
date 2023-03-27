@@ -132,105 +132,105 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "createCustomer"
+     * Test attribute "create_customer"
      */
     public function testPropertyCreateCustomer()
     {
     }
 
     /**
-     * Test attribute "planVersion"
+     * Test attribute "plan_version"
      */
     public function testPropertyPlanVersion()
     {
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "generateHandle"
+     * Test attribute "generate_handle"
      */
     public function testPropertyGenerateHandle()
     {
     }
 
     /**
-     * Test attribute "startDate"
+     * Test attribute "start_date"
      */
     public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "endDate"
+     * Test attribute "end_date"
      */
     public function testPropertyEndDate()
     {
     }
 
     /**
-     * Test attribute "graceDuration"
+     * Test attribute "grace_duration"
      */
     public function testPropertyGraceDuration()
     {
     }
 
     /**
-     * Test attribute "noTrial"
+     * Test attribute "no_trial"
      */
     public function testPropertyNoTrial()
     {
     }
 
     /**
-     * Test attribute "noSetupFee"
+     * Test attribute "no_setup_fee"
      */
     public function testPropertyNoSetupFee()
     {
     }
 
     /**
-     * Test attribute "trialPeriod"
+     * Test attribute "trial_period"
      */
     public function testPropertyTrialPeriod()
     {
     }
 
     /**
-     * Test attribute "subscriptionDiscounts"
+     * Test attribute "subscription_discounts"
      */
     public function testPropertySubscriptionDiscounts()
     {
     }
 
     /**
-     * Test attribute "couponCodes"
+     * Test attribute "coupon_codes"
      */
     public function testPropertyCouponCodes()
     {
     }
 
     /**
-     * Test attribute "addOns"
+     * Test attribute "add_ons"
      */
     public function testPropertyAddOns()
     {
     }
 
     /**
-     * Test attribute "additionalCosts"
+     * Test attribute "additional_costs"
      */
     public function testPropertyAdditionalCosts()
     {
     }
 
     /**
-     * Test attribute "signupMethod"
+     * Test attribute "signup_method"
      */
     public function testPropertySignupMethod()
     {

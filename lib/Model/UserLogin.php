@@ -63,8 +63,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         'organisations' => '\Reepay\Model\OrganisationLogin[]',
         'groups' => 'string[]',
         'permissions' => 'string[]',
-        'tokenTtl' => 'int',
-        'mfaRequired' => 'bool'
+        'token_ttl' => 'int',
+        'mfa_required' => 'bool'
     ];
 
     /**
@@ -80,8 +80,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         'organisations' => null,
         'groups' => null,
         'permissions' => null,
-        'tokenTtl' => 'int32',
-        'mfaRequired' => null
+        'token_ttl' => 'int32',
+        'mfa_required' => null
     ];
 
     /**
@@ -118,8 +118,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         'organisations' => 'organisations',
         'groups' => 'groups',
         'permissions' => 'permissions',
-        'tokenTtl' => 'token_ttl',
-        'mfaRequired' => 'mfa_required'
+        'token_ttl' => 'token_ttl',
+        'mfa_required' => 'mfa_required'
     ];
 
     /**
@@ -135,8 +135,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         'organisations' => 'setOrganisations',
         'groups' => 'setGroups',
         'permissions' => 'setPermissions',
-        'tokenTtl' => 'setTokenTtl',
-        'mfaRequired' => 'setMfaRequired'
+        'token_ttl' => 'setTokenTtl',
+        'mfa_required' => 'setMfaRequired'
     ];
 
     /**
@@ -152,8 +152,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         'organisations' => 'getOrganisations',
         'groups' => 'getGroups',
         'permissions' => 'getPermissions',
-        'tokenTtl' => 'getTokenTtl',
-        'mfaRequired' => 'getMfaRequired'
+        'token_ttl' => 'getTokenTtl',
+        'mfa_required' => 'getMfaRequired'
     ];
 
     /**
@@ -221,8 +221,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         $this->container['organisations'] = isset($data['organisations']) ? $data['organisations'] : null;
         $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
         $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
-        $this->container['tokenTtl'] = isset($data['tokenTtl']) ? $data['tokenTtl'] : null;
-        $this->container['mfaRequired'] = isset($data['mfaRequired']) ? $data['mfaRequired'] : null;
+        $this->container['token_ttl'] = isset($data['token_ttl']) ? $data['token_ttl'] : null;
+        $this->container['mfa_required'] = isset($data['mfa_required']) ? $data['mfa_required'] : null;
     }
 
     /**
@@ -255,8 +255,8 @@ class UserLogin implements ModelInterface, ArrayAccess
         if ($this->container['permissions'] === null) {
             $invalidProperties[] = "'permissions' can't be null";
         }
-        if ($this->container['tokenTtl'] === null) {
-            $invalidProperties[] = "'tokenTtl' can't be null";
+        if ($this->container['token_ttl'] === null) {
+            $invalidProperties[] = "'token_ttl' can't be null";
         }
         return $invalidProperties;
     }
@@ -442,49 +442,49 @@ class UserLogin implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets tokenTtl
+     * Gets token_ttl
      *
      * @return int
      */
     public function getTokenTtl()
     {
-        return $this->container['tokenTtl'];
+        return $this->container['token_ttl'];
     }
 
     /**
-     * Sets tokenTtl
+     * Sets token_ttl
      *
-     * @param int $tokenTtl Token time-to-live in minutes
+     * @param int $token_ttl Token time-to-live in minutes
      *
      * @return $this
      */
-    public function setTokenTtl($tokenTtl)
+    public function setTokenTtl($token_ttl)
     {
-        $this->container['tokenTtl'] = $tokenTtl;
+        $this->container['token_ttl'] = $token_ttl;
 
         return $this;
     }
 
     /**
-     * Gets mfaRequired
+     * Gets mfa_required
      *
      * @return bool
      */
     public function getMfaRequired()
     {
-        return $this->container['mfaRequired'];
+        return $this->container['mfa_required'];
     }
 
     /**
-     * Sets mfaRequired
+     * Sets mfa_required
      *
-     * @param bool $mfaRequired User needs to add MFA
+     * @param bool $mfa_required User needs to add MFA
      *
      * @return $this
      */
-    public function setMfaRequired($mfaRequired)
+    public function setMfaRequired($mfa_required)
     {
-        $this->container['mfaRequired'] = $mfaRequired;
+        $this->container['mfa_required'] = $mfa_required;
 
         return $this;
     }

@@ -60,7 +60,7 @@ class CreateCredit implements ModelInterface, ArrayAccess
         'handle' => 'string',
         'amount' => 'int',
         'text' => 'string',
-        'validFrom' => 'string'
+        'valid_from' => 'string'
     ];
 
     /**
@@ -73,7 +73,7 @@ class CreateCredit implements ModelInterface, ArrayAccess
         'handle' => null,
         'amount' => 'int32',
         'text' => null,
-        'validFrom' => null
+        'valid_from' => null
     ];
 
     /**
@@ -107,7 +107,7 @@ class CreateCredit implements ModelInterface, ArrayAccess
         'handle' => 'handle',
         'amount' => 'amount',
         'text' => 'text',
-        'validFrom' => 'valid_from'
+        'valid_from' => 'valid_from'
     ];
 
     /**
@@ -120,7 +120,7 @@ class CreateCredit implements ModelInterface, ArrayAccess
         'handle' => 'setHandle',
         'amount' => 'setAmount',
         'text' => 'setText',
-        'validFrom' => 'setValidFrom'
+        'valid_from' => 'setValidFrom'
     ];
 
     /**
@@ -133,7 +133,7 @@ class CreateCredit implements ModelInterface, ArrayAccess
         'handle' => 'getHandle',
         'amount' => 'getAmount',
         'text' => 'getText',
-        'validFrom' => 'getValidFrom'
+        'valid_from' => 'getValidFrom'
     ];
 
     /**
@@ -198,7 +198,7 @@ class CreateCredit implements ModelInterface, ArrayAccess
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['validFrom'] = isset($data['validFrom']) ? $data['validFrom'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
     }
 
     /**
@@ -334,25 +334,25 @@ class CreateCredit implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets validFrom
+     * Gets valid_from
      *
      * @return string
      */
     public function getValidFrom()
     {
-        return $this->container['validFrom'];
+        return $this->container['valid_from'];
     }
 
     /**
-     * Sets validFrom
+     * Sets valid_from
      *
-     * @param string $validFrom Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
+     * @param string $valid_from Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
      *
      * @return $this
      */
-    public function setValidFrom($validFrom)
+    public function setValidFrom($valid_from)
     {
-        $this->container['validFrom'] = $validFrom;
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }

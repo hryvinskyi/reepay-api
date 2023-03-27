@@ -57,7 +57,7 @@ class UserRenew implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'token' => 'string',
-        'tokenTtl' => 'int'
+        'token_ttl' => 'int'
     ];
 
     /**
@@ -67,7 +67,7 @@ class UserRenew implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'token' => null,
-        'tokenTtl' => 'int32'
+        'token_ttl' => 'int32'
     ];
 
     /**
@@ -98,7 +98,7 @@ class UserRenew implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'token' => 'token',
-        'tokenTtl' => 'token_ttl'
+        'token_ttl' => 'token_ttl'
     ];
 
     /**
@@ -108,7 +108,7 @@ class UserRenew implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'token' => 'setToken',
-        'tokenTtl' => 'setTokenTtl'
+        'token_ttl' => 'setTokenTtl'
     ];
 
     /**
@@ -118,7 +118,7 @@ class UserRenew implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'token' => 'getToken',
-        'tokenTtl' => 'getTokenTtl'
+        'token_ttl' => 'getTokenTtl'
     ];
 
     /**
@@ -180,7 +180,7 @@ class UserRenew implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['tokenTtl'] = isset($data['tokenTtl']) ? $data['tokenTtl'] : null;
+        $this->container['token_ttl'] = isset($data['token_ttl']) ? $data['token_ttl'] : null;
     }
 
     /**
@@ -195,8 +195,8 @@ class UserRenew implements ModelInterface, ArrayAccess
         if ($this->container['token'] === null) {
             $invalidProperties[] = "'token' can't be null";
         }
-        if ($this->container['tokenTtl'] === null) {
-            $invalidProperties[] = "'tokenTtl' can't be null";
+        if ($this->container['token_ttl'] === null) {
+            $invalidProperties[] = "'token_ttl' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,25 +238,25 @@ class UserRenew implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets tokenTtl
+     * Gets token_ttl
      *
      * @return int
      */
     public function getTokenTtl()
     {
-        return $this->container['tokenTtl'];
+        return $this->container['token_ttl'];
     }
 
     /**
-     * Sets tokenTtl
+     * Sets token_ttl
      *
-     * @param int $tokenTtl Token time-to-live in minutes
+     * @param int $token_ttl Token time-to-live in minutes
      *
      * @return $this
      */
-    public function setTokenTtl($tokenTtl)
+    public function setTokenTtl($token_ttl)
     {
-        $this->container['tokenTtl'] = $tokenTtl;
+        $this->container['token_ttl'] = $token_ttl;
 
         return $this;
     }

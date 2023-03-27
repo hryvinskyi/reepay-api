@@ -2880,16 +2880,16 @@ class SubscriptionApi
      *
      * Delete subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
-     * @throws \Reepay\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * @return \Reepay\Model\SubscriptionDiscount
+     * @throws \InvalidArgumentException
+     * @throws \Reepay\ApiException on non-2xx response
      */
-    public function deleteSubscriptionDiscount($handle, $sdHandle)
+    public function deleteSubscriptionDiscount($handle, $sd_handle)
     {
-        list($response) = $this->deleteSubscriptionDiscountWithHttpInfo($handle, $sdHandle);
+        list($response) = $this->deleteSubscriptionDiscountWithHttpInfo($handle, $sd_handle);
         return $response;
     }
 
@@ -2898,17 +2898,17 @@ class SubscriptionApi
      *
      * Delete subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\SubscriptionDiscount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSubscriptionDiscountWithHttpInfo($handle, $sdHandle)
+    public function deleteSubscriptionDiscountWithHttpInfo($handle, $sd_handle)
     {
         $returnType = '\Reepay\Model\SubscriptionDiscount';
-        $request = $this->deleteSubscriptionDiscountRequest($handle, $sdHandle);
+        $request = $this->deleteSubscriptionDiscountRequest($handle, $sd_handle);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3022,15 +3022,15 @@ class SubscriptionApi
      *
      * Delete subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSubscriptionDiscountAsync($handle, $sdHandle)
+    public function deleteSubscriptionDiscountAsync($handle, $sd_handle)
     {
-        return $this->deleteSubscriptionDiscountAsyncWithHttpInfo($handle, $sdHandle)
+        return $this->deleteSubscriptionDiscountAsyncWithHttpInfo($handle, $sd_handle)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3043,16 +3043,16 @@ class SubscriptionApi
      *
      * Delete subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSubscriptionDiscountAsyncWithHttpInfo($handle, $sdHandle)
+    public function deleteSubscriptionDiscountAsyncWithHttpInfo($handle, $sd_handle)
     {
         $returnType = '\Reepay\Model\SubscriptionDiscount';
-        $request = $this->deleteSubscriptionDiscountRequest($handle, $sdHandle);
+        $request = $this->deleteSubscriptionDiscountRequest($handle, $sd_handle);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3094,13 +3094,13 @@ class SubscriptionApi
     /**
      * Create request for operation 'deleteSubscriptionDiscount'
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteSubscriptionDiscountRequest($handle, $sdHandle)
+    protected function deleteSubscriptionDiscountRequest($handle, $sd_handle)
     {
         // verify the required parameter 'handle' is set
         if ($handle === null || (is_array($handle) && count($handle) === 0)) {
@@ -3108,10 +3108,10 @@ class SubscriptionApi
                 'Missing the required parameter $handle when calling deleteSubscriptionDiscount'
             );
         }
-        // verify the required parameter 'sdHandle' is set
-        if ($sdHandle === null || (is_array($sdHandle) && count($sdHandle) === 0)) {
+        // verify the required parameter 'sd_handle' is set
+        if ($sd_handle === null || (is_array($sd_handle) && count($sd_handle) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sdHandle when calling deleteSubscriptionDiscount'
+                'Missing the required parameter $sd_handle when calling deleteSubscriptionDiscount'
             );
         }
 
@@ -3132,10 +3132,10 @@ class SubscriptionApi
             );
         }
         // path params
-        if ($sdHandle !== null) {
+        if ($sd_handle !== null) {
             $resourcePath = str_replace(
                 '{' . 'sdHandle' . '}',
-                ObjectSerializer::toPathValue($sdHandle),
+                ObjectSerializer::toPathValue($sd_handle),
                 $resourcePath
             );
         }
@@ -4477,16 +4477,16 @@ class SubscriptionApi
      *
      * Get subscription add-on
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $saHandle Subscription add-on handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\SubscriptionAddOn
      */
-    public function getSubscriptionAddOn($handle, $saHandle)
+    public function getSubscriptionAddOn($handle, $sa_handle)
     {
-        list($response) = $this->getSubscriptionAddOnWithHttpInfo($handle, $saHandle);
+        list($response) = $this->getSubscriptionAddOnWithHttpInfo($handle, $sa_handle);
         return $response;
     }
 
@@ -4495,17 +4495,17 @@ class SubscriptionApi
      *
      * Get subscription add-on
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $saHandle Subscription add-on handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\SubscriptionAddOn, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubscriptionAddOnWithHttpInfo($handle, $saHandle)
+    public function getSubscriptionAddOnWithHttpInfo($handle, $sa_handle)
     {
         $returnType = '\Reepay\Model\SubscriptionAddOn';
-        $request = $this->getSubscriptionAddOnRequest($handle, $saHandle);
+        $request = $this->getSubscriptionAddOnRequest($handle, $sa_handle);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4619,15 +4619,15 @@ class SubscriptionApi
      *
      * Get subscription add-on
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $saHandle Subscription add-on handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionAddOnAsync($handle, $saHandle)
+    public function getSubscriptionAddOnAsync($handle, $sa_handle)
     {
-        return $this->getSubscriptionAddOnAsyncWithHttpInfo($handle, $saHandle)
+        return $this->getSubscriptionAddOnAsyncWithHttpInfo($handle, $sa_handle)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4640,16 +4640,16 @@ class SubscriptionApi
      *
      * Get subscription add-on
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $saHandle Subscription add-on handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionAddOnAsyncWithHttpInfo($handle, $saHandle)
+    public function getSubscriptionAddOnAsyncWithHttpInfo($handle, $sa_handle)
     {
         $returnType = '\Reepay\Model\SubscriptionAddOn';
-        $request = $this->getSubscriptionAddOnRequest($handle, $saHandle);
+        $request = $this->getSubscriptionAddOnRequest($handle, $sa_handle);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4691,13 +4691,13 @@ class SubscriptionApi
     /**
      * Create request for operation 'getSubscriptionAddOn'
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $saHandle Subscription add-on handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSubscriptionAddOnRequest($handle, $saHandle)
+    protected function getSubscriptionAddOnRequest($handle, $sa_handle)
     {
         // verify the required parameter 'handle' is set
         if ($handle === null || (is_array($handle) && count($handle) === 0)) {
@@ -4705,10 +4705,10 @@ class SubscriptionApi
                 'Missing the required parameter $handle when calling getSubscriptionAddOn'
             );
         }
-        // verify the required parameter 'saHandle' is set
-        if ($saHandle === null || (is_array($saHandle) && count($saHandle) === 0)) {
+        // verify the required parameter 'sa_handle' is set
+        if ($sa_handle === null || (is_array($sa_handle) && count($sa_handle) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $saHandle when calling getSubscriptionAddOn'
+                'Missing the required parameter $sa_handle when calling getSubscriptionAddOn'
             );
         }
 
@@ -4729,10 +4729,10 @@ class SubscriptionApi
             );
         }
         // path params
-        if ($saHandle !== null) {
+        if ($sa_handle !== null) {
             $resourcePath = str_replace(
                 '{' . 'saHandle' . '}',
-                ObjectSerializer::toPathValue($saHandle),
+                ObjectSerializer::toPathValue($sa_handle),
                 $resourcePath
             );
         }
@@ -5124,16 +5124,16 @@ class SubscriptionApi
      *
      * Get subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\SubscriptionDiscount
      */
-    public function getSubscriptionDiscount($handle, $sdHandle)
+    public function getSubscriptionDiscount($handle, $sd_handle)
     {
-        list($response) = $this->getSubscriptionDiscountWithHttpInfo($handle, $sdHandle);
+        list($response) = $this->getSubscriptionDiscountWithHttpInfo($handle, $sd_handle);
         return $response;
     }
 
@@ -5142,17 +5142,17 @@ class SubscriptionApi
      *
      * Get subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\SubscriptionDiscount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubscriptionDiscountWithHttpInfo($handle, $sdHandle)
+    public function getSubscriptionDiscountWithHttpInfo($handle, $sd_handle)
     {
         $returnType = '\Reepay\Model\SubscriptionDiscount';
-        $request = $this->getSubscriptionDiscountRequest($handle, $sdHandle);
+        $request = $this->getSubscriptionDiscountRequest($handle, $sd_handle);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5266,15 +5266,15 @@ class SubscriptionApi
      *
      * Get subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionDiscountAsync($handle, $sdHandle)
+    public function getSubscriptionDiscountAsync($handle, $sd_handle)
     {
-        return $this->getSubscriptionDiscountAsyncWithHttpInfo($handle, $sdHandle)
+        return $this->getSubscriptionDiscountAsyncWithHttpInfo($handle, $sd_handle)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5287,16 +5287,16 @@ class SubscriptionApi
      *
      * Get subscription discount
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionDiscountAsyncWithHttpInfo($handle, $sdHandle)
+    public function getSubscriptionDiscountAsyncWithHttpInfo($handle, $sd_handle)
     {
         $returnType = '\Reepay\Model\SubscriptionDiscount';
-        $request = $this->getSubscriptionDiscountRequest($handle, $sdHandle);
+        $request = $this->getSubscriptionDiscountRequest($handle, $sd_handle);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5338,13 +5338,13 @@ class SubscriptionApi
     /**
      * Create request for operation 'getSubscriptionDiscount'
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $sdHandle Subscription discount handle (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $sd_handle Subscription discount handle (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSubscriptionDiscountRequest($handle, $sdHandle)
+    protected function getSubscriptionDiscountRequest($handle, $sd_handle)
     {
         // verify the required parameter 'handle' is set
         if ($handle === null || (is_array($handle) && count($handle) === 0)) {
@@ -5352,10 +5352,10 @@ class SubscriptionApi
                 'Missing the required parameter $handle when calling getSubscriptionDiscount'
             );
         }
-        // verify the required parameter 'sdHandle' is set
-        if ($sdHandle === null || (is_array($sdHandle) && count($sdHandle) === 0)) {
+        // verify the required parameter 'sd_handle' is set
+        if ($sd_handle === null || (is_array($sd_handle) && count($sd_handle) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sdHandle when calling getSubscriptionDiscount'
+                'Missing the required parameter $sd_handle when calling getSubscriptionDiscount'
             );
         }
 
@@ -5376,10 +5376,10 @@ class SubscriptionApi
             );
         }
         // path params
-        if ($sdHandle !== null) {
+        if ($sd_handle !== null) {
             $resourcePath = str_replace(
                 '{' . 'sdHandle' . '}',
-                ObjectSerializer::toPathValue($sdHandle),
+                ObjectSerializer::toPathValue($sd_handle),
                 $resourcePath
             );
         }
@@ -8960,16 +8960,16 @@ class SubscriptionApi
      *
      * Remove payment method
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $methodId Payment method id (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $method_id Payment method id (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\PaymentMethodV2[]
      */
-    public function removeSubscriptionPaymentMethod($handle, $methodId)
+    public function removeSubscriptionPaymentMethod($handle, $method_id)
     {
-        list($response) = $this->removeSubscriptionPaymentMethodWithHttpInfo($handle, $methodId);
+        list($response) = $this->removeSubscriptionPaymentMethodWithHttpInfo($handle, $method_id);
         return $response;
     }
 
@@ -8978,17 +8978,17 @@ class SubscriptionApi
      *
      * Remove payment method
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $methodId Payment method id (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $method_id Payment method id (required)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\PaymentMethodV2[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeSubscriptionPaymentMethodWithHttpInfo($handle, $methodId)
+    public function removeSubscriptionPaymentMethodWithHttpInfo($handle, $method_id)
     {
         $returnType = '\Reepay\Model\PaymentMethodV2[]';
-        $request = $this->removeSubscriptionPaymentMethodRequest($handle, $methodId);
+        $request = $this->removeSubscriptionPaymentMethodRequest($handle, $method_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9102,15 +9102,15 @@ class SubscriptionApi
      *
      * Remove payment method
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $methodId Payment method id (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $method_id Payment method id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeSubscriptionPaymentMethodAsync($handle, $methodId)
+    public function removeSubscriptionPaymentMethodAsync($handle, $method_id)
     {
-        return $this->removeSubscriptionPaymentMethodAsyncWithHttpInfo($handle, $methodId)
+        return $this->removeSubscriptionPaymentMethodAsyncWithHttpInfo($handle, $method_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9123,16 +9123,16 @@ class SubscriptionApi
      *
      * Remove payment method
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $methodId Payment method id (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $method_id Payment method id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeSubscriptionPaymentMethodAsyncWithHttpInfo($handle, $methodId)
+    public function removeSubscriptionPaymentMethodAsyncWithHttpInfo($handle, $method_id)
     {
         $returnType = '\Reepay\Model\PaymentMethodV2[]';
-        $request = $this->removeSubscriptionPaymentMethodRequest($handle, $methodId);
+        $request = $this->removeSubscriptionPaymentMethodRequest($handle, $method_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9174,13 +9174,13 @@ class SubscriptionApi
     /**
      * Create request for operation 'removeSubscriptionPaymentMethod'
      *
-     * @param  string $handle Subscription handle (required)
-     * @param  string $methodId Payment method id (required)
+     * @param string $handle Subscription handle (required)
+     * @param string $method_id Payment method id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function removeSubscriptionPaymentMethodRequest($handle, $methodId)
+    protected function removeSubscriptionPaymentMethodRequest($handle, $method_id)
     {
         // verify the required parameter 'handle' is set
         if ($handle === null || (is_array($handle) && count($handle) === 0)) {
@@ -9188,10 +9188,10 @@ class SubscriptionApi
                 'Missing the required parameter $handle when calling removeSubscriptionPaymentMethod'
             );
         }
-        // verify the required parameter 'methodId' is set
-        if ($methodId === null || (is_array($methodId) && count($methodId) === 0)) {
+        // verify the required parameter 'method_id' is set
+        if ($method_id === null || (is_array($method_id) && count($method_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $methodId when calling removeSubscriptionPaymentMethod'
+                'Missing the required parameter $method_id when calling removeSubscriptionPaymentMethod'
             );
         }
 
@@ -9212,10 +9212,10 @@ class SubscriptionApi
             );
         }
         // path params
-        if ($methodId !== null) {
+        if ($method_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'method_id' . '}',
-                ObjectSerializer::toPathValue($methodId),
+                ObjectSerializer::toPathValue($method_id),
                 $resourcePath
             );
         }
@@ -9932,9 +9932,9 @@ class SubscriptionApi
      * @param string $handle Resource handle (required)
      * @param map[string,object] $body body (optional)
      *
-     * @return map[string,object]
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return map[string,object]
      */
     public function updateMetadata4($handle, $body = null)
     {

@@ -202,21 +202,21 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "postalCode"
+     * Test attribute "postal_code"
      */
     public function testPropertyPostalCode()
     {
     }
 
     /**
-     * Test attribute "defaultVat"
+     * Test attribute "default_vat"
      */
     public function testPropertyDefaultVat()
     {
     }
 
     /**
-     * Test attribute "subscriptionInvoicePrefix"
+     * Test attribute "subscription_invoice_prefix"
      */
     public function testPropertySubscriptionInvoicePrefix()
     {

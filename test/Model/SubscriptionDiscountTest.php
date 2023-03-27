@@ -160,42 +160,42 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "applyTo"
+     * Test attribute "apply_to"
      */
     public function testPropertyApplyTo()
     {
     }
 
     /**
-     * Test attribute "fixedCount"
+     * Test attribute "fixed_count"
      */
     public function testPropertyFixedCount()
     {
     }
 
     /**
-     * Test attribute "fixedPeriodUnit"
+     * Test attribute "fixed_period_unit"
      */
     public function testPropertyFixedPeriodUnit()
     {
     }
 
     /**
-     * Test attribute "fixedPeriod"
+     * Test attribute "fixed_period"
      */
     public function testPropertyFixedPeriod()
     {
     }
 
     /**
-     * Test attribute "fixedUsageReached"
+     * Test attribute "fixed_usage_reached"
      */
     public function testPropertyFixedUsageReached()
     {
     }
 
     /**
-     * Test attribute "fixedPeriodPassed"
+     * Test attribute "fixed_period_passed"
      */
     public function testPropertyFixedPeriodPassed()
     {

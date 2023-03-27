@@ -90,14 +90,14 @@ class InviteUserAcceptTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "mfaMethod"
+     * Test attribute "mfa_method"
      */
     public function testPropertyMfaMethod()
     {
     }
 
     /**
-     * Test attribute "mfaCode"
+     * Test attribute "mfa_code"
      */
     public function testPropertyMfaCode()
     {

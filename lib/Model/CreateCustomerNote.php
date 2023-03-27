@@ -57,8 +57,8 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'note' => 'string',
-        'userName' => 'string',
-        'userEmail' => 'string'
+        'user_name' => 'string',
+        'user_email' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'note' => null,
-        'userName' => null,
-        'userEmail' => null
+        'user_name' => null,
+        'user_email' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'note' => 'note',
-        'userName' => 'user_name',
-        'userEmail' => 'user_email'
+        'user_name' => 'user_name',
+        'user_email' => 'user_email'
     ];
 
     /**
@@ -111,8 +111,8 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'note' => 'setNote',
-        'userName' => 'setUserName',
-        'userEmail' => 'setUserEmail'
+        'user_name' => 'setUserName',
+        'user_email' => 'setUserEmail'
     ];
 
     /**
@@ -122,8 +122,8 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'note' => 'getNote',
-        'userName' => 'getUserName',
-        'userEmail' => 'getUserEmail'
+        'user_name' => 'getUserName',
+        'user_email' => 'getUserEmail'
     ];
 
     /**
@@ -185,8 +185,8 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['userName'] = isset($data['userName']) ? $data['userName'] : null;
-        $this->container['userEmail'] = isset($data['userEmail']) ? $data['userEmail'] : null;
+        $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
+        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
     }
 
     /**
@@ -241,49 +241,49 @@ class CreateCustomerNote implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets userName
+     * Gets user_name
      *
      * @return string
      */
     public function getUserName()
     {
-        return $this->container['userName'];
+        return $this->container['user_name'];
     }
 
     /**
-     * Sets userName
+     * Sets user_name
      *
-     * @param string $userName User name of the note creator
+     * @param string $user_name User name of the note creator
      *
      * @return $this
      */
-    public function setUserName($userName)
+    public function setUserName($user_name)
     {
-        $this->container['userName'] = $userName;
+        $this->container['user_name'] = $user_name;
 
         return $this;
     }
 
     /**
-     * Gets userEmail
+     * Gets user_email
      *
      * @return string
      */
     public function getUserEmail()
     {
-        return $this->container['userEmail'];
+        return $this->container['user_email'];
     }
 
     /**
-     * Sets userEmail
+     * Sets user_email
      *
-     * @param string $userEmail User email of the note creator
+     * @param string $user_email User email of the note creator
      *
      * @return $this
      */
-    public function setUserEmail($userEmail)
+    public function setUserEmail($user_email)
     {
-        $this->container['userEmail'] = $userEmail;
+        $this->container['user_email'] = $user_email;
 
         return $this;
     }

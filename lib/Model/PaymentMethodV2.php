@@ -64,10 +64,10 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'card' => '\Reepay\Model\CardV2',
         'applepay' => '\Reepay\Model\CardV2',
-        'paymentType' => 'string',
-        'mpsSubscription' => '\Reepay\Model\MpsSubscriptionV2',
-        'vippsRecurringSubscription' => '\Reepay\Model\VippsRecurringSubscription',
-        'sepaMandate' => '\Reepay\Model\SepaMandate'
+        'payment_type' => 'string',
+        'mps_subscription' => '\Reepay\Model\MpsSubscriptionV2',
+        'vipps_recurring_subscription' => '\Reepay\Model\VippsRecurringSubscription',
+        'sepa_mandate' => '\Reepay\Model\SepaMandate'
     ];
 
     /**
@@ -84,10 +84,10 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'card' => null,
         'applepay' => null,
-        'paymentType' => null,
-        'mpsSubscription' => null,
-        'vippsRecurringSubscription' => null,
-        'sepaMandate' => null
+        'payment_type' => null,
+        'mps_subscription' => null,
+        'vipps_recurring_subscription' => null,
+        'sepa_mandate' => null
     ];
 
     /**
@@ -125,10 +125,10 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         'created' => 'created',
         'card' => 'card',
         'applepay' => 'applepay',
-        'paymentType' => 'payment_type',
-        'mpsSubscription' => 'mps_subscription',
-        'vippsRecurringSubscription' => 'vipps_recurring_subscription',
-        'sepaMandate' => 'sepa_mandate'
+        'payment_type' => 'payment_type',
+        'mps_subscription' => 'mps_subscription',
+        'vipps_recurring_subscription' => 'vipps_recurring_subscription',
+        'sepa_mandate' => 'sepa_mandate'
     ];
 
     /**
@@ -145,10 +145,10 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'card' => 'setCard',
         'applepay' => 'setApplepay',
-        'paymentType' => 'setPaymentType',
-        'mpsSubscription' => 'setMpsSubscription',
-        'vippsRecurringSubscription' => 'setVippsRecurringSubscription',
-        'sepaMandate' => 'setSepaMandate'
+        'payment_type' => 'setPaymentType',
+        'mps_subscription' => 'setMpsSubscription',
+        'vipps_recurring_subscription' => 'setVippsRecurringSubscription',
+        'sepa_mandate' => 'setSepaMandate'
     ];
 
     /**
@@ -165,10 +165,10 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'card' => 'getCard',
         'applepay' => 'getApplepay',
-        'paymentType' => 'getPaymentType',
-        'mpsSubscription' => 'getMpsSubscription',
-        'vippsRecurringSubscription' => 'getVippsRecurringSubscription',
-        'sepaMandate' => 'getSepaMandate'
+        'payment_type' => 'getPaymentType',
+        'mps_subscription' => 'getMpsSubscription',
+        'vipps_recurring_subscription' => 'getVippsRecurringSubscription',
+        'sepa_mandate' => 'getSepaMandate'
     ];
 
     /**
@@ -277,10 +277,10 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['applepay'] = isset($data['applepay']) ? $data['applepay'] : null;
-        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
-        $this->container['mpsSubscription'] = isset($data['mpsSubscription']) ? $data['mpsSubscription'] : null;
-        $this->container['vippsRecurringSubscription'] = isset($data['vippsRecurringSubscription']) ? $data['vippsRecurringSubscription'] : null;
-        $this->container['sepaMandate'] = isset($data['sepaMandate']) ? $data['sepaMandate'] : null;
+        $this->container['payment_type'] = isset($data['payment_type']) ? $data['payment_type'] : null;
+        $this->container['mps_subscription'] = isset($data['mps_subscription']) ? $data['mps_subscription'] : null;
+        $this->container['vipps_recurring_subscription'] = isset($data['vipps_recurring_subscription']) ? $data['vipps_recurring_subscription'] : null;
+        $this->container['sepa_mandate'] = isset($data['sepa_mandate']) ? $data['sepa_mandate'] : null;
     }
 
     /**
@@ -312,13 +312,17 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['paymentType'] === null) {
-            $invalidProperties[] = "'paymentType' can't be null";
+        if ($this->container['payment_type'] === null) {
+            $invalidProperties[] = "'payment_type' can't be null";
         }
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!is_null($this->container['paymentType']) && !in_array($this->container['paymentType'], $allowedValues, true)) {
+        if (!is_null($this->container['payment_type']) && !in_array(
+                $this->container['payment_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'paymentType', must be one of '%s'",
+                "invalid value for 'payment_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -540,110 +544,109 @@ class PaymentMethodV2 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentType
+     * Gets payment_type
      *
      * @return string
      */
     public function getPaymentType()
     {
-        return $this->container['paymentType'];
+        return $this->container['payment_type'];
     }
 
     /**
-     * Sets paymentType
+     * Sets payment_type
      *
-     * @param string $paymentType Payment type for saved payment method, either: `card`, `emv_token`, `vipps_recurring`, `applepay` or `mobilepay_subscriptions`
+     * @param string $payment_type Payment type for saved payment method, either: `card`, `emv_token`, `vipps_recurring`, `applepay` or `mobilepay_subscriptions`
      *
      * @return $this
      */
-    public function setPaymentType($paymentType)
+    public function setPaymentType($payment_type)
     {
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!in_array($paymentType, $allowedValues, true)) {
+        if (!in_array($payment_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'paymentType', must be one of '%s'",
+                    "Invalid value for 'payment_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['paymentType'] = $paymentType;
+        $this->container['payment_type'] = $payment_type;
 
         return $this;
     }
 
     /**
-     * Gets mpsSubscription
+     * Gets mps_subscription
      *
      * @return \Reepay\Model\MpsSubscriptionV2
      */
     public function getMpsSubscription()
     {
-        return $this->container['mpsSubscription'];
+        return $this->container['mps_subscription'];
     }
 
     /**
-     * Sets mpsSubscription
+     * Sets mps_subscription
      *
-     * @param \Reepay\Model\MpsSubscriptionV2 $mpsSubscription mpsSubscription
+     * @param \Reepay\Model\MpsSubscriptionV2 $mps_subscription mps_subscription
      *
      * @return $this
      */
-    public function setMpsSubscription($mpsSubscription)
+    public function setMpsSubscription($mps_subscription)
     {
-        $this->container['mpsSubscription'] = $mpsSubscription;
+        $this->container['mps_subscription'] = $mps_subscription;
 
         return $this;
     }
 
     /**
-     * Gets vippsRecurringSubscription
+     * Gets vipps_recurring_subscription
      *
      * @return \Reepay\Model\VippsRecurringSubscription
      */
     public function getVippsRecurringSubscription()
     {
-        return $this->container['vippsRecurringSubscription'];
+        return $this->container['vipps_recurring_subscription'];
     }
 
     /**
-     * Sets vippsRecurringSubscription
+     * Sets vipps_recurring_subscription
      *
-     * @param \Reepay\Model\VippsRecurringSubscription $vippsRecurringSubscription vippsRecurringSubscription
+     * @param \Reepay\Model\VippsRecurringSubscription $vipps_recurring_subscription vipps_recurring_subscription
      *
      * @return $this
      */
-    public function setVippsRecurringSubscription($vippsRecurringSubscription)
+    public function setVippsRecurringSubscription($vipps_recurring_subscription)
     {
-        $this->container['vippsRecurringSubscription'] = $vippsRecurringSubscription;
+        $this->container['vipps_recurring_subscription'] = $vipps_recurring_subscription;
 
         return $this;
     }
 
     /**
-     * Gets sepaMandate
+     * Gets sepa_mandate
      *
      * @return \Reepay\Model\SepaMandate
      */
     public function getSepaMandate()
     {
-        return $this->container['sepaMandate'];
+        return $this->container['sepa_mandate'];
     }
 
     /**
-     * Sets sepaMandate
+     * Sets sepa_mandate
      *
-     * @param \Reepay\Model\SepaMandate $sepaMandate sepaMandate
+     * @param \Reepay\Model\SepaMandate $sepa_mandate sepa_mandate
      *
      * @return $this
      */
-    public function setSepaMandate($sepaMandate)
+    public function setSepaMandate($sepa_mandate)
     {
-        $this->container['sepaMandate'] = $sepaMandate;
+        $this->container['sepa_mandate'] = $sepa_mandate;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

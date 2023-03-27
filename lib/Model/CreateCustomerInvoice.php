@@ -59,10 +59,10 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         'handle' => 'string',
         'settle' => '\Reepay\Model\Settle',
         'metadata' => 'map[string,object]',
-        'orderLines' => '\Reepay\Model\CreateOrderLine[]',
-        'manualTransfer' => '\Reepay\Model\ManualSettleTransfer',
-        'billingAddress' => '\Reepay\Model\InvoiceBillingAddress',
-        'shippingAddress' => '\Reepay\Model\InvoiceShippingAddress'
+        'order_lines' => '\Reepay\Model\CreateOrderLine[]',
+        'manual_transfer' => '\Reepay\Model\ManualSettleTransfer',
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress'
     ];
 
     /**
@@ -74,10 +74,10 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         'handle' => null,
         'settle' => null,
         'metadata' => null,
-        'orderLines' => null,
-        'manualTransfer' => null,
-        'billingAddress' => null,
-        'shippingAddress' => null
+        'order_lines' => null,
+        'manual_transfer' => null,
+        'billing_address' => null,
+        'shipping_address' => null
     ];
 
     /**
@@ -110,10 +110,10 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         'handle' => 'handle',
         'settle' => 'settle',
         'metadata' => 'metadata',
-        'orderLines' => 'order_lines',
-        'manualTransfer' => 'manual_transfer',
-        'billingAddress' => 'billing_address',
-        'shippingAddress' => 'shipping_address'
+        'order_lines' => 'order_lines',
+        'manual_transfer' => 'manual_transfer',
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address'
     ];
 
     /**
@@ -125,10 +125,10 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         'handle' => 'setHandle',
         'settle' => 'setSettle',
         'metadata' => 'setMetadata',
-        'orderLines' => 'setOrderLines',
-        'manualTransfer' => 'setManualTransfer',
-        'billingAddress' => 'setBillingAddress',
-        'shippingAddress' => 'setShippingAddress'
+        'order_lines' => 'setOrderLines',
+        'manual_transfer' => 'setManualTransfer',
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress'
     ];
 
     /**
@@ -140,10 +140,10 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         'handle' => 'getHandle',
         'settle' => 'getSettle',
         'metadata' => 'getMetadata',
-        'orderLines' => 'getOrderLines',
-        'manualTransfer' => 'getManualTransfer',
-        'billingAddress' => 'getBillingAddress',
-        'shippingAddress' => 'getShippingAddress'
+        'order_lines' => 'getOrderLines',
+        'manual_transfer' => 'getManualTransfer',
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress'
     ];
 
     /**
@@ -207,10 +207,10 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['orderLines'] = isset($data['orderLines']) ? $data['orderLines'] : null;
-        $this->container['manualTransfer'] = isset($data['manualTransfer']) ? $data['manualTransfer'] : null;
-        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
-        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['manual_transfer'] = isset($data['manual_transfer']) ? $data['manual_transfer'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
     }
 
     /**
@@ -225,8 +225,8 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
         if ($this->container['handle'] === null) {
             $invalidProperties[] = "'handle' can't be null";
         }
-        if ($this->container['orderLines'] === null) {
-            $invalidProperties[] = "'orderLines' can't be null";
+        if ($this->container['order_lines'] === null) {
+            $invalidProperties[] = "'order_lines' can't be null";
         }
         return $invalidProperties;
     }
@@ -316,97 +316,97 @@ class CreateCustomerInvoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderLines
+     * Gets order_lines
      *
      * @return \Reepay\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
-        return $this->container['orderLines'];
+        return $this->container['order_lines'];
     }
 
     /**
-     * Sets orderLines
+     * Sets order_lines
      *
-     * @param \Reepay\Model\CreateOrderLine[] $orderLines Order lines for the invoice. A maximum of 100 order lines is allowed.
+     * @param \Reepay\Model\CreateOrderLine[] $order_lines Order lines for the invoice. A maximum of 100 order lines is allowed.
      *
      * @return $this
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines($order_lines)
     {
-        $this->container['orderLines'] = $orderLines;
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }
 
     /**
-     * Gets manualTransfer
+     * Gets manual_transfer
      *
      * @return \Reepay\Model\ManualSettleTransfer
      */
     public function getManualTransfer()
     {
-        return $this->container['manualTransfer'];
+        return $this->container['manual_transfer'];
     }
 
     /**
-     * Sets manualTransfer
+     * Sets manual_transfer
      *
-     * @param \Reepay\Model\ManualSettleTransfer $manualTransfer manualTransfer
+     * @param \Reepay\Model\ManualSettleTransfer $manual_transfer manual_transfer
      *
      * @return $this
      */
-    public function setManualTransfer($manualTransfer)
+    public function setManualTransfer($manual_transfer)
     {
-        $this->container['manualTransfer'] = $manualTransfer;
+        $this->container['manual_transfer'] = $manual_transfer;
 
         return $this;
     }
 
     /**
-     * Gets billingAddress
+     * Gets billing_address
      *
      * @return \Reepay\Model\InvoiceBillingAddress
      */
     public function getBillingAddress()
     {
-        return $this->container['billingAddress'];
+        return $this->container['billing_address'];
     }
 
     /**
-     * Sets billingAddress
+     * Sets billing_address
      *
-     * @param \Reepay\Model\InvoiceBillingAddress $billingAddress billingAddress
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address billing_address
      *
      * @return $this
      */
-    public function setBillingAddress($billingAddress)
+    public function setBillingAddress($billing_address)
     {
-        $this->container['billingAddress'] = $billingAddress;
+        $this->container['billing_address'] = $billing_address;
 
         return $this;
     }
 
     /**
-     * Gets shippingAddress
+     * Gets shipping_address
      *
      * @return \Reepay\Model\InvoiceShippingAddress
      */
     public function getShippingAddress()
     {
-        return $this->container['shippingAddress'];
+        return $this->container['shipping_address'];
     }
 
     /**
-     * Sets shippingAddress
+     * Sets shipping_address
      *
-     * @param \Reepay\Model\InvoiceShippingAddress $shippingAddress shippingAddress
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address shipping_address
      *
      * @return $this
      */
-    public function setShippingAddress($shippingAddress)
+    public function setShippingAddress($shipping_address)
     {
-        $this->container['shippingAddress'] = $shippingAddress;
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }

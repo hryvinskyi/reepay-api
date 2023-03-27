@@ -60,7 +60,7 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
         'password' => 'string',
         'organisation' => 'string',
         'account' => 'string',
-        'mfaCode' => 'string'
+        'mfa_code' => 'string'
     ];
 
     /**
@@ -73,7 +73,7 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
         'password' => null,
         'organisation' => null,
         'account' => null,
-        'mfaCode' => null
+        'mfa_code' => null
     ];
 
     /**
@@ -107,7 +107,7 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
         'password' => 'password',
         'organisation' => 'organisation',
         'account' => 'account',
-        'mfaCode' => 'mfa_code'
+        'mfa_code' => 'mfa_code'
     ];
 
     /**
@@ -120,7 +120,7 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
         'password' => 'setPassword',
         'organisation' => 'setOrganisation',
         'account' => 'setAccount',
-        'mfaCode' => 'setMfaCode'
+        'mfa_code' => 'setMfaCode'
     ];
 
     /**
@@ -133,7 +133,7 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
         'password' => 'getPassword',
         'organisation' => 'getOrganisation',
         'account' => 'getAccount',
-        'mfaCode' => 'getMfaCode'
+        'mfa_code' => 'getMfaCode'
     ];
 
     /**
@@ -197,7 +197,7 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['organisation'] = isset($data['organisation']) ? $data['organisation'] : null;
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
-        $this->container['mfaCode'] = isset($data['mfaCode']) ? $data['mfaCode'] : null;
+        $this->container['mfa_code'] = isset($data['mfa_code']) ? $data['mfa_code'] : null;
     }
 
     /**
@@ -321,29 +321,28 @@ class AuthenticateLoginBody implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets mfaCode
+     * Gets mfa_code
      *
      * @return string
      */
     public function getMfaCode()
     {
-        return $this->container['mfaCode'];
+        return $this->container['mfa_code'];
     }
 
     /**
-     * Sets mfaCode
+     * Sets mfa_code
      *
-     * @param string $mfaCode MFA verification code
+     * @param string $mfa_code MFA verification code
      *
      * @return $this
      */
-    public function setMfaCode($mfaCode)
+    public function setMfaCode($mfa_code)
     {
-        $this->container['mfaCode'] = $mfaCode;
+        $this->container['mfa_code'] = $mfa_code;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

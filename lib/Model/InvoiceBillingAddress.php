@@ -65,10 +65,10 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
         'country' => 'string',
         'email' => 'string',
         'phone' => 'string',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'postalCode' => 'string',
-        'stateOrProvince' => 'string'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'postal_code' => 'string',
+        'state_or_province' => 'string'
     ];
 
     /**
@@ -86,10 +86,10 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
         'country' => null,
         'email' => null,
         'phone' => null,
-        'firstName' => null,
-        'lastName' => null,
-        'postalCode' => null,
-        'stateOrProvince' => null
+        'first_name' => null,
+        'last_name' => null,
+        'postal_code' => null,
+        'state_or_province' => null
     ];
 
     /**
@@ -128,10 +128,10 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
         'country' => 'country',
         'email' => 'email',
         'phone' => 'phone',
-        'firstName' => 'first_name',
-        'lastName' => 'last_name',
-        'postalCode' => 'postal_code',
-        'stateOrProvince' => 'state_or_province'
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'postal_code' => 'postal_code',
+        'state_or_province' => 'state_or_province'
     ];
 
     /**
@@ -149,10 +149,10 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
         'country' => 'setCountry',
         'email' => 'setEmail',
         'phone' => 'setPhone',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'postalCode' => 'setPostalCode',
-        'stateOrProvince' => 'setStateOrProvince'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'postal_code' => 'setPostalCode',
+        'state_or_province' => 'setStateOrProvince'
     ];
 
     /**
@@ -170,10 +170,10 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
         'country' => 'getCountry',
         'email' => 'getEmail',
         'phone' => 'getPhone',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'postalCode' => 'getPostalCode',
-        'stateOrProvince' => 'getStateOrProvince'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'postal_code' => 'getPostalCode',
+        'state_or_province' => 'getStateOrProvince'
     ];
 
     /**
@@ -243,10 +243,10 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
-        $this->container['stateOrProvince'] = isset($data['stateOrProvince']) ? $data['stateOrProvince'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['state_or_province'] = isset($data['state_or_province']) ? $data['state_or_province'] : null;
     }
 
     /**
@@ -490,97 +490,97 @@ class InvoiceBillingAddress implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName First name
+     * @param string $first_name First name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName Last name
+     * @param string $last_name Last name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets postalCode
+     * Gets postal_code
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postalCode'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets postalCode
+     * Sets postal_code
      *
-     * @param string $postalCode Postal code
+     * @param string $postal_code Postal code
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postal_code)
     {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
 
     /**
-     * Gets stateOrProvince
+     * Gets state_or_province
      *
      * @return string
      */
     public function getStateOrProvince()
     {
-        return $this->container['stateOrProvince'];
+        return $this->container['state_or_province'];
     }
 
     /**
-     * Sets stateOrProvince
+     * Sets state_or_province
      *
-     * @param string $stateOrProvince State or province. Should be in country subdivision code defined in ISO 3166-2.
+     * @param string $state_or_province State or province. Should be in country subdivision code defined in ISO 3166-2.
      *
      * @return $this
      */
-    public function setStateOrProvince($stateOrProvince)
+    public function setStateOrProvince($state_or_province)
     {
-        $this->container['stateOrProvince'] = $stateOrProvince;
+        $this->container['state_or_province'] = $state_or_province;
 
         return $this;
     }

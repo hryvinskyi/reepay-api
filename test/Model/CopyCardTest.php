@@ -104,14 +104,14 @@ class CopyCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "customerHandle"
+     * Test attribute "customer_handle"
      */
     public function testPropertyCustomerHandle()
     {
     }
 
     /**
-     * Test attribute "cardType"
+     * Test attribute "card_type"
      */
     public function testPropertyCardType()
     {

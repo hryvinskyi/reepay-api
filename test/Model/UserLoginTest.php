@@ -125,14 +125,14 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "tokenTtl"
+     * Test attribute "token_ttl"
      */
     public function testPropertyTokenTtl()
     {
     }
 
     /**
-     * Test attribute "mfaRequired"
+     * Test attribute "mfa_required"
      */
     public function testPropertyMfaRequired()
     {

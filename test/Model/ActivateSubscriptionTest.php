@@ -83,14 +83,14 @@ class ActivateSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentMethodReference"
+     * Test attribute "payment_method_reference"
      */
     public function testPropertyPaymentMethodReference()
     {
     }
 
     /**
-     * Test attribute "signupMethod"
+     * Test attribute "signup_method"
      */
     public function testPropertySignupMethod()
     {

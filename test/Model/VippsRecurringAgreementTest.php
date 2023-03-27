@@ -76,14 +76,14 @@ class VippsRecurringAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchantSerialNumber"
+     * Test attribute "merchant_serial_number"
      */
     public function testPropertyMerchantSerialNumber()
     {
     }
 
     /**
-     * Test attribute "merchantCancelUrl"
+     * Test attribute "merchant_cancel_url"
      */
     public function testPropertyMerchantCancelUrl()
     {

@@ -97,7 +97,7 @@ class ManualRefundTransferTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentDate"
+     * Test attribute "payment_date"
      */
     public function testPropertyPaymentDate()
     {

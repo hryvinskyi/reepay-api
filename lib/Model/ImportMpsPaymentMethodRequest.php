@@ -58,9 +58,9 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'reference' => 'string',
         'customer' => '\Reepay\Model\CreateCustomer',
-        'customerHandle' => 'string',
-        'mobilePayId' => 'string',
-        'cancelRedirectUrl' => 'string'
+        'customer_handle' => 'string',
+        'mobile_pay_id' => 'string',
+        'cancel_redirect_url' => 'string'
     ];
 
     /**
@@ -71,9 +71,9 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'reference' => null,
         'customer' => null,
-        'customerHandle' => null,
-        'mobilePayId' => null,
-        'cancelRedirectUrl' => null
+        'customer_handle' => null,
+        'mobile_pay_id' => null,
+        'cancel_redirect_url' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'reference' => 'reference',
         'customer' => 'customer',
-        'customerHandle' => 'customer_handle',
-        'mobilePayId' => 'mobile_pay_id',
-        'cancelRedirectUrl' => 'cancel_redirect_url'
+        'customer_handle' => 'customer_handle',
+        'mobile_pay_id' => 'mobile_pay_id',
+        'cancel_redirect_url' => 'cancel_redirect_url'
     ];
 
     /**
@@ -118,9 +118,9 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'reference' => 'setReference',
         'customer' => 'setCustomer',
-        'customerHandle' => 'setCustomerHandle',
-        'mobilePayId' => 'setMobilePayId',
-        'cancelRedirectUrl' => 'setCancelRedirectUrl'
+        'customer_handle' => 'setCustomerHandle',
+        'mobile_pay_id' => 'setMobilePayId',
+        'cancel_redirect_url' => 'setCancelRedirectUrl'
     ];
 
     /**
@@ -131,9 +131,9 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'reference' => 'getReference',
         'customer' => 'getCustomer',
-        'customerHandle' => 'getCustomerHandle',
-        'mobilePayId' => 'getMobilePayId',
-        'cancelRedirectUrl' => 'getCancelRedirectUrl'
+        'customer_handle' => 'getCustomerHandle',
+        'mobile_pay_id' => 'getMobilePayId',
+        'cancel_redirect_url' => 'getCancelRedirectUrl'
     ];
 
     /**
@@ -195,9 +195,9 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     {
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
-        $this->container['customerHandle'] = isset($data['customerHandle']) ? $data['customerHandle'] : null;
-        $this->container['mobilePayId'] = isset($data['mobilePayId']) ? $data['mobilePayId'] : null;
-        $this->container['cancelRedirectUrl'] = isset($data['cancelRedirectUrl']) ? $data['cancelRedirectUrl'] : null;
+        $this->container['customer_handle'] = isset($data['customer_handle']) ? $data['customer_handle'] : null;
+        $this->container['mobile_pay_id'] = isset($data['mobile_pay_id']) ? $data['mobile_pay_id'] : null;
+        $this->container['cancel_redirect_url'] = isset($data['cancel_redirect_url']) ? $data['cancel_redirect_url'] : null;
     }
 
     /**
@@ -273,77 +273,76 @@ class ImportMpsPaymentMethodRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets customerHandle
+     * Gets customer_handle
      *
      * @return string
      */
     public function getCustomerHandle()
     {
-        return $this->container['customerHandle'];
+        return $this->container['customer_handle'];
     }
 
     /**
-     * Sets customerHandle
+     * Sets customer_handle
      *
-     * @param string $customerHandle Customer reference to an existing customer. Either this argument or `customer` must be provided.
+     * @param string $customer_handle Customer reference to an existing customer. Either this argument or `customer` must be provided.
      *
      * @return $this
      */
-    public function setCustomerHandle($customerHandle)
+    public function setCustomerHandle($customer_handle)
     {
-        $this->container['customerHandle'] = $customerHandle;
+        $this->container['customer_handle'] = $customer_handle;
 
         return $this;
     }
 
     /**
-     * Gets mobilePayId
+     * Gets mobile_pay_id
      *
      * @return string
      */
     public function getMobilePayId()
     {
-        return $this->container['mobilePayId'];
+        return $this->container['mobile_pay_id'];
     }
 
     /**
-     * Sets mobilePayId
+     * Sets mobile_pay_id
      *
-     * @param string $mobilePayId mobilePayId
+     * @param string $mobile_pay_id mobile_pay_id
      *
      * @return $this
      */
-    public function setMobilePayId($mobilePayId)
+    public function setMobilePayId($mobile_pay_id)
     {
-        $this->container['mobilePayId'] = $mobilePayId;
+        $this->container['mobile_pay_id'] = $mobile_pay_id;
 
         return $this;
     }
 
     /**
-     * Gets cancelRedirectUrl
+     * Gets cancel_redirect_url
      *
      * @return string
      */
     public function getCancelRedirectUrl()
     {
-        return $this->container['cancelRedirectUrl'];
+        return $this->container['cancel_redirect_url'];
     }
 
     /**
-     * Sets cancelRedirectUrl
+     * Sets cancel_redirect_url
      *
-     * @param string $cancelRedirectUrl cancelRedirectUrl
+     * @param string $cancel_redirect_url cancel_redirect_url
      *
      * @return $this
      */
-    public function setCancelRedirectUrl($cancelRedirectUrl)
+    public function setCancelRedirectUrl($cancel_redirect_url)
     {
-        $this->container['cancelRedirectUrl'] = $cancelRedirectUrl;
+        $this->container['cancel_redirect_url'] = $cancel_redirect_url;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -62,7 +62,7 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'vat' => 'float',
         'subscription' => 'string',
-        'amountInclVat' => 'bool'
+        'amount_incl_vat' => 'bool'
     ];
 
     /**
@@ -77,7 +77,7 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'int32',
         'vat' => 'float',
         'subscription' => null,
-        'amountInclVat' => null
+        'amount_incl_vat' => null
     ];
 
     /**
@@ -113,7 +113,7 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'vat' => 'vat',
         'subscription' => 'subscription',
-        'amountInclVat' => 'amount_incl_vat'
+        'amount_incl_vat' => 'amount_incl_vat'
     ];
 
     /**
@@ -128,7 +128,7 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'vat' => 'setVat',
         'subscription' => 'setSubscription',
-        'amountInclVat' => 'setAmountInclVat'
+        'amount_incl_vat' => 'setAmountInclVat'
     ];
 
     /**
@@ -143,7 +143,7 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'vat' => 'getVat',
         'subscription' => 'getSubscription',
-        'amountInclVat' => 'getAmountInclVat'
+        'amount_incl_vat' => 'getAmountInclVat'
     ];
 
     /**
@@ -210,7 +210,7 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
     /**
@@ -394,25 +394,25 @@ class CreateAdditionalCost implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the per quantity amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the per quantity amount is including VAT. Defaults to true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }

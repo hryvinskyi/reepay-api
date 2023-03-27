@@ -62,7 +62,7 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         'credit' => 'string',
         'amount' => 'int',
         'created' => '\DateTime',
-        'creditNoteLines' => '\Reepay\Model\CreditNoteLine[]'
+        'credit_note_lines' => '\Reepay\Model\CreditNoteLine[]'
     ];
 
     /**
@@ -77,7 +77,7 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         'credit' => null,
         'amount' => 'int32',
         'created' => 'date-time',
-        'creditNoteLines' => null
+        'credit_note_lines' => null
     ];
 
     /**
@@ -113,7 +113,7 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         'credit' => 'credit',
         'amount' => 'amount',
         'created' => 'created',
-        'creditNoteLines' => 'credit_note_lines'
+        'credit_note_lines' => 'credit_note_lines'
     ];
 
     /**
@@ -128,7 +128,7 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         'credit' => 'setCredit',
         'amount' => 'setAmount',
         'created' => 'setCreated',
-        'creditNoteLines' => 'setCreditNoteLines'
+        'credit_note_lines' => 'setCreditNoteLines'
     ];
 
     /**
@@ -143,7 +143,7 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         'credit' => 'getCredit',
         'amount' => 'getAmount',
         'created' => 'getCreated',
-        'creditNoteLines' => 'getCreditNoteLines'
+        'credit_note_lines' => 'getCreditNoteLines'
     ];
 
     /**
@@ -210,7 +210,7 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         $this->container['credit'] = isset($data['credit']) ? $data['credit'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['creditNoteLines'] = isset($data['creditNoteLines']) ? $data['creditNoteLines'] : null;
+        $this->container['credit_note_lines'] = isset($data['credit_note_lines']) ? $data['credit_note_lines'] : null;
     }
 
     /**
@@ -234,8 +234,8 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['creditNoteLines'] === null) {
-            $invalidProperties[] = "'creditNoteLines' can't be null";
+        if ($this->container['credit_note_lines'] === null) {
+            $invalidProperties[] = "'credit_note_lines' can't be null";
         }
         return $invalidProperties;
     }
@@ -397,25 +397,25 @@ class InvoiceCreditNote implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets creditNoteLines
+     * Gets credit_note_lines
      *
      * @return \Reepay\Model\CreditNoteLine[]
      */
     public function getCreditNoteLines()
     {
-        return $this->container['creditNoteLines'];
+        return $this->container['credit_note_lines'];
     }
 
     /**
-     * Sets creditNoteLines
+     * Sets credit_note_lines
      *
-     * @param \Reepay\Model\CreditNoteLine[] $creditNoteLines Credit note lines
+     * @param \Reepay\Model\CreditNoteLine[] $credit_note_lines Credit note lines
      *
      * @return $this
      */
-    public function setCreditNoteLines($creditNoteLines)
+    public function setCreditNoteLines($credit_note_lines)
     {
-        $this->container['creditNoteLines'] = $creditNoteLines;
+        $this->container['credit_note_lines'] = $credit_note_lines;
 
         return $this;
     }

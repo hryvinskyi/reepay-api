@@ -125,84 +125,84 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "discountedAmount"
+     * Test attribute "discounted_amount"
      */
     public function testPropertyDiscountedAmount()
     {
     }
 
     /**
-     * Test attribute "amountVat"
+     * Test attribute "amount_vat"
      */
     public function testPropertyAmountVat()
     {
     }
 
     /**
-     * Test attribute "amountExVat"
+     * Test attribute "amount_ex_vat"
      */
     public function testPropertyAmountExVat()
     {
     }
 
     /**
-     * Test attribute "unitAmount"
+     * Test attribute "unit_amount"
      */
     public function testPropertyUnitAmount()
     {
     }
 
     /**
-     * Test attribute "unitAmountVat"
+     * Test attribute "unit_amount_vat"
      */
     public function testPropertyUnitAmountVat()
     {
     }
 
     /**
-     * Test attribute "unitAmountExVat"
+     * Test attribute "unit_amount_ex_vat"
      */
     public function testPropertyUnitAmountExVat()
     {
     }
 
     /**
-     * Test attribute "amountDefinedInclVat"
+     * Test attribute "amount_defined_incl_vat"
      */
     public function testPropertyAmountDefinedInclVat()
     {
     }
 
     /**
-     * Test attribute "originHandle"
+     * Test attribute "origin_handle"
      */
     public function testPropertyOriginHandle()
     {
     }
 
     /**
-     * Test attribute "periodFrom"
+     * Test attribute "period_from"
      */
     public function testPropertyPeriodFrom()
     {
     }
 
     /**
-     * Test attribute "periodTo"
+     * Test attribute "period_to"
      */
     public function testPropertyPeriodTo()
     {
     }
 
     /**
-     * Test attribute "discountPercentage"
+     * Test attribute "discount_percentage"
      */
     public function testPropertyDiscountPercentage()
     {
     }
 
     /**
-     * Test attribute "discountedOrderLine"
+     * Test attribute "discounted_order_line"
      */
     public function testPropertyDiscountedOrderLine()
     {

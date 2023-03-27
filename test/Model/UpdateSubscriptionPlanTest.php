@@ -97,77 +97,77 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "dunningPlan"
+     * Test attribute "dunning_plan"
      */
     public function testPropertyDunningPlan()
     {
     }
 
     /**
-     * Test attribute "renewalReminderEmailDays"
+     * Test attribute "renewal_reminder_email_days"
      */
     public function testPropertyRenewalReminderEmailDays()
     {
     }
 
     /**
-     * Test attribute "trialReminderEmailDays"
+     * Test attribute "trial_reminder_email_days"
      */
     public function testPropertyTrialReminderEmailDays()
     {
     }
 
     /**
-     * Test attribute "partialPeriodHandling"
+     * Test attribute "partial_period_handling"
      */
     public function testPropertyPartialPeriodHandling()
     {
     }
 
     /**
-     * Test attribute "includeZeroAmount"
+     * Test attribute "include_zero_amount"
      */
     public function testPropertyIncludeZeroAmount()
     {
     }
 
     /**
-     * Test attribute "setupFee"
+     * Test attribute "setup_fee"
      */
     public function testPropertySetupFee()
     {
     }
 
     /**
-     * Test attribute "setupFeeText"
+     * Test attribute "setup_fee_text"
      */
     public function testPropertySetupFeeText()
     {
     }
 
     /**
-     * Test attribute "setupFeeHandling"
+     * Test attribute "setup_fee_handling"
      */
     public function testPropertySetupFeeHandling()
     {
     }
 
     /**
-     * Test attribute "partialProrationDays"
+     * Test attribute "partial_proration_days"
      */
     public function testPropertyPartialProrationDays()
     {
     }
 
     /**
-     * Test attribute "fixedTrialDays"
+     * Test attribute "fixed_trial_days"
      */
     public function testPropertyFixedTrialDays()
     {
     }
 
     /**
-     * Test attribute "minimumProratedAmount"
+     * Test attribute "minimum_prorated_amount"
      */
     public function testPropertyMinimumProratedAmount()
     {

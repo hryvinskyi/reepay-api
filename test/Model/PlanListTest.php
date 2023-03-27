@@ -111,7 +111,7 @@ class PlanListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "nextPageToken"
+     * Test attribute "next_page_token"
      */
     public function testPropertyNextPageToken()
     {

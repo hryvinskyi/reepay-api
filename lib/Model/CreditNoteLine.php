@@ -59,7 +59,7 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'text' => 'string',
         'quantity' => 'int',
-        'orderLineId' => 'string'
+        'order_line_id' => 'string'
     ];
 
     /**
@@ -71,7 +71,7 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
         'amount' => 'int32',
         'text' => null,
         'quantity' => 'int32',
-        'orderLineId' => null
+        'order_line_id' => null
     ];
 
     /**
@@ -104,7 +104,7 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'text' => 'text',
         'quantity' => 'quantity',
-        'orderLineId' => 'order_line_id'
+        'order_line_id' => 'order_line_id'
     ];
 
     /**
@@ -116,7 +116,7 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'text' => 'setText',
         'quantity' => 'setQuantity',
-        'orderLineId' => 'setOrderLineId'
+        'order_line_id' => 'setOrderLineId'
     ];
 
     /**
@@ -128,7 +128,7 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'text' => 'getText',
         'quantity' => 'getQuantity',
-        'orderLineId' => 'getOrderLineId'
+        'order_line_id' => 'getOrderLineId'
     ];
 
     /**
@@ -192,7 +192,7 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['orderLineId'] = isset($data['orderLineId']) ? $data['orderLineId'] : null;
+        $this->container['order_line_id'] = isset($data['order_line_id']) ? $data['order_line_id'] : null;
     }
 
     /**
@@ -301,25 +301,25 @@ class CreditNoteLine implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderLineId
+     * Gets order_line_id
      *
      * @return string
      */
     public function getOrderLineId()
     {
-        return $this->container['orderLineId'];
+        return $this->container['order_line_id'];
     }
 
     /**
-     * Sets orderLineId
+     * Sets order_line_id
      *
-     * @param string $orderLineId Reference to invoice orderline this credit note line relates to
+     * @param string $order_line_id Reference to invoice orderline this credit note line relates to
      *
      * @return $this
      */
-    public function setOrderLineId($orderLineId)
+    public function setOrderLineId($order_line_id)
     {
-        $this->container['orderLineId'] = $orderLineId;
+        $this->container['order_line_id'] = $order_line_id;
 
         return $this;
     }

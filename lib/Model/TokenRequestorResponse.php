@@ -57,9 +57,9 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'tokenRequestorId' => 'string',
-        'clientAppId' => 'string',
-        'relationshipId' => 'string'
+        'token_requestor_id' => 'string',
+        'client_app_id' => 'string',
+        'relationship_id' => 'string'
     ];
 
     /**
@@ -69,9 +69,9 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'name' => null,
-        'tokenRequestorId' => null,
-        'clientAppId' => null,
-        'relationshipId' => null
+        'token_requestor_id' => null,
+        'client_app_id' => null,
+        'relationship_id' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'tokenRequestorId' => 'token_requestor_id',
-        'clientAppId' => 'client_app_id',
-        'relationshipId' => 'relationship_id'
+        'token_requestor_id' => 'token_requestor_id',
+        'client_app_id' => 'client_app_id',
+        'relationship_id' => 'relationship_id'
     ];
 
     /**
@@ -114,9 +114,9 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'tokenRequestorId' => 'setTokenRequestorId',
-        'clientAppId' => 'setClientAppId',
-        'relationshipId' => 'setRelationshipId'
+        'token_requestor_id' => 'setTokenRequestorId',
+        'client_app_id' => 'setClientAppId',
+        'relationship_id' => 'setRelationshipId'
     ];
 
     /**
@@ -126,9 +126,9 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'tokenRequestorId' => 'getTokenRequestorId',
-        'clientAppId' => 'getClientAppId',
-        'relationshipId' => 'getRelationshipId'
+        'token_requestor_id' => 'getTokenRequestorId',
+        'client_app_id' => 'getClientAppId',
+        'relationship_id' => 'getRelationshipId'
     ];
 
     /**
@@ -189,9 +189,9 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['tokenRequestorId'] = isset($data['tokenRequestorId']) ? $data['tokenRequestorId'] : null;
-        $this->container['clientAppId'] = isset($data['clientAppId']) ? $data['clientAppId'] : null;
-        $this->container['relationshipId'] = isset($data['relationshipId']) ? $data['relationshipId'] : null;
+        $this->container['token_requestor_id'] = isset($data['token_requestor_id']) ? $data['token_requestor_id'] : null;
+        $this->container['client_app_id'] = isset($data['client_app_id']) ? $data['client_app_id'] : null;
+        $this->container['relationship_id'] = isset($data['relationship_id']) ? $data['relationship_id'] : null;
     }
 
     /**
@@ -243,77 +243,76 @@ class TokenRequestorResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets tokenRequestorId
+     * Gets token_requestor_id
      *
      * @return string
      */
     public function getTokenRequestorId()
     {
-        return $this->container['tokenRequestorId'];
+        return $this->container['token_requestor_id'];
     }
 
     /**
-     * Sets tokenRequestorId
+     * Sets token_requestor_id
      *
-     * @param string $tokenRequestorId Token Requestor Id
+     * @param string $token_requestor_id Token Requestor Id
      *
      * @return $this
      */
-    public function setTokenRequestorId($tokenRequestorId)
+    public function setTokenRequestorId($token_requestor_id)
     {
-        $this->container['tokenRequestorId'] = $tokenRequestorId;
+        $this->container['token_requestor_id'] = $token_requestor_id;
 
         return $this;
     }
 
     /**
-     * Gets clientAppId
+     * Gets client_app_id
      *
      * @return string
      */
     public function getClientAppId()
     {
-        return $this->container['clientAppId'];
+        return $this->container['client_app_id'];
     }
 
     /**
-     * Sets clientAppId
+     * Sets client_app_id
      *
-     * @param string $clientAppId Client App Id
+     * @param string $client_app_id Client App Id
      *
      * @return $this
      */
-    public function setClientAppId($clientAppId)
+    public function setClientAppId($client_app_id)
     {
-        $this->container['clientAppId'] = $clientAppId;
+        $this->container['client_app_id'] = $client_app_id;
 
         return $this;
     }
 
     /**
-     * Gets relationshipId
+     * Gets relationship_id
      *
      * @return string
      */
     public function getRelationshipId()
     {
-        return $this->container['relationshipId'];
+        return $this->container['relationship_id'];
     }
 
     /**
-     * Sets relationshipId
+     * Sets relationship_id
      *
-     * @param string $relationshipId Relationship Id
+     * @param string $relationship_id Relationship Id
      *
      * @return $this
      */
-    public function setRelationshipId($relationshipId)
+    public function setRelationshipId($relationship_id)
     {
-        $this->container['relationshipId'] = $relationshipId;
+        $this->container['relationship_id'] = $relationship_id;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

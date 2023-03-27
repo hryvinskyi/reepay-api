@@ -57,10 +57,10 @@ class IdealTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'error' => 'string',
-        'refTransaction' => 'string',
-        'errorState' => 'string',
-        'acquirerMessage' => 'string',
-        'idealId' => 'string'
+        'ref_transaction' => 'string',
+        'error_state' => 'string',
+        'acquirer_message' => 'string',
+        'ideal_id' => 'string'
     ];
 
     /**
@@ -70,10 +70,10 @@ class IdealTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'error' => null,
-        'refTransaction' => null,
-        'errorState' => null,
-        'acquirerMessage' => null,
-        'idealId' => null
+        'ref_transaction' => null,
+        'error_state' => null,
+        'acquirer_message' => null,
+        'ideal_id' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class IdealTransaction implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'error' => 'error',
-        'refTransaction' => 'ref_transaction',
-        'errorState' => 'error_state',
-        'acquirerMessage' => 'acquirer_message',
-        'idealId' => 'ideal_id'
+        'ref_transaction' => 'ref_transaction',
+        'error_state' => 'error_state',
+        'acquirer_message' => 'acquirer_message',
+        'ideal_id' => 'ideal_id'
     ];
 
     /**
@@ -117,10 +117,10 @@ class IdealTransaction implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'error' => 'setError',
-        'refTransaction' => 'setRefTransaction',
-        'errorState' => 'setErrorState',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'idealId' => 'setIdealId'
+        'ref_transaction' => 'setRefTransaction',
+        'error_state' => 'setErrorState',
+        'acquirer_message' => 'setAcquirerMessage',
+        'ideal_id' => 'setIdealId'
     ];
 
     /**
@@ -130,10 +130,10 @@ class IdealTransaction implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'error' => 'getError',
-        'refTransaction' => 'getRefTransaction',
-        'errorState' => 'getErrorState',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'idealId' => 'getIdealId'
+        'ref_transaction' => 'getRefTransaction',
+        'error_state' => 'getErrorState',
+        'acquirer_message' => 'getAcquirerMessage',
+        'ideal_id' => 'getIdealId'
     ];
 
     /**
@@ -213,10 +213,10 @@ class IdealTransaction implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['refTransaction'] = isset($data['refTransaction']) ? $data['refTransaction'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['idealId'] = isset($data['idealId']) ? $data['idealId'] : null;
+        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['ideal_id'] = isset($data['ideal_id']) ? $data['ideal_id'] : null;
     }
 
     /**
@@ -229,9 +229,13 @@ class IdealTransaction implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -276,106 +280,106 @@ class IdealTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets refTransaction
+     * Gets ref_transaction
      *
      * @return string
      */
     public function getRefTransaction()
     {
-        return $this->container['refTransaction'];
+        return $this->container['ref_transaction'];
     }
 
     /**
-     * Sets refTransaction
+     * Sets ref_transaction
      *
-     * @param string $refTransaction Id of a possible referenced transaction
+     * @param string $ref_transaction Id of a possible referenced transaction
      *
      * @return $this
      */
-    public function setRefTransaction($refTransaction)
+    public function setRefTransaction($ref_transaction)
     {
-        $this->container['refTransaction'] = $refTransaction;
+        $this->container['ref_transaction'] = $ref_transaction;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
+     * @param string $error_state Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets idealId
+     * Gets ideal_id
      *
      * @return string
      */
     public function getIdealId()
     {
-        return $this->container['idealId'];
+        return $this->container['ideal_id'];
     }
 
     /**
-     * Sets idealId
+     * Sets ideal_id
      *
-     * @param string $idealId Ideal id
+     * @param string $ideal_id Ideal id
      *
      * @return $this
      */
-    public function setIdealId($idealId)
+    public function setIdealId($ideal_id)
     {
-        $this->container['idealId'] = $idealId;
+        $this->container['ideal_id'] = $ideal_id;
 
         return $this;
     }

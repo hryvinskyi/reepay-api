@@ -118,56 +118,56 @@ class GatewayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "cardGatewayAgreement"
+     * Test attribute "card_gateway_agreement"
      */
     public function testPropertyCardGatewayAgreement()
     {
     }
 
     /**
-     * Test attribute "mpoAgreement"
+     * Test attribute "mpo_agreement"
      */
     public function testPropertyMpoAgreement()
     {
     }
 
     /**
-     * Test attribute "vippsAgreement"
+     * Test attribute "vipps_agreement"
      */
     public function testPropertyVippsAgreement()
     {
     }
 
     /**
-     * Test attribute "vippsRecurringAgreement"
+     * Test attribute "vipps_recurring_agreement"
      */
     public function testPropertyVippsRecurringAgreement()
     {
     }
 
     /**
-     * Test attribute "viabillAgreement"
+     * Test attribute "viabill_agreement"
      */
     public function testPropertyViabillAgreement()
     {
     }
 
     /**
-     * Test attribute "anydayAgreement"
+     * Test attribute "anyday_agreement"
      */
     public function testPropertyAnydayAgreement()
     {
     }
 
     /**
-     * Test attribute "resursAgreement"
+     * Test attribute "resurs_agreement"
      */
     public function testPropertyResursAgreement()
     {
     }
 
     /**
-     * Test attribute "klarnaAgreement"
+     * Test attribute "klarna_agreement"
      */
     public function testPropertyKlarnaAgreement()
     {
@@ -181,35 +181,35 @@ class GatewayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "applepayAgreement"
+     * Test attribute "applepay_agreement"
      */
     public function testPropertyApplepayAgreement()
     {
     }
 
     /**
-     * Test attribute "googlepayAgreement"
+     * Test attribute "googlepay_agreement"
      */
     public function testPropertyGooglepayAgreement()
     {
     }
 
     /**
-     * Test attribute "paypalAgreement"
+     * Test attribute "paypal_agreement"
      */
     public function testPropertyPaypalAgreement()
     {
     }
 
     /**
-     * Test attribute "mpsAgreement"
+     * Test attribute "mps_agreement"
      */
     public function testPropertyMpsAgreement()
     {
     }
 
     /**
-     * Test attribute "pproAgreement"
+     * Test attribute "ppro_agreement"
      */
     public function testPropertyPproAgreement()
     {

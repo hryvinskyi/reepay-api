@@ -56,8 +56,8 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantSerialNumber' => 'string',
-        'merchantCancelUrl' => 'string'
+        'merchant_serial_number' => 'string',
+        'merchant_cancel_url' => 'string'
     ];
 
     /**
@@ -66,8 +66,8 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'merchantSerialNumber' => null,
-        'merchantCancelUrl' => null
+        'merchant_serial_number' => null,
+        'merchant_cancel_url' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantSerialNumber' => 'merchantSerialNumber',
-        'merchantCancelUrl' => 'merchantCancelUrl'
+        'merchant_serial_number' => 'merchantSerialNumber',
+        'merchant_cancel_url' => 'merchantCancelUrl'
     ];
 
     /**
@@ -107,8 +107,8 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantSerialNumber' => 'setMerchantSerialNumber',
-        'merchantCancelUrl' => 'setMerchantCancelUrl'
+        'merchant_serial_number' => 'setMerchantSerialNumber',
+        'merchant_cancel_url' => 'setMerchantCancelUrl'
     ];
 
     /**
@@ -117,8 +117,8 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantSerialNumber' => 'getMerchantSerialNumber',
-        'merchantCancelUrl' => 'getMerchantCancelUrl'
+        'merchant_serial_number' => 'getMerchantSerialNumber',
+        'merchant_cancel_url' => 'getMerchantCancelUrl'
     ];
 
     /**
@@ -179,8 +179,8 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantSerialNumber'] = isset($data['merchantSerialNumber']) ? $data['merchantSerialNumber'] : null;
-        $this->container['merchantCancelUrl'] = isset($data['merchantCancelUrl']) ? $data['merchantCancelUrl'] : null;
+        $this->container['merchant_serial_number'] = isset($data['merchant_serial_number']) ? $data['merchant_serial_number'] : null;
+        $this->container['merchant_cancel_url'] = isset($data['merchant_cancel_url']) ? $data['merchant_cancel_url'] : null;
     }
 
     /**
@@ -192,11 +192,11 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantSerialNumber'] === null) {
-            $invalidProperties[] = "'merchantSerialNumber' can't be null";
+        if ($this->container['merchant_serial_number'] === null) {
+            $invalidProperties[] = "'merchant_serial_number' can't be null";
         }
-        if ($this->container['merchantCancelUrl'] === null) {
-            $invalidProperties[] = "'merchantCancelUrl' can't be null";
+        if ($this->container['merchant_cancel_url'] === null) {
+            $invalidProperties[] = "'merchant_cancel_url' can't be null";
         }
         return $invalidProperties;
     }
@@ -214,53 +214,52 @@ class VippsRecurringAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merchantSerialNumber
+     * Gets merchant_serial_number
      *
      * @return string
      */
     public function getMerchantSerialNumber()
     {
-        return $this->container['merchantSerialNumber'];
+        return $this->container['merchant_serial_number'];
     }
 
     /**
-     * Sets merchantSerialNumber
+     * Sets merchant_serial_number
      *
-     * @param string $merchantSerialNumber merchantSerialNumber
+     * @param string $merchant_serial_number merchant_serial_number
      *
      * @return $this
      */
-    public function setMerchantSerialNumber($merchantSerialNumber)
+    public function setMerchantSerialNumber($merchant_serial_number)
     {
-        $this->container['merchantSerialNumber'] = $merchantSerialNumber;
+        $this->container['merchant_serial_number'] = $merchant_serial_number;
 
         return $this;
     }
 
     /**
-     * Gets merchantCancelUrl
+     * Gets merchant_cancel_url
      *
      * @return string
      */
     public function getMerchantCancelUrl()
     {
-        return $this->container['merchantCancelUrl'];
+        return $this->container['merchant_cancel_url'];
     }
 
     /**
-     * Sets merchantCancelUrl
+     * Sets merchant_cancel_url
      *
-     * @param string $merchantCancelUrl merchantCancelUrl
+     * @param string $merchant_cancel_url merchant_cancel_url
      *
      * @return $this
      */
-    public function setMerchantCancelUrl($merchantCancelUrl)
+    public function setMerchantCancelUrl($merchant_cancel_url)
     {
-        $this->container['merchantCancelUrl'] = $merchantCancelUrl;
+        $this->container['merchant_cancel_url'] = $merchant_cancel_url;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

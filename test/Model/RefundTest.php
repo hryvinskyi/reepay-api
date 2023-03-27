@@ -139,28 +139,28 @@ class RefundTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "creditNoteId"
+     * Test attribute "credit_note_id"
      */
     public function testPropertyCreditNoteId()
     {
     }
 
     /**
-     * Test attribute "refTransaction"
+     * Test attribute "ref_transaction"
      */
     public function testPropertyRefTransaction()
     {
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {

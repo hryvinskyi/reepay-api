@@ -66,29 +66,29 @@ class Transaction implements ModelInterface, ArrayAccess
         'failed' => '\DateTime',
         'refunded' => '\DateTime',
         'created' => '\DateTime',
-        'paymentType' => 'string',
-        'cardTransaction' => '\Reepay\Model\CardTransaction',
-        'mpoTransaction' => '\Reepay\Model\CardTransaction',
-        'vippsTransaction' => '\Reepay\Model\CardTransaction',
-        'applepayTransaction' => '\Reepay\Model\CardTransaction',
-        'googlepayTransaction' => '\Reepay\Model\CardTransaction',
-        'manualTransaction' => '\Reepay\Model\ManualTransaction',
-        'viabillTransaction' => '\Reepay\Model\ViabillTransaction',
-        'anydayTransaction' => '\Reepay\Model\AnydayTransaction',
-        'resursTransaction' => '\Reepay\Model\ResursTransaction',
-        'klarnaTransaction' => '\Reepay\Model\KlarnaTransaction',
-        'swishTransaction' => '\Reepay\Model\SwishTransaction',
-        'paypalTransaction' => '\Reepay\Model\PaypalTransaction',
-        'bancontactTransaction' => '\Reepay\Model\BancontactTransaction',
-        'blikTransaction' => '\Reepay\Model\BlikTransaction',
-        'giropayTransaction' => '\Reepay\Model\GiropayTransaction',
-        'idealTransaction' => '\Reepay\Model\IdealTransaction',
-        'p24Transaction' => '\Reepay\Model\P24Transaction',
-        'sepaTransaction' => '\Reepay\Model\SepaTransaction',
-        'verkkopankkiTransaction' => '\Reepay\Model\VerkkopankkiTransaction',
-        'mpsTransaction' => '\Reepay\Model\MpsTransaction',
-        'vippsRecurringTransaction' => '\Reepay\Model\VippsRecurringTransaction',
-        'paymentContext' => 'string'
+        'payment_type' => 'string',
+        'card_transaction' => '\Reepay\Model\CardTransaction',
+        'mpo_transaction' => '\Reepay\Model\CardTransaction',
+        'vipps_transaction' => '\Reepay\Model\CardTransaction',
+        'applepay_transaction' => '\Reepay\Model\CardTransaction',
+        'googlepay_transaction' => '\Reepay\Model\CardTransaction',
+        'manual_transaction' => '\Reepay\Model\ManualTransaction',
+        'viabill_transaction' => '\Reepay\Model\ViabillTransaction',
+        'anyday_transaction' => '\Reepay\Model\AnydayTransaction',
+        'resurs_transaction' => '\Reepay\Model\ResursTransaction',
+        'klarna_transaction' => '\Reepay\Model\KlarnaTransaction',
+        'swish_transaction' => '\Reepay\Model\SwishTransaction',
+        'paypal_transaction' => '\Reepay\Model\PaypalTransaction',
+        'bancontact_transaction' => '\Reepay\Model\BancontactTransaction',
+        'blik_transaction' => '\Reepay\Model\BlikTransaction',
+        'giropay_transaction' => '\Reepay\Model\GiropayTransaction',
+        'ideal_transaction' => '\Reepay\Model\IdealTransaction',
+        'p24_transaction' => '\Reepay\Model\P24Transaction',
+        'sepa_transaction' => '\Reepay\Model\SepaTransaction',
+        'verkkopankki_transaction' => '\Reepay\Model\VerkkopankkiTransaction',
+        'mps_transaction' => '\Reepay\Model\MpsTransaction',
+        'vipps_recurring_transaction' => '\Reepay\Model\VippsRecurringTransaction',
+        'payment_context' => 'string'
     ];
 
     /**
@@ -107,29 +107,29 @@ class Transaction implements ModelInterface, ArrayAccess
         'failed' => 'date-time',
         'refunded' => 'date-time',
         'created' => 'date-time',
-        'paymentType' => null,
-        'cardTransaction' => null,
-        'mpoTransaction' => null,
-        'vippsTransaction' => null,
-        'applepayTransaction' => null,
-        'googlepayTransaction' => null,
-        'manualTransaction' => null,
-        'viabillTransaction' => null,
-        'anydayTransaction' => null,
-        'resursTransaction' => null,
-        'klarnaTransaction' => null,
-        'swishTransaction' => null,
-        'paypalTransaction' => null,
-        'bancontactTransaction' => null,
-        'blikTransaction' => null,
-        'giropayTransaction' => null,
-        'idealTransaction' => null,
-        'p24Transaction' => null,
-        'sepaTransaction' => null,
-        'verkkopankkiTransaction' => null,
-        'mpsTransaction' => null,
-        'vippsRecurringTransaction' => null,
-        'paymentContext' => null
+        'payment_type' => null,
+        'card_transaction' => null,
+        'mpo_transaction' => null,
+        'vipps_transaction' => null,
+        'applepay_transaction' => null,
+        'googlepay_transaction' => null,
+        'manual_transaction' => null,
+        'viabill_transaction' => null,
+        'anyday_transaction' => null,
+        'resurs_transaction' => null,
+        'klarna_transaction' => null,
+        'swish_transaction' => null,
+        'paypal_transaction' => null,
+        'bancontact_transaction' => null,
+        'blik_transaction' => null,
+        'giropay_transaction' => null,
+        'ideal_transaction' => null,
+        'p24_transaction' => null,
+        'sepa_transaction' => null,
+        'verkkopankki_transaction' => null,
+        'mps_transaction' => null,
+        'vipps_recurring_transaction' => null,
+        'payment_context' => null
     ];
 
     /**
@@ -169,29 +169,29 @@ class Transaction implements ModelInterface, ArrayAccess
         'failed' => 'failed',
         'refunded' => 'refunded',
         'created' => 'created',
-        'paymentType' => 'payment_type',
-        'cardTransaction' => 'card_transaction',
-        'mpoTransaction' => 'mpo_transaction',
-        'vippsTransaction' => 'vipps_transaction',
-        'applepayTransaction' => 'applepay_transaction',
-        'googlepayTransaction' => 'googlepay_transaction',
-        'manualTransaction' => 'manual_transaction',
-        'viabillTransaction' => 'viabill_transaction',
-        'anydayTransaction' => 'anyday_transaction',
-        'resursTransaction' => 'resurs_transaction',
-        'klarnaTransaction' => 'klarna_transaction',
-        'swishTransaction' => 'swish_transaction',
-        'paypalTransaction' => 'paypal_transaction',
-        'bancontactTransaction' => 'bancontact_transaction',
-        'blikTransaction' => 'blik_transaction',
-        'giropayTransaction' => 'giropay_transaction',
-        'idealTransaction' => 'ideal_transaction',
-        'p24Transaction' => 'p24_transaction',
-        'sepaTransaction' => 'sepa_transaction',
-        'verkkopankkiTransaction' => 'verkkopankki_transaction',
-        'mpsTransaction' => 'mps_transaction',
-        'vippsRecurringTransaction' => 'vipps_recurring_transaction',
-        'paymentContext' => 'payment_context'
+        'payment_type' => 'payment_type',
+        'card_transaction' => 'card_transaction',
+        'mpo_transaction' => 'mpo_transaction',
+        'vipps_transaction' => 'vipps_transaction',
+        'applepay_transaction' => 'applepay_transaction',
+        'googlepay_transaction' => 'googlepay_transaction',
+        'manual_transaction' => 'manual_transaction',
+        'viabill_transaction' => 'viabill_transaction',
+        'anyday_transaction' => 'anyday_transaction',
+        'resurs_transaction' => 'resurs_transaction',
+        'klarna_transaction' => 'klarna_transaction',
+        'swish_transaction' => 'swish_transaction',
+        'paypal_transaction' => 'paypal_transaction',
+        'bancontact_transaction' => 'bancontact_transaction',
+        'blik_transaction' => 'blik_transaction',
+        'giropay_transaction' => 'giropay_transaction',
+        'ideal_transaction' => 'ideal_transaction',
+        'p24_transaction' => 'p24_transaction',
+        'sepa_transaction' => 'sepa_transaction',
+        'verkkopankki_transaction' => 'verkkopankki_transaction',
+        'mps_transaction' => 'mps_transaction',
+        'vipps_recurring_transaction' => 'vipps_recurring_transaction',
+        'payment_context' => 'payment_context'
     ];
 
     /**
@@ -210,29 +210,29 @@ class Transaction implements ModelInterface, ArrayAccess
         'failed' => 'setFailed',
         'refunded' => 'setRefunded',
         'created' => 'setCreated',
-        'paymentType' => 'setPaymentType',
-        'cardTransaction' => 'setCardTransaction',
-        'mpoTransaction' => 'setMpoTransaction',
-        'vippsTransaction' => 'setVippsTransaction',
-        'applepayTransaction' => 'setApplepayTransaction',
-        'googlepayTransaction' => 'setGooglepayTransaction',
-        'manualTransaction' => 'setManualTransaction',
-        'viabillTransaction' => 'setViabillTransaction',
-        'anydayTransaction' => 'setAnydayTransaction',
-        'resursTransaction' => 'setResursTransaction',
-        'klarnaTransaction' => 'setKlarnaTransaction',
-        'swishTransaction' => 'setSwishTransaction',
-        'paypalTransaction' => 'setPaypalTransaction',
-        'bancontactTransaction' => 'setBancontactTransaction',
-        'blikTransaction' => 'setBlikTransaction',
-        'giropayTransaction' => 'setGiropayTransaction',
-        'idealTransaction' => 'setIdealTransaction',
-        'p24Transaction' => 'setP24Transaction',
-        'sepaTransaction' => 'setSepaTransaction',
-        'verkkopankkiTransaction' => 'setVerkkopankkiTransaction',
-        'mpsTransaction' => 'setMpsTransaction',
-        'vippsRecurringTransaction' => 'setVippsRecurringTransaction',
-        'paymentContext' => 'setPaymentContext'
+        'payment_type' => 'setPaymentType',
+        'card_transaction' => 'setCardTransaction',
+        'mpo_transaction' => 'setMpoTransaction',
+        'vipps_transaction' => 'setVippsTransaction',
+        'applepay_transaction' => 'setApplepayTransaction',
+        'googlepay_transaction' => 'setGooglepayTransaction',
+        'manual_transaction' => 'setManualTransaction',
+        'viabill_transaction' => 'setViabillTransaction',
+        'anyday_transaction' => 'setAnydayTransaction',
+        'resurs_transaction' => 'setResursTransaction',
+        'klarna_transaction' => 'setKlarnaTransaction',
+        'swish_transaction' => 'setSwishTransaction',
+        'paypal_transaction' => 'setPaypalTransaction',
+        'bancontact_transaction' => 'setBancontactTransaction',
+        'blik_transaction' => 'setBlikTransaction',
+        'giropay_transaction' => 'setGiropayTransaction',
+        'ideal_transaction' => 'setIdealTransaction',
+        'p24_transaction' => 'setP24Transaction',
+        'sepa_transaction' => 'setSepaTransaction',
+        'verkkopankki_transaction' => 'setVerkkopankkiTransaction',
+        'mps_transaction' => 'setMpsTransaction',
+        'vipps_recurring_transaction' => 'setVippsRecurringTransaction',
+        'payment_context' => 'setPaymentContext'
     ];
 
     /**
@@ -251,29 +251,29 @@ class Transaction implements ModelInterface, ArrayAccess
         'failed' => 'getFailed',
         'refunded' => 'getRefunded',
         'created' => 'getCreated',
-        'paymentType' => 'getPaymentType',
-        'cardTransaction' => 'getCardTransaction',
-        'mpoTransaction' => 'getMpoTransaction',
-        'vippsTransaction' => 'getVippsTransaction',
-        'applepayTransaction' => 'getApplepayTransaction',
-        'googlepayTransaction' => 'getGooglepayTransaction',
-        'manualTransaction' => 'getManualTransaction',
-        'viabillTransaction' => 'getViabillTransaction',
-        'anydayTransaction' => 'getAnydayTransaction',
-        'resursTransaction' => 'getResursTransaction',
-        'klarnaTransaction' => 'getKlarnaTransaction',
-        'swishTransaction' => 'getSwishTransaction',
-        'paypalTransaction' => 'getPaypalTransaction',
-        'bancontactTransaction' => 'getBancontactTransaction',
-        'blikTransaction' => 'getBlikTransaction',
-        'giropayTransaction' => 'getGiropayTransaction',
-        'idealTransaction' => 'getIdealTransaction',
-        'p24Transaction' => 'getP24Transaction',
-        'sepaTransaction' => 'getSepaTransaction',
-        'verkkopankkiTransaction' => 'getVerkkopankkiTransaction',
-        'mpsTransaction' => 'getMpsTransaction',
-        'vippsRecurringTransaction' => 'getVippsRecurringTransaction',
-        'paymentContext' => 'getPaymentContext'
+        'payment_type' => 'getPaymentType',
+        'card_transaction' => 'getCardTransaction',
+        'mpo_transaction' => 'getMpoTransaction',
+        'vipps_transaction' => 'getVippsTransaction',
+        'applepay_transaction' => 'getApplepayTransaction',
+        'googlepay_transaction' => 'getGooglepayTransaction',
+        'manual_transaction' => 'getManualTransaction',
+        'viabill_transaction' => 'getViabillTransaction',
+        'anyday_transaction' => 'getAnydayTransaction',
+        'resurs_transaction' => 'getResursTransaction',
+        'klarna_transaction' => 'getKlarnaTransaction',
+        'swish_transaction' => 'getSwishTransaction',
+        'paypal_transaction' => 'getPaypalTransaction',
+        'bancontact_transaction' => 'getBancontactTransaction',
+        'blik_transaction' => 'getBlikTransaction',
+        'giropay_transaction' => 'getGiropayTransaction',
+        'ideal_transaction' => 'getIdealTransaction',
+        'p24_transaction' => 'getP24Transaction',
+        'sepa_transaction' => 'getSepaTransaction',
+        'verkkopankki_transaction' => 'getVerkkopankkiTransaction',
+        'mps_transaction' => 'getMpsTransaction',
+        'vipps_recurring_transaction' => 'getVippsRecurringTransaction',
+        'payment_context' => 'getPaymentContext'
     ];
 
     /**
@@ -450,29 +450,29 @@ class Transaction implements ModelInterface, ArrayAccess
         $this->container['failed'] = isset($data['failed']) ? $data['failed'] : null;
         $this->container['refunded'] = isset($data['refunded']) ? $data['refunded'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
-        $this->container['cardTransaction'] = isset($data['cardTransaction']) ? $data['cardTransaction'] : null;
-        $this->container['mpoTransaction'] = isset($data['mpoTransaction']) ? $data['mpoTransaction'] : null;
-        $this->container['vippsTransaction'] = isset($data['vippsTransaction']) ? $data['vippsTransaction'] : null;
-        $this->container['applepayTransaction'] = isset($data['applepayTransaction']) ? $data['applepayTransaction'] : null;
-        $this->container['googlepayTransaction'] = isset($data['googlepayTransaction']) ? $data['googlepayTransaction'] : null;
-        $this->container['manualTransaction'] = isset($data['manualTransaction']) ? $data['manualTransaction'] : null;
-        $this->container['viabillTransaction'] = isset($data['viabillTransaction']) ? $data['viabillTransaction'] : null;
-        $this->container['anydayTransaction'] = isset($data['anydayTransaction']) ? $data['anydayTransaction'] : null;
-        $this->container['resursTransaction'] = isset($data['resursTransaction']) ? $data['resursTransaction'] : null;
-        $this->container['klarnaTransaction'] = isset($data['klarnaTransaction']) ? $data['klarnaTransaction'] : null;
-        $this->container['swishTransaction'] = isset($data['swishTransaction']) ? $data['swishTransaction'] : null;
-        $this->container['paypalTransaction'] = isset($data['paypalTransaction']) ? $data['paypalTransaction'] : null;
-        $this->container['bancontactTransaction'] = isset($data['bancontactTransaction']) ? $data['bancontactTransaction'] : null;
-        $this->container['blikTransaction'] = isset($data['blikTransaction']) ? $data['blikTransaction'] : null;
-        $this->container['giropayTransaction'] = isset($data['giropayTransaction']) ? $data['giropayTransaction'] : null;
-        $this->container['idealTransaction'] = isset($data['idealTransaction']) ? $data['idealTransaction'] : null;
-        $this->container['p24Transaction'] = isset($data['p24Transaction']) ? $data['p24Transaction'] : null;
-        $this->container['sepaTransaction'] = isset($data['sepaTransaction']) ? $data['sepaTransaction'] : null;
-        $this->container['verkkopankkiTransaction'] = isset($data['verkkopankkiTransaction']) ? $data['verkkopankkiTransaction'] : null;
-        $this->container['mpsTransaction'] = isset($data['mpsTransaction']) ? $data['mpsTransaction'] : null;
-        $this->container['vippsRecurringTransaction'] = isset($data['vippsRecurringTransaction']) ? $data['vippsRecurringTransaction'] : null;
-        $this->container['paymentContext'] = isset($data['paymentContext']) ? $data['paymentContext'] : null;
+        $this->container['payment_type'] = isset($data['payment_type']) ? $data['payment_type'] : null;
+        $this->container['card_transaction'] = isset($data['card_transaction']) ? $data['card_transaction'] : null;
+        $this->container['mpo_transaction'] = isset($data['mpo_transaction']) ? $data['mpo_transaction'] : null;
+        $this->container['vipps_transaction'] = isset($data['vipps_transaction']) ? $data['vipps_transaction'] : null;
+        $this->container['applepay_transaction'] = isset($data['applepay_transaction']) ? $data['applepay_transaction'] : null;
+        $this->container['googlepay_transaction'] = isset($data['googlepay_transaction']) ? $data['googlepay_transaction'] : null;
+        $this->container['manual_transaction'] = isset($data['manual_transaction']) ? $data['manual_transaction'] : null;
+        $this->container['viabill_transaction'] = isset($data['viabill_transaction']) ? $data['viabill_transaction'] : null;
+        $this->container['anyday_transaction'] = isset($data['anyday_transaction']) ? $data['anyday_transaction'] : null;
+        $this->container['resurs_transaction'] = isset($data['resurs_transaction']) ? $data['resurs_transaction'] : null;
+        $this->container['klarna_transaction'] = isset($data['klarna_transaction']) ? $data['klarna_transaction'] : null;
+        $this->container['swish_transaction'] = isset($data['swish_transaction']) ? $data['swish_transaction'] : null;
+        $this->container['paypal_transaction'] = isset($data['paypal_transaction']) ? $data['paypal_transaction'] : null;
+        $this->container['bancontact_transaction'] = isset($data['bancontact_transaction']) ? $data['bancontact_transaction'] : null;
+        $this->container['blik_transaction'] = isset($data['blik_transaction']) ? $data['blik_transaction'] : null;
+        $this->container['giropay_transaction'] = isset($data['giropay_transaction']) ? $data['giropay_transaction'] : null;
+        $this->container['ideal_transaction'] = isset($data['ideal_transaction']) ? $data['ideal_transaction'] : null;
+        $this->container['p24_transaction'] = isset($data['p24_transaction']) ? $data['p24_transaction'] : null;
+        $this->container['sepa_transaction'] = isset($data['sepa_transaction']) ? $data['sepa_transaction'] : null;
+        $this->container['verkkopankki_transaction'] = isset($data['verkkopankki_transaction']) ? $data['verkkopankki_transaction'] : null;
+        $this->container['mps_transaction'] = isset($data['mps_transaction']) ? $data['mps_transaction'] : null;
+        $this->container['vipps_recurring_transaction'] = isset($data['vipps_recurring_transaction']) ? $data['vipps_recurring_transaction'] : null;
+        $this->container['payment_context'] = isset($data['payment_context']) ? $data['payment_context'] : null;
     }
 
     /**
@@ -518,13 +518,17 @@ class Transaction implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['paymentType'] === null) {
-            $invalidProperties[] = "'paymentType' can't be null";
+        if ($this->container['payment_type'] === null) {
+            $invalidProperties[] = "'payment_type' can't be null";
         }
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!is_null($this->container['paymentType']) && !in_array($this->container['paymentType'], $allowedValues, true)) {
+        if (!is_null($this->container['payment_type']) && !in_array(
+                $this->container['payment_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'paymentType', must be one of '%s'",
+                "invalid value for 'payment_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -803,562 +807,562 @@ class Transaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentType
+     * Gets payment_type
      *
      * @return string
      */
     public function getPaymentType()
     {
-        return $this->container['paymentType'];
+        return $this->container['payment_type'];
     }
 
     /**
-     * Sets paymentType
+     * Sets payment_type
      *
-     * @param string $paymentType Payment type for transaction, either: `card`, `mpo`, `mobilepay`, `vipps`, `vipps_recurring`, `swish`, `viabill`, `anyday`, `manual`, `applepay`, `googlepay`, `paypal`, `klarna_pay_now`, `klarna_pay_later`, `klarna_slice_it`, `klarna_direct_bank_transfer`, `klarna_direct_debit`, `resurs`, `mobilepay_subscriptions`, `emv_token`, `bcmc`, `blik`, `pp_blik_oc`, `giropay`, `ideal`, `p24`, `sepa`, or `verkkopankki`
+     * @param string $payment_type Payment type for transaction, either: `card`, `mpo`, `mobilepay`, `vipps`, `vipps_recurring`, `swish`, `viabill`, `anyday`, `manual`, `applepay`, `googlepay`, `paypal`, `klarna_pay_now`, `klarna_pay_later`, `klarna_slice_it`, `klarna_direct_bank_transfer`, `klarna_direct_debit`, `resurs`, `mobilepay_subscriptions`, `emv_token`, `bcmc`, `blik`, `pp_blik_oc`, `giropay`, `ideal`, `p24`, `sepa`, or `verkkopankki`
      *
      * @return $this
      */
-    public function setPaymentType($paymentType)
+    public function setPaymentType($payment_type)
     {
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!in_array($paymentType, $allowedValues, true)) {
+        if (!in_array($payment_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'paymentType', must be one of '%s'",
+                    "Invalid value for 'payment_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['paymentType'] = $paymentType;
+        $this->container['payment_type'] = $payment_type;
 
         return $this;
     }
 
     /**
-     * Gets cardTransaction
+     * Gets card_transaction
      *
      * @return \Reepay\Model\CardTransaction
      */
     public function getCardTransaction()
     {
-        return $this->container['cardTransaction'];
+        return $this->container['card_transaction'];
     }
 
     /**
-     * Sets cardTransaction
+     * Sets card_transaction
      *
-     * @param \Reepay\Model\CardTransaction $cardTransaction cardTransaction
+     * @param \Reepay\Model\CardTransaction $card_transaction card_transaction
      *
      * @return $this
      */
-    public function setCardTransaction($cardTransaction)
+    public function setCardTransaction($card_transaction)
     {
-        $this->container['cardTransaction'] = $cardTransaction;
+        $this->container['card_transaction'] = $card_transaction;
 
         return $this;
     }
 
     /**
-     * Gets mpoTransaction
+     * Gets mpo_transaction
      *
      * @return \Reepay\Model\CardTransaction
      */
     public function getMpoTransaction()
     {
-        return $this->container['mpoTransaction'];
+        return $this->container['mpo_transaction'];
     }
 
     /**
-     * Sets mpoTransaction
+     * Sets mpo_transaction
      *
-     * @param \Reepay\Model\CardTransaction $mpoTransaction mpoTransaction
+     * @param \Reepay\Model\CardTransaction $mpo_transaction mpo_transaction
      *
      * @return $this
      */
-    public function setMpoTransaction($mpoTransaction)
+    public function setMpoTransaction($mpo_transaction)
     {
-        $this->container['mpoTransaction'] = $mpoTransaction;
+        $this->container['mpo_transaction'] = $mpo_transaction;
 
         return $this;
     }
 
     /**
-     * Gets vippsTransaction
+     * Gets vipps_transaction
      *
      * @return \Reepay\Model\CardTransaction
      */
     public function getVippsTransaction()
     {
-        return $this->container['vippsTransaction'];
+        return $this->container['vipps_transaction'];
     }
 
     /**
-     * Sets vippsTransaction
+     * Sets vipps_transaction
      *
-     * @param \Reepay\Model\CardTransaction $vippsTransaction vippsTransaction
+     * @param \Reepay\Model\CardTransaction $vipps_transaction vipps_transaction
      *
      * @return $this
      */
-    public function setVippsTransaction($vippsTransaction)
+    public function setVippsTransaction($vipps_transaction)
     {
-        $this->container['vippsTransaction'] = $vippsTransaction;
+        $this->container['vipps_transaction'] = $vipps_transaction;
 
         return $this;
     }
 
     /**
-     * Gets applepayTransaction
+     * Gets applepay_transaction
      *
      * @return \Reepay\Model\CardTransaction
      */
     public function getApplepayTransaction()
     {
-        return $this->container['applepayTransaction'];
+        return $this->container['applepay_transaction'];
     }
 
     /**
-     * Sets applepayTransaction
+     * Sets applepay_transaction
      *
-     * @param \Reepay\Model\CardTransaction $applepayTransaction applepayTransaction
+     * @param \Reepay\Model\CardTransaction $applepay_transaction applepay_transaction
      *
      * @return $this
      */
-    public function setApplepayTransaction($applepayTransaction)
+    public function setApplepayTransaction($applepay_transaction)
     {
-        $this->container['applepayTransaction'] = $applepayTransaction;
+        $this->container['applepay_transaction'] = $applepay_transaction;
 
         return $this;
     }
 
     /**
-     * Gets googlepayTransaction
+     * Gets googlepay_transaction
      *
      * @return \Reepay\Model\CardTransaction
      */
     public function getGooglepayTransaction()
     {
-        return $this->container['googlepayTransaction'];
+        return $this->container['googlepay_transaction'];
     }
 
     /**
-     * Sets googlepayTransaction
+     * Sets googlepay_transaction
      *
-     * @param \Reepay\Model\CardTransaction $googlepayTransaction googlepayTransaction
+     * @param \Reepay\Model\CardTransaction $googlepay_transaction googlepay_transaction
      *
      * @return $this
      */
-    public function setGooglepayTransaction($googlepayTransaction)
+    public function setGooglepayTransaction($googlepay_transaction)
     {
-        $this->container['googlepayTransaction'] = $googlepayTransaction;
+        $this->container['googlepay_transaction'] = $googlepay_transaction;
 
         return $this;
     }
 
     /**
-     * Gets manualTransaction
+     * Gets manual_transaction
      *
      * @return \Reepay\Model\ManualTransaction
      */
     public function getManualTransaction()
     {
-        return $this->container['manualTransaction'];
+        return $this->container['manual_transaction'];
     }
 
     /**
-     * Sets manualTransaction
+     * Sets manual_transaction
      *
-     * @param \Reepay\Model\ManualTransaction $manualTransaction manualTransaction
+     * @param \Reepay\Model\ManualTransaction $manual_transaction manual_transaction
      *
      * @return $this
      */
-    public function setManualTransaction($manualTransaction)
+    public function setManualTransaction($manual_transaction)
     {
-        $this->container['manualTransaction'] = $manualTransaction;
+        $this->container['manual_transaction'] = $manual_transaction;
 
         return $this;
     }
 
     /**
-     * Gets viabillTransaction
+     * Gets viabill_transaction
      *
      * @return \Reepay\Model\ViabillTransaction
      */
     public function getViabillTransaction()
     {
-        return $this->container['viabillTransaction'];
+        return $this->container['viabill_transaction'];
     }
 
     /**
-     * Sets viabillTransaction
+     * Sets viabill_transaction
      *
-     * @param \Reepay\Model\ViabillTransaction $viabillTransaction viabillTransaction
+     * @param \Reepay\Model\ViabillTransaction $viabill_transaction viabill_transaction
      *
      * @return $this
      */
-    public function setViabillTransaction($viabillTransaction)
+    public function setViabillTransaction($viabill_transaction)
     {
-        $this->container['viabillTransaction'] = $viabillTransaction;
+        $this->container['viabill_transaction'] = $viabill_transaction;
 
         return $this;
     }
 
     /**
-     * Gets anydayTransaction
+     * Gets anyday_transaction
      *
      * @return \Reepay\Model\AnydayTransaction
      */
     public function getAnydayTransaction()
     {
-        return $this->container['anydayTransaction'];
+        return $this->container['anyday_transaction'];
     }
 
     /**
-     * Sets anydayTransaction
+     * Sets anyday_transaction
      *
-     * @param \Reepay\Model\AnydayTransaction $anydayTransaction anydayTransaction
+     * @param \Reepay\Model\AnydayTransaction $anyday_transaction anyday_transaction
      *
      * @return $this
      */
-    public function setAnydayTransaction($anydayTransaction)
+    public function setAnydayTransaction($anyday_transaction)
     {
-        $this->container['anydayTransaction'] = $anydayTransaction;
+        $this->container['anyday_transaction'] = $anyday_transaction;
 
         return $this;
     }
 
     /**
-     * Gets resursTransaction
+     * Gets resurs_transaction
      *
      * @return \Reepay\Model\ResursTransaction
      */
     public function getResursTransaction()
     {
-        return $this->container['resursTransaction'];
+        return $this->container['resurs_transaction'];
     }
 
     /**
-     * Sets resursTransaction
+     * Sets resurs_transaction
      *
-     * @param \Reepay\Model\ResursTransaction $resursTransaction resursTransaction
+     * @param \Reepay\Model\ResursTransaction $resurs_transaction resurs_transaction
      *
      * @return $this
      */
-    public function setResursTransaction($resursTransaction)
+    public function setResursTransaction($resurs_transaction)
     {
-        $this->container['resursTransaction'] = $resursTransaction;
+        $this->container['resurs_transaction'] = $resurs_transaction;
 
         return $this;
     }
 
     /**
-     * Gets klarnaTransaction
+     * Gets klarna_transaction
      *
      * @return \Reepay\Model\KlarnaTransaction
      */
     public function getKlarnaTransaction()
     {
-        return $this->container['klarnaTransaction'];
+        return $this->container['klarna_transaction'];
     }
 
     /**
-     * Sets klarnaTransaction
+     * Sets klarna_transaction
      *
-     * @param \Reepay\Model\KlarnaTransaction $klarnaTransaction klarnaTransaction
+     * @param \Reepay\Model\KlarnaTransaction $klarna_transaction klarna_transaction
      *
      * @return $this
      */
-    public function setKlarnaTransaction($klarnaTransaction)
+    public function setKlarnaTransaction($klarna_transaction)
     {
-        $this->container['klarnaTransaction'] = $klarnaTransaction;
+        $this->container['klarna_transaction'] = $klarna_transaction;
 
         return $this;
     }
 
     /**
-     * Gets swishTransaction
+     * Gets swish_transaction
      *
      * @return \Reepay\Model\SwishTransaction
      */
     public function getSwishTransaction()
     {
-        return $this->container['swishTransaction'];
+        return $this->container['swish_transaction'];
     }
 
     /**
-     * Sets swishTransaction
+     * Sets swish_transaction
      *
-     * @param \Reepay\Model\SwishTransaction $swishTransaction swishTransaction
+     * @param \Reepay\Model\SwishTransaction $swish_transaction swish_transaction
      *
      * @return $this
      */
-    public function setSwishTransaction($swishTransaction)
+    public function setSwishTransaction($swish_transaction)
     {
-        $this->container['swishTransaction'] = $swishTransaction;
+        $this->container['swish_transaction'] = $swish_transaction;
 
         return $this;
     }
 
     /**
-     * Gets paypalTransaction
+     * Gets paypal_transaction
      *
      * @return \Reepay\Model\PaypalTransaction
      */
     public function getPaypalTransaction()
     {
-        return $this->container['paypalTransaction'];
+        return $this->container['paypal_transaction'];
     }
 
     /**
-     * Sets paypalTransaction
+     * Sets paypal_transaction
      *
-     * @param \Reepay\Model\PaypalTransaction $paypalTransaction paypalTransaction
+     * @param \Reepay\Model\PaypalTransaction $paypal_transaction paypal_transaction
      *
      * @return $this
      */
-    public function setPaypalTransaction($paypalTransaction)
+    public function setPaypalTransaction($paypal_transaction)
     {
-        $this->container['paypalTransaction'] = $paypalTransaction;
+        $this->container['paypal_transaction'] = $paypal_transaction;
 
         return $this;
     }
 
     /**
-     * Gets bancontactTransaction
+     * Gets bancontact_transaction
      *
      * @return \Reepay\Model\BancontactTransaction
      */
     public function getBancontactTransaction()
     {
-        return $this->container['bancontactTransaction'];
+        return $this->container['bancontact_transaction'];
     }
 
     /**
-     * Sets bancontactTransaction
+     * Sets bancontact_transaction
      *
-     * @param \Reepay\Model\BancontactTransaction $bancontactTransaction bancontactTransaction
+     * @param \Reepay\Model\BancontactTransaction $bancontact_transaction bancontact_transaction
      *
      * @return $this
      */
-    public function setBancontactTransaction($bancontactTransaction)
+    public function setBancontactTransaction($bancontact_transaction)
     {
-        $this->container['bancontactTransaction'] = $bancontactTransaction;
+        $this->container['bancontact_transaction'] = $bancontact_transaction;
 
         return $this;
     }
 
     /**
-     * Gets blikTransaction
+     * Gets blik_transaction
      *
      * @return \Reepay\Model\BlikTransaction
      */
     public function getBlikTransaction()
     {
-        return $this->container['blikTransaction'];
+        return $this->container['blik_transaction'];
     }
 
     /**
-     * Sets blikTransaction
+     * Sets blik_transaction
      *
-     * @param \Reepay\Model\BlikTransaction $blikTransaction blikTransaction
+     * @param \Reepay\Model\BlikTransaction $blik_transaction blik_transaction
      *
      * @return $this
      */
-    public function setBlikTransaction($blikTransaction)
+    public function setBlikTransaction($blik_transaction)
     {
-        $this->container['blikTransaction'] = $blikTransaction;
+        $this->container['blik_transaction'] = $blik_transaction;
 
         return $this;
     }
 
     /**
-     * Gets giropayTransaction
+     * Gets giropay_transaction
      *
      * @return \Reepay\Model\GiropayTransaction
      */
     public function getGiropayTransaction()
     {
-        return $this->container['giropayTransaction'];
+        return $this->container['giropay_transaction'];
     }
 
     /**
-     * Sets giropayTransaction
+     * Sets giropay_transaction
      *
-     * @param \Reepay\Model\GiropayTransaction $giropayTransaction giropayTransaction
+     * @param \Reepay\Model\GiropayTransaction $giropay_transaction giropay_transaction
      *
      * @return $this
      */
-    public function setGiropayTransaction($giropayTransaction)
+    public function setGiropayTransaction($giropay_transaction)
     {
-        $this->container['giropayTransaction'] = $giropayTransaction;
+        $this->container['giropay_transaction'] = $giropay_transaction;
 
         return $this;
     }
 
     /**
-     * Gets idealTransaction
+     * Gets ideal_transaction
      *
      * @return \Reepay\Model\IdealTransaction
      */
     public function getIdealTransaction()
     {
-        return $this->container['idealTransaction'];
+        return $this->container['ideal_transaction'];
     }
 
     /**
-     * Sets idealTransaction
+     * Sets ideal_transaction
      *
-     * @param \Reepay\Model\IdealTransaction $idealTransaction idealTransaction
+     * @param \Reepay\Model\IdealTransaction $ideal_transaction ideal_transaction
      *
      * @return $this
      */
-    public function setIdealTransaction($idealTransaction)
+    public function setIdealTransaction($ideal_transaction)
     {
-        $this->container['idealTransaction'] = $idealTransaction;
+        $this->container['ideal_transaction'] = $ideal_transaction;
 
         return $this;
     }
 
     /**
-     * Gets p24Transaction
+     * Gets p24_transaction
      *
      * @return \Reepay\Model\P24Transaction
      */
     public function getP24Transaction()
     {
-        return $this->container['p24Transaction'];
+        return $this->container['p24_transaction'];
     }
 
     /**
-     * Sets p24Transaction
+     * Sets p24_transaction
      *
-     * @param \Reepay\Model\P24Transaction $p24Transaction p24Transaction
+     * @param \Reepay\Model\P24Transaction $p24_transaction p24_transaction
      *
      * @return $this
      */
-    public function setP24Transaction($p24Transaction)
+    public function setP24Transaction($p24_transaction)
     {
-        $this->container['p24Transaction'] = $p24Transaction;
+        $this->container['p24_transaction'] = $p24_transaction;
 
         return $this;
     }
 
     /**
-     * Gets sepaTransaction
+     * Gets sepa_transaction
      *
      * @return \Reepay\Model\SepaTransaction
      */
     public function getSepaTransaction()
     {
-        return $this->container['sepaTransaction'];
+        return $this->container['sepa_transaction'];
     }
 
     /**
-     * Sets sepaTransaction
+     * Sets sepa_transaction
      *
-     * @param \Reepay\Model\SepaTransaction $sepaTransaction sepaTransaction
+     * @param \Reepay\Model\SepaTransaction $sepa_transaction sepa_transaction
      *
      * @return $this
      */
-    public function setSepaTransaction($sepaTransaction)
+    public function setSepaTransaction($sepa_transaction)
     {
-        $this->container['sepaTransaction'] = $sepaTransaction;
+        $this->container['sepa_transaction'] = $sepa_transaction;
 
         return $this;
     }
 
     /**
-     * Gets verkkopankkiTransaction
+     * Gets verkkopankki_transaction
      *
      * @return \Reepay\Model\VerkkopankkiTransaction
      */
     public function getVerkkopankkiTransaction()
     {
-        return $this->container['verkkopankkiTransaction'];
+        return $this->container['verkkopankki_transaction'];
     }
 
     /**
-     * Sets verkkopankkiTransaction
+     * Sets verkkopankki_transaction
      *
-     * @param \Reepay\Model\VerkkopankkiTransaction $verkkopankkiTransaction verkkopankkiTransaction
+     * @param \Reepay\Model\VerkkopankkiTransaction $verkkopankki_transaction verkkopankki_transaction
      *
      * @return $this
      */
-    public function setVerkkopankkiTransaction($verkkopankkiTransaction)
+    public function setVerkkopankkiTransaction($verkkopankki_transaction)
     {
-        $this->container['verkkopankkiTransaction'] = $verkkopankkiTransaction;
+        $this->container['verkkopankki_transaction'] = $verkkopankki_transaction;
 
         return $this;
     }
 
     /**
-     * Gets mpsTransaction
+     * Gets mps_transaction
      *
      * @return \Reepay\Model\MpsTransaction
      */
     public function getMpsTransaction()
     {
-        return $this->container['mpsTransaction'];
+        return $this->container['mps_transaction'];
     }
 
     /**
-     * Sets mpsTransaction
+     * Sets mps_transaction
      *
-     * @param \Reepay\Model\MpsTransaction $mpsTransaction mpsTransaction
+     * @param \Reepay\Model\MpsTransaction $mps_transaction mps_transaction
      *
      * @return $this
      */
-    public function setMpsTransaction($mpsTransaction)
+    public function setMpsTransaction($mps_transaction)
     {
-        $this->container['mpsTransaction'] = $mpsTransaction;
+        $this->container['mps_transaction'] = $mps_transaction;
 
         return $this;
     }
 
     /**
-     * Gets vippsRecurringTransaction
+     * Gets vipps_recurring_transaction
      *
      * @return \Reepay\Model\VippsRecurringTransaction
      */
     public function getVippsRecurringTransaction()
     {
-        return $this->container['vippsRecurringTransaction'];
+        return $this->container['vipps_recurring_transaction'];
     }
 
     /**
-     * Sets vippsRecurringTransaction
+     * Sets vipps_recurring_transaction
      *
-     * @param \Reepay\Model\VippsRecurringTransaction $vippsRecurringTransaction vippsRecurringTransaction
+     * @param \Reepay\Model\VippsRecurringTransaction $vipps_recurring_transaction vipps_recurring_transaction
      *
      * @return $this
      */
-    public function setVippsRecurringTransaction($vippsRecurringTransaction)
+    public function setVippsRecurringTransaction($vipps_recurring_transaction)
     {
-        $this->container['vippsRecurringTransaction'] = $vippsRecurringTransaction;
+        $this->container['vipps_recurring_transaction'] = $vipps_recurring_transaction;
 
         return $this;
     }
 
     /**
-     * Gets paymentContext
+     * Gets payment_context
      *
      * @return string
      */
     public function getPaymentContext()
     {
-        return $this->container['paymentContext'];
+        return $this->container['payment_context'];
     }
 
     /**
-     * Sets paymentContext
+     * Sets payment_context
      *
-     * @param string $paymentContext Payment context describing if the transaction is customer or merchant initiated, one of the following values: `cit`, `mit`, `cit_cof`
+     * @param string $payment_context Payment context describing if the transaction is customer or merchant initiated, one of the following values: `cit`, `mit`, `cit_cof`
      *
      * @return $this
      */
-    public function setPaymentContext($paymentContext)
+    public function setPaymentContext($payment_context)
     {
-        $this->container['paymentContext'] = $paymentContext;
+        $this->container['payment_context'] = $payment_context;
 
         return $this;
     }

@@ -76,7 +76,7 @@ class ChargeParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "mpsTtl"
+     * Test attribute "mps_ttl"
      */
     public function testPropertyMpsTtl()
     {

@@ -56,7 +56,7 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'contractId' => 'string'
+        'contract_id' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'contractId' => null
+        'contract_id' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'contractId' => 'contract_id'
+        'contract_id' => 'contract_id'
     ];
 
     /**
@@ -104,7 +104,7 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'contractId' => 'setContractId'
+        'contract_id' => 'setContractId'
     ];
 
     /**
@@ -113,7 +113,7 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'contractId' => 'getContractId'
+        'contract_id' => 'getContractId'
     ];
 
     /**
@@ -174,7 +174,7 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['contractId'] = isset($data['contractId']) ? $data['contractId'] : null;
+        $this->container['contract_id'] = isset($data['contract_id']) ? $data['contract_id'] : null;
     }
 
     /**
@@ -202,25 +202,25 @@ class UpdatePproAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets contractId
+     * Gets contract_id
      *
      * @return string
      */
     public function getContractId()
     {
-        return $this->container['contractId'];
+        return $this->container['contract_id'];
     }
 
     /**
-     * Sets contractId
+     * Sets contract_id
      *
-     * @param string $contractId Contract id for local payment method
+     * @param string $contract_id Contract id for local payment method
      *
      * @return $this
      */
-    public function setContractId($contractId)
+    public function setContractId($contract_id)
     {
-        $this->container['contractId'] = $contractId;
+        $this->container['contract_id'] = $contract_id;
 
         return $this;
     }

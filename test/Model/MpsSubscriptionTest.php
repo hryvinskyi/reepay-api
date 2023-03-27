@@ -118,7 +118,7 @@ class MpsSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "externalId"
+     * Test attribute "external_id"
      */
     public function testPropertyExternalId()
     {

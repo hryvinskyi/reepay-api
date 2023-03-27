@@ -59,7 +59,7 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
         'comment' => 'string',
         'reference' => 'string',
         'method' => 'string',
-        'paymentDate' => 'string'
+        'payment_date' => 'string'
     ];
 
     /**
@@ -71,7 +71,7 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
         'comment' => null,
         'reference' => null,
         'method' => null,
-        'paymentDate' => null
+        'payment_date' => null
     ];
 
     /**
@@ -104,7 +104,7 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
         'comment' => 'comment',
         'reference' => 'reference',
         'method' => 'method',
-        'paymentDate' => 'payment_date'
+        'payment_date' => 'payment_date'
     ];
 
     /**
@@ -116,7 +116,7 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
         'comment' => 'setComment',
         'reference' => 'setReference',
         'method' => 'setMethod',
-        'paymentDate' => 'setPaymentDate'
+        'payment_date' => 'setPaymentDate'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
         'comment' => 'getComment',
         'reference' => 'getReference',
         'method' => 'getMethod',
-        'paymentDate' => 'getPaymentDate'
+        'payment_date' => 'getPaymentDate'
     ];
 
     /**
@@ -212,7 +212,7 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
-        $this->container['paymentDate'] = isset($data['paymentDate']) ? $data['paymentDate'] : null;
+        $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
     }
 
     /**
@@ -235,8 +235,8 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['paymentDate'] === null) {
-            $invalidProperties[] = "'paymentDate' can't be null";
+        if ($this->container['payment_date'] === null) {
+            $invalidProperties[] = "'payment_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -335,25 +335,25 @@ class ManualRefundTransfer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentDate
+     * Gets payment_date
      *
      * @return string
      */
     public function getPaymentDate()
     {
-        return $this->container['paymentDate'];
+        return $this->container['payment_date'];
     }
 
     /**
-     * Sets paymentDate
+     * Sets payment_date
      *
-     * @param string $paymentDate When the manual transaction was performed on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
+     * @param string $payment_date When the manual transaction was performed on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
      *
      * @return $this
      */
-    public function setPaymentDate($paymentDate)
+    public function setPaymentDate($payment_date)
     {
-        $this->container['paymentDate'] = $paymentDate;
+        $this->container['payment_date'] = $payment_date;
 
         return $this;
     }

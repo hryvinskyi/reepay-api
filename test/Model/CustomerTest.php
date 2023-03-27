@@ -167,203 +167,203 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "firstName"
+     * Test attribute "first_name"
      */
     public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "lastName"
+     * Test attribute "last_name"
      */
     public function testPropertyLastName()
     {
     }
 
     /**
-     * Test attribute "postalCode"
+     * Test attribute "postal_code"
      */
     public function testPropertyPostalCode()
     {
     }
 
     /**
-     * Test attribute "activeSubscriptions"
+     * Test attribute "active_subscriptions"
      */
     public function testPropertyActiveSubscriptions()
     {
     }
 
     /**
-     * Test attribute "trialActiveSubscriptions"
+     * Test attribute "trial_active_subscriptions"
      */
     public function testPropertyTrialActiveSubscriptions()
     {
     }
 
     /**
-     * Test attribute "trialCancelledSubscriptions"
+     * Test attribute "trial_cancelled_subscriptions"
      */
     public function testPropertyTrialCancelledSubscriptions()
     {
     }
 
     /**
-     * Test attribute "expiredSubscriptions"
+     * Test attribute "expired_subscriptions"
      */
     public function testPropertyExpiredSubscriptions()
     {
     }
 
     /**
-     * Test attribute "onHoldSubscriptions"
+     * Test attribute "on_hold_subscriptions"
      */
     public function testPropertyOnHoldSubscriptions()
     {
     }
 
     /**
-     * Test attribute "cancelledSubscriptions"
+     * Test attribute "cancelled_subscriptions"
      */
     public function testPropertyCancelledSubscriptions()
     {
     }
 
     /**
-     * Test attribute "nonRenewingSubscriptions"
+     * Test attribute "non_renewing_subscriptions"
      */
     public function testPropertyNonRenewingSubscriptions()
     {
     }
 
     /**
-     * Test attribute "failedInvoices"
+     * Test attribute "failed_invoices"
      */
     public function testPropertyFailedInvoices()
     {
     }
 
     /**
-     * Test attribute "failedAmount"
+     * Test attribute "failed_amount"
      */
     public function testPropertyFailedAmount()
     {
     }
 
     /**
-     * Test attribute "cancelledInvoices"
+     * Test attribute "cancelled_invoices"
      */
     public function testPropertyCancelledInvoices()
     {
     }
 
     /**
-     * Test attribute "cancelledAmount"
+     * Test attribute "cancelled_amount"
      */
     public function testPropertyCancelledAmount()
     {
     }
 
     /**
-     * Test attribute "pendingInvoices"
+     * Test attribute "pending_invoices"
      */
     public function testPropertyPendingInvoices()
     {
     }
 
     /**
-     * Test attribute "pendingAmount"
+     * Test attribute "pending_amount"
      */
     public function testPropertyPendingAmount()
     {
     }
 
     /**
-     * Test attribute "dunningInvoices"
+     * Test attribute "dunning_invoices"
      */
     public function testPropertyDunningInvoices()
     {
     }
 
     /**
-     * Test attribute "dunningAmount"
+     * Test attribute "dunning_amount"
      */
     public function testPropertyDunningAmount()
     {
     }
 
     /**
-     * Test attribute "settledInvoices"
+     * Test attribute "settled_invoices"
      */
     public function testPropertySettledInvoices()
     {
     }
 
     /**
-     * Test attribute "settledAmount"
+     * Test attribute "settled_amount"
      */
     public function testPropertySettledAmount()
     {
     }
 
     /**
-     * Test attribute "refundedAmount"
+     * Test attribute "refunded_amount"
      */
     public function testPropertyRefundedAmount()
     {
     }
 
     /**
-     * Test attribute "pendingAdditionalCosts"
+     * Test attribute "pending_additional_costs"
      */
     public function testPropertyPendingAdditionalCosts()
     {
     }
 
     /**
-     * Test attribute "pendingAdditionalCostAmount"
+     * Test attribute "pending_additional_cost_amount"
      */
     public function testPropertyPendingAdditionalCostAmount()
     {
     }
 
     /**
-     * Test attribute "transferredAdditionalCosts"
+     * Test attribute "transferred_additional_costs"
      */
     public function testPropertyTransferredAdditionalCosts()
     {
     }
 
     /**
-     * Test attribute "transferredAdditionalCostAmount"
+     * Test attribute "transferred_additional_cost_amount"
      */
     public function testPropertyTransferredAdditionalCostAmount()
     {
     }
 
     /**
-     * Test attribute "pendingCredits"
+     * Test attribute "pending_credits"
      */
     public function testPropertyPendingCredits()
     {
     }
 
     /**
-     * Test attribute "pendingCreditAmount"
+     * Test attribute "pending_credit_amount"
      */
     public function testPropertyPendingCreditAmount()
     {
     }
 
     /**
-     * Test attribute "transferredCredits"
+     * Test attribute "transferred_credits"
      */
     public function testPropertyTransferredCredits()
     {
     }
 
     /**
-     * Test attribute "transferredCreditAmount"
+     * Test attribute "transferred_credit_amount"
      */
     public function testPropertyTransferredCreditAmount()
     {

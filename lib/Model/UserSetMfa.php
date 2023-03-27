@@ -56,8 +56,8 @@ class UserSetMfa implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mfaMethod' => 'string',
-        'mfaCode' => 'string'
+        'mfa_method' => 'string',
+        'mfa_code' => 'string'
     ];
 
     /**
@@ -66,8 +66,8 @@ class UserSetMfa implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'mfaMethod' => null,
-        'mfaCode' => null
+        'mfa_method' => null,
+        'mfa_code' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class UserSetMfa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mfaMethod' => 'mfa_method',
-        'mfaCode' => 'mfa_code'
+        'mfa_method' => 'mfa_method',
+        'mfa_code' => 'mfa_code'
     ];
 
     /**
@@ -107,8 +107,8 @@ class UserSetMfa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mfaMethod' => 'setMfaMethod',
-        'mfaCode' => 'setMfaCode'
+        'mfa_method' => 'setMfaMethod',
+        'mfa_code' => 'setMfaCode'
     ];
 
     /**
@@ -117,8 +117,8 @@ class UserSetMfa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mfaMethod' => 'getMfaMethod',
-        'mfaCode' => 'getMfaCode'
+        'mfa_method' => 'getMfaMethod',
+        'mfa_code' => 'getMfaCode'
     ];
 
     /**
@@ -193,8 +193,8 @@ class UserSetMfa implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mfaMethod'] = isset($data['mfaMethod']) ? $data['mfaMethod'] : null;
-        $this->container['mfaCode'] = isset($data['mfaCode']) ? $data['mfaCode'] : null;
+        $this->container['mfa_method'] = isset($data['mfa_method']) ? $data['mfa_method'] : null;
+        $this->container['mfa_code'] = isset($data['mfa_code']) ? $data['mfa_code'] : null;
     }
 
     /**
@@ -207,9 +207,13 @@ class UserSetMfa implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getMfaMethodAllowableValues();
-        if (!is_null($this->container['mfaMethod']) && !in_array($this->container['mfaMethod'], $allowedValues, true)) {
+        if (!is_null($this->container['mfa_method']) && !in_array(
+                $this->container['mfa_method'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'mfaMethod', must be one of '%s'",
+                "invalid value for 'mfa_method', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -230,58 +234,58 @@ class UserSetMfa implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets mfaMethod
+     * Gets mfa_method
      *
      * @return string
      */
     public function getMfaMethod()
     {
-        return $this->container['mfaMethod'];
+        return $this->container['mfa_method'];
     }
 
     /**
-     * Sets mfaMethod
+     * Sets mfa_method
      *
-     * @param string $mfaMethod MFA method
+     * @param string $mfa_method MFA method
      *
      * @return $this
      */
-    public function setMfaMethod($mfaMethod)
+    public function setMfaMethod($mfa_method)
     {
         $allowedValues = $this->getMfaMethodAllowableValues();
-        if (!is_null($mfaMethod) && !in_array($mfaMethod, $allowedValues, true)) {
+        if (!is_null($mfa_method) && !in_array($mfa_method, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'mfaMethod', must be one of '%s'",
+                    "Invalid value for 'mfa_method', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['mfaMethod'] = $mfaMethod;
+        $this->container['mfa_method'] = $mfa_method;
 
         return $this;
     }
 
     /**
-     * Gets mfaCode
+     * Gets mfa_code
      *
      * @return string
      */
     public function getMfaCode()
     {
-        return $this->container['mfaCode'];
+        return $this->container['mfa_code'];
     }
 
     /**
-     * Sets mfaCode
+     * Sets mfa_code
      *
-     * @param string $mfaCode MFA verification code
+     * @param string $mfa_code MFA verification code
      *
      * @return $this
      */
-    public function setMfaCode($mfaCode)
+    public function setMfaCode($mfa_code)
     {
-        $this->container['mfaCode'] = $mfaCode;
+        $this->container['mfa_code'] = $mfa_code;
 
         return $this;
     }

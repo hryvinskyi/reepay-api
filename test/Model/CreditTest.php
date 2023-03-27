@@ -118,28 +118,28 @@ class CreditTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "validFrom"
+     * Test attribute "valid_from"
      */
     public function testPropertyValidFrom()
     {
     }
 
     /**
-     * Test attribute "creditInvoices"
+     * Test attribute "credit_invoices"
      */
     public function testPropertyCreditInvoices()
     {
     }
 
     /**
-     * Test attribute "pendingAmount"
+     * Test attribute "pending_amount"
      */
     public function testPropertyPendingAmount()
     {
     }
 
     /**
-     * Test attribute "invoiceCreditNote"
+     * Test attribute "invoice_credit_note"
      */
     public function testPropertyInvoiceCreditNote()
     {

@@ -56,7 +56,7 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mfaPolicy' => 'string'
+        'mfa_policy' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'mfaPolicy' => null
+        'mfa_policy' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mfaPolicy' => 'mfa_policy'
+        'mfa_policy' => 'mfa_policy'
     ];
 
     /**
@@ -104,7 +104,7 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mfaPolicy' => 'setMfaPolicy'
+        'mfa_policy' => 'setMfaPolicy'
     ];
 
     /**
@@ -113,7 +113,7 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mfaPolicy' => 'getMfaPolicy'
+        'mfa_policy' => 'getMfaPolicy'
     ];
 
     /**
@@ -188,7 +188,7 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mfaPolicy'] = isset($data['mfaPolicy']) ? $data['mfaPolicy'] : null;
+        $this->container['mfa_policy'] = isset($data['mfa_policy']) ? $data['mfa_policy'] : null;
     }
 
     /**
@@ -200,13 +200,17 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['mfaPolicy'] === null) {
-            $invalidProperties[] = "'mfaPolicy' can't be null";
+        if ($this->container['mfa_policy'] === null) {
+            $invalidProperties[] = "'mfa_policy' can't be null";
         }
         $allowedValues = $this->getMfaPolicyAllowableValues();
-        if (!is_null($this->container['mfaPolicy']) && !in_array($this->container['mfaPolicy'], $allowedValues, true)) {
+        if (!is_null($this->container['mfa_policy']) && !in_array(
+                $this->container['mfa_policy'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'mfaPolicy', must be one of '%s'",
+                "invalid value for 'mfa_policy', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -227,34 +231,34 @@ class AccountMfaSettings implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets mfaPolicy
+     * Gets mfa_policy
      *
      * @return string
      */
     public function getMfaPolicy()
     {
-        return $this->container['mfaPolicy'];
+        return $this->container['mfa_policy'];
     }
 
     /**
-     * Sets mfaPolicy
+     * Sets mfa_policy
      *
-     * @param string $mfaPolicy Account MFA policy: `optional` or `required`
+     * @param string $mfa_policy Account MFA policy: `optional` or `required`
      *
      * @return $this
      */
-    public function setMfaPolicy($mfaPolicy)
+    public function setMfaPolicy($mfa_policy)
     {
         $allowedValues = $this->getMfaPolicyAllowableValues();
-        if (!in_array($mfaPolicy, $allowedValues, true)) {
+        if (!in_array($mfa_policy, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'mfaPolicy', must be one of '%s'",
+                    "Invalid value for 'mfa_policy', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['mfaPolicy'] = $mfaPolicy;
+        $this->container['mfa_policy'] = $mfa_policy;
 
         return $this;
     }

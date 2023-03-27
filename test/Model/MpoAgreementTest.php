@@ -76,21 +76,21 @@ class MpoAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shopName"
+     * Test attribute "shop_name"
      */
     public function testPropertyShopName()
     {
     }
 
     /**
-     * Test attribute "shopLogoUrl"
+     * Test attribute "shop_logo_url"
      */
     public function testPropertyShopLogoUrl()
     {
     }
 
     /**
-     * Test attribute "merchantCategoryCode"
+     * Test attribute "merchant_category_code"
      */
     public function testPropertyMerchantCategoryCode()
     {

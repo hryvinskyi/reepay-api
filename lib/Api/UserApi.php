@@ -2990,6 +2990,7 @@ class UserApi
      */
     protected function resetPasswordRequest($body = null, $version = null)
     {
+
         $resourcePath = '/v1/user/reset_password';
         $formParams = [];
         $queryParams = [];

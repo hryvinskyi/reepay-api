@@ -10,8 +10,8 @@
  **organisations** | [**\Reepay\Model\OrganisationLogin[]**](OrganisationLogin.md) | List of organisations for user              |
  **groups**        | **string[]**                                                  | List user groups                            |
  **permissions**   | **string[]**                                                  | List user permissions                       |
- **tokenTtl**      | **int**                                                       | Token time-to-live in minutes               |
- **mfaRequired**   | **bool**                                                      | User needs to add MFA                       | [optional] 
+ **token_ttl**     | **int**                                                       | Token time-to-live in minutes               |
+ **mfa_required**  | **bool**                                                      | User needs to add MFA                       | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -62,8 +62,8 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
         'consumed' => 'int',
         'remaining' => 'int',
         'creditable' => 'int',
-        'periodAmount' => 'int',
-        'onlineRefundable' => 'int'
+        'period_amount' => 'int',
+        'online_refundable' => 'int'
     ];
 
     /**
@@ -78,8 +78,8 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
         'consumed' => 'int32',
         'remaining' => 'int32',
         'creditable' => 'int32',
-        'periodAmount' => 'int32',
-        'onlineRefundable' => 'int32'
+        'period_amount' => 'int32',
+        'online_refundable' => 'int32'
     ];
 
     /**
@@ -115,8 +115,8 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
         'consumed' => 'consumed',
         'remaining' => 'remaining',
         'creditable' => 'creditable',
-        'periodAmount' => 'period_amount',
-        'onlineRefundable' => 'online_refundable'
+        'period_amount' => 'period_amount',
+        'online_refundable' => 'online_refundable'
     ];
 
     /**
@@ -131,8 +131,8 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
         'consumed' => 'setConsumed',
         'remaining' => 'setRemaining',
         'creditable' => 'setCreditable',
-        'periodAmount' => 'setPeriodAmount',
-        'onlineRefundable' => 'setOnlineRefundable'
+        'period_amount' => 'setPeriodAmount',
+        'online_refundable' => 'setOnlineRefundable'
     ];
 
     /**
@@ -147,8 +147,8 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
         'consumed' => 'getConsumed',
         'remaining' => 'getRemaining',
         'creditable' => 'getCreditable',
-        'periodAmount' => 'getPeriodAmount',
-        'onlineRefundable' => 'getOnlineRefundable'
+        'period_amount' => 'getPeriodAmount',
+        'online_refundable' => 'getOnlineRefundable'
     ];
 
     /**
@@ -215,8 +215,8 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
         $this->container['consumed'] = isset($data['consumed']) ? $data['consumed'] : null;
         $this->container['remaining'] = isset($data['remaining']) ? $data['remaining'] : null;
         $this->container['creditable'] = isset($data['creditable']) ? $data['creditable'] : null;
-        $this->container['periodAmount'] = isset($data['periodAmount']) ? $data['periodAmount'] : null;
-        $this->container['onlineRefundable'] = isset($data['onlineRefundable']) ? $data['onlineRefundable'] : null;
+        $this->container['period_amount'] = isset($data['period_amount']) ? $data['period_amount'] : null;
+        $this->container['online_refundable'] = isset($data['online_refundable']) ? $data['online_refundable'] : null;
     }
 
     /**
@@ -388,49 +388,49 @@ class SubscriptionPeriodBalance implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets periodAmount
+     * Gets period_amount
      *
      * @return int
      */
     public function getPeriodAmount()
     {
-        return $this->container['periodAmount'];
+        return $this->container['period_amount'];
     }
 
     /**
-     * Sets periodAmount
+     * Sets period_amount
      *
-     * @param int $periodAmount Full period amount for period
+     * @param int $period_amount Full period amount for period
      *
      * @return $this
      */
-    public function setPeriodAmount($periodAmount)
+    public function setPeriodAmount($period_amount)
     {
-        $this->container['periodAmount'] = $periodAmount;
+        $this->container['period_amount'] = $period_amount;
 
         return $this;
     }
 
     /**
-     * Gets onlineRefundable
+     * Gets online_refundable
      *
      * @return int
      */
     public function getOnlineRefundable()
     {
-        return $this->container['onlineRefundable'];
+        return $this->container['online_refundable'];
     }
 
     /**
-     * Sets onlineRefundable
+     * Sets online_refundable
      *
-     * @param int $onlineRefundable The amount that can be online refunded on the subscription
+     * @param int $online_refundable The amount that can be online refunded on the subscription
      *
      * @return $this
      */
-    public function setOnlineRefundable($onlineRefundable)
+    public function setOnlineRefundable($online_refundable)
     {
-        $this->container['onlineRefundable'] = $onlineRefundable;
+        $this->container['online_refundable'] = $online_refundable;
 
         return $this;
     }

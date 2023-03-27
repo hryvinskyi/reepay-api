@@ -56,7 +56,7 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'apiKey' => 'string'
+        'api_key' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'apiKey' => null
+        'api_key' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'apiKey' => 'api_key'
+        'api_key' => 'api_key'
     ];
 
     /**
@@ -104,7 +104,7 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'apiKey' => 'setApiKey'
+        'api_key' => 'setApiKey'
     ];
 
     /**
@@ -113,7 +113,7 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'apiKey' => 'getApiKey'
+        'api_key' => 'getApiKey'
     ];
 
     /**
@@ -174,7 +174,7 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['apiKey'] = isset($data['apiKey']) ? $data['apiKey'] : null;
+        $this->container['api_key'] = isset($data['api_key']) ? $data['api_key'] : null;
     }
 
     /**
@@ -202,25 +202,25 @@ class UpdateViabillAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets apiKey
+     * Gets api_key
      *
      * @return string
      */
     public function getApiKey()
     {
-        return $this->container['apiKey'];
+        return $this->container['api_key'];
     }
 
     /**
-     * Sets apiKey
+     * Sets api_key
      *
-     * @param string $apiKey Viabill API key
+     * @param string $api_key Viabill API key
      *
      * @return $this
      */
-    public function setApiKey($apiKey)
+    public function setApiKey($api_key)
     {
-        $this->container['apiKey'] = $apiKey;
+        $this->container['api_key'] = $api_key;
 
         return $this;
     }

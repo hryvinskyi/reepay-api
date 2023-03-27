@@ -64,9 +64,9 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
         'phone' => 'string',
         'company' => 'string',
         'vat' => 'string',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'postalCode' => 'string'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'postal_code' => 'string'
     ];
 
     /**
@@ -83,9 +83,9 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
         'phone' => null,
         'company' => null,
         'vat' => null,
-        'firstName' => null,
-        'lastName' => null,
-        'postalCode' => null
+        'first_name' => null,
+        'last_name' => null,
+        'postal_code' => null
     ];
 
     /**
@@ -123,9 +123,9 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
         'phone' => 'phone',
         'company' => 'company',
         'vat' => 'vat',
-        'firstName' => 'first_name',
-        'lastName' => 'last_name',
-        'postalCode' => 'postal_code'
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'postal_code' => 'postal_code'
     ];
 
     /**
@@ -142,9 +142,9 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
         'phone' => 'setPhone',
         'company' => 'setCompany',
         'vat' => 'setVat',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'postalCode' => 'setPostalCode'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'postal_code' => 'setPostalCode'
     ];
 
     /**
@@ -161,9 +161,9 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
         'phone' => 'getPhone',
         'company' => 'getCompany',
         'vat' => 'getVat',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'postalCode' => 'getPostalCode'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'postal_code' => 'getPostalCode'
     ];
 
     /**
@@ -232,9 +232,9 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['company'] = isset($data['company']) ? $data['company'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
     }
 
     /**
@@ -454,73 +454,73 @@ class UpdateCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName Customer first name
+     * @param string $first_name Customer first name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName Customer last name
+     * @param string $last_name Customer last name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets postalCode
+     * Gets postal_code
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postalCode'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets postalCode
+     * Sets postal_code
      *
-     * @param string $postalCode Customer postal code
+     * @param string $postal_code Customer postal code
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postal_code)
     {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }

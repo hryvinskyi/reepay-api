@@ -64,21 +64,21 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         'handle' => 'string',
         'metadata' => 'map[string,object]',
         'source' => 'string',
-        'createCustomer' => '\Reepay\Model\CreateCustomer',
-        'planVersion' => 'int',
-        'amountInclVat' => 'bool',
-        'generateHandle' => 'bool',
-        'startDate' => 'string',
-        'endDate' => 'string',
-        'graceDuration' => 'int',
-        'noTrial' => 'bool',
-        'noSetupFee' => 'bool',
-        'trialPeriod' => 'string',
-        'subscriptionDiscounts' => '\Reepay\Model\CreateSubscriptionDiscount[]',
-        'couponCodes' => 'string[]',
-        'addOns' => '\Reepay\Model\CreateSubscriptionAddOn[]',
-        'additionalCosts' => '\Reepay\Model\CreateSubscriptionAdditionalCost[]',
-        'signupMethod' => 'string'
+        'create_customer' => '\Reepay\Model\CreateCustomer',
+        'plan_version' => 'int',
+        'amount_incl_vat' => 'bool',
+        'generate_handle' => 'bool',
+        'start_date' => 'string',
+        'end_date' => 'string',
+        'grace_duration' => 'int',
+        'no_trial' => 'bool',
+        'no_setup_fee' => 'bool',
+        'trial_period' => 'string',
+        'subscription_discounts' => '\Reepay\Model\CreateSubscriptionDiscount[]',
+        'coupon_codes' => 'string[]',
+        'add_ons' => '\Reepay\Model\CreateSubscriptionAddOn[]',
+        'additional_costs' => '\Reepay\Model\CreateSubscriptionAdditionalCost[]',
+        'signup_method' => 'string'
     ];
 
     /**
@@ -95,21 +95,21 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         'handle' => null,
         'metadata' => null,
         'source' => null,
-        'createCustomer' => null,
-        'planVersion' => 'int32',
-        'amountInclVat' => null,
-        'generateHandle' => null,
-        'startDate' => null,
-        'endDate' => null,
-        'graceDuration' => 'int64',
-        'noTrial' => null,
-        'noSetupFee' => null,
-        'trialPeriod' => null,
-        'subscriptionDiscounts' => null,
-        'couponCodes' => null,
-        'addOns' => null,
-        'additionalCosts' => null,
-        'signupMethod' => null
+        'create_customer' => null,
+        'plan_version' => 'int32',
+        'amount_incl_vat' => null,
+        'generate_handle' => null,
+        'start_date' => null,
+        'end_date' => null,
+        'grace_duration' => 'int64',
+        'no_trial' => null,
+        'no_setup_fee' => null,
+        'trial_period' => null,
+        'subscription_discounts' => null,
+        'coupon_codes' => null,
+        'add_ons' => null,
+        'additional_costs' => null,
+        'signup_method' => null
     ];
 
     /**
@@ -147,21 +147,21 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         'handle' => 'handle',
         'metadata' => 'metadata',
         'source' => 'source',
-        'createCustomer' => 'create_customer',
-        'planVersion' => 'plan_version',
-        'amountInclVat' => 'amount_incl_vat',
-        'generateHandle' => 'generate_handle',
-        'startDate' => 'start_date',
-        'endDate' => 'end_date',
-        'graceDuration' => 'grace_duration',
-        'noTrial' => 'no_trial',
-        'noSetupFee' => 'no_setup_fee',
-        'trialPeriod' => 'trial_period',
-        'subscriptionDiscounts' => 'subscription_discounts',
-        'couponCodes' => 'coupon_codes',
-        'addOns' => 'add_ons',
-        'additionalCosts' => 'additional_costs',
-        'signupMethod' => 'signup_method'
+        'create_customer' => 'create_customer',
+        'plan_version' => 'plan_version',
+        'amount_incl_vat' => 'amount_incl_vat',
+        'generate_handle' => 'generate_handle',
+        'start_date' => 'start_date',
+        'end_date' => 'end_date',
+        'grace_duration' => 'grace_duration',
+        'no_trial' => 'no_trial',
+        'no_setup_fee' => 'no_setup_fee',
+        'trial_period' => 'trial_period',
+        'subscription_discounts' => 'subscription_discounts',
+        'coupon_codes' => 'coupon_codes',
+        'add_ons' => 'add_ons',
+        'additional_costs' => 'additional_costs',
+        'signup_method' => 'signup_method'
     ];
 
     /**
@@ -178,21 +178,21 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         'handle' => 'setHandle',
         'metadata' => 'setMetadata',
         'source' => 'setSource',
-        'createCustomer' => 'setCreateCustomer',
-        'planVersion' => 'setPlanVersion',
-        'amountInclVat' => 'setAmountInclVat',
-        'generateHandle' => 'setGenerateHandle',
-        'startDate' => 'setStartDate',
-        'endDate' => 'setEndDate',
-        'graceDuration' => 'setGraceDuration',
-        'noTrial' => 'setNoTrial',
-        'noSetupFee' => 'setNoSetupFee',
-        'trialPeriod' => 'setTrialPeriod',
-        'subscriptionDiscounts' => 'setSubscriptionDiscounts',
-        'couponCodes' => 'setCouponCodes',
-        'addOns' => 'setAddOns',
-        'additionalCosts' => 'setAdditionalCosts',
-        'signupMethod' => 'setSignupMethod'
+        'create_customer' => 'setCreateCustomer',
+        'plan_version' => 'setPlanVersion',
+        'amount_incl_vat' => 'setAmountInclVat',
+        'generate_handle' => 'setGenerateHandle',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'grace_duration' => 'setGraceDuration',
+        'no_trial' => 'setNoTrial',
+        'no_setup_fee' => 'setNoSetupFee',
+        'trial_period' => 'setTrialPeriod',
+        'subscription_discounts' => 'setSubscriptionDiscounts',
+        'coupon_codes' => 'setCouponCodes',
+        'add_ons' => 'setAddOns',
+        'additional_costs' => 'setAdditionalCosts',
+        'signup_method' => 'setSignupMethod'
     ];
 
     /**
@@ -209,21 +209,21 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         'handle' => 'getHandle',
         'metadata' => 'getMetadata',
         'source' => 'getSource',
-        'createCustomer' => 'getCreateCustomer',
-        'planVersion' => 'getPlanVersion',
-        'amountInclVat' => 'getAmountInclVat',
-        'generateHandle' => 'getGenerateHandle',
-        'startDate' => 'getStartDate',
-        'endDate' => 'getEndDate',
-        'graceDuration' => 'getGraceDuration',
-        'noTrial' => 'getNoTrial',
-        'noSetupFee' => 'getNoSetupFee',
-        'trialPeriod' => 'getTrialPeriod',
-        'subscriptionDiscounts' => 'getSubscriptionDiscounts',
-        'couponCodes' => 'getCouponCodes',
-        'addOns' => 'getAddOns',
-        'additionalCosts' => 'getAdditionalCosts',
-        'signupMethod' => 'getSignupMethod'
+        'create_customer' => 'getCreateCustomer',
+        'plan_version' => 'getPlanVersion',
+        'amount_incl_vat' => 'getAmountInclVat',
+        'generate_handle' => 'getGenerateHandle',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'grace_duration' => 'getGraceDuration',
+        'no_trial' => 'getNoTrial',
+        'no_setup_fee' => 'getNoSetupFee',
+        'trial_period' => 'getTrialPeriod',
+        'subscription_discounts' => 'getSubscriptionDiscounts',
+        'coupon_codes' => 'getCouponCodes',
+        'add_ons' => 'getAddOns',
+        'additional_costs' => 'getAdditionalCosts',
+        'signup_method' => 'getSignupMethod'
     ];
 
     /**
@@ -292,21 +292,21 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['createCustomer'] = isset($data['createCustomer']) ? $data['createCustomer'] : null;
-        $this->container['planVersion'] = isset($data['planVersion']) ? $data['planVersion'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
-        $this->container['generateHandle'] = isset($data['generateHandle']) ? $data['generateHandle'] : null;
-        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
-        $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
-        $this->container['graceDuration'] = isset($data['graceDuration']) ? $data['graceDuration'] : null;
-        $this->container['noTrial'] = isset($data['noTrial']) ? $data['noTrial'] : null;
-        $this->container['noSetupFee'] = isset($data['noSetupFee']) ? $data['noSetupFee'] : null;
-        $this->container['trialPeriod'] = isset($data['trialPeriod']) ? $data['trialPeriod'] : null;
-        $this->container['subscriptionDiscounts'] = isset($data['subscriptionDiscounts']) ? $data['subscriptionDiscounts'] : null;
-        $this->container['couponCodes'] = isset($data['couponCodes']) ? $data['couponCodes'] : null;
-        $this->container['addOns'] = isset($data['addOns']) ? $data['addOns'] : null;
-        $this->container['additionalCosts'] = isset($data['additionalCosts']) ? $data['additionalCosts'] : null;
-        $this->container['signupMethod'] = isset($data['signupMethod']) ? $data['signupMethod'] : null;
+        $this->container['create_customer'] = isset($data['create_customer']) ? $data['create_customer'] : null;
+        $this->container['plan_version'] = isset($data['plan_version']) ? $data['plan_version'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['generate_handle'] = isset($data['generate_handle']) ? $data['generate_handle'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['grace_duration'] = isset($data['grace_duration']) ? $data['grace_duration'] : null;
+        $this->container['no_trial'] = isset($data['no_trial']) ? $data['no_trial'] : null;
+        $this->container['no_setup_fee'] = isset($data['no_setup_fee']) ? $data['no_setup_fee'] : null;
+        $this->container['trial_period'] = isset($data['trial_period']) ? $data['trial_period'] : null;
+        $this->container['subscription_discounts'] = isset($data['subscription_discounts']) ? $data['subscription_discounts'] : null;
+        $this->container['coupon_codes'] = isset($data['coupon_codes']) ? $data['coupon_codes'] : null;
+        $this->container['add_ons'] = isset($data['add_ons']) ? $data['add_ons'] : null;
+        $this->container['additional_costs'] = isset($data['additional_costs']) ? $data['additional_costs'] : null;
+        $this->container['signup_method'] = isset($data['signup_method']) ? $data['signup_method'] : null;
     }
 
     /**
@@ -321,8 +321,8 @@ class CreateSubscription implements ModelInterface, ArrayAccess
         if ($this->container['plan'] === null) {
             $invalidProperties[] = "'plan' can't be null";
         }
-        if ($this->container['signupMethod'] === null) {
-            $invalidProperties[] = "'signupMethod' can't be null";
+        if ($this->container['signup_method'] === null) {
+            $invalidProperties[] = "'signup_method' can't be null";
         }
         return $invalidProperties;
     }
@@ -532,361 +532,361 @@ class CreateSubscription implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets createCustomer
+     * Gets create_customer
      *
      * @return \Reepay\Model\CreateCustomer
      */
     public function getCreateCustomer()
     {
-        return $this->container['createCustomer'];
+        return $this->container['create_customer'];
     }
 
     /**
-     * Sets createCustomer
+     * Sets create_customer
      *
-     * @param \Reepay\Model\CreateCustomer $createCustomer createCustomer
+     * @param \Reepay\Model\CreateCustomer $create_customer create_customer
      *
      * @return $this
      */
-    public function setCreateCustomer($createCustomer)
+    public function setCreateCustomer($create_customer)
     {
-        $this->container['createCustomer'] = $createCustomer;
+        $this->container['create_customer'] = $create_customer;
 
         return $this;
     }
 
     /**
-     * Gets planVersion
+     * Gets plan_version
      *
      * @return int
      */
     public function getPlanVersion()
     {
-        return $this->container['planVersion'];
+        return $this->container['plan_version'];
     }
 
     /**
-     * Sets planVersion
+     * Sets plan_version
      *
-     * @param int $planVersion Optional plan version, default is to use newest version of plan
+     * @param int $plan_version Optional plan version, default is to use newest version of plan
      *
      * @return $this
      */
-    public function setPlanVersion($planVersion)
+    public function setPlanVersion($plan_version)
     {
-        $this->container['planVersion'] = $planVersion;
+        $this->container['plan_version'] = $plan_version;
 
         return $this;
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the optional amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the optional amount is including VAT. Defaults to true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets generateHandle
+     * Gets generate_handle
      *
      * @return bool
      */
     public function getGenerateHandle()
     {
-        return $this->container['generateHandle'];
+        return $this->container['generate_handle'];
     }
 
     /**
-     * Sets generateHandle
+     * Sets generate_handle
      *
-     * @param bool $generateHandle Auto generate handle on the form sub-[sequence_number]
+     * @param bool $generate_handle Auto generate handle on the form sub-[sequence_number]
      *
      * @return $this
      */
-    public function setGenerateHandle($generateHandle)
+    public function setGenerateHandle($generate_handle)
     {
-        $this->container['generateHandle'] = $generateHandle;
+        $this->container['generate_handle'] = $generate_handle;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return string
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param string $startDate Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` from which the subscription is eligible to schedule first invoice. If no time part is given start of day will be used. A start date in the past can be used, but no more than one period length in the past. A start date in the past can result in an instant invoice for a past billing period start. Default value is current date and time.
+     * @param string $start_date Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` from which the subscription is eligible to schedule first invoice. If no time part is given start of day will be used. A start date in the past can be used, but no more than one period length in the past. A start date in the past can result in an instant invoice for a past billing period start. Default value is current date and time.
      *
      * @return $this
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets endDate
+     * Gets end_date
      *
      * @return string
      */
     public function getEndDate()
     {
-        return $this->container['endDate'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets endDate
+     * Sets end_date
      *
-     * @param string $endDate Fixed date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` where the subscription will automatically cancel. The subscription will expire at the end of the billing period containing the end date. Default is no fixed end date.
+     * @param string $end_date Fixed date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` where the subscription will automatically cancel. The subscription will expire at the end of the billing period containing the end date. Default is no fixed end date.
      *
      * @return $this
      */
-    public function setEndDate($endDate)
+    public function setEndDate($end_date)
     {
-        $this->container['endDate'] = $endDate;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
 
     /**
-     * Gets graceDuration
+     * Gets grace_duration
      *
      * @return int
      */
     public function getGraceDuration()
     {
-        return $this->container['graceDuration'];
+        return $this->container['grace_duration'];
     }
 
     /**
-     * Sets graceDuration
+     * Sets grace_duration
      *
-     * @param int $graceDuration A grace duration in seconds from the creation of a subscription where no dunning process is started for a failing invoice. This allows a certain amount of time for the customer to sign up with a payment method.
+     * @param int $grace_duration A grace duration in seconds from the creation of a subscription where no dunning process is started for a failing invoice. This allows a certain amount of time for the customer to sign up with a payment method.
      *
      * @return $this
      */
-    public function setGraceDuration($graceDuration)
+    public function setGraceDuration($grace_duration)
     {
-        $this->container['graceDuration'] = $graceDuration;
+        $this->container['grace_duration'] = $grace_duration;
 
         return $this;
     }
 
     /**
-     * Gets noTrial
+     * Gets no_trial
      *
      * @return bool
      */
     public function getNoTrial()
     {
-        return $this->container['noTrial'];
+        return $this->container['no_trial'];
     }
 
     /**
-     * Sets noTrial
+     * Sets no_trial
      *
-     * @param bool $noTrial Override plan trial settings and disable trial
+     * @param bool $no_trial Override plan trial settings and disable trial
      *
      * @return $this
      */
-    public function setNoTrial($noTrial)
+    public function setNoTrial($no_trial)
     {
-        $this->container['noTrial'] = $noTrial;
+        $this->container['no_trial'] = $no_trial;
 
         return $this;
     }
 
     /**
-     * Gets noSetupFee
+     * Gets no_setup_fee
      *
      * @return bool
      */
     public function getNoSetupFee()
     {
-        return $this->container['noSetupFee'];
+        return $this->container['no_setup_fee'];
     }
 
     /**
-     * Sets noSetupFee
+     * Sets no_setup_fee
      *
-     * @param bool $noSetupFee Override plan setup fee settings and disable fee
+     * @param bool $no_setup_fee Override plan setup fee settings and disable fee
      *
      * @return $this
      */
-    public function setNoSetupFee($noSetupFee)
+    public function setNoSetupFee($no_setup_fee)
     {
-        $this->container['noSetupFee'] = $noSetupFee;
+        $this->container['no_setup_fee'] = $no_setup_fee;
 
         return $this;
     }
 
     /**
-     * Gets trialPeriod
+     * Gets trial_period
      *
      * @return string
      */
     public function getTrialPeriod()
     {
-        return $this->container['trialPeriod'];
+        return $this->container['trial_period'];
     }
 
     /**
-     * Sets trialPeriod
+     * Sets trial_period
      *
-     * @param string $trialPeriod Optional custom trial period overriding the setting on the subscription plan. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations. E.g. `P7D` for seven days or `P1M` for one month.
+     * @param string $trial_period Optional custom trial period overriding the setting on the subscription plan. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations. E.g. `P7D` for seven days or `P1M` for one month.
      *
      * @return $this
      */
-    public function setTrialPeriod($trialPeriod)
+    public function setTrialPeriod($trial_period)
     {
-        $this->container['trialPeriod'] = $trialPeriod;
+        $this->container['trial_period'] = $trial_period;
 
         return $this;
     }
 
     /**
-     * Gets subscriptionDiscounts
+     * Gets subscription_discounts
      *
      * @return \Reepay\Model\CreateSubscriptionDiscount[]
      */
     public function getSubscriptionDiscounts()
     {
-        return $this->container['subscriptionDiscounts'];
+        return $this->container['subscription_discounts'];
     }
 
     /**
-     * Sets subscriptionDiscounts
+     * Sets subscription_discounts
      *
-     * @param \Reepay\Model\CreateSubscriptionDiscount[] $subscriptionDiscounts Discounts to attach to subscription. A maximum of 100 discounts is allowed.
+     * @param \Reepay\Model\CreateSubscriptionDiscount[] $subscription_discounts Discounts to attach to subscription. A maximum of 100 discounts is allowed.
      *
      * @return $this
      */
-    public function setSubscriptionDiscounts($subscriptionDiscounts)
+    public function setSubscriptionDiscounts($subscription_discounts)
     {
-        $this->container['subscriptionDiscounts'] = $subscriptionDiscounts;
+        $this->container['subscription_discounts'] = $subscription_discounts;
 
         return $this;
     }
 
     /**
-     * Gets couponCodes
+     * Gets coupon_codes
      *
      * @return string[]
      */
     public function getCouponCodes()
     {
-        return $this->container['couponCodes'];
+        return $this->container['coupon_codes'];
     }
 
     /**
-     * Sets couponCodes
+     * Sets coupon_codes
      *
-     * @param string[] $couponCodes Coupon codes to redeem for subscription
+     * @param string[] $coupon_codes Coupon codes to redeem for subscription
      *
      * @return $this
      */
-    public function setCouponCodes($couponCodes)
+    public function setCouponCodes($coupon_codes)
     {
-        $this->container['couponCodes'] = $couponCodes;
+        $this->container['coupon_codes'] = $coupon_codes;
 
         return $this;
     }
 
     /**
-     * Gets addOns
+     * Gets add_ons
      *
      * @return \Reepay\Model\CreateSubscriptionAddOn[]
      */
     public function getAddOns()
     {
-        return $this->container['addOns'];
+        return $this->container['add_ons'];
     }
 
     /**
-     * Sets addOns
+     * Sets add_ons
      *
-     * @param \Reepay\Model\CreateSubscriptionAddOn[] $addOns Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on. A maximum of 100 add-ons is allowed.
+     * @param \Reepay\Model\CreateSubscriptionAddOn[] $add_ons Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on. A maximum of 100 add-ons is allowed.
      *
      * @return $this
      */
-    public function setAddOns($addOns)
+    public function setAddOns($add_ons)
     {
-        $this->container['addOns'] = $addOns;
+        $this->container['add_ons'] = $add_ons;
 
         return $this;
     }
 
     /**
-     * Gets additionalCosts
+     * Gets additional_costs
      *
      * @return \Reepay\Model\CreateSubscriptionAdditionalCost[]
      */
     public function getAdditionalCosts()
     {
-        return $this->container['additionalCosts'];
+        return $this->container['additional_costs'];
     }
 
     /**
-     * Sets additionalCosts
+     * Sets additional_costs
      *
-     * @param \Reepay\Model\CreateSubscriptionAdditionalCost[] $additionalCosts Additional costs to add to subscription at creation time. A maximum of 100 additional costs is allowed.
+     * @param \Reepay\Model\CreateSubscriptionAdditionalCost[] $additional_costs Additional costs to add to subscription at creation time. A maximum of 100 additional costs is allowed.
      *
      * @return $this
      */
-    public function setAdditionalCosts($additionalCosts)
+    public function setAdditionalCosts($additional_costs)
     {
-        $this->container['additionalCosts'] = $additionalCosts;
+        $this->container['additional_costs'] = $additional_costs;
 
         return $this;
     }
 
     /**
-     * Gets signupMethod
+     * Gets signup_method
      *
      * @return string
      */
     public function getSignupMethod()
     {
-        return $this->container['signupMethod'];
+        return $this->container['signup_method'];
     }
 
     /**
-     * Sets signupMethod
+     * Sets signup_method
      *
-     * @param string $signupMethod The signup method, how to get payment information from customer, one of the following: `source`, `email`, `link`. The `source` method takes a reference to an existing customer payment method (e.g. card `ca_..`) or a card token for `ct_...`. The method `email` will send an email to customer requesting payment information with a link to a hosted page. The method `link` does not do anything but the hosted page link in the subscription object can be provided to the customer as a link to enter payment information.
+     * @param string $signup_method The signup method, how to get payment information from customer, one of the following: `source`, `email`, `link`. The `source` method takes a reference to an existing customer payment method (e.g. card `ca_..`) or a card token for `ct_...`. The method `email` will send an email to customer requesting payment information with a link to a hosted page. The method `link` does not do anything but the hosted page link in the subscription object can be provided to the customer as a link to enter payment information.
      *
      * @return $this
      */
-    public function setSignupMethod($signupMethod)
+    public function setSignupMethod($signup_method)
     {
-        $this->container['signupMethod'] = $signupMethod;
+        $this->container['signup_method'] = $signup_method;
 
         return $this;
     }

@@ -62,10 +62,10 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
         'description' => 'string',
         'amount' => 'int',
         'percentage' => 'int',
-        'applyTo' => 'string[]',
-        'fixedCount' => 'int',
-        'fixedPeriodUnit' => 'string',
-        'fixedPeriod' => 'int'
+        'apply_to' => 'string[]',
+        'fixed_count' => 'int',
+        'fixed_period_unit' => 'string',
+        'fixed_period' => 'int'
     ];
 
     /**
@@ -80,10 +80,10 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
         'description' => null,
         'amount' => 'int32',
         'percentage' => 'int32',
-        'applyTo' => null,
-        'fixedCount' => 'int32',
-        'fixedPeriodUnit' => null,
-        'fixedPeriod' => 'int32'
+        'apply_to' => null,
+        'fixed_count' => 'int32',
+        'fixed_period_unit' => null,
+        'fixed_period' => 'int32'
     ];
 
     /**
@@ -119,10 +119,10 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
         'description' => 'description',
         'amount' => 'amount',
         'percentage' => 'percentage',
-        'applyTo' => 'apply_to',
-        'fixedCount' => 'fixed_count',
-        'fixedPeriodUnit' => 'fixed_period_unit',
-        'fixedPeriod' => 'fixed_period'
+        'apply_to' => 'apply_to',
+        'fixed_count' => 'fixed_count',
+        'fixed_period_unit' => 'fixed_period_unit',
+        'fixed_period' => 'fixed_period'
     ];
 
     /**
@@ -137,10 +137,10 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
         'description' => 'setDescription',
         'amount' => 'setAmount',
         'percentage' => 'setPercentage',
-        'applyTo' => 'setApplyTo',
-        'fixedCount' => 'setFixedCount',
-        'fixedPeriodUnit' => 'setFixedPeriodUnit',
-        'fixedPeriod' => 'setFixedPeriod'
+        'apply_to' => 'setApplyTo',
+        'fixed_count' => 'setFixedCount',
+        'fixed_period_unit' => 'setFixedPeriodUnit',
+        'fixed_period' => 'setFixedPeriod'
     ];
 
     /**
@@ -155,10 +155,10 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
         'description' => 'getDescription',
         'amount' => 'getAmount',
         'percentage' => 'getPercentage',
-        'applyTo' => 'getApplyTo',
-        'fixedCount' => 'getFixedCount',
-        'fixedPeriodUnit' => 'getFixedPeriodUnit',
-        'fixedPeriod' => 'getFixedPeriod'
+        'apply_to' => 'getApplyTo',
+        'fixed_count' => 'getFixedCount',
+        'fixed_period_unit' => 'getFixedPeriodUnit',
+        'fixed_period' => 'getFixedPeriod'
     ];
 
     /**
@@ -239,10 +239,10 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
-        $this->container['applyTo'] = isset($data['applyTo']) ? $data['applyTo'] : null;
-        $this->container['fixedCount'] = isset($data['fixedCount']) ? $data['fixedCount'] : null;
-        $this->container['fixedPeriodUnit'] = isset($data['fixedPeriodUnit']) ? $data['fixedPeriodUnit'] : null;
-        $this->container['fixedPeriod'] = isset($data['fixedPeriod']) ? $data['fixedPeriod'] : null;
+        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
+        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
+        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
+        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
     }
 
     /**
@@ -261,9 +261,13 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'discount' can't be null";
         }
         $allowedValues = $this->getFixedPeriodUnitAllowableValues();
-        if (!is_null($this->container['fixedPeriodUnit']) && !in_array($this->container['fixedPeriodUnit'], $allowedValues, true)) {
+        if (!is_null($this->container['fixed_period_unit']) && !in_array(
+                $this->container['fixed_period_unit'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'fixedPeriodUnit', must be one of '%s'",
+                "invalid value for 'fixed_period_unit', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -428,106 +432,106 @@ class CreateSubscriptionDiscount implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets applyTo
+     * Gets apply_to
      *
      * @return string[]
      */
     public function getApplyTo()
     {
-        return $this->container['applyTo'];
+        return $this->container['apply_to'];
     }
 
     /**
-     * Sets applyTo
+     * Sets apply_to
      *
-     * @param string[] $applyTo Optional overriding discount settings
+     * @param string[] $apply_to Optional overriding discount settings
      *
      * @return $this
      */
-    public function setApplyTo($applyTo)
+    public function setApplyTo($apply_to)
     {
-        $this->container['applyTo'] = $applyTo;
+        $this->container['apply_to'] = $apply_to;
 
         return $this;
     }
 
     /**
-     * Gets fixedCount
+     * Gets fixed_count
      *
      * @return int
      */
     public function getFixedCount()
     {
-        return $this->container['fixedCount'];
+        return $this->container['fixed_count'];
     }
 
     /**
-     * Sets fixedCount
+     * Sets fixed_count
      *
-     * @param int $fixedCount Optional overriding discount settings
+     * @param int $fixed_count Optional overriding discount settings
      *
      * @return $this
      */
-    public function setFixedCount($fixedCount)
+    public function setFixedCount($fixed_count)
     {
-        $this->container['fixedCount'] = $fixedCount;
+        $this->container['fixed_count'] = $fixed_count;
 
         return $this;
     }
 
     /**
-     * Gets fixedPeriodUnit
+     * Gets fixed_period_unit
      *
      * @return string
      */
     public function getFixedPeriodUnit()
     {
-        return $this->container['fixedPeriodUnit'];
+        return $this->container['fixed_period_unit'];
     }
 
     /**
-     * Sets fixedPeriodUnit
+     * Sets fixed_period_unit
      *
-     * @param string $fixedPeriodUnit Optional overriding discount settings
+     * @param string $fixed_period_unit Optional overriding discount settings
      *
      * @return $this
      */
-    public function setFixedPeriodUnit($fixedPeriodUnit)
+    public function setFixedPeriodUnit($fixed_period_unit)
     {
         $allowedValues = $this->getFixedPeriodUnitAllowableValues();
-        if (!is_null($fixedPeriodUnit) && !in_array($fixedPeriodUnit, $allowedValues, true)) {
+        if (!is_null($fixed_period_unit) && !in_array($fixed_period_unit, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'fixedPeriodUnit', must be one of '%s'",
+                    "Invalid value for 'fixed_period_unit', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['fixedPeriodUnit'] = $fixedPeriodUnit;
+        $this->container['fixed_period_unit'] = $fixed_period_unit;
 
         return $this;
     }
 
     /**
-     * Gets fixedPeriod
+     * Gets fixed_period
      *
      * @return int
      */
     public function getFixedPeriod()
     {
-        return $this->container['fixedPeriod'];
+        return $this->container['fixed_period'];
     }
 
     /**
-     * Sets fixedPeriod
+     * Sets fixed_period
      *
-     * @param int $fixedPeriod Optional overriding discount settings
+     * @param int $fixed_period Optional overriding discount settings
      *
      * @return $this
      */
-    public function setFixedPeriod($fixedPeriod)
+    public function setFixedPeriod($fixed_period)
     {
-        $this->container['fixedPeriod'] = $fixedPeriod;
+        $this->container['fixed_period'] = $fixed_period;
 
         return $this;
     }

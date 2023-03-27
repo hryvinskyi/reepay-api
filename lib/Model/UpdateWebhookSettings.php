@@ -60,9 +60,9 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
         'username' => 'string',
         'password' => 'string',
         'disabled' => 'bool',
-        'alertEmails' => 'string[]',
-        'alertCount' => 'int',
-        'eventTypes' => 'string[]'
+        'alert_emails' => 'string[]',
+        'alert_count' => 'int',
+        'event_types' => 'string[]'
     ];
 
     /**
@@ -75,9 +75,9 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
         'username' => null,
         'password' => null,
         'disabled' => null,
-        'alertEmails' => null,
-        'alertCount' => 'int32',
-        'eventTypes' => null
+        'alert_emails' => null,
+        'alert_count' => 'int32',
+        'event_types' => null
     ];
 
     /**
@@ -111,9 +111,9 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
         'username' => 'username',
         'password' => 'password',
         'disabled' => 'disabled',
-        'alertEmails' => 'alert_emails',
-        'alertCount' => 'alert_count',
-        'eventTypes' => 'event_types'
+        'alert_emails' => 'alert_emails',
+        'alert_count' => 'alert_count',
+        'event_types' => 'event_types'
     ];
 
     /**
@@ -126,9 +126,9 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
         'username' => 'setUsername',
         'password' => 'setPassword',
         'disabled' => 'setDisabled',
-        'alertEmails' => 'setAlertEmails',
-        'alertCount' => 'setAlertCount',
-        'eventTypes' => 'setEventTypes'
+        'alert_emails' => 'setAlertEmails',
+        'alert_count' => 'setAlertCount',
+        'event_types' => 'setEventTypes'
     ];
 
     /**
@@ -141,9 +141,9 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
         'username' => 'getUsername',
         'password' => 'getPassword',
         'disabled' => 'getDisabled',
-        'alertEmails' => 'getAlertEmails',
-        'alertCount' => 'getAlertCount',
-        'eventTypes' => 'getEventTypes'
+        'alert_emails' => 'getAlertEmails',
+        'alert_count' => 'getAlertCount',
+        'event_types' => 'getEventTypes'
     ];
 
     /**
@@ -208,9 +208,9 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['disabled'] = isset($data['disabled']) ? $data['disabled'] : null;
-        $this->container['alertEmails'] = isset($data['alertEmails']) ? $data['alertEmails'] : null;
-        $this->container['alertCount'] = isset($data['alertCount']) ? $data['alertCount'] : null;
-        $this->container['eventTypes'] = isset($data['eventTypes']) ? $data['eventTypes'] : null;
+        $this->container['alert_emails'] = isset($data['alert_emails']) ? $data['alert_emails'] : null;
+        $this->container['alert_count'] = isset($data['alert_count']) ? $data['alert_count'] : null;
+        $this->container['event_types'] = isset($data['event_types']) ? $data['event_types'] : null;
     }
 
     /**
@@ -340,73 +340,73 @@ class UpdateWebhookSettings implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets alertEmails
+     * Gets alert_emails
      *
      * @return string[]
      */
     public function getAlertEmails()
     {
-        return $this->container['alertEmails'];
+        return $this->container['alert_emails'];
     }
 
     /**
-     * Sets alertEmails
+     * Sets alert_emails
      *
-     * @param string[] $alertEmails Optional list of emails to send alert to if webhook fails
+     * @param string[] $alert_emails Optional list of emails to send alert to if webhook fails
      *
      * @return $this
      */
-    public function setAlertEmails($alertEmails)
+    public function setAlertEmails($alert_emails)
     {
-        $this->container['alertEmails'] = $alertEmails;
+        $this->container['alert_emails'] = $alert_emails;
 
         return $this;
     }
 
     /**
-     * Gets alertCount
+     * Gets alert_count
      *
      * @return int
      */
     public function getAlertCount()
     {
-        return $this->container['alertCount'];
+        return $this->container['alert_count'];
     }
 
     /**
-     * Sets alertCount
+     * Sets alert_count
      *
-     * @param int $alertCount Number of requests to perform before alert email is sent, must be greater than or equal to four (1 hour)
+     * @param int $alert_count Number of requests to perform before alert email is sent, must be greater than or equal to four (1 hour)
      *
      * @return $this
      */
-    public function setAlertCount($alertCount)
+    public function setAlertCount($alert_count)
     {
-        $this->container['alertCount'] = $alertCount;
+        $this->container['alert_count'] = $alert_count;
 
         return $this;
     }
 
     /**
-     * Gets eventTypes
+     * Gets event_types
      *
      * @return string[]
      */
     public function getEventTypes()
     {
-        return $this->container['eventTypes'];
+        return $this->container['event_types'];
     }
 
     /**
-     * Sets eventTypes
+     * Sets event_types
      *
-     * @param string[] $eventTypes List of event types to receive. See documentation for valid event types.
+     * @param string[] $event_types List of event types to receive. See documentation for valid event types.
      *
      * @return $this
      */
-    public function setEventTypes($eventTypes)
+    public function setEventTypes($event_types)
     {
-        $this->container['eventTypes'] = $eventTypes;
+        $this->container['event_types'] = $event_types;
 
         return $this;
     }

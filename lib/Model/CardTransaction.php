@@ -60,24 +60,24 @@ class CardTransaction implements ModelInterface, ArrayAccess
         'error' => 'string',
         'fingerprint' => 'string',
         'provider' => 'string',
-        'refTransaction' => 'string',
-        'gwId' => 'string',
-        'lastFailed' => '\DateTime',
-        'firstFailed' => '\DateTime',
-        'errorState' => 'string',
-        'cardType' => 'string',
-        'transactionCardType' => 'string',
-        'expDate' => 'string',
-        'maskedCard' => 'string',
-        'cardCountry' => 'string',
-        'strongAuthenticationStatus' => 'string',
-        'threeDSecureStatus' => 'string',
-        'riskRule' => 'string',
-        'acquirerCode' => 'string',
-        'acquirerMessage' => 'string',
-        'acquirerReference' => 'string',
-        'textOnStatement' => 'string',
-        'surchargeFee' => 'int'
+        'ref_transaction' => 'string',
+        'gw_id' => 'string',
+        'last_failed' => '\DateTime',
+        'first_failed' => '\DateTime',
+        'error_state' => 'string',
+        'card_type' => 'string',
+        'transaction_card_type' => 'string',
+        'exp_date' => 'string',
+        'masked_card' => 'string',
+        'card_country' => 'string',
+        'strong_authentication_status' => 'string',
+        'three_d_secure_status' => 'string',
+        'risk_rule' => 'string',
+        'acquirer_code' => 'string',
+        'acquirer_message' => 'string',
+        'acquirer_reference' => 'string',
+        'text_on_statement' => 'string',
+        'surcharge_fee' => 'int'
     ];
 
     /**
@@ -90,24 +90,24 @@ class CardTransaction implements ModelInterface, ArrayAccess
         'error' => null,
         'fingerprint' => null,
         'provider' => null,
-        'refTransaction' => null,
-        'gwId' => null,
-        'lastFailed' => 'date-time',
-        'firstFailed' => 'date-time',
-        'errorState' => null,
-        'cardType' => null,
-        'transactionCardType' => null,
-        'expDate' => null,
-        'maskedCard' => null,
-        'cardCountry' => null,
-        'strongAuthenticationStatus' => null,
-        'threeDSecureStatus' => null,
-        'riskRule' => null,
-        'acquirerCode' => null,
-        'acquirerMessage' => null,
-        'acquirerReference' => null,
-        'textOnStatement' => null,
-        'surchargeFee' => 'int32'
+        'ref_transaction' => null,
+        'gw_id' => null,
+        'last_failed' => 'date-time',
+        'first_failed' => 'date-time',
+        'error_state' => null,
+        'card_type' => null,
+        'transaction_card_type' => null,
+        'exp_date' => null,
+        'masked_card' => null,
+        'card_country' => null,
+        'strong_authentication_status' => null,
+        'three_d_secure_status' => null,
+        'risk_rule' => null,
+        'acquirer_code' => null,
+        'acquirer_message' => null,
+        'acquirer_reference' => null,
+        'text_on_statement' => null,
+        'surcharge_fee' => 'int32'
     ];
 
     /**
@@ -141,24 +141,24 @@ class CardTransaction implements ModelInterface, ArrayAccess
         'error' => 'error',
         'fingerprint' => 'fingerprint',
         'provider' => 'provider',
-        'refTransaction' => 'ref_transaction',
-        'gwId' => 'gw_id',
-        'lastFailed' => 'last_failed',
-        'firstFailed' => 'first_failed',
-        'errorState' => 'error_state',
-        'cardType' => 'card_type',
-        'transactionCardType' => 'transaction_card_type',
-        'expDate' => 'exp_date',
-        'maskedCard' => 'masked_card',
-        'cardCountry' => 'card_country',
-        'strongAuthenticationStatus' => 'strong_authentication_status',
-        'threeDSecureStatus' => 'three_d_secure_status',
-        'riskRule' => 'risk_rule',
-        'acquirerCode' => 'acquirer_code',
-        'acquirerMessage' => 'acquirer_message',
-        'acquirerReference' => 'acquirer_reference',
-        'textOnStatement' => 'text_on_statement',
-        'surchargeFee' => 'surcharge_fee'
+        'ref_transaction' => 'ref_transaction',
+        'gw_id' => 'gw_id',
+        'last_failed' => 'last_failed',
+        'first_failed' => 'first_failed',
+        'error_state' => 'error_state',
+        'card_type' => 'card_type',
+        'transaction_card_type' => 'transaction_card_type',
+        'exp_date' => 'exp_date',
+        'masked_card' => 'masked_card',
+        'card_country' => 'card_country',
+        'strong_authentication_status' => 'strong_authentication_status',
+        'three_d_secure_status' => 'three_d_secure_status',
+        'risk_rule' => 'risk_rule',
+        'acquirer_code' => 'acquirer_code',
+        'acquirer_message' => 'acquirer_message',
+        'acquirer_reference' => 'acquirer_reference',
+        'text_on_statement' => 'text_on_statement',
+        'surcharge_fee' => 'surcharge_fee'
     ];
 
     /**
@@ -171,24 +171,24 @@ class CardTransaction implements ModelInterface, ArrayAccess
         'error' => 'setError',
         'fingerprint' => 'setFingerprint',
         'provider' => 'setProvider',
-        'refTransaction' => 'setRefTransaction',
-        'gwId' => 'setGwId',
-        'lastFailed' => 'setLastFailed',
-        'firstFailed' => 'setFirstFailed',
-        'errorState' => 'setErrorState',
-        'cardType' => 'setCardType',
-        'transactionCardType' => 'setTransactionCardType',
-        'expDate' => 'setExpDate',
-        'maskedCard' => 'setMaskedCard',
-        'cardCountry' => 'setCardCountry',
-        'strongAuthenticationStatus' => 'setStrongAuthenticationStatus',
-        'threeDSecureStatus' => 'setThreeDSecureStatus',
-        'riskRule' => 'setRiskRule',
-        'acquirerCode' => 'setAcquirerCode',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'acquirerReference' => 'setAcquirerReference',
-        'textOnStatement' => 'setTextOnStatement',
-        'surchargeFee' => 'setSurchargeFee'
+        'ref_transaction' => 'setRefTransaction',
+        'gw_id' => 'setGwId',
+        'last_failed' => 'setLastFailed',
+        'first_failed' => 'setFirstFailed',
+        'error_state' => 'setErrorState',
+        'card_type' => 'setCardType',
+        'transaction_card_type' => 'setTransactionCardType',
+        'exp_date' => 'setExpDate',
+        'masked_card' => 'setMaskedCard',
+        'card_country' => 'setCardCountry',
+        'strong_authentication_status' => 'setStrongAuthenticationStatus',
+        'three_d_secure_status' => 'setThreeDSecureStatus',
+        'risk_rule' => 'setRiskRule',
+        'acquirer_code' => 'setAcquirerCode',
+        'acquirer_message' => 'setAcquirerMessage',
+        'acquirer_reference' => 'setAcquirerReference',
+        'text_on_statement' => 'setTextOnStatement',
+        'surcharge_fee' => 'setSurchargeFee'
     ];
 
     /**
@@ -201,24 +201,24 @@ class CardTransaction implements ModelInterface, ArrayAccess
         'error' => 'getError',
         'fingerprint' => 'getFingerprint',
         'provider' => 'getProvider',
-        'refTransaction' => 'getRefTransaction',
-        'gwId' => 'getGwId',
-        'lastFailed' => 'getLastFailed',
-        'firstFailed' => 'getFirstFailed',
-        'errorState' => 'getErrorState',
-        'cardType' => 'getCardType',
-        'transactionCardType' => 'getTransactionCardType',
-        'expDate' => 'getExpDate',
-        'maskedCard' => 'getMaskedCard',
-        'cardCountry' => 'getCardCountry',
-        'strongAuthenticationStatus' => 'getStrongAuthenticationStatus',
-        'threeDSecureStatus' => 'getThreeDSecureStatus',
-        'riskRule' => 'getRiskRule',
-        'acquirerCode' => 'getAcquirerCode',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'acquirerReference' => 'getAcquirerReference',
-        'textOnStatement' => 'getTextOnStatement',
-        'surchargeFee' => 'getSurchargeFee'
+        'ref_transaction' => 'getRefTransaction',
+        'gw_id' => 'getGwId',
+        'last_failed' => 'getLastFailed',
+        'first_failed' => 'getFirstFailed',
+        'error_state' => 'getErrorState',
+        'card_type' => 'getCardType',
+        'transaction_card_type' => 'getTransactionCardType',
+        'exp_date' => 'getExpDate',
+        'masked_card' => 'getMaskedCard',
+        'card_country' => 'getCardCountry',
+        'strong_authentication_status' => 'getStrongAuthenticationStatus',
+        'three_d_secure_status' => 'getThreeDSecureStatus',
+        'risk_rule' => 'getRiskRule',
+        'acquirer_code' => 'getAcquirerCode',
+        'acquirer_message' => 'getAcquirerMessage',
+        'acquirer_reference' => 'getAcquirerReference',
+        'text_on_statement' => 'getTextOnStatement',
+        'surcharge_fee' => 'getSurchargeFee'
     ];
 
     /**
@@ -421,24 +421,24 @@ class CardTransaction implements ModelInterface, ArrayAccess
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['fingerprint'] = isset($data['fingerprint']) ? $data['fingerprint'] : null;
         $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['refTransaction'] = isset($data['refTransaction']) ? $data['refTransaction'] : null;
-        $this->container['gwId'] = isset($data['gwId']) ? $data['gwId'] : null;
-        $this->container['lastFailed'] = isset($data['lastFailed']) ? $data['lastFailed'] : null;
-        $this->container['firstFailed'] = isset($data['firstFailed']) ? $data['firstFailed'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['cardType'] = isset($data['cardType']) ? $data['cardType'] : null;
-        $this->container['transactionCardType'] = isset($data['transactionCardType']) ? $data['transactionCardType'] : null;
-        $this->container['expDate'] = isset($data['expDate']) ? $data['expDate'] : null;
-        $this->container['maskedCard'] = isset($data['maskedCard']) ? $data['maskedCard'] : null;
-        $this->container['cardCountry'] = isset($data['cardCountry']) ? $data['cardCountry'] : null;
-        $this->container['strongAuthenticationStatus'] = isset($data['strongAuthenticationStatus']) ? $data['strongAuthenticationStatus'] : null;
-        $this->container['threeDSecureStatus'] = isset($data['threeDSecureStatus']) ? $data['threeDSecureStatus'] : null;
-        $this->container['riskRule'] = isset($data['riskRule']) ? $data['riskRule'] : null;
-        $this->container['acquirerCode'] = isset($data['acquirerCode']) ? $data['acquirerCode'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['acquirerReference'] = isset($data['acquirerReference']) ? $data['acquirerReference'] : null;
-        $this->container['textOnStatement'] = isset($data['textOnStatement']) ? $data['textOnStatement'] : null;
-        $this->container['surchargeFee'] = isset($data['surchargeFee']) ? $data['surchargeFee'] : null;
+        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
+        $this->container['gw_id'] = isset($data['gw_id']) ? $data['gw_id'] : null;
+        $this->container['last_failed'] = isset($data['last_failed']) ? $data['last_failed'] : null;
+        $this->container['first_failed'] = isset($data['first_failed']) ? $data['first_failed'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
+        $this->container['transaction_card_type'] = isset($data['transaction_card_type']) ? $data['transaction_card_type'] : null;
+        $this->container['exp_date'] = isset($data['exp_date']) ? $data['exp_date'] : null;
+        $this->container['masked_card'] = isset($data['masked_card']) ? $data['masked_card'] : null;
+        $this->container['card_country'] = isset($data['card_country']) ? $data['card_country'] : null;
+        $this->container['strong_authentication_status'] = isset($data['strong_authentication_status']) ? $data['strong_authentication_status'] : null;
+        $this->container['three_d_secure_status'] = isset($data['three_d_secure_status']) ? $data['three_d_secure_status'] : null;
+        $this->container['risk_rule'] = isset($data['risk_rule']) ? $data['risk_rule'] : null;
+        $this->container['acquirer_code'] = isset($data['acquirer_code']) ? $data['acquirer_code'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['acquirer_reference'] = isset($data['acquirer_reference']) ? $data['acquirer_reference'] : null;
+        $this->container['text_on_statement'] = isset($data['text_on_statement']) ? $data['text_on_statement'] : null;
+        $this->container['surcharge_fee'] = isset($data['surcharge_fee']) ? $data['surcharge_fee'] : null;
     }
 
     /**
@@ -459,36 +459,48 @@ class CardTransaction implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['cardType'] === null) {
-            $invalidProperties[] = "'cardType' can't be null";
+        if ($this->container['card_type'] === null) {
+            $invalidProperties[] = "'card_type' can't be null";
         }
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
+        if (!is_null($this->container['card_type']) && !in_array($this->container['card_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'cardType', must be one of '%s'",
+                "invalid value for 'card_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getTransactionCardTypeAllowableValues();
-        if (!is_null($this->container['transactionCardType']) && !in_array($this->container['transactionCardType'], $allowedValues, true)) {
+        if (!is_null($this->container['transaction_card_type']) && !in_array(
+                $this->container['transaction_card_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'transactionCardType', must be one of '%s'",
+                "invalid value for 'transaction_card_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getStrongAuthenticationStatusAllowableValues();
-        if (!is_null($this->container['strongAuthenticationStatus']) && !in_array($this->container['strongAuthenticationStatus'], $allowedValues, true)) {
+        if (!is_null($this->container['strong_authentication_status']) && !in_array(
+                $this->container['strong_authentication_status'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'strongAuthenticationStatus', must be one of '%s'",
+                "invalid value for 'strong_authentication_status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -614,469 +626,469 @@ class CardTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets refTransaction
+     * Gets ref_transaction
      *
      * @return string
      */
     public function getRefTransaction()
     {
-        return $this->container['refTransaction'];
+        return $this->container['ref_transaction'];
     }
 
     /**
-     * Sets refTransaction
+     * Sets ref_transaction
      *
-     * @param string $refTransaction Id of a possible referenced transaction
+     * @param string $ref_transaction Id of a possible referenced transaction
      *
      * @return $this
      */
-    public function setRefTransaction($refTransaction)
+    public function setRefTransaction($ref_transaction)
     {
-        $this->container['refTransaction'] = $refTransaction;
+        $this->container['ref_transaction'] = $ref_transaction;
 
         return $this;
     }
 
     /**
-     * Gets gwId
+     * Gets gw_id
      *
      * @return string
      */
     public function getGwId()
     {
-        return $this->container['gwId'];
+        return $this->container['gw_id'];
     }
 
     /**
-     * Sets gwId
+     * Sets gw_id
      *
-     * @param string $gwId Gateway id for card
+     * @param string $gw_id Gateway id for card
      *
      * @return $this
      */
-    public function setGwId($gwId)
+    public function setGwId($gw_id)
     {
-        $this->container['gwId'] = $gwId;
+        $this->container['gw_id'] = $gw_id;
 
         return $this;
     }
 
     /**
-     * Gets lastFailed
+     * Gets last_failed
      *
      * @return \DateTime
      */
     public function getLastFailed()
     {
-        return $this->container['lastFailed'];
+        return $this->container['last_failed'];
     }
 
     /**
-     * Sets lastFailed
+     * Sets last_failed
      *
-     * @param \DateTime $lastFailed When the card transaction last failed, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $last_failed When the card transaction last failed, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setLastFailed($lastFailed)
+    public function setLastFailed($last_failed)
     {
-        $this->container['lastFailed'] = $lastFailed;
+        $this->container['last_failed'] = $last_failed;
 
         return $this;
     }
 
     /**
-     * Gets firstFailed
+     * Gets first_failed
      *
      * @return \DateTime
      */
     public function getFirstFailed()
     {
-        return $this->container['firstFailed'];
+        return $this->container['first_failed'];
     }
 
     /**
-     * Sets firstFailed
+     * Sets first_failed
      *
-     * @param \DateTime $firstFailed When the card transaction first failed, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $first_failed When the card transaction first failed, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setFirstFailed($firstFailed)
+    public function setFirstFailed($first_failed)
     {
-        $this->container['firstFailed'] = $firstFailed;
+        $this->container['first_failed'] = $first_failed;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
+     * @param string $error_state Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets cardType
+     * Gets card_type
      *
      * @return string
      */
     public function getCardType()
     {
-        return $this->container['cardType'];
+        return $this->container['card_type'];
     }
 
     /**
-     * Sets cardType
+     * Sets card_type
      *
-     * @param string $cardType Card type: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @param string $card_type Card type: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
      *
      * @return $this
      */
-    public function setCardType($cardType)
+    public function setCardType($card_type)
     {
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!in_array($cardType, $allowedValues, true)) {
+        if (!in_array($card_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'cardType', must be one of '%s'",
+                    "Invalid value for 'card_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['cardType'] = $cardType;
+        $this->container['card_type'] = $card_type;
 
         return $this;
     }
 
     /**
-     * Gets transactionCardType
+     * Gets transaction_card_type
      *
      * @return string
      */
     public function getTransactionCardType()
     {
-        return $this->container['transactionCardType'];
+        return $this->container['transaction_card_type'];
     }
 
     /**
-     * Sets transactionCardType
+     * Sets transaction_card_type
      *
-     * @param string $transactionCardType Transaction card type. Will differ from `card_type` if co-branded card. Transaction card type is the card type used for the transaction. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @param string $transaction_card_type Transaction card type. Will differ from `card_type` if co-branded card. Transaction card type is the card type used for the transaction. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
      *
      * @return $this
      */
-    public function setTransactionCardType($transactionCardType)
+    public function setTransactionCardType($transaction_card_type)
     {
         $allowedValues = $this->getTransactionCardTypeAllowableValues();
-        if (!is_null($transactionCardType) && !in_array($transactionCardType, $allowedValues, true)) {
+        if (!is_null($transaction_card_type) && !in_array($transaction_card_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'transactionCardType', must be one of '%s'",
+                    "Invalid value for 'transaction_card_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['transactionCardType'] = $transactionCardType;
+        $this->container['transaction_card_type'] = $transaction_card_type;
 
         return $this;
     }
 
     /**
-     * Gets expDate
+     * Gets exp_date
      *
      * @return string
      */
     public function getExpDate()
     {
-        return $this->container['expDate'];
+        return $this->container['exp_date'];
     }
 
     /**
-     * Sets expDate
+     * Sets exp_date
      *
-     * @param string $expDate Card expire date on form MM-YY
+     * @param string $exp_date Card expire date on form MM-YY
      *
      * @return $this
      */
-    public function setExpDate($expDate)
+    public function setExpDate($exp_date)
     {
-        $this->container['expDate'] = $expDate;
+        $this->container['exp_date'] = $exp_date;
 
         return $this;
     }
 
     /**
-     * Gets maskedCard
+     * Gets masked_card
      *
      * @return string
      */
     public function getMaskedCard()
     {
-        return $this->container['maskedCard'];
+        return $this->container['masked_card'];
     }
 
     /**
-     * Sets maskedCard
+     * Sets masked_card
      *
-     * @param string $maskedCard Masked card number
+     * @param string $masked_card Masked card number
      *
      * @return $this
      */
-    public function setMaskedCard($maskedCard)
+    public function setMaskedCard($masked_card)
     {
-        $this->container['maskedCard'] = $maskedCard;
+        $this->container['masked_card'] = $masked_card;
 
         return $this;
     }
 
     /**
-     * Gets cardCountry
+     * Gets card_country
      *
      * @return string
      */
     public function getCardCountry()
     {
-        return $this->container['cardCountry'];
+        return $this->container['card_country'];
     }
 
     /**
-     * Sets cardCountry
+     * Sets card_country
      *
-     * @param string $cardCountry Card issuing country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+     * @param string $card_country Card issuing country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
      *
      * @return $this
      */
-    public function setCardCountry($cardCountry)
+    public function setCardCountry($card_country)
     {
-        $this->container['cardCountry'] = $cardCountry;
+        $this->container['card_country'] = $card_country;
 
         return $this;
     }
 
     /**
-     * Gets strongAuthenticationStatus
+     * Gets strong_authentication_status
      *
      * @return string
      */
     public function getStrongAuthenticationStatus()
     {
-        return $this->container['strongAuthenticationStatus'];
+        return $this->container['strong_authentication_status'];
     }
 
     /**
-     * Sets strongAuthenticationStatus
+     * Sets strong_authentication_status
      *
-     * @param string $strongAuthenticationStatus Status for strong customer authentication: `threed_secure` - 3D Secure authenticated, `threed_secure_not_enrolled` - 3D Secure authentication not performed as card not enrolled, `secured_by_nets` - Secure by Nets authenticated
+     * @param string $strong_authentication_status Status for strong customer authentication: `threed_secure` - 3D Secure authenticated, `threed_secure_not_enrolled` - 3D Secure authentication not performed as card not enrolled, `secured_by_nets` - Secure by Nets authenticated
      *
      * @return $this
      */
-    public function setStrongAuthenticationStatus($strongAuthenticationStatus)
+    public function setStrongAuthenticationStatus($strong_authentication_status)
     {
         $allowedValues = $this->getStrongAuthenticationStatusAllowableValues();
-        if (!is_null($strongAuthenticationStatus) && !in_array($strongAuthenticationStatus, $allowedValues, true)) {
+        if (!is_null($strong_authentication_status) && !in_array($strong_authentication_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'strongAuthenticationStatus', must be one of '%s'",
+                    "Invalid value for 'strong_authentication_status', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['strongAuthenticationStatus'] = $strongAuthenticationStatus;
+        $this->container['strong_authentication_status'] = $strong_authentication_status;
 
         return $this;
     }
 
     /**
-     * Gets threeDSecureStatus
+     * Gets three_d_secure_status
      *
      * @return string
      */
     public function getThreeDSecureStatus()
     {
-        return $this->container['threeDSecureStatus'];
+        return $this->container['three_d_secure_status'];
     }
 
     /**
-     * Sets threeDSecureStatus
+     * Sets three_d_secure_status
      *
-     * @param string $threeDSecureStatus If 3D Secure authenticated the 3D status will either be `Y` (fully authenticated) or `A` (attempted authenticated). An attempted authentication means that card issuer (e.g. bank) does not support 3D Secure so no full authentication has been performed. Attempted authentication normally means liability shift, but this can differ between acquirers.
+     * @param string $three_d_secure_status If 3D Secure authenticated the 3D status will either be `Y` (fully authenticated) or `A` (attempted authenticated). An attempted authentication means that card issuer (e.g. bank) does not support 3D Secure so no full authentication has been performed. Attempted authentication normally means liability shift, but this can differ between acquirers.
      *
      * @return $this
      */
-    public function setThreeDSecureStatus($threeDSecureStatus)
+    public function setThreeDSecureStatus($three_d_secure_status)
     {
-        $this->container['threeDSecureStatus'] = $threeDSecureStatus;
+        $this->container['three_d_secure_status'] = $three_d_secure_status;
 
         return $this;
     }
 
     /**
-     * Gets riskRule
+     * Gets risk_rule
      *
      * @return string
      */
     public function getRiskRule()
     {
-        return $this->container['riskRule'];
+        return $this->container['risk_rule'];
     }
 
     /**
-     * Sets riskRule
+     * Sets risk_rule
      *
-     * @param string $riskRule If this parameter is set the transaction has either been flagged or declined by a Reepay Risk Filter rule. For flag action rules the transaction can be successful, but may require special attention. For block action rules the decline error will be `risk_filter_block`.
+     * @param string $risk_rule If this parameter is set the transaction has either been flagged or declined by a Reepay Risk Filter rule. For flag action rules the transaction can be successful, but may require special attention. For block action rules the decline error will be `risk_filter_block`.
      *
      * @return $this
      */
-    public function setRiskRule($riskRule)
+    public function setRiskRule($risk_rule)
     {
-        $this->container['riskRule'] = $riskRule;
+        $this->container['risk_rule'] = $risk_rule;
 
         return $this;
     }
 
     /**
-     * Gets acquirerCode
+     * Gets acquirer_code
      *
      * @return string
      */
     public function getAcquirerCode()
     {
-        return $this->container['acquirerCode'];
+        return $this->container['acquirer_code'];
     }
 
     /**
-     * Sets acquirerCode
+     * Sets acquirer_code
      *
-     * @param string $acquirerCode Acquirer error code in case of error
+     * @param string $acquirer_code Acquirer error code in case of error
      *
      * @return $this
      */
-    public function setAcquirerCode($acquirerCode)
+    public function setAcquirerCode($acquirer_code)
     {
-        $this->container['acquirerCode'] = $acquirerCode;
+        $this->container['acquirer_code'] = $acquirer_code;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets acquirerReference
+     * Gets acquirer_reference
      *
      * @return string
      */
     public function getAcquirerReference()
     {
-        return $this->container['acquirerReference'];
+        return $this->container['acquirer_reference'];
     }
 
     /**
-     * Sets acquirerReference
+     * Sets acquirer_reference
      *
-     * @param string $acquirerReference Acquirer reference to transaction. E.g. Nets order id or Clearhaus reference.
+     * @param string $acquirer_reference Acquirer reference to transaction. E.g. Nets order id or Clearhaus reference.
      *
      * @return $this
      */
-    public function setAcquirerReference($acquirerReference)
+    public function setAcquirerReference($acquirer_reference)
     {
-        $this->container['acquirerReference'] = $acquirerReference;
+        $this->container['acquirer_reference'] = $acquirer_reference;
 
         return $this;
     }
 
     /**
-     * Gets textOnStatement
+     * Gets text_on_statement
      *
      * @return string
      */
     public function getTextOnStatement()
     {
-        return $this->container['textOnStatement'];
+        return $this->container['text_on_statement'];
     }
 
     /**
-     * Sets textOnStatement
+     * Sets text_on_statement
      *
-     * @param string $textOnStatement Resulting text on bank statement if known
+     * @param string $text_on_statement Resulting text on bank statement if known
      *
      * @return $this
      */
-    public function setTextOnStatement($textOnStatement)
+    public function setTextOnStatement($text_on_statement)
     {
-        $this->container['textOnStatement'] = $textOnStatement;
+        $this->container['text_on_statement'] = $text_on_statement;
 
         return $this;
     }
 
     /**
-     * Gets surchargeFee
+     * Gets surcharge_fee
      *
      * @return int
      */
     public function getSurchargeFee()
     {
-        return $this->container['surchargeFee'];
+        return $this->container['surcharge_fee'];
     }
 
     /**
-     * Sets surchargeFee
+     * Sets surcharge_fee
      *
-     * @param int $surchargeFee Potential card surcharge fee added to amount if surcharging enabled
+     * @param int $surcharge_fee Potential card surcharge fee added to amount if surcharging enabled
      *
      * @return $this
      */
-    public function setSurchargeFee($surchargeFee)
+    public function setSurchargeFee($surcharge_fee)
     {
-        $this->container['surchargeFee'] = $surchargeFee;
+        $this->container['surcharge_fee'] = $surcharge_fee;
 
         return $this;
     }

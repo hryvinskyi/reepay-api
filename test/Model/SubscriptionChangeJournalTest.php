@@ -90,28 +90,28 @@ class SubscriptionChangeJournalTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "newPlan"
+     * Test attribute "new_plan"
      */
     public function testPropertyNewPlan()
     {
     }
 
     /**
-     * Test attribute "compensationAmount"
+     * Test attribute "compensation_amount"
      */
     public function testPropertyCompensationAmount()
     {
     }
 
     /**
-     * Test attribute "compensationInvoice"
+     * Test attribute "compensation_invoice"
      */
     public function testPropertyCompensationInvoice()
     {
     }
 
     /**
-     * Test attribute "changedPeriodStartDate"
+     * Test attribute "changed_period_start_date"
      */
     public function testPropertyChangedPeriodStartDate()
     {

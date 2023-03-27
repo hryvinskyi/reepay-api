@@ -56,10 +56,10 @@ class CancelSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'noticePeriods' => 'int',
-        'noticePeriodsAfterCurrent' => 'bool',
-        'expireAt' => 'string',
-        'trialWithNoticeAndFixation' => 'bool'
+        'notice_periods' => 'int',
+        'notice_periods_after_current' => 'bool',
+        'expire_at' => 'string',
+        'trial_with_notice_and_fixation' => 'bool'
     ];
 
     /**
@@ -68,10 +68,10 @@ class CancelSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'noticePeriods' => 'int32',
-        'noticePeriodsAfterCurrent' => null,
-        'expireAt' => null,
-        'trialWithNoticeAndFixation' => null
+        'notice_periods' => 'int32',
+        'notice_periods_after_current' => null,
+        'expire_at' => null,
+        'trial_with_notice_and_fixation' => null
     ];
 
     /**
@@ -101,10 +101,10 @@ class CancelSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'noticePeriods' => 'notice_periods',
-        'noticePeriodsAfterCurrent' => 'notice_periods_after_current',
-        'expireAt' => 'expire_at',
-        'trialWithNoticeAndFixation' => 'trial_with_notice_and_fixation'
+        'notice_periods' => 'notice_periods',
+        'notice_periods_after_current' => 'notice_periods_after_current',
+        'expire_at' => 'expire_at',
+        'trial_with_notice_and_fixation' => 'trial_with_notice_and_fixation'
     ];
 
     /**
@@ -113,10 +113,10 @@ class CancelSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'noticePeriods' => 'setNoticePeriods',
-        'noticePeriodsAfterCurrent' => 'setNoticePeriodsAfterCurrent',
-        'expireAt' => 'setExpireAt',
-        'trialWithNoticeAndFixation' => 'setTrialWithNoticeAndFixation'
+        'notice_periods' => 'setNoticePeriods',
+        'notice_periods_after_current' => 'setNoticePeriodsAfterCurrent',
+        'expire_at' => 'setExpireAt',
+        'trial_with_notice_and_fixation' => 'setTrialWithNoticeAndFixation'
     ];
 
     /**
@@ -125,10 +125,10 @@ class CancelSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'noticePeriods' => 'getNoticePeriods',
-        'noticePeriodsAfterCurrent' => 'getNoticePeriodsAfterCurrent',
-        'expireAt' => 'getExpireAt',
-        'trialWithNoticeAndFixation' => 'getTrialWithNoticeAndFixation'
+        'notice_periods' => 'getNoticePeriods',
+        'notice_periods_after_current' => 'getNoticePeriodsAfterCurrent',
+        'expire_at' => 'getExpireAt',
+        'trial_with_notice_and_fixation' => 'getTrialWithNoticeAndFixation'
     ];
 
     /**
@@ -189,10 +189,10 @@ class CancelSubscription implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['noticePeriods'] = isset($data['noticePeriods']) ? $data['noticePeriods'] : null;
-        $this->container['noticePeriodsAfterCurrent'] = isset($data['noticePeriodsAfterCurrent']) ? $data['noticePeriodsAfterCurrent'] : null;
-        $this->container['expireAt'] = isset($data['expireAt']) ? $data['expireAt'] : null;
-        $this->container['trialWithNoticeAndFixation'] = isset($data['trialWithNoticeAndFixation']) ? $data['trialWithNoticeAndFixation'] : null;
+        $this->container['notice_periods'] = isset($data['notice_periods']) ? $data['notice_periods'] : null;
+        $this->container['notice_periods_after_current'] = isset($data['notice_periods_after_current']) ? $data['notice_periods_after_current'] : null;
+        $this->container['expire_at'] = isset($data['expire_at']) ? $data['expire_at'] : null;
+        $this->container['trial_with_notice_and_fixation'] = isset($data['trial_with_notice_and_fixation']) ? $data['trial_with_notice_and_fixation'] : null;
     }
 
     /**
@@ -220,97 +220,97 @@ class CancelSubscription implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets noticePeriods
+     * Gets notice_periods
      *
      * @return int
      */
     public function getNoticePeriods()
     {
-        return $this->container['noticePeriods'];
+        return $this->container['notice_periods'];
     }
 
     /**
-     * Sets noticePeriods
+     * Sets notice_periods
      *
-     * @param int $noticePeriods Optional override of the notice periods set for plan. See plan for the definition of notice periods.
+     * @param int $notice_periods Optional override of the notice periods set for plan. See plan for the definition of notice periods.
      *
      * @return $this
      */
-    public function setNoticePeriods($noticePeriods)
+    public function setNoticePeriods($notice_periods)
     {
-        $this->container['noticePeriods'] = $noticePeriods;
+        $this->container['notice_periods'] = $notice_periods;
 
         return $this;
     }
 
     /**
-     * Gets noticePeriodsAfterCurrent
+     * Gets notice_periods_after_current
      *
      * @return bool
      */
     public function getNoticePeriodsAfterCurrent()
     {
-        return $this->container['noticePeriodsAfterCurrent'];
+        return $this->container['notice_periods_after_current'];
     }
 
     /**
-     * Sets noticePeriodsAfterCurrent
+     * Sets notice_periods_after_current
      *
-     * @param bool $noticePeriodsAfterCurrent Optional override of the notice periods after current setting for plan. See plan for the definition of notice periods.
+     * @param bool $notice_periods_after_current Optional override of the notice periods after current setting for plan. See plan for the definition of notice periods.
      *
      * @return $this
      */
-    public function setNoticePeriodsAfterCurrent($noticePeriodsAfterCurrent)
+    public function setNoticePeriodsAfterCurrent($notice_periods_after_current)
     {
-        $this->container['noticePeriodsAfterCurrent'] = $noticePeriodsAfterCurrent;
+        $this->container['notice_periods_after_current'] = $notice_periods_after_current;
 
         return $this;
     }
 
     /**
-     * Gets expireAt
+     * Gets expire_at
      *
      * @return string
      */
     public function getExpireAt()
     {
-        return $this->container['expireAt'];
+        return $this->container['expire_at'];
     }
 
     /**
-     * Sets expireAt
+     * Sets expire_at
      *
-     * @param string $expireAt Optional fixed date and time on when the subscription should expire. Using this option results in prorated billing for the last partial period. Notice that when using this option the cancellation cannot be uncancelled in the last partial period. The fixed expire date takes precedence over notice periods and fixation period. The fixed expire date must be after the end of the current periods. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
+     * @param string $expire_at Optional fixed date and time on when the subscription should expire. Using this option results in prorated billing for the last partial period. Notice that when using this option the cancellation cannot be uncancelled in the last partial period. The fixed expire date takes precedence over notice periods and fixation period. The fixed expire date must be after the end of the current periods. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
      *
      * @return $this
      */
-    public function setExpireAt($expireAt)
+    public function setExpireAt($expire_at)
     {
-        $this->container['expireAt'] = $expireAt;
+        $this->container['expire_at'] = $expire_at;
 
         return $this;
     }
 
     /**
-     * Gets trialWithNoticeAndFixation
+     * Gets trial_with_notice_and_fixation
      *
      * @return bool
      */
     public function getTrialWithNoticeAndFixation()
     {
-        return $this->container['trialWithNoticeAndFixation'];
+        return $this->container['trial_with_notice_and_fixation'];
     }
 
     /**
-     * Sets trialWithNoticeAndFixation
+     * Sets trial_with_notice_and_fixation
      *
-     * @param bool $trialWithNoticeAndFixation If subscription is in trial and this flag is set to true, the potential notice and fixation periods will be respected. This can be used in a paid trial scenario where the trial period have custom duration and price collected with a setup fee. E.g. if notice period is set to 2, the subscription will run for the trial period and two full paid periods.
+     * @param bool $trial_with_notice_and_fixation If subscription is in trial and this flag is set to true, the potential notice and fixation periods will be respected. This can be used in a paid trial scenario where the trial period have custom duration and price collected with a setup fee. E.g. if notice period is set to 2, the subscription will run for the trial period and two full paid periods.
      *
      * @return $this
      */
-    public function setTrialWithNoticeAndFixation($trialWithNoticeAndFixation)
+    public function setTrialWithNoticeAndFixation($trial_with_notice_and_fixation)
     {
-        $this->container['trialWithNoticeAndFixation'] = $trialWithNoticeAndFixation;
+        $this->container['trial_with_notice_and_fixation'] = $trial_with_notice_and_fixation;
 
         return $this;
     }

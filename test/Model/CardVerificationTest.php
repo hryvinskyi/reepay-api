@@ -118,14 +118,14 @@ class CardVerificationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "acquirerCode"
+     * Test attribute "acquirer_code"
      */
     public function testPropertyAcquirerCode()
     {
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {

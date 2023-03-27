@@ -57,7 +57,7 @@ class CouponRedemption implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'coupon' => '\Reepay\Model\Coupon',
-        'subscriptionDiscount' => '\Reepay\Model\SubscriptionDiscount'
+        'subscription_discount' => '\Reepay\Model\SubscriptionDiscount'
     ];
 
     /**
@@ -67,7 +67,7 @@ class CouponRedemption implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'coupon' => null,
-        'subscriptionDiscount' => null
+        'subscription_discount' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class CouponRedemption implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'coupon' => 'coupon',
-        'subscriptionDiscount' => 'subscription_discount'
+        'subscription_discount' => 'subscription_discount'
     ];
 
     /**
@@ -108,7 +108,7 @@ class CouponRedemption implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'coupon' => 'setCoupon',
-        'subscriptionDiscount' => 'setSubscriptionDiscount'
+        'subscription_discount' => 'setSubscriptionDiscount'
     ];
 
     /**
@@ -118,7 +118,7 @@ class CouponRedemption implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'coupon' => 'getCoupon',
-        'subscriptionDiscount' => 'getSubscriptionDiscount'
+        'subscription_discount' => 'getSubscriptionDiscount'
     ];
 
     /**
@@ -180,7 +180,7 @@ class CouponRedemption implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['coupon'] = isset($data['coupon']) ? $data['coupon'] : null;
-        $this->container['subscriptionDiscount'] = isset($data['subscriptionDiscount']) ? $data['subscriptionDiscount'] : null;
+        $this->container['subscription_discount'] = isset($data['subscription_discount']) ? $data['subscription_discount'] : null;
     }
 
     /**
@@ -195,8 +195,8 @@ class CouponRedemption implements ModelInterface, ArrayAccess
         if ($this->container['coupon'] === null) {
             $invalidProperties[] = "'coupon' can't be null";
         }
-        if ($this->container['subscriptionDiscount'] === null) {
-            $invalidProperties[] = "'subscriptionDiscount' can't be null";
+        if ($this->container['subscription_discount'] === null) {
+            $invalidProperties[] = "'subscription_discount' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,25 +238,25 @@ class CouponRedemption implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets subscriptionDiscount
+     * Gets subscription_discount
      *
      * @return \Reepay\Model\SubscriptionDiscount
      */
     public function getSubscriptionDiscount()
     {
-        return $this->container['subscriptionDiscount'];
+        return $this->container['subscription_discount'];
     }
 
     /**
-     * Sets subscriptionDiscount
+     * Sets subscription_discount
      *
-     * @param \Reepay\Model\SubscriptionDiscount $subscriptionDiscount subscriptionDiscount
+     * @param \Reepay\Model\SubscriptionDiscount $subscription_discount subscription_discount
      *
      * @return $this
      */
-    public function setSubscriptionDiscount($subscriptionDiscount)
+    public function setSubscriptionDiscount($subscription_discount)
     {
-        $this->container['subscriptionDiscount'] = $subscriptionDiscount;
+        $this->container['subscription_discount'] = $subscription_discount;
 
         return $this;
     }

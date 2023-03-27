@@ -56,9 +56,9 @@ class MpoAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'shopName' => 'string',
-        'shopLogoUrl' => 'string',
-        'merchantCategoryCode' => 'int'
+        'shop_name' => 'string',
+        'shop_logo_url' => 'string',
+        'merchant_category_code' => 'int'
     ];
 
     /**
@@ -67,9 +67,9 @@ class MpoAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'shopName' => null,
-        'shopLogoUrl' => null,
-        'merchantCategoryCode' => 'int64'
+        'shop_name' => null,
+        'shop_logo_url' => null,
+        'merchant_category_code' => 'int64'
     ];
 
     /**
@@ -99,9 +99,9 @@ class MpoAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shopName' => 'shopName',
-        'shopLogoUrl' => 'shopLogoUrl',
-        'merchantCategoryCode' => 'merchantCategoryCode'
+        'shop_name' => 'shopName',
+        'shop_logo_url' => 'shopLogoUrl',
+        'merchant_category_code' => 'merchantCategoryCode'
     ];
 
     /**
@@ -110,9 +110,9 @@ class MpoAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shopName' => 'setShopName',
-        'shopLogoUrl' => 'setShopLogoUrl',
-        'merchantCategoryCode' => 'setMerchantCategoryCode'
+        'shop_name' => 'setShopName',
+        'shop_logo_url' => 'setShopLogoUrl',
+        'merchant_category_code' => 'setMerchantCategoryCode'
     ];
 
     /**
@@ -121,9 +121,9 @@ class MpoAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shopName' => 'getShopName',
-        'shopLogoUrl' => 'getShopLogoUrl',
-        'merchantCategoryCode' => 'getMerchantCategoryCode'
+        'shop_name' => 'getShopName',
+        'shop_logo_url' => 'getShopLogoUrl',
+        'merchant_category_code' => 'getMerchantCategoryCode'
     ];
 
     /**
@@ -184,9 +184,9 @@ class MpoAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['shopName'] = isset($data['shopName']) ? $data['shopName'] : null;
-        $this->container['shopLogoUrl'] = isset($data['shopLogoUrl']) ? $data['shopLogoUrl'] : null;
-        $this->container['merchantCategoryCode'] = isset($data['merchantCategoryCode']) ? $data['merchantCategoryCode'] : null;
+        $this->container['shop_name'] = isset($data['shop_name']) ? $data['shop_name'] : null;
+        $this->container['shop_logo_url'] = isset($data['shop_logo_url']) ? $data['shop_logo_url'] : null;
+        $this->container['merchant_category_code'] = isset($data['merchant_category_code']) ? $data['merchant_category_code'] : null;
     }
 
     /**
@@ -198,11 +198,11 @@ class MpoAgreement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['shopName'] === null) {
-            $invalidProperties[] = "'shopName' can't be null";
+        if ($this->container['shop_name'] === null) {
+            $invalidProperties[] = "'shop_name' can't be null";
         }
-        if ($this->container['merchantCategoryCode'] === null) {
-            $invalidProperties[] = "'merchantCategoryCode' can't be null";
+        if ($this->container['merchant_category_code'] === null) {
+            $invalidProperties[] = "'merchant_category_code' can't be null";
         }
         return $invalidProperties;
     }
@@ -220,77 +220,76 @@ class MpoAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets shopName
+     * Gets shop_name
      *
      * @return string
      */
     public function getShopName()
     {
-        return $this->container['shopName'];
+        return $this->container['shop_name'];
     }
 
     /**
-     * Sets shopName
+     * Sets shop_name
      *
-     * @param string $shopName shopName
+     * @param string $shop_name shop_name
      *
      * @return $this
      */
-    public function setShopName($shopName)
+    public function setShopName($shop_name)
     {
-        $this->container['shopName'] = $shopName;
+        $this->container['shop_name'] = $shop_name;
 
         return $this;
     }
 
     /**
-     * Gets shopLogoUrl
+     * Gets shop_logo_url
      *
      * @return string
      */
     public function getShopLogoUrl()
     {
-        return $this->container['shopLogoUrl'];
+        return $this->container['shop_logo_url'];
     }
 
     /**
-     * Sets shopLogoUrl
+     * Sets shop_logo_url
      *
-     * @param string $shopLogoUrl shopLogoUrl
+     * @param string $shop_logo_url shop_logo_url
      *
      * @return $this
      */
-    public function setShopLogoUrl($shopLogoUrl)
+    public function setShopLogoUrl($shop_logo_url)
     {
-        $this->container['shopLogoUrl'] = $shopLogoUrl;
+        $this->container['shop_logo_url'] = $shop_logo_url;
 
         return $this;
     }
 
     /**
-     * Gets merchantCategoryCode
+     * Gets merchant_category_code
      *
      * @return int
      */
     public function getMerchantCategoryCode()
     {
-        return $this->container['merchantCategoryCode'];
+        return $this->container['merchant_category_code'];
     }
 
     /**
-     * Sets merchantCategoryCode
+     * Sets merchant_category_code
      *
-     * @param int $merchantCategoryCode merchantCategoryCode
+     * @param int $merchant_category_code merchant_category_code
      *
      * @return $this
      */
-    public function setMerchantCategoryCode($merchantCategoryCode)
+    public function setMerchantCategoryCode($merchant_category_code)
     {
-        $this->container['merchantCategoryCode'] = $merchantCategoryCode;
+        $this->container['merchant_category_code'] = $merchant_category_code;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

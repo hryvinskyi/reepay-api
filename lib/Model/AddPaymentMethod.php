@@ -59,7 +59,7 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
         'reference' => 'string',
         'customer' => '\Reepay\Model\CreateCustomer',
         'source' => 'string',
-        'customerHandle' => 'string'
+        'customer_handle' => 'string'
     ];
 
     /**
@@ -71,7 +71,7 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
         'reference' => null,
         'customer' => null,
         'source' => null,
-        'customerHandle' => null
+        'customer_handle' => null
     ];
 
     /**
@@ -104,7 +104,7 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
         'reference' => 'reference',
         'customer' => 'customer',
         'source' => 'source',
-        'customerHandle' => 'customer_handle'
+        'customer_handle' => 'customer_handle'
     ];
 
     /**
@@ -116,7 +116,7 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
         'reference' => 'setReference',
         'customer' => 'setCustomer',
         'source' => 'setSource',
-        'customerHandle' => 'setCustomerHandle'
+        'customer_handle' => 'setCustomerHandle'
     ];
 
     /**
@@ -128,7 +128,7 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
         'reference' => 'getReference',
         'customer' => 'getCustomer',
         'source' => 'getSource',
-        'customerHandle' => 'getCustomerHandle'
+        'customer_handle' => 'getCustomerHandle'
     ];
 
     /**
@@ -192,7 +192,7 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['customerHandle'] = isset($data['customerHandle']) ? $data['customerHandle'] : null;
+        $this->container['customer_handle'] = isset($data['customer_handle']) ? $data['customer_handle'] : null;
     }
 
     /**
@@ -295,25 +295,25 @@ class AddPaymentMethod implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets customerHandle
+     * Gets customer_handle
      *
      * @return string
      */
     public function getCustomerHandle()
     {
-        return $this->container['customerHandle'];
+        return $this->container['customer_handle'];
     }
 
     /**
-     * Sets customerHandle
+     * Sets customer_handle
      *
-     * @param string $customerHandle Customer reference to an existing customer. Either this argument or `customer` must be provided.
+     * @param string $customer_handle Customer reference to an existing customer. Either this argument or `customer` must be provided.
      *
      * @return $this
      */
-    public function setCustomerHandle($customerHandle)
+    public function setCustomerHandle($customer_handle)
     {
-        $this->container['customerHandle'] = $customerHandle;
+        $this->container['customer_handle'] = $customer_handle;
 
         return $this;
     }

@@ -76,7 +76,7 @@ class UpdateGooglepayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "displayName"
+     * Test attribute "display_name"
      */
     public function testPropertyDisplayName()
     {

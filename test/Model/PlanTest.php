@@ -160,175 +160,175 @@ class PlanTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "dunningPlan"
+     * Test attribute "dunning_plan"
      */
     public function testPropertyDunningPlan()
     {
     }
 
     /**
-     * Test attribute "renewalReminderEmailDays"
+     * Test attribute "renewal_reminder_email_days"
      */
     public function testPropertyRenewalReminderEmailDays()
     {
     }
 
     /**
-     * Test attribute "trialReminderEmailDays"
+     * Test attribute "trial_reminder_email_days"
      */
     public function testPropertyTrialReminderEmailDays()
     {
     }
 
     /**
-     * Test attribute "partialPeriodHandling"
+     * Test attribute "partial_period_handling"
      */
     public function testPropertyPartialPeriodHandling()
     {
     }
 
     /**
-     * Test attribute "includeZeroAmount"
+     * Test attribute "include_zero_amount"
      */
     public function testPropertyIncludeZeroAmount()
     {
     }
 
     /**
-     * Test attribute "setupFee"
+     * Test attribute "setup_fee"
      */
     public function testPropertySetupFee()
     {
     }
 
     /**
-     * Test attribute "setupFeeText"
+     * Test attribute "setup_fee_text"
      */
     public function testPropertySetupFeeText()
     {
     }
 
     /**
-     * Test attribute "setupFeeHandling"
+     * Test attribute "setup_fee_handling"
      */
     public function testPropertySetupFeeHandling()
     {
     }
 
     /**
-     * Test attribute "partialProrationDays"
+     * Test attribute "partial_proration_days"
      */
     public function testPropertyPartialProrationDays()
     {
     }
 
     /**
-     * Test attribute "fixedTrialDays"
+     * Test attribute "fixed_trial_days"
      */
     public function testPropertyFixedTrialDays()
     {
     }
 
     /**
-     * Test attribute "minimumProratedAmount"
+     * Test attribute "minimum_prorated_amount"
      */
     public function testPropertyMinimumProratedAmount()
     {
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "fixedCount"
+     * Test attribute "fixed_count"
      */
     public function testPropertyFixedCount()
     {
     }
 
     /**
-     * Test attribute "fixedLifeTimeUnit"
+     * Test attribute "fixed_life_time_unit"
      */
     public function testPropertyFixedLifeTimeUnit()
     {
     }
 
     /**
-     * Test attribute "fixedLifeTimeLength"
+     * Test attribute "fixed_life_time_length"
      */
     public function testPropertyFixedLifeTimeLength()
     {
     }
 
     /**
-     * Test attribute "trialIntervalUnit"
+     * Test attribute "trial_interval_unit"
      */
     public function testPropertyTrialIntervalUnit()
     {
     }
 
     /**
-     * Test attribute "trialIntervalLength"
+     * Test attribute "trial_interval_length"
      */
     public function testPropertyTrialIntervalLength()
     {
     }
 
     /**
-     * Test attribute "intervalLength"
+     * Test attribute "interval_length"
      */
     public function testPropertyIntervalLength()
     {
     }
 
     /**
-     * Test attribute "scheduleType"
+     * Test attribute "schedule_type"
      */
     public function testPropertyScheduleType()
     {
     }
 
     /**
-     * Test attribute "scheduleFixedDay"
+     * Test attribute "schedule_fixed_day"
      */
     public function testPropertyScheduleFixedDay()
     {
     }
 
     /**
-     * Test attribute "baseMonth"
+     * Test attribute "base_month"
      */
     public function testPropertyBaseMonth()
     {
     }
 
     /**
-     * Test attribute "noticePeriods"
+     * Test attribute "notice_periods"
      */
     public function testPropertyNoticePeriods()
     {
     }
 
     /**
-     * Test attribute "noticePeriodsAfterCurrent"
+     * Test attribute "notice_periods_after_current"
      */
     public function testPropertyNoticePeriodsAfterCurrent()
     {
     }
 
     /**
-     * Test attribute "fixationPeriods"
+     * Test attribute "fixation_periods"
      */
     public function testPropertyFixationPeriods()
     {
     }
 
     /**
-     * Test attribute "fixationPeriodsFull"
+     * Test attribute "fixation_periods_full"
      */
     public function testPropertyFixationPeriodsFull()
     {

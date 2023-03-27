@@ -56,7 +56,7 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'compensationMethod' => 'string'
+        'compensation_method' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'compensationMethod' => null
+        'compensation_method' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'compensationMethod' => 'compensation_method'
+        'compensation_method' => 'compensation_method'
     ];
 
     /**
@@ -104,7 +104,7 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'compensationMethod' => 'setCompensationMethod'
+        'compensation_method' => 'setCompensationMethod'
     ];
 
     /**
@@ -113,7 +113,7 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'compensationMethod' => 'getCompensationMethod'
+        'compensation_method' => 'getCompensationMethod'
     ];
 
     /**
@@ -190,7 +190,7 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['compensationMethod'] = isset($data['compensationMethod']) ? $data['compensationMethod'] : null;
+        $this->container['compensation_method'] = isset($data['compensation_method']) ? $data['compensation_method'] : null;
     }
 
     /**
@@ -203,9 +203,13 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getCompensationMethodAllowableValues();
-        if (!is_null($this->container['compensationMethod']) && !in_array($this->container['compensationMethod'], $allowedValues, true)) {
+        if (!is_null($this->container['compensation_method']) && !in_array(
+                $this->container['compensation_method'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'compensationMethod', must be one of '%s'",
+                "invalid value for 'compensation_method', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -226,34 +230,34 @@ class ExpireSubscription implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets compensationMethod
+     * Gets compensation_method
      *
      * @return string
      */
     public function getCompensationMethod()
     {
-        return $this->container['compensationMethod'];
+        return $this->container['compensation_method'];
     }
 
     /**
-     * Sets compensationMethod
+     * Sets compensation_method
      *
-     * @param string $compensationMethod Optional method for compensation of partial period, either `full_refund`, `prorated_refund` or `none. Refund compensation is only allowed for synchronous refund payment methods, e.g. credit cards.`
+     * @param string $compensation_method Optional method for compensation of partial period, either `full_refund`, `prorated_refund` or `none. Refund compensation is only allowed for synchronous refund payment methods, e.g. credit cards.`
      *
      * @return $this
      */
-    public function setCompensationMethod($compensationMethod)
+    public function setCompensationMethod($compensation_method)
     {
         $allowedValues = $this->getCompensationMethodAllowableValues();
-        if (!is_null($compensationMethod) && !in_array($compensationMethod, $allowedValues, true)) {
+        if (!is_null($compensation_method) && !in_array($compensation_method, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'compensationMethod', must be one of '%s'",
+                    "Invalid value for 'compensation_method', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['compensationMethod'] = $compensationMethod;
+        $this->container['compensation_method'] = $compensation_method;
 
         return $this;
     }

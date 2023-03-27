@@ -76,7 +76,7 @@ class VippsAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchantSerialNumber"
+     * Test attribute "merchant_serial_number"
      */
     public function testPropertyMerchantSerialNumber()
     {

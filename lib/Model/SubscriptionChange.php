@@ -63,9 +63,9 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
         'applied' => '\DateTime',
         'updated' => '\DateTime',
         'created' => '\DateTime',
-        'amountInclVat' => 'bool',
-        'subscriptionAddOns' => '\Reepay\Model\SubscriptionAddOn[]',
-        'removeAddOns' => 'string[]'
+        'amount_incl_vat' => 'bool',
+        'subscription_add_ons' => '\Reepay\Model\SubscriptionAddOn[]',
+        'remove_add_ons' => 'string[]'
     ];
 
     /**
@@ -81,9 +81,9 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
         'applied' => 'date-time',
         'updated' => 'date-time',
         'created' => 'date-time',
-        'amountInclVat' => null,
-        'subscriptionAddOns' => null,
-        'removeAddOns' => null
+        'amount_incl_vat' => null,
+        'subscription_add_ons' => null,
+        'remove_add_ons' => null
     ];
 
     /**
@@ -120,9 +120,9 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
         'applied' => 'applied',
         'updated' => 'updated',
         'created' => 'created',
-        'amountInclVat' => 'amount_incl_vat',
-        'subscriptionAddOns' => 'subscription_add_ons',
-        'removeAddOns' => 'remove_add_ons'
+        'amount_incl_vat' => 'amount_incl_vat',
+        'subscription_add_ons' => 'subscription_add_ons',
+        'remove_add_ons' => 'remove_add_ons'
     ];
 
     /**
@@ -138,9 +138,9 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
         'applied' => 'setApplied',
         'updated' => 'setUpdated',
         'created' => 'setCreated',
-        'amountInclVat' => 'setAmountInclVat',
-        'subscriptionAddOns' => 'setSubscriptionAddOns',
-        'removeAddOns' => 'setRemoveAddOns'
+        'amount_incl_vat' => 'setAmountInclVat',
+        'subscription_add_ons' => 'setSubscriptionAddOns',
+        'remove_add_ons' => 'setRemoveAddOns'
     ];
 
     /**
@@ -156,9 +156,9 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
         'applied' => 'getApplied',
         'updated' => 'getUpdated',
         'created' => 'getCreated',
-        'amountInclVat' => 'getAmountInclVat',
-        'subscriptionAddOns' => 'getSubscriptionAddOns',
-        'removeAddOns' => 'getRemoveAddOns'
+        'amount_incl_vat' => 'getAmountInclVat',
+        'subscription_add_ons' => 'getSubscriptionAddOns',
+        'remove_add_ons' => 'getRemoveAddOns'
     ];
 
     /**
@@ -226,9 +226,9 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
         $this->container['applied'] = isset($data['applied']) ? $data['applied'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
-        $this->container['subscriptionAddOns'] = isset($data['subscriptionAddOns']) ? $data['subscriptionAddOns'] : null;
-        $this->container['removeAddOns'] = isset($data['removeAddOns']) ? $data['removeAddOns'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['subscription_add_ons'] = isset($data['subscription_add_ons']) ? $data['subscription_add_ons'] : null;
+        $this->container['remove_add_ons'] = isset($data['remove_add_ons']) ? $data['remove_add_ons'] : null;
     }
 
     /**
@@ -430,73 +430,73 @@ class SubscriptionChange implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the optional amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the optional amount is including VAT. Defaults to true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets subscriptionAddOns
+     * Gets subscription_add_ons
      *
      * @return \Reepay\Model\SubscriptionAddOn[]
      */
     public function getSubscriptionAddOns()
     {
-        return $this->container['subscriptionAddOns'];
+        return $this->container['subscription_add_ons'];
     }
 
     /**
-     * Sets subscriptionAddOns
+     * Sets subscription_add_ons
      *
-     * @param \Reepay\Model\SubscriptionAddOn[] $subscriptionAddOns List of subscription add-ons to create in change
+     * @param \Reepay\Model\SubscriptionAddOn[] $subscription_add_ons List of subscription add-ons to create in change
      *
      * @return $this
      */
-    public function setSubscriptionAddOns($subscriptionAddOns)
+    public function setSubscriptionAddOns($subscription_add_ons)
     {
-        $this->container['subscriptionAddOns'] = $subscriptionAddOns;
+        $this->container['subscription_add_ons'] = $subscription_add_ons;
 
         return $this;
     }
 
     /**
-     * Gets removeAddOns
+     * Gets remove_add_ons
      *
      * @return string[]
      */
     public function getRemoveAddOns()
     {
-        return $this->container['removeAddOns'];
+        return $this->container['remove_add_ons'];
     }
 
     /**
-     * Sets removeAddOns
+     * Sets remove_add_ons
      *
-     * @param string[] $removeAddOns Subscription add-ons to remove from subscription by subscription add-on handle
+     * @param string[] $remove_add_ons Subscription add-ons to remove from subscription by subscription add-on handle
      *
      * @return $this
      */
-    public function setRemoveAddOns($removeAddOns)
+    public function setRemoveAddOns($remove_add_ons)
     {
-        $this->container['removeAddOns'] = $removeAddOns;
+        $this->container['remove_add_ons'] = $remove_add_ons;
 
         return $this;
     }

@@ -104,21 +104,21 @@ class UpdateWebhookSettingsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "alertEmails"
+     * Test attribute "alert_emails"
      */
     public function testPropertyAlertEmails()
     {
     }
 
     /**
-     * Test attribute "alertCount"
+     * Test attribute "alert_count"
      */
     public function testPropertyAlertCount()
     {
     }
 
     /**
-     * Test attribute "eventTypes"
+     * Test attribute "event_types"
      */
     public function testPropertyEventTypes()
     {

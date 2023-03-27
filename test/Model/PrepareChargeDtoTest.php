@@ -125,28 +125,28 @@ class PrepareChargeDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "orderLines"
+     * Test attribute "order_lines"
      */
     public function testPropertyOrderLines()
     {
     }
 
     /**
-     * Test attribute "customerHandle"
+     * Test attribute "customer_handle"
      */
     public function testPropertyCustomerHandle()
     {
     }
 
     /**
-     * Test attribute "billingAddress"
+     * Test attribute "billing_address"
      */
     public function testPropertyBillingAddress()
     {
     }
 
     /**
-     * Test attribute "shippingAddress"
+     * Test attribute "shipping_address"
      */
     public function testPropertyShippingAddress()
     {

@@ -83,7 +83,7 @@ class SettleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentMethod"
+     * Test attribute "payment_method"
      */
     public function testPropertyPaymentMethod()
     {

@@ -76,7 +76,7 @@ class SubscriptionLinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentInfo"
+     * Test attribute "payment_info"
      */
     public function testPropertyPaymentInfo()
     {

@@ -66,10 +66,10 @@ class Webhook implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'success' => '\DateTime',
         'count' => 'int',
-        'lastFail' => '\DateTime',
-        'firstFail' => '\DateTime',
-        'alertCount' => 'int',
-        'alertSent' => '\DateTime'
+        'last_fail' => '\DateTime',
+        'first_fail' => '\DateTime',
+        'alert_count' => 'int',
+        'alert_sent' => '\DateTime'
     ];
 
     /**
@@ -88,10 +88,10 @@ class Webhook implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'success' => 'date-time',
         'count' => 'int32',
-        'lastFail' => 'date-time',
-        'firstFail' => 'date-time',
-        'alertCount' => 'int32',
-        'alertSent' => 'date-time'
+        'last_fail' => 'date-time',
+        'first_fail' => 'date-time',
+        'alert_count' => 'int32',
+        'alert_sent' => 'date-time'
     ];
 
     /**
@@ -131,10 +131,10 @@ class Webhook implements ModelInterface, ArrayAccess
         'created' => 'created',
         'success' => 'success',
         'count' => 'count',
-        'lastFail' => 'last_fail',
-        'firstFail' => 'first_fail',
-        'alertCount' => 'alert_count',
-        'alertSent' => 'alert_sent'
+        'last_fail' => 'last_fail',
+        'first_fail' => 'first_fail',
+        'alert_count' => 'alert_count',
+        'alert_sent' => 'alert_sent'
     ];
 
     /**
@@ -153,10 +153,10 @@ class Webhook implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'success' => 'setSuccess',
         'count' => 'setCount',
-        'lastFail' => 'setLastFail',
-        'firstFail' => 'setFirstFail',
-        'alertCount' => 'setAlertCount',
-        'alertSent' => 'setAlertSent'
+        'last_fail' => 'setLastFail',
+        'first_fail' => 'setFirstFail',
+        'alert_count' => 'setAlertCount',
+        'alert_sent' => 'setAlertSent'
     ];
 
     /**
@@ -175,10 +175,10 @@ class Webhook implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'success' => 'getSuccess',
         'count' => 'getCount',
-        'lastFail' => 'getLastFail',
-        'firstFail' => 'getFirstFail',
-        'alertCount' => 'getAlertCount',
-        'alertSent' => 'getAlertSent'
+        'last_fail' => 'getLastFail',
+        'first_fail' => 'getFirstFail',
+        'alert_count' => 'getAlertCount',
+        'alert_sent' => 'getAlertSent'
     ];
 
     /**
@@ -269,10 +269,10 @@ class Webhook implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['lastFail'] = isset($data['lastFail']) ? $data['lastFail'] : null;
-        $this->container['firstFail'] = isset($data['firstFail']) ? $data['firstFail'] : null;
-        $this->container['alertCount'] = isset($data['alertCount']) ? $data['alertCount'] : null;
-        $this->container['alertSent'] = isset($data['alertSent']) ? $data['alertSent'] : null;
+        $this->container['last_fail'] = isset($data['last_fail']) ? $data['last_fail'] : null;
+        $this->container['first_fail'] = isset($data['first_fail']) ? $data['first_fail'] : null;
+        $this->container['alert_count'] = isset($data['alert_count']) ? $data['alert_count'] : null;
+        $this->container['alert_sent'] = isset($data['alert_sent']) ? $data['alert_sent'] : null;
     }
 
     /**
@@ -578,97 +578,97 @@ class Webhook implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets lastFail
+     * Gets last_fail
      *
      * @return \DateTime
      */
     public function getLastFail()
     {
-        return $this->container['lastFail'];
+        return $this->container['last_fail'];
     }
 
     /**
-     * Sets lastFail
+     * Sets last_fail
      *
-     * @param \DateTime $lastFail Date of last failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $last_fail Date of last failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setLastFail($lastFail)
+    public function setLastFail($last_fail)
     {
-        $this->container['lastFail'] = $lastFail;
+        $this->container['last_fail'] = $last_fail;
 
         return $this;
     }
 
     /**
-     * Gets firstFail
+     * Gets first_fail
      *
      * @return \DateTime
      */
     public function getFirstFail()
     {
-        return $this->container['firstFail'];
+        return $this->container['first_fail'];
     }
 
     /**
-     * Sets firstFail
+     * Sets first_fail
      *
-     * @param \DateTime $firstFail Date of first failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $first_fail Date of first failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setFirstFail($firstFail)
+    public function setFirstFail($first_fail)
     {
-        $this->container['firstFail'] = $firstFail;
+        $this->container['first_fail'] = $first_fail;
 
         return $this;
     }
 
     /**
-     * Gets alertCount
+     * Gets alert_count
      *
      * @return int
      */
     public function getAlertCount()
     {
-        return $this->container['alertCount'];
+        return $this->container['alert_count'];
     }
 
     /**
-     * Sets alertCount
+     * Sets alert_count
      *
-     * @param int $alertCount Number of failed invocations before an alert email is sent
+     * @param int $alert_count Number of failed invocations before an alert email is sent
      *
      * @return $this
      */
-    public function setAlertCount($alertCount)
+    public function setAlertCount($alert_count)
     {
-        $this->container['alertCount'] = $alertCount;
+        $this->container['alert_count'] = $alert_count;
 
         return $this;
     }
 
     /**
-     * Gets alertSent
+     * Gets alert_sent
      *
      * @return \DateTime
      */
     public function getAlertSent()
     {
-        return $this->container['alertSent'];
+        return $this->container['alert_sent'];
     }
 
     /**
-     * Sets alertSent
+     * Sets alert_sent
      *
-     * @param \DateTime $alertSent Date when an optional alert email sending was requested in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $alert_sent Date when an optional alert email sending was requested in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setAlertSent($alertSent)
+    public function setAlertSent($alert_sent)
     {
-        $this->container['alertSent'] = $alertSent;
+        $this->container['alert_sent'] = $alert_sent;
 
         return $this;
     }

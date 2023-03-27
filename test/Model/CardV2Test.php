@@ -97,112 +97,112 @@ class CardV2Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "gwRef"
+     * Test attribute "gw_ref"
      */
     public function testPropertyGwRef()
     {
     }
 
     /**
-     * Test attribute "cardType"
+     * Test attribute "card_type"
      */
     public function testPropertyCardType()
     {
     }
 
     /**
-     * Test attribute "transactionCardType"
+     * Test attribute "transaction_card_type"
      */
     public function testPropertyTransactionCardType()
     {
     }
 
     /**
-     * Test attribute "cardAgreement"
+     * Test attribute "card_agreement"
      */
     public function testPropertyCardAgreement()
     {
     }
 
     /**
-     * Test attribute "expDate"
+     * Test attribute "exp_date"
      */
     public function testPropertyExpDate()
     {
     }
 
     /**
-     * Test attribute "maskedCard"
+     * Test attribute "masked_card"
      */
     public function testPropertyMaskedCard()
     {
     }
 
     /**
-     * Test attribute "lastSuccess"
+     * Test attribute "last_success"
      */
     public function testPropertyLastSuccess()
     {
     }
 
     /**
-     * Test attribute "lastFailed"
+     * Test attribute "last_failed"
      */
     public function testPropertyLastFailed()
     {
     }
 
     /**
-     * Test attribute "firstFail"
+     * Test attribute "first_fail"
      */
     public function testPropertyFirstFail()
     {
     }
 
     /**
-     * Test attribute "errorCode"
+     * Test attribute "error_code"
      */
     public function testPropertyErrorCode()
     {
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "declinedCount"
+     * Test attribute "declined_count"
      */
     public function testPropertyDeclinedCount()
     {
     }
 
     /**
-     * Test attribute "strongAuthenticationStatus"
+     * Test attribute "strong_authentication_status"
      */
     public function testPropertyStrongAuthenticationStatus()
     {
     }
 
     /**
-     * Test attribute "threeDSecureStatus"
+     * Test attribute "three_d_secure_status"
      */
     public function testPropertyThreeDSecureStatus()
     {
     }
 
     /**
-     * Test attribute "riskRule"
+     * Test attribute "risk_rule"
      */
     public function testPropertyRiskRule()
     {
     }
 
     /**
-     * Test attribute "cardCountry"
+     * Test attribute "card_country"
      */
     public function testPropertyCardCountry()
     {

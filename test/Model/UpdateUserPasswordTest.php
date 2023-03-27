@@ -83,7 +83,7 @@ class UpdateUserPasswordTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "oldPassword"
+     * Test attribute "old_password"
      */
     public function testPropertyOldPassword()
     {

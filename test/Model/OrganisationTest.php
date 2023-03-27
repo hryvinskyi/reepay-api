@@ -125,7 +125,7 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "liveDate"
+     * Test attribute "live_date"
      */
     public function testPropertyLiveDate()
     {

@@ -525,7 +525,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscriptionDiscount**
-> \Reepay\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sdHandle)
+
+> \Reepay\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sd_handle)
 
 Delete subscription discount
 
@@ -546,10 +547,10 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     $config
 );
 $handle = "handle_example"; // string | Subscription handle
-$sdHandle = "sdHandle_example"; // string | Subscription discount handle
+$sd_handle = "sd_handle_example"; // string | Subscription discount handle
 
 try {
-    $result = $apiInstance->deleteSubscriptionDiscount($handle, $sdHandle);
+    $result = $apiInstance->deleteSubscriptionDiscount($handle, $sd_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deleteSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -559,10 +560,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Subscription handle |
- **sdHandle** | **string**| Subscription discount handle |
+ Name          | Type       | Description                  | Notes 
+---------------|------------|------------------------------|-------
+ **handle**    | **string** | Subscription handle          |
+ **sd_handle** | **string** | Subscription discount handle |
 
 ### Return type
 
@@ -794,7 +795,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOn**
-> \Reepay\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $saHandle)
+
+> \Reepay\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $sa_handle)
 
 Get subscription add-on
 
@@ -815,10 +817,10 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     $config
 );
 $handle = "handle_example"; // string | Subscription handle
-$saHandle = "saHandle_example"; // string | Subscription add-on handle
+$sa_handle = "sa_handle_example"; // string | Subscription add-on handle
 
 try {
-    $result = $apiInstance->getSubscriptionAddOn($handle, $saHandle);
+    $result = $apiInstance->getSubscriptionAddOn($handle, $sa_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionAddOn: ', $e->getMessage(), PHP_EOL;
@@ -828,10 +830,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Subscription handle |
- **saHandle** | **string**| Subscription add-on handle |
+ Name          | Type       | Description                | Notes 
+---------------|------------|----------------------------|-------
+ **handle**    | **string** | Subscription handle        |
+ **sa_handle** | **string** | Subscription add-on handle |
 
 ### Return type
 
@@ -902,7 +904,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscount**
-> \Reepay\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sdHandle)
+
+> \Reepay\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sd_handle)
 
 Get subscription discount
 
@@ -923,10 +926,10 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     $config
 );
 $handle = "handle_example"; // string | Subscription handle
-$sdHandle = "sdHandle_example"; // string | Subscription discount handle
+$sd_handle = "sd_handle_example"; // string | Subscription discount handle
 
 try {
-    $result = $apiInstance->getSubscriptionDiscount($handle, $sdHandle);
+    $result = $apiInstance->getSubscriptionDiscount($handle, $sd_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -936,10 +939,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Subscription handle |
- **sdHandle** | **string**| Subscription discount handle |
+ Name          | Type       | Description                  | Notes 
+---------------|------------|------------------------------|-------
+ **handle**    | **string** | Subscription handle          |
+ **sd_handle** | **string** | Subscription discount handle |
 
 ### Return type
 
@@ -1554,7 +1557,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeSubscriptionPaymentMethod**
-> \Reepay\Model\PaymentMethodV2[] removeSubscriptionPaymentMethod($handle, $methodId)
+
+> \Reepay\Model\PaymentMethodV2[] removeSubscriptionPaymentMethod($handle, $method_id)
 
 Remove payment method
 
@@ -1575,10 +1579,10 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     $config
 );
 $handle = "handle_example"; // string | Subscription handle
-$methodId = "methodId_example"; // string | Payment method id
+$method_id = "method_id_example"; // string | Payment method id
 
 try {
-    $result = $apiInstance->removeSubscriptionPaymentMethod($handle, $methodId);
+    $result = $apiInstance->removeSubscriptionPaymentMethod($handle, $method_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->removeSubscriptionPaymentMethod: ', $e->getMessage(), PHP_EOL;
@@ -1588,10 +1592,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Subscription handle |
- **methodId** | **string**| Payment method id |
+ Name          | Type       | Description         | Notes 
+---------------|------------|---------------------|-------
+ **handle**    | **string** | Subscription handle |
+ **method_id** | **string** | Payment method id   |
 
 ### Return type
 

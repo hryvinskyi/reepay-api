@@ -63,7 +63,7 @@ class Organisation implements ModelInterface, ArrayAccess
         'state' => 'string',
         'privileges' => 'string[]',
         'created' => '\DateTime',
-        'liveDate' => '\DateTime'
+        'live_date' => '\DateTime'
     ];
 
     /**
@@ -79,7 +79,7 @@ class Organisation implements ModelInterface, ArrayAccess
         'state' => null,
         'privileges' => null,
         'created' => 'date-time',
-        'liveDate' => 'date-time'
+        'live_date' => 'date-time'
     ];
 
     /**
@@ -116,7 +116,7 @@ class Organisation implements ModelInterface, ArrayAccess
         'state' => 'state',
         'privileges' => 'privileges',
         'created' => 'created',
-        'liveDate' => 'live_date'
+        'live_date' => 'live_date'
     ];
 
     /**
@@ -132,7 +132,7 @@ class Organisation implements ModelInterface, ArrayAccess
         'state' => 'setState',
         'privileges' => 'setPrivileges',
         'created' => 'setCreated',
-        'liveDate' => 'setLiveDate'
+        'live_date' => 'setLiveDate'
     ];
 
     /**
@@ -148,7 +148,7 @@ class Organisation implements ModelInterface, ArrayAccess
         'state' => 'getState',
         'privileges' => 'getPrivileges',
         'created' => 'getCreated',
-        'liveDate' => 'getLiveDate'
+        'live_date' => 'getLiveDate'
     ];
 
     /**
@@ -230,7 +230,7 @@ class Organisation implements ModelInterface, ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['privileges'] = isset($data['privileges']) ? $data['privileges'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['liveDate'] = isset($data['liveDate']) ? $data['liveDate'] : null;
+        $this->container['live_date'] = isset($data['live_date']) ? $data['live_date'] : null;
     }
 
     /**
@@ -268,8 +268,8 @@ class Organisation implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['liveDate'] === null) {
-            $invalidProperties[] = "'liveDate' can't be null";
+        if ($this->container['live_date'] === null) {
+            $invalidProperties[] = "'live_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -464,25 +464,25 @@ class Organisation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets liveDate
+     * Gets live_date
      *
      * @return \DateTime
      */
     public function getLiveDate()
     {
-        return $this->container['liveDate'];
+        return $this->container['live_date'];
     }
 
     /**
-     * Sets liveDate
+     * Sets live_date
      *
-     * @param \DateTime $liveDate Date when the organisation went live. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $live_date Date when the organisation went live. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setLiveDate($liveDate)
+    public function setLiveDate($live_date)
     {
-        $this->container['liveDate'] = $liveDate;
+        $this->container['live_date'] = $live_date;
 
         return $this;
     }

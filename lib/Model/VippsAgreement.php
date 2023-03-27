@@ -56,7 +56,7 @@ class VippsAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantSerialNumber' => 'string'
+        'merchant_serial_number' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class VippsAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'merchantSerialNumber' => null
+        'merchant_serial_number' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class VippsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantSerialNumber' => 'merchantSerialNumber'
+        'merchant_serial_number' => 'merchantSerialNumber'
     ];
 
     /**
@@ -104,7 +104,7 @@ class VippsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantSerialNumber' => 'setMerchantSerialNumber'
+        'merchant_serial_number' => 'setMerchantSerialNumber'
     ];
 
     /**
@@ -113,7 +113,7 @@ class VippsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantSerialNumber' => 'getMerchantSerialNumber'
+        'merchant_serial_number' => 'getMerchantSerialNumber'
     ];
 
     /**
@@ -174,7 +174,7 @@ class VippsAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantSerialNumber'] = isset($data['merchantSerialNumber']) ? $data['merchantSerialNumber'] : null;
+        $this->container['merchant_serial_number'] = isset($data['merchant_serial_number']) ? $data['merchant_serial_number'] : null;
     }
 
     /**
@@ -186,8 +186,8 @@ class VippsAgreement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantSerialNumber'] === null) {
-            $invalidProperties[] = "'merchantSerialNumber' can't be null";
+        if ($this->container['merchant_serial_number'] === null) {
+            $invalidProperties[] = "'merchant_serial_number' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,25 +205,25 @@ class VippsAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merchantSerialNumber
+     * Gets merchant_serial_number
      *
      * @return string
      */
     public function getMerchantSerialNumber()
     {
-        return $this->container['merchantSerialNumber'];
+        return $this->container['merchant_serial_number'];
     }
 
     /**
-     * Sets merchantSerialNumber
+     * Sets merchant_serial_number
      *
-     * @param string $merchantSerialNumber merchantSerialNumber
+     * @param string $merchant_serial_number merchant_serial_number
      *
      * @return $this
      */
-    public function setMerchantSerialNumber($merchantSerialNumber)
+    public function setMerchantSerialNumber($merchant_serial_number)
     {
-        $this->container['merchantSerialNumber'] = $merchantSerialNumber;
+        $this->container['merchant_serial_number'] = $merchant_serial_number;
 
         return $this;
     }

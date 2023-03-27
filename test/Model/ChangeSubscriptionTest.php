@@ -111,56 +111,56 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "compensationMethod"
+     * Test attribute "compensation_method"
      */
     public function testPropertyCompensationMethod()
     {
     }
 
     /**
-     * Test attribute "partialPeriodHandling"
+     * Test attribute "partial_period_handling"
      */
     public function testPropertyPartialPeriodHandling()
     {
     }
 
     /**
-     * Test attribute "startDate"
+     * Test attribute "start_date"
      */
     public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "forceNewPeriod"
+     * Test attribute "force_new_period"
      */
     public function testPropertyForceNewPeriod()
     {
     }
 
     /**
-     * Test attribute "cancelChange"
+     * Test attribute "cancel_change"
      */
     public function testPropertyCancelChange()
     {
     }
 
     /**
-     * Test attribute "addOns"
+     * Test attribute "add_ons"
      */
     public function testPropertyAddOns()
     {
     }
 
     /**
-     * Test attribute "removeAddOns"
+     * Test attribute "remove_add_ons"
      */
     public function testPropertyRemoveAddOns()
     {

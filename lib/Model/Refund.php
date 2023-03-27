@@ -65,10 +65,10 @@ class Refund implements ModelInterface, ArrayAccess
         'error' => 'string',
         'type' => 'string',
         'created' => '\DateTime',
-        'creditNoteId' => 'string',
-        'refTransaction' => 'string',
-        'errorState' => 'string',
-        'acquirerMessage' => 'string'
+        'credit_note_id' => 'string',
+        'ref_transaction' => 'string',
+        'error_state' => 'string',
+        'acquirer_message' => 'string'
     ];
 
     /**
@@ -86,10 +86,10 @@ class Refund implements ModelInterface, ArrayAccess
         'error' => null,
         'type' => null,
         'created' => 'date-time',
-        'creditNoteId' => null,
-        'refTransaction' => null,
-        'errorState' => null,
-        'acquirerMessage' => null
+        'credit_note_id' => null,
+        'ref_transaction' => null,
+        'error_state' => null,
+        'acquirer_message' => null
     ];
 
     /**
@@ -128,10 +128,10 @@ class Refund implements ModelInterface, ArrayAccess
         'error' => 'error',
         'type' => 'type',
         'created' => 'created',
-        'creditNoteId' => 'credit_note_id',
-        'refTransaction' => 'ref_transaction',
-        'errorState' => 'error_state',
-        'acquirerMessage' => 'acquirer_message'
+        'credit_note_id' => 'credit_note_id',
+        'ref_transaction' => 'ref_transaction',
+        'error_state' => 'error_state',
+        'acquirer_message' => 'acquirer_message'
     ];
 
     /**
@@ -149,10 +149,10 @@ class Refund implements ModelInterface, ArrayAccess
         'error' => 'setError',
         'type' => 'setType',
         'created' => 'setCreated',
-        'creditNoteId' => 'setCreditNoteId',
-        'refTransaction' => 'setRefTransaction',
-        'errorState' => 'setErrorState',
-        'acquirerMessage' => 'setAcquirerMessage'
+        'credit_note_id' => 'setCreditNoteId',
+        'ref_transaction' => 'setRefTransaction',
+        'error_state' => 'setErrorState',
+        'acquirer_message' => 'setAcquirerMessage'
     ];
 
     /**
@@ -170,10 +170,10 @@ class Refund implements ModelInterface, ArrayAccess
         'error' => 'getError',
         'type' => 'getType',
         'created' => 'getCreated',
-        'creditNoteId' => 'getCreditNoteId',
-        'refTransaction' => 'getRefTransaction',
-        'errorState' => 'getErrorState',
-        'acquirerMessage' => 'getAcquirerMessage'
+        'credit_note_id' => 'getCreditNoteId',
+        'ref_transaction' => 'getRefTransaction',
+        'error_state' => 'getErrorState',
+        'acquirer_message' => 'getAcquirerMessage'
     ];
 
     /**
@@ -339,10 +339,10 @@ class Refund implements ModelInterface, ArrayAccess
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['creditNoteId'] = isset($data['creditNoteId']) ? $data['creditNoteId'] : null;
-        $this->container['refTransaction'] = isset($data['refTransaction']) ? $data['refTransaction'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
+        $this->container['credit_note_id'] = isset($data['credit_note_id']) ? $data['credit_note_id'] : null;
+        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
     }
 
     /**
@@ -395,9 +395,13 @@ class Refund implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'created' can't be null";
         }
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -652,106 +656,106 @@ class Refund implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets creditNoteId
+     * Gets credit_note_id
      *
      * @return string
      */
     public function getCreditNoteId()
     {
-        return $this->container['creditNoteId'];
+        return $this->container['credit_note_id'];
     }
 
     /**
-     * Sets creditNoteId
+     * Sets credit_note_id
      *
-     * @param string $creditNoteId Credit note id for successful refund
+     * @param string $credit_note_id Credit note id for successful refund
      *
      * @return $this
      */
-    public function setCreditNoteId($creditNoteId)
+    public function setCreditNoteId($credit_note_id)
     {
-        $this->container['creditNoteId'] = $creditNoteId;
+        $this->container['credit_note_id'] = $credit_note_id;
 
         return $this;
     }
 
     /**
-     * Gets refTransaction
+     * Gets ref_transaction
      *
      * @return string
      */
     public function getRefTransaction()
     {
-        return $this->container['refTransaction'];
+        return $this->container['ref_transaction'];
     }
 
     /**
-     * Sets refTransaction
+     * Sets ref_transaction
      *
-     * @param string $refTransaction Id of a possible settled transaction that has been refunded
+     * @param string $ref_transaction Id of a possible settled transaction that has been refunded
      *
      * @return $this
      */
-    public function setRefTransaction($refTransaction)
+    public function setRefTransaction($ref_transaction)
     {
-        $this->container['refTransaction'] = $refTransaction;
+        $this->container['ref_transaction'] = $ref_transaction;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Reepay error state if failed: `hard_declined` or `processing_error`. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay and the acquirer.
+     * @param string $error_state Reepay error state if failed: `hard_declined` or `processing_error`. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay and the acquirer.
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }

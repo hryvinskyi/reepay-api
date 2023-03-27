@@ -104,14 +104,14 @@ class CreateRefundTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "noteLines"
+     * Test attribute "note_lines"
      */
     public function testPropertyNoteLines()
     {
     }
 
     /**
-     * Test attribute "manualTransfer"
+     * Test attribute "manual_transfer"
      */
     public function testPropertyManualTransfer()
     {

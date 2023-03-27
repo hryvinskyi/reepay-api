@@ -1,7 +1,6 @@
 # SepaMandate
 
 ## Properties
-
  Name     | Type       | Description | Notes      
 ----------|------------|-------------|------------
  **iban** | **string** |             | [optional] 

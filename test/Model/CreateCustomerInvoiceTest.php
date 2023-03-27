@@ -97,28 +97,28 @@ class CreateCustomerInvoiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "orderLines"
+     * Test attribute "order_lines"
      */
     public function testPropertyOrderLines()
     {
     }
 
     /**
-     * Test attribute "manualTransfer"
+     * Test attribute "manual_transfer"
      */
     public function testPropertyManualTransfer()
     {
     }
 
     /**
-     * Test attribute "billingAddress"
+     * Test attribute "billing_address"
      */
     public function testPropertyBillingAddress()
     {
     }
 
     /**
-     * Test attribute "shippingAddress"
+     * Test attribute "shipping_address"
      */
     public function testPropertyShippingAddress()
     {

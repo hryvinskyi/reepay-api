@@ -104,126 +104,126 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "refTransaction"
+     * Test attribute "ref_transaction"
      */
     public function testPropertyRefTransaction()
     {
     }
 
     /**
-     * Test attribute "gwId"
+     * Test attribute "gw_id"
      */
     public function testPropertyGwId()
     {
     }
 
     /**
-     * Test attribute "lastFailed"
+     * Test attribute "last_failed"
      */
     public function testPropertyLastFailed()
     {
     }
 
     /**
-     * Test attribute "firstFailed"
+     * Test attribute "first_failed"
      */
     public function testPropertyFirstFailed()
     {
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "cardType"
+     * Test attribute "card_type"
      */
     public function testPropertyCardType()
     {
     }
 
     /**
-     * Test attribute "transactionCardType"
+     * Test attribute "transaction_card_type"
      */
     public function testPropertyTransactionCardType()
     {
     }
 
     /**
-     * Test attribute "expDate"
+     * Test attribute "exp_date"
      */
     public function testPropertyExpDate()
     {
     }
 
     /**
-     * Test attribute "maskedCard"
+     * Test attribute "masked_card"
      */
     public function testPropertyMaskedCard()
     {
     }
 
     /**
-     * Test attribute "cardCountry"
+     * Test attribute "card_country"
      */
     public function testPropertyCardCountry()
     {
     }
 
     /**
-     * Test attribute "strongAuthenticationStatus"
+     * Test attribute "strong_authentication_status"
      */
     public function testPropertyStrongAuthenticationStatus()
     {
     }
 
     /**
-     * Test attribute "threeDSecureStatus"
+     * Test attribute "three_d_secure_status"
      */
     public function testPropertyThreeDSecureStatus()
     {
     }
 
     /**
-     * Test attribute "riskRule"
+     * Test attribute "risk_rule"
      */
     public function testPropertyRiskRule()
     {
     }
 
     /**
-     * Test attribute "acquirerCode"
+     * Test attribute "acquirer_code"
      */
     public function testPropertyAcquirerCode()
     {
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {
     }
 
     /**
-     * Test attribute "acquirerReference"
+     * Test attribute "acquirer_reference"
      */
     public function testPropertyAcquirerReference()
     {
     }
 
     /**
-     * Test attribute "textOnStatement"
+     * Test attribute "text_on_statement"
      */
     public function testPropertyTextOnStatement()
     {
     }
 
     /**
-     * Test attribute "surchargeFee"
+     * Test attribute "surcharge_fee"
      */
     public function testPropertySurchargeFee()
     {

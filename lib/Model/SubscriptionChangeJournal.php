@@ -58,10 +58,10 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'change' => '\Reepay\Model\SubscriptionChange',
         'invoice' => '\Reepay\Model\Invoice',
-        'newPlan' => '\Reepay\Model\Plan',
-        'compensationAmount' => 'int',
-        'compensationInvoice' => '\Reepay\Model\Invoice',
-        'changedPeriodStartDate' => '\DateTime'
+        'new_plan' => '\Reepay\Model\Plan',
+        'compensation_amount' => 'int',
+        'compensation_invoice' => '\Reepay\Model\Invoice',
+        'changed_period_start_date' => '\DateTime'
     ];
 
     /**
@@ -72,10 +72,10 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'change' => null,
         'invoice' => null,
-        'newPlan' => null,
-        'compensationAmount' => 'int32',
-        'compensationInvoice' => null,
-        'changedPeriodStartDate' => 'date-time'
+        'new_plan' => null,
+        'compensation_amount' => 'int32',
+        'compensation_invoice' => null,
+        'changed_period_start_date' => 'date-time'
     ];
 
     /**
@@ -107,10 +107,10 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'change' => 'change',
         'invoice' => 'invoice',
-        'newPlan' => 'new_plan',
-        'compensationAmount' => 'compensation_amount',
-        'compensationInvoice' => 'compensation_invoice',
-        'changedPeriodStartDate' => 'changed_period_start_date'
+        'new_plan' => 'new_plan',
+        'compensation_amount' => 'compensation_amount',
+        'compensation_invoice' => 'compensation_invoice',
+        'changed_period_start_date' => 'changed_period_start_date'
     ];
 
     /**
@@ -121,10 +121,10 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     protected static $setters = [
         'change' => 'setChange',
         'invoice' => 'setInvoice',
-        'newPlan' => 'setNewPlan',
-        'compensationAmount' => 'setCompensationAmount',
-        'compensationInvoice' => 'setCompensationInvoice',
-        'changedPeriodStartDate' => 'setChangedPeriodStartDate'
+        'new_plan' => 'setNewPlan',
+        'compensation_amount' => 'setCompensationAmount',
+        'compensation_invoice' => 'setCompensationInvoice',
+        'changed_period_start_date' => 'setChangedPeriodStartDate'
     ];
 
     /**
@@ -135,10 +135,10 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     protected static $getters = [
         'change' => 'getChange',
         'invoice' => 'getInvoice',
-        'newPlan' => 'getNewPlan',
-        'compensationAmount' => 'getCompensationAmount',
-        'compensationInvoice' => 'getCompensationInvoice',
-        'changedPeriodStartDate' => 'getChangedPeriodStartDate'
+        'new_plan' => 'getNewPlan',
+        'compensation_amount' => 'getCompensationAmount',
+        'compensation_invoice' => 'getCompensationInvoice',
+        'changed_period_start_date' => 'getChangedPeriodStartDate'
     ];
 
     /**
@@ -201,10 +201,10 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     {
         $this->container['change'] = isset($data['change']) ? $data['change'] : null;
         $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
-        $this->container['newPlan'] = isset($data['newPlan']) ? $data['newPlan'] : null;
-        $this->container['compensationAmount'] = isset($data['compensationAmount']) ? $data['compensationAmount'] : null;
-        $this->container['compensationInvoice'] = isset($data['compensationInvoice']) ? $data['compensationInvoice'] : null;
-        $this->container['changedPeriodStartDate'] = isset($data['changedPeriodStartDate']) ? $data['changedPeriodStartDate'] : null;
+        $this->container['new_plan'] = isset($data['new_plan']) ? $data['new_plan'] : null;
+        $this->container['compensation_amount'] = isset($data['compensation_amount']) ? $data['compensation_amount'] : null;
+        $this->container['compensation_invoice'] = isset($data['compensation_invoice']) ? $data['compensation_invoice'] : null;
+        $this->container['changed_period_start_date'] = isset($data['changed_period_start_date']) ? $data['changed_period_start_date'] : null;
     }
 
     /**
@@ -280,97 +280,97 @@ class SubscriptionChangeJournal implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets newPlan
+     * Gets new_plan
      *
      * @return \Reepay\Model\Plan
      */
     public function getNewPlan()
     {
-        return $this->container['newPlan'];
+        return $this->container['new_plan'];
     }
 
     /**
-     * Sets newPlan
+     * Sets new_plan
      *
-     * @param \Reepay\Model\Plan $newPlan newPlan
+     * @param \Reepay\Model\Plan $new_plan new_plan
      *
      * @return $this
      */
-    public function setNewPlan($newPlan)
+    public function setNewPlan($new_plan)
     {
-        $this->container['newPlan'] = $newPlan;
+        $this->container['new_plan'] = $new_plan;
 
         return $this;
     }
 
     /**
-     * Gets compensationAmount
+     * Gets compensation_amount
      *
      * @return int
      */
     public function getCompensationAmount()
     {
-        return $this->container['compensationAmount'];
+        return $this->container['compensation_amount'];
     }
 
     /**
-     * Sets compensationAmount
+     * Sets compensation_amount
      *
-     * @param int $compensationAmount If compensation the compensation amount
+     * @param int $compensation_amount If compensation the compensation amount
      *
      * @return $this
      */
-    public function setCompensationAmount($compensationAmount)
+    public function setCompensationAmount($compensation_amount)
     {
-        $this->container['compensationAmount'] = $compensationAmount;
+        $this->container['compensation_amount'] = $compensation_amount;
 
         return $this;
     }
 
     /**
-     * Gets compensationInvoice
+     * Gets compensation_invoice
      *
      * @return \Reepay\Model\Invoice
      */
     public function getCompensationInvoice()
     {
-        return $this->container['compensationInvoice'];
+        return $this->container['compensation_invoice'];
     }
 
     /**
-     * Sets compensationInvoice
+     * Sets compensation_invoice
      *
-     * @param \Reepay\Model\Invoice $compensationInvoice compensationInvoice
+     * @param \Reepay\Model\Invoice $compensation_invoice compensation_invoice
      *
      * @return $this
      */
-    public function setCompensationInvoice($compensationInvoice)
+    public function setCompensationInvoice($compensation_invoice)
     {
-        $this->container['compensationInvoice'] = $compensationInvoice;
+        $this->container['compensation_invoice'] = $compensation_invoice;
 
         return $this;
     }
 
     /**
-     * Gets changedPeriodStartDate
+     * Gets changed_period_start_date
      *
      * @return \DateTime
      */
     public function getChangedPeriodStartDate()
     {
-        return $this->container['changedPeriodStartDate'];
+        return $this->container['changed_period_start_date'];
     }
 
     /**
-     * Sets changedPeriodStartDate
+     * Sets changed_period_start_date
      *
-     * @param \DateTime $changedPeriodStartDate If the change resulted in a new billing cycle this is the start date used
+     * @param \DateTime $changed_period_start_date If the change resulted in a new billing cycle this is the start date used
      *
      * @return $this
      */
-    public function setChangedPeriodStartDate($changedPeriodStartDate)
+    public function setChangedPeriodStartDate($changed_period_start_date)
     {
-        $this->container['changedPeriodStartDate'] = $changedPeriodStartDate;
+        $this->container['changed_period_start_date'] = $changed_period_start_date;
 
         return $this;
     }

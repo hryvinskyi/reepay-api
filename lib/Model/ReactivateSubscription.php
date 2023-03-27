@@ -56,8 +56,8 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'startDate' => 'string',
-        'partialPeriodHandling' => 'string'
+        'start_date' => 'string',
+        'partial_period_handling' => 'string'
     ];
 
     /**
@@ -66,8 +66,8 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'startDate' => null,
-        'partialPeriodHandling' => null
+        'start_date' => null,
+        'partial_period_handling' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'startDate' => 'start_date',
-        'partialPeriodHandling' => 'partial_period_handling'
+        'start_date' => 'start_date',
+        'partial_period_handling' => 'partial_period_handling'
     ];
 
     /**
@@ -107,8 +107,8 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'startDate' => 'setStartDate',
-        'partialPeriodHandling' => 'setPartialPeriodHandling'
+        'start_date' => 'setStartDate',
+        'partial_period_handling' => 'setPartialPeriodHandling'
     ];
 
     /**
@@ -117,8 +117,8 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'startDate' => 'getStartDate',
-        'partialPeriodHandling' => 'getPartialPeriodHandling'
+        'start_date' => 'getStartDate',
+        'partial_period_handling' => 'getPartialPeriodHandling'
     ];
 
     /**
@@ -197,8 +197,8 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
-        $this->container['partialPeriodHandling'] = isset($data['partialPeriodHandling']) ? $data['partialPeriodHandling'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
     }
 
     /**
@@ -211,9 +211,13 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($this->container['partialPeriodHandling']) && !in_array($this->container['partialPeriodHandling'], $allowedValues, true)) {
+        if (!is_null($this->container['partial_period_handling']) && !in_array(
+                $this->container['partial_period_handling'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'partialPeriodHandling', must be one of '%s'",
+                "invalid value for 'partial_period_handling', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -234,58 +238,58 @@ class ReactivateSubscription implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return string
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param string $startDate Optional date and time from which the subscription is eligible to schedule first invoice after reactivation. If no time part is given start of day will be used. A start date in the past can be used, but not before the date when the subscription was put on hold. A start date in the past can result in invoices for past billing periods. Default value is current date and time. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
+     * @param string $start_date Optional date and time from which the subscription is eligible to schedule first invoice after reactivation. If no time part is given start of day will be used. A start date in the past can be used, but not before the date when the subscription was put on hold. A start date in the past can result in invoices for past billing periods. Default value is current date and time. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
      *
      * @return $this
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets partialPeriodHandling
+     * Gets partial_period_handling
      *
      * @return string
      */
     public function getPartialPeriodHandling()
     {
-        return $this->container['partialPeriodHandling'];
+        return $this->container['partial_period_handling'];
     }
 
     /**
-     * Sets partialPeriodHandling
+     * Sets partial_period_handling
      *
-     * @param string $partialPeriodHandling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
      *
      * @return $this
      */
-    public function setPartialPeriodHandling($partialPeriodHandling)
+    public function setPartialPeriodHandling($partial_period_handling)
     {
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($partialPeriodHandling) && !in_array($partialPeriodHandling, $allowedValues, true)) {
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'partialPeriodHandling', must be one of '%s'",
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['partialPeriodHandling'] = $partialPeriodHandling;
+        $this->container['partial_period_handling'] = $partial_period_handling;
 
         return $this;
     }

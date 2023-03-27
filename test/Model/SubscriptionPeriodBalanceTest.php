@@ -118,14 +118,14 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "periodAmount"
+     * Test attribute "period_amount"
      */
     public function testPropertyPeriodAmount()
     {
     }
 
     /**
-     * Test attribute "onlineRefundable"
+     * Test attribute "online_refundable"
      */
     public function testPropertyOnlineRefundable()
     {

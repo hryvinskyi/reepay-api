@@ -63,18 +63,18 @@ class OrderLine implements ModelInterface, ArrayAccess
         'quantity' => 'int',
         'origin' => 'string',
         'timestamp' => '\DateTime',
-        'discountedAmount' => 'int',
-        'amountVat' => 'int',
-        'amountExVat' => 'int',
-        'unitAmount' => 'int',
-        'unitAmountVat' => 'int',
-        'unitAmountExVat' => 'int',
-        'amountDefinedInclVat' => 'bool',
-        'originHandle' => 'string',
-        'periodFrom' => '\DateTime',
-        'periodTo' => '\DateTime',
-        'discountPercentage' => 'int',
-        'discountedOrderLine' => 'string'
+        'discounted_amount' => 'int',
+        'amount_vat' => 'int',
+        'amount_ex_vat' => 'int',
+        'unit_amount' => 'int',
+        'unit_amount_vat' => 'int',
+        'unit_amount_ex_vat' => 'int',
+        'amount_defined_incl_vat' => 'bool',
+        'origin_handle' => 'string',
+        'period_from' => '\DateTime',
+        'period_to' => '\DateTime',
+        'discount_percentage' => 'int',
+        'discounted_order_line' => 'string'
     ];
 
     /**
@@ -90,18 +90,18 @@ class OrderLine implements ModelInterface, ArrayAccess
         'quantity' => 'int32',
         'origin' => null,
         'timestamp' => 'date-time',
-        'discountedAmount' => 'int32',
-        'amountVat' => 'int32',
-        'amountExVat' => 'int32',
-        'unitAmount' => 'int32',
-        'unitAmountVat' => 'int32',
-        'unitAmountExVat' => 'int32',
-        'amountDefinedInclVat' => null,
-        'originHandle' => null,
-        'periodFrom' => 'date-time',
-        'periodTo' => 'date-time',
-        'discountPercentage' => 'int32',
-        'discountedOrderLine' => null
+        'discounted_amount' => 'int32',
+        'amount_vat' => 'int32',
+        'amount_ex_vat' => 'int32',
+        'unit_amount' => 'int32',
+        'unit_amount_vat' => 'int32',
+        'unit_amount_ex_vat' => 'int32',
+        'amount_defined_incl_vat' => null,
+        'origin_handle' => null,
+        'period_from' => 'date-time',
+        'period_to' => 'date-time',
+        'discount_percentage' => 'int32',
+        'discounted_order_line' => null
     ];
 
     /**
@@ -138,18 +138,18 @@ class OrderLine implements ModelInterface, ArrayAccess
         'quantity' => 'quantity',
         'origin' => 'origin',
         'timestamp' => 'timestamp',
-        'discountedAmount' => 'discounted_amount',
-        'amountVat' => 'amount_vat',
-        'amountExVat' => 'amount_ex_vat',
-        'unitAmount' => 'unit_amount',
-        'unitAmountVat' => 'unit_amount_vat',
-        'unitAmountExVat' => 'unit_amount_ex_vat',
-        'amountDefinedInclVat' => 'amount_defined_incl_vat',
-        'originHandle' => 'origin_handle',
-        'periodFrom' => 'period_from',
-        'periodTo' => 'period_to',
-        'discountPercentage' => 'discount_percentage',
-        'discountedOrderLine' => 'discounted_order_line'
+        'discounted_amount' => 'discounted_amount',
+        'amount_vat' => 'amount_vat',
+        'amount_ex_vat' => 'amount_ex_vat',
+        'unit_amount' => 'unit_amount',
+        'unit_amount_vat' => 'unit_amount_vat',
+        'unit_amount_ex_vat' => 'unit_amount_ex_vat',
+        'amount_defined_incl_vat' => 'amount_defined_incl_vat',
+        'origin_handle' => 'origin_handle',
+        'period_from' => 'period_from',
+        'period_to' => 'period_to',
+        'discount_percentage' => 'discount_percentage',
+        'discounted_order_line' => 'discounted_order_line'
     ];
 
     /**
@@ -165,18 +165,18 @@ class OrderLine implements ModelInterface, ArrayAccess
         'quantity' => 'setQuantity',
         'origin' => 'setOrigin',
         'timestamp' => 'setTimestamp',
-        'discountedAmount' => 'setDiscountedAmount',
-        'amountVat' => 'setAmountVat',
-        'amountExVat' => 'setAmountExVat',
-        'unitAmount' => 'setUnitAmount',
-        'unitAmountVat' => 'setUnitAmountVat',
-        'unitAmountExVat' => 'setUnitAmountExVat',
-        'amountDefinedInclVat' => 'setAmountDefinedInclVat',
-        'originHandle' => 'setOriginHandle',
-        'periodFrom' => 'setPeriodFrom',
-        'periodTo' => 'setPeriodTo',
-        'discountPercentage' => 'setDiscountPercentage',
-        'discountedOrderLine' => 'setDiscountedOrderLine'
+        'discounted_amount' => 'setDiscountedAmount',
+        'amount_vat' => 'setAmountVat',
+        'amount_ex_vat' => 'setAmountExVat',
+        'unit_amount' => 'setUnitAmount',
+        'unit_amount_vat' => 'setUnitAmountVat',
+        'unit_amount_ex_vat' => 'setUnitAmountExVat',
+        'amount_defined_incl_vat' => 'setAmountDefinedInclVat',
+        'origin_handle' => 'setOriginHandle',
+        'period_from' => 'setPeriodFrom',
+        'period_to' => 'setPeriodTo',
+        'discount_percentage' => 'setDiscountPercentage',
+        'discounted_order_line' => 'setDiscountedOrderLine'
     ];
 
     /**
@@ -192,18 +192,18 @@ class OrderLine implements ModelInterface, ArrayAccess
         'quantity' => 'getQuantity',
         'origin' => 'getOrigin',
         'timestamp' => 'getTimestamp',
-        'discountedAmount' => 'getDiscountedAmount',
-        'amountVat' => 'getAmountVat',
-        'amountExVat' => 'getAmountExVat',
-        'unitAmount' => 'getUnitAmount',
-        'unitAmountVat' => 'getUnitAmountVat',
-        'unitAmountExVat' => 'getUnitAmountExVat',
-        'amountDefinedInclVat' => 'getAmountDefinedInclVat',
-        'originHandle' => 'getOriginHandle',
-        'periodFrom' => 'getPeriodFrom',
-        'periodTo' => 'getPeriodTo',
-        'discountPercentage' => 'getDiscountPercentage',
-        'discountedOrderLine' => 'getDiscountedOrderLine'
+        'discounted_amount' => 'getDiscountedAmount',
+        'amount_vat' => 'getAmountVat',
+        'amount_ex_vat' => 'getAmountExVat',
+        'unit_amount' => 'getUnitAmount',
+        'unit_amount_vat' => 'getUnitAmountVat',
+        'unit_amount_ex_vat' => 'getUnitAmountExVat',
+        'amount_defined_incl_vat' => 'getAmountDefinedInclVat',
+        'origin_handle' => 'getOriginHandle',
+        'period_from' => 'getPeriodFrom',
+        'period_to' => 'getPeriodTo',
+        'discount_percentage' => 'getDiscountPercentage',
+        'discounted_order_line' => 'getDiscountedOrderLine'
     ];
 
     /**
@@ -297,18 +297,18 @@ class OrderLine implements ModelInterface, ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
         $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
-        $this->container['discountedAmount'] = isset($data['discountedAmount']) ? $data['discountedAmount'] : null;
-        $this->container['amountVat'] = isset($data['amountVat']) ? $data['amountVat'] : null;
-        $this->container['amountExVat'] = isset($data['amountExVat']) ? $data['amountExVat'] : null;
-        $this->container['unitAmount'] = isset($data['unitAmount']) ? $data['unitAmount'] : null;
-        $this->container['unitAmountVat'] = isset($data['unitAmountVat']) ? $data['unitAmountVat'] : null;
-        $this->container['unitAmountExVat'] = isset($data['unitAmountExVat']) ? $data['unitAmountExVat'] : null;
-        $this->container['amountDefinedInclVat'] = isset($data['amountDefinedInclVat']) ? $data['amountDefinedInclVat'] : null;
-        $this->container['originHandle'] = isset($data['originHandle']) ? $data['originHandle'] : null;
-        $this->container['periodFrom'] = isset($data['periodFrom']) ? $data['periodFrom'] : null;
-        $this->container['periodTo'] = isset($data['periodTo']) ? $data['periodTo'] : null;
-        $this->container['discountPercentage'] = isset($data['discountPercentage']) ? $data['discountPercentage'] : null;
-        $this->container['discountedOrderLine'] = isset($data['discountedOrderLine']) ? $data['discountedOrderLine'] : null;
+        $this->container['discounted_amount'] = isset($data['discounted_amount']) ? $data['discounted_amount'] : null;
+        $this->container['amount_vat'] = isset($data['amount_vat']) ? $data['amount_vat'] : null;
+        $this->container['amount_ex_vat'] = isset($data['amount_ex_vat']) ? $data['amount_ex_vat'] : null;
+        $this->container['unit_amount'] = isset($data['unit_amount']) ? $data['unit_amount'] : null;
+        $this->container['unit_amount_vat'] = isset($data['unit_amount_vat']) ? $data['unit_amount_vat'] : null;
+        $this->container['unit_amount_ex_vat'] = isset($data['unit_amount_ex_vat']) ? $data['unit_amount_ex_vat'] : null;
+        $this->container['amount_defined_incl_vat'] = isset($data['amount_defined_incl_vat']) ? $data['amount_defined_incl_vat'] : null;
+        $this->container['origin_handle'] = isset($data['origin_handle']) ? $data['origin_handle'] : null;
+        $this->container['period_from'] = isset($data['period_from']) ? $data['period_from'] : null;
+        $this->container['period_to'] = isset($data['period_to']) ? $data['period_to'] : null;
+        $this->container['discount_percentage'] = isset($data['discount_percentage']) ? $data['discount_percentage'] : null;
+        $this->container['discounted_order_line'] = isset($data['discounted_order_line']) ? $data['discounted_order_line'] : null;
     }
 
     /**
@@ -349,23 +349,23 @@ class OrderLine implements ModelInterface, ArrayAccess
         if ($this->container['timestamp'] === null) {
             $invalidProperties[] = "'timestamp' can't be null";
         }
-        if ($this->container['amountVat'] === null) {
-            $invalidProperties[] = "'amountVat' can't be null";
+        if ($this->container['amount_vat'] === null) {
+            $invalidProperties[] = "'amount_vat' can't be null";
         }
-        if ($this->container['amountExVat'] === null) {
-            $invalidProperties[] = "'amountExVat' can't be null";
+        if ($this->container['amount_ex_vat'] === null) {
+            $invalidProperties[] = "'amount_ex_vat' can't be null";
         }
-        if ($this->container['unitAmount'] === null) {
-            $invalidProperties[] = "'unitAmount' can't be null";
+        if ($this->container['unit_amount'] === null) {
+            $invalidProperties[] = "'unit_amount' can't be null";
         }
-        if ($this->container['unitAmountVat'] === null) {
-            $invalidProperties[] = "'unitAmountVat' can't be null";
+        if ($this->container['unit_amount_vat'] === null) {
+            $invalidProperties[] = "'unit_amount_vat' can't be null";
         }
-        if ($this->container['unitAmountExVat'] === null) {
-            $invalidProperties[] = "'unitAmountExVat' can't be null";
+        if ($this->container['unit_amount_ex_vat'] === null) {
+            $invalidProperties[] = "'unit_amount_ex_vat' can't be null";
         }
-        if ($this->container['amountDefinedInclVat'] === null) {
-            $invalidProperties[] = "'amountDefinedInclVat' can't be null";
+        if ($this->container['amount_defined_incl_vat'] === null) {
+            $invalidProperties[] = "'amount_defined_incl_vat' can't be null";
         }
         return $invalidProperties;
     }
@@ -560,289 +560,289 @@ class OrderLine implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets discountedAmount
+     * Gets discounted_amount
      *
      * @return int
      */
     public function getDiscountedAmount()
     {
-        return $this->container['discountedAmount'];
+        return $this->container['discounted_amount'];
     }
 
     /**
-     * Sets discountedAmount
+     * Sets discounted_amount
      *
-     * @param int $discountedAmount Order line amount after potential discount has been deducted
+     * @param int $discounted_amount Order line amount after potential discount has been deducted
      *
      * @return $this
      */
-    public function setDiscountedAmount($discountedAmount)
+    public function setDiscountedAmount($discounted_amount)
     {
-        $this->container['discountedAmount'] = $discountedAmount;
+        $this->container['discounted_amount'] = $discounted_amount;
 
         return $this;
     }
 
     /**
-     * Gets amountVat
+     * Gets amount_vat
      *
      * @return int
      */
     public function getAmountVat()
     {
-        return $this->container['amountVat'];
+        return $this->container['amount_vat'];
     }
 
     /**
-     * Sets amountVat
+     * Sets amount_vat
      *
-     * @param int $amountVat Order line total vat amount
+     * @param int $amount_vat Order line total vat amount
      *
      * @return $this
      */
-    public function setAmountVat($amountVat)
+    public function setAmountVat($amount_vat)
     {
-        $this->container['amountVat'] = $amountVat;
+        $this->container['amount_vat'] = $amount_vat;
 
         return $this;
     }
 
     /**
-     * Gets amountExVat
+     * Gets amount_ex_vat
      *
      * @return int
      */
     public function getAmountExVat()
     {
-        return $this->container['amountExVat'];
+        return $this->container['amount_ex_vat'];
     }
 
     /**
-     * Sets amountExVat
+     * Sets amount_ex_vat
      *
-     * @param int $amountExVat Order line total amount without vat
+     * @param int $amount_ex_vat Order line total amount without vat
      *
      * @return $this
      */
-    public function setAmountExVat($amountExVat)
+    public function setAmountExVat($amount_ex_vat)
     {
-        $this->container['amountExVat'] = $amountExVat;
+        $this->container['amount_ex_vat'] = $amount_ex_vat;
 
         return $this;
     }
 
     /**
-     * Gets unitAmount
+     * Gets unit_amount
      *
      * @return int
      */
     public function getUnitAmount()
     {
-        return $this->container['unitAmount'];
+        return $this->container['unit_amount'];
     }
 
     /**
-     * Sets unitAmount
+     * Sets unit_amount
      *
-     * @param int $unitAmount Order line unit amount including vat
+     * @param int $unit_amount Order line unit amount including vat
      *
      * @return $this
      */
-    public function setUnitAmount($unitAmount)
+    public function setUnitAmount($unit_amount)
     {
-        $this->container['unitAmount'] = $unitAmount;
+        $this->container['unit_amount'] = $unit_amount;
 
         return $this;
     }
 
     /**
-     * Gets unitAmountVat
+     * Gets unit_amount_vat
      *
      * @return int
      */
     public function getUnitAmountVat()
     {
-        return $this->container['unitAmountVat'];
+        return $this->container['unit_amount_vat'];
     }
 
     /**
-     * Sets unitAmountVat
+     * Sets unit_amount_vat
      *
-     * @param int $unitAmountVat Order line unit vat amount
+     * @param int $unit_amount_vat Order line unit vat amount
      *
      * @return $this
      */
-    public function setUnitAmountVat($unitAmountVat)
+    public function setUnitAmountVat($unit_amount_vat)
     {
-        $this->container['unitAmountVat'] = $unitAmountVat;
+        $this->container['unit_amount_vat'] = $unit_amount_vat;
 
         return $this;
     }
 
     /**
-     * Gets unitAmountExVat
+     * Gets unit_amount_ex_vat
      *
      * @return int
      */
     public function getUnitAmountExVat()
     {
-        return $this->container['unitAmountExVat'];
+        return $this->container['unit_amount_ex_vat'];
     }
 
     /**
-     * Sets unitAmountExVat
+     * Sets unit_amount_ex_vat
      *
-     * @param int $unitAmountExVat Order line unit amount without vat
+     * @param int $unit_amount_ex_vat Order line unit amount without vat
      *
      * @return $this
      */
-    public function setUnitAmountExVat($unitAmountExVat)
+    public function setUnitAmountExVat($unit_amount_ex_vat)
     {
-        $this->container['unitAmountExVat'] = $unitAmountExVat;
+        $this->container['unit_amount_ex_vat'] = $unit_amount_ex_vat;
 
         return $this;
     }
 
     /**
-     * Gets amountDefinedInclVat
+     * Gets amount_defined_incl_vat
      *
      * @return bool
      */
     public function getAmountDefinedInclVat()
     {
-        return $this->container['amountDefinedInclVat'];
+        return $this->container['amount_defined_incl_vat'];
     }
 
     /**
-     * Sets amountDefinedInclVat
+     * Sets amount_defined_incl_vat
      *
-     * @param bool $amountDefinedInclVat Whether the amount was defined including VAT. E.g. plan amount defined including VAT.
+     * @param bool $amount_defined_incl_vat Whether the amount was defined including VAT. E.g. plan amount defined including VAT.
      *
      * @return $this
      */
-    public function setAmountDefinedInclVat($amountDefinedInclVat)
+    public function setAmountDefinedInclVat($amount_defined_incl_vat)
     {
-        $this->container['amountDefinedInclVat'] = $amountDefinedInclVat;
+        $this->container['amount_defined_incl_vat'] = $amount_defined_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets originHandle
+     * Gets origin_handle
      *
      * @return string
      */
     public function getOriginHandle()
     {
-        return $this->container['originHandle'];
+        return $this->container['origin_handle'];
     }
 
     /**
-     * Sets originHandle
+     * Sets origin_handle
      *
-     * @param string $originHandle Handle for additional cost, credit, plan or subscription discount in the case one of those are the origin
+     * @param string $origin_handle Handle for additional cost, credit, plan or subscription discount in the case one of those are the origin
      *
      * @return $this
      */
-    public function setOriginHandle($originHandle)
+    public function setOriginHandle($origin_handle)
     {
-        $this->container['originHandle'] = $originHandle;
+        $this->container['origin_handle'] = $origin_handle;
 
         return $this;
     }
 
     /**
-     * Gets periodFrom
+     * Gets period_from
      *
      * @return \DateTime
      */
     public function getPeriodFrom()
     {
-        return $this->container['periodFrom'];
+        return $this->container['period_from'];
     }
 
     /**
-     * Sets periodFrom
+     * Sets period_from
      *
-     * @param \DateTime $periodFrom The start of billing period if the order line is a plan order line for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $period_from The start of billing period if the order line is a plan order line for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setPeriodFrom($periodFrom)
+    public function setPeriodFrom($period_from)
     {
-        $this->container['periodFrom'] = $periodFrom;
+        $this->container['period_from'] = $period_from;
 
         return $this;
     }
 
     /**
-     * Gets periodTo
+     * Gets period_to
      *
      * @return \DateTime
      */
     public function getPeriodTo()
     {
-        return $this->container['periodTo'];
+        return $this->container['period_to'];
     }
 
     /**
-     * Sets periodTo
+     * Sets period_to
      *
-     * @param \DateTime $periodTo The end of billing period if the order line is a plan order line for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $period_to The end of billing period if the order line is a plan order line for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setPeriodTo($periodTo)
+    public function setPeriodTo($period_to)
     {
-        $this->container['periodTo'] = $periodTo;
+        $this->container['period_to'] = $period_to;
 
         return $this;
     }
 
     /**
-     * Gets discountPercentage
+     * Gets discount_percentage
      *
      * @return int
      */
     public function getDiscountPercentage()
     {
-        return $this->container['discountPercentage'];
+        return $this->container['discount_percentage'];
     }
 
     /**
-     * Sets discountPercentage
+     * Sets discount_percentage
      *
-     * @param int $discountPercentage The discount percentage for discount order lines that has a percentage discount
+     * @param int $discount_percentage The discount percentage for discount order lines that has a percentage discount
      *
      * @return $this
      */
-    public function setDiscountPercentage($discountPercentage)
+    public function setDiscountPercentage($discount_percentage)
     {
-        $this->container['discountPercentage'] = $discountPercentage;
+        $this->container['discount_percentage'] = $discount_percentage;
 
         return $this;
     }
 
     /**
-     * Gets discountedOrderLine
+     * Gets discounted_order_line
      *
      * @return string
      */
     public function getDiscountedOrderLine()
     {
-        return $this->container['discountedOrderLine'];
+        return $this->container['discounted_order_line'];
     }
 
     /**
-     * Sets discountedOrderLine
+     * Sets discounted_order_line
      *
-     * @param string $discountedOrderLine For discount order lines a reference to the order line for which the order line is a discount
+     * @param string $discounted_order_line For discount order lines a reference to the order line for which the order line is a discount
      *
      * @return $this
      */
-    public function setDiscountedOrderLine($discountedOrderLine)
+    public function setDiscountedOrderLine($discounted_order_line)
     {
-        $this->container['discountedOrderLine'] = $discountedOrderLine;
+        $this->container['discounted_order_line'] = $discounted_order_line;
 
         return $this;
     }

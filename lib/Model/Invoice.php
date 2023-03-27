@@ -74,31 +74,31 @@ class Invoice implements ModelInterface, ArrayAccess
         'authorized' => '\DateTime',
         'credits' => '\Reepay\Model\CreditInvoice[]',
         'created' => '\DateTime',
-        'planVersion' => 'int',
-        'dunningPlan' => 'string',
-        'discountAmount' => 'int',
-        'orgAmount' => 'int',
-        'amountVat' => 'int',
-        'amountExVat' => 'int',
-        'settledAmount' => 'int',
-        'refundedAmount' => 'int',
-        'authorizedAmount' => 'int',
-        'creditedAmount' => 'int',
-        'periodNumber' => 'int',
-        'recurringPaymentMethod' => 'string',
-        'orderLines' => '\Reepay\Model\OrderLine[]',
-        'additionalCosts' => 'string[]',
+        'plan_version' => 'int',
+        'dunning_plan' => 'string',
+        'discount_amount' => 'int',
+        'org_amount' => 'int',
+        'amount_vat' => 'int',
+        'amount_ex_vat' => 'int',
+        'settled_amount' => 'int',
+        'refunded_amount' => 'int',
+        'authorized_amount' => 'int',
+        'credited_amount' => 'int',
+        'period_number' => 'int',
+        'recurring_payment_method' => 'string',
+        'order_lines' => '\Reepay\Model\OrderLine[]',
+        'additional_costs' => 'string[]',
         'transactions' => '\Reepay\Model\Transaction[]',
-        'creditNotes' => '\Reepay\Model\InvoiceCreditNote[]',
-        'dunningStart' => '\DateTime',
-        'dunningCount' => 'int',
-        'dunningExpired' => '\DateTime',
-        'periodFrom' => '\DateTime',
-        'periodTo' => '\DateTime',
-        'settleLater' => 'bool',
-        'settleLaterPaymentMethod' => 'string',
-        'billingAddress' => '\Reepay\Model\InvoiceBillingAddress',
-        'shippingAddress' => '\Reepay\Model\InvoiceShippingAddress'
+        'credit_notes' => '\Reepay\Model\InvoiceCreditNote[]',
+        'dunning_start' => '\DateTime',
+        'dunning_count' => 'int',
+        'dunning_expired' => '\DateTime',
+        'period_from' => '\DateTime',
+        'period_to' => '\DateTime',
+        'settle_later' => 'bool',
+        'settle_later_payment_method' => 'string',
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress'
     ];
 
     /**
@@ -125,31 +125,31 @@ class Invoice implements ModelInterface, ArrayAccess
         'authorized' => 'date-time',
         'credits' => null,
         'created' => 'date-time',
-        'planVersion' => 'int32',
-        'dunningPlan' => null,
-        'discountAmount' => 'int32',
-        'orgAmount' => 'int32',
-        'amountVat' => 'int32',
-        'amountExVat' => 'int32',
-        'settledAmount' => 'int32',
-        'refundedAmount' => 'int32',
-        'authorizedAmount' => 'int32',
-        'creditedAmount' => 'int32',
-        'periodNumber' => 'int32',
-        'recurringPaymentMethod' => null,
-        'orderLines' => null,
-        'additionalCosts' => null,
+        'plan_version' => 'int32',
+        'dunning_plan' => null,
+        'discount_amount' => 'int32',
+        'org_amount' => 'int32',
+        'amount_vat' => 'int32',
+        'amount_ex_vat' => 'int32',
+        'settled_amount' => 'int32',
+        'refunded_amount' => 'int32',
+        'authorized_amount' => 'int32',
+        'credited_amount' => 'int32',
+        'period_number' => 'int32',
+        'recurring_payment_method' => null,
+        'order_lines' => null,
+        'additional_costs' => null,
         'transactions' => null,
-        'creditNotes' => null,
-        'dunningStart' => 'date-time',
-        'dunningCount' => 'int32',
-        'dunningExpired' => 'date-time',
-        'periodFrom' => 'date-time',
-        'periodTo' => 'date-time',
-        'settleLater' => null,
-        'settleLaterPaymentMethod' => null,
-        'billingAddress' => null,
-        'shippingAddress' => null
+        'credit_notes' => null,
+        'dunning_start' => 'date-time',
+        'dunning_count' => 'int32',
+        'dunning_expired' => 'date-time',
+        'period_from' => 'date-time',
+        'period_to' => 'date-time',
+        'settle_later' => null,
+        'settle_later_payment_method' => null,
+        'billing_address' => null,
+        'shipping_address' => null
     ];
 
     /**
@@ -197,31 +197,31 @@ class Invoice implements ModelInterface, ArrayAccess
         'authorized' => 'authorized',
         'credits' => 'credits',
         'created' => 'created',
-        'planVersion' => 'plan_version',
-        'dunningPlan' => 'dunning_plan',
-        'discountAmount' => 'discount_amount',
-        'orgAmount' => 'org_amount',
-        'amountVat' => 'amount_vat',
-        'amountExVat' => 'amount_ex_vat',
-        'settledAmount' => 'settled_amount',
-        'refundedAmount' => 'refunded_amount',
-        'authorizedAmount' => 'authorized_amount',
-        'creditedAmount' => 'credited_amount',
-        'periodNumber' => 'period_number',
-        'recurringPaymentMethod' => 'recurring_payment_method',
-        'orderLines' => 'order_lines',
-        'additionalCosts' => 'additional_costs',
+        'plan_version' => 'plan_version',
+        'dunning_plan' => 'dunning_plan',
+        'discount_amount' => 'discount_amount',
+        'org_amount' => 'org_amount',
+        'amount_vat' => 'amount_vat',
+        'amount_ex_vat' => 'amount_ex_vat',
+        'settled_amount' => 'settled_amount',
+        'refunded_amount' => 'refunded_amount',
+        'authorized_amount' => 'authorized_amount',
+        'credited_amount' => 'credited_amount',
+        'period_number' => 'period_number',
+        'recurring_payment_method' => 'recurring_payment_method',
+        'order_lines' => 'order_lines',
+        'additional_costs' => 'additional_costs',
         'transactions' => 'transactions',
-        'creditNotes' => 'credit_notes',
-        'dunningStart' => 'dunning_start',
-        'dunningCount' => 'dunning_count',
-        'dunningExpired' => 'dunning_expired',
-        'periodFrom' => 'period_from',
-        'periodTo' => 'period_to',
-        'settleLater' => 'settle_later',
-        'settleLaterPaymentMethod' => 'settle_later_payment_method',
-        'billingAddress' => 'billing_address',
-        'shippingAddress' => 'shipping_address'
+        'credit_notes' => 'credit_notes',
+        'dunning_start' => 'dunning_start',
+        'dunning_count' => 'dunning_count',
+        'dunning_expired' => 'dunning_expired',
+        'period_from' => 'period_from',
+        'period_to' => 'period_to',
+        'settle_later' => 'settle_later',
+        'settle_later_payment_method' => 'settle_later_payment_method',
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address'
     ];
 
     /**
@@ -248,31 +248,31 @@ class Invoice implements ModelInterface, ArrayAccess
         'authorized' => 'setAuthorized',
         'credits' => 'setCredits',
         'created' => 'setCreated',
-        'planVersion' => 'setPlanVersion',
-        'dunningPlan' => 'setDunningPlan',
-        'discountAmount' => 'setDiscountAmount',
-        'orgAmount' => 'setOrgAmount',
-        'amountVat' => 'setAmountVat',
-        'amountExVat' => 'setAmountExVat',
-        'settledAmount' => 'setSettledAmount',
-        'refundedAmount' => 'setRefundedAmount',
-        'authorizedAmount' => 'setAuthorizedAmount',
-        'creditedAmount' => 'setCreditedAmount',
-        'periodNumber' => 'setPeriodNumber',
-        'recurringPaymentMethod' => 'setRecurringPaymentMethod',
-        'orderLines' => 'setOrderLines',
-        'additionalCosts' => 'setAdditionalCosts',
+        'plan_version' => 'setPlanVersion',
+        'dunning_plan' => 'setDunningPlan',
+        'discount_amount' => 'setDiscountAmount',
+        'org_amount' => 'setOrgAmount',
+        'amount_vat' => 'setAmountVat',
+        'amount_ex_vat' => 'setAmountExVat',
+        'settled_amount' => 'setSettledAmount',
+        'refunded_amount' => 'setRefundedAmount',
+        'authorized_amount' => 'setAuthorizedAmount',
+        'credited_amount' => 'setCreditedAmount',
+        'period_number' => 'setPeriodNumber',
+        'recurring_payment_method' => 'setRecurringPaymentMethod',
+        'order_lines' => 'setOrderLines',
+        'additional_costs' => 'setAdditionalCosts',
         'transactions' => 'setTransactions',
-        'creditNotes' => 'setCreditNotes',
-        'dunningStart' => 'setDunningStart',
-        'dunningCount' => 'setDunningCount',
-        'dunningExpired' => 'setDunningExpired',
-        'periodFrom' => 'setPeriodFrom',
-        'periodTo' => 'setPeriodTo',
-        'settleLater' => 'setSettleLater',
-        'settleLaterPaymentMethod' => 'setSettleLaterPaymentMethod',
-        'billingAddress' => 'setBillingAddress',
-        'shippingAddress' => 'setShippingAddress'
+        'credit_notes' => 'setCreditNotes',
+        'dunning_start' => 'setDunningStart',
+        'dunning_count' => 'setDunningCount',
+        'dunning_expired' => 'setDunningExpired',
+        'period_from' => 'setPeriodFrom',
+        'period_to' => 'setPeriodTo',
+        'settle_later' => 'setSettleLater',
+        'settle_later_payment_method' => 'setSettleLaterPaymentMethod',
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress'
     ];
 
     /**
@@ -299,31 +299,31 @@ class Invoice implements ModelInterface, ArrayAccess
         'authorized' => 'getAuthorized',
         'credits' => 'getCredits',
         'created' => 'getCreated',
-        'planVersion' => 'getPlanVersion',
-        'dunningPlan' => 'getDunningPlan',
-        'discountAmount' => 'getDiscountAmount',
-        'orgAmount' => 'getOrgAmount',
-        'amountVat' => 'getAmountVat',
-        'amountExVat' => 'getAmountExVat',
-        'settledAmount' => 'getSettledAmount',
-        'refundedAmount' => 'getRefundedAmount',
-        'authorizedAmount' => 'getAuthorizedAmount',
-        'creditedAmount' => 'getCreditedAmount',
-        'periodNumber' => 'getPeriodNumber',
-        'recurringPaymentMethod' => 'getRecurringPaymentMethod',
-        'orderLines' => 'getOrderLines',
-        'additionalCosts' => 'getAdditionalCosts',
+        'plan_version' => 'getPlanVersion',
+        'dunning_plan' => 'getDunningPlan',
+        'discount_amount' => 'getDiscountAmount',
+        'org_amount' => 'getOrgAmount',
+        'amount_vat' => 'getAmountVat',
+        'amount_ex_vat' => 'getAmountExVat',
+        'settled_amount' => 'getSettledAmount',
+        'refunded_amount' => 'getRefundedAmount',
+        'authorized_amount' => 'getAuthorizedAmount',
+        'credited_amount' => 'getCreditedAmount',
+        'period_number' => 'getPeriodNumber',
+        'recurring_payment_method' => 'getRecurringPaymentMethod',
+        'order_lines' => 'getOrderLines',
+        'additional_costs' => 'getAdditionalCosts',
         'transactions' => 'getTransactions',
-        'creditNotes' => 'getCreditNotes',
-        'dunningStart' => 'getDunningStart',
-        'dunningCount' => 'getDunningCount',
-        'dunningExpired' => 'getDunningExpired',
-        'periodFrom' => 'getPeriodFrom',
-        'periodTo' => 'getPeriodTo',
-        'settleLater' => 'getSettleLater',
-        'settleLaterPaymentMethod' => 'getSettleLaterPaymentMethod',
-        'billingAddress' => 'getBillingAddress',
-        'shippingAddress' => 'getShippingAddress'
+        'credit_notes' => 'getCreditNotes',
+        'dunning_start' => 'getDunningStart',
+        'dunning_count' => 'getDunningCount',
+        'dunning_expired' => 'getDunningExpired',
+        'period_from' => 'getPeriodFrom',
+        'period_to' => 'getPeriodTo',
+        'settle_later' => 'getSettleLater',
+        'settle_later_payment_method' => 'getSettleLaterPaymentMethod',
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress'
     ];
 
     /**
@@ -446,31 +446,31 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['authorized'] = isset($data['authorized']) ? $data['authorized'] : null;
         $this->container['credits'] = isset($data['credits']) ? $data['credits'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['planVersion'] = isset($data['planVersion']) ? $data['planVersion'] : null;
-        $this->container['dunningPlan'] = isset($data['dunningPlan']) ? $data['dunningPlan'] : null;
-        $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
-        $this->container['orgAmount'] = isset($data['orgAmount']) ? $data['orgAmount'] : null;
-        $this->container['amountVat'] = isset($data['amountVat']) ? $data['amountVat'] : null;
-        $this->container['amountExVat'] = isset($data['amountExVat']) ? $data['amountExVat'] : null;
-        $this->container['settledAmount'] = isset($data['settledAmount']) ? $data['settledAmount'] : null;
-        $this->container['refundedAmount'] = isset($data['refundedAmount']) ? $data['refundedAmount'] : null;
-        $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
-        $this->container['creditedAmount'] = isset($data['creditedAmount']) ? $data['creditedAmount'] : null;
-        $this->container['periodNumber'] = isset($data['periodNumber']) ? $data['periodNumber'] : null;
-        $this->container['recurringPaymentMethod'] = isset($data['recurringPaymentMethod']) ? $data['recurringPaymentMethod'] : null;
-        $this->container['orderLines'] = isset($data['orderLines']) ? $data['orderLines'] : null;
-        $this->container['additionalCosts'] = isset($data['additionalCosts']) ? $data['additionalCosts'] : null;
+        $this->container['plan_version'] = isset($data['plan_version']) ? $data['plan_version'] : null;
+        $this->container['dunning_plan'] = isset($data['dunning_plan']) ? $data['dunning_plan'] : null;
+        $this->container['discount_amount'] = isset($data['discount_amount']) ? $data['discount_amount'] : null;
+        $this->container['org_amount'] = isset($data['org_amount']) ? $data['org_amount'] : null;
+        $this->container['amount_vat'] = isset($data['amount_vat']) ? $data['amount_vat'] : null;
+        $this->container['amount_ex_vat'] = isset($data['amount_ex_vat']) ? $data['amount_ex_vat'] : null;
+        $this->container['settled_amount'] = isset($data['settled_amount']) ? $data['settled_amount'] : null;
+        $this->container['refunded_amount'] = isset($data['refunded_amount']) ? $data['refunded_amount'] : null;
+        $this->container['authorized_amount'] = isset($data['authorized_amount']) ? $data['authorized_amount'] : null;
+        $this->container['credited_amount'] = isset($data['credited_amount']) ? $data['credited_amount'] : null;
+        $this->container['period_number'] = isset($data['period_number']) ? $data['period_number'] : null;
+        $this->container['recurring_payment_method'] = isset($data['recurring_payment_method']) ? $data['recurring_payment_method'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['additional_costs'] = isset($data['additional_costs']) ? $data['additional_costs'] : null;
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
-        $this->container['creditNotes'] = isset($data['creditNotes']) ? $data['creditNotes'] : null;
-        $this->container['dunningStart'] = isset($data['dunningStart']) ? $data['dunningStart'] : null;
-        $this->container['dunningCount'] = isset($data['dunningCount']) ? $data['dunningCount'] : null;
-        $this->container['dunningExpired'] = isset($data['dunningExpired']) ? $data['dunningExpired'] : null;
-        $this->container['periodFrom'] = isset($data['periodFrom']) ? $data['periodFrom'] : null;
-        $this->container['periodTo'] = isset($data['periodTo']) ? $data['periodTo'] : null;
-        $this->container['settleLater'] = isset($data['settleLater']) ? $data['settleLater'] : null;
-        $this->container['settleLaterPaymentMethod'] = isset($data['settleLaterPaymentMethod']) ? $data['settleLaterPaymentMethod'] : null;
-        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
-        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['credit_notes'] = isset($data['credit_notes']) ? $data['credit_notes'] : null;
+        $this->container['dunning_start'] = isset($data['dunning_start']) ? $data['dunning_start'] : null;
+        $this->container['dunning_count'] = isset($data['dunning_count']) ? $data['dunning_count'] : null;
+        $this->container['dunning_expired'] = isset($data['dunning_expired']) ? $data['dunning_expired'] : null;
+        $this->container['period_from'] = isset($data['period_from']) ? $data['period_from'] : null;
+        $this->container['period_to'] = isset($data['period_to']) ? $data['period_to'] : null;
+        $this->container['settle_later'] = isset($data['settle_later']) ? $data['settle_later'] : null;
+        $this->container['settle_later_payment_method'] = isset($data['settle_later_payment_method']) ? $data['settle_later_payment_method'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
     }
 
     /**
@@ -528,29 +528,29 @@ class Invoice implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['discountAmount'] === null) {
-            $invalidProperties[] = "'discountAmount' can't be null";
+        if ($this->container['discount_amount'] === null) {
+            $invalidProperties[] = "'discount_amount' can't be null";
         }
-        if ($this->container['orgAmount'] === null) {
-            $invalidProperties[] = "'orgAmount' can't be null";
+        if ($this->container['org_amount'] === null) {
+            $invalidProperties[] = "'org_amount' can't be null";
         }
-        if ($this->container['amountVat'] === null) {
-            $invalidProperties[] = "'amountVat' can't be null";
+        if ($this->container['amount_vat'] === null) {
+            $invalidProperties[] = "'amount_vat' can't be null";
         }
-        if ($this->container['amountExVat'] === null) {
-            $invalidProperties[] = "'amountExVat' can't be null";
+        if ($this->container['amount_ex_vat'] === null) {
+            $invalidProperties[] = "'amount_ex_vat' can't be null";
         }
-        if ($this->container['settledAmount'] === null) {
-            $invalidProperties[] = "'settledAmount' can't be null";
+        if ($this->container['settled_amount'] === null) {
+            $invalidProperties[] = "'settled_amount' can't be null";
         }
-        if ($this->container['refundedAmount'] === null) {
-            $invalidProperties[] = "'refundedAmount' can't be null";
+        if ($this->container['refunded_amount'] === null) {
+            $invalidProperties[] = "'refunded_amount' can't be null";
         }
-        if ($this->container['orderLines'] === null) {
-            $invalidProperties[] = "'orderLines' can't be null";
+        if ($this->container['order_lines'] === null) {
+            $invalidProperties[] = "'order_lines' can't be null";
         }
-        if ($this->container['additionalCosts'] === null) {
-            $invalidProperties[] = "'additionalCosts' can't be null";
+        if ($this->container['additional_costs'] === null) {
+            $invalidProperties[] = "'additional_costs' can't be null";
         }
         if ($this->container['transactions'] === null) {
             $invalidProperties[] = "'transactions' can't be null";
@@ -1021,337 +1021,337 @@ class Invoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets planVersion
+     * Gets plan_version
      *
      * @return int
      */
     public function getPlanVersion()
     {
-        return $this->container['planVersion'];
+        return $this->container['plan_version'];
     }
 
     /**
-     * Sets planVersion
+     * Sets plan_version
      *
-     * @param int $planVersion Subscription plan version
+     * @param int $plan_version Subscription plan version
      *
      * @return $this
      */
-    public function setPlanVersion($planVersion)
+    public function setPlanVersion($plan_version)
     {
-        $this->container['planVersion'] = $planVersion;
+        $this->container['plan_version'] = $plan_version;
 
         return $this;
     }
 
     /**
-     * Gets dunningPlan
+     * Gets dunning_plan
      *
      * @return string
      */
     public function getDunningPlan()
     {
-        return $this->container['dunningPlan'];
+        return $this->container['dunning_plan'];
     }
 
     /**
-     * Sets dunningPlan
+     * Sets dunning_plan
      *
-     * @param string $dunningPlan Dunning plan handle
+     * @param string $dunning_plan Dunning plan handle
      *
      * @return $this
      */
-    public function setDunningPlan($dunningPlan)
+    public function setDunningPlan($dunning_plan)
     {
-        $this->container['dunningPlan'] = $dunningPlan;
+        $this->container['dunning_plan'] = $dunning_plan;
 
         return $this;
     }
 
     /**
-     * Gets discountAmount
+     * Gets discount_amount
      *
      * @return int
      */
     public function getDiscountAmount()
     {
-        return $this->container['discountAmount'];
+        return $this->container['discount_amount'];
     }
 
     /**
-     * Sets discountAmount
+     * Sets discount_amount
      *
-     * @param int $discountAmount The potential discount amount deducted from the invoice amount including VAT
+     * @param int $discount_amount The potential discount amount deducted from the invoice amount including VAT
      *
      * @return $this
      */
-    public function setDiscountAmount($discountAmount)
+    public function setDiscountAmount($discount_amount)
     {
-        $this->container['discountAmount'] = $discountAmount;
+        $this->container['discount_amount'] = $discount_amount;
 
         return $this;
     }
 
     /**
-     * Gets orgAmount
+     * Gets org_amount
      *
      * @return int
      */
     public function getOrgAmount()
     {
-        return $this->container['orgAmount'];
+        return $this->container['org_amount'];
     }
 
     /**
-     * Sets orgAmount
+     * Sets org_amount
      *
-     * @param int $orgAmount The invoice original amount including VAT, may differ from amount if adjustments have been applied for the invoice
+     * @param int $org_amount The invoice original amount including VAT, may differ from amount if adjustments have been applied for the invoice
      *
      * @return $this
      */
-    public function setOrgAmount($orgAmount)
+    public function setOrgAmount($org_amount)
     {
-        $this->container['orgAmount'] = $orgAmount;
+        $this->container['org_amount'] = $org_amount;
 
         return $this;
     }
 
     /**
-     * Gets amountVat
+     * Gets amount_vat
      *
      * @return int
      */
     public function getAmountVat()
     {
-        return $this->container['amountVat'];
+        return $this->container['amount_vat'];
     }
 
     /**
-     * Sets amountVat
+     * Sets amount_vat
      *
-     * @param int $amountVat The invoice vat amount calculated as rounded summed fractional vats for each orderline
+     * @param int $amount_vat The invoice vat amount calculated as rounded summed fractional vats for each orderline
      *
      * @return $this
      */
-    public function setAmountVat($amountVat)
+    public function setAmountVat($amount_vat)
     {
-        $this->container['amountVat'] = $amountVat;
+        $this->container['amount_vat'] = $amount_vat;
 
         return $this;
     }
 
     /**
-     * Gets amountExVat
+     * Gets amount_ex_vat
      *
      * @return int
      */
     public function getAmountExVat()
     {
-        return $this->container['amountExVat'];
+        return $this->container['amount_ex_vat'];
     }
 
     /**
-     * Sets amountExVat
+     * Sets amount_ex_vat
      *
-     * @param int $amountExVat The invoice amount without vat
+     * @param int $amount_ex_vat The invoice amount without vat
      *
      * @return $this
      */
-    public function setAmountExVat($amountExVat)
+    public function setAmountExVat($amount_ex_vat)
     {
-        $this->container['amountExVat'] = $amountExVat;
+        $this->container['amount_ex_vat'] = $amount_ex_vat;
 
         return $this;
     }
 
     /**
-     * Gets settledAmount
+     * Gets settled_amount
      *
      * @return int
      */
     public function getSettledAmount()
     {
-        return $this->container['settledAmount'];
+        return $this->container['settled_amount'];
     }
 
     /**
-     * Sets settledAmount
+     * Sets settled_amount
      *
-     * @param int $settledAmount Settled amount
+     * @param int $settled_amount Settled amount
      *
      * @return $this
      */
-    public function setSettledAmount($settledAmount)
+    public function setSettledAmount($settled_amount)
     {
-        $this->container['settledAmount'] = $settledAmount;
+        $this->container['settled_amount'] = $settled_amount;
 
         return $this;
     }
 
     /**
-     * Gets refundedAmount
+     * Gets refunded_amount
      *
      * @return int
      */
     public function getRefundedAmount()
     {
-        return $this->container['refundedAmount'];
+        return $this->container['refunded_amount'];
     }
 
     /**
-     * Sets refundedAmount
+     * Sets refunded_amount
      *
-     * @param int $refundedAmount Refunded amount
+     * @param int $refunded_amount Refunded amount
      *
      * @return $this
      */
-    public function setRefundedAmount($refundedAmount)
+    public function setRefundedAmount($refunded_amount)
     {
-        $this->container['refundedAmount'] = $refundedAmount;
+        $this->container['refunded_amount'] = $refunded_amount;
 
         return $this;
     }
 
     /**
-     * Gets authorizedAmount
+     * Gets authorized_amount
      *
      * @return int
      */
     public function getAuthorizedAmount()
     {
-        return $this->container['authorizedAmount'];
+        return $this->container['authorized_amount'];
     }
 
     /**
-     * Sets authorizedAmount
+     * Sets authorized_amount
      *
-     * @param int $authorizedAmount Authorized amount
+     * @param int $authorized_amount Authorized amount
      *
      * @return $this
      */
-    public function setAuthorizedAmount($authorizedAmount)
+    public function setAuthorizedAmount($authorized_amount)
     {
-        $this->container['authorizedAmount'] = $authorizedAmount;
+        $this->container['authorized_amount'] = $authorized_amount;
 
         return $this;
     }
 
     /**
-     * Gets creditedAmount
+     * Gets credited_amount
      *
      * @return int
      */
     public function getCreditedAmount()
     {
-        return $this->container['creditedAmount'];
+        return $this->container['credited_amount'];
     }
 
     /**
-     * Sets creditedAmount
+     * Sets credited_amount
      *
-     * @param int $creditedAmount Credited amount
+     * @param int $credited_amount Credited amount
      *
      * @return $this
      */
-    public function setCreditedAmount($creditedAmount)
+    public function setCreditedAmount($credited_amount)
     {
-        $this->container['creditedAmount'] = $creditedAmount;
+        $this->container['credited_amount'] = $credited_amount;
 
         return $this;
     }
 
     /**
-     * Gets periodNumber
+     * Gets period_number
      *
      * @return int
      */
     public function getPeriodNumber()
     {
-        return $this->container['periodNumber'];
+        return $this->container['period_number'];
     }
 
     /**
-     * Sets periodNumber
+     * Sets period_number
      *
-     * @param int $periodNumber The subscription period this invoice is for
+     * @param int $period_number The subscription period this invoice is for
      *
      * @return $this
      */
-    public function setPeriodNumber($periodNumber)
+    public function setPeriodNumber($period_number)
     {
-        $this->container['periodNumber'] = $periodNumber;
+        $this->container['period_number'] = $period_number;
 
         return $this;
     }
 
     /**
-     * Gets recurringPaymentMethod
+     * Gets recurring_payment_method
      *
      * @return string
      */
     public function getRecurringPaymentMethod()
     {
-        return $this->container['recurringPaymentMethod'];
+        return $this->container['recurring_payment_method'];
     }
 
     /**
-     * Sets recurringPaymentMethod
+     * Sets recurring_payment_method
      *
-     * @param string $recurringPaymentMethod Optional reference to recurring payment method created in conjunction with charging
+     * @param string $recurring_payment_method Optional reference to recurring payment method created in conjunction with charging
      *
      * @return $this
      */
-    public function setRecurringPaymentMethod($recurringPaymentMethod)
+    public function setRecurringPaymentMethod($recurring_payment_method)
     {
-        $this->container['recurringPaymentMethod'] = $recurringPaymentMethod;
+        $this->container['recurring_payment_method'] = $recurring_payment_method;
 
         return $this;
     }
 
     /**
-     * Gets orderLines
+     * Gets order_lines
      *
      * @return \Reepay\Model\OrderLine[]
      */
     public function getOrderLines()
     {
-        return $this->container['orderLines'];
+        return $this->container['order_lines'];
     }
 
     /**
-     * Sets orderLines
+     * Sets order_lines
      *
-     * @param \Reepay\Model\OrderLine[] $orderLines Order lines for invoice sorted by descending timestamp
+     * @param \Reepay\Model\OrderLine[] $order_lines Order lines for invoice sorted by descending timestamp
      *
      * @return $this
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines($order_lines)
     {
-        $this->container['orderLines'] = $orderLines;
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }
 
     /**
-     * Gets additionalCosts
+     * Gets additional_costs
      *
      * @return string[]
      */
     public function getAdditionalCosts()
     {
-        return $this->container['additionalCosts'];
+        return $this->container['additional_costs'];
     }
 
     /**
-     * Sets additionalCosts
+     * Sets additional_costs
      *
-     * @param string[] $additionalCosts Additional cost handles for any additional costs added to this invoice
+     * @param string[] $additional_costs Additional cost handles for any additional costs added to this invoice
      *
      * @return $this
      */
-    public function setAdditionalCosts($additionalCosts)
+    public function setAdditionalCosts($additional_costs)
     {
-        $this->container['additionalCosts'] = $additionalCosts;
+        $this->container['additional_costs'] = $additional_costs;
 
         return $this;
     }
@@ -1381,241 +1381,241 @@ class Invoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets creditNotes
+     * Gets credit_notes
      *
      * @return \Reepay\Model\InvoiceCreditNote[]
      */
     public function getCreditNotes()
     {
-        return $this->container['creditNotes'];
+        return $this->container['credit_notes'];
     }
 
     /**
-     * Sets creditNotes
+     * Sets credit_notes
      *
-     * @param \Reepay\Model\InvoiceCreditNote[] $creditNotes Invoice credit notes
+     * @param \Reepay\Model\InvoiceCreditNote[] $credit_notes Invoice credit notes
      *
      * @return $this
      */
-    public function setCreditNotes($creditNotes)
+    public function setCreditNotes($credit_notes)
     {
-        $this->container['creditNotes'] = $creditNotes;
+        $this->container['credit_notes'] = $credit_notes;
 
         return $this;
     }
 
     /**
-     * Gets dunningStart
+     * Gets dunning_start
      *
      * @return \DateTime
      */
     public function getDunningStart()
     {
-        return $this->container['dunningStart'];
+        return $this->container['dunning_start'];
     }
 
     /**
-     * Sets dunningStart
+     * Sets dunning_start
      *
-     * @param \DateTime $dunningStart When dunning for the invoice was started, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $dunning_start When dunning for the invoice was started, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setDunningStart($dunningStart)
+    public function setDunningStart($dunning_start)
     {
-        $this->container['dunningStart'] = $dunningStart;
+        $this->container['dunning_start'] = $dunning_start;
 
         return $this;
     }
 
     /**
-     * Gets dunningCount
+     * Gets dunning_count
      *
      * @return int
      */
     public function getDunningCount()
     {
-        return $this->container['dunningCount'];
+        return $this->container['dunning_count'];
     }
 
     /**
-     * Sets dunningCount
+     * Sets dunning_count
      *
-     * @param int $dunningCount Number of dunning events for invoice (number of reminders sent)
+     * @param int $dunning_count Number of dunning events for invoice (number of reminders sent)
      *
      * @return $this
      */
-    public function setDunningCount($dunningCount)
+    public function setDunningCount($dunning_count)
     {
-        $this->container['dunningCount'] = $dunningCount;
+        $this->container['dunning_count'] = $dunning_count;
 
         return $this;
     }
 
     /**
-     * Gets dunningExpired
+     * Gets dunning_expired
      *
      * @return \DateTime
      */
     public function getDunningExpired()
     {
-        return $this->container['dunningExpired'];
+        return $this->container['dunning_expired'];
     }
 
     /**
-     * Sets dunningExpired
+     * Sets dunning_expired
      *
-     * @param \DateTime $dunningExpired When dunning for the invoice expired, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $dunning_expired When dunning for the invoice expired, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setDunningExpired($dunningExpired)
+    public function setDunningExpired($dunning_expired)
     {
-        $this->container['dunningExpired'] = $dunningExpired;
+        $this->container['dunning_expired'] = $dunning_expired;
 
         return $this;
     }
 
     /**
-     * Gets periodFrom
+     * Gets period_from
      *
      * @return \DateTime
      */
     public function getPeriodFrom()
     {
-        return $this->container['periodFrom'];
+        return $this->container['period_from'];
     }
 
     /**
-     * Sets periodFrom
+     * Sets period_from
      *
-     * @param \DateTime $periodFrom The start of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $period_from The start of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setPeriodFrom($periodFrom)
+    public function setPeriodFrom($period_from)
     {
-        $this->container['periodFrom'] = $periodFrom;
+        $this->container['period_from'] = $period_from;
 
         return $this;
     }
 
     /**
-     * Gets periodTo
+     * Gets period_to
      *
      * @return \DateTime
      */
     public function getPeriodTo()
     {
-        return $this->container['periodTo'];
+        return $this->container['period_to'];
     }
 
     /**
-     * Sets periodTo
+     * Sets period_to
      *
-     * @param \DateTime $periodTo The end of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $period_to The end of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      *
      * @return $this
      */
-    public function setPeriodTo($periodTo)
+    public function setPeriodTo($period_to)
     {
-        $this->container['periodTo'] = $periodTo;
+        $this->container['period_to'] = $period_to;
 
         return $this;
     }
 
     /**
-     * Gets settleLater
+     * Gets settle_later
      *
      * @return bool
      */
     public function getSettleLater()
     {
-        return $this->container['settleLater'];
+        return $this->container['settle_later'];
     }
 
     /**
-     * Sets settleLater
+     * Sets settle_later
      *
-     * @param bool $settleLater Whether this is a customer one-time invoice that will be settled later
+     * @param bool $settle_later Whether this is a customer one-time invoice that will be settled later
      *
      * @return $this
      */
-    public function setSettleLater($settleLater)
+    public function setSettleLater($settle_later)
     {
-        $this->container['settleLater'] = $settleLater;
+        $this->container['settle_later'] = $settle_later;
 
         return $this;
     }
 
     /**
-     * Gets settleLaterPaymentMethod
+     * Gets settle_later_payment_method
      *
      * @return string
      */
     public function getSettleLaterPaymentMethod()
     {
-        return $this->container['settleLaterPaymentMethod'];
+        return $this->container['settle_later_payment_method'];
     }
 
     /**
-     * Sets settleLaterPaymentMethod
+     * Sets settle_later_payment_method
      *
-     * @param string $settleLaterPaymentMethod The payment method to use for a later settle of a one-time customer invoice
+     * @param string $settle_later_payment_method The payment method to use for a later settle of a one-time customer invoice
      *
      * @return $this
      */
-    public function setSettleLaterPaymentMethod($settleLaterPaymentMethod)
+    public function setSettleLaterPaymentMethod($settle_later_payment_method)
     {
-        $this->container['settleLaterPaymentMethod'] = $settleLaterPaymentMethod;
+        $this->container['settle_later_payment_method'] = $settle_later_payment_method;
 
         return $this;
     }
 
     /**
-     * Gets billingAddress
+     * Gets billing_address
      *
      * @return \Reepay\Model\InvoiceBillingAddress
      */
     public function getBillingAddress()
     {
-        return $this->container['billingAddress'];
+        return $this->container['billing_address'];
     }
 
     /**
-     * Sets billingAddress
+     * Sets billing_address
      *
-     * @param \Reepay\Model\InvoiceBillingAddress $billingAddress billingAddress
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address billing_address
      *
      * @return $this
      */
-    public function setBillingAddress($billingAddress)
+    public function setBillingAddress($billing_address)
     {
-        $this->container['billingAddress'] = $billingAddress;
+        $this->container['billing_address'] = $billing_address;
 
         return $this;
     }
 
     /**
-     * Gets shippingAddress
+     * Gets shipping_address
      *
      * @return \Reepay\Model\InvoiceShippingAddress
      */
     public function getShippingAddress()
     {
-        return $this->container['shippingAddress'];
+        return $this->container['shipping_address'];
     }
 
     /**
-     * Sets shippingAddress
+     * Sets shipping_address
      *
-     * @param \Reepay\Model\InvoiceShippingAddress $shippingAddress shippingAddress
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address shipping_address
      *
      * @return $this
      */
-    public function setShippingAddress($shippingAddress)
+    public function setShippingAddress($shipping_address)
     {
-        $this->container['shippingAddress'] = $shippingAddress;
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }

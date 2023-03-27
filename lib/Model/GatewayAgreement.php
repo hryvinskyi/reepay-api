@@ -62,20 +62,20 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
         'usage' => 'string',
         'test' => 'bool',
         'created' => '\DateTime',
-        'cardGatewayAgreement' => '\Reepay\Model\CardGatewayAgreement',
-        'mpoAgreement' => '\Reepay\Model\MpoAgreement',
-        'vippsAgreement' => '\Reepay\Model\VippsAgreement',
-        'vippsRecurringAgreement' => '\Reepay\Model\VippsRecurringAgreement',
-        'viabillAgreement' => '\Reepay\Model\ViabillAgreement',
-        'anydayAgreement' => '\Reepay\Model\AnydayAgreement',
-        'resursAgreement' => '\Reepay\Model\ResursAgreement',
-        'klarnaAgreement' => '\Reepay\Model\KlarnaAgreement',
+        'card_gateway_agreement' => '\Reepay\Model\CardGatewayAgreement',
+        'mpo_agreement' => '\Reepay\Model\MpoAgreement',
+        'vipps_agreement' => '\Reepay\Model\VippsAgreement',
+        'vipps_recurring_agreement' => '\Reepay\Model\VippsRecurringAgreement',
+        'viabill_agreement' => '\Reepay\Model\ViabillAgreement',
+        'anyday_agreement' => '\Reepay\Model\AnydayAgreement',
+        'resurs_agreement' => '\Reepay\Model\ResursAgreement',
+        'klarna_agreement' => '\Reepay\Model\KlarnaAgreement',
         'swish' => '\Reepay\Model\SwishAgreement',
-        'applepayAgreement' => '\Reepay\Model\ApplepayAgreement',
-        'googlepayAgreement' => '\Reepay\Model\GooglepayAgreement',
-        'paypalAgreement' => '\Reepay\Model\PaypalAgreement',
-        'mpsAgreement' => '\Reepay\Model\MpsAgreement',
-        'pproAgreement' => '\Reepay\Model\PproAgreement'
+        'applepay_agreement' => '\Reepay\Model\ApplepayAgreement',
+        'googlepay_agreement' => '\Reepay\Model\GooglepayAgreement',
+        'paypal_agreement' => '\Reepay\Model\PaypalAgreement',
+        'mps_agreement' => '\Reepay\Model\MpsAgreement',
+        'ppro_agreement' => '\Reepay\Model\PproAgreement'
     ];
 
     /**
@@ -90,20 +90,20 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
         'usage' => null,
         'test' => null,
         'created' => 'date-time',
-        'cardGatewayAgreement' => null,
-        'mpoAgreement' => null,
-        'vippsAgreement' => null,
-        'vippsRecurringAgreement' => null,
-        'viabillAgreement' => null,
-        'anydayAgreement' => null,
-        'resursAgreement' => null,
-        'klarnaAgreement' => null,
+        'card_gateway_agreement' => null,
+        'mpo_agreement' => null,
+        'vipps_agreement' => null,
+        'vipps_recurring_agreement' => null,
+        'viabill_agreement' => null,
+        'anyday_agreement' => null,
+        'resurs_agreement' => null,
+        'klarna_agreement' => null,
         'swish' => null,
-        'applepayAgreement' => null,
-        'googlepayAgreement' => null,
-        'paypalAgreement' => null,
-        'mpsAgreement' => null,
-        'pproAgreement' => null
+        'applepay_agreement' => null,
+        'googlepay_agreement' => null,
+        'paypal_agreement' => null,
+        'mps_agreement' => null,
+        'ppro_agreement' => null
     ];
 
     /**
@@ -139,20 +139,20 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
         'usage' => 'usage',
         'test' => 'test',
         'created' => 'created',
-        'cardGatewayAgreement' => 'card_gateway_agreement',
-        'mpoAgreement' => 'mpo_agreement',
-        'vippsAgreement' => 'vipps_agreement',
-        'vippsRecurringAgreement' => 'vipps_recurring_agreement',
-        'viabillAgreement' => 'viabill_agreement',
-        'anydayAgreement' => 'anyday_agreement',
-        'resursAgreement' => 'resurs_agreement',
-        'klarnaAgreement' => 'klarna_agreement',
+        'card_gateway_agreement' => 'card_gateway_agreement',
+        'mpo_agreement' => 'mpo_agreement',
+        'vipps_agreement' => 'vipps_agreement',
+        'vipps_recurring_agreement' => 'vipps_recurring_agreement',
+        'viabill_agreement' => 'viabill_agreement',
+        'anyday_agreement' => 'anyday_agreement',
+        'resurs_agreement' => 'resurs_agreement',
+        'klarna_agreement' => 'klarna_agreement',
         'swish' => 'swish',
-        'applepayAgreement' => 'applepay_agreement',
-        'googlepayAgreement' => 'googlepay_agreement',
-        'paypalAgreement' => 'paypal_agreement',
-        'mpsAgreement' => 'mps_agreement',
-        'pproAgreement' => 'ppro_agreement'
+        'applepay_agreement' => 'applepay_agreement',
+        'googlepay_agreement' => 'googlepay_agreement',
+        'paypal_agreement' => 'paypal_agreement',
+        'mps_agreement' => 'mps_agreement',
+        'ppro_agreement' => 'ppro_agreement'
     ];
 
     /**
@@ -167,20 +167,20 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
         'usage' => 'setUsage',
         'test' => 'setTest',
         'created' => 'setCreated',
-        'cardGatewayAgreement' => 'setCardGatewayAgreement',
-        'mpoAgreement' => 'setMpoAgreement',
-        'vippsAgreement' => 'setVippsAgreement',
-        'vippsRecurringAgreement' => 'setVippsRecurringAgreement',
-        'viabillAgreement' => 'setViabillAgreement',
-        'anydayAgreement' => 'setAnydayAgreement',
-        'resursAgreement' => 'setResursAgreement',
-        'klarnaAgreement' => 'setKlarnaAgreement',
+        'card_gateway_agreement' => 'setCardGatewayAgreement',
+        'mpo_agreement' => 'setMpoAgreement',
+        'vipps_agreement' => 'setVippsAgreement',
+        'vipps_recurring_agreement' => 'setVippsRecurringAgreement',
+        'viabill_agreement' => 'setViabillAgreement',
+        'anyday_agreement' => 'setAnydayAgreement',
+        'resurs_agreement' => 'setResursAgreement',
+        'klarna_agreement' => 'setKlarnaAgreement',
         'swish' => 'setSwish',
-        'applepayAgreement' => 'setApplepayAgreement',
-        'googlepayAgreement' => 'setGooglepayAgreement',
-        'paypalAgreement' => 'setPaypalAgreement',
-        'mpsAgreement' => 'setMpsAgreement',
-        'pproAgreement' => 'setPproAgreement'
+        'applepay_agreement' => 'setApplepayAgreement',
+        'googlepay_agreement' => 'setGooglepayAgreement',
+        'paypal_agreement' => 'setPaypalAgreement',
+        'mps_agreement' => 'setMpsAgreement',
+        'ppro_agreement' => 'setPproAgreement'
     ];
 
     /**
@@ -195,20 +195,20 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
         'usage' => 'getUsage',
         'test' => 'getTest',
         'created' => 'getCreated',
-        'cardGatewayAgreement' => 'getCardGatewayAgreement',
-        'mpoAgreement' => 'getMpoAgreement',
-        'vippsAgreement' => 'getVippsAgreement',
-        'vippsRecurringAgreement' => 'getVippsRecurringAgreement',
-        'viabillAgreement' => 'getViabillAgreement',
-        'anydayAgreement' => 'getAnydayAgreement',
-        'resursAgreement' => 'getResursAgreement',
-        'klarnaAgreement' => 'getKlarnaAgreement',
+        'card_gateway_agreement' => 'getCardGatewayAgreement',
+        'mpo_agreement' => 'getMpoAgreement',
+        'vipps_agreement' => 'getVippsAgreement',
+        'vipps_recurring_agreement' => 'getVippsRecurringAgreement',
+        'viabill_agreement' => 'getViabillAgreement',
+        'anyday_agreement' => 'getAnydayAgreement',
+        'resurs_agreement' => 'getResursAgreement',
+        'klarna_agreement' => 'getKlarnaAgreement',
         'swish' => 'getSwish',
-        'applepayAgreement' => 'getApplepayAgreement',
-        'googlepayAgreement' => 'getGooglepayAgreement',
-        'paypalAgreement' => 'getPaypalAgreement',
-        'mpsAgreement' => 'getMpsAgreement',
-        'pproAgreement' => 'getPproAgreement'
+        'applepay_agreement' => 'getApplepayAgreement',
+        'googlepay_agreement' => 'getGooglepayAgreement',
+        'paypal_agreement' => 'getPaypalAgreement',
+        'mps_agreement' => 'getMpsAgreement',
+        'ppro_agreement' => 'getPproAgreement'
     ];
 
     /**
@@ -365,20 +365,20 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
         $this->container['usage'] = isset($data['usage']) ? $data['usage'] : null;
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['cardGatewayAgreement'] = isset($data['cardGatewayAgreement']) ? $data['cardGatewayAgreement'] : null;
-        $this->container['mpoAgreement'] = isset($data['mpoAgreement']) ? $data['mpoAgreement'] : null;
-        $this->container['vippsAgreement'] = isset($data['vippsAgreement']) ? $data['vippsAgreement'] : null;
-        $this->container['vippsRecurringAgreement'] = isset($data['vippsRecurringAgreement']) ? $data['vippsRecurringAgreement'] : null;
-        $this->container['viabillAgreement'] = isset($data['viabillAgreement']) ? $data['viabillAgreement'] : null;
-        $this->container['anydayAgreement'] = isset($data['anydayAgreement']) ? $data['anydayAgreement'] : null;
-        $this->container['resursAgreement'] = isset($data['resursAgreement']) ? $data['resursAgreement'] : null;
-        $this->container['klarnaAgreement'] = isset($data['klarnaAgreement']) ? $data['klarnaAgreement'] : null;
+        $this->container['card_gateway_agreement'] = isset($data['card_gateway_agreement']) ? $data['card_gateway_agreement'] : null;
+        $this->container['mpo_agreement'] = isset($data['mpo_agreement']) ? $data['mpo_agreement'] : null;
+        $this->container['vipps_agreement'] = isset($data['vipps_agreement']) ? $data['vipps_agreement'] : null;
+        $this->container['vipps_recurring_agreement'] = isset($data['vipps_recurring_agreement']) ? $data['vipps_recurring_agreement'] : null;
+        $this->container['viabill_agreement'] = isset($data['viabill_agreement']) ? $data['viabill_agreement'] : null;
+        $this->container['anyday_agreement'] = isset($data['anyday_agreement']) ? $data['anyday_agreement'] : null;
+        $this->container['resurs_agreement'] = isset($data['resurs_agreement']) ? $data['resurs_agreement'] : null;
+        $this->container['klarna_agreement'] = isset($data['klarna_agreement']) ? $data['klarna_agreement'] : null;
         $this->container['swish'] = isset($data['swish']) ? $data['swish'] : null;
-        $this->container['applepayAgreement'] = isset($data['applepayAgreement']) ? $data['applepayAgreement'] : null;
-        $this->container['googlepayAgreement'] = isset($data['googlepayAgreement']) ? $data['googlepayAgreement'] : null;
-        $this->container['paypalAgreement'] = isset($data['paypalAgreement']) ? $data['paypalAgreement'] : null;
-        $this->container['mpsAgreement'] = isset($data['mpsAgreement']) ? $data['mpsAgreement'] : null;
-        $this->container['pproAgreement'] = isset($data['pproAgreement']) ? $data['pproAgreement'] : null;
+        $this->container['applepay_agreement'] = isset($data['applepay_agreement']) ? $data['applepay_agreement'] : null;
+        $this->container['googlepay_agreement'] = isset($data['googlepay_agreement']) ? $data['googlepay_agreement'] : null;
+        $this->container['paypal_agreement'] = isset($data['paypal_agreement']) ? $data['paypal_agreement'] : null;
+        $this->container['mps_agreement'] = isset($data['mps_agreement']) ? $data['mps_agreement'] : null;
+        $this->container['ppro_agreement'] = isset($data['ppro_agreement']) ? $data['ppro_agreement'] : null;
     }
 
     /**
@@ -619,193 +619,193 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets cardGatewayAgreement
+     * Gets card_gateway_agreement
      *
      * @return \Reepay\Model\CardGatewayAgreement
      */
     public function getCardGatewayAgreement()
     {
-        return $this->container['cardGatewayAgreement'];
+        return $this->container['card_gateway_agreement'];
     }
 
     /**
-     * Sets cardGatewayAgreement
+     * Sets card_gateway_agreement
      *
-     * @param \Reepay\Model\CardGatewayAgreement $cardGatewayAgreement cardGatewayAgreement
+     * @param \Reepay\Model\CardGatewayAgreement $card_gateway_agreement card_gateway_agreement
      *
      * @return $this
      */
-    public function setCardGatewayAgreement($cardGatewayAgreement)
+    public function setCardGatewayAgreement($card_gateway_agreement)
     {
-        $this->container['cardGatewayAgreement'] = $cardGatewayAgreement;
+        $this->container['card_gateway_agreement'] = $card_gateway_agreement;
 
         return $this;
     }
 
     /**
-     * Gets mpoAgreement
+     * Gets mpo_agreement
      *
      * @return \Reepay\Model\MpoAgreement
      */
     public function getMpoAgreement()
     {
-        return $this->container['mpoAgreement'];
+        return $this->container['mpo_agreement'];
     }
 
     /**
-     * Sets mpoAgreement
+     * Sets mpo_agreement
      *
-     * @param \Reepay\Model\MpoAgreement $mpoAgreement mpoAgreement
+     * @param \Reepay\Model\MpoAgreement $mpo_agreement mpo_agreement
      *
      * @return $this
      */
-    public function setMpoAgreement($mpoAgreement)
+    public function setMpoAgreement($mpo_agreement)
     {
-        $this->container['mpoAgreement'] = $mpoAgreement;
+        $this->container['mpo_agreement'] = $mpo_agreement;
 
         return $this;
     }
 
     /**
-     * Gets vippsAgreement
+     * Gets vipps_agreement
      *
      * @return \Reepay\Model\VippsAgreement
      */
     public function getVippsAgreement()
     {
-        return $this->container['vippsAgreement'];
+        return $this->container['vipps_agreement'];
     }
 
     /**
-     * Sets vippsAgreement
+     * Sets vipps_agreement
      *
-     * @param \Reepay\Model\VippsAgreement $vippsAgreement vippsAgreement
+     * @param \Reepay\Model\VippsAgreement $vipps_agreement vipps_agreement
      *
      * @return $this
      */
-    public function setVippsAgreement($vippsAgreement)
+    public function setVippsAgreement($vipps_agreement)
     {
-        $this->container['vippsAgreement'] = $vippsAgreement;
+        $this->container['vipps_agreement'] = $vipps_agreement;
 
         return $this;
     }
 
     /**
-     * Gets vippsRecurringAgreement
+     * Gets vipps_recurring_agreement
      *
      * @return \Reepay\Model\VippsRecurringAgreement
      */
     public function getVippsRecurringAgreement()
     {
-        return $this->container['vippsRecurringAgreement'];
+        return $this->container['vipps_recurring_agreement'];
     }
 
     /**
-     * Sets vippsRecurringAgreement
+     * Sets vipps_recurring_agreement
      *
-     * @param \Reepay\Model\VippsRecurringAgreement $vippsRecurringAgreement vippsRecurringAgreement
+     * @param \Reepay\Model\VippsRecurringAgreement $vipps_recurring_agreement vipps_recurring_agreement
      *
      * @return $this
      */
-    public function setVippsRecurringAgreement($vippsRecurringAgreement)
+    public function setVippsRecurringAgreement($vipps_recurring_agreement)
     {
-        $this->container['vippsRecurringAgreement'] = $vippsRecurringAgreement;
+        $this->container['vipps_recurring_agreement'] = $vipps_recurring_agreement;
 
         return $this;
     }
 
     /**
-     * Gets viabillAgreement
+     * Gets viabill_agreement
      *
      * @return \Reepay\Model\ViabillAgreement
      */
     public function getViabillAgreement()
     {
-        return $this->container['viabillAgreement'];
+        return $this->container['viabill_agreement'];
     }
 
     /**
-     * Sets viabillAgreement
+     * Sets viabill_agreement
      *
-     * @param \Reepay\Model\ViabillAgreement $viabillAgreement viabillAgreement
+     * @param \Reepay\Model\ViabillAgreement $viabill_agreement viabill_agreement
      *
      * @return $this
      */
-    public function setViabillAgreement($viabillAgreement)
+    public function setViabillAgreement($viabill_agreement)
     {
-        $this->container['viabillAgreement'] = $viabillAgreement;
+        $this->container['viabill_agreement'] = $viabill_agreement;
 
         return $this;
     }
 
     /**
-     * Gets anydayAgreement
+     * Gets anyday_agreement
      *
      * @return \Reepay\Model\AnydayAgreement
      */
     public function getAnydayAgreement()
     {
-        return $this->container['anydayAgreement'];
+        return $this->container['anyday_agreement'];
     }
 
     /**
-     * Sets anydayAgreement
+     * Sets anyday_agreement
      *
-     * @param \Reepay\Model\AnydayAgreement $anydayAgreement anydayAgreement
+     * @param \Reepay\Model\AnydayAgreement $anyday_agreement anyday_agreement
      *
      * @return $this
      */
-    public function setAnydayAgreement($anydayAgreement)
+    public function setAnydayAgreement($anyday_agreement)
     {
-        $this->container['anydayAgreement'] = $anydayAgreement;
+        $this->container['anyday_agreement'] = $anyday_agreement;
 
         return $this;
     }
 
     /**
-     * Gets resursAgreement
+     * Gets resurs_agreement
      *
      * @return \Reepay\Model\ResursAgreement
      */
     public function getResursAgreement()
     {
-        return $this->container['resursAgreement'];
+        return $this->container['resurs_agreement'];
     }
 
     /**
-     * Sets resursAgreement
+     * Sets resurs_agreement
      *
-     * @param \Reepay\Model\ResursAgreement $resursAgreement resursAgreement
+     * @param \Reepay\Model\ResursAgreement $resurs_agreement resurs_agreement
      *
      * @return $this
      */
-    public function setResursAgreement($resursAgreement)
+    public function setResursAgreement($resurs_agreement)
     {
-        $this->container['resursAgreement'] = $resursAgreement;
+        $this->container['resurs_agreement'] = $resurs_agreement;
 
         return $this;
     }
 
     /**
-     * Gets klarnaAgreement
+     * Gets klarna_agreement
      *
      * @return \Reepay\Model\KlarnaAgreement
      */
     public function getKlarnaAgreement()
     {
-        return $this->container['klarnaAgreement'];
+        return $this->container['klarna_agreement'];
     }
 
     /**
-     * Sets klarnaAgreement
+     * Sets klarna_agreement
      *
-     * @param \Reepay\Model\KlarnaAgreement $klarnaAgreement klarnaAgreement
+     * @param \Reepay\Model\KlarnaAgreement $klarna_agreement klarna_agreement
      *
      * @return $this
      */
-    public function setKlarnaAgreement($klarnaAgreement)
+    public function setKlarnaAgreement($klarna_agreement)
     {
-        $this->container['klarnaAgreement'] = $klarnaAgreement;
+        $this->container['klarna_agreement'] = $klarna_agreement;
 
         return $this;
     }
@@ -835,121 +835,121 @@ class GatewayAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets applepayAgreement
+     * Gets applepay_agreement
      *
      * @return \Reepay\Model\ApplepayAgreement
      */
     public function getApplepayAgreement()
     {
-        return $this->container['applepayAgreement'];
+        return $this->container['applepay_agreement'];
     }
 
     /**
-     * Sets applepayAgreement
+     * Sets applepay_agreement
      *
-     * @param \Reepay\Model\ApplepayAgreement $applepayAgreement applepayAgreement
+     * @param \Reepay\Model\ApplepayAgreement $applepay_agreement applepay_agreement
      *
      * @return $this
      */
-    public function setApplepayAgreement($applepayAgreement)
+    public function setApplepayAgreement($applepay_agreement)
     {
-        $this->container['applepayAgreement'] = $applepayAgreement;
+        $this->container['applepay_agreement'] = $applepay_agreement;
 
         return $this;
     }
 
     /**
-     * Gets googlepayAgreement
+     * Gets googlepay_agreement
      *
      * @return \Reepay\Model\GooglepayAgreement
      */
     public function getGooglepayAgreement()
     {
-        return $this->container['googlepayAgreement'];
+        return $this->container['googlepay_agreement'];
     }
 
     /**
-     * Sets googlepayAgreement
+     * Sets googlepay_agreement
      *
-     * @param \Reepay\Model\GooglepayAgreement $googlepayAgreement googlepayAgreement
+     * @param \Reepay\Model\GooglepayAgreement $googlepay_agreement googlepay_agreement
      *
      * @return $this
      */
-    public function setGooglepayAgreement($googlepayAgreement)
+    public function setGooglepayAgreement($googlepay_agreement)
     {
-        $this->container['googlepayAgreement'] = $googlepayAgreement;
+        $this->container['googlepay_agreement'] = $googlepay_agreement;
 
         return $this;
     }
 
     /**
-     * Gets paypalAgreement
+     * Gets paypal_agreement
      *
      * @return \Reepay\Model\PaypalAgreement
      */
     public function getPaypalAgreement()
     {
-        return $this->container['paypalAgreement'];
+        return $this->container['paypal_agreement'];
     }
 
     /**
-     * Sets paypalAgreement
+     * Sets paypal_agreement
      *
-     * @param \Reepay\Model\PaypalAgreement $paypalAgreement paypalAgreement
+     * @param \Reepay\Model\PaypalAgreement $paypal_agreement paypal_agreement
      *
      * @return $this
      */
-    public function setPaypalAgreement($paypalAgreement)
+    public function setPaypalAgreement($paypal_agreement)
     {
-        $this->container['paypalAgreement'] = $paypalAgreement;
+        $this->container['paypal_agreement'] = $paypal_agreement;
 
         return $this;
     }
 
     /**
-     * Gets mpsAgreement
+     * Gets mps_agreement
      *
      * @return \Reepay\Model\MpsAgreement
      */
     public function getMpsAgreement()
     {
-        return $this->container['mpsAgreement'];
+        return $this->container['mps_agreement'];
     }
 
     /**
-     * Sets mpsAgreement
+     * Sets mps_agreement
      *
-     * @param \Reepay\Model\MpsAgreement $mpsAgreement mpsAgreement
+     * @param \Reepay\Model\MpsAgreement $mps_agreement mps_agreement
      *
      * @return $this
      */
-    public function setMpsAgreement($mpsAgreement)
+    public function setMpsAgreement($mps_agreement)
     {
-        $this->container['mpsAgreement'] = $mpsAgreement;
+        $this->container['mps_agreement'] = $mps_agreement;
 
         return $this;
     }
 
     /**
-     * Gets pproAgreement
+     * Gets ppro_agreement
      *
      * @return \Reepay\Model\PproAgreement
      */
     public function getPproAgreement()
     {
-        return $this->container['pproAgreement'];
+        return $this->container['ppro_agreement'];
     }
 
     /**
-     * Sets pproAgreement
+     * Sets ppro_agreement
      *
-     * @param \Reepay\Model\PproAgreement $pproAgreement pproAgreement
+     * @param \Reepay\Model\PproAgreement $ppro_agreement ppro_agreement
      *
      * @return $this
      */
-    public function setPproAgreement($pproAgreement)
+    public function setPproAgreement($ppro_agreement)
     {
-        $this->container['pproAgreement'] = $pproAgreement;
+        $this->container['ppro_agreement'] = $ppro_agreement;
 
         return $this;
     }

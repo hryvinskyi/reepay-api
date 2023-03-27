@@ -287,13 +287,11 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **enrollCardPaymentMethodV2**
-
 > \Reepay\Model\PaymentMethodV2 enrollCardPaymentMethodV2($id)
 
 Enroll card to EMV Token
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -448,13 +446,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **importMpsPaymentMethod**
-
 > \Reepay\Model\PaymentMethodV2 importMpsPaymentMethod($body)
 
 Import MobilePay Subscription payment method
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -503,13 +499,11 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inactivatePaymentMethodV2**
-
 > \Reepay\Model\PaymentMethodV2 inactivatePaymentMethodV2($id)
 
 Inactivate payment method
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

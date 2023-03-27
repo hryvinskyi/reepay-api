@@ -9,12 +9,12 @@ All URIs are relative to *https://api.reepay.com/*
  [**verifyAuthentication**](AuthenticateApi.md#verifyauthentication) | **GET** /v1/authenticate/verify | Verify authentication 
 
 # **login**
-> \Reepay\Model\UserLogin login($email, $password, $organisation, $account, $mfaCode)
+
+> \Reepay\Model\UserLogin login($email, $password, $organisation, $account, $mfa_code)
 
 User login
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -28,10 +28,10 @@ $email = "email_example"; // string |
 $password = "password_example"; // string | 
 $organisation = "organisation_example"; // string | 
 $account = "account_example"; // string | 
-$mfaCode = "mfaCode_example"; // string | 
+$mfa_code = "mfa_code_example"; // string | 
 
 try {
-    $result = $apiInstance->login($email, $password, $organisation, $account, $mfaCode);
+    $result = $apiInstance->login($email, $password, $organisation, $account, $mfa_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AuthenticateApi->login: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +47,7 @@ try {
  **password**     | **string** |             | [optional] 
  **organisation** | **string** |             | [optional] 
  **account**      | **string** |             | [optional] 
- **mfaCode**      | **string** |             | [optional] 
+ **mfa_code**     | **string** |             | [optional] 
 
 ### Return type
 

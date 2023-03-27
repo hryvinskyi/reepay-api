@@ -682,13 +682,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createTokenRequestor**
-
 > \Reepay\Model\TokenRequestorResponse createTokenRequestor($body)
 
 Create token requestor
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -737,7 +735,6 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createViabillAgreement**
-
 > \Reepay\Model\GatewayAgreement createViabillAgreement($body)
 
 Create ViaBill agreement
@@ -951,12 +948,11 @@ Name | Type | Description  | Notes
 
 # **deleteTokenRequestor**
 
-> deleteTokenRequestor($cardScheme, $tokenRequestorId)
+> deleteTokenRequestor($card_scheme, $token_requestor_id)
 
 Delete token requestor by id for card type
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -972,11 +968,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$cardScheme = "cardScheme_example"; // string | Card Scheme
-$tokenRequestorId = "tokenRequestorId_example"; // string | Token Requestor Id
+$card_scheme = "card_scheme_example"; // string | Card Scheme
+$token_requestor_id = "token_requestor_id_example"; // string | Token Requestor Id
 
 try {
-    $apiInstance->deleteTokenRequestor($cardScheme, $tokenRequestorId);
+    $apiInstance->deleteTokenRequestor($card_scheme, $token_requestor_id);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->deleteTokenRequestor: ', $e->getMessage(), PHP_EOL;
 }
@@ -985,10 +981,10 @@ try {
 
 ### Parameters
 
- Name                 | Type       | Description        | Notes 
-----------------------|------------|--------------------|-------
- **cardScheme**       | **string** | Card Scheme        |
- **tokenRequestorId** | **string** | Token Requestor Id |
+ Name                   | Type       | Description        | Notes 
+------------------------|------------|--------------------|-------
+ **card_scheme**        | **string** | Card Scheme        |
+ **token_requestor_id** | **string** | Token Requestor Id |
 
 ### Return type
 
@@ -1006,13 +1002,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **disableGatewayAgreement**
-
 > \Reepay\Model\GatewayAgreement disableGatewayAgreement($id)
 
 Disable gateway agreement
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1114,7 +1108,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreements**
-> \Reepay\Model\GatewayAgreement[] getCardGatewayAgreements($onlyActive, $nonDeleted)
+
+> \Reepay\Model\GatewayAgreement[] getCardGatewayAgreements($only_active, $non_deleted)
 
 Get all card gateway agreements
 
@@ -1134,11 +1129,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$onlyActive = false; // bool | Get only active
-$nonDeleted = false; // bool | Get only non-deleted
+$only_active = false; // bool | Get only active
+$non_deleted = false; // bool | Get only non-deleted
 
 try {
-    $result = $apiInstance->getCardGatewayAgreements($onlyActive, $nonDeleted);
+    $result = $apiInstance->getCardGatewayAgreements($only_active, $non_deleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getCardGatewayAgreements: ', $e->getMessage(), PHP_EOL;
@@ -1148,10 +1143,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **onlyActive** | **bool**| Get only active | [optional] [default to false]
- **nonDeleted** | **bool**| Get only non-deleted | [optional] [default to false]
+ Name            | Type     | Description          | Notes                         
+-----------------|----------|----------------------|-------------------------------
+ **only_active** | **bool** | Get only active      | [optional] [default to false] 
+ **non_deleted** | **bool** | Get only non-deleted | [optional] [default to false] 
 
 ### Return type
 
@@ -1222,7 +1217,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGatewayAgreements**
-> \Reepay\Model\GatewayAgreement[] getGatewayAgreements($onlyActive, $nonDeleted)
+
+> \Reepay\Model\GatewayAgreement[] getGatewayAgreements($only_active, $non_deleted)
 
 Get all agreements
 
@@ -1242,11 +1238,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$onlyActive = false; // bool | Get only active
-$nonDeleted = false; // bool | Get only non-deleted
+$only_active = false; // bool | Get only active
+$non_deleted = false; // bool | Get only non-deleted
 
 try {
-    $result = $apiInstance->getGatewayAgreements($onlyActive, $nonDeleted);
+    $result = $apiInstance->getGatewayAgreements($only_active, $non_deleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getGatewayAgreements: ', $e->getMessage(), PHP_EOL;
@@ -1256,10 +1252,10 @@ try {
 
 ### Parameters
 
- Name           | Type     | Description          | Notes                         
-----------------|----------|----------------------|-------------------------------
- **onlyActive** | **bool** | Get only active      | [optional] [default to false] 
- **nonDeleted** | **bool** | Get only non-deleted | [optional] [default to false] 
+ Name            | Type     | Description          | Notes                         
+-----------------|----------|----------------------|-------------------------------
+ **only_active** | **bool** | Get only active      | [optional] [default to false] 
+ **non_deleted** | **bool** | Get only non-deleted | [optional] [default to false] 
 
 ### Return type
 
@@ -1278,12 +1274,11 @@ try {
 
 # **getTokenRequestor**
 
-> \Reepay\Model\TokenRequestorResponse[] getTokenRequestor($cardScheme)
+> \Reepay\Model\TokenRequestorResponse[] getTokenRequestor($card_scheme)
 
 Get token requestors for card type
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1299,10 +1294,10 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$cardScheme = "cardScheme_example"; // string | Card Scheme
+$card_scheme = "card_scheme_example"; // string | Card Scheme
 
 try {
-    $result = $apiInstance->getTokenRequestor($cardScheme);
+    $result = $apiInstance->getTokenRequestor($card_scheme);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getTokenRequestor: ', $e->getMessage(), PHP_EOL;
@@ -1312,9 +1307,9 @@ try {
 
 ### Parameters
 
- Name           | Type       | Description | Notes 
-----------------|------------|-------------|-------
- **cardScheme** | **string** | Card Scheme |
+ Name            | Type       | Description | Notes 
+-----------------|------------|-------------|-------
+ **card_scheme** | **string** | Card Scheme |
 
 ### Return type
 

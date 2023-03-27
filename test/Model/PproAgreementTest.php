@@ -83,14 +83,14 @@ class PproAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "contractId"
+     * Test attribute "contract_id"
      */
     public function testPropertyContractId()
     {
     }
 
     /**
-     * Test attribute "paymentType"
+     * Test attribute "payment_type"
      */
     public function testPropertyPaymentType()
     {

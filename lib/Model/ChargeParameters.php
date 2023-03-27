@@ -56,7 +56,7 @@ class ChargeParameters implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mpsTtl' => 'string'
+        'mps_ttl' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class ChargeParameters implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'mpsTtl' => null
+        'mps_ttl' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class ChargeParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mpsTtl' => 'mps_ttl'
+        'mps_ttl' => 'mps_ttl'
     ];
 
     /**
@@ -104,7 +104,7 @@ class ChargeParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mpsTtl' => 'setMpsTtl'
+        'mps_ttl' => 'setMpsTtl'
     ];
 
     /**
@@ -113,7 +113,7 @@ class ChargeParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mpsTtl' => 'getMpsTtl'
+        'mps_ttl' => 'getMpsTtl'
     ];
 
     /**
@@ -174,7 +174,7 @@ class ChargeParameters implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mpsTtl'] = isset($data['mpsTtl']) ? $data['mpsTtl'] : null;
+        $this->container['mps_ttl'] = isset($data['mps_ttl']) ? $data['mps_ttl'] : null;
     }
 
     /**
@@ -202,25 +202,25 @@ class ChargeParameters implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets mpsTtl
+     * Gets mps_ttl
      *
      * @return string
      */
     public function getMpsTtl()
     {
-        return $this->container['mpsTtl'];
+        return $this->container['mps_ttl'];
     }
 
     /**
-     * Sets mpsTtl
+     * Sets mps_ttl
      *
-     * @param string $mpsTtl Optional override of default MPS payment expiration. The period is defined as an ISO-8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * @param string $mps_ttl Optional override of default MPS payment expiration. The period is defined as an ISO-8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
      *
      * @return $this
      */
-    public function setMpsTtl($mpsTtl)
+    public function setMpsTtl($mps_ttl)
     {
-        $this->container['mpsTtl'] = $mpsTtl;
+        $this->container['mps_ttl'] = $mps_ttl;
 
         return $this;
     }

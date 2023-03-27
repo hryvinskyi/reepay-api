@@ -61,14 +61,14 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
         'due' => 'string',
         'settle' => '\Reepay\Model\Settle',
         'metadata' => 'map[string,object]',
-        'planManual' => 'bool',
-        'collectAdditionalCosts' => 'bool',
-        'collectCredit' => 'bool',
-        'applyDiscounts' => 'bool',
-        'orderLines' => '\Reepay\Model\CreateOrderLine[]',
-        'manualTransfer' => '\Reepay\Model\ManualSettleTransfer',
-        'billingAddress' => '\Reepay\Model\InvoiceBillingAddress',
-        'shippingAddress' => '\Reepay\Model\InvoiceShippingAddress'
+        'plan_manual' => 'bool',
+        'collect_additional_costs' => 'bool',
+        'collect_credit' => 'bool',
+        'apply_discounts' => 'bool',
+        'order_lines' => '\Reepay\Model\CreateOrderLine[]',
+        'manual_transfer' => '\Reepay\Model\ManualSettleTransfer',
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress'
     ];
 
     /**
@@ -82,14 +82,14 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
         'due' => null,
         'settle' => null,
         'metadata' => null,
-        'planManual' => null,
-        'collectAdditionalCosts' => null,
-        'collectCredit' => null,
-        'applyDiscounts' => null,
-        'orderLines' => null,
-        'manualTransfer' => null,
-        'billingAddress' => null,
-        'shippingAddress' => null
+        'plan_manual' => null,
+        'collect_additional_costs' => null,
+        'collect_credit' => null,
+        'apply_discounts' => null,
+        'order_lines' => null,
+        'manual_transfer' => null,
+        'billing_address' => null,
+        'shipping_address' => null
     ];
 
     /**
@@ -124,14 +124,14 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
         'due' => 'due',
         'settle' => 'settle',
         'metadata' => 'metadata',
-        'planManual' => 'plan_manual',
-        'collectAdditionalCosts' => 'collect_additional_costs',
-        'collectCredit' => 'collect_credit',
-        'applyDiscounts' => 'apply_discounts',
-        'orderLines' => 'order_lines',
-        'manualTransfer' => 'manual_transfer',
-        'billingAddress' => 'billing_address',
-        'shippingAddress' => 'shipping_address'
+        'plan_manual' => 'plan_manual',
+        'collect_additional_costs' => 'collect_additional_costs',
+        'collect_credit' => 'collect_credit',
+        'apply_discounts' => 'apply_discounts',
+        'order_lines' => 'order_lines',
+        'manual_transfer' => 'manual_transfer',
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address'
     ];
 
     /**
@@ -145,14 +145,14 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
         'due' => 'setDue',
         'settle' => 'setSettle',
         'metadata' => 'setMetadata',
-        'planManual' => 'setPlanManual',
-        'collectAdditionalCosts' => 'setCollectAdditionalCosts',
-        'collectCredit' => 'setCollectCredit',
-        'applyDiscounts' => 'setApplyDiscounts',
-        'orderLines' => 'setOrderLines',
-        'manualTransfer' => 'setManualTransfer',
-        'billingAddress' => 'setBillingAddress',
-        'shippingAddress' => 'setShippingAddress'
+        'plan_manual' => 'setPlanManual',
+        'collect_additional_costs' => 'setCollectAdditionalCosts',
+        'collect_credit' => 'setCollectCredit',
+        'apply_discounts' => 'setApplyDiscounts',
+        'order_lines' => 'setOrderLines',
+        'manual_transfer' => 'setManualTransfer',
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress'
     ];
 
     /**
@@ -166,14 +166,14 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
         'due' => 'getDue',
         'settle' => 'getSettle',
         'metadata' => 'getMetadata',
-        'planManual' => 'getPlanManual',
-        'collectAdditionalCosts' => 'getCollectAdditionalCosts',
-        'collectCredit' => 'getCollectCredit',
-        'applyDiscounts' => 'getApplyDiscounts',
-        'orderLines' => 'getOrderLines',
-        'manualTransfer' => 'getManualTransfer',
-        'billingAddress' => 'getBillingAddress',
-        'shippingAddress' => 'getShippingAddress'
+        'plan_manual' => 'getPlanManual',
+        'collect_additional_costs' => 'getCollectAdditionalCosts',
+        'collect_credit' => 'getCollectCredit',
+        'apply_discounts' => 'getApplyDiscounts',
+        'order_lines' => 'getOrderLines',
+        'manual_transfer' => 'getManualTransfer',
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress'
     ];
 
     /**
@@ -239,14 +239,14 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
         $this->container['due'] = isset($data['due']) ? $data['due'] : null;
         $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['planManual'] = isset($data['planManual']) ? $data['planManual'] : null;
-        $this->container['collectAdditionalCosts'] = isset($data['collectAdditionalCosts']) ? $data['collectAdditionalCosts'] : null;
-        $this->container['collectCredit'] = isset($data['collectCredit']) ? $data['collectCredit'] : null;
-        $this->container['applyDiscounts'] = isset($data['applyDiscounts']) ? $data['applyDiscounts'] : null;
-        $this->container['orderLines'] = isset($data['orderLines']) ? $data['orderLines'] : null;
-        $this->container['manualTransfer'] = isset($data['manualTransfer']) ? $data['manualTransfer'] : null;
-        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
-        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['plan_manual'] = isset($data['plan_manual']) ? $data['plan_manual'] : null;
+        $this->container['collect_additional_costs'] = isset($data['collect_additional_costs']) ? $data['collect_additional_costs'] : null;
+        $this->container['collect_credit'] = isset($data['collect_credit']) ? $data['collect_credit'] : null;
+        $this->container['apply_discounts'] = isset($data['apply_discounts']) ? $data['apply_discounts'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['manual_transfer'] = isset($data['manual_transfer']) ? $data['manual_transfer'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
     }
 
     /**
@@ -397,193 +397,193 @@ class CreateSubscriptionInvoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets planManual
+     * Gets plan_manual
      *
      * @return bool
      */
     public function getPlanManual()
     {
-        return $this->container['planManual'];
+        return $this->container['plan_manual'];
     }
 
     /**
-     * Sets planManual
+     * Sets plan_manual
      *
-     * @param bool $planManual Create manually for plan by adding plan product and potential add-ons as order line (default false)
+     * @param bool $plan_manual Create manually for plan by adding plan product and potential add-ons as order line (default false)
      *
      * @return $this
      */
-    public function setPlanManual($planManual)
+    public function setPlanManual($plan_manual)
     {
-        $this->container['planManual'] = $planManual;
+        $this->container['plan_manual'] = $plan_manual;
 
         return $this;
     }
 
     /**
-     * Gets collectAdditionalCosts
+     * Gets collect_additional_costs
      *
      * @return bool
      */
     public function getCollectAdditionalCosts()
     {
-        return $this->container['collectAdditionalCosts'];
+        return $this->container['collect_additional_costs'];
     }
 
     /**
-     * Sets collectAdditionalCosts
+     * Sets collect_additional_costs
      *
-     * @param bool $collectAdditionalCosts Collect pending additional costs and transfer to invoice (default true)
+     * @param bool $collect_additional_costs Collect pending additional costs and transfer to invoice (default true)
      *
      * @return $this
      */
-    public function setCollectAdditionalCosts($collectAdditionalCosts)
+    public function setCollectAdditionalCosts($collect_additional_costs)
     {
-        $this->container['collectAdditionalCosts'] = $collectAdditionalCosts;
+        $this->container['collect_additional_costs'] = $collect_additional_costs;
 
         return $this;
     }
 
     /**
-     * Gets collectCredit
+     * Gets collect_credit
      *
      * @return bool
      */
     public function getCollectCredit()
     {
-        return $this->container['collectCredit'];
+        return $this->container['collect_credit'];
     }
 
     /**
-     * Sets collectCredit
+     * Sets collect_credit
      *
-     * @param bool $collectCredit Collect pending credit and transfer to invoice (default true)
+     * @param bool $collect_credit Collect pending credit and transfer to invoice (default true)
      *
      * @return $this
      */
-    public function setCollectCredit($collectCredit)
+    public function setCollectCredit($collect_credit)
     {
-        $this->container['collectCredit'] = $collectCredit;
+        $this->container['collect_credit'] = $collect_credit;
 
         return $this;
     }
 
     /**
-     * Gets applyDiscounts
+     * Gets apply_discounts
      *
      * @return bool
      */
     public function getApplyDiscounts()
     {
-        return $this->container['applyDiscounts'];
+        return $this->container['apply_discounts'];
     }
 
     /**
-     * Sets applyDiscounts
+     * Sets apply_discounts
      *
-     * @param bool $applyDiscounts Apply potential discounts for the subscription to the invoice order lines (default true)
+     * @param bool $apply_discounts Apply potential discounts for the subscription to the invoice order lines (default true)
      *
      * @return $this
      */
-    public function setApplyDiscounts($applyDiscounts)
+    public function setApplyDiscounts($apply_discounts)
     {
-        $this->container['applyDiscounts'] = $applyDiscounts;
+        $this->container['apply_discounts'] = $apply_discounts;
 
         return $this;
     }
 
     /**
-     * Gets orderLines
+     * Gets order_lines
      *
      * @return \Reepay\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
-        return $this->container['orderLines'];
+        return $this->container['order_lines'];
     }
 
     /**
-     * Sets orderLines
+     * Sets order_lines
      *
-     * @param \Reepay\Model\CreateOrderLine[] $orderLines Optional additional order lines for the invoice. A maximum of 100 order lines is allowed.
+     * @param \Reepay\Model\CreateOrderLine[] $order_lines Optional additional order lines for the invoice. A maximum of 100 order lines is allowed.
      *
      * @return $this
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines($order_lines)
     {
-        $this->container['orderLines'] = $orderLines;
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }
 
     /**
-     * Gets manualTransfer
+     * Gets manual_transfer
      *
      * @return \Reepay\Model\ManualSettleTransfer
      */
     public function getManualTransfer()
     {
-        return $this->container['manualTransfer'];
+        return $this->container['manual_transfer'];
     }
 
     /**
-     * Sets manualTransfer
+     * Sets manual_transfer
      *
-     * @param \Reepay\Model\ManualSettleTransfer $manualTransfer manualTransfer
+     * @param \Reepay\Model\ManualSettleTransfer $manual_transfer manual_transfer
      *
      * @return $this
      */
-    public function setManualTransfer($manualTransfer)
+    public function setManualTransfer($manual_transfer)
     {
-        $this->container['manualTransfer'] = $manualTransfer;
+        $this->container['manual_transfer'] = $manual_transfer;
 
         return $this;
     }
 
     /**
-     * Gets billingAddress
+     * Gets billing_address
      *
      * @return \Reepay\Model\InvoiceBillingAddress
      */
     public function getBillingAddress()
     {
-        return $this->container['billingAddress'];
+        return $this->container['billing_address'];
     }
 
     /**
-     * Sets billingAddress
+     * Sets billing_address
      *
-     * @param \Reepay\Model\InvoiceBillingAddress $billingAddress billingAddress
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address billing_address
      *
      * @return $this
      */
-    public function setBillingAddress($billingAddress)
+    public function setBillingAddress($billing_address)
     {
-        $this->container['billingAddress'] = $billingAddress;
+        $this->container['billing_address'] = $billing_address;
 
         return $this;
     }
 
     /**
-     * Gets shippingAddress
+     * Gets shipping_address
      *
      * @return \Reepay\Model\InvoiceShippingAddress
      */
     public function getShippingAddress()
     {
-        return $this->container['shippingAddress'];
+        return $this->container['shipping_address'];
     }
 
     /**
-     * Sets shippingAddress
+     * Sets shipping_address
      *
-     * @param \Reepay\Model\InvoiceShippingAddress $shippingAddress shippingAddress
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address shipping_address
      *
      * @return $this
      */
-    public function setShippingAddress($shippingAddress)
+    public function setShippingAddress($shipping_address)
     {
-        $this->container['shippingAddress'] = $shippingAddress;
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }

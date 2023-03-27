@@ -60,7 +60,7 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'vat' => 'float',
         'quantity' => 'int',
-        'amountInclVat' => 'bool'
+        'amount_incl_vat' => 'bool'
     ];
 
     /**
@@ -73,7 +73,7 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
         'amount' => 'int32',
         'vat' => 'float',
         'quantity' => 'int32',
-        'amountInclVat' => null
+        'amount_incl_vat' => null
     ];
 
     /**
@@ -107,7 +107,7 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'vat' => 'vat',
         'quantity' => 'quantity',
-        'amountInclVat' => 'amount_incl_vat'
+        'amount_incl_vat' => 'amount_incl_vat'
     ];
 
     /**
@@ -120,7 +120,7 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'vat' => 'setVat',
         'quantity' => 'setQuantity',
-        'amountInclVat' => 'setAmountInclVat'
+        'amount_incl_vat' => 'setAmountInclVat'
     ];
 
     /**
@@ -133,7 +133,7 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'vat' => 'getVat',
         'quantity' => 'getQuantity',
-        'amountInclVat' => 'getAmountInclVat'
+        'amount_incl_vat' => 'getAmountInclVat'
     ];
 
     /**
@@ -198,7 +198,7 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
     /**
@@ -328,25 +328,25 @@ class CreateOrderLine implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the per quantity amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the per quantity amount is including VAT. Defaults to true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }

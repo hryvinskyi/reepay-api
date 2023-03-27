@@ -57,10 +57,10 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'allPlans' => 'bool',
-        'eligiblePlans' => 'string[]',
-        'maxRedemptions' => 'int',
-        'validUntil' => 'string'
+        'all_plans' => 'bool',
+        'eligible_plans' => 'string[]',
+        'max_redemptions' => 'int',
+        'valid_until' => 'string'
     ];
 
     /**
@@ -70,10 +70,10 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'allPlans' => null,
-        'eligiblePlans' => null,
-        'maxRedemptions' => 'int32',
-        'validUntil' => null
+        'all_plans' => null,
+        'eligible_plans' => null,
+        'max_redemptions' => 'int32',
+        'valid_until' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'allPlans' => 'all_plans',
-        'eligiblePlans' => 'eligible_plans',
-        'maxRedemptions' => 'max_redemptions',
-        'validUntil' => 'valid_until'
+        'all_plans' => 'all_plans',
+        'eligible_plans' => 'eligible_plans',
+        'max_redemptions' => 'max_redemptions',
+        'valid_until' => 'valid_until'
     ];
 
     /**
@@ -117,10 +117,10 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'allPlans' => 'setAllPlans',
-        'eligiblePlans' => 'setEligiblePlans',
-        'maxRedemptions' => 'setMaxRedemptions',
-        'validUntil' => 'setValidUntil'
+        'all_plans' => 'setAllPlans',
+        'eligible_plans' => 'setEligiblePlans',
+        'max_redemptions' => 'setMaxRedemptions',
+        'valid_until' => 'setValidUntil'
     ];
 
     /**
@@ -130,10 +130,10 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'allPlans' => 'getAllPlans',
-        'eligiblePlans' => 'getEligiblePlans',
-        'maxRedemptions' => 'getMaxRedemptions',
-        'validUntil' => 'getValidUntil'
+        'all_plans' => 'getAllPlans',
+        'eligible_plans' => 'getEligiblePlans',
+        'max_redemptions' => 'getMaxRedemptions',
+        'valid_until' => 'getValidUntil'
     ];
 
     /**
@@ -195,10 +195,10 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['allPlans'] = isset($data['allPlans']) ? $data['allPlans'] : null;
-        $this->container['eligiblePlans'] = isset($data['eligiblePlans']) ? $data['eligiblePlans'] : null;
-        $this->container['maxRedemptions'] = isset($data['maxRedemptions']) ? $data['maxRedemptions'] : null;
-        $this->container['validUntil'] = isset($data['validUntil']) ? $data['validUntil'] : null;
+        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
+        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
+        $this->container['max_redemptions'] = isset($data['max_redemptions']) ? $data['max_redemptions'] : null;
+        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
     }
 
     /**
@@ -253,97 +253,97 @@ class UpdateCoupon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets allPlans
+     * Gets all_plans
      *
      * @return bool
      */
     public function getAllPlans()
     {
-        return $this->container['allPlans'];
+        return $this->container['all_plans'];
     }
 
     /**
-     * Sets allPlans
+     * Sets all_plans
      *
-     * @param bool $allPlans Whether all plans are eligible for this coupon. Defaults to false.
+     * @param bool $all_plans Whether all plans are eligible for this coupon. Defaults to false.
      *
      * @return $this
      */
-    public function setAllPlans($allPlans)
+    public function setAllPlans($all_plans)
     {
-        $this->container['allPlans'] = $allPlans;
+        $this->container['all_plans'] = $all_plans;
 
         return $this;
     }
 
     /**
-     * Gets eligiblePlans
+     * Gets eligible_plans
      *
      * @return string[]
      */
     public function getEligiblePlans()
     {
-        return $this->container['eligiblePlans'];
+        return $this->container['eligible_plans'];
     }
 
     /**
-     * Sets eligiblePlans
+     * Sets eligible_plans
      *
-     * @param string[] $eligiblePlans If not all_plans are set to true, then the set of eligible plan handles must be defined.
+     * @param string[] $eligible_plans If not all_plans are set to true, then the set of eligible plan handles must be defined.
      *
      * @return $this
      */
-    public function setEligiblePlans($eligiblePlans)
+    public function setEligiblePlans($eligible_plans)
     {
-        $this->container['eligiblePlans'] = $eligiblePlans;
+        $this->container['eligible_plans'] = $eligible_plans;
 
         return $this;
     }
 
     /**
-     * Gets maxRedemptions
+     * Gets max_redemptions
      *
      * @return int
      */
     public function getMaxRedemptions()
     {
-        return $this->container['maxRedemptions'];
+        return $this->container['max_redemptions'];
     }
 
     /**
-     * Sets maxRedemptions
+     * Sets max_redemptions
      *
-     * @param int $maxRedemptions Optional maximum number of times this coupon can be redeemed.
+     * @param int $max_redemptions Optional maximum number of times this coupon can be redeemed.
      *
      * @return $this
      */
-    public function setMaxRedemptions($maxRedemptions)
+    public function setMaxRedemptions($max_redemptions)
     {
-        $this->container['maxRedemptions'] = $maxRedemptions;
+        $this->container['max_redemptions'] = $max_redemptions;
 
         return $this;
     }
 
     /**
-     * Gets validUntil
+     * Gets valid_until
      *
      * @return string
      */
     public function getValidUntil()
     {
-        return $this->container['validUntil'];
+        return $this->container['valid_until'];
     }
 
     /**
-     * Sets validUntil
+     * Sets valid_until
      *
-     * @param string $validUntil Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
+     * @param string $valid_until Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
      *
      * @return $this
      */
-    public function setValidUntil($validUntil)
+    public function setValidUntil($valid_until)
     {
-        $this->container['validUntil'] = $validUntil;
+        $this->container['valid_until'] = $valid_until;
 
         return $this;
     }

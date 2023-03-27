@@ -83,7 +83,7 @@ class UserRenewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "tokenTtl"
+     * Test attribute "token_ttl"
      */
     public function testPropertyTokenTtl()
     {

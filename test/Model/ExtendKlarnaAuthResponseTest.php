@@ -83,7 +83,7 @@ class ExtendKlarnaAuthResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {

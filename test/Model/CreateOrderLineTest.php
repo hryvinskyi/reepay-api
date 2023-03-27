@@ -104,7 +104,7 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {

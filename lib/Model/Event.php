@@ -62,8 +62,8 @@ class Event implements ModelInterface, ArrayAccess
         'invoice' => 'string',
         'principal' => 'string',
         'created' => '\DateTime',
-        'eventType' => 'string',
-        'principalType' => 'string'
+        'event_type' => 'string',
+        'principal_type' => 'string'
     ];
 
     /**
@@ -78,8 +78,8 @@ class Event implements ModelInterface, ArrayAccess
         'invoice' => null,
         'principal' => null,
         'created' => 'date-time',
-        'eventType' => null,
-        'principalType' => null
+        'event_type' => null,
+        'principal_type' => null
     ];
 
     /**
@@ -115,8 +115,8 @@ class Event implements ModelInterface, ArrayAccess
         'invoice' => 'invoice',
         'principal' => 'principal',
         'created' => 'created',
-        'eventType' => 'event_type',
-        'principalType' => 'principal_type'
+        'event_type' => 'event_type',
+        'principal_type' => 'principal_type'
     ];
 
     /**
@@ -131,8 +131,8 @@ class Event implements ModelInterface, ArrayAccess
         'invoice' => 'setInvoice',
         'principal' => 'setPrincipal',
         'created' => 'setCreated',
-        'eventType' => 'setEventType',
-        'principalType' => 'setPrincipalType'
+        'event_type' => 'setEventType',
+        'principal_type' => 'setPrincipalType'
     ];
 
     /**
@@ -147,8 +147,8 @@ class Event implements ModelInterface, ArrayAccess
         'invoice' => 'getInvoice',
         'principal' => 'getPrincipal',
         'created' => 'getCreated',
-        'eventType' => 'getEventType',
-        'principalType' => 'getPrincipalType'
+        'event_type' => 'getEventType',
+        'principal_type' => 'getPrincipalType'
     ];
 
     /**
@@ -229,8 +229,8 @@ class Event implements ModelInterface, ArrayAccess
         $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
         $this->container['principal'] = isset($data['principal']) ? $data['principal'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
-        $this->container['principalType'] = isset($data['principalType']) ? $data['principalType'] : null;
+        $this->container['event_type'] = isset($data['event_type']) ? $data['event_type'] : null;
+        $this->container['principal_type'] = isset($data['principal_type']) ? $data['principal_type'] : null;
     }
 
     /**
@@ -248,13 +248,17 @@ class Event implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['eventType'] === null) {
-            $invalidProperties[] = "'eventType' can't be null";
+        if ($this->container['event_type'] === null) {
+            $invalidProperties[] = "'event_type' can't be null";
         }
         $allowedValues = $this->getPrincipalTypeAllowableValues();
-        if (!is_null($this->container['principalType']) && !in_array($this->container['principalType'], $allowedValues, true)) {
+        if (!is_null($this->container['principal_type']) && !in_array(
+                $this->container['principal_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'principalType', must be one of '%s'",
+                "invalid value for 'principal_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -419,58 +423,58 @@ class Event implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets eventType
+     * Gets event_type
      *
      * @return string
      */
     public function getEventType()
     {
-        return $this->container['eventType'];
+        return $this->container['event_type'];
     }
 
     /**
-     * Sets eventType
+     * Sets event_type
      *
-     * @param string $eventType The event type (see documentation)
+     * @param string $event_type The event type (see documentation)
      *
      * @return $this
      */
-    public function setEventType($eventType)
+    public function setEventType($event_type)
     {
-        $this->container['eventType'] = $eventType;
+        $this->container['event_type'] = $event_type;
 
         return $this;
     }
 
     /**
-     * Gets principalType
+     * Gets principal_type
      *
      * @return string
      */
     public function getPrincipalType()
     {
-        return $this->container['principalType'];
+        return $this->container['principal_type'];
     }
 
     /**
-     * Sets principalType
+     * Sets principal_type
      *
-     * @param string $principalType Principal type `api` or `user`
+     * @param string $principal_type Principal type `api` or `user`
      *
      * @return $this
      */
-    public function setPrincipalType($principalType)
+    public function setPrincipalType($principal_type)
     {
         $allowedValues = $this->getPrincipalTypeAllowableValues();
-        if (!is_null($principalType) && !in_array($principalType, $allowedValues, true)) {
+        if (!is_null($principal_type) && !in_array($principal_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'principalType', must be one of '%s'",
+                    "Invalid value for 'principal_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['principalType'] = $principalType;
+        $this->container['principal_type'] = $principal_type;
 
         return $this;
     }

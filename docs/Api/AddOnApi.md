@@ -19,7 +19,6 @@ All URIs are relative to *https://api.reepay.com/*
 Create add-on
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -73,7 +72,6 @@ try {
 Delete add-on
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -127,7 +125,6 @@ Name | Type | Description  | Notes
 Delete metadata
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -180,7 +177,6 @@ void (empty response body)
 Get add-on
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -234,7 +230,6 @@ Name | Type | Description  | Notes
 Get metadata
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -288,7 +283,6 @@ Name | Type | Description  | Notes
 Un-delete add-on
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -342,7 +336,6 @@ Name | Type | Description  | Notes
 Update add-on
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -398,7 +391,6 @@ try {
 Create or update metadata
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

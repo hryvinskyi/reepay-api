@@ -111,7 +111,7 @@ class WebhookRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "httpStatus"
+     * Test attribute "http_status"
      */
     public function testPropertyHttpStatus()
     {

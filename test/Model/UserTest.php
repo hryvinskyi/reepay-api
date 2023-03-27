@@ -97,14 +97,14 @@ class UserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "verifiedEmail"
+     * Test attribute "verified_email"
      */
     public function testPropertyVerifiedEmail()
     {
     }
 
     /**
-     * Test attribute "mfaMethod"
+     * Test attribute "mfa_method"
      */
     public function testPropertyMfaMethod()
     {

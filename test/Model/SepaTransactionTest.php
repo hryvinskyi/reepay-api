@@ -83,35 +83,35 @@ class SepaTransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "refTransaction"
+     * Test attribute "ref_transaction"
      */
     public function testPropertyRefTransaction()
     {
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {
     }
 
     /**
-     * Test attribute "sepaId"
+     * Test attribute "sepa_id"
      */
     public function testPropertySepaId()
     {
     }
 
     /**
-     * Test attribute "sepaMandate"
+     * Test attribute "sepa_mandate"
      */
     public function testPropertySepaMandate()
     {

@@ -146,161 +146,161 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentType"
+     * Test attribute "payment_type"
      */
     public function testPropertyPaymentType()
     {
     }
 
     /**
-     * Test attribute "cardTransaction"
+     * Test attribute "card_transaction"
      */
     public function testPropertyCardTransaction()
     {
     }
 
     /**
-     * Test attribute "mpoTransaction"
+     * Test attribute "mpo_transaction"
      */
     public function testPropertyMpoTransaction()
     {
     }
 
     /**
-     * Test attribute "vippsTransaction"
+     * Test attribute "vipps_transaction"
      */
     public function testPropertyVippsTransaction()
     {
     }
 
     /**
-     * Test attribute "applepayTransaction"
+     * Test attribute "applepay_transaction"
      */
     public function testPropertyApplepayTransaction()
     {
     }
 
     /**
-     * Test attribute "googlepayTransaction"
+     * Test attribute "googlepay_transaction"
      */
     public function testPropertyGooglepayTransaction()
     {
     }
 
     /**
-     * Test attribute "manualTransaction"
+     * Test attribute "manual_transaction"
      */
     public function testPropertyManualTransaction()
     {
     }
 
     /**
-     * Test attribute "viabillTransaction"
+     * Test attribute "viabill_transaction"
      */
     public function testPropertyViabillTransaction()
     {
     }
 
     /**
-     * Test attribute "anydayTransaction"
+     * Test attribute "anyday_transaction"
      */
     public function testPropertyAnydayTransaction()
     {
     }
 
     /**
-     * Test attribute "resursTransaction"
+     * Test attribute "resurs_transaction"
      */
     public function testPropertyResursTransaction()
     {
     }
 
     /**
-     * Test attribute "klarnaTransaction"
+     * Test attribute "klarna_transaction"
      */
     public function testPropertyKlarnaTransaction()
     {
     }
 
     /**
-     * Test attribute "swishTransaction"
+     * Test attribute "swish_transaction"
      */
     public function testPropertySwishTransaction()
     {
     }
 
     /**
-     * Test attribute "paypalTransaction"
+     * Test attribute "paypal_transaction"
      */
     public function testPropertyPaypalTransaction()
     {
     }
 
     /**
-     * Test attribute "bancontactTransaction"
+     * Test attribute "bancontact_transaction"
      */
     public function testPropertyBancontactTransaction()
     {
     }
 
     /**
-     * Test attribute "blikTransaction"
+     * Test attribute "blik_transaction"
      */
     public function testPropertyBlikTransaction()
     {
     }
 
     /**
-     * Test attribute "giropayTransaction"
+     * Test attribute "giropay_transaction"
      */
     public function testPropertyGiropayTransaction()
     {
     }
 
     /**
-     * Test attribute "idealTransaction"
+     * Test attribute "ideal_transaction"
      */
     public function testPropertyIdealTransaction()
     {
     }
 
     /**
-     * Test attribute "p24Transaction"
+     * Test attribute "p24_transaction"
      */
     public function testPropertyP24Transaction()
     {
     }
 
     /**
-     * Test attribute "sepaTransaction"
+     * Test attribute "sepa_transaction"
      */
     public function testPropertySepaTransaction()
     {
     }
 
     /**
-     * Test attribute "verkkopankkiTransaction"
+     * Test attribute "verkkopankki_transaction"
      */
     public function testPropertyVerkkopankkiTransaction()
     {
     }
 
     /**
-     * Test attribute "mpsTransaction"
+     * Test attribute "mps_transaction"
      */
     public function testPropertyMpsTransaction()
     {
     }
 
     /**
-     * Test attribute "vippsRecurringTransaction"
+     * Test attribute "vipps_recurring_transaction"
      */
     public function testPropertyVippsRecurringTransaction()
     {
     }
 
     /**
-     * Test attribute "paymentContext"
+     * Test attribute "payment_context"
      */
     public function testPropertyPaymentContext()
     {

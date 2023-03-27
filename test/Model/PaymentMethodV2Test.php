@@ -132,28 +132,28 @@ class PaymentMethodV2Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentType"
+     * Test attribute "payment_type"
      */
     public function testPropertyPaymentType()
     {
     }
 
     /**
-     * Test attribute "mpsSubscription"
+     * Test attribute "mps_subscription"
      */
     public function testPropertyMpsSubscription()
     {
     }
 
     /**
-     * Test attribute "vippsRecurringSubscription"
+     * Test attribute "vipps_recurring_subscription"
      */
     public function testPropertyVippsRecurringSubscription()
     {
     }
 
     /**
-     * Test attribute "sepaMandate"
+     * Test attribute "sepa_mandate"
      */
     public function testPropertySepaMandate()
     {

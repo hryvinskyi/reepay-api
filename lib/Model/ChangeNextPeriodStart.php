@@ -56,7 +56,7 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'nextPeriodStart' => 'string'
+        'next_period_start' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'nextPeriodStart' => null
+        'next_period_start' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'nextPeriodStart' => 'next_period_start'
+        'next_period_start' => 'next_period_start'
     ];
 
     /**
@@ -104,7 +104,7 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'nextPeriodStart' => 'setNextPeriodStart'
+        'next_period_start' => 'setNextPeriodStart'
     ];
 
     /**
@@ -113,7 +113,7 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'nextPeriodStart' => 'getNextPeriodStart'
+        'next_period_start' => 'getNextPeriodStart'
     ];
 
     /**
@@ -174,7 +174,7 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['nextPeriodStart'] = isset($data['nextPeriodStart']) ? $data['nextPeriodStart'] : null;
+        $this->container['next_period_start'] = isset($data['next_period_start']) ? $data['next_period_start'] : null;
     }
 
     /**
@@ -186,8 +186,8 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['nextPeriodStart'] === null) {
-            $invalidProperties[] = "'nextPeriodStart' can't be null";
+        if ($this->container['next_period_start'] === null) {
+            $invalidProperties[] = "'next_period_start' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,25 +205,25 @@ class ChangeNextPeriodStart implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets nextPeriodStart
+     * Gets next_period_start
      *
      * @return string
      */
     public function getNextPeriodStart()
     {
-        return $this->container['nextPeriodStart'];
+        return $this->container['next_period_start'];
     }
 
     /**
-     * Sets nextPeriodStart
+     * Sets next_period_start
      *
-     * @param string $nextPeriodStart Date and time of requested next period start on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`. The date and time must be in the future.
+     * @param string $next_period_start Date and time of requested next period start on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`. The date and time must be in the future.
      *
      * @return $this
      */
-    public function setNextPeriodStart($nextPeriodStart)
+    public function setNextPeriodStart($next_period_start)
     {
-        $this->container['nextPeriodStart'] = $nextPeriodStart;
+        $this->container['next_period_start'] = $next_period_start;
 
         return $this;
     }

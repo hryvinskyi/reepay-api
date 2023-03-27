@@ -57,8 +57,8 @@ class MailSettings implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'bcc' => 'string',
-        'defaultFrom' => 'string',
-        'replyTo' => 'string'
+        'default_from' => 'string',
+        'reply_to' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class MailSettings implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'bcc' => null,
-        'defaultFrom' => null,
-        'replyTo' => null
+        'default_from' => null,
+        'reply_to' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class MailSettings implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'bcc' => 'bcc',
-        'defaultFrom' => 'default_from',
-        'replyTo' => 'reply_to'
+        'default_from' => 'default_from',
+        'reply_to' => 'reply_to'
     ];
 
     /**
@@ -111,8 +111,8 @@ class MailSettings implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'bcc' => 'setBcc',
-        'defaultFrom' => 'setDefaultFrom',
-        'replyTo' => 'setReplyTo'
+        'default_from' => 'setDefaultFrom',
+        'reply_to' => 'setReplyTo'
     ];
 
     /**
@@ -122,8 +122,8 @@ class MailSettings implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'bcc' => 'getBcc',
-        'defaultFrom' => 'getDefaultFrom',
-        'replyTo' => 'getReplyTo'
+        'default_from' => 'getDefaultFrom',
+        'reply_to' => 'getReplyTo'
     ];
 
     /**
@@ -185,8 +185,8 @@ class MailSettings implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
-        $this->container['defaultFrom'] = isset($data['defaultFrom']) ? $data['defaultFrom'] : null;
-        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['default_from'] = isset($data['default_from']) ? $data['default_from'] : null;
+        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
     }
 
     /**
@@ -198,8 +198,8 @@ class MailSettings implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['defaultFrom'] === null) {
-            $invalidProperties[] = "'defaultFrom' can't be null";
+        if ($this->container['default_from'] === null) {
+            $invalidProperties[] = "'default_from' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,49 +241,49 @@ class MailSettings implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets defaultFrom
+     * Gets default_from
      *
      * @return string
      */
     public function getDefaultFrom()
     {
-        return $this->container['defaultFrom'];
+        return $this->container['default_from'];
     }
 
     /**
-     * Sets defaultFrom
+     * Sets default_from
      *
-     * @param string $defaultFrom Default email sender address. Rfc 822 address.
+     * @param string $default_from Default email sender address. Rfc 822 address.
      *
      * @return $this
      */
-    public function setDefaultFrom($defaultFrom)
+    public function setDefaultFrom($default_from)
     {
-        $this->container['defaultFrom'] = $defaultFrom;
+        $this->container['default_from'] = $default_from;
 
         return $this;
     }
 
     /**
-     * Gets replyTo
+     * Gets reply_to
      *
      * @return string
      */
     public function getReplyTo()
     {
-        return $this->container['replyTo'];
+        return $this->container['reply_to'];
     }
 
     /**
-     * Sets replyTo
+     * Sets reply_to
      *
-     * @param string $replyTo Optional Reply-To email address. Rfc 822 address.
+     * @param string $reply_to Optional Reply-To email address. Rfc 822 address.
      *
      * @return $this
      */
-    public function setReplyTo($replyTo)
+    public function setReplyTo($reply_to)
     {
-        $this->container['replyTo'] = $replyTo;
+        $this->container['reply_to'] = $reply_to;
 
         return $this;
     }

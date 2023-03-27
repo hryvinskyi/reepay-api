@@ -62,8 +62,8 @@ class CardVerification implements ModelInterface, ArrayAccess
         'error' => 'string',
         'provider' => 'string',
         'created' => '\DateTime',
-        'acquirerCode' => 'string',
-        'acquirerMessage' => 'string'
+        'acquirer_code' => 'string',
+        'acquirer_message' => 'string'
     ];
 
     /**
@@ -78,8 +78,8 @@ class CardVerification implements ModelInterface, ArrayAccess
         'error' => null,
         'provider' => null,
         'created' => 'date-time',
-        'acquirerCode' => null,
-        'acquirerMessage' => null
+        'acquirer_code' => null,
+        'acquirer_message' => null
     ];
 
     /**
@@ -115,8 +115,8 @@ class CardVerification implements ModelInterface, ArrayAccess
         'error' => 'error',
         'provider' => 'provider',
         'created' => 'created',
-        'acquirerCode' => 'acquirer_code',
-        'acquirerMessage' => 'acquirer_message'
+        'acquirer_code' => 'acquirer_code',
+        'acquirer_message' => 'acquirer_message'
     ];
 
     /**
@@ -131,8 +131,8 @@ class CardVerification implements ModelInterface, ArrayAccess
         'error' => 'setError',
         'provider' => 'setProvider',
         'created' => 'setCreated',
-        'acquirerCode' => 'setAcquirerCode',
-        'acquirerMessage' => 'setAcquirerMessage'
+        'acquirer_code' => 'setAcquirerCode',
+        'acquirer_message' => 'setAcquirerMessage'
     ];
 
     /**
@@ -147,8 +147,8 @@ class CardVerification implements ModelInterface, ArrayAccess
         'error' => 'getError',
         'provider' => 'getProvider',
         'created' => 'getCreated',
-        'acquirerCode' => 'getAcquirerCode',
-        'acquirerMessage' => 'getAcquirerMessage'
+        'acquirer_code' => 'getAcquirerCode',
+        'acquirer_message' => 'getAcquirerMessage'
     ];
 
     /**
@@ -255,8 +255,8 @@ class CardVerification implements ModelInterface, ArrayAccess
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['acquirerCode'] = isset($data['acquirerCode']) ? $data['acquirerCode'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
+        $this->container['acquirer_code'] = isset($data['acquirer_code']) ? $data['acquirer_code'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
     }
 
     /**
@@ -471,49 +471,49 @@ class CardVerification implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets acquirerCode
+     * Gets acquirer_code
      *
      * @return string
      */
     public function getAcquirerCode()
     {
-        return $this->container['acquirerCode'];
+        return $this->container['acquirer_code'];
     }
 
     /**
-     * Sets acquirerCode
+     * Sets acquirer_code
      *
-     * @param string $acquirerCode Card acquirer error code in case of card error
+     * @param string $acquirer_code Card acquirer error code in case of card error
      *
      * @return $this
      */
-    public function setAcquirerCode($acquirerCode)
+    public function setAcquirerCode($acquirer_code)
     {
-        $this->container['acquirerCode'] = $acquirerCode;
+        $this->container['acquirer_code'] = $acquirer_code;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }

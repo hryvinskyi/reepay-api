@@ -63,10 +63,10 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
         'customer' => '\Reepay\Model\CreateCustomer',
         'metadata' => 'map[string,object]',
         'ordertext' => 'string',
-        'orderLines' => '\Reepay\Model\CreateOrderLine[]',
-        'customerHandle' => 'string',
-        'billingAddress' => '\Reepay\Model\InvoiceBillingAddress',
-        'shippingAddress' => '\Reepay\Model\InvoiceShippingAddress'
+        'order_lines' => '\Reepay\Model\CreateOrderLine[]',
+        'customer_handle' => 'string',
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress'
     ];
 
     /**
@@ -82,10 +82,10 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
         'customer' => null,
         'metadata' => null,
         'ordertext' => null,
-        'orderLines' => null,
-        'customerHandle' => null,
-        'billingAddress' => null,
-        'shippingAddress' => null
+        'order_lines' => null,
+        'customer_handle' => null,
+        'billing_address' => null,
+        'shipping_address' => null
     ];
 
     /**
@@ -122,10 +122,10 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
         'customer' => 'customer',
         'metadata' => 'metadata',
         'ordertext' => 'ordertext',
-        'orderLines' => 'order_lines',
-        'customerHandle' => 'customer_handle',
-        'billingAddress' => 'billing_address',
-        'shippingAddress' => 'shipping_address'
+        'order_lines' => 'order_lines',
+        'customer_handle' => 'customer_handle',
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address'
     ];
 
     /**
@@ -141,10 +141,10 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
         'customer' => 'setCustomer',
         'metadata' => 'setMetadata',
         'ordertext' => 'setOrdertext',
-        'orderLines' => 'setOrderLines',
-        'customerHandle' => 'setCustomerHandle',
-        'billingAddress' => 'setBillingAddress',
-        'shippingAddress' => 'setShippingAddress'
+        'order_lines' => 'setOrderLines',
+        'customer_handle' => 'setCustomerHandle',
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress'
     ];
 
     /**
@@ -160,10 +160,10 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
         'customer' => 'getCustomer',
         'metadata' => 'getMetadata',
         'ordertext' => 'getOrdertext',
-        'orderLines' => 'getOrderLines',
-        'customerHandle' => 'getCustomerHandle',
-        'billingAddress' => 'getBillingAddress',
-        'shippingAddress' => 'getShippingAddress'
+        'order_lines' => 'getOrderLines',
+        'customer_handle' => 'getCustomerHandle',
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress'
     ];
 
     /**
@@ -231,10 +231,10 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
-        $this->container['orderLines'] = isset($data['orderLines']) ? $data['orderLines'] : null;
-        $this->container['customerHandle'] = isset($data['customerHandle']) ? $data['customerHandle'] : null;
-        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
-        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['customer_handle'] = isset($data['customer_handle']) ? $data['customer_handle'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
     }
 
     /**
@@ -433,97 +433,97 @@ class PrepareChargeDto implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderLines
+     * Gets order_lines
      *
      * @return \Reepay\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
-        return $this->container['orderLines'];
+        return $this->container['order_lines'];
     }
 
     /**
-     * Sets orderLines
+     * Sets order_lines
      *
-     * @param \Reepay\Model\CreateOrderLine[] $orderLines Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted. A maximum of 100 order lines is allowed.
+     * @param \Reepay\Model\CreateOrderLine[] $order_lines Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted. A maximum of 100 order lines is allowed.
      *
      * @return $this
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines($order_lines)
     {
-        $this->container['orderLines'] = $orderLines;
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }
 
     /**
-     * Gets customerHandle
+     * Gets customer_handle
      *
      * @return string
      */
     public function getCustomerHandle()
     {
-        return $this->container['customerHandle'];
+        return $this->container['customer_handle'];
     }
 
     /**
-     * Sets customerHandle
+     * Sets customer_handle
      *
-     * @param string $customerHandle Customer reference. If charge does not already exist either this reference must be provided, a create customer object must be provided or the source must be a payment method reference (e.g. `ca_..`) identifying customer. Notice that customer cannot be changed for existing charge/invoice so if handle is provided it must match the customer handle for existing customer.
+     * @param string $customer_handle Customer reference. If charge does not already exist either this reference must be provided, a create customer object must be provided or the source must be a payment method reference (e.g. `ca_..`) identifying customer. Notice that customer cannot be changed for existing charge/invoice so if handle is provided it must match the customer handle for existing customer.
      *
      * @return $this
      */
-    public function setCustomerHandle($customerHandle)
+    public function setCustomerHandle($customer_handle)
     {
-        $this->container['customerHandle'] = $customerHandle;
+        $this->container['customer_handle'] = $customer_handle;
 
         return $this;
     }
 
     /**
-     * Gets billingAddress
+     * Gets billing_address
      *
      * @return \Reepay\Model\InvoiceBillingAddress
      */
     public function getBillingAddress()
     {
-        return $this->container['billingAddress'];
+        return $this->container['billing_address'];
     }
 
     /**
-     * Sets billingAddress
+     * Sets billing_address
      *
-     * @param \Reepay\Model\InvoiceBillingAddress $billingAddress billingAddress
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address billing_address
      *
      * @return $this
      */
-    public function setBillingAddress($billingAddress)
+    public function setBillingAddress($billing_address)
     {
-        $this->container['billingAddress'] = $billingAddress;
+        $this->container['billing_address'] = $billing_address;
 
         return $this;
     }
 
     /**
-     * Gets shippingAddress
+     * Gets shipping_address
      *
      * @return \Reepay\Model\InvoiceShippingAddress
      */
     public function getShippingAddress()
     {
-        return $this->container['shippingAddress'];
+        return $this->container['shipping_address'];
     }
 
     /**
-     * Sets shippingAddress
+     * Sets shipping_address
      *
-     * @param \Reepay\Model\InvoiceShippingAddress $shippingAddress shippingAddress
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address shipping_address
      *
      * @return $this
      */
-    public function setShippingAddress($shippingAddress)
+    public function setShippingAddress($shipping_address)
     {
-        $this->container['shippingAddress'] = $shippingAddress;
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }

@@ -104,7 +104,7 @@ class CreateCreditTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "validFrom"
+     * Test attribute "valid_from"
      */
     public function testPropertyValidFrom()
     {

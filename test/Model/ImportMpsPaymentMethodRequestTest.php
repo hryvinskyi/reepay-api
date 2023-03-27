@@ -90,21 +90,21 @@ class ImportMpsPaymentMethodRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "customerHandle"
+     * Test attribute "customer_handle"
      */
     public function testPropertyCustomerHandle()
     {
     }
 
     /**
-     * Test attribute "mobilePayId"
+     * Test attribute "mobile_pay_id"
      */
     public function testPropertyMobilePayId()
     {
     }
 
     /**
-     * Test attribute "cancelRedirectUrl"
+     * Test attribute "cancel_redirect_url"
      */
     public function testPropertyCancelRedirectUrl()
     {

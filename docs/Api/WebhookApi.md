@@ -171,7 +171,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Reepay\Model\Webhook[] getWebhooks($createdBefore, $size, $state, $createdAfter)
+
+> \Reepay\Model\Webhook[] getWebhooks($created_before, $size, $state, $created_after)
 
 Get list of webhooks
 
@@ -191,13 +192,13 @@ $apiInstance = new Reepay\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$createdBefore = "createdBefore_example"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
+$created_before = "created_before_example"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
 $size = 100; // int | Page size. A maximum of 100 is allowed.
 $state = "state_example"; // string | Optional state to filter on, one of the following: `pending`, `retrying`, `disabled`, `failed`, `completed`
-$createdAfter = "createdAfter_example"; // string | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
+$created_after = "created_after_example"; // string | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
 
 try {
-    $result = $apiInstance->getWebhooks($createdBefore, $size, $state, $createdAfter);
+    $result = $apiInstance->getWebhooks($created_before, $size, $state, $created_after);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -207,12 +208,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createdBefore** | **string**| Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
- **size** | **int**| Page size. A maximum of 100 is allowed. | [optional] [default to 100]
- **state** | **string**| Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; | [optional]
- **createdAfter** | **string**| Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. | [optional]
+ Name               | Type       | Description                                                                                                                                                                  | Notes                       
+--------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------
+ **created_before** | **string** | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
+ **size**           | **int**    | Page size. A maximum of 100 is allowed.                                                                                                                                      | [optional] [default to 100] 
+ **state**          | **string** | Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60;                | [optional]                  
+ **created_after**  | **string** | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.  | [optional]                  
 
 ### Return type
 

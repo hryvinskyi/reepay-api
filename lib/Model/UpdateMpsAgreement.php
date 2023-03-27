@@ -56,9 +56,9 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'shopName' => 'string',
-        'merchantVat' => 'string',
-        'asyncOneOff' => 'bool'
+        'shop_name' => 'string',
+        'merchant_vat' => 'string',
+        'async_one_off' => 'bool'
     ];
 
     /**
@@ -67,9 +67,9 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'shopName' => null,
-        'merchantVat' => null,
-        'asyncOneOff' => null
+        'shop_name' => null,
+        'merchant_vat' => null,
+        'async_one_off' => null
     ];
 
     /**
@@ -99,9 +99,9 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shopName' => 'shop_name',
-        'merchantVat' => 'merchant_vat',
-        'asyncOneOff' => 'async_one_off'
+        'shop_name' => 'shop_name',
+        'merchant_vat' => 'merchant_vat',
+        'async_one_off' => 'async_one_off'
     ];
 
     /**
@@ -110,9 +110,9 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shopName' => 'setShopName',
-        'merchantVat' => 'setMerchantVat',
-        'asyncOneOff' => 'setAsyncOneOff'
+        'shop_name' => 'setShopName',
+        'merchant_vat' => 'setMerchantVat',
+        'async_one_off' => 'setAsyncOneOff'
     ];
 
     /**
@@ -121,9 +121,9 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shopName' => 'getShopName',
-        'merchantVat' => 'getMerchantVat',
-        'asyncOneOff' => 'getAsyncOneOff'
+        'shop_name' => 'getShopName',
+        'merchant_vat' => 'getMerchantVat',
+        'async_one_off' => 'getAsyncOneOff'
     ];
 
     /**
@@ -184,9 +184,9 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['shopName'] = isset($data['shopName']) ? $data['shopName'] : null;
-        $this->container['merchantVat'] = isset($data['merchantVat']) ? $data['merchantVat'] : null;
-        $this->container['asyncOneOff'] = isset($data['asyncOneOff']) ? $data['asyncOneOff'] : null;
+        $this->container['shop_name'] = isset($data['shop_name']) ? $data['shop_name'] : null;
+        $this->container['merchant_vat'] = isset($data['merchant_vat']) ? $data['merchant_vat'] : null;
+        $this->container['async_one_off'] = isset($data['async_one_off']) ? $data['async_one_off'] : null;
     }
 
     /**
@@ -214,73 +214,73 @@ class UpdateMpsAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets shopName
+     * Gets shop_name
      *
      * @return string
      */
     public function getShopName()
     {
-        return $this->container['shopName'];
+        return $this->container['shop_name'];
     }
 
     /**
-     * Sets shopName
+     * Sets shop_name
      *
-     * @param string $shopName shopName
+     * @param string $shop_name shop_name
      *
      * @return $this
      */
-    public function setShopName($shopName)
+    public function setShopName($shop_name)
     {
-        $this->container['shopName'] = $shopName;
+        $this->container['shop_name'] = $shop_name;
 
         return $this;
     }
 
     /**
-     * Gets merchantVat
+     * Gets merchant_vat
      *
      * @return string
      */
     public function getMerchantVat()
     {
-        return $this->container['merchantVat'];
+        return $this->container['merchant_vat'];
     }
 
     /**
-     * Sets merchantVat
+     * Sets merchant_vat
      *
-     * @param string $merchantVat merchantVat
+     * @param string $merchant_vat merchant_vat
      *
      * @return $this
      */
-    public function setMerchantVat($merchantVat)
+    public function setMerchantVat($merchant_vat)
     {
-        $this->container['merchantVat'] = $merchantVat;
+        $this->container['merchant_vat'] = $merchant_vat;
 
         return $this;
     }
 
     /**
-     * Gets asyncOneOff
+     * Gets async_one_off
      *
      * @return bool
      */
     public function getAsyncOneOff()
     {
-        return $this->container['asyncOneOff'];
+        return $this->container['async_one_off'];
     }
 
     /**
-     * Sets asyncOneOff
+     * Sets async_one_off
      *
-     * @param bool $asyncOneOff asyncOneOff
+     * @param bool $async_one_off async_one_off
      *
      * @return $this
      */
-    public function setAsyncOneOff($asyncOneOff)
+    public function setAsyncOneOff($async_one_off)
     {
-        $this->container['asyncOneOff'] = $asyncOneOff;
+        $this->container['async_one_off'] = $async_one_off;
 
         return $this;
     }

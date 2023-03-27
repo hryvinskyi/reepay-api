@@ -104,7 +104,7 @@ class AuthenticateLoginBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "mfaCode"
+     * Test attribute "mfa_code"
      */
     public function testPropertyMfaCode()
     {

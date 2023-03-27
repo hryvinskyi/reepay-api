@@ -83,14 +83,14 @@ class AnydayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "apiKey"
+     * Test attribute "api_key"
      */
     public function testPropertyApiKey()
     {
     }
 
     /**
-     * Test attribute "privateKey"
+     * Test attribute "private_key"
      */
     public function testPropertyPrivateKey()
     {

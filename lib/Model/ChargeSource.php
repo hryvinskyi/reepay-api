@@ -62,22 +62,22 @@ class ChargeSource implements ModelInterface, ArrayAccess
         'iban' => 'string',
         'fingerprint' => 'string',
         'provider' => 'string',
-        'vippsRecurring' => 'string',
-        'sepaMandate' => 'string',
-        'authTransaction' => 'string',
-        'cardType' => 'string',
-        'transactionCardType' => 'string',
-        'expDate' => 'string',
-        'maskedCard' => 'string',
-        'cardCountry' => 'string',
-        'strongAuthenticationStatus' => 'string',
-        'threeDSecureStatus' => 'string',
-        'riskRule' => 'string',
-        'acquirerCode' => 'string',
-        'acquirerMessage' => 'string',
-        'acquirerReference' => 'string',
-        'textOnStatement' => 'string',
-        'surchargeFee' => 'int'
+        'vipps_recurring' => 'string',
+        'sepa_mandate' => 'string',
+        'auth_transaction' => 'string',
+        'card_type' => 'string',
+        'transaction_card_type' => 'string',
+        'exp_date' => 'string',
+        'masked_card' => 'string',
+        'card_country' => 'string',
+        'strong_authentication_status' => 'string',
+        'three_d_secure_status' => 'string',
+        'risk_rule' => 'string',
+        'acquirer_code' => 'string',
+        'acquirer_message' => 'string',
+        'acquirer_reference' => 'string',
+        'text_on_statement' => 'string',
+        'surcharge_fee' => 'int'
     ];
 
     /**
@@ -92,22 +92,22 @@ class ChargeSource implements ModelInterface, ArrayAccess
         'iban' => null,
         'fingerprint' => null,
         'provider' => null,
-        'vippsRecurring' => null,
-        'sepaMandate' => null,
-        'authTransaction' => null,
-        'cardType' => null,
-        'transactionCardType' => null,
-        'expDate' => null,
-        'maskedCard' => null,
-        'cardCountry' => null,
-        'strongAuthenticationStatus' => null,
-        'threeDSecureStatus' => null,
-        'riskRule' => null,
-        'acquirerCode' => null,
-        'acquirerMessage' => null,
-        'acquirerReference' => null,
-        'textOnStatement' => null,
-        'surchargeFee' => 'int32'
+        'vipps_recurring' => null,
+        'sepa_mandate' => null,
+        'auth_transaction' => null,
+        'card_type' => null,
+        'transaction_card_type' => null,
+        'exp_date' => null,
+        'masked_card' => null,
+        'card_country' => null,
+        'strong_authentication_status' => null,
+        'three_d_secure_status' => null,
+        'risk_rule' => null,
+        'acquirer_code' => null,
+        'acquirer_message' => null,
+        'acquirer_reference' => null,
+        'text_on_statement' => null,
+        'surcharge_fee' => 'int32'
     ];
 
     /**
@@ -143,22 +143,22 @@ class ChargeSource implements ModelInterface, ArrayAccess
         'iban' => 'iban',
         'fingerprint' => 'fingerprint',
         'provider' => 'provider',
-        'vippsRecurring' => 'vipps_recurring',
-        'sepaMandate' => 'sepa_mandate',
-        'authTransaction' => 'auth_transaction',
-        'cardType' => 'card_type',
-        'transactionCardType' => 'transaction_card_type',
-        'expDate' => 'exp_date',
-        'maskedCard' => 'masked_card',
-        'cardCountry' => 'card_country',
-        'strongAuthenticationStatus' => 'strong_authentication_status',
-        'threeDSecureStatus' => 'three_d_secure_status',
-        'riskRule' => 'risk_rule',
-        'acquirerCode' => 'acquirer_code',
-        'acquirerMessage' => 'acquirer_message',
-        'acquirerReference' => 'acquirer_reference',
-        'textOnStatement' => 'text_on_statement',
-        'surchargeFee' => 'surcharge_fee'
+        'vipps_recurring' => 'vipps_recurring',
+        'sepa_mandate' => 'sepa_mandate',
+        'auth_transaction' => 'auth_transaction',
+        'card_type' => 'card_type',
+        'transaction_card_type' => 'transaction_card_type',
+        'exp_date' => 'exp_date',
+        'masked_card' => 'masked_card',
+        'card_country' => 'card_country',
+        'strong_authentication_status' => 'strong_authentication_status',
+        'three_d_secure_status' => 'three_d_secure_status',
+        'risk_rule' => 'risk_rule',
+        'acquirer_code' => 'acquirer_code',
+        'acquirer_message' => 'acquirer_message',
+        'acquirer_reference' => 'acquirer_reference',
+        'text_on_statement' => 'text_on_statement',
+        'surcharge_fee' => 'surcharge_fee'
     ];
 
     /**
@@ -173,22 +173,22 @@ class ChargeSource implements ModelInterface, ArrayAccess
         'iban' => 'setIban',
         'fingerprint' => 'setFingerprint',
         'provider' => 'setProvider',
-        'vippsRecurring' => 'setVippsRecurring',
-        'sepaMandate' => 'setSepaMandate',
-        'authTransaction' => 'setAuthTransaction',
-        'cardType' => 'setCardType',
-        'transactionCardType' => 'setTransactionCardType',
-        'expDate' => 'setExpDate',
-        'maskedCard' => 'setMaskedCard',
-        'cardCountry' => 'setCardCountry',
-        'strongAuthenticationStatus' => 'setStrongAuthenticationStatus',
-        'threeDSecureStatus' => 'setThreeDSecureStatus',
-        'riskRule' => 'setRiskRule',
-        'acquirerCode' => 'setAcquirerCode',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'acquirerReference' => 'setAcquirerReference',
-        'textOnStatement' => 'setTextOnStatement',
-        'surchargeFee' => 'setSurchargeFee'
+        'vipps_recurring' => 'setVippsRecurring',
+        'sepa_mandate' => 'setSepaMandate',
+        'auth_transaction' => 'setAuthTransaction',
+        'card_type' => 'setCardType',
+        'transaction_card_type' => 'setTransactionCardType',
+        'exp_date' => 'setExpDate',
+        'masked_card' => 'setMaskedCard',
+        'card_country' => 'setCardCountry',
+        'strong_authentication_status' => 'setStrongAuthenticationStatus',
+        'three_d_secure_status' => 'setThreeDSecureStatus',
+        'risk_rule' => 'setRiskRule',
+        'acquirer_code' => 'setAcquirerCode',
+        'acquirer_message' => 'setAcquirerMessage',
+        'acquirer_reference' => 'setAcquirerReference',
+        'text_on_statement' => 'setTextOnStatement',
+        'surcharge_fee' => 'setSurchargeFee'
     ];
 
     /**
@@ -203,22 +203,22 @@ class ChargeSource implements ModelInterface, ArrayAccess
         'iban' => 'getIban',
         'fingerprint' => 'getFingerprint',
         'provider' => 'getProvider',
-        'vippsRecurring' => 'getVippsRecurring',
-        'sepaMandate' => 'getSepaMandate',
-        'authTransaction' => 'getAuthTransaction',
-        'cardType' => 'getCardType',
-        'transactionCardType' => 'getTransactionCardType',
-        'expDate' => 'getExpDate',
-        'maskedCard' => 'getMaskedCard',
-        'cardCountry' => 'getCardCountry',
-        'strongAuthenticationStatus' => 'getStrongAuthenticationStatus',
-        'threeDSecureStatus' => 'getThreeDSecureStatus',
-        'riskRule' => 'getRiskRule',
-        'acquirerCode' => 'getAcquirerCode',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'acquirerReference' => 'getAcquirerReference',
-        'textOnStatement' => 'getTextOnStatement',
-        'surchargeFee' => 'getSurchargeFee'
+        'vipps_recurring' => 'getVippsRecurring',
+        'sepa_mandate' => 'getSepaMandate',
+        'auth_transaction' => 'getAuthTransaction',
+        'card_type' => 'getCardType',
+        'transaction_card_type' => 'getTransactionCardType',
+        'exp_date' => 'getExpDate',
+        'masked_card' => 'getMaskedCard',
+        'card_country' => 'getCardCountry',
+        'strong_authentication_status' => 'getStrongAuthenticationStatus',
+        'three_d_secure_status' => 'getThreeDSecureStatus',
+        'risk_rule' => 'getRiskRule',
+        'acquirer_code' => 'getAcquirerCode',
+        'acquirer_message' => 'getAcquirerMessage',
+        'acquirer_reference' => 'getAcquirerReference',
+        'text_on_statement' => 'getTextOnStatement',
+        'surcharge_fee' => 'getSurchargeFee'
     ];
 
     /**
@@ -473,22 +473,22 @@ class ChargeSource implements ModelInterface, ArrayAccess
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['fingerprint'] = isset($data['fingerprint']) ? $data['fingerprint'] : null;
         $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['vippsRecurring'] = isset($data['vippsRecurring']) ? $data['vippsRecurring'] : null;
-        $this->container['sepaMandate'] = isset($data['sepaMandate']) ? $data['sepaMandate'] : null;
-        $this->container['authTransaction'] = isset($data['authTransaction']) ? $data['authTransaction'] : null;
-        $this->container['cardType'] = isset($data['cardType']) ? $data['cardType'] : null;
-        $this->container['transactionCardType'] = isset($data['transactionCardType']) ? $data['transactionCardType'] : null;
-        $this->container['expDate'] = isset($data['expDate']) ? $data['expDate'] : null;
-        $this->container['maskedCard'] = isset($data['maskedCard']) ? $data['maskedCard'] : null;
-        $this->container['cardCountry'] = isset($data['cardCountry']) ? $data['cardCountry'] : null;
-        $this->container['strongAuthenticationStatus'] = isset($data['strongAuthenticationStatus']) ? $data['strongAuthenticationStatus'] : null;
-        $this->container['threeDSecureStatus'] = isset($data['threeDSecureStatus']) ? $data['threeDSecureStatus'] : null;
-        $this->container['riskRule'] = isset($data['riskRule']) ? $data['riskRule'] : null;
-        $this->container['acquirerCode'] = isset($data['acquirerCode']) ? $data['acquirerCode'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['acquirerReference'] = isset($data['acquirerReference']) ? $data['acquirerReference'] : null;
-        $this->container['textOnStatement'] = isset($data['textOnStatement']) ? $data['textOnStatement'] : null;
-        $this->container['surchargeFee'] = isset($data['surchargeFee']) ? $data['surchargeFee'] : null;
+        $this->container['vipps_recurring'] = isset($data['vipps_recurring']) ? $data['vipps_recurring'] : null;
+        $this->container['sepa_mandate'] = isset($data['sepa_mandate']) ? $data['sepa_mandate'] : null;
+        $this->container['auth_transaction'] = isset($data['auth_transaction']) ? $data['auth_transaction'] : null;
+        $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
+        $this->container['transaction_card_type'] = isset($data['transaction_card_type']) ? $data['transaction_card_type'] : null;
+        $this->container['exp_date'] = isset($data['exp_date']) ? $data['exp_date'] : null;
+        $this->container['masked_card'] = isset($data['masked_card']) ? $data['masked_card'] : null;
+        $this->container['card_country'] = isset($data['card_country']) ? $data['card_country'] : null;
+        $this->container['strong_authentication_status'] = isset($data['strong_authentication_status']) ? $data['strong_authentication_status'] : null;
+        $this->container['three_d_secure_status'] = isset($data['three_d_secure_status']) ? $data['three_d_secure_status'] : null;
+        $this->container['risk_rule'] = isset($data['risk_rule']) ? $data['risk_rule'] : null;
+        $this->container['acquirer_code'] = isset($data['acquirer_code']) ? $data['acquirer_code'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['acquirer_reference'] = isset($data['acquirer_reference']) ? $data['acquirer_reference'] : null;
+        $this->container['text_on_statement'] = isset($data['text_on_statement']) ? $data['text_on_statement'] : null;
+        $this->container['surcharge_fee'] = isset($data['surcharge_fee']) ? $data['surcharge_fee'] : null;
     }
 
     /**
@@ -520,25 +520,33 @@ class ChargeSource implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
+        if (!is_null($this->container['card_type']) && !in_array($this->container['card_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'cardType', must be one of '%s'",
+                "invalid value for 'card_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getTransactionCardTypeAllowableValues();
-        if (!is_null($this->container['transactionCardType']) && !in_array($this->container['transactionCardType'], $allowedValues, true)) {
+        if (!is_null($this->container['transaction_card_type']) && !in_array(
+                $this->container['transaction_card_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'transactionCardType', must be one of '%s'",
+                "invalid value for 'transaction_card_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getStrongAuthenticationStatusAllowableValues();
-        if (!is_null($this->container['strongAuthenticationStatus']) && !in_array($this->container['strongAuthenticationStatus'], $allowedValues, true)) {
+        if (!is_null($this->container['strong_authentication_status']) && !in_array(
+                $this->container['strong_authentication_status'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'strongAuthenticationStatus', must be one of '%s'",
+                "invalid value for 'strong_authentication_status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -721,412 +729,412 @@ class ChargeSource implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vippsRecurring
+     * Gets vipps_recurring
      *
      * @return string
      */
     public function getVippsRecurring()
     {
-        return $this->container['vippsRecurring'];
+        return $this->container['vipps_recurring'];
     }
 
     /**
-     * Sets vippsRecurring
+     * Sets vipps_recurring
      *
-     * @param string $vippsRecurring Reference to Vipps Recurring Subscriptions payment method if source type `vipps_recurring`
+     * @param string $vipps_recurring Reference to Vipps Recurring Subscriptions payment method if source type `vipps_recurring`
      *
      * @return $this
      */
-    public function setVippsRecurring($vippsRecurring)
+    public function setVippsRecurring($vipps_recurring)
     {
-        $this->container['vippsRecurring'] = $vippsRecurring;
+        $this->container['vipps_recurring'] = $vipps_recurring;
 
         return $this;
     }
 
     /**
-     * Gets sepaMandate
+     * Gets sepa_mandate
      *
      * @return string
      */
     public function getSepaMandate()
     {
-        return $this->container['sepaMandate'];
+        return $this->container['sepa_mandate'];
     }
 
     /**
-     * Sets sepaMandate
+     * Sets sepa_mandate
      *
-     * @param string $sepaMandate Reference to SEPA Mandate payment method if source type `sepa`
+     * @param string $sepa_mandate Reference to SEPA Mandate payment method if source type `sepa`
      *
      * @return $this
      */
-    public function setSepaMandate($sepaMandate)
+    public function setSepaMandate($sepa_mandate)
     {
-        $this->container['sepaMandate'] = $sepaMandate;
+        $this->container['sepa_mandate'] = $sepa_mandate;
 
         return $this;
     }
 
     /**
-     * Gets authTransaction
+     * Gets auth_transaction
      *
      * @return string
      */
     public function getAuthTransaction()
     {
-        return $this->container['authTransaction'];
+        return $this->container['auth_transaction'];
     }
 
     /**
-     * Sets authTransaction
+     * Sets auth_transaction
      *
-     * @param string $authTransaction Reference to authorization transaction if charge is settled after authorization
+     * @param string $auth_transaction Reference to authorization transaction if charge is settled after authorization
      *
      * @return $this
      */
-    public function setAuthTransaction($authTransaction)
+    public function setAuthTransaction($auth_transaction)
     {
-        $this->container['authTransaction'] = $authTransaction;
+        $this->container['auth_transaction'] = $auth_transaction;
 
         return $this;
     }
 
     /**
-     * Gets cardType
+     * Gets card_type
      *
      * @return string
      */
     public function getCardType()
     {
-        return $this->container['cardType'];
+        return $this->container['card_type'];
     }
 
     /**
-     * Sets cardType
+     * Sets card_type
      *
-     * @param string $cardType Card type if credit card source: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @param string $card_type Card type if credit card source: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
      *
      * @return $this
      */
-    public function setCardType($cardType)
+    public function setCardType($card_type)
     {
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($cardType) && !in_array($cardType, $allowedValues, true)) {
+        if (!is_null($card_type) && !in_array($card_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'cardType', must be one of '%s'",
+                    "Invalid value for 'card_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['cardType'] = $cardType;
+        $this->container['card_type'] = $card_type;
 
         return $this;
     }
 
     /**
-     * Gets transactionCardType
+     * Gets transaction_card_type
      *
      * @return string
      */
     public function getTransactionCardType()
     {
-        return $this->container['transactionCardType'];
+        return $this->container['transaction_card_type'];
     }
 
     /**
-     * Sets transactionCardType
+     * Sets transaction_card_type
      *
-     * @param string $transactionCardType Transaction card type if credit card source. Will differ from `card_type` if co-branded card. Transaction card type is the card type used for the transaction. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @param string $transaction_card_type Transaction card type if credit card source. Will differ from `card_type` if co-branded card. Transaction card type is the card type used for the transaction. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
      *
      * @return $this
      */
-    public function setTransactionCardType($transactionCardType)
+    public function setTransactionCardType($transaction_card_type)
     {
         $allowedValues = $this->getTransactionCardTypeAllowableValues();
-        if (!is_null($transactionCardType) && !in_array($transactionCardType, $allowedValues, true)) {
+        if (!is_null($transaction_card_type) && !in_array($transaction_card_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'transactionCardType', must be one of '%s'",
+                    "Invalid value for 'transaction_card_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['transactionCardType'] = $transactionCardType;
+        $this->container['transaction_card_type'] = $transaction_card_type;
 
         return $this;
     }
 
     /**
-     * Gets expDate
+     * Gets exp_date
      *
      * @return string
      */
     public function getExpDate()
     {
-        return $this->container['expDate'];
+        return $this->container['exp_date'];
     }
 
     /**
-     * Sets expDate
+     * Sets exp_date
      *
-     * @param string $expDate Card expire date on form MM-YY if credit card source
+     * @param string $exp_date Card expire date on form MM-YY if credit card source
      *
      * @return $this
      */
-    public function setExpDate($expDate)
+    public function setExpDate($exp_date)
     {
-        $this->container['expDate'] = $expDate;
+        $this->container['exp_date'] = $exp_date;
 
         return $this;
     }
 
     /**
-     * Gets maskedCard
+     * Gets masked_card
      *
      * @return string
      */
     public function getMaskedCard()
     {
-        return $this->container['maskedCard'];
+        return $this->container['masked_card'];
     }
 
     /**
-     * Sets maskedCard
+     * Sets masked_card
      *
-     * @param string $maskedCard Masked card number if credit card source
+     * @param string $masked_card Masked card number if credit card source
      *
      * @return $this
      */
-    public function setMaskedCard($maskedCard)
+    public function setMaskedCard($masked_card)
     {
-        $this->container['maskedCard'] = $maskedCard;
+        $this->container['masked_card'] = $masked_card;
 
         return $this;
     }
 
     /**
-     * Gets cardCountry
+     * Gets card_country
      *
      * @return string
      */
     public function getCardCountry()
     {
-        return $this->container['cardCountry'];
+        return $this->container['card_country'];
     }
 
     /**
-     * Sets cardCountry
+     * Sets card_country
      *
-     * @param string $cardCountry Card issuing country if credit card source, in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+     * @param string $card_country Card issuing country if credit card source, in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
      *
      * @return $this
      */
-    public function setCardCountry($cardCountry)
+    public function setCardCountry($card_country)
     {
-        $this->container['cardCountry'] = $cardCountry;
+        $this->container['card_country'] = $card_country;
 
         return $this;
     }
 
     /**
-     * Gets strongAuthenticationStatus
+     * Gets strong_authentication_status
      *
      * @return string
      */
     public function getStrongAuthenticationStatus()
     {
-        return $this->container['strongAuthenticationStatus'];
+        return $this->container['strong_authentication_status'];
     }
 
     /**
-     * Sets strongAuthenticationStatus
+     * Sets strong_authentication_status
      *
-     * @param string $strongAuthenticationStatus Status for strong customer authentication: `threed_secure` - 3D Secure authenticated, `threed_secure_not_enrolled` - 3D Secure authentication not performed as card not enrolled, `secured_by_nets` - Secure by Nets authenticated
+     * @param string $strong_authentication_status Status for strong customer authentication: `threed_secure` - 3D Secure authenticated, `threed_secure_not_enrolled` - 3D Secure authentication not performed as card not enrolled, `secured_by_nets` - Secure by Nets authenticated
      *
      * @return $this
      */
-    public function setStrongAuthenticationStatus($strongAuthenticationStatus)
+    public function setStrongAuthenticationStatus($strong_authentication_status)
     {
         $allowedValues = $this->getStrongAuthenticationStatusAllowableValues();
-        if (!is_null($strongAuthenticationStatus) && !in_array($strongAuthenticationStatus, $allowedValues, true)) {
+        if (!is_null($strong_authentication_status) && !in_array($strong_authentication_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'strongAuthenticationStatus', must be one of '%s'",
+                    "Invalid value for 'strong_authentication_status', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['strongAuthenticationStatus'] = $strongAuthenticationStatus;
+        $this->container['strong_authentication_status'] = $strong_authentication_status;
 
         return $this;
     }
 
     /**
-     * Gets threeDSecureStatus
+     * Gets three_d_secure_status
      *
      * @return string
      */
     public function getThreeDSecureStatus()
     {
-        return $this->container['threeDSecureStatus'];
+        return $this->container['three_d_secure_status'];
     }
 
     /**
-     * Sets threeDSecureStatus
+     * Sets three_d_secure_status
      *
-     * @param string $threeDSecureStatus If 3D Secure authenticated the 3D status will either be `Y` (fully authenticated) or `A` (attempted authenticated). An attempted authentication means that card issuer (e.g. bank) does not support 3D Secure so no full authentication has been performed. Attempted authentication normally means liability shift, but this can differ between acquirers.
+     * @param string $three_d_secure_status If 3D Secure authenticated the 3D status will either be `Y` (fully authenticated) or `A` (attempted authenticated). An attempted authentication means that card issuer (e.g. bank) does not support 3D Secure so no full authentication has been performed. Attempted authentication normally means liability shift, but this can differ between acquirers.
      *
      * @return $this
      */
-    public function setThreeDSecureStatus($threeDSecureStatus)
+    public function setThreeDSecureStatus($three_d_secure_status)
     {
-        $this->container['threeDSecureStatus'] = $threeDSecureStatus;
+        $this->container['three_d_secure_status'] = $three_d_secure_status;
 
         return $this;
     }
 
     /**
-     * Gets riskRule
+     * Gets risk_rule
      *
      * @return string
      */
     public function getRiskRule()
     {
-        return $this->container['riskRule'];
+        return $this->container['risk_rule'];
     }
 
     /**
-     * Sets riskRule
+     * Sets risk_rule
      *
-     * @param string $riskRule If this parameter is set the charge has either been flagged or declined by a Reepay Risk Filter rule. For flag action rules the charge can be successful, but may require special attention. For block action rules the decline error will be `risk_filter_block`.
+     * @param string $risk_rule If this parameter is set the charge has either been flagged or declined by a Reepay Risk Filter rule. For flag action rules the charge can be successful, but may require special attention. For block action rules the decline error will be `risk_filter_block`.
      *
      * @return $this
      */
-    public function setRiskRule($riskRule)
+    public function setRiskRule($risk_rule)
     {
-        $this->container['riskRule'] = $riskRule;
+        $this->container['risk_rule'] = $risk_rule;
 
         return $this;
     }
 
     /**
-     * Gets acquirerCode
+     * Gets acquirer_code
      *
      * @return string
      */
     public function getAcquirerCode()
     {
-        return $this->container['acquirerCode'];
+        return $this->container['acquirer_code'];
     }
 
     /**
-     * Sets acquirerCode
+     * Sets acquirer_code
      *
-     * @param string $acquirerCode Card acquirer error code in case of card error
+     * @param string $acquirer_code Card acquirer error code in case of card error
      *
      * @return $this
      */
-    public function setAcquirerCode($acquirerCode)
+    public function setAcquirerCode($acquirer_code)
     {
-        $this->container['acquirerCode'] = $acquirerCode;
+        $this->container['acquirer_code'] = $acquirer_code;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets acquirerReference
+     * Gets acquirer_reference
      *
      * @return string
      */
     public function getAcquirerReference()
     {
-        return $this->container['acquirerReference'];
+        return $this->container['acquirer_reference'];
     }
 
     /**
-     * Sets acquirerReference
+     * Sets acquirer_reference
      *
-     * @param string $acquirerReference Card acquirer reference to transaction in case of card source. E.g. Nets order id or Clearhaus reference.
+     * @param string $acquirer_reference Card acquirer reference to transaction in case of card source. E.g. Nets order id or Clearhaus reference.
      *
      * @return $this
      */
-    public function setAcquirerReference($acquirerReference)
+    public function setAcquirerReference($acquirer_reference)
     {
-        $this->container['acquirerReference'] = $acquirerReference;
+        $this->container['acquirer_reference'] = $acquirer_reference;
 
         return $this;
     }
 
     /**
-     * Gets textOnStatement
+     * Gets text_on_statement
      *
      * @return string
      */
     public function getTextOnStatement()
     {
-        return $this->container['textOnStatement'];
+        return $this->container['text_on_statement'];
     }
 
     /**
-     * Sets textOnStatement
+     * Sets text_on_statement
      *
-     * @param string $textOnStatement Resulting text on bank statement if known
+     * @param string $text_on_statement Resulting text on bank statement if known
      *
      * @return $this
      */
-    public function setTextOnStatement($textOnStatement)
+    public function setTextOnStatement($text_on_statement)
     {
-        $this->container['textOnStatement'] = $textOnStatement;
+        $this->container['text_on_statement'] = $text_on_statement;
 
         return $this;
     }
 
     /**
-     * Gets surchargeFee
+     * Gets surcharge_fee
      *
      * @return int
      */
     public function getSurchargeFee()
     {
-        return $this->container['surchargeFee'];
+        return $this->container['surcharge_fee'];
     }
 
     /**
-     * Sets surchargeFee
+     * Sets surcharge_fee
      *
-     * @param int $surchargeFee Potential card surcharge fee added to amount if surcharging enabled
+     * @param int $surcharge_fee Potential card surcharge fee added to amount if surcharging enabled
      *
      * @return $this
      */
-    public function setSurchargeFee($surchargeFee)
+    public function setSurchargeFee($surcharge_fee)
     {
-        $this->container['surchargeFee'] = $surchargeFee;
+        $this->container['surcharge_fee'] = $surcharge_fee;
 
         return $this;
     }

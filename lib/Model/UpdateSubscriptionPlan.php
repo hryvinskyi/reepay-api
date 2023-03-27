@@ -59,17 +59,17 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
         'name' => 'string',
         'description' => 'string',
         'vat' => 'float',
-        'dunningPlan' => 'string',
-        'renewalReminderEmailDays' => 'int',
-        'trialReminderEmailDays' => 'int',
-        'partialPeriodHandling' => 'string',
-        'includeZeroAmount' => 'bool',
-        'setupFee' => 'int',
-        'setupFeeText' => 'string',
-        'setupFeeHandling' => 'string',
-        'partialProrationDays' => 'bool',
-        'fixedTrialDays' => 'bool',
-        'minimumProratedAmount' => 'int'
+        'dunning_plan' => 'string',
+        'renewal_reminder_email_days' => 'int',
+        'trial_reminder_email_days' => 'int',
+        'partial_period_handling' => 'string',
+        'include_zero_amount' => 'bool',
+        'setup_fee' => 'int',
+        'setup_fee_text' => 'string',
+        'setup_fee_handling' => 'string',
+        'partial_proration_days' => 'bool',
+        'fixed_trial_days' => 'bool',
+        'minimum_prorated_amount' => 'int'
     ];
 
     /**
@@ -81,17 +81,17 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
         'name' => null,
         'description' => null,
         'vat' => 'float',
-        'dunningPlan' => null,
-        'renewalReminderEmailDays' => 'int32',
-        'trialReminderEmailDays' => 'int32',
-        'partialPeriodHandling' => null,
-        'includeZeroAmount' => null,
-        'setupFee' => 'int32',
-        'setupFeeText' => null,
-        'setupFeeHandling' => null,
-        'partialProrationDays' => null,
-        'fixedTrialDays' => null,
-        'minimumProratedAmount' => 'int32'
+        'dunning_plan' => null,
+        'renewal_reminder_email_days' => 'int32',
+        'trial_reminder_email_days' => 'int32',
+        'partial_period_handling' => null,
+        'include_zero_amount' => null,
+        'setup_fee' => 'int32',
+        'setup_fee_text' => null,
+        'setup_fee_handling' => null,
+        'partial_proration_days' => null,
+        'fixed_trial_days' => null,
+        'minimum_prorated_amount' => 'int32'
     ];
 
     /**
@@ -124,17 +124,17 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
         'name' => 'name',
         'description' => 'description',
         'vat' => 'vat',
-        'dunningPlan' => 'dunning_plan',
-        'renewalReminderEmailDays' => 'renewal_reminder_email_days',
-        'trialReminderEmailDays' => 'trial_reminder_email_days',
-        'partialPeriodHandling' => 'partial_period_handling',
-        'includeZeroAmount' => 'include_zero_amount',
-        'setupFee' => 'setup_fee',
-        'setupFeeText' => 'setup_fee_text',
-        'setupFeeHandling' => 'setup_fee_handling',
-        'partialProrationDays' => 'partial_proration_days',
-        'fixedTrialDays' => 'fixed_trial_days',
-        'minimumProratedAmount' => 'minimum_prorated_amount'
+        'dunning_plan' => 'dunning_plan',
+        'renewal_reminder_email_days' => 'renewal_reminder_email_days',
+        'trial_reminder_email_days' => 'trial_reminder_email_days',
+        'partial_period_handling' => 'partial_period_handling',
+        'include_zero_amount' => 'include_zero_amount',
+        'setup_fee' => 'setup_fee',
+        'setup_fee_text' => 'setup_fee_text',
+        'setup_fee_handling' => 'setup_fee_handling',
+        'partial_proration_days' => 'partial_proration_days',
+        'fixed_trial_days' => 'fixed_trial_days',
+        'minimum_prorated_amount' => 'minimum_prorated_amount'
     ];
 
     /**
@@ -146,17 +146,17 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'description' => 'setDescription',
         'vat' => 'setVat',
-        'dunningPlan' => 'setDunningPlan',
-        'renewalReminderEmailDays' => 'setRenewalReminderEmailDays',
-        'trialReminderEmailDays' => 'setTrialReminderEmailDays',
-        'partialPeriodHandling' => 'setPartialPeriodHandling',
-        'includeZeroAmount' => 'setIncludeZeroAmount',
-        'setupFee' => 'setSetupFee',
-        'setupFeeText' => 'setSetupFeeText',
-        'setupFeeHandling' => 'setSetupFeeHandling',
-        'partialProrationDays' => 'setPartialProrationDays',
-        'fixedTrialDays' => 'setFixedTrialDays',
-        'minimumProratedAmount' => 'setMinimumProratedAmount'
+        'dunning_plan' => 'setDunningPlan',
+        'renewal_reminder_email_days' => 'setRenewalReminderEmailDays',
+        'trial_reminder_email_days' => 'setTrialReminderEmailDays',
+        'partial_period_handling' => 'setPartialPeriodHandling',
+        'include_zero_amount' => 'setIncludeZeroAmount',
+        'setup_fee' => 'setSetupFee',
+        'setup_fee_text' => 'setSetupFeeText',
+        'setup_fee_handling' => 'setSetupFeeHandling',
+        'partial_proration_days' => 'setPartialProrationDays',
+        'fixed_trial_days' => 'setFixedTrialDays',
+        'minimum_prorated_amount' => 'setMinimumProratedAmount'
     ];
 
     /**
@@ -168,17 +168,17 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'description' => 'getDescription',
         'vat' => 'getVat',
-        'dunningPlan' => 'getDunningPlan',
-        'renewalReminderEmailDays' => 'getRenewalReminderEmailDays',
-        'trialReminderEmailDays' => 'getTrialReminderEmailDays',
-        'partialPeriodHandling' => 'getPartialPeriodHandling',
-        'includeZeroAmount' => 'getIncludeZeroAmount',
-        'setupFee' => 'getSetupFee',
-        'setupFeeText' => 'getSetupFeeText',
-        'setupFeeHandling' => 'getSetupFeeHandling',
-        'partialProrationDays' => 'getPartialProrationDays',
-        'fixedTrialDays' => 'getFixedTrialDays',
-        'minimumProratedAmount' => 'getMinimumProratedAmount'
+        'dunning_plan' => 'getDunningPlan',
+        'renewal_reminder_email_days' => 'getRenewalReminderEmailDays',
+        'trial_reminder_email_days' => 'getTrialReminderEmailDays',
+        'partial_period_handling' => 'getPartialPeriodHandling',
+        'include_zero_amount' => 'getIncludeZeroAmount',
+        'setup_fee' => 'getSetupFee',
+        'setup_fee_text' => 'getSetupFeeText',
+        'setup_fee_handling' => 'getSetupFeeHandling',
+        'partial_proration_days' => 'getPartialProrationDays',
+        'fixed_trial_days' => 'getFixedTrialDays',
+        'minimum_prorated_amount' => 'getMinimumProratedAmount'
     ];
 
     /**
@@ -260,17 +260,17 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['dunningPlan'] = isset($data['dunningPlan']) ? $data['dunningPlan'] : null;
-        $this->container['renewalReminderEmailDays'] = isset($data['renewalReminderEmailDays']) ? $data['renewalReminderEmailDays'] : null;
-        $this->container['trialReminderEmailDays'] = isset($data['trialReminderEmailDays']) ? $data['trialReminderEmailDays'] : null;
-        $this->container['partialPeriodHandling'] = isset($data['partialPeriodHandling']) ? $data['partialPeriodHandling'] : null;
-        $this->container['includeZeroAmount'] = isset($data['includeZeroAmount']) ? $data['includeZeroAmount'] : null;
-        $this->container['setupFee'] = isset($data['setupFee']) ? $data['setupFee'] : null;
-        $this->container['setupFeeText'] = isset($data['setupFeeText']) ? $data['setupFeeText'] : null;
-        $this->container['setupFeeHandling'] = isset($data['setupFeeHandling']) ? $data['setupFeeHandling'] : null;
-        $this->container['partialProrationDays'] = isset($data['partialProrationDays']) ? $data['partialProrationDays'] : null;
-        $this->container['fixedTrialDays'] = isset($data['fixedTrialDays']) ? $data['fixedTrialDays'] : null;
-        $this->container['minimumProratedAmount'] = isset($data['minimumProratedAmount']) ? $data['minimumProratedAmount'] : null;
+        $this->container['dunning_plan'] = isset($data['dunning_plan']) ? $data['dunning_plan'] : null;
+        $this->container['renewal_reminder_email_days'] = isset($data['renewal_reminder_email_days']) ? $data['renewal_reminder_email_days'] : null;
+        $this->container['trial_reminder_email_days'] = isset($data['trial_reminder_email_days']) ? $data['trial_reminder_email_days'] : null;
+        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['include_zero_amount'] = isset($data['include_zero_amount']) ? $data['include_zero_amount'] : null;
+        $this->container['setup_fee'] = isset($data['setup_fee']) ? $data['setup_fee'] : null;
+        $this->container['setup_fee_text'] = isset($data['setup_fee_text']) ? $data['setup_fee_text'] : null;
+        $this->container['setup_fee_handling'] = isset($data['setup_fee_handling']) ? $data['setup_fee_handling'] : null;
+        $this->container['partial_proration_days'] = isset($data['partial_proration_days']) ? $data['partial_proration_days'] : null;
+        $this->container['fixed_trial_days'] = isset($data['fixed_trial_days']) ? $data['fixed_trial_days'] : null;
+        $this->container['minimum_prorated_amount'] = isset($data['minimum_prorated_amount']) ? $data['minimum_prorated_amount'] : null;
     }
 
     /**
@@ -286,9 +286,13 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'name' can't be null";
         }
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($this->container['partialPeriodHandling']) && !in_array($this->container['partialPeriodHandling'], $allowedValues, true)) {
+        if (!is_null($this->container['partial_period_handling']) && !in_array(
+                $this->container['partial_period_handling'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'partialPeriodHandling', must be one of '%s'",
+                "invalid value for 'partial_period_handling', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -381,274 +385,274 @@ class UpdateSubscriptionPlan implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets dunningPlan
+     * Gets dunning_plan
      *
      * @return string
      */
     public function getDunningPlan()
     {
-        return $this->container['dunningPlan'];
+        return $this->container['dunning_plan'];
     }
 
     /**
-     * Sets dunningPlan
+     * Sets dunning_plan
      *
-     * @param string $dunningPlan Dunning plan handle
+     * @param string $dunning_plan Dunning plan handle
      *
      * @return $this
      */
-    public function setDunningPlan($dunningPlan)
+    public function setDunningPlan($dunning_plan)
     {
-        $this->container['dunningPlan'] = $dunningPlan;
+        $this->container['dunning_plan'] = $dunning_plan;
 
         return $this;
     }
 
     /**
-     * Gets renewalReminderEmailDays
+     * Gets renewal_reminder_email_days
      *
      * @return int
      */
     public function getRenewalReminderEmailDays()
     {
-        return $this->container['renewalReminderEmailDays'];
+        return $this->container['renewal_reminder_email_days'];
     }
 
     /**
-     * Sets renewalReminderEmailDays
+     * Sets renewal_reminder_email_days
      *
-     * @param int $renewalReminderEmailDays Optional renewal reminder email settings. Number of days before next billing to send a reminder email.
+     * @param int $renewal_reminder_email_days Optional renewal reminder email settings. Number of days before next billing to send a reminder email.
      *
      * @return $this
      */
-    public function setRenewalReminderEmailDays($renewalReminderEmailDays)
+    public function setRenewalReminderEmailDays($renewal_reminder_email_days)
     {
-        $this->container['renewalReminderEmailDays'] = $renewalReminderEmailDays;
+        $this->container['renewal_reminder_email_days'] = $renewal_reminder_email_days;
 
         return $this;
     }
 
     /**
-     * Gets trialReminderEmailDays
+     * Gets trial_reminder_email_days
      *
      * @return int
      */
     public function getTrialReminderEmailDays()
     {
-        return $this->container['trialReminderEmailDays'];
+        return $this->container['trial_reminder_email_days'];
     }
 
     /**
-     * Sets trialReminderEmailDays
+     * Sets trial_reminder_email_days
      *
-     * @param int $trialReminderEmailDays Optional end of trial reminder email settings. Number of days before end of trial to send a reminder email.
+     * @param int $trial_reminder_email_days Optional end of trial reminder email settings. Number of days before end of trial to send a reminder email.
      *
      * @return $this
      */
-    public function setTrialReminderEmailDays($trialReminderEmailDays)
+    public function setTrialReminderEmailDays($trial_reminder_email_days)
     {
-        $this->container['trialReminderEmailDays'] = $trialReminderEmailDays;
+        $this->container['trial_reminder_email_days'] = $trial_reminder_email_days;
 
         return $this;
     }
 
     /**
-     * Gets partialPeriodHandling
+     * Gets partial_period_handling
      *
      * @return string
      */
     public function getPartialPeriodHandling()
     {
-        return $this->container['partialPeriodHandling'];
+        return $this->container['partial_period_handling'];
     }
 
     /**
-     * Sets partialPeriodHandling
+     * Sets partial_period_handling
      *
-     * @param string $partialPeriodHandling How to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * @param string $partial_period_handling How to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
      *
      * @return $this
      */
-    public function setPartialPeriodHandling($partialPeriodHandling)
+    public function setPartialPeriodHandling($partial_period_handling)
     {
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($partialPeriodHandling) && !in_array($partialPeriodHandling, $allowedValues, true)) {
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'partialPeriodHandling', must be one of '%s'",
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['partialPeriodHandling'] = $partialPeriodHandling;
+        $this->container['partial_period_handling'] = $partial_period_handling;
 
         return $this;
     }
 
     /**
-     * Gets includeZeroAmount
+     * Gets include_zero_amount
      *
      * @return bool
      */
     public function getIncludeZeroAmount()
     {
-        return $this->container['includeZeroAmount'];
+        return $this->container['include_zero_amount'];
     }
 
     /**
-     * Sets includeZeroAmount
+     * Sets include_zero_amount
      *
-     * @param bool $includeZeroAmount Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added.
+     * @param bool $include_zero_amount Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added.
      *
      * @return $this
      */
-    public function setIncludeZeroAmount($includeZeroAmount)
+    public function setIncludeZeroAmount($include_zero_amount)
     {
-        $this->container['includeZeroAmount'] = $includeZeroAmount;
+        $this->container['include_zero_amount'] = $include_zero_amount;
 
         return $this;
     }
 
     /**
-     * Gets setupFee
+     * Gets setup_fee
      *
      * @return int
      */
     public function getSetupFee()
     {
-        return $this->container['setupFee'];
+        return $this->container['setup_fee'];
     }
 
     /**
-     * Sets setupFee
+     * Sets setup_fee
      *
-     * @param int $setupFee Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting `setup_fee_handling`.
+     * @param int $setup_fee Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting `setup_fee_handling`.
      *
      * @return $this
      */
-    public function setSetupFee($setupFee)
+    public function setSetupFee($setup_fee)
     {
-        $this->container['setupFee'] = $setupFee;
+        $this->container['setup_fee'] = $setup_fee;
 
         return $this;
     }
 
     /**
-     * Gets setupFeeText
+     * Gets setup_fee_text
      *
      * @return string
      */
     public function getSetupFeeText()
     {
-        return $this->container['setupFeeText'];
+        return $this->container['setup_fee_text'];
     }
 
     /**
-     * Sets setupFeeText
+     * Sets setup_fee_text
      *
-     * @param string $setupFeeText Optional invoice order text for the setup fee that
+     * @param string $setup_fee_text Optional invoice order text for the setup fee that
      *
      * @return $this
      */
-    public function setSetupFeeText($setupFeeText)
+    public function setSetupFeeText($setup_fee_text)
     {
-        $this->container['setupFeeText'] = $setupFeeText;
+        $this->container['setup_fee_text'] = $setup_fee_text;
 
         return $this;
     }
 
     /**
-     * Gets setupFeeHandling
+     * Gets setup_fee_handling
      *
      * @return string
      */
     public function getSetupFeeHandling()
     {
-        return $this->container['setupFeeHandling'];
+        return $this->container['setup_fee_handling'];
     }
 
     /**
-     * Sets setupFeeHandling
+     * Sets setup_fee_handling
      *
-     * @param string $setupFeeHandling How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`.
+     * @param string $setup_fee_handling How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`.
      *
      * @return $this
      */
-    public function setSetupFeeHandling($setupFeeHandling)
+    public function setSetupFeeHandling($setup_fee_handling)
     {
-        $this->container['setupFeeHandling'] = $setupFeeHandling;
+        $this->container['setup_fee_handling'] = $setup_fee_handling;
 
         return $this;
     }
 
     /**
-     * Gets partialProrationDays
+     * Gets partial_proration_days
      *
      * @return bool
      */
     public function getPartialProrationDays()
     {
-        return $this->container['partialProrationDays'];
+        return $this->container['partial_proration_days'];
     }
 
     /**
-     * Sets partialProrationDays
+     * Sets partial_proration_days
      *
-     * @param bool $partialProrationDays For fixed day scheduling and prorated partial handling calculate prorated amount using whole days counting start day as a full day, or use by the minute proration calculation from start date time to the next period start. Default is true (whole days).
+     * @param bool $partial_proration_days For fixed day scheduling and prorated partial handling calculate prorated amount using whole days counting start day as a full day, or use by the minute proration calculation from start date time to the next period start. Default is true (whole days).
      *
      * @return $this
      */
-    public function setPartialProrationDays($partialProrationDays)
+    public function setPartialProrationDays($partial_proration_days)
     {
-        $this->container['partialProrationDays'] = $partialProrationDays;
+        $this->container['partial_proration_days'] = $partial_proration_days;
 
         return $this;
     }
 
     /**
-     * Gets fixedTrialDays
+     * Gets fixed_trial_days
      *
      * @return bool
      */
     public function getFixedTrialDays()
     {
-        return $this->container['fixedTrialDays'];
+        return $this->container['fixed_trial_days'];
     }
 
     /**
-     * Sets fixedTrialDays
+     * Sets fixed_trial_days
      *
-     * @param bool $fixedTrialDays When using trial for fixed day scheduling use this setting to control if trial expires at midnight or the trial period is down to the minute. Default is true (trial until start of day). Trial in days can only be true if `partial_proration_days` is also set to true.
+     * @param bool $fixed_trial_days When using trial for fixed day scheduling use this setting to control if trial expires at midnight or the trial period is down to the minute. Default is true (trial until start of day). Trial in days can only be true if `partial_proration_days` is also set to true.
      *
      * @return $this
      */
-    public function setFixedTrialDays($fixedTrialDays)
+    public function setFixedTrialDays($fixed_trial_days)
     {
-        $this->container['fixedTrialDays'] = $fixedTrialDays;
+        $this->container['fixed_trial_days'] = $fixed_trial_days;
 
         return $this;
     }
 
     /**
-     * Gets minimumProratedAmount
+     * Gets minimum_prorated_amount
      *
      * @return int
      */
     public function getMinimumProratedAmount()
     {
-        return $this->container['minimumProratedAmount'];
+        return $this->container['minimum_prorated_amount'];
     }
 
     /**
-     * Sets minimumProratedAmount
+     * Sets minimum_prorated_amount
      *
-     * @param int $minimumProratedAmount When using prorated partial handling the prorated amount for plan and add-ons might result in very small amounts. A minimum prorated amount for plan and add-ons can be defined. If the prorated amount is below this minimum the amount will be changed to zero.
+     * @param int $minimum_prorated_amount When using prorated partial handling the prorated amount for plan and add-ons might result in very small amounts. A minimum prorated amount for plan and add-ons can be defined. If the prorated amount is below this minimum the amount will be changed to zero.
      *
      * @return $this
      */
-    public function setMinimumProratedAmount($minimumProratedAmount)
+    public function setMinimumProratedAmount($minimum_prorated_amount)
     {
-        $this->container['minimumProratedAmount'] = $minimumProratedAmount;
+        $this->container['minimum_prorated_amount'] = $minimum_prorated_amount;
 
         return $this;
     }

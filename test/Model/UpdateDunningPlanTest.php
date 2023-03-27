@@ -90,28 +90,28 @@ class UpdateDunningPlanTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "defaultPlan"
+     * Test attribute "default_plan"
      */
     public function testPropertyDefaultPlan()
     {
     }
 
     /**
-     * Test attribute "finalSubscriptionAction"
+     * Test attribute "final_subscription_action"
      */
     public function testPropertyFinalSubscriptionAction()
     {
     }
 
     /**
-     * Test attribute "gracePeriod"
+     * Test attribute "grace_period"
      */
     public function testPropertyGracePeriod()
     {
     }
 
     /**
-     * Test attribute "noGraceHardDecline"
+     * Test attribute "no_grace_hard_decline"
      */
     public function testPropertyNoGraceHardDecline()
     {

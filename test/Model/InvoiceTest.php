@@ -202,98 +202,98 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "planVersion"
+     * Test attribute "plan_version"
      */
     public function testPropertyPlanVersion()
     {
     }
 
     /**
-     * Test attribute "dunningPlan"
+     * Test attribute "dunning_plan"
      */
     public function testPropertyDunningPlan()
     {
     }
 
     /**
-     * Test attribute "discountAmount"
+     * Test attribute "discount_amount"
      */
     public function testPropertyDiscountAmount()
     {
     }
 
     /**
-     * Test attribute "orgAmount"
+     * Test attribute "org_amount"
      */
     public function testPropertyOrgAmount()
     {
     }
 
     /**
-     * Test attribute "amountVat"
+     * Test attribute "amount_vat"
      */
     public function testPropertyAmountVat()
     {
     }
 
     /**
-     * Test attribute "amountExVat"
+     * Test attribute "amount_ex_vat"
      */
     public function testPropertyAmountExVat()
     {
     }
 
     /**
-     * Test attribute "settledAmount"
+     * Test attribute "settled_amount"
      */
     public function testPropertySettledAmount()
     {
     }
 
     /**
-     * Test attribute "refundedAmount"
+     * Test attribute "refunded_amount"
      */
     public function testPropertyRefundedAmount()
     {
     }
 
     /**
-     * Test attribute "authorizedAmount"
+     * Test attribute "authorized_amount"
      */
     public function testPropertyAuthorizedAmount()
     {
     }
 
     /**
-     * Test attribute "creditedAmount"
+     * Test attribute "credited_amount"
      */
     public function testPropertyCreditedAmount()
     {
     }
 
     /**
-     * Test attribute "periodNumber"
+     * Test attribute "period_number"
      */
     public function testPropertyPeriodNumber()
     {
     }
 
     /**
-     * Test attribute "recurringPaymentMethod"
+     * Test attribute "recurring_payment_method"
      */
     public function testPropertyRecurringPaymentMethod()
     {
     }
 
     /**
-     * Test attribute "orderLines"
+     * Test attribute "order_lines"
      */
     public function testPropertyOrderLines()
     {
     }
 
     /**
-     * Test attribute "additionalCosts"
+     * Test attribute "additional_costs"
      */
     public function testPropertyAdditionalCosts()
     {
@@ -307,70 +307,70 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "creditNotes"
+     * Test attribute "credit_notes"
      */
     public function testPropertyCreditNotes()
     {
     }
 
     /**
-     * Test attribute "dunningStart"
+     * Test attribute "dunning_start"
      */
     public function testPropertyDunningStart()
     {
     }
 
     /**
-     * Test attribute "dunningCount"
+     * Test attribute "dunning_count"
      */
     public function testPropertyDunningCount()
     {
     }
 
     /**
-     * Test attribute "dunningExpired"
+     * Test attribute "dunning_expired"
      */
     public function testPropertyDunningExpired()
     {
     }
 
     /**
-     * Test attribute "periodFrom"
+     * Test attribute "period_from"
      */
     public function testPropertyPeriodFrom()
     {
     }
 
     /**
-     * Test attribute "periodTo"
+     * Test attribute "period_to"
      */
     public function testPropertyPeriodTo()
     {
     }
 
     /**
-     * Test attribute "settleLater"
+     * Test attribute "settle_later"
      */
     public function testPropertySettleLater()
     {
     }
 
     /**
-     * Test attribute "settleLaterPaymentMethod"
+     * Test attribute "settle_later_payment_method"
      */
     public function testPropertySettleLaterPaymentMethod()
     {
     }
 
     /**
-     * Test attribute "billingAddress"
+     * Test attribute "billing_address"
      */
     public function testPropertyBillingAddress()
     {
     }
 
     /**
-     * Test attribute "shippingAddress"
+     * Test attribute "shipping_address"
      */
     public function testPropertyShippingAddress()
     {

@@ -97,42 +97,42 @@ class TokenRequestorRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "companyPrimaryLegalName"
+     * Test attribute "company_primary_legal_name"
      */
     public function testPropertyCompanyPrimaryLegalName()
     {
     }
 
     /**
-     * Test attribute "primaryContactEmail"
+     * Test attribute "primary_contact_email"
      */
     public function testPropertyPrimaryContactEmail()
     {
     }
 
     /**
-     * Test attribute "companyCountryCode"
+     * Test attribute "company_country_code"
      */
     public function testPropertyCompanyCountryCode()
     {
     }
 
     /**
-     * Test attribute "companyCity"
+     * Test attribute "company_city"
      */
     public function testPropertyCompanyCity()
     {
     }
 
     /**
-     * Test attribute "primaryWebsiteUrl"
+     * Test attribute "primary_website_url"
      */
     public function testPropertyPrimaryWebsiteUrl()
     {
     }
 
     /**
-     * Test attribute "cardScheme"
+     * Test attribute "card_scheme"
      */
     public function testPropertyCardScheme()
     {

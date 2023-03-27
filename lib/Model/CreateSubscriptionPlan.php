@@ -64,31 +64,31 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
         'prepaid' => 'bool',
         'handle' => 'string',
         'metadata' => 'map[string,object]',
-        'dunningPlan' => 'string',
-        'renewalReminderEmailDays' => 'int',
-        'trialReminderEmailDays' => 'int',
-        'partialPeriodHandling' => 'string',
-        'includeZeroAmount' => 'bool',
-        'setupFee' => 'int',
-        'setupFeeText' => 'string',
-        'setupFeeHandling' => 'string',
-        'partialProrationDays' => 'bool',
-        'fixedTrialDays' => 'bool',
-        'minimumProratedAmount' => 'int',
-        'amountInclVat' => 'bool',
-        'fixedCount' => 'int',
-        'fixedLifeTimeUnit' => 'string',
-        'fixedLifeTimeLength' => 'int',
-        'trialIntervalUnit' => 'string',
-        'trialIntervalLength' => 'int',
-        'intervalLength' => 'int',
-        'scheduleType' => 'string',
-        'scheduleFixedDay' => 'int',
-        'baseMonth' => 'int',
-        'noticePeriods' => 'int',
-        'noticePeriodsAfterCurrent' => 'bool',
-        'fixationPeriods' => 'int',
-        'fixationPeriodsFull' => 'bool'
+        'dunning_plan' => 'string',
+        'renewal_reminder_email_days' => 'int',
+        'trial_reminder_email_days' => 'int',
+        'partial_period_handling' => 'string',
+        'include_zero_amount' => 'bool',
+        'setup_fee' => 'int',
+        'setup_fee_text' => 'string',
+        'setup_fee_handling' => 'string',
+        'partial_proration_days' => 'bool',
+        'fixed_trial_days' => 'bool',
+        'minimum_prorated_amount' => 'int',
+        'amount_incl_vat' => 'bool',
+        'fixed_count' => 'int',
+        'fixed_life_time_unit' => 'string',
+        'fixed_life_time_length' => 'int',
+        'trial_interval_unit' => 'string',
+        'trial_interval_length' => 'int',
+        'interval_length' => 'int',
+        'schedule_type' => 'string',
+        'schedule_fixed_day' => 'int',
+        'base_month' => 'int',
+        'notice_periods' => 'int',
+        'notice_periods_after_current' => 'bool',
+        'fixation_periods' => 'int',
+        'fixation_periods_full' => 'bool'
     ];
 
     /**
@@ -105,31 +105,31 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
         'prepaid' => null,
         'handle' => null,
         'metadata' => null,
-        'dunningPlan' => null,
-        'renewalReminderEmailDays' => 'int32',
-        'trialReminderEmailDays' => 'int32',
-        'partialPeriodHandling' => null,
-        'includeZeroAmount' => null,
-        'setupFee' => 'int32',
-        'setupFeeText' => null,
-        'setupFeeHandling' => null,
-        'partialProrationDays' => null,
-        'fixedTrialDays' => null,
-        'minimumProratedAmount' => 'int32',
-        'amountInclVat' => null,
-        'fixedCount' => 'int32',
-        'fixedLifeTimeUnit' => null,
-        'fixedLifeTimeLength' => 'int32',
-        'trialIntervalUnit' => null,
-        'trialIntervalLength' => 'int32',
-        'intervalLength' => 'int32',
-        'scheduleType' => null,
-        'scheduleFixedDay' => 'int32',
-        'baseMonth' => 'int32',
-        'noticePeriods' => 'int32',
-        'noticePeriodsAfterCurrent' => null,
-        'fixationPeriods' => 'int32',
-        'fixationPeriodsFull' => null
+        'dunning_plan' => null,
+        'renewal_reminder_email_days' => 'int32',
+        'trial_reminder_email_days' => 'int32',
+        'partial_period_handling' => null,
+        'include_zero_amount' => null,
+        'setup_fee' => 'int32',
+        'setup_fee_text' => null,
+        'setup_fee_handling' => null,
+        'partial_proration_days' => null,
+        'fixed_trial_days' => null,
+        'minimum_prorated_amount' => 'int32',
+        'amount_incl_vat' => null,
+        'fixed_count' => 'int32',
+        'fixed_life_time_unit' => null,
+        'fixed_life_time_length' => 'int32',
+        'trial_interval_unit' => null,
+        'trial_interval_length' => 'int32',
+        'interval_length' => 'int32',
+        'schedule_type' => null,
+        'schedule_fixed_day' => 'int32',
+        'base_month' => 'int32',
+        'notice_periods' => 'int32',
+        'notice_periods_after_current' => null,
+        'fixation_periods' => 'int32',
+        'fixation_periods_full' => null
     ];
 
     /**
@@ -167,31 +167,31 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
         'prepaid' => 'prepaid',
         'handle' => 'handle',
         'metadata' => 'metadata',
-        'dunningPlan' => 'dunning_plan',
-        'renewalReminderEmailDays' => 'renewal_reminder_email_days',
-        'trialReminderEmailDays' => 'trial_reminder_email_days',
-        'partialPeriodHandling' => 'partial_period_handling',
-        'includeZeroAmount' => 'include_zero_amount',
-        'setupFee' => 'setup_fee',
-        'setupFeeText' => 'setup_fee_text',
-        'setupFeeHandling' => 'setup_fee_handling',
-        'partialProrationDays' => 'partial_proration_days',
-        'fixedTrialDays' => 'fixed_trial_days',
-        'minimumProratedAmount' => 'minimum_prorated_amount',
-        'amountInclVat' => 'amount_incl_vat',
-        'fixedCount' => 'fixed_count',
-        'fixedLifeTimeUnit' => 'fixed_life_time_unit',
-        'fixedLifeTimeLength' => 'fixed_life_time_length',
-        'trialIntervalUnit' => 'trial_interval_unit',
-        'trialIntervalLength' => 'trial_interval_length',
-        'intervalLength' => 'interval_length',
-        'scheduleType' => 'schedule_type',
-        'scheduleFixedDay' => 'schedule_fixed_day',
-        'baseMonth' => 'base_month',
-        'noticePeriods' => 'notice_periods',
-        'noticePeriodsAfterCurrent' => 'notice_periods_after_current',
-        'fixationPeriods' => 'fixation_periods',
-        'fixationPeriodsFull' => 'fixation_periods_full'
+        'dunning_plan' => 'dunning_plan',
+        'renewal_reminder_email_days' => 'renewal_reminder_email_days',
+        'trial_reminder_email_days' => 'trial_reminder_email_days',
+        'partial_period_handling' => 'partial_period_handling',
+        'include_zero_amount' => 'include_zero_amount',
+        'setup_fee' => 'setup_fee',
+        'setup_fee_text' => 'setup_fee_text',
+        'setup_fee_handling' => 'setup_fee_handling',
+        'partial_proration_days' => 'partial_proration_days',
+        'fixed_trial_days' => 'fixed_trial_days',
+        'minimum_prorated_amount' => 'minimum_prorated_amount',
+        'amount_incl_vat' => 'amount_incl_vat',
+        'fixed_count' => 'fixed_count',
+        'fixed_life_time_unit' => 'fixed_life_time_unit',
+        'fixed_life_time_length' => 'fixed_life_time_length',
+        'trial_interval_unit' => 'trial_interval_unit',
+        'trial_interval_length' => 'trial_interval_length',
+        'interval_length' => 'interval_length',
+        'schedule_type' => 'schedule_type',
+        'schedule_fixed_day' => 'schedule_fixed_day',
+        'base_month' => 'base_month',
+        'notice_periods' => 'notice_periods',
+        'notice_periods_after_current' => 'notice_periods_after_current',
+        'fixation_periods' => 'fixation_periods',
+        'fixation_periods_full' => 'fixation_periods_full'
     ];
 
     /**
@@ -208,31 +208,31 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
         'prepaid' => 'setPrepaid',
         'handle' => 'setHandle',
         'metadata' => 'setMetadata',
-        'dunningPlan' => 'setDunningPlan',
-        'renewalReminderEmailDays' => 'setRenewalReminderEmailDays',
-        'trialReminderEmailDays' => 'setTrialReminderEmailDays',
-        'partialPeriodHandling' => 'setPartialPeriodHandling',
-        'includeZeroAmount' => 'setIncludeZeroAmount',
-        'setupFee' => 'setSetupFee',
-        'setupFeeText' => 'setSetupFeeText',
-        'setupFeeHandling' => 'setSetupFeeHandling',
-        'partialProrationDays' => 'setPartialProrationDays',
-        'fixedTrialDays' => 'setFixedTrialDays',
-        'minimumProratedAmount' => 'setMinimumProratedAmount',
-        'amountInclVat' => 'setAmountInclVat',
-        'fixedCount' => 'setFixedCount',
-        'fixedLifeTimeUnit' => 'setFixedLifeTimeUnit',
-        'fixedLifeTimeLength' => 'setFixedLifeTimeLength',
-        'trialIntervalUnit' => 'setTrialIntervalUnit',
-        'trialIntervalLength' => 'setTrialIntervalLength',
-        'intervalLength' => 'setIntervalLength',
-        'scheduleType' => 'setScheduleType',
-        'scheduleFixedDay' => 'setScheduleFixedDay',
-        'baseMonth' => 'setBaseMonth',
-        'noticePeriods' => 'setNoticePeriods',
-        'noticePeriodsAfterCurrent' => 'setNoticePeriodsAfterCurrent',
-        'fixationPeriods' => 'setFixationPeriods',
-        'fixationPeriodsFull' => 'setFixationPeriodsFull'
+        'dunning_plan' => 'setDunningPlan',
+        'renewal_reminder_email_days' => 'setRenewalReminderEmailDays',
+        'trial_reminder_email_days' => 'setTrialReminderEmailDays',
+        'partial_period_handling' => 'setPartialPeriodHandling',
+        'include_zero_amount' => 'setIncludeZeroAmount',
+        'setup_fee' => 'setSetupFee',
+        'setup_fee_text' => 'setSetupFeeText',
+        'setup_fee_handling' => 'setSetupFeeHandling',
+        'partial_proration_days' => 'setPartialProrationDays',
+        'fixed_trial_days' => 'setFixedTrialDays',
+        'minimum_prorated_amount' => 'setMinimumProratedAmount',
+        'amount_incl_vat' => 'setAmountInclVat',
+        'fixed_count' => 'setFixedCount',
+        'fixed_life_time_unit' => 'setFixedLifeTimeUnit',
+        'fixed_life_time_length' => 'setFixedLifeTimeLength',
+        'trial_interval_unit' => 'setTrialIntervalUnit',
+        'trial_interval_length' => 'setTrialIntervalLength',
+        'interval_length' => 'setIntervalLength',
+        'schedule_type' => 'setScheduleType',
+        'schedule_fixed_day' => 'setScheduleFixedDay',
+        'base_month' => 'setBaseMonth',
+        'notice_periods' => 'setNoticePeriods',
+        'notice_periods_after_current' => 'setNoticePeriodsAfterCurrent',
+        'fixation_periods' => 'setFixationPeriods',
+        'fixation_periods_full' => 'setFixationPeriodsFull'
     ];
 
     /**
@@ -249,31 +249,31 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
         'prepaid' => 'getPrepaid',
         'handle' => 'getHandle',
         'metadata' => 'getMetadata',
-        'dunningPlan' => 'getDunningPlan',
-        'renewalReminderEmailDays' => 'getRenewalReminderEmailDays',
-        'trialReminderEmailDays' => 'getTrialReminderEmailDays',
-        'partialPeriodHandling' => 'getPartialPeriodHandling',
-        'includeZeroAmount' => 'getIncludeZeroAmount',
-        'setupFee' => 'getSetupFee',
-        'setupFeeText' => 'getSetupFeeText',
-        'setupFeeHandling' => 'getSetupFeeHandling',
-        'partialProrationDays' => 'getPartialProrationDays',
-        'fixedTrialDays' => 'getFixedTrialDays',
-        'minimumProratedAmount' => 'getMinimumProratedAmount',
-        'amountInclVat' => 'getAmountInclVat',
-        'fixedCount' => 'getFixedCount',
-        'fixedLifeTimeUnit' => 'getFixedLifeTimeUnit',
-        'fixedLifeTimeLength' => 'getFixedLifeTimeLength',
-        'trialIntervalUnit' => 'getTrialIntervalUnit',
-        'trialIntervalLength' => 'getTrialIntervalLength',
-        'intervalLength' => 'getIntervalLength',
-        'scheduleType' => 'getScheduleType',
-        'scheduleFixedDay' => 'getScheduleFixedDay',
-        'baseMonth' => 'getBaseMonth',
-        'noticePeriods' => 'getNoticePeriods',
-        'noticePeriodsAfterCurrent' => 'getNoticePeriodsAfterCurrent',
-        'fixationPeriods' => 'getFixationPeriods',
-        'fixationPeriodsFull' => 'getFixationPeriodsFull'
+        'dunning_plan' => 'getDunningPlan',
+        'renewal_reminder_email_days' => 'getRenewalReminderEmailDays',
+        'trial_reminder_email_days' => 'getTrialReminderEmailDays',
+        'partial_period_handling' => 'getPartialPeriodHandling',
+        'include_zero_amount' => 'getIncludeZeroAmount',
+        'setup_fee' => 'getSetupFee',
+        'setup_fee_text' => 'getSetupFeeText',
+        'setup_fee_handling' => 'getSetupFeeHandling',
+        'partial_proration_days' => 'getPartialProrationDays',
+        'fixed_trial_days' => 'getFixedTrialDays',
+        'minimum_prorated_amount' => 'getMinimumProratedAmount',
+        'amount_incl_vat' => 'getAmountInclVat',
+        'fixed_count' => 'getFixedCount',
+        'fixed_life_time_unit' => 'getFixedLifeTimeUnit',
+        'fixed_life_time_length' => 'getFixedLifeTimeLength',
+        'trial_interval_unit' => 'getTrialIntervalUnit',
+        'trial_interval_length' => 'getTrialIntervalLength',
+        'interval_length' => 'getIntervalLength',
+        'schedule_type' => 'getScheduleType',
+        'schedule_fixed_day' => 'getScheduleFixedDay',
+        'base_month' => 'getBaseMonth',
+        'notice_periods' => 'getNoticePeriods',
+        'notice_periods_after_current' => 'getNoticePeriodsAfterCurrent',
+        'fixation_periods' => 'getFixationPeriods',
+        'fixation_periods_full' => 'getFixationPeriodsFull'
     ];
 
     /**
@@ -410,31 +410,31 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
         $this->container['prepaid'] = isset($data['prepaid']) ? $data['prepaid'] : null;
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['dunningPlan'] = isset($data['dunningPlan']) ? $data['dunningPlan'] : null;
-        $this->container['renewalReminderEmailDays'] = isset($data['renewalReminderEmailDays']) ? $data['renewalReminderEmailDays'] : null;
-        $this->container['trialReminderEmailDays'] = isset($data['trialReminderEmailDays']) ? $data['trialReminderEmailDays'] : null;
-        $this->container['partialPeriodHandling'] = isset($data['partialPeriodHandling']) ? $data['partialPeriodHandling'] : null;
-        $this->container['includeZeroAmount'] = isset($data['includeZeroAmount']) ? $data['includeZeroAmount'] : null;
-        $this->container['setupFee'] = isset($data['setupFee']) ? $data['setupFee'] : null;
-        $this->container['setupFeeText'] = isset($data['setupFeeText']) ? $data['setupFeeText'] : null;
-        $this->container['setupFeeHandling'] = isset($data['setupFeeHandling']) ? $data['setupFeeHandling'] : null;
-        $this->container['partialProrationDays'] = isset($data['partialProrationDays']) ? $data['partialProrationDays'] : null;
-        $this->container['fixedTrialDays'] = isset($data['fixedTrialDays']) ? $data['fixedTrialDays'] : null;
-        $this->container['minimumProratedAmount'] = isset($data['minimumProratedAmount']) ? $data['minimumProratedAmount'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
-        $this->container['fixedCount'] = isset($data['fixedCount']) ? $data['fixedCount'] : null;
-        $this->container['fixedLifeTimeUnit'] = isset($data['fixedLifeTimeUnit']) ? $data['fixedLifeTimeUnit'] : null;
-        $this->container['fixedLifeTimeLength'] = isset($data['fixedLifeTimeLength']) ? $data['fixedLifeTimeLength'] : null;
-        $this->container['trialIntervalUnit'] = isset($data['trialIntervalUnit']) ? $data['trialIntervalUnit'] : null;
-        $this->container['trialIntervalLength'] = isset($data['trialIntervalLength']) ? $data['trialIntervalLength'] : null;
-        $this->container['intervalLength'] = isset($data['intervalLength']) ? $data['intervalLength'] : null;
-        $this->container['scheduleType'] = isset($data['scheduleType']) ? $data['scheduleType'] : null;
-        $this->container['scheduleFixedDay'] = isset($data['scheduleFixedDay']) ? $data['scheduleFixedDay'] : null;
-        $this->container['baseMonth'] = isset($data['baseMonth']) ? $data['baseMonth'] : null;
-        $this->container['noticePeriods'] = isset($data['noticePeriods']) ? $data['noticePeriods'] : null;
-        $this->container['noticePeriodsAfterCurrent'] = isset($data['noticePeriodsAfterCurrent']) ? $data['noticePeriodsAfterCurrent'] : null;
-        $this->container['fixationPeriods'] = isset($data['fixationPeriods']) ? $data['fixationPeriods'] : null;
-        $this->container['fixationPeriodsFull'] = isset($data['fixationPeriodsFull']) ? $data['fixationPeriodsFull'] : null;
+        $this->container['dunning_plan'] = isset($data['dunning_plan']) ? $data['dunning_plan'] : null;
+        $this->container['renewal_reminder_email_days'] = isset($data['renewal_reminder_email_days']) ? $data['renewal_reminder_email_days'] : null;
+        $this->container['trial_reminder_email_days'] = isset($data['trial_reminder_email_days']) ? $data['trial_reminder_email_days'] : null;
+        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['include_zero_amount'] = isset($data['include_zero_amount']) ? $data['include_zero_amount'] : null;
+        $this->container['setup_fee'] = isset($data['setup_fee']) ? $data['setup_fee'] : null;
+        $this->container['setup_fee_text'] = isset($data['setup_fee_text']) ? $data['setup_fee_text'] : null;
+        $this->container['setup_fee_handling'] = isset($data['setup_fee_handling']) ? $data['setup_fee_handling'] : null;
+        $this->container['partial_proration_days'] = isset($data['partial_proration_days']) ? $data['partial_proration_days'] : null;
+        $this->container['fixed_trial_days'] = isset($data['fixed_trial_days']) ? $data['fixed_trial_days'] : null;
+        $this->container['minimum_prorated_amount'] = isset($data['minimum_prorated_amount']) ? $data['minimum_prorated_amount'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
+        $this->container['fixed_life_time_unit'] = isset($data['fixed_life_time_unit']) ? $data['fixed_life_time_unit'] : null;
+        $this->container['fixed_life_time_length'] = isset($data['fixed_life_time_length']) ? $data['fixed_life_time_length'] : null;
+        $this->container['trial_interval_unit'] = isset($data['trial_interval_unit']) ? $data['trial_interval_unit'] : null;
+        $this->container['trial_interval_length'] = isset($data['trial_interval_length']) ? $data['trial_interval_length'] : null;
+        $this->container['interval_length'] = isset($data['interval_length']) ? $data['interval_length'] : null;
+        $this->container['schedule_type'] = isset($data['schedule_type']) ? $data['schedule_type'] : null;
+        $this->container['schedule_fixed_day'] = isset($data['schedule_fixed_day']) ? $data['schedule_fixed_day'] : null;
+        $this->container['base_month'] = isset($data['base_month']) ? $data['base_month'] : null;
+        $this->container['notice_periods'] = isset($data['notice_periods']) ? $data['notice_periods'] : null;
+        $this->container['notice_periods_after_current'] = isset($data['notice_periods_after_current']) ? $data['notice_periods_after_current'] : null;
+        $this->container['fixation_periods'] = isset($data['fixation_periods']) ? $data['fixation_periods'] : null;
+        $this->container['fixation_periods_full'] = isset($data['fixation_periods_full']) ? $data['fixation_periods_full'] : null;
     }
 
     /**
@@ -456,39 +456,55 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'handle' can't be null";
         }
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($this->container['partialPeriodHandling']) && !in_array($this->container['partialPeriodHandling'], $allowedValues, true)) {
+        if (!is_null($this->container['partial_period_handling']) && !in_array(
+                $this->container['partial_period_handling'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'partialPeriodHandling', must be one of '%s'",
+                "invalid value for 'partial_period_handling', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getFixedLifeTimeUnitAllowableValues();
-        if (!is_null($this->container['fixedLifeTimeUnit']) && !in_array($this->container['fixedLifeTimeUnit'], $allowedValues, true)) {
+        if (!is_null($this->container['fixed_life_time_unit']) && !in_array(
+                $this->container['fixed_life_time_unit'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'fixedLifeTimeUnit', must be one of '%s'",
+                "invalid value for 'fixed_life_time_unit', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getTrialIntervalUnitAllowableValues();
-        if (!is_null($this->container['trialIntervalUnit']) && !in_array($this->container['trialIntervalUnit'], $allowedValues, true)) {
+        if (!is_null($this->container['trial_interval_unit']) && !in_array(
+                $this->container['trial_interval_unit'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'trialIntervalUnit', must be one of '%s'",
+                "invalid value for 'trial_interval_unit', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['intervalLength'] === null) {
-            $invalidProperties[] = "'intervalLength' can't be null";
+        if ($this->container['interval_length'] === null) {
+            $invalidProperties[] = "'interval_length' can't be null";
         }
-        if ($this->container['scheduleType'] === null) {
-            $invalidProperties[] = "'scheduleType' can't be null";
+        if ($this->container['schedule_type'] === null) {
+            $invalidProperties[] = "'schedule_type' can't be null";
         }
         $allowedValues = $this->getScheduleTypeAllowableValues();
-        if (!is_null($this->container['scheduleType']) && !in_array($this->container['scheduleType'], $allowedValues, true)) {
+        if (!is_null($this->container['schedule_type']) && !in_array(
+                $this->container['schedule_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'scheduleType', must be one of '%s'",
+                "invalid value for 'schedule_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -701,637 +717,637 @@ class CreateSubscriptionPlan implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets dunningPlan
+     * Gets dunning_plan
      *
      * @return string
      */
     public function getDunningPlan()
     {
-        return $this->container['dunningPlan'];
+        return $this->container['dunning_plan'];
     }
 
     /**
-     * Sets dunningPlan
+     * Sets dunning_plan
      *
-     * @param string $dunningPlan Dunning plan handle
+     * @param string $dunning_plan Dunning plan handle
      *
      * @return $this
      */
-    public function setDunningPlan($dunningPlan)
+    public function setDunningPlan($dunning_plan)
     {
-        $this->container['dunningPlan'] = $dunningPlan;
+        $this->container['dunning_plan'] = $dunning_plan;
 
         return $this;
     }
 
     /**
-     * Gets renewalReminderEmailDays
+     * Gets renewal_reminder_email_days
      *
      * @return int
      */
     public function getRenewalReminderEmailDays()
     {
-        return $this->container['renewalReminderEmailDays'];
+        return $this->container['renewal_reminder_email_days'];
     }
 
     /**
-     * Sets renewalReminderEmailDays
+     * Sets renewal_reminder_email_days
      *
-     * @param int $renewalReminderEmailDays Optional renewal reminder email settings. Number of days before next billing to send a reminder email.
+     * @param int $renewal_reminder_email_days Optional renewal reminder email settings. Number of days before next billing to send a reminder email.
      *
      * @return $this
      */
-    public function setRenewalReminderEmailDays($renewalReminderEmailDays)
+    public function setRenewalReminderEmailDays($renewal_reminder_email_days)
     {
-        $this->container['renewalReminderEmailDays'] = $renewalReminderEmailDays;
+        $this->container['renewal_reminder_email_days'] = $renewal_reminder_email_days;
 
         return $this;
     }
 
     /**
-     * Gets trialReminderEmailDays
+     * Gets trial_reminder_email_days
      *
      * @return int
      */
     public function getTrialReminderEmailDays()
     {
-        return $this->container['trialReminderEmailDays'];
+        return $this->container['trial_reminder_email_days'];
     }
 
     /**
-     * Sets trialReminderEmailDays
+     * Sets trial_reminder_email_days
      *
-     * @param int $trialReminderEmailDays Optional end of trial reminder email settings. Number of days before end of trial to send a reminder email.
+     * @param int $trial_reminder_email_days Optional end of trial reminder email settings. Number of days before end of trial to send a reminder email.
      *
      * @return $this
      */
-    public function setTrialReminderEmailDays($trialReminderEmailDays)
+    public function setTrialReminderEmailDays($trial_reminder_email_days)
     {
-        $this->container['trialReminderEmailDays'] = $trialReminderEmailDays;
+        $this->container['trial_reminder_email_days'] = $trial_reminder_email_days;
 
         return $this;
     }
 
     /**
-     * Gets partialPeriodHandling
+     * Gets partial_period_handling
      *
      * @return string
      */
     public function getPartialPeriodHandling()
     {
-        return $this->container['partialPeriodHandling'];
+        return $this->container['partial_period_handling'];
     }
 
     /**
-     * Sets partialPeriodHandling
+     * Sets partial_period_handling
      *
-     * @param string $partialPeriodHandling How to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * @param string $partial_period_handling How to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
      *
      * @return $this
      */
-    public function setPartialPeriodHandling($partialPeriodHandling)
+    public function setPartialPeriodHandling($partial_period_handling)
     {
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($partialPeriodHandling) && !in_array($partialPeriodHandling, $allowedValues, true)) {
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'partialPeriodHandling', must be one of '%s'",
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['partialPeriodHandling'] = $partialPeriodHandling;
+        $this->container['partial_period_handling'] = $partial_period_handling;
 
         return $this;
     }
 
     /**
-     * Gets includeZeroAmount
+     * Gets include_zero_amount
      *
      * @return bool
      */
     public function getIncludeZeroAmount()
     {
-        return $this->container['includeZeroAmount'];
+        return $this->container['include_zero_amount'];
     }
 
     /**
-     * Sets includeZeroAmount
+     * Sets include_zero_amount
      *
-     * @param bool $includeZeroAmount Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added.
+     * @param bool $include_zero_amount Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added.
      *
      * @return $this
      */
-    public function setIncludeZeroAmount($includeZeroAmount)
+    public function setIncludeZeroAmount($include_zero_amount)
     {
-        $this->container['includeZeroAmount'] = $includeZeroAmount;
+        $this->container['include_zero_amount'] = $include_zero_amount;
 
         return $this;
     }
 
     /**
-     * Gets setupFee
+     * Gets setup_fee
      *
      * @return int
      */
     public function getSetupFee()
     {
-        return $this->container['setupFee'];
+        return $this->container['setup_fee'];
     }
 
     /**
-     * Sets setupFee
+     * Sets setup_fee
      *
-     * @param int $setupFee Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting `setup_fee_handling`.
+     * @param int $setup_fee Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting `setup_fee_handling`.
      *
      * @return $this
      */
-    public function setSetupFee($setupFee)
+    public function setSetupFee($setup_fee)
     {
-        $this->container['setupFee'] = $setupFee;
+        $this->container['setup_fee'] = $setup_fee;
 
         return $this;
     }
 
     /**
-     * Gets setupFeeText
+     * Gets setup_fee_text
      *
      * @return string
      */
     public function getSetupFeeText()
     {
-        return $this->container['setupFeeText'];
+        return $this->container['setup_fee_text'];
     }
 
     /**
-     * Sets setupFeeText
+     * Sets setup_fee_text
      *
-     * @param string $setupFeeText Optional invoice order text for the setup fee that
+     * @param string $setup_fee_text Optional invoice order text for the setup fee that
      *
      * @return $this
      */
-    public function setSetupFeeText($setupFeeText)
+    public function setSetupFeeText($setup_fee_text)
     {
-        $this->container['setupFeeText'] = $setupFeeText;
+        $this->container['setup_fee_text'] = $setup_fee_text;
 
         return $this;
     }
 
     /**
-     * Gets setupFeeHandling
+     * Gets setup_fee_handling
      *
      * @return string
      */
     public function getSetupFeeHandling()
     {
-        return $this->container['setupFeeHandling'];
+        return $this->container['setup_fee_handling'];
     }
 
     /**
-     * Sets setupFeeHandling
+     * Sets setup_fee_handling
      *
-     * @param string $setupFeeHandling How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`.
+     * @param string $setup_fee_handling How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`.
      *
      * @return $this
      */
-    public function setSetupFeeHandling($setupFeeHandling)
+    public function setSetupFeeHandling($setup_fee_handling)
     {
-        $this->container['setupFeeHandling'] = $setupFeeHandling;
+        $this->container['setup_fee_handling'] = $setup_fee_handling;
 
         return $this;
     }
 
     /**
-     * Gets partialProrationDays
+     * Gets partial_proration_days
      *
      * @return bool
      */
     public function getPartialProrationDays()
     {
-        return $this->container['partialProrationDays'];
+        return $this->container['partial_proration_days'];
     }
 
     /**
-     * Sets partialProrationDays
+     * Sets partial_proration_days
      *
-     * @param bool $partialProrationDays For fixed day scheduling and prorated partial handling calculate prorated amount using whole days counting start day as a full day, or use by the minute proration calculation from start date time to the next period start. Default is true (whole days).
+     * @param bool $partial_proration_days For fixed day scheduling and prorated partial handling calculate prorated amount using whole days counting start day as a full day, or use by the minute proration calculation from start date time to the next period start. Default is true (whole days).
      *
      * @return $this
      */
-    public function setPartialProrationDays($partialProrationDays)
+    public function setPartialProrationDays($partial_proration_days)
     {
-        $this->container['partialProrationDays'] = $partialProrationDays;
+        $this->container['partial_proration_days'] = $partial_proration_days;
 
         return $this;
     }
 
     /**
-     * Gets fixedTrialDays
+     * Gets fixed_trial_days
      *
      * @return bool
      */
     public function getFixedTrialDays()
     {
-        return $this->container['fixedTrialDays'];
+        return $this->container['fixed_trial_days'];
     }
 
     /**
-     * Sets fixedTrialDays
+     * Sets fixed_trial_days
      *
-     * @param bool $fixedTrialDays When using trial for fixed day scheduling use this setting to control if trial expires at midnight or the trial period is down to the minute. Default is true (trial until start of day). Trial in days can only be true if `partial_proration_days` is also set to true.
+     * @param bool $fixed_trial_days When using trial for fixed day scheduling use this setting to control if trial expires at midnight or the trial period is down to the minute. Default is true (trial until start of day). Trial in days can only be true if `partial_proration_days` is also set to true.
      *
      * @return $this
      */
-    public function setFixedTrialDays($fixedTrialDays)
+    public function setFixedTrialDays($fixed_trial_days)
     {
-        $this->container['fixedTrialDays'] = $fixedTrialDays;
+        $this->container['fixed_trial_days'] = $fixed_trial_days;
 
         return $this;
     }
 
     /**
-     * Gets minimumProratedAmount
+     * Gets minimum_prorated_amount
      *
      * @return int
      */
     public function getMinimumProratedAmount()
     {
-        return $this->container['minimumProratedAmount'];
+        return $this->container['minimum_prorated_amount'];
     }
 
     /**
-     * Sets minimumProratedAmount
+     * Sets minimum_prorated_amount
      *
-     * @param int $minimumProratedAmount When using prorated partial handling the prorated amount for plan and add-ons might result in very small amounts. A minimum prorated amount for plan and add-ons can be defined. If the prorated amount is below this minimum the amount will be changed to zero.
+     * @param int $minimum_prorated_amount When using prorated partial handling the prorated amount for plan and add-ons might result in very small amounts. A minimum prorated amount for plan and add-ons can be defined. If the prorated amount is below this minimum the amount will be changed to zero.
      *
      * @return $this
      */
-    public function setMinimumProratedAmount($minimumProratedAmount)
+    public function setMinimumProratedAmount($minimum_prorated_amount)
     {
-        $this->container['minimumProratedAmount'] = $minimumProratedAmount;
+        $this->container['minimum_prorated_amount'] = $minimum_prorated_amount;
 
         return $this;
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the amount is including VAT. Default true.
+     * @param bool $amount_incl_vat Whether the amount is including VAT. Default true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets fixedCount
+     * Gets fixed_count
      *
      * @return int
      */
     public function getFixedCount()
     {
-        return $this->container['fixedCount'];
+        return $this->container['fixed_count'];
     }
 
     /**
-     * Sets fixedCount
+     * Sets fixed_count
      *
-     * @param int $fixedCount Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices.
+     * @param int $fixed_count Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices.
      *
      * @return $this
      */
-    public function setFixedCount($fixedCount)
+    public function setFixedCount($fixed_count)
     {
-        $this->container['fixedCount'] = $fixedCount;
+        $this->container['fixed_count'] = $fixed_count;
 
         return $this;
     }
 
     /**
-     * Gets fixedLifeTimeUnit
+     * Gets fixed_life_time_unit
      *
      * @return string
      */
     public function getFixedLifeTimeUnit()
     {
-        return $this->container['fixedLifeTimeUnit'];
+        return $this->container['fixed_life_time_unit'];
     }
 
     /**
-     * Sets fixedLifeTimeUnit
+     * Sets fixed_life_time_unit
      *
-     * @param string $fixedLifeTimeUnit Time unit use for fixed life time
+     * @param string $fixed_life_time_unit Time unit use for fixed life time
      *
      * @return $this
      */
-    public function setFixedLifeTimeUnit($fixedLifeTimeUnit)
+    public function setFixedLifeTimeUnit($fixed_life_time_unit)
     {
         $allowedValues = $this->getFixedLifeTimeUnitAllowableValues();
-        if (!is_null($fixedLifeTimeUnit) && !in_array($fixedLifeTimeUnit, $allowedValues, true)) {
+        if (!is_null($fixed_life_time_unit) && !in_array($fixed_life_time_unit, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'fixedLifeTimeUnit', must be one of '%s'",
+                    "Invalid value for 'fixed_life_time_unit', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['fixedLifeTimeUnit'] = $fixedLifeTimeUnit;
+        $this->container['fixed_life_time_unit'] = $fixed_life_time_unit;
 
         return $this;
     }
 
     /**
-     * Gets fixedLifeTimeLength
+     * Gets fixed_life_time_length
      *
      * @return int
      */
     public function getFixedLifeTimeLength()
     {
-        return $this->container['fixedLifeTimeLength'];
+        return $this->container['fixed_life_time_length'];
     }
 
     /**
-     * Sets fixedLifeTimeLength
+     * Sets fixed_life_time_length
      *
-     * @param int $fixedLifeTimeLength Fixed life time length for subscriptions using this plan. E.g. 12 months. Subscriptions will cancel after the fixed life time and expire when the active billing cycle ends.
+     * @param int $fixed_life_time_length Fixed life time length for subscriptions using this plan. E.g. 12 months. Subscriptions will cancel after the fixed life time and expire when the active billing cycle ends.
      *
      * @return $this
      */
-    public function setFixedLifeTimeLength($fixedLifeTimeLength)
+    public function setFixedLifeTimeLength($fixed_life_time_length)
     {
-        $this->container['fixedLifeTimeLength'] = $fixedLifeTimeLength;
+        $this->container['fixed_life_time_length'] = $fixed_life_time_length;
 
         return $this;
     }
 
     /**
-     * Gets trialIntervalUnit
+     * Gets trial_interval_unit
      *
      * @return string
      */
     public function getTrialIntervalUnit()
     {
-        return $this->container['trialIntervalUnit'];
+        return $this->container['trial_interval_unit'];
     }
 
     /**
-     * Sets trialIntervalUnit
+     * Sets trial_interval_unit
      *
-     * @param string $trialIntervalUnit Time unit for free trial period
+     * @param string $trial_interval_unit Time unit for free trial period
      *
      * @return $this
      */
-    public function setTrialIntervalUnit($trialIntervalUnit)
+    public function setTrialIntervalUnit($trial_interval_unit)
     {
         $allowedValues = $this->getTrialIntervalUnitAllowableValues();
-        if (!is_null($trialIntervalUnit) && !in_array($trialIntervalUnit, $allowedValues, true)) {
+        if (!is_null($trial_interval_unit) && !in_array($trial_interval_unit, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'trialIntervalUnit', must be one of '%s'",
+                    "Invalid value for 'trial_interval_unit', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['trialIntervalUnit'] = $trialIntervalUnit;
+        $this->container['trial_interval_unit'] = $trial_interval_unit;
 
         return $this;
     }
 
     /**
-     * Gets trialIntervalLength
+     * Gets trial_interval_length
      *
      * @return int
      */
     public function getTrialIntervalLength()
     {
-        return $this->container['trialIntervalLength'];
+        return $this->container['trial_interval_length'];
     }
 
     /**
-     * Sets trialIntervalLength
+     * Sets trial_interval_length
      *
-     * @param int $trialIntervalLength Free trial interval length. E.g. 1 month.
+     * @param int $trial_interval_length Free trial interval length. E.g. 1 month.
      *
      * @return $this
      */
-    public function setTrialIntervalLength($trialIntervalLength)
+    public function setTrialIntervalLength($trial_interval_length)
     {
-        $this->container['trialIntervalLength'] = $trialIntervalLength;
+        $this->container['trial_interval_length'] = $trial_interval_length;
 
         return $this;
     }
 
     /**
-     * Gets intervalLength
+     * Gets interval_length
      *
      * @return int
      */
     public function getIntervalLength()
     {
-        return $this->container['intervalLength'];
+        return $this->container['interval_length'];
     }
 
     /**
-     * Sets intervalLength
+     * Sets interval_length
      *
-     * @param int $intervalLength The length of intervals. E.g. every second month or every 14 days.
+     * @param int $interval_length The length of intervals. E.g. every second month or every 14 days.
      *
      * @return $this
      */
-    public function setIntervalLength($intervalLength)
+    public function setIntervalLength($interval_length)
     {
-        $this->container['intervalLength'] = $intervalLength;
+        $this->container['interval_length'] = $interval_length;
 
         return $this;
     }
 
     /**
-     * Gets scheduleType
+     * Gets schedule_type
      *
      * @return string
      */
     public function getScheduleType()
     {
-        return $this->container['scheduleType'];
+        return $this->container['schedule_type'];
     }
 
     /**
-     * Sets scheduleType
+     * Sets schedule_type
      *
-     * @param string $scheduleType Scheduling type, one of the following: `manual`, `daily`, `weekly_fixedday`, `month_startdate`, `month_fixedday`, `month_lastday`. See documentation for descriptions of the different types.
+     * @param string $schedule_type Scheduling type, one of the following: `manual`, `daily`, `weekly_fixedday`, `month_startdate`, `month_fixedday`, `month_lastday`. See documentation for descriptions of the different types.
      *
      * @return $this
      */
-    public function setScheduleType($scheduleType)
+    public function setScheduleType($schedule_type)
     {
         $allowedValues = $this->getScheduleTypeAllowableValues();
-        if (!in_array($scheduleType, $allowedValues, true)) {
+        if (!in_array($schedule_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'scheduleType', must be one of '%s'",
+                    "Invalid value for 'schedule_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['scheduleType'] = $scheduleType;
+        $this->container['schedule_type'] = $schedule_type;
 
         return $this;
     }
 
     /**
-     * Gets scheduleFixedDay
+     * Gets schedule_fixed_day
      *
      * @return int
      */
     public function getScheduleFixedDay()
     {
-        return $this->container['scheduleFixedDay'];
+        return $this->container['schedule_fixed_day'];
     }
 
     /**
-     * Sets scheduleFixedDay
+     * Sets schedule_fixed_day
      *
-     * @param int $scheduleFixedDay If a fixed day scheduling type is used a fixed day must be provided. For months the allowed value is 1-28 for weeks it is 1-7
+     * @param int $schedule_fixed_day If a fixed day scheduling type is used a fixed day must be provided. For months the allowed value is 1-28 for weeks it is 1-7
      *
      * @return $this
      */
-    public function setScheduleFixedDay($scheduleFixedDay)
+    public function setScheduleFixedDay($schedule_fixed_day)
     {
-        $this->container['scheduleFixedDay'] = $scheduleFixedDay;
+        $this->container['schedule_fixed_day'] = $schedule_fixed_day;
 
         return $this;
     }
 
     /**
-     * Gets baseMonth
+     * Gets base_month
      *
      * @return int
      */
     public function getBaseMonth()
     {
-        return $this->container['baseMonth'];
+        return $this->container['base_month'];
     }
 
     /**
-     * Sets baseMonth
+     * Sets base_month
      *
-     * @param int $baseMonth For fixed month schedule types the base month can be used to control which months are eligible for start of first billing period. The eligible months are calculated as `base_month + k * interval_length` up to 12. E.g. to use quaterly billing in the months jan-apr-jul-oct, `base_month` 1 and `interval_length` 3 can be used. If not defined the first fixed day will be used as start of first billing period.
+     * @param int $base_month For fixed month schedule types the base month can be used to control which months are eligible for start of first billing period. The eligible months are calculated as `base_month + k * interval_length` up to 12. E.g. to use quaterly billing in the months jan-apr-jul-oct, `base_month` 1 and `interval_length` 3 can be used. If not defined the first fixed day will be used as start of first billing period.
      *
      * @return $this
      */
-    public function setBaseMonth($baseMonth)
+    public function setBaseMonth($base_month)
     {
-        $this->container['baseMonth'] = $baseMonth;
+        $this->container['base_month'] = $base_month;
 
         return $this;
     }
 
     /**
-     * Gets noticePeriods
+     * Gets notice_periods
      *
      * @return int
      */
     public function getNoticePeriods()
     {
-        return $this->container['noticePeriods'];
+        return $this->container['notice_periods'];
     }
 
     /**
-     * Sets noticePeriods
+     * Sets notice_periods
      *
-     * @param int $noticePeriods Optional number of notice periods for a cancel. The subscription will be cancelled for this number of full periods before expiring. Either from the cancellation date, or from the end of the the current period. See `notice_periods_after_current`. The default is to expire at the end of current period (0). A value of 1 (and `notice_periods_after_current` set to true) will for example result in a scenario where the subscription is cancelled until the end of current period, and then for the full subsequent period before expiring.
+     * @param int $notice_periods Optional number of notice periods for a cancel. The subscription will be cancelled for this number of full periods before expiring. Either from the cancellation date, or from the end of the the current period. See `notice_periods_after_current`. The default is to expire at the end of current period (0). A value of 1 (and `notice_periods_after_current` set to true) will for example result in a scenario where the subscription is cancelled until the end of current period, and then for the full subsequent period before expiring.
      *
      * @return $this
      */
-    public function setNoticePeriods($noticePeriods)
+    public function setNoticePeriods($notice_periods)
     {
-        $this->container['noticePeriods'] = $noticePeriods;
+        $this->container['notice_periods'] = $notice_periods;
 
         return $this;
     }
 
     /**
-     * Gets noticePeriodsAfterCurrent
+     * Gets notice_periods_after_current
      *
      * @return bool
      */
     public function getNoticePeriodsAfterCurrent()
     {
-        return $this->container['noticePeriodsAfterCurrent'];
+        return $this->container['notice_periods_after_current'];
     }
 
     /**
-     * Sets noticePeriodsAfterCurrent
+     * Sets notice_periods_after_current
      *
-     * @param bool $noticePeriodsAfterCurrent If notice periods is set, this option controls whether the number of full notice periods should start at the end of the current period, or run from cancellation date and result in a partial period with partial amount for the last period. The default is true. E.g. if set to false and `notice_periods = 1` then the subscription will be cancelled for exactly for one period from the cancellation time and a partial amount will be billed at the start of the next billing period.
+     * @param bool $notice_periods_after_current If notice periods is set, this option controls whether the number of full notice periods should start at the end of the current period, or run from cancellation date and result in a partial period with partial amount for the last period. The default is true. E.g. if set to false and `notice_periods = 1` then the subscription will be cancelled for exactly for one period from the cancellation time and a partial amount will be billed at the start of the next billing period.
      *
      * @return $this
      */
-    public function setNoticePeriodsAfterCurrent($noticePeriodsAfterCurrent)
+    public function setNoticePeriodsAfterCurrent($notice_periods_after_current)
     {
-        $this->container['noticePeriodsAfterCurrent'] = $noticePeriodsAfterCurrent;
+        $this->container['notice_periods_after_current'] = $notice_periods_after_current;
 
         return $this;
     }
 
     /**
-     * Gets fixationPeriods
+     * Gets fixation_periods
      *
      * @return int
      */
     public function getFixationPeriods()
     {
-        return $this->container['fixationPeriods'];
+        return $this->container['fixation_periods'];
     }
 
     /**
-     * Sets fixationPeriods
+     * Sets fixation_periods
      *
-     * @param int $fixationPeriods Optional number of fixation periods. Fixation periods will guarantee that a subscription will have this number of paid full periods before expiring after a cancel. Default is to have no requirement (0).
+     * @param int $fixation_periods Optional number of fixation periods. Fixation periods will guarantee that a subscription will have this number of paid full periods before expiring after a cancel. Default is to have no requirement (0).
      *
      * @return $this
      */
-    public function setFixationPeriods($fixationPeriods)
+    public function setFixationPeriods($fixation_periods)
     {
-        $this->container['fixationPeriods'] = $fixationPeriods;
+        $this->container['fixation_periods'] = $fixation_periods;
 
         return $this;
     }
 
     /**
-     * Gets fixationPeriodsFull
+     * Gets fixation_periods_full
      *
      * @return bool
      */
     public function getFixationPeriodsFull()
     {
-        return $this->container['fixationPeriodsFull'];
+        return $this->container['fixation_periods_full'];
     }
 
     /**
-     * Sets fixationPeriodsFull
+     * Sets fixation_periods_full
      *
-     * @param bool $fixationPeriodsFull If fixation periods are defined, and the subscription can have a partial prorated first period, this parameter controls if the the last period should be full, or partial to give exactly `fixation_periods` paid periods. Default is false.
+     * @param bool $fixation_periods_full If fixation periods are defined, and the subscription can have a partial prorated first period, this parameter controls if the the last period should be full, or partial to give exactly `fixation_periods` paid periods. Default is false.
      *
      * @return $this
      */
-    public function setFixationPeriodsFull($fixationPeriodsFull)
+    public function setFixationPeriodsFull($fixation_periods_full)
     {
-        $this->container['fixationPeriodsFull'] = $fixationPeriodsFull;
+        $this->container['fixation_periods_full'] = $fixation_periods_full;
 
         return $this;
     }

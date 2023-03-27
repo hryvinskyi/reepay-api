@@ -56,8 +56,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'displayName' => 'string',
-        'recurringEnabled' => 'bool'
+        'display_name' => 'string',
+        'recurring_enabled' => 'bool'
     ];
 
     /**
@@ -66,8 +66,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'displayName' => null,
-        'recurringEnabled' => null
+        'display_name' => null,
+        'recurring_enabled' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'displayName' => 'display_name',
-        'recurringEnabled' => 'recurring_enabled'
+        'display_name' => 'display_name',
+        'recurring_enabled' => 'recurring_enabled'
     ];
 
     /**
@@ -107,8 +107,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'displayName' => 'setDisplayName',
-        'recurringEnabled' => 'setRecurringEnabled'
+        'display_name' => 'setDisplayName',
+        'recurring_enabled' => 'setRecurringEnabled'
     ];
 
     /**
@@ -117,8 +117,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'displayName' => 'getDisplayName',
-        'recurringEnabled' => 'getRecurringEnabled'
+        'display_name' => 'getDisplayName',
+        'recurring_enabled' => 'getRecurringEnabled'
     ];
 
     /**
@@ -179,8 +179,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['displayName'] = isset($data['displayName']) ? $data['displayName'] : null;
-        $this->container['recurringEnabled'] = isset($data['recurringEnabled']) ? $data['recurringEnabled'] : null;
+        $this->container['display_name'] = isset($data['display_name']) ? $data['display_name'] : null;
+        $this->container['recurring_enabled'] = isset($data['recurring_enabled']) ? $data['recurring_enabled'] : null;
     }
 
     /**
@@ -192,8 +192,8 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['displayName'] === null) {
-            $invalidProperties[] = "'displayName' can't be null";
+        if ($this->container['display_name'] === null) {
+            $invalidProperties[] = "'display_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -211,49 +211,49 @@ class ApplepayAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets displayName
+     * Gets display_name
      *
      * @return string
      */
     public function getDisplayName()
     {
-        return $this->container['displayName'];
+        return $this->container['display_name'];
     }
 
     /**
-     * Sets displayName
+     * Sets display_name
      *
-     * @param string $displayName displayName
+     * @param string $display_name display_name
      *
      * @return $this
      */
-    public function setDisplayName($displayName)
+    public function setDisplayName($display_name)
     {
-        $this->container['displayName'] = $displayName;
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }
 
     /**
-     * Gets recurringEnabled
+     * Gets recurring_enabled
      *
      * @return bool
      */
     public function getRecurringEnabled()
     {
-        return $this->container['recurringEnabled'];
+        return $this->container['recurring_enabled'];
     }
 
     /**
-     * Sets recurringEnabled
+     * Sets recurring_enabled
      *
-     * @param bool $recurringEnabled recurringEnabled
+     * @param bool $recurring_enabled recurring_enabled
      *
      * @return $this
      */
-    public function setRecurringEnabled($recurringEnabled)
+    public function setRecurringEnabled($recurring_enabled)
     {
-        $this->container['recurringEnabled'] = $recurringEnabled;
+        $this->container['recurring_enabled'] = $recurring_enabled;
 
         return $this;
     }

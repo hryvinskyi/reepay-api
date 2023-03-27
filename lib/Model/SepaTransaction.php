@@ -57,11 +57,11 @@ class SepaTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'error' => 'string',
-        'refTransaction' => 'string',
-        'errorState' => 'string',
-        'acquirerMessage' => 'string',
-        'sepaId' => 'string',
-        'sepaMandate' => '\Reepay\Model\SepaMandate'
+        'ref_transaction' => 'string',
+        'error_state' => 'string',
+        'acquirer_message' => 'string',
+        'sepa_id' => 'string',
+        'sepa_mandate' => '\Reepay\Model\SepaMandate'
     ];
 
     /**
@@ -71,11 +71,11 @@ class SepaTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'error' => null,
-        'refTransaction' => null,
-        'errorState' => null,
-        'acquirerMessage' => null,
-        'sepaId' => null,
-        'sepaMandate' => null
+        'ref_transaction' => null,
+        'error_state' => null,
+        'acquirer_message' => null,
+        'sepa_id' => null,
+        'sepa_mandate' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class SepaTransaction implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'error' => 'error',
-        'refTransaction' => 'ref_transaction',
-        'errorState' => 'error_state',
-        'acquirerMessage' => 'acquirer_message',
-        'sepaId' => 'sepa_id',
-        'sepaMandate' => 'sepa_mandate'
+        'ref_transaction' => 'ref_transaction',
+        'error_state' => 'error_state',
+        'acquirer_message' => 'acquirer_message',
+        'sepa_id' => 'sepa_id',
+        'sepa_mandate' => 'sepa_mandate'
     ];
 
     /**
@@ -120,11 +120,11 @@ class SepaTransaction implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'error' => 'setError',
-        'refTransaction' => 'setRefTransaction',
-        'errorState' => 'setErrorState',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'sepaId' => 'setSepaId',
-        'sepaMandate' => 'setSepaMandate'
+        'ref_transaction' => 'setRefTransaction',
+        'error_state' => 'setErrorState',
+        'acquirer_message' => 'setAcquirerMessage',
+        'sepa_id' => 'setSepaId',
+        'sepa_mandate' => 'setSepaMandate'
     ];
 
     /**
@@ -134,11 +134,11 @@ class SepaTransaction implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'error' => 'getError',
-        'refTransaction' => 'getRefTransaction',
-        'errorState' => 'getErrorState',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'sepaId' => 'getSepaId',
-        'sepaMandate' => 'getSepaMandate'
+        'ref_transaction' => 'getRefTransaction',
+        'error_state' => 'getErrorState',
+        'acquirer_message' => 'getAcquirerMessage',
+        'sepa_id' => 'getSepaId',
+        'sepa_mandate' => 'getSepaMandate'
     ];
 
     /**
@@ -218,11 +218,11 @@ class SepaTransaction implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['refTransaction'] = isset($data['refTransaction']) ? $data['refTransaction'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['sepaId'] = isset($data['sepaId']) ? $data['sepaId'] : null;
-        $this->container['sepaMandate'] = isset($data['sepaMandate']) ? $data['sepaMandate'] : null;
+        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['sepa_id'] = isset($data['sepa_id']) ? $data['sepa_id'] : null;
+        $this->container['sepa_mandate'] = isset($data['sepa_mandate']) ? $data['sepa_mandate'] : null;
     }
 
     /**
@@ -235,9 +235,13 @@ class SepaTransaction implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -282,134 +286,133 @@ class SepaTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets refTransaction
+     * Gets ref_transaction
      *
      * @return string
      */
     public function getRefTransaction()
     {
-        return $this->container['refTransaction'];
+        return $this->container['ref_transaction'];
     }
 
     /**
-     * Sets refTransaction
+     * Sets ref_transaction
      *
-     * @param string $refTransaction Id of a possible referenced transaction
+     * @param string $ref_transaction Id of a possible referenced transaction
      *
      * @return $this
      */
-    public function setRefTransaction($refTransaction)
+    public function setRefTransaction($ref_transaction)
     {
-        $this->container['refTransaction'] = $refTransaction;
+        $this->container['ref_transaction'] = $ref_transaction;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
+     * @param string $error_state Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets sepaId
+     * Gets sepa_id
      *
      * @return string
      */
     public function getSepaId()
     {
-        return $this->container['sepaId'];
+        return $this->container['sepa_id'];
     }
 
     /**
-     * Sets sepaId
+     * Sets sepa_id
      *
-     * @param string $sepaId SEPA id
+     * @param string $sepa_id SEPA id
      *
      * @return $this
      */
-    public function setSepaId($sepaId)
+    public function setSepaId($sepa_id)
     {
-        $this->container['sepaId'] = $sepaId;
+        $this->container['sepa_id'] = $sepa_id;
 
         return $this;
     }
 
     /**
-     * Gets sepaMandate
+     * Gets sepa_mandate
      *
      * @return \Reepay\Model\SepaMandate
      */
     public function getSepaMandate()
     {
-        return $this->container['sepaMandate'];
+        return $this->container['sepa_mandate'];
     }
 
     /**
-     * Sets sepaMandate
+     * Sets sepa_mandate
      *
-     * @param \Reepay\Model\SepaMandate $sepaMandate sepaMandate
+     * @param \Reepay\Model\SepaMandate $sepa_mandate sepa_mandate
      *
      * @return $this
      */
-    public function setSepaMandate($sepaMandate)
+    public function setSepaMandate($sepa_mandate)
     {
-        $this->container['sepaMandate'] = $sepaMandate;
+        $this->container['sepa_mandate'] = $sepa_mandate;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

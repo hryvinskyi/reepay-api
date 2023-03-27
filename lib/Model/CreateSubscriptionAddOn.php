@@ -61,9 +61,9 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'name' => 'string',
         'description' => 'string',
-        'addOn' => 'string',
-        'fixedAmount' => 'bool',
-        'amountInclVat' => 'bool'
+        'add_on' => 'string',
+        'fixed_amount' => 'bool',
+        'amount_incl_vat' => 'bool'
     ];
 
     /**
@@ -77,9 +77,9 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         'amount' => 'int32',
         'name' => null,
         'description' => null,
-        'addOn' => null,
-        'fixedAmount' => null,
-        'amountInclVat' => null
+        'add_on' => null,
+        'fixed_amount' => null,
+        'amount_incl_vat' => null
     ];
 
     /**
@@ -114,9 +114,9 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'name' => 'name',
         'description' => 'description',
-        'addOn' => 'add_on',
-        'fixedAmount' => 'fixed_amount',
-        'amountInclVat' => 'amount_incl_vat'
+        'add_on' => 'add_on',
+        'fixed_amount' => 'fixed_amount',
+        'amount_incl_vat' => 'amount_incl_vat'
     ];
 
     /**
@@ -130,9 +130,9 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'name' => 'setName',
         'description' => 'setDescription',
-        'addOn' => 'setAddOn',
-        'fixedAmount' => 'setFixedAmount',
-        'amountInclVat' => 'setAmountInclVat'
+        'add_on' => 'setAddOn',
+        'fixed_amount' => 'setFixedAmount',
+        'amount_incl_vat' => 'setAmountInclVat'
     ];
 
     /**
@@ -146,9 +146,9 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'name' => 'getName',
         'description' => 'getDescription',
-        'addOn' => 'getAddOn',
-        'fixedAmount' => 'getFixedAmount',
-        'amountInclVat' => 'getAmountInclVat'
+        'add_on' => 'getAddOn',
+        'fixed_amount' => 'getFixedAmount',
+        'amount_incl_vat' => 'getAmountInclVat'
     ];
 
     /**
@@ -214,9 +214,9 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['addOn'] = isset($data['addOn']) ? $data['addOn'] : null;
-        $this->container['fixedAmount'] = isset($data['fixedAmount']) ? $data['fixedAmount'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
+        $this->container['add_on'] = isset($data['add_on']) ? $data['add_on'] : null;
+        $this->container['fixed_amount'] = isset($data['fixed_amount']) ? $data['fixed_amount'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
     /**
@@ -231,8 +231,8 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
         if ($this->container['handle'] === null) {
             $invalidProperties[] = "'handle' can't be null";
         }
-        if ($this->container['addOn'] === null) {
-            $invalidProperties[] = "'addOn' can't be null";
+        if ($this->container['add_on'] === null) {
+            $invalidProperties[] = "'add_on' can't be null";
         }
         return $invalidProperties;
     }
@@ -370,73 +370,73 @@ class CreateSubscriptionAddOn implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets addOn
+     * Gets add_on
      *
      * @return string
      */
     public function getAddOn()
     {
-        return $this->container['addOn'];
+        return $this->container['add_on'];
     }
 
     /**
-     * Sets addOn
+     * Sets add_on
      *
-     * @param string $addOn Add-on for subscription add-on
+     * @param string $add_on Add-on for subscription add-on
      *
      * @return $this
      */
-    public function setAddOn($addOn)
+    public function setAddOn($add_on)
     {
-        $this->container['addOn'] = $addOn;
+        $this->container['add_on'] = $add_on;
 
         return $this;
     }
 
     /**
-     * Gets fixedAmount
+     * Gets fixed_amount
      *
      * @return bool
      */
     public function getFixedAmount()
     {
-        return $this->container['fixedAmount'];
+        return $this->container['fixed_amount'];
     }
 
     /**
-     * Sets fixedAmount
+     * Sets fixed_amount
      *
-     * @param bool $fixedAmount Whether the price of the subscription add-on should be fixed to the current price of add-on, or the price should follow the add-on price. Defaults to true. If set to false the price of the add-on will be determined by the add-on price at the time of subscription billing.
+     * @param bool $fixed_amount Whether the price of the subscription add-on should be fixed to the current price of add-on, or the price should follow the add-on price. Defaults to true. If set to false the price of the add-on will be determined by the add-on price at the time of subscription billing.
      *
      * @return $this
      */
-    public function setFixedAmount($fixedAmount)
+    public function setFixedAmount($fixed_amount)
     {
-        $this->container['fixedAmount'] = $fixedAmount;
+        $this->container['fixed_amount'] = $fixed_amount;
 
         return $this;
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the optional amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the optional amount is including VAT. Defaults to true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }

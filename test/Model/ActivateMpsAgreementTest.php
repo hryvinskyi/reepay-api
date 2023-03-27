@@ -76,7 +76,7 @@ class ActivateMpsAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "providerId"
+     * Test attribute "provider_id"
      */
     public function testPropertyProviderId()
     {

@@ -118,7 +118,7 @@ class InvoiceCreditNoteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "creditNoteLines"
+     * Test attribute "credit_note_lines"
      */
     public function testPropertyCreditNoteLines()
     {

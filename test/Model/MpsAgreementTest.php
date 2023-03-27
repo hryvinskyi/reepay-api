@@ -90,35 +90,35 @@ class MpsAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shopName"
+     * Test attribute "shop_name"
      */
     public function testPropertyShopName()
     {
     }
 
     /**
-     * Test attribute "merchantVat"
+     * Test attribute "merchant_vat"
      */
     public function testPropertyMerchantVat()
     {
     }
 
     /**
-     * Test attribute "providerId"
+     * Test attribute "provider_id"
      */
     public function testPropertyProviderId()
     {
     }
 
     /**
-     * Test attribute "authorizationUrl"
+     * Test attribute "authorization_url"
      */
     public function testPropertyAuthorizationUrl()
     {
     }
 
     /**
-     * Test attribute "asyncOneOff"
+     * Test attribute "async_one_off"
      */
     public function testPropertyAsyncOneOff()
     {

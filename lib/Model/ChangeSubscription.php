@@ -61,14 +61,14 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'quantity' => 'int',
         'billing' => 'string',
-        'amountInclVat' => 'bool',
-        'compensationMethod' => 'string',
-        'partialPeriodHandling' => 'string',
-        'startDate' => 'string',
-        'forceNewPeriod' => 'bool',
-        'cancelChange' => 'bool',
-        'addOns' => '\Reepay\Model\CreateSubscriptionAddOn[]',
-        'removeAddOns' => 'string[]'
+        'amount_incl_vat' => 'bool',
+        'compensation_method' => 'string',
+        'partial_period_handling' => 'string',
+        'start_date' => 'string',
+        'force_new_period' => 'bool',
+        'cancel_change' => 'bool',
+        'add_ons' => '\Reepay\Model\CreateSubscriptionAddOn[]',
+        'remove_add_ons' => 'string[]'
     ];
 
     /**
@@ -82,14 +82,14 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         'amount' => 'int32',
         'quantity' => 'int32',
         'billing' => null,
-        'amountInclVat' => null,
-        'compensationMethod' => null,
-        'partialPeriodHandling' => null,
-        'startDate' => null,
-        'forceNewPeriod' => null,
-        'cancelChange' => null,
-        'addOns' => null,
-        'removeAddOns' => null
+        'amount_incl_vat' => null,
+        'compensation_method' => null,
+        'partial_period_handling' => null,
+        'start_date' => null,
+        'force_new_period' => null,
+        'cancel_change' => null,
+        'add_ons' => null,
+        'remove_add_ons' => null
     ];
 
     /**
@@ -124,14 +124,14 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'quantity' => 'quantity',
         'billing' => 'billing',
-        'amountInclVat' => 'amount_incl_vat',
-        'compensationMethod' => 'compensation_method',
-        'partialPeriodHandling' => 'partial_period_handling',
-        'startDate' => 'start_date',
-        'forceNewPeriod' => 'force_new_period',
-        'cancelChange' => 'cancel_change',
-        'addOns' => 'add_ons',
-        'removeAddOns' => 'remove_add_ons'
+        'amount_incl_vat' => 'amount_incl_vat',
+        'compensation_method' => 'compensation_method',
+        'partial_period_handling' => 'partial_period_handling',
+        'start_date' => 'start_date',
+        'force_new_period' => 'force_new_period',
+        'cancel_change' => 'cancel_change',
+        'add_ons' => 'add_ons',
+        'remove_add_ons' => 'remove_add_ons'
     ];
 
     /**
@@ -145,14 +145,14 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'quantity' => 'setQuantity',
         'billing' => 'setBilling',
-        'amountInclVat' => 'setAmountInclVat',
-        'compensationMethod' => 'setCompensationMethod',
-        'partialPeriodHandling' => 'setPartialPeriodHandling',
-        'startDate' => 'setStartDate',
-        'forceNewPeriod' => 'setForceNewPeriod',
-        'cancelChange' => 'setCancelChange',
-        'addOns' => 'setAddOns',
-        'removeAddOns' => 'setRemoveAddOns'
+        'amount_incl_vat' => 'setAmountInclVat',
+        'compensation_method' => 'setCompensationMethod',
+        'partial_period_handling' => 'setPartialPeriodHandling',
+        'start_date' => 'setStartDate',
+        'force_new_period' => 'setForceNewPeriod',
+        'cancel_change' => 'setCancelChange',
+        'add_ons' => 'setAddOns',
+        'remove_add_ons' => 'setRemoveAddOns'
     ];
 
     /**
@@ -166,14 +166,14 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'quantity' => 'getQuantity',
         'billing' => 'getBilling',
-        'amountInclVat' => 'getAmountInclVat',
-        'compensationMethod' => 'getCompensationMethod',
-        'partialPeriodHandling' => 'getPartialPeriodHandling',
-        'startDate' => 'getStartDate',
-        'forceNewPeriod' => 'getForceNewPeriod',
-        'cancelChange' => 'getCancelChange',
-        'addOns' => 'getAddOns',
-        'removeAddOns' => 'getRemoveAddOns'
+        'amount_incl_vat' => 'getAmountInclVat',
+        'compensation_method' => 'getCompensationMethod',
+        'partial_period_handling' => 'getPartialPeriodHandling',
+        'start_date' => 'getStartDate',
+        'force_new_period' => 'getForceNewPeriod',
+        'cancel_change' => 'getCancelChange',
+        'add_ons' => 'getAddOns',
+        'remove_add_ons' => 'getRemoveAddOns'
     ];
 
     /**
@@ -309,14 +309,14 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
-        $this->container['compensationMethod'] = isset($data['compensationMethod']) ? $data['compensationMethod'] : null;
-        $this->container['partialPeriodHandling'] = isset($data['partialPeriodHandling']) ? $data['partialPeriodHandling'] : null;
-        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
-        $this->container['forceNewPeriod'] = isset($data['forceNewPeriod']) ? $data['forceNewPeriod'] : null;
-        $this->container['cancelChange'] = isset($data['cancelChange']) ? $data['cancelChange'] : null;
-        $this->container['addOns'] = isset($data['addOns']) ? $data['addOns'] : null;
-        $this->container['removeAddOns'] = isset($data['removeAddOns']) ? $data['removeAddOns'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['compensation_method'] = isset($data['compensation_method']) ? $data['compensation_method'] : null;
+        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['force_new_period'] = isset($data['force_new_period']) ? $data['force_new_period'] : null;
+        $this->container['cancel_change'] = isset($data['cancel_change']) ? $data['cancel_change'] : null;
+        $this->container['add_ons'] = isset($data['add_ons']) ? $data['add_ons'] : null;
+        $this->container['remove_add_ons'] = isset($data['remove_add_ons']) ? $data['remove_add_ons'] : null;
     }
 
     /**
@@ -348,17 +348,25 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getCompensationMethodAllowableValues();
-        if (!is_null($this->container['compensationMethod']) && !in_array($this->container['compensationMethod'], $allowedValues, true)) {
+        if (!is_null($this->container['compensation_method']) && !in_array(
+                $this->container['compensation_method'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'compensationMethod', must be one of '%s'",
+                "invalid value for 'compensation_method', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($this->container['partialPeriodHandling']) && !in_array($this->container['partialPeriodHandling'], $allowedValues, true)) {
+        if (!is_null($this->container['partial_period_handling']) && !in_array(
+                $this->container['partial_period_handling'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'partialPeriodHandling', must be one of '%s'",
+                "invalid value for 'partial_period_handling', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -517,211 +525,211 @@ class ChangeSubscription implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the optional amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the optional amount is including VAT. Defaults to true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets compensationMethod
+     * Gets compensation_method
      *
      * @return string
      */
     public function getCompensationMethod()
     {
-        return $this->container['compensationMethod'];
+        return $this->container['compensation_method'];
     }
 
     /**
-     * Sets compensationMethod
+     * Sets compensation_method
      *
-     * @param string $compensationMethod In the case of immediate change, optional method for compensation of partial period, either `full_refund`, `prorated_refund`, `full_credit`, `prorated_credit` or `none`. Default is `prorated_refund`
+     * @param string $compensation_method In the case of immediate change, optional method for compensation of partial period, either `full_refund`, `prorated_refund`, `full_credit`, `prorated_credit` or `none`. Default is `prorated_refund`
      *
      * @return $this
      */
-    public function setCompensationMethod($compensationMethod)
+    public function setCompensationMethod($compensation_method)
     {
         $allowedValues = $this->getCompensationMethodAllowableValues();
-        if (!is_null($compensationMethod) && !in_array($compensationMethod, $allowedValues, true)) {
+        if (!is_null($compensation_method) && !in_array($compensation_method, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'compensationMethod', must be one of '%s'",
+                    "Invalid value for 'compensation_method', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['compensationMethod'] = $compensationMethod;
+        $this->container['compensation_method'] = $compensation_method;
 
         return $this;
     }
 
     /**
-     * Gets partialPeriodHandling
+     * Gets partial_period_handling
      *
      * @return string
      */
     public function getPartialPeriodHandling()
     {
-        return $this->container['partialPeriodHandling'];
+        return $this->container['partial_period_handling'];
     }
 
     /**
-     * Sets partialPeriodHandling
+     * Sets partial_period_handling
      *
-     * @param string $partialPeriodHandling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amount, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amount, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
      *
      * @return $this
      */
-    public function setPartialPeriodHandling($partialPeriodHandling)
+    public function setPartialPeriodHandling($partial_period_handling)
     {
         $allowedValues = $this->getPartialPeriodHandlingAllowableValues();
-        if (!is_null($partialPeriodHandling) && !in_array($partialPeriodHandling, $allowedValues, true)) {
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'partialPeriodHandling', must be one of '%s'",
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['partialPeriodHandling'] = $partialPeriodHandling;
+        $this->container['partial_period_handling'] = $partial_period_handling;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return string
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param string $startDate If the subscription change results in a new period due to change to a plan with different scheduling, or the use of argument `force_new_period`, an optional date and time from which the subscription is eligible to schedule first invoice can be given. See subscription create and subscription reactivate argument `start_date`. If the subscription has not yet started it's billing cycles, e.g. in trial or changing from a manual plan, `start_date` will default to now.
+     * @param string $start_date If the subscription change results in a new period due to change to a plan with different scheduling, or the use of argument `force_new_period`, an optional date and time from which the subscription is eligible to schedule first invoice can be given. See subscription create and subscription reactivate argument `start_date`. If the subscription has not yet started it's billing cycles, e.g. in trial or changing from a manual plan, `start_date` will default to now.
      *
      * @return $this
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets forceNewPeriod
+     * Gets force_new_period
      *
      * @return bool
      */
     public function getForceNewPeriod()
     {
-        return $this->container['forceNewPeriod'];
+        return $this->container['force_new_period'];
     }
 
     /**
-     * Sets forceNewPeriod
+     * Sets force_new_period
      *
-     * @param bool $forceNewPeriod If an immediate change should result in a new billing period starting now, or at the optional `start_date`. If the subscription is in trial the trial will be terminated. Default is false. If the subscription change results in a new period due to change to a plan with different scheduling, this option will have no effect as new period is required in this case.
+     * @param bool $force_new_period If an immediate change should result in a new billing period starting now, or at the optional `start_date`. If the subscription is in trial the trial will be terminated. Default is false. If the subscription change results in a new period due to change to a plan with different scheduling, this option will have no effect as new period is required in this case.
      *
      * @return $this
      */
-    public function setForceNewPeriod($forceNewPeriod)
+    public function setForceNewPeriod($force_new_period)
     {
-        $this->container['forceNewPeriod'] = $forceNewPeriod;
+        $this->container['force_new_period'] = $force_new_period;
 
         return $this;
     }
 
     /**
-     * Gets cancelChange
+     * Gets cancel_change
      *
      * @return bool
      */
     public function getCancelChange()
     {
-        return $this->container['cancelChange'];
+        return $this->container['cancel_change'];
     }
 
     /**
-     * Sets cancelChange
+     * Sets cancel_change
      *
-     * @param bool $cancelChange If there are pending changes at renewal for the subscription they can be cancelled using this argument and timing=renewal
+     * @param bool $cancel_change If there are pending changes at renewal for the subscription they can be cancelled using this argument and timing=renewal
      *
      * @return $this
      */
-    public function setCancelChange($cancelChange)
+    public function setCancelChange($cancel_change)
     {
-        $this->container['cancelChange'] = $cancelChange;
+        $this->container['cancel_change'] = $cancel_change;
 
         return $this;
     }
 
     /**
-     * Gets addOns
+     * Gets add_ons
      *
      * @return \Reepay\Model\CreateSubscriptionAddOn[]
      */
     public function getAddOns()
     {
-        return $this->container['addOns'];
+        return $this->container['add_ons'];
     }
 
     /**
-     * Sets addOns
+     * Sets add_ons
      *
-     * @param \Reepay\Model\CreateSubscriptionAddOn[] $addOns Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on. A maximum of 100 add-ons is allowed.
+     * @param \Reepay\Model\CreateSubscriptionAddOn[] $add_ons Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on. A maximum of 100 add-ons is allowed.
      *
      * @return $this
      */
-    public function setAddOns($addOns)
+    public function setAddOns($add_ons)
     {
-        $this->container['addOns'] = $addOns;
+        $this->container['add_ons'] = $add_ons;
 
         return $this;
     }
 
     /**
-     * Gets removeAddOns
+     * Gets remove_add_ons
      *
      * @return string[]
      */
     public function getRemoveAddOns()
     {
-        return $this->container['removeAddOns'];
+        return $this->container['remove_add_ons'];
     }
 
     /**
-     * Sets removeAddOns
+     * Sets remove_add_ons
      *
-     * @param string[] $removeAddOns Subscription add-ons to remove from subscription by subscription add-on handle
+     * @param string[] $remove_add_ons Subscription add-ons to remove from subscription by subscription add-on handle
      *
      * @return $this
      */
-    public function setRemoveAddOns($removeAddOns)
+    public function setRemoveAddOns($remove_add_ons)
     {
-        $this->container['removeAddOns'] = $removeAddOns;
+        $this->container['remove_add_ons'] = $remove_add_ons;
 
         return $this;
     }

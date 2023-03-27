@@ -83,14 +83,14 @@ class PaypalAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientId"
+     * Test attribute "client_id"
      */
     public function testPropertyClientId()
     {
     }
 
     /**
-     * Test attribute "clientSecret"
+     * Test attribute "client_secret"
      */
     public function testPropertyClientSecret()
     {

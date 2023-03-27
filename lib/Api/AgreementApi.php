@@ -3706,8 +3706,10 @@ class AgreementApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -3765,9 +3767,9 @@ class AgreementApi
      *
      * @param \Reepay\Model\TokenRequestorRequest $body (optional)
      *
-     * @return array of \Reepay\Model\TokenRequestorResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\TokenRequestorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTokenRequestorWithHttpInfo($body = null)
     {
@@ -3817,6 +3819,7 @@ class AgreementApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -3887,8 +3890,8 @@ class AgreementApi
      *
      * @param \Reepay\Model\TokenRequestorRequest $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createTokenRequestorAsync($body = null)
     {
@@ -3907,8 +3910,8 @@ class AgreementApi
      *
      * @param \Reepay\Model\TokenRequestorRequest $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createTokenRequestorAsyncWithHttpInfo($body = null)
     {
@@ -3957,17 +3960,19 @@ class AgreementApi
      *
      * @param \Reepay\Model\TokenRequestorRequest $body (optional)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function createTokenRequestorRequest($body = null)
     {
+
         $resourcePath = '/v1/agreement/token_requestor/onboard';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
 
 
         // body params
@@ -5021,6 +5026,7 @@ class AgreementApi
                 }
             }
 
+
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
@@ -5229,8 +5235,10 @@ class AgreementApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -5269,16 +5277,16 @@ class AgreementApi
      *
      * Delete token requestor by id for card type
      *
-     * @param string $cardScheme Card Scheme (required)
-     * @param string $tokenRequestorId Token Requestor Id (required)
+     * @param string $card_scheme Card Scheme (required)
+     * @param string $token_requestor_id Token Requestor Id (required)
      *
-     * @return void
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
      */
-    public function deleteTokenRequestor($cardScheme, $tokenRequestorId)
+    public function deleteTokenRequestor($card_scheme, $token_requestor_id)
     {
-        $this->deleteTokenRequestorWithHttpInfo($cardScheme, $tokenRequestorId);
+        $this->deleteTokenRequestorWithHttpInfo($card_scheme, $token_requestor_id);
     }
 
     /**
@@ -5286,17 +5294,17 @@ class AgreementApi
      *
      * Delete token requestor by id for card type
      *
-     * @param string $cardScheme Card Scheme (required)
-     * @param string $tokenRequestorId Token Requestor Id (required)
+     * @param string $card_scheme Card Scheme (required)
+     * @param string $token_requestor_id Token Requestor Id (required)
      *
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTokenRequestorWithHttpInfo($cardScheme, $tokenRequestorId)
+    public function deleteTokenRequestorWithHttpInfo($card_scheme, $token_requestor_id)
     {
         $returnType = '';
-        $request = $this->deleteTokenRequestorRequest($cardScheme, $tokenRequestorId);
+        $request = $this->deleteTokenRequestorRequest($card_scheme, $token_requestor_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5327,6 +5335,7 @@ class AgreementApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
@@ -5387,15 +5396,15 @@ class AgreementApi
      *
      * Delete token requestor by id for card type
      *
-     * @param string $cardScheme Card Scheme (required)
-     * @param string $tokenRequestorId Token Requestor Id (required)
+     * @param string $card_scheme Card Scheme (required)
+     * @param string $token_requestor_id Token Requestor Id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTokenRequestorAsync($cardScheme, $tokenRequestorId)
+    public function deleteTokenRequestorAsync($card_scheme, $token_requestor_id)
     {
-        return $this->deleteTokenRequestorAsyncWithHttpInfo($cardScheme, $tokenRequestorId)
+        return $this->deleteTokenRequestorAsyncWithHttpInfo($card_scheme, $token_requestor_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5408,16 +5417,16 @@ class AgreementApi
      *
      * Delete token requestor by id for card type
      *
-     * @param string $cardScheme Card Scheme (required)
-     * @param string $tokenRequestorId Token Requestor Id (required)
+     * @param string $card_scheme Card Scheme (required)
+     * @param string $token_requestor_id Token Requestor Id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTokenRequestorAsyncWithHttpInfo($cardScheme, $tokenRequestorId)
+    public function deleteTokenRequestorAsyncWithHttpInfo($card_scheme, $token_requestor_id)
     {
         $returnType = '';
-        $request = $this->deleteTokenRequestorRequest($cardScheme, $tokenRequestorId);
+        $request = $this->deleteTokenRequestorRequest($card_scheme, $token_requestor_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5445,24 +5454,24 @@ class AgreementApi
     /**
      * Create request for operation 'deleteTokenRequestor'
      *
-     * @param string $cardScheme Card Scheme (required)
-     * @param string $tokenRequestorId Token Requestor Id (required)
+     * @param string $card_scheme Card Scheme (required)
+     * @param string $token_requestor_id Token Requestor Id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteTokenRequestorRequest($cardScheme, $tokenRequestorId)
+    protected function deleteTokenRequestorRequest($card_scheme, $token_requestor_id)
     {
-        // verify the required parameter 'cardScheme' is set
-        if ($cardScheme === null || (is_array($cardScheme) && count($cardScheme) === 0)) {
+        // verify the required parameter 'card_scheme' is set
+        if ($card_scheme === null || (is_array($card_scheme) && count($card_scheme) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cardScheme when calling deleteTokenRequestor'
+                'Missing the required parameter $card_scheme when calling deleteTokenRequestor'
             );
         }
-        // verify the required parameter 'tokenRequestorId' is set
-        if ($tokenRequestorId === null || (is_array($tokenRequestorId) && count($tokenRequestorId) === 0)) {
+        // verify the required parameter 'token_requestor_id' is set
+        if ($token_requestor_id === null || (is_array($token_requestor_id) && count($token_requestor_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tokenRequestorId when calling deleteTokenRequestor'
+                'Missing the required parameter $token_requestor_id when calling deleteTokenRequestor'
             );
         }
 
@@ -5474,12 +5483,12 @@ class AgreementApi
         $multipart = false;
 
         // query params
-        if ($cardScheme !== null) {
-            $queryParams['card_scheme'] = ObjectSerializer::toQueryValue($cardScheme, null);
+        if ($card_scheme !== null) {
+            $queryParams['card_scheme'] = ObjectSerializer::toQueryValue($card_scheme, null);
         }
         // query params
-        if ($tokenRequestorId !== null) {
-            $queryParams['token_requestor_id'] = ObjectSerializer::toQueryValue($tokenRequestorId, null);
+        if ($token_requestor_id !== null) {
+            $queryParams['token_requestor_id'] = ObjectSerializer::toQueryValue($token_requestor_id, null);
         }
 
 
@@ -6184,16 +6193,16 @@ class AgreementApi
      *
      * Get all card gateway agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\GatewayAgreement[]
      */
-    public function getCardGatewayAgreements($onlyActive = 'false', $nonDeleted = 'false')
+    public function getCardGatewayAgreements($only_active = 'false', $non_deleted = 'false')
     {
-        list($response) = $this->getCardGatewayAgreementsWithHttpInfo($onlyActive, $nonDeleted);
+        list($response) = $this->getCardGatewayAgreementsWithHttpInfo($only_active, $non_deleted);
         return $response;
     }
 
@@ -6202,17 +6211,17 @@ class AgreementApi
      *
      * Get all card gateway agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\GatewayAgreement[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCardGatewayAgreementsWithHttpInfo($onlyActive = 'false', $nonDeleted = 'false')
+    public function getCardGatewayAgreementsWithHttpInfo($only_active = 'false', $non_deleted = 'false')
     {
         $returnType = '\Reepay\Model\GatewayAgreement[]';
-        $request = $this->getCardGatewayAgreementsRequest($onlyActive, $nonDeleted);
+        $request = $this->getCardGatewayAgreementsRequest($only_active, $non_deleted);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6326,15 +6335,15 @@ class AgreementApi
      *
      * Get all card gateway agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCardGatewayAgreementsAsync($onlyActive = 'false', $nonDeleted = 'false')
+    public function getCardGatewayAgreementsAsync($only_active = 'false', $non_deleted = 'false')
     {
-        return $this->getCardGatewayAgreementsAsyncWithHttpInfo($onlyActive, $nonDeleted)
+        return $this->getCardGatewayAgreementsAsyncWithHttpInfo($only_active, $non_deleted)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6347,16 +6356,16 @@ class AgreementApi
      *
      * Get all card gateway agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCardGatewayAgreementsAsyncWithHttpInfo($onlyActive = 'false', $nonDeleted = 'false')
+    public function getCardGatewayAgreementsAsyncWithHttpInfo($only_active = 'false', $non_deleted = 'false')
     {
         $returnType = '\Reepay\Model\GatewayAgreement[]';
-        $request = $this->getCardGatewayAgreementsRequest($onlyActive, $nonDeleted);
+        $request = $this->getCardGatewayAgreementsRequest($only_active, $non_deleted);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6398,15 +6407,14 @@ class AgreementApi
     /**
      * Create request for operation 'getCardGatewayAgreements'
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCardGatewayAgreementsRequest($onlyActive = 'false', $nonDeleted = 'false')
+    protected function getCardGatewayAgreementsRequest($only_active = 'false', $non_deleted = 'false')
     {
-
         $resourcePath = '/v1/agreement/card_gateway';
         $formParams = [];
         $queryParams = [];
@@ -6415,12 +6423,12 @@ class AgreementApi
         $multipart = false;
 
         // query params
-        if ($onlyActive !== null) {
-            $queryParams['only_active'] = ObjectSerializer::toQueryValue($onlyActive, null);
+        if ($only_active !== null) {
+            $queryParams['only_active'] = ObjectSerializer::toQueryValue($only_active, null);
         }
         // query params
-        if ($nonDeleted !== null) {
-            $queryParams['non_deleted'] = ObjectSerializer::toQueryValue($nonDeleted, null);
+        if ($non_deleted !== null) {
+            $queryParams['non_deleted'] = ObjectSerializer::toQueryValue($non_deleted, null);
         }
 
 
@@ -6811,16 +6819,16 @@ class AgreementApi
      *
      * Get all agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\GatewayAgreement[]
      */
-    public function getGatewayAgreements($onlyActive = 'false', $nonDeleted = 'false')
+    public function getGatewayAgreements($only_active = 'false', $non_deleted = 'false')
     {
-        list($response) = $this->getGatewayAgreementsWithHttpInfo($onlyActive, $nonDeleted);
+        list($response) = $this->getGatewayAgreementsWithHttpInfo($only_active, $non_deleted);
         return $response;
     }
 
@@ -6829,17 +6837,17 @@ class AgreementApi
      *
      * Get all agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\GatewayAgreement[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGatewayAgreementsWithHttpInfo($onlyActive = 'false', $nonDeleted = 'false')
+    public function getGatewayAgreementsWithHttpInfo($only_active = 'false', $non_deleted = 'false')
     {
         $returnType = '\Reepay\Model\GatewayAgreement[]';
-        $request = $this->getGatewayAgreementsRequest($onlyActive, $nonDeleted);
+        $request = $this->getGatewayAgreementsRequest($only_active, $non_deleted);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6953,15 +6961,15 @@ class AgreementApi
      *
      * Get all agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGatewayAgreementsAsync($onlyActive = 'false', $nonDeleted = 'false')
+    public function getGatewayAgreementsAsync($only_active = 'false', $non_deleted = 'false')
     {
-        return $this->getGatewayAgreementsAsyncWithHttpInfo($onlyActive, $nonDeleted)
+        return $this->getGatewayAgreementsAsyncWithHttpInfo($only_active, $non_deleted)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6974,16 +6982,16 @@ class AgreementApi
      *
      * Get all agreements
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGatewayAgreementsAsyncWithHttpInfo($onlyActive = 'false', $nonDeleted = 'false')
+    public function getGatewayAgreementsAsyncWithHttpInfo($only_active = 'false', $non_deleted = 'false')
     {
         $returnType = '\Reepay\Model\GatewayAgreement[]';
-        $request = $this->getGatewayAgreementsRequest($onlyActive, $nonDeleted);
+        $request = $this->getGatewayAgreementsRequest($only_active, $non_deleted);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7025,15 +7033,14 @@ class AgreementApi
     /**
      * Create request for operation 'getGatewayAgreements'
      *
-     * @param  bool $onlyActive Get only active (optional, default to false)
-     * @param  bool $nonDeleted Get only non-deleted (optional, default to false)
+     * @param bool $only_active Get only active (optional, default to false)
+     * @param bool $non_deleted Get only non-deleted (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getGatewayAgreementsRequest($onlyActive = 'false', $nonDeleted = 'false')
+    protected function getGatewayAgreementsRequest($only_active = 'false', $non_deleted = 'false')
     {
-
         $resourcePath = '/v1/agreement';
         $formParams = [];
         $queryParams = [];
@@ -7042,12 +7049,12 @@ class AgreementApi
         $multipart = false;
 
         // query params
-        if ($onlyActive !== null) {
-            $queryParams['only_active'] = ObjectSerializer::toQueryValue($onlyActive, null);
+        if ($only_active !== null) {
+            $queryParams['only_active'] = ObjectSerializer::toQueryValue($only_active, null);
         }
         // query params
-        if ($nonDeleted !== null) {
-            $queryParams['non_deleted'] = ObjectSerializer::toQueryValue($nonDeleted, null);
+        if ($non_deleted !== null) {
+            $queryParams['non_deleted'] = ObjectSerializer::toQueryValue($non_deleted, null);
         }
 
 
@@ -7084,8 +7091,10 @@ class AgreementApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -7124,15 +7133,15 @@ class AgreementApi
      *
      * Get token requestors for card type
      *
-     * @param string $cardScheme Card Scheme (required)
+     * @param string $card_scheme Card Scheme (required)
      *
-     * @return \Reepay\Model\TokenRequestorResponse[]
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\TokenRequestorResponse[]
      */
-    public function getTokenRequestor($cardScheme)
+    public function getTokenRequestor($card_scheme)
     {
-        list($response) = $this->getTokenRequestorWithHttpInfo($cardScheme);
+        list($response) = $this->getTokenRequestorWithHttpInfo($card_scheme);
         return $response;
     }
 
@@ -7141,16 +7150,16 @@ class AgreementApi
      *
      * Get token requestors for card type
      *
-     * @param string $cardScheme Card Scheme (required)
+     * @param string $card_scheme Card Scheme (required)
      *
-     * @return array of \Reepay\Model\TokenRequestorResponse[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\TokenRequestorResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTokenRequestorWithHttpInfo($cardScheme)
+    public function getTokenRequestorWithHttpInfo($card_scheme)
     {
         $returnType = '\Reepay\Model\TokenRequestorResponse[]';
-        $request = $this->getTokenRequestorRequest($cardScheme);
+        $request = $this->getTokenRequestorRequest($card_scheme);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7195,6 +7204,7 @@ class AgreementApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -7263,14 +7273,14 @@ class AgreementApi
      *
      * Get token requestors for card type
      *
-     * @param string $cardScheme Card Scheme (required)
+     * @param string $card_scheme Card Scheme (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTokenRequestorAsync($cardScheme)
+    public function getTokenRequestorAsync($card_scheme)
     {
-        return $this->getTokenRequestorAsyncWithHttpInfo($cardScheme)
+        return $this->getTokenRequestorAsyncWithHttpInfo($card_scheme)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7283,15 +7293,15 @@ class AgreementApi
      *
      * Get token requestors for card type
      *
-     * @param string $cardScheme Card Scheme (required)
+     * @param string $card_scheme Card Scheme (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTokenRequestorAsyncWithHttpInfo($cardScheme)
+    public function getTokenRequestorAsyncWithHttpInfo($card_scheme)
     {
         $returnType = '\Reepay\Model\TokenRequestorResponse[]';
-        $request = $this->getTokenRequestorRequest($cardScheme);
+        $request = $this->getTokenRequestorRequest($card_scheme);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7333,17 +7343,17 @@ class AgreementApi
     /**
      * Create request for operation 'getTokenRequestor'
      *
-     * @param string $cardScheme Card Scheme (required)
+     * @param string $card_scheme Card Scheme (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTokenRequestorRequest($cardScheme)
+    protected function getTokenRequestorRequest($card_scheme)
     {
-        // verify the required parameter 'cardScheme' is set
-        if ($cardScheme === null || (is_array($cardScheme) && count($cardScheme) === 0)) {
+        // verify the required parameter 'card_scheme' is set
+        if ($card_scheme === null || (is_array($card_scheme) && count($card_scheme) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cardScheme when calling getTokenRequestor'
+                'Missing the required parameter $card_scheme when calling getTokenRequestor'
             );
         }
 
@@ -7355,8 +7365,8 @@ class AgreementApi
         $multipart = false;
 
         // query params
-        if ($cardScheme !== null) {
-            $queryParams['card_scheme'] = ObjectSerializer::toQueryValue($cardScheme, null);
+        if ($card_scheme !== null) {
+            $queryParams['card_scheme'] = ObjectSerializer::toQueryValue($card_scheme, null);
         }
 
 

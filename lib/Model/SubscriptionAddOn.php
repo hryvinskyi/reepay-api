@@ -62,8 +62,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         'name' => 'string',
         'description' => 'string',
         'created' => '\DateTime',
-        'addOn' => '\Reepay\Model\AddOn',
-        'amountInclVat' => 'bool'
+        'add_on' => '\Reepay\Model\AddOn',
+        'amount_incl_vat' => 'bool'
     ];
 
     /**
@@ -78,8 +78,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         'name' => null,
         'description' => null,
         'created' => 'date-time',
-        'addOn' => null,
-        'amountInclVat' => null
+        'add_on' => null,
+        'amount_incl_vat' => null
     ];
 
     /**
@@ -115,8 +115,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         'name' => 'name',
         'description' => 'description',
         'created' => 'created',
-        'addOn' => 'add_on',
-        'amountInclVat' => 'amount_incl_vat'
+        'add_on' => 'add_on',
+        'amount_incl_vat' => 'amount_incl_vat'
     ];
 
     /**
@@ -131,8 +131,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'description' => 'setDescription',
         'created' => 'setCreated',
-        'addOn' => 'setAddOn',
-        'amountInclVat' => 'setAmountInclVat'
+        'add_on' => 'setAddOn',
+        'amount_incl_vat' => 'setAmountInclVat'
     ];
 
     /**
@@ -147,8 +147,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'description' => 'getDescription',
         'created' => 'getCreated',
-        'addOn' => 'getAddOn',
-        'amountInclVat' => 'getAmountInclVat'
+        'add_on' => 'getAddOn',
+        'amount_incl_vat' => 'getAmountInclVat'
     ];
 
     /**
@@ -215,8 +215,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['addOn'] = isset($data['addOn']) ? $data['addOn'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
+        $this->container['add_on'] = isset($data['add_on']) ? $data['add_on'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
     /**
@@ -234,8 +234,8 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['addOn'] === null) {
-            $invalidProperties[] = "'addOn' can't be null";
+        if ($this->container['add_on'] === null) {
+            $invalidProperties[] = "'add_on' can't be null";
         }
         return $invalidProperties;
     }
@@ -397,49 +397,49 @@ class SubscriptionAddOn implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets addOn
+     * Gets add_on
      *
      * @return \Reepay\Model\AddOn
      */
     public function getAddOn()
     {
-        return $this->container['addOn'];
+        return $this->container['add_on'];
     }
 
     /**
-     * Sets addOn
+     * Sets add_on
      *
-     * @param \Reepay\Model\AddOn $addOn addOn
+     * @param \Reepay\Model\AddOn $add_on add_on
      *
      * @return $this
      */
-    public function setAddOn($addOn)
+    public function setAddOn($add_on)
     {
-        $this->container['addOn'] = $addOn;
+        $this->container['add_on'] = $add_on;
 
         return $this;
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat If fixed price this parameter tells whether the amount is including VAT
+     * @param bool $amount_incl_vat If fixed price this parameter tells whether the amount is including VAT
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }

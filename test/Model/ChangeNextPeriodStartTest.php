@@ -76,7 +76,7 @@ class ChangeNextPeriodStartTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "nextPeriodStart"
+     * Test attribute "next_period_start"
      */
     public function testPropertyNextPeriodStart()
     {

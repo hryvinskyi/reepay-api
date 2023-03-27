@@ -132,28 +132,28 @@ class DiscountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "applyTo"
+     * Test attribute "apply_to"
      */
     public function testPropertyApplyTo()
     {
     }
 
     /**
-     * Test attribute "fixedCount"
+     * Test attribute "fixed_count"
      */
     public function testPropertyFixedCount()
     {
     }
 
     /**
-     * Test attribute "fixedPeriodUnit"
+     * Test attribute "fixed_period_unit"
      */
     public function testPropertyFixedPeriodUnit()
     {
     }
 
     /**
-     * Test attribute "fixedPeriod"
+     * Test attribute "fixed_period"
      */
     public function testPropertyFixedPeriod()
     {

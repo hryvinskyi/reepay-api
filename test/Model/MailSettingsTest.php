@@ -83,14 +83,14 @@ class MailSettingsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "defaultFrom"
+     * Test attribute "default_from"
      */
     public function testPropertyDefaultFrom()
     {
     }
 
     /**
-     * Test attribute "replyTo"
+     * Test attribute "reply_to"
      */
     public function testPropertyReplyTo()
     {

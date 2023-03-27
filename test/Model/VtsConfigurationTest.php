@@ -76,14 +76,14 @@ class VtsConfigurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "emvTokenizationStatus"
+     * Test attribute "emv_tokenization_status"
      */
     public function testPropertyEmvTokenizationStatus()
     {
     }
 
     /**
-     * Test attribute "tokenRequestorId"
+     * Test attribute "token_requestor_id"
      */
     public function testPropertyTokenRequestorId()
     {

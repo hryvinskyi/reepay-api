@@ -83,28 +83,28 @@ class UpdateCouponTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "allPlans"
+     * Test attribute "all_plans"
      */
     public function testPropertyAllPlans()
     {
     }
 
     /**
-     * Test attribute "eligiblePlans"
+     * Test attribute "eligible_plans"
      */
     public function testPropertyEligiblePlans()
     {
     }
 
     /**
-     * Test attribute "maxRedemptions"
+     * Test attribute "max_redemptions"
      */
     public function testPropertyMaxRedemptions()
     {
     }
 
     /**
-     * Test attribute "validUntil"
+     * Test attribute "valid_until"
      */
     public function testPropertyValidUntil()
     {

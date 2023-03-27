@@ -67,14 +67,14 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         'error' => 'string',
         'fingerprint' => 'string',
         'provider' => 'string',
-        'errorState' => 'string',
-        'cardType' => 'string',
-        'expDate' => 'string',
-        'maskedCard' => 'string',
-        'acquirerCode' => 'string',
-        'acquirerMessage' => 'string',
-        'acquirerReference' => 'string',
-        'textOnStatement' => 'string'
+        'error_state' => 'string',
+        'card_type' => 'string',
+        'exp_date' => 'string',
+        'masked_card' => 'string',
+        'acquirer_code' => 'string',
+        'acquirer_message' => 'string',
+        'acquirer_reference' => 'string',
+        'text_on_statement' => 'string'
     ];
 
     /**
@@ -94,14 +94,14 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         'error' => null,
         'fingerprint' => null,
         'provider' => null,
-        'errorState' => null,
-        'cardType' => null,
-        'expDate' => null,
-        'maskedCard' => null,
-        'acquirerCode' => null,
-        'acquirerMessage' => null,
-        'acquirerReference' => null,
-        'textOnStatement' => null
+        'error_state' => null,
+        'card_type' => null,
+        'exp_date' => null,
+        'masked_card' => null,
+        'acquirer_code' => null,
+        'acquirer_message' => null,
+        'acquirer_reference' => null,
+        'text_on_statement' => null
     ];
 
     /**
@@ -142,14 +142,14 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         'error' => 'error',
         'fingerprint' => 'fingerprint',
         'provider' => 'provider',
-        'errorState' => 'error_state',
-        'cardType' => 'card_type',
-        'expDate' => 'exp_date',
-        'maskedCard' => 'masked_card',
-        'acquirerCode' => 'acquirer_code',
-        'acquirerMessage' => 'acquirer_message',
-        'acquirerReference' => 'acquirer_reference',
-        'textOnStatement' => 'text_on_statement'
+        'error_state' => 'error_state',
+        'card_type' => 'card_type',
+        'exp_date' => 'exp_date',
+        'masked_card' => 'masked_card',
+        'acquirer_code' => 'acquirer_code',
+        'acquirer_message' => 'acquirer_message',
+        'acquirer_reference' => 'acquirer_reference',
+        'text_on_statement' => 'text_on_statement'
     ];
 
     /**
@@ -169,14 +169,14 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         'error' => 'setError',
         'fingerprint' => 'setFingerprint',
         'provider' => 'setProvider',
-        'errorState' => 'setErrorState',
-        'cardType' => 'setCardType',
-        'expDate' => 'setExpDate',
-        'maskedCard' => 'setMaskedCard',
-        'acquirerCode' => 'setAcquirerCode',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'acquirerReference' => 'setAcquirerReference',
-        'textOnStatement' => 'setTextOnStatement'
+        'error_state' => 'setErrorState',
+        'card_type' => 'setCardType',
+        'exp_date' => 'setExpDate',
+        'masked_card' => 'setMaskedCard',
+        'acquirer_code' => 'setAcquirerCode',
+        'acquirer_message' => 'setAcquirerMessage',
+        'acquirer_reference' => 'setAcquirerReference',
+        'text_on_statement' => 'setTextOnStatement'
     ];
 
     /**
@@ -196,14 +196,14 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         'error' => 'getError',
         'fingerprint' => 'getFingerprint',
         'provider' => 'getProvider',
-        'errorState' => 'getErrorState',
-        'cardType' => 'getCardType',
-        'expDate' => 'getExpDate',
-        'maskedCard' => 'getMaskedCard',
-        'acquirerCode' => 'getAcquirerCode',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'acquirerReference' => 'getAcquirerReference',
-        'textOnStatement' => 'getTextOnStatement'
+        'error_state' => 'getErrorState',
+        'card_type' => 'getCardType',
+        'exp_date' => 'getExpDate',
+        'masked_card' => 'getMaskedCard',
+        'acquirer_code' => 'getAcquirerCode',
+        'acquirer_message' => 'getAcquirerMessage',
+        'acquirer_reference' => 'getAcquirerReference',
+        'text_on_statement' => 'getTextOnStatement'
     ];
 
     /**
@@ -377,14 +377,14 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['fingerprint'] = isset($data['fingerprint']) ? $data['fingerprint'] : null;
         $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['cardType'] = isset($data['cardType']) ? $data['cardType'] : null;
-        $this->container['expDate'] = isset($data['expDate']) ? $data['expDate'] : null;
-        $this->container['maskedCard'] = isset($data['maskedCard']) ? $data['maskedCard'] : null;
-        $this->container['acquirerCode'] = isset($data['acquirerCode']) ? $data['acquirerCode'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['acquirerReference'] = isset($data['acquirerReference']) ? $data['acquirerReference'] : null;
-        $this->container['textOnStatement'] = isset($data['textOnStatement']) ? $data['textOnStatement'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
+        $this->container['exp_date'] = isset($data['exp_date']) ? $data['exp_date'] : null;
+        $this->container['masked_card'] = isset($data['masked_card']) ? $data['masked_card'] : null;
+        $this->container['acquirer_code'] = isset($data['acquirer_code']) ? $data['acquirer_code'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['acquirer_reference'] = isset($data['acquirer_reference']) ? $data['acquirer_reference'] : null;
+        $this->container['text_on_statement'] = isset($data['text_on_statement']) ? $data['text_on_statement'] : null;
     }
 
     /**
@@ -428,20 +428,24 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['cardType'] === null) {
-            $invalidProperties[] = "'cardType' can't be null";
+        if ($this->container['card_type'] === null) {
+            $invalidProperties[] = "'card_type' can't be null";
         }
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
+        if (!is_null($this->container['card_type']) && !in_array($this->container['card_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'cardType', must be one of '%s'",
+                "invalid value for 'card_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -744,211 +748,211 @@ class PayoutTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
+     * @param string $error_state Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets cardType
+     * Gets card_type
      *
      * @return string
      */
     public function getCardType()
     {
-        return $this->container['cardType'];
+        return $this->container['card_type'];
     }
 
     /**
-     * Sets cardType
+     * Sets card_type
      *
-     * @param string $cardType Card type: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @param string $card_type Card type: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
      *
      * @return $this
      */
-    public function setCardType($cardType)
+    public function setCardType($card_type)
     {
         $allowedValues = $this->getCardTypeAllowableValues();
-        if (!in_array($cardType, $allowedValues, true)) {
+        if (!in_array($card_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'cardType', must be one of '%s'",
+                    "Invalid value for 'card_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['cardType'] = $cardType;
+        $this->container['card_type'] = $card_type;
 
         return $this;
     }
 
     /**
-     * Gets expDate
+     * Gets exp_date
      *
      * @return string
      */
     public function getExpDate()
     {
-        return $this->container['expDate'];
+        return $this->container['exp_date'];
     }
 
     /**
-     * Sets expDate
+     * Sets exp_date
      *
-     * @param string $expDate Card expire date on form MM-YY
+     * @param string $exp_date Card expire date on form MM-YY
      *
      * @return $this
      */
-    public function setExpDate($expDate)
+    public function setExpDate($exp_date)
     {
-        $this->container['expDate'] = $expDate;
+        $this->container['exp_date'] = $exp_date;
 
         return $this;
     }
 
     /**
-     * Gets maskedCard
+     * Gets masked_card
      *
      * @return string
      */
     public function getMaskedCard()
     {
-        return $this->container['maskedCard'];
+        return $this->container['masked_card'];
     }
 
     /**
-     * Sets maskedCard
+     * Sets masked_card
      *
-     * @param string $maskedCard Masked card number
+     * @param string $masked_card Masked card number
      *
      * @return $this
      */
-    public function setMaskedCard($maskedCard)
+    public function setMaskedCard($masked_card)
     {
-        $this->container['maskedCard'] = $maskedCard;
+        $this->container['masked_card'] = $masked_card;
 
         return $this;
     }
 
     /**
-     * Gets acquirerCode
+     * Gets acquirer_code
      *
      * @return string
      */
     public function getAcquirerCode()
     {
-        return $this->container['acquirerCode'];
+        return $this->container['acquirer_code'];
     }
 
     /**
-     * Sets acquirerCode
+     * Sets acquirer_code
      *
-     * @param string $acquirerCode Acquirer error code in case of error
+     * @param string $acquirer_code Acquirer error code in case of error
      *
      * @return $this
      */
-    public function setAcquirerCode($acquirerCode)
+    public function setAcquirerCode($acquirer_code)
     {
-        $this->container['acquirerCode'] = $acquirerCode;
+        $this->container['acquirer_code'] = $acquirer_code;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets acquirerReference
+     * Gets acquirer_reference
      *
      * @return string
      */
     public function getAcquirerReference()
     {
-        return $this->container['acquirerReference'];
+        return $this->container['acquirer_reference'];
     }
 
     /**
-     * Sets acquirerReference
+     * Sets acquirer_reference
      *
-     * @param string $acquirerReference Acquirer reference to transaction. E.g. Nets order id or Clearhaus reference.
+     * @param string $acquirer_reference Acquirer reference to transaction. E.g. Nets order id or Clearhaus reference.
      *
      * @return $this
      */
-    public function setAcquirerReference($acquirerReference)
+    public function setAcquirerReference($acquirer_reference)
     {
-        $this->container['acquirerReference'] = $acquirerReference;
+        $this->container['acquirer_reference'] = $acquirer_reference;
 
         return $this;
     }
 
     /**
-     * Gets textOnStatement
+     * Gets text_on_statement
      *
      * @return string
      */
     public function getTextOnStatement()
     {
-        return $this->container['textOnStatement'];
+        return $this->container['text_on_statement'];
     }
 
     /**
-     * Sets textOnStatement
+     * Sets text_on_statement
      *
-     * @param string $textOnStatement Resulting text on bank statement if known
+     * @param string $text_on_statement Resulting text on bank statement if known
      *
      * @return $this
      */
-    public function setTextOnStatement($textOnStatement)
+    public function setTextOnStatement($text_on_statement)
     {
-        $this->container['textOnStatement'] = $textOnStatement;
+        $this->container['text_on_statement'] = $text_on_statement;
 
         return $this;
     }

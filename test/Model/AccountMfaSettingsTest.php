@@ -76,7 +76,7 @@ class AccountMfaSettingsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "mfaPolicy"
+     * Test attribute "mfa_policy"
      */
     public function testPropertyMfaPolicy()
     {

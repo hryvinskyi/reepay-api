@@ -90,7 +90,7 @@ class CreateMpsAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "returnUrl"
+     * Test attribute "return_url"
      */
     public function testPropertyReturnUrl()
     {
@@ -104,21 +104,21 @@ class CreateMpsAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shopName"
+     * Test attribute "shop_name"
      */
     public function testPropertyShopName()
     {
     }
 
     /**
-     * Test attribute "merchantVat"
+     * Test attribute "merchant_vat"
      */
     public function testPropertyMerchantVat()
     {
     }
 
     /**
-     * Test attribute "asyncOneOff"
+     * Test attribute "async_one_off"
      */
     public function testPropertyAsyncOneOff()
     {

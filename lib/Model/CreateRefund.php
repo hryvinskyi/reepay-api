@@ -60,8 +60,8 @@ class CreateRefund implements ModelInterface, ArrayAccess
         'key' => 'string',
         'amount' => 'int',
         'text' => 'string',
-        'noteLines' => '\Reepay\Model\CreateCreditNoteLine[]',
-        'manualTransfer' => '\Reepay\Model\ManualRefundTransfer'
+        'note_lines' => '\Reepay\Model\CreateCreditNoteLine[]',
+        'manual_transfer' => '\Reepay\Model\ManualRefundTransfer'
     ];
 
     /**
@@ -74,8 +74,8 @@ class CreateRefund implements ModelInterface, ArrayAccess
         'key' => null,
         'amount' => 'int32',
         'text' => null,
-        'noteLines' => null,
-        'manualTransfer' => null
+        'note_lines' => null,
+        'manual_transfer' => null
     ];
 
     /**
@@ -109,8 +109,8 @@ class CreateRefund implements ModelInterface, ArrayAccess
         'key' => 'key',
         'amount' => 'amount',
         'text' => 'text',
-        'noteLines' => 'note_lines',
-        'manualTransfer' => 'manual_transfer'
+        'note_lines' => 'note_lines',
+        'manual_transfer' => 'manual_transfer'
     ];
 
     /**
@@ -123,8 +123,8 @@ class CreateRefund implements ModelInterface, ArrayAccess
         'key' => 'setKey',
         'amount' => 'setAmount',
         'text' => 'setText',
-        'noteLines' => 'setNoteLines',
-        'manualTransfer' => 'setManualTransfer'
+        'note_lines' => 'setNoteLines',
+        'manual_transfer' => 'setManualTransfer'
     ];
 
     /**
@@ -137,8 +137,8 @@ class CreateRefund implements ModelInterface, ArrayAccess
         'key' => 'getKey',
         'amount' => 'getAmount',
         'text' => 'getText',
-        'noteLines' => 'getNoteLines',
-        'manualTransfer' => 'getManualTransfer'
+        'note_lines' => 'getNoteLines',
+        'manual_transfer' => 'getManualTransfer'
     ];
 
     /**
@@ -203,8 +203,8 @@ class CreateRefund implements ModelInterface, ArrayAccess
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['noteLines'] = isset($data['noteLines']) ? $data['noteLines'] : null;
-        $this->container['manualTransfer'] = isset($data['manualTransfer']) ? $data['manualTransfer'] : null;
+        $this->container['note_lines'] = isset($data['note_lines']) ? $data['note_lines'] : null;
+        $this->container['manual_transfer'] = isset($data['manual_transfer']) ? $data['manual_transfer'] : null;
     }
 
     /**
@@ -331,49 +331,49 @@ class CreateRefund implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets noteLines
+     * Gets note_lines
      *
      * @return \Reepay\Model\CreateCreditNoteLine[]
      */
     public function getNoteLines()
     {
-        return $this->container['noteLines'];
+        return $this->container['note_lines'];
     }
 
     /**
-     * Sets noteLines
+     * Sets note_lines
      *
-     * @param \Reepay\Model\CreateCreditNoteLine[] $noteLines Refund credit note lines to give detailed information for credit note. Alternative to `amount`.
+     * @param \Reepay\Model\CreateCreditNoteLine[] $note_lines Refund credit note lines to give detailed information for credit note. Alternative to `amount`.
      *
      * @return $this
      */
-    public function setNoteLines($noteLines)
+    public function setNoteLines($note_lines)
     {
-        $this->container['noteLines'] = $noteLines;
+        $this->container['note_lines'] = $note_lines;
 
         return $this;
     }
 
     /**
-     * Gets manualTransfer
+     * Gets manual_transfer
      *
      * @return \Reepay\Model\ManualRefundTransfer
      */
     public function getManualTransfer()
     {
-        return $this->container['manualTransfer'];
+        return $this->container['manual_transfer'];
     }
 
     /**
-     * Sets manualTransfer
+     * Sets manual_transfer
      *
-     * @param \Reepay\Model\ManualRefundTransfer $manualTransfer manualTransfer
+     * @param \Reepay\Model\ManualRefundTransfer $manual_transfer manual_transfer
      *
      * @return $this
      */
-    public function setManualTransfer($manualTransfer)
+    public function setManualTransfer($manual_transfer)
     {
-        $this->container['manualTransfer'] = $manualTransfer;
+        $this->container['manual_transfer'] = $manual_transfer;
 
         return $this;
     }

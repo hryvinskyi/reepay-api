@@ -63,7 +63,7 @@ class ChargeList implements ModelInterface, ArrayAccess
         'from' => 'string',
         'content' => '\Reepay\Model\Charge[]',
         'range' => 'string',
-        'nextPageToken' => 'string'
+        'next_page_token' => 'string'
     ];
 
     /**
@@ -78,7 +78,7 @@ class ChargeList implements ModelInterface, ArrayAccess
         'from' => null,
         'content' => null,
         'range' => null,
-        'nextPageToken' => null
+        'next_page_token' => null
     ];
 
     /**
@@ -114,7 +114,7 @@ class ChargeList implements ModelInterface, ArrayAccess
         'from' => 'from',
         'content' => 'content',
         'range' => 'range',
-        'nextPageToken' => 'next_page_token'
+        'next_page_token' => 'next_page_token'
     ];
 
     /**
@@ -129,7 +129,7 @@ class ChargeList implements ModelInterface, ArrayAccess
         'from' => 'setFrom',
         'content' => 'setContent',
         'range' => 'setRange',
-        'nextPageToken' => 'setNextPageToken'
+        'next_page_token' => 'setNextPageToken'
     ];
 
     /**
@@ -144,7 +144,7 @@ class ChargeList implements ModelInterface, ArrayAccess
         'from' => 'getFrom',
         'content' => 'getContent',
         'range' => 'getRange',
-        'nextPageToken' => 'getNextPageToken'
+        'next_page_token' => 'getNextPageToken'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ChargeList implements ModelInterface, ArrayAccess
         $this->container['from'] = isset($data['from']) ? $data['from'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['range'] = isset($data['range']) ? $data['range'] : null;
-        $this->container['nextPageToken'] = isset($data['nextPageToken']) ? $data['nextPageToken'] : null;
+        $this->container['next_page_token'] = isset($data['next_page_token']) ? $data['next_page_token'] : null;
     }
 
     /**
@@ -401,25 +401,25 @@ class ChargeList implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nextPageToken
+     * Gets next_page_token
      *
      * @return string
      */
     public function getNextPageToken()
     {
-        return $this->container['nextPageToken'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets nextPageToken
+     * Sets next_page_token
      *
-     * @param string $nextPageToken Pagination token to use to get the next page. Notice that page size and range should be the same for all page requests. If not present the last page has been reached.
+     * @param string $next_page_token Pagination token to use to get the next page. Notice that page size and range should be the same for all page requests. If not present the last page has been reached.
      *
      * @return $this
      */
-    public function setNextPageToken($nextPageToken)
+    public function setNextPageToken($next_page_token)
     {
-        $this->container['nextPageToken'] = $nextPageToken;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }

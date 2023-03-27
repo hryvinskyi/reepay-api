@@ -69,35 +69,35 @@ class Customer implements ModelInterface, ArrayAccess
         'subscriptions' => 'int',
         'created' => '\DateTime',
         'deleted' => '\DateTime',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'postalCode' => 'string',
-        'activeSubscriptions' => 'int',
-        'trialActiveSubscriptions' => 'int',
-        'trialCancelledSubscriptions' => 'int',
-        'expiredSubscriptions' => 'int',
-        'onHoldSubscriptions' => 'int',
-        'cancelledSubscriptions' => 'int',
-        'nonRenewingSubscriptions' => 'int',
-        'failedInvoices' => 'int',
-        'failedAmount' => 'int',
-        'cancelledInvoices' => 'int',
-        'cancelledAmount' => 'int',
-        'pendingInvoices' => 'int',
-        'pendingAmount' => 'int',
-        'dunningInvoices' => 'int',
-        'dunningAmount' => 'int',
-        'settledInvoices' => 'int',
-        'settledAmount' => 'int',
-        'refundedAmount' => 'int',
-        'pendingAdditionalCosts' => 'int',
-        'pendingAdditionalCostAmount' => 'int',
-        'transferredAdditionalCosts' => 'int',
-        'transferredAdditionalCostAmount' => 'int',
-        'pendingCredits' => 'int',
-        'pendingCreditAmount' => 'int',
-        'transferredCredits' => 'int',
-        'transferredCreditAmount' => 'int'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'postal_code' => 'string',
+        'active_subscriptions' => 'int',
+        'trial_active_subscriptions' => 'int',
+        'trial_cancelled_subscriptions' => 'int',
+        'expired_subscriptions' => 'int',
+        'on_hold_subscriptions' => 'int',
+        'cancelled_subscriptions' => 'int',
+        'non_renewing_subscriptions' => 'int',
+        'failed_invoices' => 'int',
+        'failed_amount' => 'int',
+        'cancelled_invoices' => 'int',
+        'cancelled_amount' => 'int',
+        'pending_invoices' => 'int',
+        'pending_amount' => 'int',
+        'dunning_invoices' => 'int',
+        'dunning_amount' => 'int',
+        'settled_invoices' => 'int',
+        'settled_amount' => 'int',
+        'refunded_amount' => 'int',
+        'pending_additional_costs' => 'int',
+        'pending_additional_cost_amount' => 'int',
+        'transferred_additional_costs' => 'int',
+        'transferred_additional_cost_amount' => 'int',
+        'pending_credits' => 'int',
+        'pending_credit_amount' => 'int',
+        'transferred_credits' => 'int',
+        'transferred_credit_amount' => 'int'
     ];
 
     /**
@@ -119,35 +119,35 @@ class Customer implements ModelInterface, ArrayAccess
         'subscriptions' => 'int32',
         'created' => 'date-time',
         'deleted' => 'date-time',
-        'firstName' => null,
-        'lastName' => null,
-        'postalCode' => null,
-        'activeSubscriptions' => 'int32',
-        'trialActiveSubscriptions' => 'int32',
-        'trialCancelledSubscriptions' => 'int32',
-        'expiredSubscriptions' => 'int32',
-        'onHoldSubscriptions' => 'int32',
-        'cancelledSubscriptions' => 'int32',
-        'nonRenewingSubscriptions' => 'int32',
-        'failedInvoices' => 'int32',
-        'failedAmount' => 'int32',
-        'cancelledInvoices' => 'int32',
-        'cancelledAmount' => 'int32',
-        'pendingInvoices' => 'int32',
-        'pendingAmount' => 'int32',
-        'dunningInvoices' => 'int32',
-        'dunningAmount' => 'int32',
-        'settledInvoices' => 'int32',
-        'settledAmount' => 'int32',
-        'refundedAmount' => 'int32',
-        'pendingAdditionalCosts' => 'int32',
-        'pendingAdditionalCostAmount' => 'int32',
-        'transferredAdditionalCosts' => 'int32',
-        'transferredAdditionalCostAmount' => 'int32',
-        'pendingCredits' => 'int32',
-        'pendingCreditAmount' => 'int32',
-        'transferredCredits' => 'int32',
-        'transferredCreditAmount' => 'int32'
+        'first_name' => null,
+        'last_name' => null,
+        'postal_code' => null,
+        'active_subscriptions' => 'int32',
+        'trial_active_subscriptions' => 'int32',
+        'trial_cancelled_subscriptions' => 'int32',
+        'expired_subscriptions' => 'int32',
+        'on_hold_subscriptions' => 'int32',
+        'cancelled_subscriptions' => 'int32',
+        'non_renewing_subscriptions' => 'int32',
+        'failed_invoices' => 'int32',
+        'failed_amount' => 'int32',
+        'cancelled_invoices' => 'int32',
+        'cancelled_amount' => 'int32',
+        'pending_invoices' => 'int32',
+        'pending_amount' => 'int32',
+        'dunning_invoices' => 'int32',
+        'dunning_amount' => 'int32',
+        'settled_invoices' => 'int32',
+        'settled_amount' => 'int32',
+        'refunded_amount' => 'int32',
+        'pending_additional_costs' => 'int32',
+        'pending_additional_cost_amount' => 'int32',
+        'transferred_additional_costs' => 'int32',
+        'transferred_additional_cost_amount' => 'int32',
+        'pending_credits' => 'int32',
+        'pending_credit_amount' => 'int32',
+        'transferred_credits' => 'int32',
+        'transferred_credit_amount' => 'int32'
     ];
 
     /**
@@ -190,35 +190,35 @@ class Customer implements ModelInterface, ArrayAccess
         'subscriptions' => 'subscriptions',
         'created' => 'created',
         'deleted' => 'deleted',
-        'firstName' => 'first_name',
-        'lastName' => 'last_name',
-        'postalCode' => 'postal_code',
-        'activeSubscriptions' => 'active_subscriptions',
-        'trialActiveSubscriptions' => 'trial_active_subscriptions',
-        'trialCancelledSubscriptions' => 'trial_cancelled_subscriptions',
-        'expiredSubscriptions' => 'expired_subscriptions',
-        'onHoldSubscriptions' => 'on_hold_subscriptions',
-        'cancelledSubscriptions' => 'cancelled_subscriptions',
-        'nonRenewingSubscriptions' => 'non_renewing_subscriptions',
-        'failedInvoices' => 'failed_invoices',
-        'failedAmount' => 'failed_amount',
-        'cancelledInvoices' => 'cancelled_invoices',
-        'cancelledAmount' => 'cancelled_amount',
-        'pendingInvoices' => 'pending_invoices',
-        'pendingAmount' => 'pending_amount',
-        'dunningInvoices' => 'dunning_invoices',
-        'dunningAmount' => 'dunning_amount',
-        'settledInvoices' => 'settled_invoices',
-        'settledAmount' => 'settled_amount',
-        'refundedAmount' => 'refunded_amount',
-        'pendingAdditionalCosts' => 'pending_additional_costs',
-        'pendingAdditionalCostAmount' => 'pending_additional_cost_amount',
-        'transferredAdditionalCosts' => 'transferred_additional_costs',
-        'transferredAdditionalCostAmount' => 'transferred_additional_cost_amount',
-        'pendingCredits' => 'pending_credits',
-        'pendingCreditAmount' => 'pending_credit_amount',
-        'transferredCredits' => 'transferred_credits',
-        'transferredCreditAmount' => 'transferred_credit_amount'
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'postal_code' => 'postal_code',
+        'active_subscriptions' => 'active_subscriptions',
+        'trial_active_subscriptions' => 'trial_active_subscriptions',
+        'trial_cancelled_subscriptions' => 'trial_cancelled_subscriptions',
+        'expired_subscriptions' => 'expired_subscriptions',
+        'on_hold_subscriptions' => 'on_hold_subscriptions',
+        'cancelled_subscriptions' => 'cancelled_subscriptions',
+        'non_renewing_subscriptions' => 'non_renewing_subscriptions',
+        'failed_invoices' => 'failed_invoices',
+        'failed_amount' => 'failed_amount',
+        'cancelled_invoices' => 'cancelled_invoices',
+        'cancelled_amount' => 'cancelled_amount',
+        'pending_invoices' => 'pending_invoices',
+        'pending_amount' => 'pending_amount',
+        'dunning_invoices' => 'dunning_invoices',
+        'dunning_amount' => 'dunning_amount',
+        'settled_invoices' => 'settled_invoices',
+        'settled_amount' => 'settled_amount',
+        'refunded_amount' => 'refunded_amount',
+        'pending_additional_costs' => 'pending_additional_costs',
+        'pending_additional_cost_amount' => 'pending_additional_cost_amount',
+        'transferred_additional_costs' => 'transferred_additional_costs',
+        'transferred_additional_cost_amount' => 'transferred_additional_cost_amount',
+        'pending_credits' => 'pending_credits',
+        'pending_credit_amount' => 'pending_credit_amount',
+        'transferred_credits' => 'transferred_credits',
+        'transferred_credit_amount' => 'transferred_credit_amount'
     ];
 
     /**
@@ -240,35 +240,35 @@ class Customer implements ModelInterface, ArrayAccess
         'subscriptions' => 'setSubscriptions',
         'created' => 'setCreated',
         'deleted' => 'setDeleted',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'postalCode' => 'setPostalCode',
-        'activeSubscriptions' => 'setActiveSubscriptions',
-        'trialActiveSubscriptions' => 'setTrialActiveSubscriptions',
-        'trialCancelledSubscriptions' => 'setTrialCancelledSubscriptions',
-        'expiredSubscriptions' => 'setExpiredSubscriptions',
-        'onHoldSubscriptions' => 'setOnHoldSubscriptions',
-        'cancelledSubscriptions' => 'setCancelledSubscriptions',
-        'nonRenewingSubscriptions' => 'setNonRenewingSubscriptions',
-        'failedInvoices' => 'setFailedInvoices',
-        'failedAmount' => 'setFailedAmount',
-        'cancelledInvoices' => 'setCancelledInvoices',
-        'cancelledAmount' => 'setCancelledAmount',
-        'pendingInvoices' => 'setPendingInvoices',
-        'pendingAmount' => 'setPendingAmount',
-        'dunningInvoices' => 'setDunningInvoices',
-        'dunningAmount' => 'setDunningAmount',
-        'settledInvoices' => 'setSettledInvoices',
-        'settledAmount' => 'setSettledAmount',
-        'refundedAmount' => 'setRefundedAmount',
-        'pendingAdditionalCosts' => 'setPendingAdditionalCosts',
-        'pendingAdditionalCostAmount' => 'setPendingAdditionalCostAmount',
-        'transferredAdditionalCosts' => 'setTransferredAdditionalCosts',
-        'transferredAdditionalCostAmount' => 'setTransferredAdditionalCostAmount',
-        'pendingCredits' => 'setPendingCredits',
-        'pendingCreditAmount' => 'setPendingCreditAmount',
-        'transferredCredits' => 'setTransferredCredits',
-        'transferredCreditAmount' => 'setTransferredCreditAmount'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'postal_code' => 'setPostalCode',
+        'active_subscriptions' => 'setActiveSubscriptions',
+        'trial_active_subscriptions' => 'setTrialActiveSubscriptions',
+        'trial_cancelled_subscriptions' => 'setTrialCancelledSubscriptions',
+        'expired_subscriptions' => 'setExpiredSubscriptions',
+        'on_hold_subscriptions' => 'setOnHoldSubscriptions',
+        'cancelled_subscriptions' => 'setCancelledSubscriptions',
+        'non_renewing_subscriptions' => 'setNonRenewingSubscriptions',
+        'failed_invoices' => 'setFailedInvoices',
+        'failed_amount' => 'setFailedAmount',
+        'cancelled_invoices' => 'setCancelledInvoices',
+        'cancelled_amount' => 'setCancelledAmount',
+        'pending_invoices' => 'setPendingInvoices',
+        'pending_amount' => 'setPendingAmount',
+        'dunning_invoices' => 'setDunningInvoices',
+        'dunning_amount' => 'setDunningAmount',
+        'settled_invoices' => 'setSettledInvoices',
+        'settled_amount' => 'setSettledAmount',
+        'refunded_amount' => 'setRefundedAmount',
+        'pending_additional_costs' => 'setPendingAdditionalCosts',
+        'pending_additional_cost_amount' => 'setPendingAdditionalCostAmount',
+        'transferred_additional_costs' => 'setTransferredAdditionalCosts',
+        'transferred_additional_cost_amount' => 'setTransferredAdditionalCostAmount',
+        'pending_credits' => 'setPendingCredits',
+        'pending_credit_amount' => 'setPendingCreditAmount',
+        'transferred_credits' => 'setTransferredCredits',
+        'transferred_credit_amount' => 'setTransferredCreditAmount'
     ];
 
     /**
@@ -290,35 +290,35 @@ class Customer implements ModelInterface, ArrayAccess
         'subscriptions' => 'getSubscriptions',
         'created' => 'getCreated',
         'deleted' => 'getDeleted',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'postalCode' => 'getPostalCode',
-        'activeSubscriptions' => 'getActiveSubscriptions',
-        'trialActiveSubscriptions' => 'getTrialActiveSubscriptions',
-        'trialCancelledSubscriptions' => 'getTrialCancelledSubscriptions',
-        'expiredSubscriptions' => 'getExpiredSubscriptions',
-        'onHoldSubscriptions' => 'getOnHoldSubscriptions',
-        'cancelledSubscriptions' => 'getCancelledSubscriptions',
-        'nonRenewingSubscriptions' => 'getNonRenewingSubscriptions',
-        'failedInvoices' => 'getFailedInvoices',
-        'failedAmount' => 'getFailedAmount',
-        'cancelledInvoices' => 'getCancelledInvoices',
-        'cancelledAmount' => 'getCancelledAmount',
-        'pendingInvoices' => 'getPendingInvoices',
-        'pendingAmount' => 'getPendingAmount',
-        'dunningInvoices' => 'getDunningInvoices',
-        'dunningAmount' => 'getDunningAmount',
-        'settledInvoices' => 'getSettledInvoices',
-        'settledAmount' => 'getSettledAmount',
-        'refundedAmount' => 'getRefundedAmount',
-        'pendingAdditionalCosts' => 'getPendingAdditionalCosts',
-        'pendingAdditionalCostAmount' => 'getPendingAdditionalCostAmount',
-        'transferredAdditionalCosts' => 'getTransferredAdditionalCosts',
-        'transferredAdditionalCostAmount' => 'getTransferredAdditionalCostAmount',
-        'pendingCredits' => 'getPendingCredits',
-        'pendingCreditAmount' => 'getPendingCreditAmount',
-        'transferredCredits' => 'getTransferredCredits',
-        'transferredCreditAmount' => 'getTransferredCreditAmount'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'postal_code' => 'getPostalCode',
+        'active_subscriptions' => 'getActiveSubscriptions',
+        'trial_active_subscriptions' => 'getTrialActiveSubscriptions',
+        'trial_cancelled_subscriptions' => 'getTrialCancelledSubscriptions',
+        'expired_subscriptions' => 'getExpiredSubscriptions',
+        'on_hold_subscriptions' => 'getOnHoldSubscriptions',
+        'cancelled_subscriptions' => 'getCancelledSubscriptions',
+        'non_renewing_subscriptions' => 'getNonRenewingSubscriptions',
+        'failed_invoices' => 'getFailedInvoices',
+        'failed_amount' => 'getFailedAmount',
+        'cancelled_invoices' => 'getCancelledInvoices',
+        'cancelled_amount' => 'getCancelledAmount',
+        'pending_invoices' => 'getPendingInvoices',
+        'pending_amount' => 'getPendingAmount',
+        'dunning_invoices' => 'getDunningInvoices',
+        'dunning_amount' => 'getDunningAmount',
+        'settled_invoices' => 'getSettledInvoices',
+        'settled_amount' => 'getSettledAmount',
+        'refunded_amount' => 'getRefundedAmount',
+        'pending_additional_costs' => 'getPendingAdditionalCosts',
+        'pending_additional_cost_amount' => 'getPendingAdditionalCostAmount',
+        'transferred_additional_costs' => 'getTransferredAdditionalCosts',
+        'transferred_additional_cost_amount' => 'getTransferredAdditionalCostAmount',
+        'pending_credits' => 'getPendingCredits',
+        'pending_credit_amount' => 'getPendingCreditAmount',
+        'transferred_credits' => 'getTransferredCredits',
+        'transferred_credit_amount' => 'getTransferredCreditAmount'
     ];
 
     /**
@@ -392,35 +392,35 @@ class Customer implements ModelInterface, ArrayAccess
         $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
-        $this->container['activeSubscriptions'] = isset($data['activeSubscriptions']) ? $data['activeSubscriptions'] : null;
-        $this->container['trialActiveSubscriptions'] = isset($data['trialActiveSubscriptions']) ? $data['trialActiveSubscriptions'] : null;
-        $this->container['trialCancelledSubscriptions'] = isset($data['trialCancelledSubscriptions']) ? $data['trialCancelledSubscriptions'] : null;
-        $this->container['expiredSubscriptions'] = isset($data['expiredSubscriptions']) ? $data['expiredSubscriptions'] : null;
-        $this->container['onHoldSubscriptions'] = isset($data['onHoldSubscriptions']) ? $data['onHoldSubscriptions'] : null;
-        $this->container['cancelledSubscriptions'] = isset($data['cancelledSubscriptions']) ? $data['cancelledSubscriptions'] : null;
-        $this->container['nonRenewingSubscriptions'] = isset($data['nonRenewingSubscriptions']) ? $data['nonRenewingSubscriptions'] : null;
-        $this->container['failedInvoices'] = isset($data['failedInvoices']) ? $data['failedInvoices'] : null;
-        $this->container['failedAmount'] = isset($data['failedAmount']) ? $data['failedAmount'] : null;
-        $this->container['cancelledInvoices'] = isset($data['cancelledInvoices']) ? $data['cancelledInvoices'] : null;
-        $this->container['cancelledAmount'] = isset($data['cancelledAmount']) ? $data['cancelledAmount'] : null;
-        $this->container['pendingInvoices'] = isset($data['pendingInvoices']) ? $data['pendingInvoices'] : null;
-        $this->container['pendingAmount'] = isset($data['pendingAmount']) ? $data['pendingAmount'] : null;
-        $this->container['dunningInvoices'] = isset($data['dunningInvoices']) ? $data['dunningInvoices'] : null;
-        $this->container['dunningAmount'] = isset($data['dunningAmount']) ? $data['dunningAmount'] : null;
-        $this->container['settledInvoices'] = isset($data['settledInvoices']) ? $data['settledInvoices'] : null;
-        $this->container['settledAmount'] = isset($data['settledAmount']) ? $data['settledAmount'] : null;
-        $this->container['refundedAmount'] = isset($data['refundedAmount']) ? $data['refundedAmount'] : null;
-        $this->container['pendingAdditionalCosts'] = isset($data['pendingAdditionalCosts']) ? $data['pendingAdditionalCosts'] : null;
-        $this->container['pendingAdditionalCostAmount'] = isset($data['pendingAdditionalCostAmount']) ? $data['pendingAdditionalCostAmount'] : null;
-        $this->container['transferredAdditionalCosts'] = isset($data['transferredAdditionalCosts']) ? $data['transferredAdditionalCosts'] : null;
-        $this->container['transferredAdditionalCostAmount'] = isset($data['transferredAdditionalCostAmount']) ? $data['transferredAdditionalCostAmount'] : null;
-        $this->container['pendingCredits'] = isset($data['pendingCredits']) ? $data['pendingCredits'] : null;
-        $this->container['pendingCreditAmount'] = isset($data['pendingCreditAmount']) ? $data['pendingCreditAmount'] : null;
-        $this->container['transferredCredits'] = isset($data['transferredCredits']) ? $data['transferredCredits'] : null;
-        $this->container['transferredCreditAmount'] = isset($data['transferredCreditAmount']) ? $data['transferredCreditAmount'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['active_subscriptions'] = isset($data['active_subscriptions']) ? $data['active_subscriptions'] : null;
+        $this->container['trial_active_subscriptions'] = isset($data['trial_active_subscriptions']) ? $data['trial_active_subscriptions'] : null;
+        $this->container['trial_cancelled_subscriptions'] = isset($data['trial_cancelled_subscriptions']) ? $data['trial_cancelled_subscriptions'] : null;
+        $this->container['expired_subscriptions'] = isset($data['expired_subscriptions']) ? $data['expired_subscriptions'] : null;
+        $this->container['on_hold_subscriptions'] = isset($data['on_hold_subscriptions']) ? $data['on_hold_subscriptions'] : null;
+        $this->container['cancelled_subscriptions'] = isset($data['cancelled_subscriptions']) ? $data['cancelled_subscriptions'] : null;
+        $this->container['non_renewing_subscriptions'] = isset($data['non_renewing_subscriptions']) ? $data['non_renewing_subscriptions'] : null;
+        $this->container['failed_invoices'] = isset($data['failed_invoices']) ? $data['failed_invoices'] : null;
+        $this->container['failed_amount'] = isset($data['failed_amount']) ? $data['failed_amount'] : null;
+        $this->container['cancelled_invoices'] = isset($data['cancelled_invoices']) ? $data['cancelled_invoices'] : null;
+        $this->container['cancelled_amount'] = isset($data['cancelled_amount']) ? $data['cancelled_amount'] : null;
+        $this->container['pending_invoices'] = isset($data['pending_invoices']) ? $data['pending_invoices'] : null;
+        $this->container['pending_amount'] = isset($data['pending_amount']) ? $data['pending_amount'] : null;
+        $this->container['dunning_invoices'] = isset($data['dunning_invoices']) ? $data['dunning_invoices'] : null;
+        $this->container['dunning_amount'] = isset($data['dunning_amount']) ? $data['dunning_amount'] : null;
+        $this->container['settled_invoices'] = isset($data['settled_invoices']) ? $data['settled_invoices'] : null;
+        $this->container['settled_amount'] = isset($data['settled_amount']) ? $data['settled_amount'] : null;
+        $this->container['refunded_amount'] = isset($data['refunded_amount']) ? $data['refunded_amount'] : null;
+        $this->container['pending_additional_costs'] = isset($data['pending_additional_costs']) ? $data['pending_additional_costs'] : null;
+        $this->container['pending_additional_cost_amount'] = isset($data['pending_additional_cost_amount']) ? $data['pending_additional_cost_amount'] : null;
+        $this->container['transferred_additional_costs'] = isset($data['transferred_additional_costs']) ? $data['transferred_additional_costs'] : null;
+        $this->container['transferred_additional_cost_amount'] = isset($data['transferred_additional_cost_amount']) ? $data['transferred_additional_cost_amount'] : null;
+        $this->container['pending_credits'] = isset($data['pending_credits']) ? $data['pending_credits'] : null;
+        $this->container['pending_credit_amount'] = isset($data['pending_credit_amount']) ? $data['pending_credit_amount'] : null;
+        $this->container['transferred_credits'] = isset($data['transferred_credits']) ? $data['transferred_credits'] : null;
+        $this->container['transferred_credit_amount'] = isset($data['transferred_credit_amount']) ? $data['transferred_credit_amount'] : null;
     }
 
     /**
@@ -441,83 +441,83 @@ class Customer implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['activeSubscriptions'] === null) {
-            $invalidProperties[] = "'activeSubscriptions' can't be null";
+        if ($this->container['active_subscriptions'] === null) {
+            $invalidProperties[] = "'active_subscriptions' can't be null";
         }
-        if ($this->container['trialActiveSubscriptions'] === null) {
-            $invalidProperties[] = "'trialActiveSubscriptions' can't be null";
+        if ($this->container['trial_active_subscriptions'] === null) {
+            $invalidProperties[] = "'trial_active_subscriptions' can't be null";
         }
-        if ($this->container['trialCancelledSubscriptions'] === null) {
-            $invalidProperties[] = "'trialCancelledSubscriptions' can't be null";
+        if ($this->container['trial_cancelled_subscriptions'] === null) {
+            $invalidProperties[] = "'trial_cancelled_subscriptions' can't be null";
         }
-        if ($this->container['expiredSubscriptions'] === null) {
-            $invalidProperties[] = "'expiredSubscriptions' can't be null";
+        if ($this->container['expired_subscriptions'] === null) {
+            $invalidProperties[] = "'expired_subscriptions' can't be null";
         }
-        if ($this->container['onHoldSubscriptions'] === null) {
-            $invalidProperties[] = "'onHoldSubscriptions' can't be null";
+        if ($this->container['on_hold_subscriptions'] === null) {
+            $invalidProperties[] = "'on_hold_subscriptions' can't be null";
         }
-        if ($this->container['cancelledSubscriptions'] === null) {
-            $invalidProperties[] = "'cancelledSubscriptions' can't be null";
+        if ($this->container['cancelled_subscriptions'] === null) {
+            $invalidProperties[] = "'cancelled_subscriptions' can't be null";
         }
-        if ($this->container['nonRenewingSubscriptions'] === null) {
-            $invalidProperties[] = "'nonRenewingSubscriptions' can't be null";
+        if ($this->container['non_renewing_subscriptions'] === null) {
+            $invalidProperties[] = "'non_renewing_subscriptions' can't be null";
         }
-        if ($this->container['failedInvoices'] === null) {
-            $invalidProperties[] = "'failedInvoices' can't be null";
+        if ($this->container['failed_invoices'] === null) {
+            $invalidProperties[] = "'failed_invoices' can't be null";
         }
-        if ($this->container['failedAmount'] === null) {
-            $invalidProperties[] = "'failedAmount' can't be null";
+        if ($this->container['failed_amount'] === null) {
+            $invalidProperties[] = "'failed_amount' can't be null";
         }
-        if ($this->container['cancelledInvoices'] === null) {
-            $invalidProperties[] = "'cancelledInvoices' can't be null";
+        if ($this->container['cancelled_invoices'] === null) {
+            $invalidProperties[] = "'cancelled_invoices' can't be null";
         }
-        if ($this->container['cancelledAmount'] === null) {
-            $invalidProperties[] = "'cancelledAmount' can't be null";
+        if ($this->container['cancelled_amount'] === null) {
+            $invalidProperties[] = "'cancelled_amount' can't be null";
         }
-        if ($this->container['pendingInvoices'] === null) {
-            $invalidProperties[] = "'pendingInvoices' can't be null";
+        if ($this->container['pending_invoices'] === null) {
+            $invalidProperties[] = "'pending_invoices' can't be null";
         }
-        if ($this->container['pendingAmount'] === null) {
-            $invalidProperties[] = "'pendingAmount' can't be null";
+        if ($this->container['pending_amount'] === null) {
+            $invalidProperties[] = "'pending_amount' can't be null";
         }
-        if ($this->container['dunningInvoices'] === null) {
-            $invalidProperties[] = "'dunningInvoices' can't be null";
+        if ($this->container['dunning_invoices'] === null) {
+            $invalidProperties[] = "'dunning_invoices' can't be null";
         }
-        if ($this->container['dunningAmount'] === null) {
-            $invalidProperties[] = "'dunningAmount' can't be null";
+        if ($this->container['dunning_amount'] === null) {
+            $invalidProperties[] = "'dunning_amount' can't be null";
         }
-        if ($this->container['settledInvoices'] === null) {
-            $invalidProperties[] = "'settledInvoices' can't be null";
+        if ($this->container['settled_invoices'] === null) {
+            $invalidProperties[] = "'settled_invoices' can't be null";
         }
-        if ($this->container['settledAmount'] === null) {
-            $invalidProperties[] = "'settledAmount' can't be null";
+        if ($this->container['settled_amount'] === null) {
+            $invalidProperties[] = "'settled_amount' can't be null";
         }
-        if ($this->container['refundedAmount'] === null) {
-            $invalidProperties[] = "'refundedAmount' can't be null";
+        if ($this->container['refunded_amount'] === null) {
+            $invalidProperties[] = "'refunded_amount' can't be null";
         }
-        if ($this->container['pendingAdditionalCosts'] === null) {
-            $invalidProperties[] = "'pendingAdditionalCosts' can't be null";
+        if ($this->container['pending_additional_costs'] === null) {
+            $invalidProperties[] = "'pending_additional_costs' can't be null";
         }
-        if ($this->container['pendingAdditionalCostAmount'] === null) {
-            $invalidProperties[] = "'pendingAdditionalCostAmount' can't be null";
+        if ($this->container['pending_additional_cost_amount'] === null) {
+            $invalidProperties[] = "'pending_additional_cost_amount' can't be null";
         }
-        if ($this->container['transferredAdditionalCosts'] === null) {
-            $invalidProperties[] = "'transferredAdditionalCosts' can't be null";
+        if ($this->container['transferred_additional_costs'] === null) {
+            $invalidProperties[] = "'transferred_additional_costs' can't be null";
         }
-        if ($this->container['transferredAdditionalCostAmount'] === null) {
-            $invalidProperties[] = "'transferredAdditionalCostAmount' can't be null";
+        if ($this->container['transferred_additional_cost_amount'] === null) {
+            $invalidProperties[] = "'transferred_additional_cost_amount' can't be null";
         }
-        if ($this->container['pendingCredits'] === null) {
-            $invalidProperties[] = "'pendingCredits' can't be null";
+        if ($this->container['pending_credits'] === null) {
+            $invalidProperties[] = "'pending_credits' can't be null";
         }
-        if ($this->container['pendingCreditAmount'] === null) {
-            $invalidProperties[] = "'pendingCreditAmount' can't be null";
+        if ($this->container['pending_credit_amount'] === null) {
+            $invalidProperties[] = "'pending_credit_amount' can't be null";
         }
-        if ($this->container['transferredCredits'] === null) {
-            $invalidProperties[] = "'transferredCredits' can't be null";
+        if ($this->container['transferred_credits'] === null) {
+            $invalidProperties[] = "'transferred_credits' can't be null";
         }
-        if ($this->container['transferredCreditAmount'] === null) {
-            $invalidProperties[] = "'transferredCreditAmount' can't be null";
+        if ($this->container['transferred_credit_amount'] === null) {
+            $invalidProperties[] = "'transferred_credit_amount' can't be null";
         }
         return $invalidProperties;
     }
@@ -847,697 +847,697 @@ class Customer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName Customer first name
+     * @param string $first_name Customer first name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName Customer last name
+     * @param string $last_name Customer last name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets postalCode
+     * Gets postal_code
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postalCode'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets postalCode
+     * Sets postal_code
      *
-     * @param string $postalCode Customer postal code
+     * @param string $postal_code Customer postal code
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postal_code)
     {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
 
     /**
-     * Gets activeSubscriptions
+     * Gets active_subscriptions
      *
      * @return int
      */
     public function getActiveSubscriptions()
     {
-        return $this->container['activeSubscriptions'];
+        return $this->container['active_subscriptions'];
     }
 
     /**
-     * Sets activeSubscriptions
+     * Sets active_subscriptions
      *
-     * @param int $activeSubscriptions Number of active subscriptions for this customer
+     * @param int $active_subscriptions Number of active subscriptions for this customer
      *
      * @return $this
      */
-    public function setActiveSubscriptions($activeSubscriptions)
+    public function setActiveSubscriptions($active_subscriptions)
     {
-        $this->container['activeSubscriptions'] = $activeSubscriptions;
+        $this->container['active_subscriptions'] = $active_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets trialActiveSubscriptions
+     * Gets trial_active_subscriptions
      *
      * @return int
      */
     public function getTrialActiveSubscriptions()
     {
-        return $this->container['trialActiveSubscriptions'];
+        return $this->container['trial_active_subscriptions'];
     }
 
     /**
-     * Sets trialActiveSubscriptions
+     * Sets trial_active_subscriptions
      *
-     * @param int $trialActiveSubscriptions Number of active subscriptions in trial for this customer. Also counts subscription to enter trial at a future start date.
+     * @param int $trial_active_subscriptions Number of active subscriptions in trial for this customer. Also counts subscription to enter trial at a future start date.
      *
      * @return $this
      */
-    public function setTrialActiveSubscriptions($trialActiveSubscriptions)
+    public function setTrialActiveSubscriptions($trial_active_subscriptions)
     {
-        $this->container['trialActiveSubscriptions'] = $trialActiveSubscriptions;
+        $this->container['trial_active_subscriptions'] = $trial_active_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets trialCancelledSubscriptions
+     * Gets trial_cancelled_subscriptions
      *
      * @return int
      */
     public function getTrialCancelledSubscriptions()
     {
-        return $this->container['trialCancelledSubscriptions'];
+        return $this->container['trial_cancelled_subscriptions'];
     }
 
     /**
-     * Sets trialCancelledSubscriptions
+     * Sets trial_cancelled_subscriptions
      *
-     * @param int $trialCancelledSubscriptions Number of cancelled subscriptions in trial for this customer
+     * @param int $trial_cancelled_subscriptions Number of cancelled subscriptions in trial for this customer
      *
      * @return $this
      */
-    public function setTrialCancelledSubscriptions($trialCancelledSubscriptions)
+    public function setTrialCancelledSubscriptions($trial_cancelled_subscriptions)
     {
-        $this->container['trialCancelledSubscriptions'] = $trialCancelledSubscriptions;
+        $this->container['trial_cancelled_subscriptions'] = $trial_cancelled_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets expiredSubscriptions
+     * Gets expired_subscriptions
      *
      * @return int
      */
     public function getExpiredSubscriptions()
     {
-        return $this->container['expiredSubscriptions'];
+        return $this->container['expired_subscriptions'];
     }
 
     /**
-     * Sets expiredSubscriptions
+     * Sets expired_subscriptions
      *
-     * @param int $expiredSubscriptions Number of expired subscription for this customer
+     * @param int $expired_subscriptions Number of expired subscription for this customer
      *
      * @return $this
      */
-    public function setExpiredSubscriptions($expiredSubscriptions)
+    public function setExpiredSubscriptions($expired_subscriptions)
     {
-        $this->container['expiredSubscriptions'] = $expiredSubscriptions;
+        $this->container['expired_subscriptions'] = $expired_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets onHoldSubscriptions
+     * Gets on_hold_subscriptions
      *
      * @return int
      */
     public function getOnHoldSubscriptions()
     {
-        return $this->container['onHoldSubscriptions'];
+        return $this->container['on_hold_subscriptions'];
     }
 
     /**
-     * Sets onHoldSubscriptions
+     * Sets on_hold_subscriptions
      *
-     * @param int $onHoldSubscriptions Number of subscription on hold for this customer
+     * @param int $on_hold_subscriptions Number of subscription on hold for this customer
      *
      * @return $this
      */
-    public function setOnHoldSubscriptions($onHoldSubscriptions)
+    public function setOnHoldSubscriptions($on_hold_subscriptions)
     {
-        $this->container['onHoldSubscriptions'] = $onHoldSubscriptions;
+        $this->container['on_hold_subscriptions'] = $on_hold_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets cancelledSubscriptions
+     * Gets cancelled_subscriptions
      *
      * @return int
      */
     public function getCancelledSubscriptions()
     {
-        return $this->container['cancelledSubscriptions'];
+        return $this->container['cancelled_subscriptions'];
     }
 
     /**
-     * Sets cancelledSubscriptions
+     * Sets cancelled_subscriptions
      *
-     * @param int $cancelledSubscriptions Number of cancelled subscription for this customer
+     * @param int $cancelled_subscriptions Number of cancelled subscription for this customer
      *
      * @return $this
      */
-    public function setCancelledSubscriptions($cancelledSubscriptions)
+    public function setCancelledSubscriptions($cancelled_subscriptions)
     {
-        $this->container['cancelledSubscriptions'] = $cancelledSubscriptions;
+        $this->container['cancelled_subscriptions'] = $cancelled_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets nonRenewingSubscriptions
+     * Gets non_renewing_subscriptions
      *
      * @return int
      */
     public function getNonRenewingSubscriptions()
     {
-        return $this->container['nonRenewingSubscriptions'];
+        return $this->container['non_renewing_subscriptions'];
     }
 
     /**
-     * Sets nonRenewingSubscriptions
+     * Sets non_renewing_subscriptions
      *
-     * @param int $nonRenewingSubscriptions Number of non renewing (active subscriptions not renewing at billing period end) subscriptions for this customer
+     * @param int $non_renewing_subscriptions Number of non renewing (active subscriptions not renewing at billing period end) subscriptions for this customer
      *
      * @return $this
      */
-    public function setNonRenewingSubscriptions($nonRenewingSubscriptions)
+    public function setNonRenewingSubscriptions($non_renewing_subscriptions)
     {
-        $this->container['nonRenewingSubscriptions'] = $nonRenewingSubscriptions;
+        $this->container['non_renewing_subscriptions'] = $non_renewing_subscriptions;
 
         return $this;
     }
 
     /**
-     * Gets failedInvoices
+     * Gets failed_invoices
      *
      * @return int
      */
     public function getFailedInvoices()
     {
-        return $this->container['failedInvoices'];
+        return $this->container['failed_invoices'];
     }
 
     /**
-     * Sets failedInvoices
+     * Sets failed_invoices
      *
-     * @param int $failedInvoices Number of failed subscription invoices for this customer
+     * @param int $failed_invoices Number of failed subscription invoices for this customer
      *
      * @return $this
      */
-    public function setFailedInvoices($failedInvoices)
+    public function setFailedInvoices($failed_invoices)
     {
-        $this->container['failedInvoices'] = $failedInvoices;
+        $this->container['failed_invoices'] = $failed_invoices;
 
         return $this;
     }
 
     /**
-     * Gets failedAmount
+     * Gets failed_amount
      *
      * @return int
      */
     public function getFailedAmount()
     {
-        return $this->container['failedAmount'];
+        return $this->container['failed_amount'];
     }
 
     /**
-     * Sets failedAmount
+     * Sets failed_amount
      *
-     * @param int $failedAmount Summed amount for failed subscription invoices
+     * @param int $failed_amount Summed amount for failed subscription invoices
      *
      * @return $this
      */
-    public function setFailedAmount($failedAmount)
+    public function setFailedAmount($failed_amount)
     {
-        $this->container['failedAmount'] = $failedAmount;
+        $this->container['failed_amount'] = $failed_amount;
 
         return $this;
     }
 
     /**
-     * Gets cancelledInvoices
+     * Gets cancelled_invoices
      *
      * @return int
      */
     public function getCancelledInvoices()
     {
-        return $this->container['cancelledInvoices'];
+        return $this->container['cancelled_invoices'];
     }
 
     /**
-     * Sets cancelledInvoices
+     * Sets cancelled_invoices
      *
-     * @param int $cancelledInvoices Number of cancelled subscription invoices for this customer
+     * @param int $cancelled_invoices Number of cancelled subscription invoices for this customer
      *
      * @return $this
      */
-    public function setCancelledInvoices($cancelledInvoices)
+    public function setCancelledInvoices($cancelled_invoices)
     {
-        $this->container['cancelledInvoices'] = $cancelledInvoices;
+        $this->container['cancelled_invoices'] = $cancelled_invoices;
 
         return $this;
     }
 
     /**
-     * Gets cancelledAmount
+     * Gets cancelled_amount
      *
      * @return int
      */
     public function getCancelledAmount()
     {
-        return $this->container['cancelledAmount'];
+        return $this->container['cancelled_amount'];
     }
 
     /**
-     * Sets cancelledAmount
+     * Sets cancelled_amount
      *
-     * @param int $cancelledAmount Summed amount for cancelled subscription invoices
+     * @param int $cancelled_amount Summed amount for cancelled subscription invoices
      *
      * @return $this
      */
-    public function setCancelledAmount($cancelledAmount)
+    public function setCancelledAmount($cancelled_amount)
     {
-        $this->container['cancelledAmount'] = $cancelledAmount;
+        $this->container['cancelled_amount'] = $cancelled_amount;
 
         return $this;
     }
 
     /**
-     * Gets pendingInvoices
+     * Gets pending_invoices
      *
      * @return int
      */
     public function getPendingInvoices()
     {
-        return $this->container['pendingInvoices'];
+        return $this->container['pending_invoices'];
     }
 
     /**
-     * Sets pendingInvoices
+     * Sets pending_invoices
      *
-     * @param int $pendingInvoices Number of pending subscription invoices for this customer
+     * @param int $pending_invoices Number of pending subscription invoices for this customer
      *
      * @return $this
      */
-    public function setPendingInvoices($pendingInvoices)
+    public function setPendingInvoices($pending_invoices)
     {
-        $this->container['pendingInvoices'] = $pendingInvoices;
+        $this->container['pending_invoices'] = $pending_invoices;
 
         return $this;
     }
 
     /**
-     * Gets pendingAmount
+     * Gets pending_amount
      *
      * @return int
      */
     public function getPendingAmount()
     {
-        return $this->container['pendingAmount'];
+        return $this->container['pending_amount'];
     }
 
     /**
-     * Sets pendingAmount
+     * Sets pending_amount
      *
-     * @param int $pendingAmount Summed amount for pending subscription invoices
+     * @param int $pending_amount Summed amount for pending subscription invoices
      *
      * @return $this
      */
-    public function setPendingAmount($pendingAmount)
+    public function setPendingAmount($pending_amount)
     {
-        $this->container['pendingAmount'] = $pendingAmount;
+        $this->container['pending_amount'] = $pending_amount;
 
         return $this;
     }
 
     /**
-     * Gets dunningInvoices
+     * Gets dunning_invoices
      *
      * @return int
      */
     public function getDunningInvoices()
     {
-        return $this->container['dunningInvoices'];
+        return $this->container['dunning_invoices'];
     }
 
     /**
-     * Sets dunningInvoices
+     * Sets dunning_invoices
      *
-     * @param int $dunningInvoices Number of dunning subscription invoices for this customer
+     * @param int $dunning_invoices Number of dunning subscription invoices for this customer
      *
      * @return $this
      */
-    public function setDunningInvoices($dunningInvoices)
+    public function setDunningInvoices($dunning_invoices)
     {
-        $this->container['dunningInvoices'] = $dunningInvoices;
+        $this->container['dunning_invoices'] = $dunning_invoices;
 
         return $this;
     }
 
     /**
-     * Gets dunningAmount
+     * Gets dunning_amount
      *
      * @return int
      */
     public function getDunningAmount()
     {
-        return $this->container['dunningAmount'];
+        return $this->container['dunning_amount'];
     }
 
     /**
-     * Sets dunningAmount
+     * Sets dunning_amount
      *
-     * @param int $dunningAmount Summed amount for dunning subscription invoices
+     * @param int $dunning_amount Summed amount for dunning subscription invoices
      *
      * @return $this
      */
-    public function setDunningAmount($dunningAmount)
+    public function setDunningAmount($dunning_amount)
     {
-        $this->container['dunningAmount'] = $dunningAmount;
+        $this->container['dunning_amount'] = $dunning_amount;
 
         return $this;
     }
 
     /**
-     * Gets settledInvoices
+     * Gets settled_invoices
      *
      * @return int
      */
     public function getSettledInvoices()
     {
-        return $this->container['settledInvoices'];
+        return $this->container['settled_invoices'];
     }
 
     /**
-     * Sets settledInvoices
+     * Sets settled_invoices
      *
-     * @param int $settledInvoices Number of settled subscription invoices for this customer
+     * @param int $settled_invoices Number of settled subscription invoices for this customer
      *
      * @return $this
      */
-    public function setSettledInvoices($settledInvoices)
+    public function setSettledInvoices($settled_invoices)
     {
-        $this->container['settledInvoices'] = $settledInvoices;
+        $this->container['settled_invoices'] = $settled_invoices;
 
         return $this;
     }
 
     /**
-     * Gets settledAmount
+     * Gets settled_amount
      *
      * @return int
      */
     public function getSettledAmount()
     {
-        return $this->container['settledAmount'];
+        return $this->container['settled_amount'];
     }
 
     /**
-     * Sets settledAmount
+     * Sets settled_amount
      *
-     * @param int $settledAmount Summed settled subscription amount
+     * @param int $settled_amount Summed settled subscription amount
      *
      * @return $this
      */
-    public function setSettledAmount($settledAmount)
+    public function setSettledAmount($settled_amount)
     {
-        $this->container['settledAmount'] = $settledAmount;
+        $this->container['settled_amount'] = $settled_amount;
 
         return $this;
     }
 
     /**
-     * Gets refundedAmount
+     * Gets refunded_amount
      *
      * @return int
      */
     public function getRefundedAmount()
     {
-        return $this->container['refundedAmount'];
+        return $this->container['refunded_amount'];
     }
 
     /**
-     * Sets refundedAmount
+     * Sets refunded_amount
      *
-     * @param int $refundedAmount Summed refunded subscription amount
+     * @param int $refunded_amount Summed refunded subscription amount
      *
      * @return $this
      */
-    public function setRefundedAmount($refundedAmount)
+    public function setRefundedAmount($refunded_amount)
     {
-        $this->container['refundedAmount'] = $refundedAmount;
+        $this->container['refunded_amount'] = $refunded_amount;
 
         return $this;
     }
 
     /**
-     * Gets pendingAdditionalCosts
+     * Gets pending_additional_costs
      *
      * @return int
      */
     public function getPendingAdditionalCosts()
     {
-        return $this->container['pendingAdditionalCosts'];
+        return $this->container['pending_additional_costs'];
     }
 
     /**
-     * Sets pendingAdditionalCosts
+     * Sets pending_additional_costs
      *
-     * @param int $pendingAdditionalCosts Number of pending additional costs
+     * @param int $pending_additional_costs Number of pending additional costs
      *
      * @return $this
      */
-    public function setPendingAdditionalCosts($pendingAdditionalCosts)
+    public function setPendingAdditionalCosts($pending_additional_costs)
     {
-        $this->container['pendingAdditionalCosts'] = $pendingAdditionalCosts;
+        $this->container['pending_additional_costs'] = $pending_additional_costs;
 
         return $this;
     }
 
     /**
-     * Gets pendingAdditionalCostAmount
+     * Gets pending_additional_cost_amount
      *
      * @return int
      */
     public function getPendingAdditionalCostAmount()
     {
-        return $this->container['pendingAdditionalCostAmount'];
+        return $this->container['pending_additional_cost_amount'];
     }
 
     /**
-     * Sets pendingAdditionalCostAmount
+     * Sets pending_additional_cost_amount
      *
-     * @param int $pendingAdditionalCostAmount Summed amount of pending additional costs incl vat
+     * @param int $pending_additional_cost_amount Summed amount of pending additional costs incl vat
      *
      * @return $this
      */
-    public function setPendingAdditionalCostAmount($pendingAdditionalCostAmount)
+    public function setPendingAdditionalCostAmount($pending_additional_cost_amount)
     {
-        $this->container['pendingAdditionalCostAmount'] = $pendingAdditionalCostAmount;
+        $this->container['pending_additional_cost_amount'] = $pending_additional_cost_amount;
 
         return $this;
     }
 
     /**
-     * Gets transferredAdditionalCosts
+     * Gets transferred_additional_costs
      *
      * @return int
      */
     public function getTransferredAdditionalCosts()
     {
-        return $this->container['transferredAdditionalCosts'];
+        return $this->container['transferred_additional_costs'];
     }
 
     /**
-     * Sets transferredAdditionalCosts
+     * Sets transferred_additional_costs
      *
-     * @param int $transferredAdditionalCosts Number of additional costs that have been applied to invoices
+     * @param int $transferred_additional_costs Number of additional costs that have been applied to invoices
      *
      * @return $this
      */
-    public function setTransferredAdditionalCosts($transferredAdditionalCosts)
+    public function setTransferredAdditionalCosts($transferred_additional_costs)
     {
-        $this->container['transferredAdditionalCosts'] = $transferredAdditionalCosts;
+        $this->container['transferred_additional_costs'] = $transferred_additional_costs;
 
         return $this;
     }
 
     /**
-     * Gets transferredAdditionalCostAmount
+     * Gets transferred_additional_cost_amount
      *
      * @return int
      */
     public function getTransferredAdditionalCostAmount()
     {
-        return $this->container['transferredAdditionalCostAmount'];
+        return $this->container['transferred_additional_cost_amount'];
     }
 
     /**
-     * Sets transferredAdditionalCostAmount
+     * Sets transferred_additional_cost_amount
      *
-     * @param int $transferredAdditionalCostAmount Summed amount of additional costs that have been applied to invoices
+     * @param int $transferred_additional_cost_amount Summed amount of additional costs that have been applied to invoices
      *
      * @return $this
      */
-    public function setTransferredAdditionalCostAmount($transferredAdditionalCostAmount)
+    public function setTransferredAdditionalCostAmount($transferred_additional_cost_amount)
     {
-        $this->container['transferredAdditionalCostAmount'] = $transferredAdditionalCostAmount;
+        $this->container['transferred_additional_cost_amount'] = $transferred_additional_cost_amount;
 
         return $this;
     }
 
     /**
-     * Gets pendingCredits
+     * Gets pending_credits
      *
      * @return int
      */
     public function getPendingCredits()
     {
-        return $this->container['pendingCredits'];
+        return $this->container['pending_credits'];
     }
 
     /**
-     * Sets pendingCredits
+     * Sets pending_credits
      *
-     * @param int $pendingCredits Number of credits that have not fully been applied to invoices
+     * @param int $pending_credits Number of credits that have not fully been applied to invoices
      *
      * @return $this
      */
-    public function setPendingCredits($pendingCredits)
+    public function setPendingCredits($pending_credits)
     {
-        $this->container['pendingCredits'] = $pendingCredits;
+        $this->container['pending_credits'] = $pending_credits;
 
         return $this;
     }
 
     /**
-     * Gets pendingCreditAmount
+     * Gets pending_credit_amount
      *
      * @return int
      */
     public function getPendingCreditAmount()
     {
-        return $this->container['pendingCreditAmount'];
+        return $this->container['pending_credit_amount'];
     }
 
     /**
-     * Sets pendingCreditAmount
+     * Sets pending_credit_amount
      *
-     * @param int $pendingCreditAmount Summed credit amount not yet applied to invoices
+     * @param int $pending_credit_amount Summed credit amount not yet applied to invoices
      *
      * @return $this
      */
-    public function setPendingCreditAmount($pendingCreditAmount)
+    public function setPendingCreditAmount($pending_credit_amount)
     {
-        $this->container['pendingCreditAmount'] = $pendingCreditAmount;
+        $this->container['pending_credit_amount'] = $pending_credit_amount;
 
         return $this;
     }
 
     /**
-     * Gets transferredCredits
+     * Gets transferred_credits
      *
      * @return int
      */
     public function getTransferredCredits()
     {
-        return $this->container['transferredCredits'];
+        return $this->container['transferred_credits'];
     }
 
     /**
-     * Sets transferredCredits
+     * Sets transferred_credits
      *
-     * @param int $transferredCredits Number of credits that have fully been applied to invoices
+     * @param int $transferred_credits Number of credits that have fully been applied to invoices
      *
      * @return $this
      */
-    public function setTransferredCredits($transferredCredits)
+    public function setTransferredCredits($transferred_credits)
     {
-        $this->container['transferredCredits'] = $transferredCredits;
+        $this->container['transferred_credits'] = $transferred_credits;
 
         return $this;
     }
 
     /**
-     * Gets transferredCreditAmount
+     * Gets transferred_credit_amount
      *
      * @return int
      */
     public function getTransferredCreditAmount()
     {
-        return $this->container['transferredCreditAmount'];
+        return $this->container['transferred_credit_amount'];
     }
 
     /**
-     * Sets transferredCreditAmount
+     * Sets transferred_credit_amount
      *
-     * @param int $transferredCreditAmount Summed credit amount that have been applied to invoices
+     * @param int $transferred_credit_amount Summed credit amount that have been applied to invoices
      *
      * @return $this
      */
-    public function setTransferredCreditAmount($transferredCreditAmount)
+    public function setTransferredCreditAmount($transferred_credit_amount)
     {
-        $this->container['transferredCreditAmount'] = $transferredCreditAmount;
+        $this->container['transferred_credit_amount'] = $transferred_credit_amount;
 
         return $this;
     }

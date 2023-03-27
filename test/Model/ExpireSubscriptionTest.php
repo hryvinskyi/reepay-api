@@ -76,7 +76,7 @@ class ExpireSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "compensationMethod"
+     * Test attribute "compensation_method"
      */
     public function testPropertyCompensationMethod()
     {

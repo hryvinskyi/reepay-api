@@ -153,56 +153,56 @@ class PayoutTransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "cardType"
+     * Test attribute "card_type"
      */
     public function testPropertyCardType()
     {
     }
 
     /**
-     * Test attribute "expDate"
+     * Test attribute "exp_date"
      */
     public function testPropertyExpDate()
     {
     }
 
     /**
-     * Test attribute "maskedCard"
+     * Test attribute "masked_card"
      */
     public function testPropertyMaskedCard()
     {
     }
 
     /**
-     * Test attribute "acquirerCode"
+     * Test attribute "acquirer_code"
      */
     public function testPropertyAcquirerCode()
     {
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {
     }
 
     /**
-     * Test attribute "acquirerReference"
+     * Test attribute "acquirer_reference"
      */
     public function testPropertyAcquirerReference()
     {
     }
 
     /**
-     * Test attribute "textOnStatement"
+     * Test attribute "text_on_statement"
      */
     public function testPropertyTextOnStatement()
     {

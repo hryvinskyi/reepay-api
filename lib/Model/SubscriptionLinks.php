@@ -56,7 +56,7 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentInfo' => 'string'
+        'payment_info' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'paymentInfo' => null
+        'payment_info' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentInfo' => 'payment_info'
+        'payment_info' => 'payment_info'
     ];
 
     /**
@@ -104,7 +104,7 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'paymentInfo' => 'setPaymentInfo'
+        'payment_info' => 'setPaymentInfo'
     ];
 
     /**
@@ -113,7 +113,7 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'paymentInfo' => 'getPaymentInfo'
+        'payment_info' => 'getPaymentInfo'
     ];
 
     /**
@@ -174,7 +174,7 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['paymentInfo'] = isset($data['paymentInfo']) ? $data['paymentInfo'] : null;
+        $this->container['payment_info'] = isset($data['payment_info']) ? $data['payment_info'] : null;
     }
 
     /**
@@ -186,8 +186,8 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['paymentInfo'] === null) {
-            $invalidProperties[] = "'paymentInfo' can't be null";
+        if ($this->container['payment_info'] === null) {
+            $invalidProperties[] = "'payment_info' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,25 +205,25 @@ class SubscriptionLinks implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets paymentInfo
+     * Gets payment_info
      *
      * @return string
      */
     public function getPaymentInfo()
     {
-        return $this->container['paymentInfo'];
+        return $this->container['payment_info'];
     }
 
     /**
-     * Sets paymentInfo
+     * Sets payment_info
      *
-     * @param string $paymentInfo Hosted page for setting payment information on subscription. Optional arguments `accept_url` and `cancel_url` can be added as query parameters to the URL to have the hosted page redirect after success or cancellation, respectively.
+     * @param string $payment_info Hosted page for setting payment information on subscription. Optional arguments `accept_url` and `cancel_url` can be added as query parameters to the URL to have the hosted page redirect after success or cancellation, respectively.
      *
      * @return $this
      */
-    public function setPaymentInfo($paymentInfo)
+    public function setPaymentInfo($payment_info)
     {
-        $this->container['paymentInfo'] = $paymentInfo;
+        $this->container['payment_info'] = $payment_info;
 
         return $this;
     }

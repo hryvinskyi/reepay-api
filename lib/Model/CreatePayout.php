@@ -62,8 +62,8 @@ class CreatePayout implements ModelInterface, ArrayAccess
         'currency' => 'string',
         'text' => 'string',
         'customer' => '\Reepay\Model\CreateCustomer',
-        'customerHandle' => 'string',
-        'textOnStatement' => 'string'
+        'customer_handle' => 'string',
+        'text_on_statement' => 'string'
     ];
 
     /**
@@ -78,8 +78,8 @@ class CreatePayout implements ModelInterface, ArrayAccess
         'currency' => null,
         'text' => null,
         'customer' => null,
-        'customerHandle' => null,
-        'textOnStatement' => null
+        'customer_handle' => null,
+        'text_on_statement' => null
     ];
 
     /**
@@ -115,8 +115,8 @@ class CreatePayout implements ModelInterface, ArrayAccess
         'currency' => 'currency',
         'text' => 'text',
         'customer' => 'customer',
-        'customerHandle' => 'customer_handle',
-        'textOnStatement' => 'text_on_statement'
+        'customer_handle' => 'customer_handle',
+        'text_on_statement' => 'text_on_statement'
     ];
 
     /**
@@ -131,8 +131,8 @@ class CreatePayout implements ModelInterface, ArrayAccess
         'currency' => 'setCurrency',
         'text' => 'setText',
         'customer' => 'setCustomer',
-        'customerHandle' => 'setCustomerHandle',
-        'textOnStatement' => 'setTextOnStatement'
+        'customer_handle' => 'setCustomerHandle',
+        'text_on_statement' => 'setTextOnStatement'
     ];
 
     /**
@@ -147,8 +147,8 @@ class CreatePayout implements ModelInterface, ArrayAccess
         'currency' => 'getCurrency',
         'text' => 'getText',
         'customer' => 'getCustomer',
-        'customerHandle' => 'getCustomerHandle',
-        'textOnStatement' => 'getTextOnStatement'
+        'customer_handle' => 'getCustomerHandle',
+        'text_on_statement' => 'getTextOnStatement'
     ];
 
     /**
@@ -215,8 +215,8 @@ class CreatePayout implements ModelInterface, ArrayAccess
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
-        $this->container['customerHandle'] = isset($data['customerHandle']) ? $data['customerHandle'] : null;
-        $this->container['textOnStatement'] = isset($data['textOnStatement']) ? $data['textOnStatement'] : null;
+        $this->container['customer_handle'] = isset($data['customer_handle']) ? $data['customer_handle'] : null;
+        $this->container['text_on_statement'] = isset($data['text_on_statement']) ? $data['text_on_statement'] : null;
     }
 
     /**
@@ -397,49 +397,49 @@ class CreatePayout implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets customerHandle
+     * Gets customer_handle
      *
      * @return string
      */
     public function getCustomerHandle()
     {
-        return $this->container['customerHandle'];
+        return $this->container['customer_handle'];
     }
 
     /**
-     * Sets customerHandle
+     * Sets customer_handle
      *
-     * @param string $customerHandle Customer reference. If payout does not already exist either this reference must be provided, a create customer object must be provided or the destination must be a payment method reference (e.g. `ca_..`) identifying customer. Notice that customer cannot be changed for existing payout so if handle is provided it must match the customer handle for existing customer.
+     * @param string $customer_handle Customer reference. If payout does not already exist either this reference must be provided, a create customer object must be provided or the destination must be a payment method reference (e.g. `ca_..`) identifying customer. Notice that customer cannot be changed for existing payout so if handle is provided it must match the customer handle for existing customer.
      *
      * @return $this
      */
-    public function setCustomerHandle($customerHandle)
+    public function setCustomerHandle($customer_handle)
     {
-        $this->container['customerHandle'] = $customerHandle;
+        $this->container['customer_handle'] = $customer_handle;
 
         return $this;
     }
 
     /**
-     * Gets textOnStatement
+     * Gets text_on_statement
      *
      * @return string
      */
     public function getTextOnStatement()
     {
-        return $this->container['textOnStatement'];
+        return $this->container['text_on_statement'];
     }
 
     /**
-     * Sets textOnStatement
+     * Sets text_on_statement
      *
-     * @param string $textOnStatement Optional argument to define the text on bank statement. Characters must match regex `[\\x20-\\x7F]`
+     * @param string $text_on_statement Optional argument to define the text on bank statement. Characters must match regex `[\\x20-\\x7F]`
      *
      * @return $this
      */
-    public function setTextOnStatement($textOnStatement)
+    public function setTextOnStatement($text_on_statement)
     {
-        $this->container['textOnStatement'] = $textOnStatement;
+        $this->container['text_on_statement'] = $text_on_statement;
 
         return $this;
     }

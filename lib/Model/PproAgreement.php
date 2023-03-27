@@ -57,8 +57,8 @@ class PproAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'test' => 'bool',
-        'contractId' => 'string',
-        'paymentType' => 'string'
+        'contract_id' => 'string',
+        'payment_type' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class PproAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'test' => null,
-        'contractId' => null,
-        'paymentType' => null
+        'contract_id' => null,
+        'payment_type' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PproAgreement implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'test' => 'test',
-        'contractId' => 'contract_id',
-        'paymentType' => 'payment_type'
+        'contract_id' => 'contract_id',
+        'payment_type' => 'payment_type'
     ];
 
     /**
@@ -111,8 +111,8 @@ class PproAgreement implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'test' => 'setTest',
-        'contractId' => 'setContractId',
-        'paymentType' => 'setPaymentType'
+        'contract_id' => 'setContractId',
+        'payment_type' => 'setPaymentType'
     ];
 
     /**
@@ -122,8 +122,8 @@ class PproAgreement implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'test' => 'getTest',
-        'contractId' => 'getContractId',
-        'paymentType' => 'getPaymentType'
+        'contract_id' => 'getContractId',
+        'payment_type' => 'getPaymentType'
     ];
 
     /**
@@ -209,8 +209,8 @@ class PproAgreement implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['contractId'] = isset($data['contractId']) ? $data['contractId'] : null;
-        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['contract_id'] = isset($data['contract_id']) ? $data['contract_id'] : null;
+        $this->container['payment_type'] = isset($data['payment_type']) ? $data['payment_type'] : null;
     }
 
     /**
@@ -222,13 +222,17 @@ class PproAgreement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['paymentType'] === null) {
-            $invalidProperties[] = "'paymentType' can't be null";
+        if ($this->container['payment_type'] === null) {
+            $invalidProperties[] = "'payment_type' can't be null";
         }
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!is_null($this->container['paymentType']) && !in_array($this->container['paymentType'], $allowedValues, true)) {
+        if (!is_null($this->container['payment_type']) && !in_array(
+                $this->container['payment_type'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'paymentType', must be one of '%s'",
+                "invalid value for 'payment_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -273,58 +277,58 @@ class PproAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets contractId
+     * Gets contract_id
      *
      * @return string
      */
     public function getContractId()
     {
-        return $this->container['contractId'];
+        return $this->container['contract_id'];
     }
 
     /**
-     * Sets contractId
+     * Sets contract_id
      *
-     * @param string $contractId Contract id for local payment method
+     * @param string $contract_id Contract id for local payment method
      *
      * @return $this
      */
-    public function setContractId($contractId)
+    public function setContractId($contract_id)
     {
-        $this->container['contractId'] = $contractId;
+        $this->container['contract_id'] = $contract_id;
 
         return $this;
     }
 
     /**
-     * Gets paymentType
+     * Gets payment_type
      *
      * @return string
      */
     public function getPaymentType()
     {
-        return $this->container['paymentType'];
+        return $this->container['payment_type'];
     }
 
     /**
-     * Sets paymentType
+     * Sets payment_type
      *
-     * @param string $paymentType Payment gateway payment type
+     * @param string $payment_type Payment gateway payment type
      *
      * @return $this
      */
-    public function setPaymentType($paymentType)
+    public function setPaymentType($payment_type)
     {
         $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!in_array($paymentType, $allowedValues, true)) {
+        if (!in_array($payment_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'paymentType', must be one of '%s'",
+                    "Invalid value for 'payment_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['paymentType'] = $paymentType;
+        $this->container['payment_type'] = $payment_type;
 
         return $this;
     }

@@ -69,14 +69,14 @@ class Charge implements ModelInterface, ArrayAccess
         'error' => 'string',
         'processing' => 'bool',
         'source' => '\Reepay\Model\ChargeSource',
-        'orderLines' => '\Reepay\Model\OrderLine[]',
-        'refundedAmount' => 'int',
-        'authorizedAmount' => 'int',
-        'errorState' => 'string',
-        'recurringPaymentMethod' => 'string',
-        'billingAddress' => '\Reepay\Model\InvoiceBillingAddress',
-        'shippingAddress' => '\Reepay\Model\InvoiceShippingAddress',
-        'paymentContext' => 'string'
+        'order_lines' => '\Reepay\Model\OrderLine[]',
+        'refunded_amount' => 'int',
+        'authorized_amount' => 'int',
+        'error_state' => 'string',
+        'recurring_payment_method' => 'string',
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress',
+        'payment_context' => 'string'
     ];
 
     /**
@@ -98,14 +98,14 @@ class Charge implements ModelInterface, ArrayAccess
         'error' => null,
         'processing' => null,
         'source' => null,
-        'orderLines' => null,
-        'refundedAmount' => 'int32',
-        'authorizedAmount' => 'int32',
-        'errorState' => null,
-        'recurringPaymentMethod' => null,
-        'billingAddress' => null,
-        'shippingAddress' => null,
-        'paymentContext' => null
+        'order_lines' => null,
+        'refunded_amount' => 'int32',
+        'authorized_amount' => 'int32',
+        'error_state' => null,
+        'recurring_payment_method' => null,
+        'billing_address' => null,
+        'shipping_address' => null,
+        'payment_context' => null
     ];
 
     /**
@@ -148,14 +148,14 @@ class Charge implements ModelInterface, ArrayAccess
         'error' => 'error',
         'processing' => 'processing',
         'source' => 'source',
-        'orderLines' => 'order_lines',
-        'refundedAmount' => 'refunded_amount',
-        'authorizedAmount' => 'authorized_amount',
-        'errorState' => 'error_state',
-        'recurringPaymentMethod' => 'recurring_payment_method',
-        'billingAddress' => 'billing_address',
-        'shippingAddress' => 'shipping_address',
-        'paymentContext' => 'payment_context'
+        'order_lines' => 'order_lines',
+        'refunded_amount' => 'refunded_amount',
+        'authorized_amount' => 'authorized_amount',
+        'error_state' => 'error_state',
+        'recurring_payment_method' => 'recurring_payment_method',
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address',
+        'payment_context' => 'payment_context'
     ];
 
     /**
@@ -177,14 +177,14 @@ class Charge implements ModelInterface, ArrayAccess
         'error' => 'setError',
         'processing' => 'setProcessing',
         'source' => 'setSource',
-        'orderLines' => 'setOrderLines',
-        'refundedAmount' => 'setRefundedAmount',
-        'authorizedAmount' => 'setAuthorizedAmount',
-        'errorState' => 'setErrorState',
-        'recurringPaymentMethod' => 'setRecurringPaymentMethod',
-        'billingAddress' => 'setBillingAddress',
-        'shippingAddress' => 'setShippingAddress',
-        'paymentContext' => 'setPaymentContext'
+        'order_lines' => 'setOrderLines',
+        'refunded_amount' => 'setRefundedAmount',
+        'authorized_amount' => 'setAuthorizedAmount',
+        'error_state' => 'setErrorState',
+        'recurring_payment_method' => 'setRecurringPaymentMethod',
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress',
+        'payment_context' => 'setPaymentContext'
     ];
 
     /**
@@ -206,14 +206,14 @@ class Charge implements ModelInterface, ArrayAccess
         'error' => 'getError',
         'processing' => 'getProcessing',
         'source' => 'getSource',
-        'orderLines' => 'getOrderLines',
-        'refundedAmount' => 'getRefundedAmount',
-        'authorizedAmount' => 'getAuthorizedAmount',
-        'errorState' => 'getErrorState',
-        'recurringPaymentMethod' => 'getRecurringPaymentMethod',
-        'billingAddress' => 'getBillingAddress',
-        'shippingAddress' => 'getShippingAddress',
-        'paymentContext' => 'getPaymentContext'
+        'order_lines' => 'getOrderLines',
+        'refunded_amount' => 'getRefundedAmount',
+        'authorized_amount' => 'getAuthorizedAmount',
+        'error_state' => 'getErrorState',
+        'recurring_payment_method' => 'getRecurringPaymentMethod',
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress',
+        'payment_context' => 'getPaymentContext'
     ];
 
     /**
@@ -325,14 +325,14 @@ class Charge implements ModelInterface, ArrayAccess
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['processing'] = isset($data['processing']) ? $data['processing'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['orderLines'] = isset($data['orderLines']) ? $data['orderLines'] : null;
-        $this->container['refundedAmount'] = isset($data['refundedAmount']) ? $data['refundedAmount'] : null;
-        $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['recurringPaymentMethod'] = isset($data['recurringPaymentMethod']) ? $data['recurringPaymentMethod'] : null;
-        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
-        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
-        $this->container['paymentContext'] = isset($data['paymentContext']) ? $data['paymentContext'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['refunded_amount'] = isset($data['refunded_amount']) ? $data['refunded_amount'] : null;
+        $this->container['authorized_amount'] = isset($data['authorized_amount']) ? $data['authorized_amount'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['recurring_payment_method'] = isset($data['recurring_payment_method']) ? $data['recurring_payment_method'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
+        $this->container['payment_context'] = isset($data['payment_context']) ? $data['payment_context'] : null;
     }
 
     /**
@@ -373,16 +373,20 @@ class Charge implements ModelInterface, ArrayAccess
         if ($this->container['source'] === null) {
             $invalidProperties[] = "'source' can't be null";
         }
-        if ($this->container['orderLines'] === null) {
-            $invalidProperties[] = "'orderLines' can't be null";
+        if ($this->container['order_lines'] === null) {
+            $invalidProperties[] = "'order_lines' can't be null";
         }
-        if ($this->container['refundedAmount'] === null) {
-            $invalidProperties[] = "'refundedAmount' can't be null";
+        if ($this->container['refunded_amount'] === null) {
+            $invalidProperties[] = "'refunded_amount' can't be null";
         }
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -724,202 +728,202 @@ class Charge implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderLines
+     * Gets order_lines
      *
      * @return \Reepay\Model\OrderLine[]
      */
     public function getOrderLines()
     {
-        return $this->container['orderLines'];
+        return $this->container['order_lines'];
     }
 
     /**
-     * Sets orderLines
+     * Sets order_lines
      *
-     * @param \Reepay\Model\OrderLine[] $orderLines Order lines for charge
+     * @param \Reepay\Model\OrderLine[] $order_lines Order lines for charge
      *
      * @return $this
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines($order_lines)
     {
-        $this->container['orderLines'] = $orderLines;
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }
 
     /**
-     * Gets refundedAmount
+     * Gets refunded_amount
      *
      * @return int
      */
     public function getRefundedAmount()
     {
-        return $this->container['refundedAmount'];
+        return $this->container['refunded_amount'];
     }
 
     /**
-     * Sets refundedAmount
+     * Sets refunded_amount
      *
-     * @param int $refundedAmount Refunded amount
+     * @param int $refunded_amount Refunded amount
      *
      * @return $this
      */
-    public function setRefundedAmount($refundedAmount)
+    public function setRefundedAmount($refunded_amount)
     {
-        $this->container['refundedAmount'] = $refundedAmount;
+        $this->container['refunded_amount'] = $refunded_amount;
 
         return $this;
     }
 
     /**
-     * Gets authorizedAmount
+     * Gets authorized_amount
      *
      * @return int
      */
     public function getAuthorizedAmount()
     {
-        return $this->container['authorizedAmount'];
+        return $this->container['authorized_amount'];
     }
 
     /**
-     * Sets authorizedAmount
+     * Sets authorized_amount
      *
-     * @param int $authorizedAmount Authorized amount if authorization was performed. The maximum amount that can be settled.
+     * @param int $authorized_amount Authorized amount if authorization was performed. The maximum amount that can be settled.
      *
      * @return $this
      */
-    public function setAuthorizedAmount($authorizedAmount)
+    public function setAuthorizedAmount($authorized_amount)
     {
-        $this->container['authorizedAmount'] = $authorizedAmount;
+        $this->container['authorized_amount'] = $authorized_amount;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Reepay error state if failed: `soft_declined`, `hard_declined` or `processing_error`. Soft and hard declines indicate a card decline. A soft decline is possibly recoverable and a subsequent request with the same card may succeed. E.g. insufficient funds. A processing error indicates an error processing the card either at Reepay, the acquirer, or between Reepay and the acquirer.
+     * @param string $error_state Reepay error state if failed: `soft_declined`, `hard_declined` or `processing_error`. Soft and hard declines indicate a card decline. A soft decline is possibly recoverable and a subsequent request with the same card may succeed. E.g. insufficient funds. A processing error indicates an error processing the card either at Reepay, the acquirer, or between Reepay and the acquirer.
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets recurringPaymentMethod
+     * Gets recurring_payment_method
      *
      * @return string
      */
     public function getRecurringPaymentMethod()
     {
-        return $this->container['recurringPaymentMethod'];
+        return $this->container['recurring_payment_method'];
     }
 
     /**
-     * Sets recurringPaymentMethod
+     * Sets recurring_payment_method
      *
-     * @param string $recurringPaymentMethod Optional reference to recurring payment method created in conjunction with charging
+     * @param string $recurring_payment_method Optional reference to recurring payment method created in conjunction with charging
      *
      * @return $this
      */
-    public function setRecurringPaymentMethod($recurringPaymentMethod)
+    public function setRecurringPaymentMethod($recurring_payment_method)
     {
-        $this->container['recurringPaymentMethod'] = $recurringPaymentMethod;
+        $this->container['recurring_payment_method'] = $recurring_payment_method;
 
         return $this;
     }
 
     /**
-     * Gets billingAddress
+     * Gets billing_address
      *
      * @return \Reepay\Model\InvoiceBillingAddress
      */
     public function getBillingAddress()
     {
-        return $this->container['billingAddress'];
+        return $this->container['billing_address'];
     }
 
     /**
-     * Sets billingAddress
+     * Sets billing_address
      *
-     * @param \Reepay\Model\InvoiceBillingAddress $billingAddress billingAddress
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address billing_address
      *
      * @return $this
      */
-    public function setBillingAddress($billingAddress)
+    public function setBillingAddress($billing_address)
     {
-        $this->container['billingAddress'] = $billingAddress;
+        $this->container['billing_address'] = $billing_address;
 
         return $this;
     }
 
     /**
-     * Gets shippingAddress
+     * Gets shipping_address
      *
      * @return \Reepay\Model\InvoiceShippingAddress
      */
     public function getShippingAddress()
     {
-        return $this->container['shippingAddress'];
+        return $this->container['shipping_address'];
     }
 
     /**
-     * Sets shippingAddress
+     * Sets shipping_address
      *
-     * @param \Reepay\Model\InvoiceShippingAddress $shippingAddress shippingAddress
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address shipping_address
      *
      * @return $this
      */
-    public function setShippingAddress($shippingAddress)
+    public function setShippingAddress($shipping_address)
     {
-        $this->container['shippingAddress'] = $shippingAddress;
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }
 
     /**
-     * Gets paymentContext
+     * Gets payment_context
      *
      * @return string
      */
     public function getPaymentContext()
     {
-        return $this->container['paymentContext'];
+        return $this->container['payment_context'];
     }
 
     /**
-     * Sets paymentContext
+     * Sets payment_context
      *
-     * @param string $paymentContext Payment context describing if the transaction is customer or merchant initiated, one of the following values: `cit`, `mit`, `cit_cof`
+     * @param string $payment_context Payment context describing if the transaction is customer or merchant initiated, one of the following values: `cit`, `mit`, `cit_cof`
      *
      * @return $this
      */
-    public function setPaymentContext($paymentContext)
+    public function setPaymentContext($payment_context)
     {
-        $this->container['paymentContext'] = $paymentContext;
+        $this->container['payment_context'] = $payment_context;
 
         return $this;
     }

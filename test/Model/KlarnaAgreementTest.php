@@ -104,7 +104,7 @@ class KlarnaAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentType"
+     * Test attribute "payment_type"
      */
     public function testPropertyPaymentType()
     {

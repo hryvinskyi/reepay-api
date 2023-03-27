@@ -57,8 +57,8 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'test' => 'bool',
-        'clientId' => 'string',
-        'clientSecret' => 'string'
+        'client_id' => 'string',
+        'client_secret' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'test' => null,
-        'clientId' => null,
-        'clientSecret' => null
+        'client_id' => null,
+        'client_secret' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'test' => 'test',
-        'clientId' => 'client_id',
-        'clientSecret' => 'client_secret'
+        'client_id' => 'client_id',
+        'client_secret' => 'client_secret'
     ];
 
     /**
@@ -111,8 +111,8 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'test' => 'setTest',
-        'clientId' => 'setClientId',
-        'clientSecret' => 'setClientSecret'
+        'client_id' => 'setClientId',
+        'client_secret' => 'setClientSecret'
     ];
 
     /**
@@ -122,8 +122,8 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'test' => 'getTest',
-        'clientId' => 'getClientId',
-        'clientSecret' => 'getClientSecret'
+        'client_id' => 'getClientId',
+        'client_secret' => 'getClientSecret'
     ];
 
     /**
@@ -185,8 +185,8 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
-        $this->container['clientSecret'] = isset($data['clientSecret']) ? $data['clientSecret'] : null;
+        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
+        $this->container['client_secret'] = isset($data['client_secret']) ? $data['client_secret'] : null;
     }
 
     /**
@@ -238,49 +238,49 @@ class PaypalAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets clientId
+     * Gets client_id
      *
      * @return string
      */
     public function getClientId()
     {
-        return $this->container['clientId'];
+        return $this->container['client_id'];
     }
 
     /**
-     * Sets clientId
+     * Sets client_id
      *
-     * @param string $clientId PayPal client id
+     * @param string $client_id PayPal client id
      *
      * @return $this
      */
-    public function setClientId($clientId)
+    public function setClientId($client_id)
     {
-        $this->container['clientId'] = $clientId;
+        $this->container['client_id'] = $client_id;
 
         return $this;
     }
 
     /**
-     * Gets clientSecret
+     * Gets client_secret
      *
      * @return string
      */
     public function getClientSecret()
     {
-        return $this->container['clientSecret'];
+        return $this->container['client_secret'];
     }
 
     /**
-     * Sets clientSecret
+     * Sets client_secret
      *
-     * @param string $clientSecret PayPal client secret
+     * @param string $client_secret PayPal client secret
      *
      * @return $this
      */
-    public function setClientSecret($clientSecret)
+    public function setClientSecret($client_secret)
     {
-        $this->container['clientSecret'] = $clientSecret;
+        $this->container['client_secret'] = $client_secret;
 
         return $this;
     }

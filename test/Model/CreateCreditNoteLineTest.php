@@ -97,7 +97,7 @@ class CreateCreditNoteLineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "orderLineId"
+     * Test attribute "order_line_id"
      */
     public function testPropertyOrderLineId()
     {

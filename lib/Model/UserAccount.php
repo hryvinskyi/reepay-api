@@ -62,9 +62,9 @@ class UserAccount implements ModelInterface, ArrayAccess
         'state' => 'string',
         'groups' => 'string[]',
         'permissions' => 'string[]',
-        'verifiedEmail' => 'bool',
-        'mfaMethod' => 'string',
-        'inviteExpires' => '\DateTime'
+        'verified_email' => 'bool',
+        'mfa_method' => 'string',
+        'invite_expires' => '\DateTime'
     ];
 
     /**
@@ -79,9 +79,9 @@ class UserAccount implements ModelInterface, ArrayAccess
         'state' => null,
         'groups' => null,
         'permissions' => null,
-        'verifiedEmail' => null,
-        'mfaMethod' => null,
-        'inviteExpires' => 'date-time'
+        'verified_email' => null,
+        'mfa_method' => null,
+        'invite_expires' => 'date-time'
     ];
 
     /**
@@ -117,9 +117,9 @@ class UserAccount implements ModelInterface, ArrayAccess
         'state' => 'state',
         'groups' => 'groups',
         'permissions' => 'permissions',
-        'verifiedEmail' => 'verified_email',
-        'mfaMethod' => 'mfa_method',
-        'inviteExpires' => 'invite_expires'
+        'verified_email' => 'verified_email',
+        'mfa_method' => 'mfa_method',
+        'invite_expires' => 'invite_expires'
     ];
 
     /**
@@ -134,9 +134,9 @@ class UserAccount implements ModelInterface, ArrayAccess
         'state' => 'setState',
         'groups' => 'setGroups',
         'permissions' => 'setPermissions',
-        'verifiedEmail' => 'setVerifiedEmail',
-        'mfaMethod' => 'setMfaMethod',
-        'inviteExpires' => 'setInviteExpires'
+        'verified_email' => 'setVerifiedEmail',
+        'mfa_method' => 'setMfaMethod',
+        'invite_expires' => 'setInviteExpires'
     ];
 
     /**
@@ -151,9 +151,9 @@ class UserAccount implements ModelInterface, ArrayAccess
         'state' => 'getState',
         'groups' => 'getGroups',
         'permissions' => 'getPermissions',
-        'verifiedEmail' => 'getVerifiedEmail',
-        'mfaMethod' => 'getMfaMethod',
-        'inviteExpires' => 'getInviteExpires'
+        'verified_email' => 'getVerifiedEmail',
+        'mfa_method' => 'getMfaMethod',
+        'invite_expires' => 'getInviteExpires'
     ];
 
     /**
@@ -246,9 +246,9 @@ class UserAccount implements ModelInterface, ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
         $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
-        $this->container['verifiedEmail'] = isset($data['verifiedEmail']) ? $data['verifiedEmail'] : null;
-        $this->container['mfaMethod'] = isset($data['mfaMethod']) ? $data['mfaMethod'] : null;
-        $this->container['inviteExpires'] = isset($data['inviteExpires']) ? $data['inviteExpires'] : null;
+        $this->container['verified_email'] = isset($data['verified_email']) ? $data['verified_email'] : null;
+        $this->container['mfa_method'] = isset($data['mfa_method']) ? $data['mfa_method'] : null;
+        $this->container['invite_expires'] = isset($data['invite_expires']) ? $data['invite_expires'] : null;
     }
 
     /**
@@ -283,13 +283,17 @@ class UserAccount implements ModelInterface, ArrayAccess
         if ($this->container['permissions'] === null) {
             $invalidProperties[] = "'permissions' can't be null";
         }
-        if ($this->container['verifiedEmail'] === null) {
-            $invalidProperties[] = "'verifiedEmail' can't be null";
+        if ($this->container['verified_email'] === null) {
+            $invalidProperties[] = "'verified_email' can't be null";
         }
         $allowedValues = $this->getMfaMethodAllowableValues();
-        if (!is_null($this->container['mfaMethod']) && !in_array($this->container['mfaMethod'], $allowedValues, true)) {
+        if (!is_null($this->container['mfa_method']) && !in_array(
+                $this->container['mfa_method'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'mfaMethod', must be one of '%s'",
+                "invalid value for 'mfa_method', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -463,82 +467,82 @@ class UserAccount implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets verifiedEmail
+     * Gets verified_email
      *
      * @return bool
      */
     public function getVerifiedEmail()
     {
-        return $this->container['verifiedEmail'];
+        return $this->container['verified_email'];
     }
 
     /**
-     * Sets verifiedEmail
+     * Sets verified_email
      *
-     * @param bool $verifiedEmail Email verified
+     * @param bool $verified_email Email verified
      *
      * @return $this
      */
-    public function setVerifiedEmail($verifiedEmail)
+    public function setVerifiedEmail($verified_email)
     {
-        $this->container['verifiedEmail'] = $verifiedEmail;
+        $this->container['verified_email'] = $verified_email;
 
         return $this;
     }
 
     /**
-     * Gets mfaMethod
+     * Gets mfa_method
      *
      * @return string
      */
     public function getMfaMethod()
     {
-        return $this->container['mfaMethod'];
+        return $this->container['mfa_method'];
     }
 
     /**
-     * Sets mfaMethod
+     * Sets mfa_method
      *
-     * @param string $mfaMethod MFA method
+     * @param string $mfa_method MFA method
      *
      * @return $this
      */
-    public function setMfaMethod($mfaMethod)
+    public function setMfaMethod($mfa_method)
     {
         $allowedValues = $this->getMfaMethodAllowableValues();
-        if (!is_null($mfaMethod) && !in_array($mfaMethod, $allowedValues, true)) {
+        if (!is_null($mfa_method) && !in_array($mfa_method, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'mfaMethod', must be one of '%s'",
+                    "Invalid value for 'mfa_method', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['mfaMethod'] = $mfaMethod;
+        $this->container['mfa_method'] = $mfa_method;
 
         return $this;
     }
 
     /**
-     * Gets inviteExpires
+     * Gets invite_expires
      *
      * @return \DateTime
      */
     public function getInviteExpires()
     {
-        return $this->container['inviteExpires'];
+        return $this->container['invite_expires'];
     }
 
     /**
-     * Sets inviteExpires
+     * Sets invite_expires
      *
-     * @param \DateTime $inviteExpires Expiry date for invite
+     * @param \DateTime $invite_expires Expiry date for invite
      *
      * @return $this
      */
-    public function setInviteExpires($inviteExpires)
+    public function setInviteExpires($invite_expires)
     {
-        $this->container['inviteExpires'] = $inviteExpires;
+        $this->container['invite_expires'] = $invite_expires;
 
         return $this;
     }

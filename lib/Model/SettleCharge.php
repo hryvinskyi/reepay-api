@@ -59,7 +59,7 @@ class SettleCharge implements ModelInterface, ArrayAccess
         'key' => 'string',
         'amount' => 'int',
         'ordertext' => 'string',
-        'orderLines' => '\Reepay\Model\CreateOrderLine[]'
+        'order_lines' => '\Reepay\Model\CreateOrderLine[]'
     ];
 
     /**
@@ -71,7 +71,7 @@ class SettleCharge implements ModelInterface, ArrayAccess
         'key' => null,
         'amount' => 'int32',
         'ordertext' => null,
-        'orderLines' => null
+        'order_lines' => null
     ];
 
     /**
@@ -104,7 +104,7 @@ class SettleCharge implements ModelInterface, ArrayAccess
         'key' => 'key',
         'amount' => 'amount',
         'ordertext' => 'ordertext',
-        'orderLines' => 'order_lines'
+        'order_lines' => 'order_lines'
     ];
 
     /**
@@ -116,7 +116,7 @@ class SettleCharge implements ModelInterface, ArrayAccess
         'key' => 'setKey',
         'amount' => 'setAmount',
         'ordertext' => 'setOrdertext',
-        'orderLines' => 'setOrderLines'
+        'order_lines' => 'setOrderLines'
     ];
 
     /**
@@ -128,7 +128,7 @@ class SettleCharge implements ModelInterface, ArrayAccess
         'key' => 'getKey',
         'amount' => 'getAmount',
         'ordertext' => 'getOrdertext',
-        'orderLines' => 'getOrderLines'
+        'order_lines' => 'getOrderLines'
     ];
 
     /**
@@ -192,7 +192,7 @@ class SettleCharge implements ModelInterface, ArrayAccess
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
-        $this->container['orderLines'] = isset($data['orderLines']) ? $data['orderLines'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
     }
 
     /**
@@ -292,25 +292,25 @@ class SettleCharge implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderLines
+     * Gets order_lines
      *
      * @return \Reepay\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
-        return $this->container['orderLines'];
+        return $this->container['order_lines'];
     }
 
     /**
-     * Sets orderLines
+     * Sets order_lines
      *
-     * @param \Reepay\Model\CreateOrderLine[] $orderLines Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount. See `amount`.
+     * @param \Reepay\Model\CreateOrderLine[] $order_lines Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount. See `amount`.
      *
      * @return $this
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines($order_lines)
     {
-        $this->container['orderLines'] = $orderLines;
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }

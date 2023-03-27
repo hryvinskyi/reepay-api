@@ -65,9 +65,9 @@ class AddOn implements ModelInterface, ArrayAccess
         'state' => 'string',
         'deleted' => '\DateTime',
         'created' => '\DateTime',
-        'amountInclVat' => 'bool',
-        'allPlans' => 'bool',
-        'eligiblePlans' => 'string[]'
+        'amount_incl_vat' => 'bool',
+        'all_plans' => 'bool',
+        'eligible_plans' => 'string[]'
     ];
 
     /**
@@ -85,9 +85,9 @@ class AddOn implements ModelInterface, ArrayAccess
         'state' => null,
         'deleted' => 'date-time',
         'created' => 'date-time',
-        'amountInclVat' => null,
-        'allPlans' => null,
-        'eligiblePlans' => null
+        'amount_incl_vat' => null,
+        'all_plans' => null,
+        'eligible_plans' => null
     ];
 
     /**
@@ -126,9 +126,9 @@ class AddOn implements ModelInterface, ArrayAccess
         'state' => 'state',
         'deleted' => 'deleted',
         'created' => 'created',
-        'amountInclVat' => 'amount_incl_vat',
-        'allPlans' => 'all_plans',
-        'eligiblePlans' => 'eligible_plans'
+        'amount_incl_vat' => 'amount_incl_vat',
+        'all_plans' => 'all_plans',
+        'eligible_plans' => 'eligible_plans'
     ];
 
     /**
@@ -146,9 +146,9 @@ class AddOn implements ModelInterface, ArrayAccess
         'state' => 'setState',
         'deleted' => 'setDeleted',
         'created' => 'setCreated',
-        'amountInclVat' => 'setAmountInclVat',
-        'allPlans' => 'setAllPlans',
-        'eligiblePlans' => 'setEligiblePlans'
+        'amount_incl_vat' => 'setAmountInclVat',
+        'all_plans' => 'setAllPlans',
+        'eligible_plans' => 'setEligiblePlans'
     ];
 
     /**
@@ -166,9 +166,9 @@ class AddOn implements ModelInterface, ArrayAccess
         'state' => 'getState',
         'deleted' => 'getDeleted',
         'created' => 'getCreated',
-        'amountInclVat' => 'getAmountInclVat',
-        'allPlans' => 'getAllPlans',
-        'eligiblePlans' => 'getEligiblePlans'
+        'amount_incl_vat' => 'getAmountInclVat',
+        'all_plans' => 'getAllPlans',
+        'eligible_plans' => 'getEligiblePlans'
     ];
 
     /**
@@ -266,9 +266,9 @@ class AddOn implements ModelInterface, ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
-        $this->container['allPlans'] = isset($data['allPlans']) ? $data['allPlans'] : null;
-        $this->container['eligiblePlans'] = isset($data['eligiblePlans']) ? $data['eligiblePlans'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
+        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
     }
 
     /**
@@ -564,73 +564,73 @@ class AddOn implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the amount is including VAT. Default true.
+     * @param bool $amount_incl_vat Whether the amount is including VAT. Default true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets allPlans
+     * Gets all_plans
      *
      * @return bool
      */
     public function getAllPlans()
     {
-        return $this->container['allPlans'];
+        return $this->container['all_plans'];
     }
 
     /**
-     * Sets allPlans
+     * Sets all_plans
      *
-     * @param bool $allPlans Whether all plans are eligible for this add-on. Defaults to false.
+     * @param bool $all_plans Whether all plans are eligible for this add-on. Defaults to false.
      *
      * @return $this
      */
-    public function setAllPlans($allPlans)
+    public function setAllPlans($all_plans)
     {
-        $this->container['allPlans'] = $allPlans;
+        $this->container['all_plans'] = $all_plans;
 
         return $this;
     }
 
     /**
-     * Gets eligiblePlans
+     * Gets eligible_plans
      *
      * @return string[]
      */
     public function getEligiblePlans()
     {
-        return $this->container['eligiblePlans'];
+        return $this->container['eligible_plans'];
     }
 
     /**
-     * Sets eligiblePlans
+     * Sets eligible_plans
      *
-     * @param string[] $eligiblePlans If not `all_plans` are set to true, then the set of eligible plan handles must be defined.
+     * @param string[] $eligible_plans If not `all_plans` are set to true, then the set of eligible plan handles must be defined.
      *
      * @return $this
      */
-    public function setEligiblePlans($eligiblePlans)
+    public function setEligiblePlans($eligible_plans)
     {
-        $this->container['eligiblePlans'] = $eligiblePlans;
+        $this->container['eligible_plans'] = $eligible_plans;
 
         return $this;
     }

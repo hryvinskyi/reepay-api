@@ -83,7 +83,7 @@ class CouponRedemptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscriptionDiscount"
+     * Test attribute "subscription_discount"
      */
     public function testPropertySubscriptionDiscount()
     {

@@ -76,14 +76,14 @@ class ReactivateSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "startDate"
+     * Test attribute "start_date"
      */
     public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "partialPeriodHandling"
+     * Test attribute "partial_period_handling"
      */
     public function testPropertyPartialPeriodHandling()
     {

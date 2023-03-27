@@ -111,28 +111,28 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "httpStatus"
+     * Test attribute "http_status"
      */
     public function testPropertyHttpStatus()
     {
     }
 
     /**
-     * Test attribute "httpReason"
+     * Test attribute "http_reason"
      */
     public function testPropertyHttpReason()
     {
     }
 
     /**
-     * Test attribute "requestId"
+     * Test attribute "request_id"
      */
     public function testPropertyRequestId()
     {
     }
 
     /**
-     * Test attribute "transactionError"
+     * Test attribute "transaction_error"
      */
     public function testPropertyTransactionError()
     {

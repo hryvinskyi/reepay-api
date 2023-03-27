@@ -57,8 +57,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'source' => 'string',
-        'paymentMethodReference' => 'string',
-        'signupMethod' => 'string'
+        'payment_method_reference' => 'string',
+        'signup_method' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'source' => null,
-        'paymentMethodReference' => null,
-        'signupMethod' => null
+        'payment_method_reference' => null,
+        'signup_method' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'source' => 'source',
-        'paymentMethodReference' => 'payment_method_reference',
-        'signupMethod' => 'signup_method'
+        'payment_method_reference' => 'payment_method_reference',
+        'signup_method' => 'signup_method'
     ];
 
     /**
@@ -111,8 +111,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'source' => 'setSource',
-        'paymentMethodReference' => 'setPaymentMethodReference',
-        'signupMethod' => 'setSignupMethod'
+        'payment_method_reference' => 'setPaymentMethodReference',
+        'signup_method' => 'setSignupMethod'
     ];
 
     /**
@@ -122,8 +122,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'source' => 'getSource',
-        'paymentMethodReference' => 'getPaymentMethodReference',
-        'signupMethod' => 'getSignupMethod'
+        'payment_method_reference' => 'getPaymentMethodReference',
+        'signup_method' => 'getSignupMethod'
     ];
 
     /**
@@ -185,8 +185,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['paymentMethodReference'] = isset($data['paymentMethodReference']) ? $data['paymentMethodReference'] : null;
-        $this->container['signupMethod'] = isset($data['signupMethod']) ? $data['signupMethod'] : null;
+        $this->container['payment_method_reference'] = isset($data['payment_method_reference']) ? $data['payment_method_reference'] : null;
+        $this->container['signup_method'] = isset($data['signup_method']) ? $data['signup_method'] : null;
     }
 
     /**
@@ -198,8 +198,8 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['signupMethod'] === null) {
-            $invalidProperties[] = "'signupMethod' can't be null";
+        if ($this->container['signup_method'] === null) {
+            $invalidProperties[] = "'signup_method' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,49 +241,49 @@ class ActivateSubscription implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentMethodReference
+     * Gets payment_method_reference
      *
      * @return string
      */
     public function getPaymentMethodReference()
     {
-        return $this->container['paymentMethodReference'];
+        return $this->container['payment_method_reference'];
     }
 
     /**
-     * Sets paymentMethodReference
+     * Sets payment_method_reference
      *
-     * @param string $paymentMethodReference Optional reference given to the created payment method in case a new payment method is added. Max length 64 with allowable characters [a-zA-Z0-9_.-@].
+     * @param string $payment_method_reference Optional reference given to the created payment method in case a new payment method is added. Max length 64 with allowable characters [a-zA-Z0-9_.-@].
      *
      * @return $this
      */
-    public function setPaymentMethodReference($paymentMethodReference)
+    public function setPaymentMethodReference($payment_method_reference)
     {
-        $this->container['paymentMethodReference'] = $paymentMethodReference;
+        $this->container['payment_method_reference'] = $payment_method_reference;
 
         return $this;
     }
 
     /**
-     * Gets signupMethod
+     * Gets signup_method
      *
      * @return string
      */
     public function getSignupMethod()
     {
-        return $this->container['signupMethod'];
+        return $this->container['signup_method'];
     }
 
     /**
-     * Sets signupMethod
+     * Sets signup_method
      *
-     * @param string $signupMethod The signup method, how to get payment information from customer, one of the following: `source`, `email`, `link`. The `source` method takes a reference to an existing customer payment method (e.g. card `ca_..`) or a card token for `ct_...`. The method `email` will send an email to customer requesting payment information with a link to a hosted page. The method `link` does not do anything but the hosted page link in the subscription object can be provided to the customer as a link to enter payment information.
+     * @param string $signup_method The signup method, how to get payment information from customer, one of the following: `source`, `email`, `link`. The `source` method takes a reference to an existing customer payment method (e.g. card `ca_..`) or a card token for `ct_...`. The method `email` will send an email to customer requesting payment information with a link to a hosted page. The method `link` does not do anything but the hosted page link in the subscription object can be provided to the customer as a link to enter payment information.
      *
      * @return $this
      */
-    public function setSignupMethod($signupMethod)
+    public function setSignupMethod($signup_method)
     {
-        $this->container['signupMethod'] = $signupMethod;
+        $this->container['signup_method'] = $signup_method;
 
         return $this;
     }

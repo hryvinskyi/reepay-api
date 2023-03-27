@@ -59,18 +59,18 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
         'currencies' => 'string[]',
         'surcharge' => 'bool',
         'provider' => 'string',
-        'cardTypes' => 'string[]',
-        'paymentTypes' => 'string[]',
-        'providerSettings' => 'map[string,object]',
-        'feeConfiguration' => 'map[string,object][]',
-        'threedSecure' => 'bool',
-        'threedSecureRecurring' => 'bool',
-        'securedByNets' => 'bool',
-        'securedByNetsRecurring' => 'bool',
-        'defaultRequireSca' => 'bool',
-        'disallowThreedSecureAttempted' => 'bool',
+        'card_types' => 'string[]',
+        'payment_types' => 'string[]',
+        'provider_settings' => 'map[string,object]',
+        'fee_configuration' => 'map[string,object][]',
+        'threed_secure' => 'bool',
+        'threed_secure_recurring' => 'bool',
+        'secured_by_nets' => 'bool',
+        'secured_by_nets_recurring' => 'bool',
+        'default_require_sca' => 'bool',
+        'disallow_threed_secure_attempted' => 'bool',
         'payout' => 'bool',
-        'vtsConfiguration' => '\Reepay\Model\VtsConfiguration'
+        'vts_configuration' => '\Reepay\Model\VtsConfiguration'
     ];
 
     /**
@@ -82,18 +82,18 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
         'currencies' => null,
         'surcharge' => null,
         'provider' => null,
-        'cardTypes' => null,
-        'paymentTypes' => null,
-        'providerSettings' => null,
-        'feeConfiguration' => null,
-        'threedSecure' => null,
-        'threedSecureRecurring' => null,
-        'securedByNets' => null,
-        'securedByNetsRecurring' => null,
-        'defaultRequireSca' => null,
-        'disallowThreedSecureAttempted' => null,
+        'card_types' => null,
+        'payment_types' => null,
+        'provider_settings' => null,
+        'fee_configuration' => null,
+        'threed_secure' => null,
+        'threed_secure_recurring' => null,
+        'secured_by_nets' => null,
+        'secured_by_nets_recurring' => null,
+        'default_require_sca' => null,
+        'disallow_threed_secure_attempted' => null,
         'payout' => null,
-        'vtsConfiguration' => null
+        'vts_configuration' => null
     ];
 
     /**
@@ -126,18 +126,18 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
         'currencies' => 'currencies',
         'surcharge' => 'surcharge',
         'provider' => 'provider',
-        'cardTypes' => 'card_types',
-        'paymentTypes' => 'payment_types',
-        'providerSettings' => 'provider_settings',
-        'feeConfiguration' => 'fee_configuration',
-        'threedSecure' => 'threed_secure',
-        'threedSecureRecurring' => 'threed_secure_recurring',
-        'securedByNets' => 'secured_by_nets',
-        'securedByNetsRecurring' => 'secured_by_nets_recurring',
-        'defaultRequireSca' => 'default_require_sca',
-        'disallowThreedSecureAttempted' => 'disallow_threed_secure_attempted',
+        'card_types' => 'card_types',
+        'payment_types' => 'payment_types',
+        'provider_settings' => 'provider_settings',
+        'fee_configuration' => 'fee_configuration',
+        'threed_secure' => 'threed_secure',
+        'threed_secure_recurring' => 'threed_secure_recurring',
+        'secured_by_nets' => 'secured_by_nets',
+        'secured_by_nets_recurring' => 'secured_by_nets_recurring',
+        'default_require_sca' => 'default_require_sca',
+        'disallow_threed_secure_attempted' => 'disallow_threed_secure_attempted',
         'payout' => 'payout',
-        'vtsConfiguration' => 'vts_configuration'
+        'vts_configuration' => 'vts_configuration'
     ];
 
     /**
@@ -149,18 +149,18 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
         'currencies' => 'setCurrencies',
         'surcharge' => 'setSurcharge',
         'provider' => 'setProvider',
-        'cardTypes' => 'setCardTypes',
-        'paymentTypes' => 'setPaymentTypes',
-        'providerSettings' => 'setProviderSettings',
-        'feeConfiguration' => 'setFeeConfiguration',
-        'threedSecure' => 'setThreedSecure',
-        'threedSecureRecurring' => 'setThreedSecureRecurring',
-        'securedByNets' => 'setSecuredByNets',
-        'securedByNetsRecurring' => 'setSecuredByNetsRecurring',
-        'defaultRequireSca' => 'setDefaultRequireSca',
-        'disallowThreedSecureAttempted' => 'setDisallowThreedSecureAttempted',
+        'card_types' => 'setCardTypes',
+        'payment_types' => 'setPaymentTypes',
+        'provider_settings' => 'setProviderSettings',
+        'fee_configuration' => 'setFeeConfiguration',
+        'threed_secure' => 'setThreedSecure',
+        'threed_secure_recurring' => 'setThreedSecureRecurring',
+        'secured_by_nets' => 'setSecuredByNets',
+        'secured_by_nets_recurring' => 'setSecuredByNetsRecurring',
+        'default_require_sca' => 'setDefaultRequireSca',
+        'disallow_threed_secure_attempted' => 'setDisallowThreedSecureAttempted',
         'payout' => 'setPayout',
-        'vtsConfiguration' => 'setVtsConfiguration'
+        'vts_configuration' => 'setVtsConfiguration'
     ];
 
     /**
@@ -172,18 +172,18 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
         'currencies' => 'getCurrencies',
         'surcharge' => 'getSurcharge',
         'provider' => 'getProvider',
-        'cardTypes' => 'getCardTypes',
-        'paymentTypes' => 'getPaymentTypes',
-        'providerSettings' => 'getProviderSettings',
-        'feeConfiguration' => 'getFeeConfiguration',
-        'threedSecure' => 'getThreedSecure',
-        'threedSecureRecurring' => 'getThreedSecureRecurring',
-        'securedByNets' => 'getSecuredByNets',
-        'securedByNetsRecurring' => 'getSecuredByNetsRecurring',
-        'defaultRequireSca' => 'getDefaultRequireSca',
-        'disallowThreedSecureAttempted' => 'getDisallowThreedSecureAttempted',
+        'card_types' => 'getCardTypes',
+        'payment_types' => 'getPaymentTypes',
+        'provider_settings' => 'getProviderSettings',
+        'fee_configuration' => 'getFeeConfiguration',
+        'threed_secure' => 'getThreedSecure',
+        'threed_secure_recurring' => 'getThreedSecureRecurring',
+        'secured_by_nets' => 'getSecuredByNets',
+        'secured_by_nets_recurring' => 'getSecuredByNetsRecurring',
+        'default_require_sca' => 'getDefaultRequireSca',
+        'disallow_threed_secure_attempted' => 'getDisallowThreedSecureAttempted',
         'payout' => 'getPayout',
-        'vtsConfiguration' => 'getVtsConfiguration'
+        'vts_configuration' => 'getVtsConfiguration'
     ];
 
     /**
@@ -247,18 +247,18 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
         $this->container['currencies'] = isset($data['currencies']) ? $data['currencies'] : null;
         $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
         $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['cardTypes'] = isset($data['cardTypes']) ? $data['cardTypes'] : null;
-        $this->container['paymentTypes'] = isset($data['paymentTypes']) ? $data['paymentTypes'] : null;
-        $this->container['providerSettings'] = isset($data['providerSettings']) ? $data['providerSettings'] : null;
-        $this->container['feeConfiguration'] = isset($data['feeConfiguration']) ? $data['feeConfiguration'] : null;
-        $this->container['threedSecure'] = isset($data['threedSecure']) ? $data['threedSecure'] : null;
-        $this->container['threedSecureRecurring'] = isset($data['threedSecureRecurring']) ? $data['threedSecureRecurring'] : null;
-        $this->container['securedByNets'] = isset($data['securedByNets']) ? $data['securedByNets'] : null;
-        $this->container['securedByNetsRecurring'] = isset($data['securedByNetsRecurring']) ? $data['securedByNetsRecurring'] : null;
-        $this->container['defaultRequireSca'] = isset($data['defaultRequireSca']) ? $data['defaultRequireSca'] : null;
-        $this->container['disallowThreedSecureAttempted'] = isset($data['disallowThreedSecureAttempted']) ? $data['disallowThreedSecureAttempted'] : null;
+        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
+        $this->container['payment_types'] = isset($data['payment_types']) ? $data['payment_types'] : null;
+        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
+        $this->container['fee_configuration'] = isset($data['fee_configuration']) ? $data['fee_configuration'] : null;
+        $this->container['threed_secure'] = isset($data['threed_secure']) ? $data['threed_secure'] : null;
+        $this->container['threed_secure_recurring'] = isset($data['threed_secure_recurring']) ? $data['threed_secure_recurring'] : null;
+        $this->container['secured_by_nets'] = isset($data['secured_by_nets']) ? $data['secured_by_nets'] : null;
+        $this->container['secured_by_nets_recurring'] = isset($data['secured_by_nets_recurring']) ? $data['secured_by_nets_recurring'] : null;
+        $this->container['default_require_sca'] = isset($data['default_require_sca']) ? $data['default_require_sca'] : null;
+        $this->container['disallow_threed_secure_attempted'] = isset($data['disallow_threed_secure_attempted']) ? $data['disallow_threed_secure_attempted'] : null;
         $this->container['payout'] = isset($data['payout']) ? $data['payout'] : null;
-        $this->container['vtsConfiguration'] = isset($data['vtsConfiguration']) ? $data['vtsConfiguration'] : null;
+        $this->container['vts_configuration'] = isset($data['vts_configuration']) ? $data['vts_configuration'] : null;
     }
 
     /**
@@ -364,241 +364,241 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets cardTypes
+     * Gets card_types
      *
      * @return string[]
      */
     public function getCardTypes()
     {
-        return $this->container['cardTypes'];
+        return $this->container['card_types'];
     }
 
     /**
-     * Sets cardTypes
+     * Sets card_types
      *
-     * @param string[] $cardTypes Card types supported by agreement
+     * @param string[] $card_types Card types supported by agreement
      *
      * @return $this
      */
-    public function setCardTypes($cardTypes)
+    public function setCardTypes($card_types)
     {
-        $this->container['cardTypes'] = $cardTypes;
+        $this->container['card_types'] = $card_types;
 
         return $this;
     }
 
     /**
-     * Gets paymentTypes
+     * Gets payment_types
      *
      * @return string[]
      */
     public function getPaymentTypes()
     {
-        return $this->container['paymentTypes'];
+        return $this->container['payment_types'];
     }
 
     /**
-     * Sets paymentTypes
+     * Sets payment_types
      *
-     * @param string[] $paymentTypes Set of supported payment types for agreement: `card`, `applepay`, `googlepay`, `mobilepay`, `vipps`. If not defined defaults to all.
+     * @param string[] $payment_types Set of supported payment types for agreement: `card`, `applepay`, `googlepay`, `mobilepay`, `vipps`. If not defined defaults to all.
      *
      * @return $this
      */
-    public function setPaymentTypes($paymentTypes)
+    public function setPaymentTypes($payment_types)
     {
-        $this->container['paymentTypes'] = $paymentTypes;
+        $this->container['payment_types'] = $payment_types;
 
         return $this;
     }
 
     /**
-     * Gets providerSettings
+     * Gets provider_settings
      *
      * @return map[string,object]
      */
     public function getProviderSettings()
     {
-        return $this->container['providerSettings'];
+        return $this->container['provider_settings'];
     }
 
     /**
-     * Sets providerSettings
+     * Sets provider_settings
      *
-     * @param map[string,object] $providerSettings Key value map of provider settings
+     * @param map[string,object] $provider_settings Key value map of provider settings
      *
      * @return $this
      */
-    public function setProviderSettings($providerSettings)
+    public function setProviderSettings($provider_settings)
     {
-        $this->container['providerSettings'] = $providerSettings;
+        $this->container['provider_settings'] = $provider_settings;
 
         return $this;
     }
 
     /**
-     * Gets feeConfiguration
+     * Gets fee_configuration
      *
      * @return map[string,object][]
      */
     public function getFeeConfiguration()
     {
-        return $this->container['feeConfiguration'];
+        return $this->container['fee_configuration'];
     }
 
     /**
-     * Sets feeConfiguration
+     * Sets fee_configuration
      *
-     * @param map[string,object][] $feeConfiguration Prioritized list of fee configuration entries
+     * @param map[string,object][] $fee_configuration Prioritized list of fee configuration entries
      *
      * @return $this
      */
-    public function setFeeConfiguration($feeConfiguration)
+    public function setFeeConfiguration($fee_configuration)
     {
-        $this->container['feeConfiguration'] = $feeConfiguration;
+        $this->container['fee_configuration'] = $fee_configuration;
 
         return $this;
     }
 
     /**
-     * Gets threedSecure
+     * Gets threed_secure
      *
      * @return bool
      */
     public function getThreedSecure()
     {
-        return $this->container['threedSecure'];
+        return $this->container['threed_secure'];
     }
 
     /**
-     * Sets threedSecure
+     * Sets threed_secure
      *
-     * @param bool $threedSecure Use 3DSecure for non-recurring payments (if supported by provider)
+     * @param bool $threed_secure Use 3DSecure for non-recurring payments (if supported by provider)
      *
      * @return $this
      */
-    public function setThreedSecure($threedSecure)
+    public function setThreedSecure($threed_secure)
     {
-        $this->container['threedSecure'] = $threedSecure;
+        $this->container['threed_secure'] = $threed_secure;
 
         return $this;
     }
 
     /**
-     * Gets threedSecureRecurring
+     * Gets threed_secure_recurring
      *
      * @return bool
      */
     public function getThreedSecureRecurring()
     {
-        return $this->container['threedSecureRecurring'];
+        return $this->container['threed_secure_recurring'];
     }
 
     /**
-     * Sets threedSecureRecurring
+     * Sets threed_secure_recurring
      *
-     * @param bool $threedSecureRecurring Use 3DSecure for recurring payments (if supported by provider)
+     * @param bool $threed_secure_recurring Use 3DSecure for recurring payments (if supported by provider)
      *
      * @return $this
      */
-    public function setThreedSecureRecurring($threedSecureRecurring)
+    public function setThreedSecureRecurring($threed_secure_recurring)
     {
-        $this->container['threedSecureRecurring'] = $threedSecureRecurring;
+        $this->container['threed_secure_recurring'] = $threed_secure_recurring;
 
         return $this;
     }
 
     /**
-     * Gets securedByNets
+     * Gets secured_by_nets
      *
      * @return bool
      */
     public function getSecuredByNets()
     {
-        return $this->container['securedByNets'];
+        return $this->container['secured_by_nets'];
     }
 
     /**
-     * Sets securedByNets
+     * Sets secured_by_nets
      *
-     * @param bool $securedByNets Use Secured By Nets for non-recurring payments (if supported by provider)
+     * @param bool $secured_by_nets Use Secured By Nets for non-recurring payments (if supported by provider)
      *
      * @return $this
      */
-    public function setSecuredByNets($securedByNets)
+    public function setSecuredByNets($secured_by_nets)
     {
-        $this->container['securedByNets'] = $securedByNets;
+        $this->container['secured_by_nets'] = $secured_by_nets;
 
         return $this;
     }
 
     /**
-     * Gets securedByNetsRecurring
+     * Gets secured_by_nets_recurring
      *
      * @return bool
      */
     public function getSecuredByNetsRecurring()
     {
-        return $this->container['securedByNetsRecurring'];
+        return $this->container['secured_by_nets_recurring'];
     }
 
     /**
-     * Sets securedByNetsRecurring
+     * Sets secured_by_nets_recurring
      *
-     * @param bool $securedByNetsRecurring Use Secured By Nets for recurring payments (if supported by provider)
+     * @param bool $secured_by_nets_recurring Use Secured By Nets for recurring payments (if supported by provider)
      *
      * @return $this
      */
-    public function setSecuredByNetsRecurring($securedByNetsRecurring)
+    public function setSecuredByNetsRecurring($secured_by_nets_recurring)
     {
-        $this->container['securedByNetsRecurring'] = $securedByNetsRecurring;
+        $this->container['secured_by_nets_recurring'] = $secured_by_nets_recurring;
 
         return $this;
     }
 
     /**
-     * Gets defaultRequireSca
+     * Gets default_require_sca
      *
      * @return bool
      */
     public function getDefaultRequireSca()
     {
-        return $this->container['defaultRequireSca'];
+        return $this->container['default_require_sca'];
     }
 
     /**
-     * Sets defaultRequireSca
+     * Sets default_require_sca
      *
-     * @param bool $defaultRequireSca Default behaviour if no specific SCA handing is defined in payment sessions. If enabled SCA will be required and un-enrolled cards will be declined.
+     * @param bool $default_require_sca Default behaviour if no specific SCA handing is defined in payment sessions. If enabled SCA will be required and un-enrolled cards will be declined.
      *
      * @return $this
      */
-    public function setDefaultRequireSca($defaultRequireSca)
+    public function setDefaultRequireSca($default_require_sca)
     {
-        $this->container['defaultRequireSca'] = $defaultRequireSca;
+        $this->container['default_require_sca'] = $default_require_sca;
 
         return $this;
     }
 
     /**
-     * Gets disallowThreedSecureAttempted
+     * Gets disallow_threed_secure_attempted
      *
      * @return bool
      */
     public function getDisallowThreedSecureAttempted()
     {
-        return $this->container['disallowThreedSecureAttempted'];
+        return $this->container['disallow_threed_secure_attempted'];
     }
 
     /**
-     * Sets disallowThreedSecureAttempted
+     * Sets disallow_threed_secure_attempted
      *
-     * @param bool $disallowThreedSecureAttempted Disallow 3D Secure status attempted which means that card issuer does not support 3D Secure so authentication could not be performed. An attempted 3D Secure flow normally results in liability shift.
+     * @param bool $disallow_threed_secure_attempted Disallow 3D Secure status attempted which means that card issuer does not support 3D Secure so authentication could not be performed. An attempted 3D Secure flow normally results in liability shift.
      *
      * @return $this
      */
-    public function setDisallowThreedSecureAttempted($disallowThreedSecureAttempted)
+    public function setDisallowThreedSecureAttempted($disallow_threed_secure_attempted)
     {
-        $this->container['disallowThreedSecureAttempted'] = $disallowThreedSecureAttempted;
+        $this->container['disallow_threed_secure_attempted'] = $disallow_threed_secure_attempted;
 
         return $this;
     }
@@ -628,29 +628,28 @@ class CreateCardGatewayAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vtsConfiguration
+     * Gets vts_configuration
      *
      * @return \Reepay\Model\VtsConfiguration
      */
     public function getVtsConfiguration()
     {
-        return $this->container['vtsConfiguration'];
+        return $this->container['vts_configuration'];
     }
 
     /**
-     * Sets vtsConfiguration
+     * Sets vts_configuration
      *
-     * @param \Reepay\Model\VtsConfiguration $vtsConfiguration vtsConfiguration
+     * @param \Reepay\Model\VtsConfiguration $vts_configuration vts_configuration
      *
      * @return $this
      */
-    public function setVtsConfiguration($vtsConfiguration)
+    public function setVtsConfiguration($vts_configuration)
     {
-        $this->container['vtsConfiguration'] = $vtsConfiguration;
+        $this->container['vts_configuration'] = $vts_configuration;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

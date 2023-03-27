@@ -57,7 +57,7 @@ class Settle implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'due' => 'string',
-        'paymentMethod' => 'string'
+        'payment_method' => 'string'
     ];
 
     /**
@@ -67,7 +67,7 @@ class Settle implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'due' => null,
-        'paymentMethod' => null
+        'payment_method' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class Settle implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'due' => 'due',
-        'paymentMethod' => 'payment_method'
+        'payment_method' => 'payment_method'
     ];
 
     /**
@@ -108,7 +108,7 @@ class Settle implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'due' => 'setDue',
-        'paymentMethod' => 'setPaymentMethod'
+        'payment_method' => 'setPaymentMethod'
     ];
 
     /**
@@ -118,7 +118,7 @@ class Settle implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'due' => 'getDue',
-        'paymentMethod' => 'getPaymentMethod'
+        'payment_method' => 'getPaymentMethod'
     ];
 
     /**
@@ -180,7 +180,7 @@ class Settle implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['due'] = isset($data['due']) ? $data['due'] : null;
-        $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
     }
 
     /**
@@ -232,25 +232,25 @@ class Settle implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentMethod
+     * Gets payment_method
      *
      * @return string
      */
     public function getPaymentMethod()
     {
-        return $this->container['paymentMethod'];
+        return $this->container['payment_method'];
     }
 
     /**
-     * Sets paymentMethod
+     * Sets payment_method
      *
-     * @param string $paymentMethod Payment method id to use to settle invoice. Must be a payment method supporting instant settle, e.g. credit card. A special value `auto` can be used to indicate that the newest active customer payment method should be used. Is required for one-time invoices if the amount on the invoice is more than zero.
+     * @param string $payment_method Payment method id to use to settle invoice. Must be a payment method supporting instant settle, e.g. credit card. A special value `auto` can be used to indicate that the newest active customer payment method should be used. Is required for one-time invoices if the amount on the invoice is more than zero.
      *
      * @return $this
      */
-    public function setPaymentMethod($paymentMethod)
+    public function setPaymentMethod($payment_method)
     {
-        $this->container['paymentMethod'] = $paymentMethod;
+        $this->container['payment_method'] = $payment_method;
 
         return $this;
     }

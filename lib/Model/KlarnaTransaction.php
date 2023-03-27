@@ -58,10 +58,10 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'error' => 'string',
         'type' => 'string',
-        'refTransaction' => 'string',
-        'errorState' => 'string',
-        'acquirerMessage' => 'string',
-        'klarnaId' => 'string'
+        'ref_transaction' => 'string',
+        'error_state' => 'string',
+        'acquirer_message' => 'string',
+        'klarna_id' => 'string'
     ];
 
     /**
@@ -72,10 +72,10 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'error' => null,
         'type' => null,
-        'refTransaction' => null,
-        'errorState' => null,
-        'acquirerMessage' => null,
-        'klarnaId' => null
+        'ref_transaction' => null,
+        'error_state' => null,
+        'acquirer_message' => null,
+        'klarna_id' => null
     ];
 
     /**
@@ -107,10 +107,10 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'error' => 'error',
         'type' => 'type',
-        'refTransaction' => 'ref_transaction',
-        'errorState' => 'error_state',
-        'acquirerMessage' => 'acquirer_message',
-        'klarnaId' => 'klarna_id'
+        'ref_transaction' => 'ref_transaction',
+        'error_state' => 'error_state',
+        'acquirer_message' => 'acquirer_message',
+        'klarna_id' => 'klarna_id'
     ];
 
     /**
@@ -121,10 +121,10 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     protected static $setters = [
         'error' => 'setError',
         'type' => 'setType',
-        'refTransaction' => 'setRefTransaction',
-        'errorState' => 'setErrorState',
-        'acquirerMessage' => 'setAcquirerMessage',
-        'klarnaId' => 'setKlarnaId'
+        'ref_transaction' => 'setRefTransaction',
+        'error_state' => 'setErrorState',
+        'acquirer_message' => 'setAcquirerMessage',
+        'klarna_id' => 'setKlarnaId'
     ];
 
     /**
@@ -135,10 +135,10 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     protected static $getters = [
         'error' => 'getError',
         'type' => 'getType',
-        'refTransaction' => 'getRefTransaction',
-        'errorState' => 'getErrorState',
-        'acquirerMessage' => 'getAcquirerMessage',
-        'klarnaId' => 'getKlarnaId'
+        'ref_transaction' => 'getRefTransaction',
+        'error_state' => 'getErrorState',
+        'acquirer_message' => 'getAcquirerMessage',
+        'klarna_id' => 'getKlarnaId'
     ];
 
     /**
@@ -239,10 +239,10 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     {
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['refTransaction'] = isset($data['refTransaction']) ? $data['refTransaction'] : null;
-        $this->container['errorState'] = isset($data['errorState']) ? $data['errorState'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
-        $this->container['klarnaId'] = isset($data['klarnaId']) ? $data['klarnaId'] : null;
+        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
+        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['klarna_id'] = isset($data['klarna_id']) ? $data['klarna_id'] : null;
     }
 
     /**
@@ -266,9 +266,13 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($this->container['errorState']) && !in_array($this->container['errorState'], $allowedValues, true)) {
+        if (!is_null($this->container['error_state']) && !in_array(
+                $this->container['error_state'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'errorState', must be one of '%s'",
+                "invalid value for 'error_state', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -346,106 +350,106 @@ class KlarnaTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets refTransaction
+     * Gets ref_transaction
      *
      * @return string
      */
     public function getRefTransaction()
     {
-        return $this->container['refTransaction'];
+        return $this->container['ref_transaction'];
     }
 
     /**
-     * Sets refTransaction
+     * Sets ref_transaction
      *
-     * @param string $refTransaction Id of a possible referenced transaction
+     * @param string $ref_transaction Id of a possible referenced transaction
      *
      * @return $this
      */
-    public function setRefTransaction($refTransaction)
+    public function setRefTransaction($ref_transaction)
     {
-        $this->container['refTransaction'] = $refTransaction;
+        $this->container['ref_transaction'] = $ref_transaction;
 
         return $this;
     }
 
     /**
-     * Gets errorState
+     * Gets error_state
      *
      * @return string
      */
     public function getErrorState()
     {
-        return $this->container['errorState'];
+        return $this->container['error_state'];
     }
 
     /**
-     * Sets errorState
+     * Sets error_state
      *
-     * @param string $errorState Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
+     * @param string $error_state Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error`
      *
      * @return $this
      */
-    public function setErrorState($errorState)
+    public function setErrorState($error_state)
     {
         $allowedValues = $this->getErrorStateAllowableValues();
-        if (!is_null($errorState) && !in_array($errorState, $allowedValues, true)) {
+        if (!is_null($error_state) && !in_array($error_state, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'errorState', must be one of '%s'",
+                    "Invalid value for 'error_state', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['errorState'] = $errorState;
+        $this->container['error_state'] = $error_state;
 
         return $this;
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Acquirer message in case of error
+     * @param string $acquirer_message Acquirer message in case of error
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
 
     /**
-     * Gets klarnaId
+     * Gets klarna_id
      *
      * @return string
      */
     public function getKlarnaId()
     {
-        return $this->container['klarnaId'];
+        return $this->container['klarna_id'];
     }
 
     /**
-     * Sets klarnaId
+     * Sets klarna_id
      *
-     * @param string $klarnaId Klarna id
+     * @param string $klarna_id Klarna id
      *
      * @return $this
      */
-    public function setKlarnaId($klarnaId)
+    public function setKlarnaId($klarna_id)
     {
-        $this->container['klarnaId'] = $klarnaId;
+        $this->container['klarna_id'] = $klarna_id;
 
         return $this;
     }

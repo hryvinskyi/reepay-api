@@ -118,14 +118,14 @@ class CreatePayoutTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "customerHandle"
+     * Test attribute "customer_handle"
      */
     public function testPropertyCustomerHandle()
     {
     }
 
     /**
-     * Test attribute "textOnStatement"
+     * Test attribute "text_on_statement"
      */
     public function testPropertyTextOnStatement()
     {

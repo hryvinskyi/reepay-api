@@ -97,7 +97,7 @@ class AddPaymentMethodTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "customerHandle"
+     * Test attribute "customer_handle"
      */
     public function testPropertyCustomerHandle()
     {

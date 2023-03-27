@@ -95,15 +95,15 @@ class AuthenticateApi
      * @param string $password password (optional)
      * @param string $organisation organisation (optional)
      * @param string $account account (optional)
-     * @param string $mfaCode mfaCode (optional)
+     * @param string $mfa_code mfa_code (optional)
      *
      * @return \Reepay\Model\UserLogin
      * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
      */
-    public function login($email = null, $password = null, $organisation = null, $account = null, $mfaCode = null)
+    public function login($email = null, $password = null, $organisation = null, $account = null, $mfa_code = null)
     {
-        list($response) = $this->loginWithHttpInfo($email, $password, $organisation, $account, $mfaCode);
+        list($response) = $this->loginWithHttpInfo($email, $password, $organisation, $account, $mfa_code);
         return $response;
     }
 
@@ -116,16 +116,21 @@ class AuthenticateApi
      * @param string $password (optional)
      * @param string $organisation (optional)
      * @param string $account (optional)
-     * @param string $mfaCode (optional)
+     * @param string $mfa_code (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\UserLogin, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginWithHttpInfo($email = null, $password = null, $organisation = null, $account = null, $mfaCode = null)
-    {
+    public function loginWithHttpInfo(
+        $email = null,
+        $password = null,
+        $organisation = null,
+        $account = null,
+        $mfa_code = null
+    ) {
         $returnType = '\Reepay\Model\UserLogin';
-        $request = $this->loginRequest($email, $password, $organisation, $account, $mfaCode);
+        $request = $this->loginRequest($email, $password, $organisation, $account, $mfa_code);
 
         try {
             $options = $this->createHttpClientOption();
@@ -243,14 +248,14 @@ class AuthenticateApi
      * @param string $password (optional)
      * @param string $organisation (optional)
      * @param string $account (optional)
-     * @param string $mfaCode (optional)
+     * @param string $mfa_code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginAsync($email = null, $password = null, $organisation = null, $account = null, $mfaCode = null)
+    public function loginAsync($email = null, $password = null, $organisation = null, $account = null, $mfa_code = null)
     {
-        return $this->loginAsyncWithHttpInfo($email, $password, $organisation, $account, $mfaCode)
+        return $this->loginAsyncWithHttpInfo($email, $password, $organisation, $account, $mfa_code)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -267,15 +272,20 @@ class AuthenticateApi
      * @param string $password (optional)
      * @param string $organisation (optional)
      * @param string $account (optional)
-     * @param string $mfaCode (optional)
+     * @param string $mfa_code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginAsyncWithHttpInfo($email = null, $password = null, $organisation = null, $account = null, $mfaCode = null)
-    {
+    public function loginAsyncWithHttpInfo(
+        $email = null,
+        $password = null,
+        $organisation = null,
+        $account = null,
+        $mfa_code = null
+    ) {
         $returnType = '\Reepay\Model\UserLogin';
-        $request = $this->loginRequest($email, $password, $organisation, $account, $mfaCode);
+        $request = $this->loginRequest($email, $password, $organisation, $account, $mfa_code);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -321,21 +331,24 @@ class AuthenticateApi
      * @param string $password (optional)
      * @param string $organisation (optional)
      * @param string $account (optional)
-     * @param string $mfaCode (optional)
+     * @param string $mfa_code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginRequest($email = null, $password = null, $organisation = null, $account = null, $mfaCode = null)
-    {
-
+    protected function loginRequest(
+        $email = null,
+        $password = null,
+        $organisation = null,
+        $account = null,
+        $mfa_code = null
+    ) {
         $resourcePath = '/v1/authenticate/login';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
 
         // form params
@@ -355,8 +368,8 @@ class AuthenticateApi
             $formParams['account'] = ObjectSerializer::toFormValue($account);
         }
         // form params
-        if ($mfaCode !== null) {
-            $formParams['mfa_code'] = ObjectSerializer::toFormValue($mfaCode);
+        if ($mfa_code !== null) {
+            $formParams['mfa_code'] = ObjectSerializer::toFormValue($mfa_code);
         }
         // body params
         $_tempBody = null;

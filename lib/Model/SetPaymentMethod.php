@@ -57,7 +57,7 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'source' => 'string',
-        'paymentMethodReference' => 'string'
+        'payment_method_reference' => 'string'
     ];
 
     /**
@@ -67,7 +67,7 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'source' => null,
-        'paymentMethodReference' => null
+        'payment_method_reference' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'source' => 'source',
-        'paymentMethodReference' => 'payment_method_reference'
+        'payment_method_reference' => 'payment_method_reference'
     ];
 
     /**
@@ -108,7 +108,7 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'source' => 'setSource',
-        'paymentMethodReference' => 'setPaymentMethodReference'
+        'payment_method_reference' => 'setPaymentMethodReference'
     ];
 
     /**
@@ -118,7 +118,7 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'source' => 'getSource',
-        'paymentMethodReference' => 'getPaymentMethodReference'
+        'payment_method_reference' => 'getPaymentMethodReference'
     ];
 
     /**
@@ -180,7 +180,7 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['paymentMethodReference'] = isset($data['paymentMethodReference']) ? $data['paymentMethodReference'] : null;
+        $this->container['payment_method_reference'] = isset($data['payment_method_reference']) ? $data['payment_method_reference'] : null;
     }
 
     /**
@@ -232,25 +232,25 @@ class SetPaymentMethod implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets paymentMethodReference
+     * Gets payment_method_reference
      *
      * @return string
      */
     public function getPaymentMethodReference()
     {
-        return $this->container['paymentMethodReference'];
+        return $this->container['payment_method_reference'];
     }
 
     /**
-     * Sets paymentMethodReference
+     * Sets payment_method_reference
      *
-     * @param string $paymentMethodReference Optional reference given to the created payment method in case a new payment method is added. Max length 64 with allowable characters [a-zA-Z0-9_.-@].
+     * @param string $payment_method_reference Optional reference given to the created payment method in case a new payment method is added. Max length 64 with allowable characters [a-zA-Z0-9_.-@].
      *
      * @return $this
      */
-    public function setPaymentMethodReference($paymentMethodReference)
+    public function setPaymentMethodReference($payment_method_reference)
     {
-        $this->container['paymentMethodReference'] = $paymentMethodReference;
+        $this->container['payment_method_reference'] = $payment_method_reference;
 
         return $this;
     }

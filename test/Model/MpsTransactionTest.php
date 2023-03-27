@@ -83,42 +83,42 @@ class MpsTransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "refTransaction"
+     * Test attribute "ref_transaction"
      */
     public function testPropertyRefTransaction()
     {
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "acquirerMessage"
+     * Test attribute "acquirer_message"
      */
     public function testPropertyAcquirerMessage()
     {
     }
 
     /**
-     * Test attribute "mpsId"
+     * Test attribute "mps_id"
      */
     public function testPropertyMpsId()
     {
     }
 
     /**
-     * Test attribute "mpsSubscription"
+     * Test attribute "mps_subscription"
      */
     public function testPropertyMpsSubscription()
     {
     }
 
     /**
-     * Test attribute "mpsPaymentType"
+     * Test attribute "mps_payment_type"
      */
     public function testPropertyMpsPaymentType()
     {

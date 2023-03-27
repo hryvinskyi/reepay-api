@@ -139,21 +139,21 @@ class AdditionalCostTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "amountVat"
+     * Test attribute "amount_vat"
      */
     public function testPropertyAmountVat()
     {
     }
 
     /**
-     * Test attribute "amountExVat"
+     * Test attribute "amount_ex_vat"
      */
     public function testPropertyAmountExVat()
     {

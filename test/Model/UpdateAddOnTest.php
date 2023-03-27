@@ -104,21 +104,21 @@ class UpdateAddOnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amountInclVat"
+     * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
     {
     }
 
     /**
-     * Test attribute "allPlans"
+     * Test attribute "all_plans"
      */
     public function testPropertyAllPlans()
     {
     }
 
     /**
-     * Test attribute "eligiblePlans"
+     * Test attribute "eligible_plans"
      */
     public function testPropertyEligiblePlans()
     {

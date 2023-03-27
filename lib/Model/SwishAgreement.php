@@ -56,7 +56,7 @@ class SwishAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'swishNumber' => 'string'
+        'swish_number' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class SwishAgreement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'swishNumber' => null
+        'swish_number' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class SwishAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'swishNumber' => 'swishNumber'
+        'swish_number' => 'swishNumber'
     ];
 
     /**
@@ -104,7 +104,7 @@ class SwishAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'swishNumber' => 'setSwishNumber'
+        'swish_number' => 'setSwishNumber'
     ];
 
     /**
@@ -113,7 +113,7 @@ class SwishAgreement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'swishNumber' => 'getSwishNumber'
+        'swish_number' => 'getSwishNumber'
     ];
 
     /**
@@ -174,7 +174,7 @@ class SwishAgreement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['swishNumber'] = isset($data['swishNumber']) ? $data['swishNumber'] : null;
+        $this->container['swish_number'] = isset($data['swish_number']) ? $data['swish_number'] : null;
     }
 
     /**
@@ -202,25 +202,25 @@ class SwishAgreement implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets swishNumber
+     * Gets swish_number
      *
      * @return string
      */
     public function getSwishNumber()
     {
-        return $this->container['swishNumber'];
+        return $this->container['swish_number'];
     }
 
     /**
-     * Sets swishNumber
+     * Sets swish_number
      *
-     * @param string $swishNumber Swish Number
+     * @param string $swish_number Swish Number
      *
      * @return $this
      */
-    public function setSwishNumber($swishNumber)
+    public function setSwishNumber($swish_number)
     {
-        $this->container['swishNumber'] = $swishNumber;
+        $this->container['swish_number'] = $swish_number;
 
         return $this;
     }

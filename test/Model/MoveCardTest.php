@@ -90,7 +90,7 @@ class MoveCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "cardType"
+     * Test attribute "card_type"
      */
     public function testPropertyCardType()
     {

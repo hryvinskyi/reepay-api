@@ -1022,18 +1022,18 @@ class WebhookApi
      *
      * Get list of webhooks
      *
-     * @param  string $createdBefore Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
-     * @param  int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
-     * @param  string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
-     * @param  string $createdAfter Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
+     * @param string $created_before Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
+     * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
+     * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
+     * @param string $created_after Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Reepay\Model\Webhook[]
      */
-    public function getWebhooks($createdBefore, $size = '100', $state = null, $createdAfter = null)
+    public function getWebhooks($created_before, $size = '100', $state = null, $created_after = null)
     {
-        list($response) = $this->getWebhooksWithHttpInfo($createdBefore, $size, $state, $createdAfter);
+        list($response) = $this->getWebhooksWithHttpInfo($created_before, $size, $state, $created_after);
         return $response;
     }
 
@@ -1042,19 +1042,19 @@ class WebhookApi
      *
      * Get list of webhooks
      *
-     * @param  string $createdBefore Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
-     * @param  int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
-     * @param  string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
-     * @param  string $createdAfter Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
+     * @param string $created_before Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
+     * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
+     * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
+     * @param string $created_after Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
      *
      * @throws \Reepay\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Reepay\Model\Webhook[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWebhooksWithHttpInfo($createdBefore, $size = '100', $state = null, $createdAfter = null)
+    public function getWebhooksWithHttpInfo($created_before, $size = '100', $state = null, $created_after = null)
     {
         $returnType = '\Reepay\Model\Webhook[]';
-        $request = $this->getWebhooksRequest($createdBefore, $size, $state, $createdAfter);
+        $request = $this->getWebhooksRequest($created_before, $size, $state, $created_after);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1168,17 +1168,17 @@ class WebhookApi
      *
      * Get list of webhooks
      *
-     * @param  string $createdBefore Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
-     * @param  int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
-     * @param  string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
-     * @param  string $createdAfter Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
+     * @param string $created_before Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
+     * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
+     * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
+     * @param string $created_after Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebhooksAsync($createdBefore, $size = '100', $state = null, $createdAfter = null)
+    public function getWebhooksAsync($created_before, $size = '100', $state = null, $created_after = null)
     {
-        return $this->getWebhooksAsyncWithHttpInfo($createdBefore, $size, $state, $createdAfter)
+        return $this->getWebhooksAsyncWithHttpInfo($created_before, $size, $state, $created_after)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1191,18 +1191,18 @@ class WebhookApi
      *
      * Get list of webhooks
      *
-     * @param  string $createdBefore Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
-     * @param  int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
-     * @param  string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
-     * @param  string $createdAfter Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
+     * @param string $created_before Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
+     * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
+     * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
+     * @param string $created_after Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebhooksAsyncWithHttpInfo($createdBefore, $size = '100', $state = null, $createdAfter = null)
+    public function getWebhooksAsyncWithHttpInfo($created_before, $size = '100', $state = null, $created_after = null)
     {
         $returnType = '\Reepay\Model\Webhook[]';
-        $request = $this->getWebhooksRequest($createdBefore, $size, $state, $createdAfter);
+        $request = $this->getWebhooksRequest($created_before, $size, $state, $created_after);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1244,20 +1244,20 @@ class WebhookApi
     /**
      * Create request for operation 'getWebhooks'
      *
-     * @param  string $createdBefore Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
-     * @param  int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
-     * @param  string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
-     * @param  string $createdAfter Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
+     * @param string $created_before Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (required)
+     * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
+     * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
+     * @param string $created_after Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getWebhooksRequest($createdBefore, $size = '100', $state = null, $createdAfter = null)
+    protected function getWebhooksRequest($created_before, $size = '100', $state = null, $created_after = null)
     {
-        // verify the required parameter 'createdBefore' is set
-        if ($createdBefore === null || (is_array($createdBefore) && count($createdBefore) === 0)) {
+        // verify the required parameter 'created_before' is set
+        if ($created_before === null || (is_array($created_before) && count($created_before) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createdBefore when calling getWebhooks'
+                'Missing the required parameter $created_before when calling getWebhooks'
             );
         }
 
@@ -1277,12 +1277,12 @@ class WebhookApi
             $queryParams['state'] = ObjectSerializer::toQueryValue($state, null);
         }
         // query params
-        if ($createdBefore !== null) {
-            $queryParams['created_before'] = ObjectSerializer::toQueryValue($createdBefore, null);
+        if ($created_before !== null) {
+            $queryParams['created_before'] = ObjectSerializer::toQueryValue($created_before, null);
         }
         // query params
-        if ($createdAfter !== null) {
-            $queryParams['created_after'] = ObjectSerializer::toQueryValue($createdAfter, null);
+        if ($created_after !== null) {
+            $queryParams['created_after'] = ObjectSerializer::toQueryValue($created_after, null);
         }
 
 

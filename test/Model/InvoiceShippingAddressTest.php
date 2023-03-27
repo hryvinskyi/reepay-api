@@ -139,28 +139,28 @@ class InvoiceShippingAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "firstName"
+     * Test attribute "first_name"
      */
     public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "lastName"
+     * Test attribute "last_name"
      */
     public function testPropertyLastName()
     {
     }
 
     /**
-     * Test attribute "postalCode"
+     * Test attribute "postal_code"
      */
     public function testPropertyPostalCode()
     {
     }
 
     /**
-     * Test attribute "stateOrProvince"
+     * Test attribute "state_or_province"
      */
     public function testPropertyStateOrProvince()
     {

@@ -65,9 +65,9 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'vat' => 'float',
         'created' => '\DateTime',
-        'amountInclVat' => 'bool',
-        'amountVat' => 'int',
-        'amountExVat' => 'int'
+        'amount_incl_vat' => 'bool',
+        'amount_vat' => 'int',
+        'amount_ex_vat' => 'int'
     ];
 
     /**
@@ -85,9 +85,9 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'int32',
         'vat' => 'float',
         'created' => 'date-time',
-        'amountInclVat' => null,
-        'amountVat' => 'int32',
-        'amountExVat' => 'int32'
+        'amount_incl_vat' => null,
+        'amount_vat' => 'int32',
+        'amount_ex_vat' => 'int32'
     ];
 
     /**
@@ -126,9 +126,9 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'vat' => 'vat',
         'created' => 'created',
-        'amountInclVat' => 'amount_incl_vat',
-        'amountVat' => 'amount_vat',
-        'amountExVat' => 'amount_ex_vat'
+        'amount_incl_vat' => 'amount_incl_vat',
+        'amount_vat' => 'amount_vat',
+        'amount_ex_vat' => 'amount_ex_vat'
     ];
 
     /**
@@ -146,9 +146,9 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'vat' => 'setVat',
         'created' => 'setCreated',
-        'amountInclVat' => 'setAmountInclVat',
-        'amountVat' => 'setAmountVat',
-        'amountExVat' => 'setAmountExVat'
+        'amount_incl_vat' => 'setAmountInclVat',
+        'amount_vat' => 'setAmountVat',
+        'amount_ex_vat' => 'setAmountExVat'
     ];
 
     /**
@@ -166,9 +166,9 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'vat' => 'getVat',
         'created' => 'getCreated',
-        'amountInclVat' => 'getAmountInclVat',
-        'amountVat' => 'getAmountVat',
-        'amountExVat' => 'getAmountExVat'
+        'amount_incl_vat' => 'getAmountInclVat',
+        'amount_vat' => 'getAmountVat',
+        'amount_ex_vat' => 'getAmountExVat'
     ];
 
     /**
@@ -254,9 +254,9 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['amountInclVat'] = isset($data['amountInclVat']) ? $data['amountInclVat'] : null;
-        $this->container['amountVat'] = isset($data['amountVat']) ? $data['amountVat'] : null;
-        $this->container['amountExVat'] = isset($data['amountExVat']) ? $data['amountExVat'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['amount_vat'] = isset($data['amount_vat']) ? $data['amount_vat'] : null;
+        $this->container['amount_ex_vat'] = isset($data['amount_ex_vat']) ? $data['amount_ex_vat'] : null;
     }
 
     /**
@@ -294,14 +294,14 @@ class AdditionalCost implements ModelInterface, ArrayAccess
         if ($this->container['created'] === null) {
             $invalidProperties[] = "'created' can't be null";
         }
-        if ($this->container['amountInclVat'] === null) {
-            $invalidProperties[] = "'amountInclVat' can't be null";
+        if ($this->container['amount_incl_vat'] === null) {
+            $invalidProperties[] = "'amount_incl_vat' can't be null";
         }
-        if ($this->container['amountVat'] === null) {
-            $invalidProperties[] = "'amountVat' can't be null";
+        if ($this->container['amount_vat'] === null) {
+            $invalidProperties[] = "'amount_vat' can't be null";
         }
-        if ($this->container['amountExVat'] === null) {
-            $invalidProperties[] = "'amountExVat' can't be null";
+        if ($this->container['amount_ex_vat'] === null) {
+            $invalidProperties[] = "'amount_ex_vat' can't be null";
         }
         return $invalidProperties;
     }
@@ -544,73 +544,73 @@ class AdditionalCost implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amountInclVat
+     * Gets amount_incl_vat
      *
      * @return bool
      */
     public function getAmountInclVat()
     {
-        return $this->container['amountInclVat'];
+        return $this->container['amount_incl_vat'];
     }
 
     /**
-     * Sets amountInclVat
+     * Sets amount_incl_vat
      *
-     * @param bool $amountInclVat Whether the amount is including VAT. Default true.
+     * @param bool $amount_incl_vat Whether the amount is including VAT. Default true.
      *
      * @return $this
      */
-    public function setAmountInclVat($amountInclVat)
+    public function setAmountInclVat($amount_incl_vat)
     {
-        $this->container['amountInclVat'] = $amountInclVat;
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }
 
     /**
-     * Gets amountVat
+     * Gets amount_vat
      *
      * @return int
      */
     public function getAmountVat()
     {
-        return $this->container['amountVat'];
+        return $this->container['amount_vat'];
     }
 
     /**
-     * Sets amountVat
+     * Sets amount_vat
      *
-     * @param int $amountVat Additional cost vat amount
+     * @param int $amount_vat Additional cost vat amount
      *
      * @return $this
      */
-    public function setAmountVat($amountVat)
+    public function setAmountVat($amount_vat)
     {
-        $this->container['amountVat'] = $amountVat;
+        $this->container['amount_vat'] = $amount_vat;
 
         return $this;
     }
 
     /**
-     * Gets amountExVat
+     * Gets amount_ex_vat
      *
      * @return int
      */
     public function getAmountExVat()
     {
-        return $this->container['amountExVat'];
+        return $this->container['amount_ex_vat'];
     }
 
     /**
-     * Sets amountExVat
+     * Sets amount_ex_vat
      *
-     * @param int $amountExVat Additional cost amount without vat
+     * @param int $amount_ex_vat Additional cost amount without vat
      *
      * @return $this
      */
-    public function setAmountExVat($amountExVat)
+    public function setAmountExVat($amount_ex_vat)
     {
-        $this->container['amountExVat'] = $amountExVat;
+        $this->container['amount_ex_vat'] = $amount_ex_vat;
 
         return $this;
     }

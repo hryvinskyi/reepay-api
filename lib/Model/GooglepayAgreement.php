@@ -57,7 +57,7 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'test' => 'bool',
-        'displayName' => 'string'
+        'display_name' => 'string'
     ];
 
     /**
@@ -67,7 +67,7 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'test' => null,
-        'displayName' => null
+        'display_name' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'test' => 'test',
-        'displayName' => 'display_name'
+        'display_name' => 'display_name'
     ];
 
     /**
@@ -108,7 +108,7 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'test' => 'setTest',
-        'displayName' => 'setDisplayName'
+        'display_name' => 'setDisplayName'
     ];
 
     /**
@@ -118,7 +118,7 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'test' => 'getTest',
-        'displayName' => 'getDisplayName'
+        'display_name' => 'getDisplayName'
     ];
 
     /**
@@ -180,7 +180,7 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['displayName'] = isset($data['displayName']) ? $data['displayName'] : null;
+        $this->container['display_name'] = isset($data['display_name']) ? $data['display_name'] : null;
     }
 
     /**
@@ -192,8 +192,8 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['displayName'] === null) {
-            $invalidProperties[] = "'displayName' can't be null";
+        if ($this->container['display_name'] === null) {
+            $invalidProperties[] = "'display_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -235,25 +235,25 @@ class GooglepayAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets displayName
+     * Gets display_name
      *
      * @return string
      */
     public function getDisplayName()
     {
-        return $this->container['displayName'];
+        return $this->container['display_name'];
     }
 
     /**
-     * Sets displayName
+     * Sets display_name
      *
-     * @param string $displayName displayName
+     * @param string $display_name display_name
      *
      * @return $this
      */
-    public function setDisplayName($displayName)
+    public function setDisplayName($display_name)
     {
-        $this->container['displayName'] = $displayName;
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }

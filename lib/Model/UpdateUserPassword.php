@@ -57,7 +57,7 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'password' => 'string',
-        'oldPassword' => 'string'
+        'old_password' => 'string'
     ];
 
     /**
@@ -67,7 +67,7 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'password' => null,
-        'oldPassword' => null
+        'old_password' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'password' => 'password',
-        'oldPassword' => 'old_password'
+        'old_password' => 'old_password'
     ];
 
     /**
@@ -108,7 +108,7 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'password' => 'setPassword',
-        'oldPassword' => 'setOldPassword'
+        'old_password' => 'setOldPassword'
     ];
 
     /**
@@ -118,7 +118,7 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'password' => 'getPassword',
-        'oldPassword' => 'getOldPassword'
+        'old_password' => 'getOldPassword'
     ];
 
     /**
@@ -180,7 +180,7 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['oldPassword'] = isset($data['oldPassword']) ? $data['oldPassword'] : null;
+        $this->container['old_password'] = isset($data['old_password']) ? $data['old_password'] : null;
     }
 
     /**
@@ -195,8 +195,8 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
-        if ($this->container['oldPassword'] === null) {
-            $invalidProperties[] = "'oldPassword' can't be null";
+        if ($this->container['old_password'] === null) {
+            $invalidProperties[] = "'old_password' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,25 +238,25 @@ class UpdateUserPassword implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets oldPassword
+     * Gets old_password
      *
      * @return string
      */
     public function getOldPassword()
     {
-        return $this->container['oldPassword'];
+        return $this->container['old_password'];
     }
 
     /**
-     * Sets oldPassword
+     * Sets old_password
      *
-     * @param string $oldPassword Old password
+     * @param string $old_password Old password
      *
      * @return $this
      */
-    public function setOldPassword($oldPassword)
+    public function setOldPassword($old_password)
     {
-        $this->container['oldPassword'] = $oldPassword;
+        $this->container['old_password'] = $old_password;
 
         return $this;
     }

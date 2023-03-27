@@ -97,14 +97,14 @@ class CustomerNoteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "userName"
+     * Test attribute "user_name"
      */
     public function testPropertyUserName()
     {
     }
 
     /**
-     * Test attribute "userEmail"
+     * Test attribute "user_email"
      */
     public function testPropertyUserEmail()
     {

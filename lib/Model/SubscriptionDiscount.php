@@ -68,12 +68,12 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         'percentage' => 'int',
         'count' => 'int',
         'invoices' => 'string[]',
-        'applyTo' => 'string[]',
-        'fixedCount' => 'int',
-        'fixedPeriodUnit' => 'string',
-        'fixedPeriod' => 'int',
-        'fixedUsageReached' => 'bool',
-        'fixedPeriodPassed' => 'bool'
+        'apply_to' => 'string[]',
+        'fixed_count' => 'int',
+        'fixed_period_unit' => 'string',
+        'fixed_period' => 'int',
+        'fixed_usage_reached' => 'bool',
+        'fixed_period_passed' => 'bool'
     ];
 
     /**
@@ -94,12 +94,12 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         'percentage' => 'int32',
         'count' => 'int32',
         'invoices' => null,
-        'applyTo' => null,
-        'fixedCount' => 'int32',
-        'fixedPeriodUnit' => null,
-        'fixedPeriod' => 'int32',
-        'fixedUsageReached' => null,
-        'fixedPeriodPassed' => null
+        'apply_to' => null,
+        'fixed_count' => 'int32',
+        'fixed_period_unit' => null,
+        'fixed_period' => 'int32',
+        'fixed_usage_reached' => null,
+        'fixed_period_passed' => null
     ];
 
     /**
@@ -141,12 +141,12 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         'percentage' => 'percentage',
         'count' => 'count',
         'invoices' => 'invoices',
-        'applyTo' => 'apply_to',
-        'fixedCount' => 'fixed_count',
-        'fixedPeriodUnit' => 'fixed_period_unit',
-        'fixedPeriod' => 'fixed_period',
-        'fixedUsageReached' => 'fixed_usage_reached',
-        'fixedPeriodPassed' => 'fixed_period_passed'
+        'apply_to' => 'apply_to',
+        'fixed_count' => 'fixed_count',
+        'fixed_period_unit' => 'fixed_period_unit',
+        'fixed_period' => 'fixed_period',
+        'fixed_usage_reached' => 'fixed_usage_reached',
+        'fixed_period_passed' => 'fixed_period_passed'
     ];
 
     /**
@@ -167,12 +167,12 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         'percentage' => 'setPercentage',
         'count' => 'setCount',
         'invoices' => 'setInvoices',
-        'applyTo' => 'setApplyTo',
-        'fixedCount' => 'setFixedCount',
-        'fixedPeriodUnit' => 'setFixedPeriodUnit',
-        'fixedPeriod' => 'setFixedPeriod',
-        'fixedUsageReached' => 'setFixedUsageReached',
-        'fixedPeriodPassed' => 'setFixedPeriodPassed'
+        'apply_to' => 'setApplyTo',
+        'fixed_count' => 'setFixedCount',
+        'fixed_period_unit' => 'setFixedPeriodUnit',
+        'fixed_period' => 'setFixedPeriod',
+        'fixed_usage_reached' => 'setFixedUsageReached',
+        'fixed_period_passed' => 'setFixedPeriodPassed'
     ];
 
     /**
@@ -193,12 +193,12 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         'percentage' => 'getPercentage',
         'count' => 'getCount',
         'invoices' => 'getInvoices',
-        'applyTo' => 'getApplyTo',
-        'fixedCount' => 'getFixedCount',
-        'fixedPeriodUnit' => 'getFixedPeriodUnit',
-        'fixedPeriod' => 'getFixedPeriod',
-        'fixedUsageReached' => 'getFixedUsageReached',
-        'fixedPeriodPassed' => 'getFixedPeriodPassed'
+        'apply_to' => 'getApplyTo',
+        'fixed_count' => 'getFixedCount',
+        'fixed_period_unit' => 'getFixedPeriodUnit',
+        'fixed_period' => 'getFixedPeriod',
+        'fixed_usage_reached' => 'getFixedUsageReached',
+        'fixed_period_passed' => 'getFixedPeriodPassed'
     ];
 
     /**
@@ -299,12 +299,12 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['invoices'] = isset($data['invoices']) ? $data['invoices'] : null;
-        $this->container['applyTo'] = isset($data['applyTo']) ? $data['applyTo'] : null;
-        $this->container['fixedCount'] = isset($data['fixedCount']) ? $data['fixedCount'] : null;
-        $this->container['fixedPeriodUnit'] = isset($data['fixedPeriodUnit']) ? $data['fixedPeriodUnit'] : null;
-        $this->container['fixedPeriod'] = isset($data['fixedPeriod']) ? $data['fixedPeriod'] : null;
-        $this->container['fixedUsageReached'] = isset($data['fixedUsageReached']) ? $data['fixedUsageReached'] : null;
-        $this->container['fixedPeriodPassed'] = isset($data['fixedPeriodPassed']) ? $data['fixedPeriodPassed'] : null;
+        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
+        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
+        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
+        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
+        $this->container['fixed_usage_reached'] = isset($data['fixed_usage_reached']) ? $data['fixed_usage_reached'] : null;
+        $this->container['fixed_period_passed'] = isset($data['fixed_period_passed']) ? $data['fixed_period_passed'] : null;
     }
 
     /**
@@ -345,22 +345,26 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
         if ($this->container['invoices'] === null) {
             $invalidProperties[] = "'invoices' can't be null";
         }
-        if ($this->container['applyTo'] === null) {
-            $invalidProperties[] = "'applyTo' can't be null";
+        if ($this->container['apply_to'] === null) {
+            $invalidProperties[] = "'apply_to' can't be null";
         }
         $allowedValues = $this->getFixedPeriodUnitAllowableValues();
-        if (!is_null($this->container['fixedPeriodUnit']) && !in_array($this->container['fixedPeriodUnit'], $allowedValues, true)) {
+        if (!is_null($this->container['fixed_period_unit']) && !in_array(
+                $this->container['fixed_period_unit'],
+                $allowedValues,
+                true
+            )) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'fixedPeriodUnit', must be one of '%s'",
+                "invalid value for 'fixed_period_unit', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['fixedUsageReached'] === null) {
-            $invalidProperties[] = "'fixedUsageReached' can't be null";
+        if ($this->container['fixed_usage_reached'] === null) {
+            $invalidProperties[] = "'fixed_usage_reached' can't be null";
         }
-        if ($this->container['fixedPeriodPassed'] === null) {
-            $invalidProperties[] = "'fixedPeriodPassed' can't be null";
+        if ($this->container['fixed_period_passed'] === null) {
+            $invalidProperties[] = "'fixed_period_passed' can't be null";
         }
         return $invalidProperties;
     }
@@ -675,154 +679,154 @@ class SubscriptionDiscount implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets applyTo
+     * Gets apply_to
      *
      * @return string[]
      */
     public function getApplyTo()
     {
-        return $this->container['applyTo'];
+        return $this->container['apply_to'];
     }
 
     /**
-     * Sets applyTo
+     * Sets apply_to
      *
-     * @param string[] $applyTo Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
+     * @param string[] $apply_to Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
      *
      * @return $this
      */
-    public function setApplyTo($applyTo)
+    public function setApplyTo($apply_to)
     {
-        $this->container['applyTo'] = $applyTo;
+        $this->container['apply_to'] = $apply_to;
 
         return $this;
     }
 
     /**
-     * Gets fixedCount
+     * Gets fixed_count
      *
      * @return int
      */
     public function getFixedCount()
     {
-        return $this->container['fixedCount'];
+        return $this->container['fixed_count'];
     }
 
     /**
-     * Sets fixedCount
+     * Sets fixed_count
      *
-     * @param int $fixedCount Apply discount to a fixed number of invoices
+     * @param int $fixed_count Apply discount to a fixed number of invoices
      *
      * @return $this
      */
-    public function setFixedCount($fixedCount)
+    public function setFixedCount($fixed_count)
     {
-        $this->container['fixedCount'] = $fixedCount;
+        $this->container['fixed_count'] = $fixed_count;
 
         return $this;
     }
 
     /**
-     * Gets fixedPeriodUnit
+     * Gets fixed_period_unit
      *
      * @return string
      */
     public function getFixedPeriodUnit()
     {
-        return $this->container['fixedPeriodUnit'];
+        return $this->container['fixed_period_unit'];
     }
 
     /**
-     * Sets fixedPeriodUnit
+     * Sets fixed_period_unit
      *
-     * @param string $fixedPeriodUnit Time unit use for fixed valid period
+     * @param string $fixed_period_unit Time unit use for fixed valid period
      *
      * @return $this
      */
-    public function setFixedPeriodUnit($fixedPeriodUnit)
+    public function setFixedPeriodUnit($fixed_period_unit)
     {
         $allowedValues = $this->getFixedPeriodUnitAllowableValues();
-        if (!is_null($fixedPeriodUnit) && !in_array($fixedPeriodUnit, $allowedValues, true)) {
+        if (!is_null($fixed_period_unit) && !in_array($fixed_period_unit, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'fixedPeriodUnit', must be one of '%s'",
+                    "Invalid value for 'fixed_period_unit', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['fixedPeriodUnit'] = $fixedPeriodUnit;
+        $this->container['fixed_period_unit'] = $fixed_period_unit;
 
         return $this;
     }
 
     /**
-     * Gets fixedPeriod
+     * Gets fixed_period
      *
      * @return int
      */
     public function getFixedPeriod()
     {
-        return $this->container['fixedPeriod'];
+        return $this->container['fixed_period'];
     }
 
     /**
-     * Sets fixedPeriod
+     * Sets fixed_period
      *
-     * @param int $fixedPeriod Fixed period length e.g. 12 months or 14 days
+     * @param int $fixed_period Fixed period length e.g. 12 months or 14 days
      *
      * @return $this
      */
-    public function setFixedPeriod($fixedPeriod)
+    public function setFixedPeriod($fixed_period)
     {
-        $this->container['fixedPeriod'] = $fixedPeriod;
+        $this->container['fixed_period'] = $fixed_period;
 
         return $this;
     }
 
     /**
-     * Gets fixedUsageReached
+     * Gets fixed_usage_reached
      *
      * @return bool
      */
     public function getFixedUsageReached()
     {
-        return $this->container['fixedUsageReached'];
+        return $this->container['fixed_usage_reached'];
     }
 
     /**
-     * Sets fixedUsageReached
+     * Sets fixed_usage_reached
      *
-     * @param bool $fixedUsageReached Whether fixed usage for subscription discount has been reached
+     * @param bool $fixed_usage_reached Whether fixed usage for subscription discount has been reached
      *
      * @return $this
      */
-    public function setFixedUsageReached($fixedUsageReached)
+    public function setFixedUsageReached($fixed_usage_reached)
     {
-        $this->container['fixedUsageReached'] = $fixedUsageReached;
+        $this->container['fixed_usage_reached'] = $fixed_usage_reached;
 
         return $this;
     }
 
     /**
-     * Gets fixedPeriodPassed
+     * Gets fixed_period_passed
      *
      * @return bool
      */
     public function getFixedPeriodPassed()
     {
-        return $this->container['fixedPeriodPassed'];
+        return $this->container['fixed_period_passed'];
     }
 
     /**
-     * Sets fixedPeriodPassed
+     * Sets fixed_period_passed
      *
-     * @param bool $fixedPeriodPassed Whether fixed period for subscription discount has been passed
+     * @param bool $fixed_period_passed Whether fixed period for subscription discount has been passed
      *
      * @return $this
      */
-    public function setFixedPeriodPassed($fixedPeriodPassed)
+    public function setFixedPeriodPassed($fixed_period_passed)
     {
-        $this->container['fixedPeriodPassed'] = $fixedPeriodPassed;
+        $this->container['fixed_period_passed'] = $fixed_period_passed;
 
         return $this;
     }

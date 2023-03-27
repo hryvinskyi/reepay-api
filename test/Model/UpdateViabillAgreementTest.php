@@ -76,7 +76,7 @@ class UpdateViabillAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "apiKey"
+     * Test attribute "api_key"
      */
     public function testPropertyApiKey()
     {

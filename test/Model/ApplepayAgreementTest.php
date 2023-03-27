@@ -76,14 +76,14 @@ class ApplepayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "displayName"
+     * Test attribute "display_name"
      */
     public function testPropertyDisplayName()
     {
     }
 
     /**
-     * Test attribute "recurringEnabled"
+     * Test attribute "recurring_enabled"
      */
     public function testPropertyRecurringEnabled()
     {

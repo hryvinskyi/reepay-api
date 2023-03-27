@@ -58,11 +58,11 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'currencies' => 'string[]',
         'country' => 'string',
-        'shopName' => 'string',
-        'merchantVat' => 'string',
-        'providerId' => 'string',
-        'authorizationUrl' => 'string',
-        'asyncOneOff' => 'bool'
+        'shop_name' => 'string',
+        'merchant_vat' => 'string',
+        'provider_id' => 'string',
+        'authorization_url' => 'string',
+        'async_one_off' => 'bool'
     ];
 
     /**
@@ -73,11 +73,11 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'currencies' => null,
         'country' => null,
-        'shopName' => null,
-        'merchantVat' => null,
-        'providerId' => null,
-        'authorizationUrl' => null,
-        'asyncOneOff' => null
+        'shop_name' => null,
+        'merchant_vat' => null,
+        'provider_id' => null,
+        'authorization_url' => null,
+        'async_one_off' => null
     ];
 
     /**
@@ -109,11 +109,11 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'currencies' => 'currencies',
         'country' => 'country',
-        'shopName' => 'shop_name',
-        'merchantVat' => 'merchant_vat',
-        'providerId' => 'provider_id',
-        'authorizationUrl' => 'authorization_url',
-        'asyncOneOff' => 'async_one_off'
+        'shop_name' => 'shop_name',
+        'merchant_vat' => 'merchant_vat',
+        'provider_id' => 'provider_id',
+        'authorization_url' => 'authorization_url',
+        'async_one_off' => 'async_one_off'
     ];
 
     /**
@@ -124,11 +124,11 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     protected static $setters = [
         'currencies' => 'setCurrencies',
         'country' => 'setCountry',
-        'shopName' => 'setShopName',
-        'merchantVat' => 'setMerchantVat',
-        'providerId' => 'setProviderId',
-        'authorizationUrl' => 'setAuthorizationUrl',
-        'asyncOneOff' => 'setAsyncOneOff'
+        'shop_name' => 'setShopName',
+        'merchant_vat' => 'setMerchantVat',
+        'provider_id' => 'setProviderId',
+        'authorization_url' => 'setAuthorizationUrl',
+        'async_one_off' => 'setAsyncOneOff'
     ];
 
     /**
@@ -139,11 +139,11 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     protected static $getters = [
         'currencies' => 'getCurrencies',
         'country' => 'getCountry',
-        'shopName' => 'getShopName',
-        'merchantVat' => 'getMerchantVat',
-        'providerId' => 'getProviderId',
-        'authorizationUrl' => 'getAuthorizationUrl',
-        'asyncOneOff' => 'getAsyncOneOff'
+        'shop_name' => 'getShopName',
+        'merchant_vat' => 'getMerchantVat',
+        'provider_id' => 'getProviderId',
+        'authorization_url' => 'getAuthorizationUrl',
+        'async_one_off' => 'getAsyncOneOff'
     ];
 
     /**
@@ -206,11 +206,11 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     {
         $this->container['currencies'] = isset($data['currencies']) ? $data['currencies'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['shopName'] = isset($data['shopName']) ? $data['shopName'] : null;
-        $this->container['merchantVat'] = isset($data['merchantVat']) ? $data['merchantVat'] : null;
-        $this->container['providerId'] = isset($data['providerId']) ? $data['providerId'] : null;
-        $this->container['authorizationUrl'] = isset($data['authorizationUrl']) ? $data['authorizationUrl'] : null;
-        $this->container['asyncOneOff'] = isset($data['asyncOneOff']) ? $data['asyncOneOff'] : null;
+        $this->container['shop_name'] = isset($data['shop_name']) ? $data['shop_name'] : null;
+        $this->container['merchant_vat'] = isset($data['merchant_vat']) ? $data['merchant_vat'] : null;
+        $this->container['provider_id'] = isset($data['provider_id']) ? $data['provider_id'] : null;
+        $this->container['authorization_url'] = isset($data['authorization_url']) ? $data['authorization_url'] : null;
+        $this->container['async_one_off'] = isset($data['async_one_off']) ? $data['async_one_off'] : null;
     }
 
     /**
@@ -289,121 +289,121 @@ class MpsAgreement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets shopName
+     * Gets shop_name
      *
      * @return string
      */
     public function getShopName()
     {
-        return $this->container['shopName'];
+        return $this->container['shop_name'];
     }
 
     /**
-     * Sets shopName
+     * Sets shop_name
      *
-     * @param string $shopName shopName
+     * @param string $shop_name shop_name
      *
      * @return $this
      */
-    public function setShopName($shopName)
+    public function setShopName($shop_name)
     {
-        $this->container['shopName'] = $shopName;
+        $this->container['shop_name'] = $shop_name;
 
         return $this;
     }
 
     /**
-     * Gets merchantVat
+     * Gets merchant_vat
      *
      * @return string
      */
     public function getMerchantVat()
     {
-        return $this->container['merchantVat'];
+        return $this->container['merchant_vat'];
     }
 
     /**
-     * Sets merchantVat
+     * Sets merchant_vat
      *
-     * @param string $merchantVat merchantVat
+     * @param string $merchant_vat merchant_vat
      *
      * @return $this
      */
-    public function setMerchantVat($merchantVat)
+    public function setMerchantVat($merchant_vat)
     {
-        $this->container['merchantVat'] = $merchantVat;
+        $this->container['merchant_vat'] = $merchant_vat;
 
         return $this;
     }
 
     /**
-     * Gets providerId
+     * Gets provider_id
      *
      * @return string
      */
     public function getProviderId()
     {
-        return $this->container['providerId'];
+        return $this->container['provider_id'];
     }
 
     /**
-     * Sets providerId
+     * Sets provider_id
      *
-     * @param string $providerId providerId
+     * @param string $provider_id provider_id
      *
      * @return $this
      */
-    public function setProviderId($providerId)
+    public function setProviderId($provider_id)
     {
-        $this->container['providerId'] = $providerId;
+        $this->container['provider_id'] = $provider_id;
 
         return $this;
     }
 
     /**
-     * Gets authorizationUrl
+     * Gets authorization_url
      *
      * @return string
      */
     public function getAuthorizationUrl()
     {
-        return $this->container['authorizationUrl'];
+        return $this->container['authorization_url'];
     }
 
     /**
-     * Sets authorizationUrl
+     * Sets authorization_url
      *
-     * @param string $authorizationUrl authorizationUrl
+     * @param string $authorization_url authorization_url
      *
      * @return $this
      */
-    public function setAuthorizationUrl($authorizationUrl)
+    public function setAuthorizationUrl($authorization_url)
     {
-        $this->container['authorizationUrl'] = $authorizationUrl;
+        $this->container['authorization_url'] = $authorization_url;
 
         return $this;
     }
 
     /**
-     * Gets asyncOneOff
+     * Gets async_one_off
      *
      * @return bool
      */
     public function getAsyncOneOff()
     {
-        return $this->container['asyncOneOff'];
+        return $this->container['async_one_off'];
     }
 
     /**
-     * Sets asyncOneOff
+     * Sets async_one_off
      *
-     * @param bool $asyncOneOff asyncOneOff
+     * @param bool $async_one_off async_one_off
      *
      * @return $this
      */
-    public function setAsyncOneOff($asyncOneOff)
+    public function setAsyncOneOff($async_one_off)
     {
-        $this->container['asyncOneOff'] = $asyncOneOff;
+        $this->container['async_one_off'] = $async_one_off;
 
         return $this;
     }

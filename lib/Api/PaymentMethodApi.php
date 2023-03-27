@@ -110,9 +110,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function activatePaymentMethodV2WithHttpInfo($id)
     {
@@ -162,6 +162,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -232,8 +233,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function activatePaymentMethodV2Async($id)
     {
@@ -252,8 +253,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function activatePaymentMethodV2AsyncWithHttpInfo($id)
     {
@@ -302,8 +303,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function activatePaymentMethodV2Request($id)
     {
@@ -364,8 +365,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -406,9 +409,9 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\AddPaymentMethod $body body (optional)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function addPaymentMethodV2($body = null)
     {
@@ -423,9 +426,9 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\AddPaymentMethod $body (optional)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function addPaymentMethodV2WithHttpInfo($body = null)
     {
@@ -475,6 +478,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -545,8 +549,8 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\AddPaymentMethod $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addPaymentMethodV2Async($body = null)
     {
@@ -565,8 +569,8 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\AddPaymentMethod $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addPaymentMethodV2AsyncWithHttpInfo($body = null)
     {
@@ -615,17 +619,19 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\AddPaymentMethod $body (optional)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function addPaymentMethodV2Request($body = null)
     {
+
         $resourcePath = '/v1/payment_method';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
 
 
         // body params
@@ -664,8 +670,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -707,9 +715,9 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CardVerificationRequest $body body (optional)
      *
-     * @return \Reepay\Model\CardVerification
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\CardVerification
      */
     public function cardVerification($id, $body = null)
     {
@@ -777,6 +785,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -848,8 +857,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CardVerificationRequest $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function cardVerificationAsync($id, $body = null)
     {
@@ -869,8 +878,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CardVerificationRequest $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function cardVerificationAsyncWithHttpInfo($id, $body = null)
     {
@@ -920,8 +929,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CardVerificationRequest $body (optional)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function cardVerificationRequest($id, $body = null)
     {
@@ -985,8 +994,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -1028,9 +1039,9 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CopyCard $body body (optional)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function copyCardPaymentMethodV2($id, $body = null)
     {
@@ -1046,9 +1057,9 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CopyCard $body (optional)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function copyCardPaymentMethodV2WithHttpInfo($id, $body = null)
     {
@@ -1098,6 +1109,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1169,8 +1181,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CopyCard $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function copyCardPaymentMethodV2Async($id, $body = null)
     {
@@ -1190,8 +1202,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CopyCard $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function copyCardPaymentMethodV2AsyncWithHttpInfo($id, $body = null)
     {
@@ -1241,8 +1253,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\CopyCard $body (optional)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function copyCardPaymentMethodV2Request($id, $body = null)
     {
@@ -1306,8 +1318,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -1348,9 +1362,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function deletePaymentMethodV2($id)
     {
@@ -1365,9 +1379,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePaymentMethodV2WithHttpInfo($id)
     {
@@ -1417,6 +1431,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1487,8 +1502,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePaymentMethodV2Async($id)
     {
@@ -1507,8 +1522,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePaymentMethodV2AsyncWithHttpInfo($id)
     {
@@ -1557,8 +1572,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function deletePaymentMethodV2Request($id)
     {
@@ -1619,8 +1634,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -1661,9 +1678,9 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function enrollCardPaymentMethodV2($id)
     {
@@ -1678,9 +1695,9 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function enrollCardPaymentMethodV2WithHttpInfo($id)
     {
@@ -1730,6 +1747,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1800,8 +1818,8 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enrollCardPaymentMethodV2Async($id)
     {
@@ -1820,8 +1838,8 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enrollCardPaymentMethodV2AsyncWithHttpInfo($id)
     {
@@ -1870,8 +1888,8 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function enrollCardPaymentMethodV2Request($id)
     {
@@ -1932,8 +1950,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -1974,9 +1994,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return map[string,object]
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return map[string,object]
      */
     public function getPaymentMethodDetailsV2($id)
     {
@@ -1991,9 +2011,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentMethodDetailsV2WithHttpInfo($id)
     {
@@ -2043,6 +2063,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -2113,8 +2134,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPaymentMethodDetailsV2Async($id)
     {
@@ -2133,8 +2154,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPaymentMethodDetailsV2AsyncWithHttpInfo($id)
     {
@@ -2183,8 +2204,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getPaymentMethodDetailsV2Request($id)
     {
@@ -2245,8 +2266,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -2287,9 +2310,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function getPaymentMethodV2($id)
     {
@@ -2304,9 +2327,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentMethodV2WithHttpInfo($id)
     {
@@ -2356,6 +2379,7 @@ class PaymentMethodApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -2426,8 +2450,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPaymentMethodV2Async($id)
     {
@@ -2446,8 +2470,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPaymentMethodV2AsyncWithHttpInfo($id)
     {
@@ -2496,8 +2520,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getPaymentMethodV2Request($id)
     {
@@ -2558,8 +2582,10 @@ class PaymentMethodApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
+
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
@@ -2600,9 +2626,9 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\ImportMpsPaymentMethodRequest $body body (optional)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function importMpsPaymentMethod($body = null)
     {
@@ -2617,9 +2643,9 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\ImportMpsPaymentMethodRequest $body (optional)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function importMpsPaymentMethodWithHttpInfo($body = null)
     {
@@ -2739,8 +2765,8 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\ImportMpsPaymentMethodRequest $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function importMpsPaymentMethodAsync($body = null)
     {
@@ -2759,8 +2785,8 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\ImportMpsPaymentMethodRequest $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function importMpsPaymentMethodAsyncWithHttpInfo($body = null)
     {
@@ -2809,8 +2835,8 @@ class PaymentMethodApi
      *
      * @param \Reepay\Model\ImportMpsPaymentMethodRequest $body (optional)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function importMpsPaymentMethodRequest($body = null)
     {
@@ -2900,9 +2926,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function inactivatePaymentMethodV2($id)
     {
@@ -2917,9 +2943,9 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function inactivatePaymentMethodV2WithHttpInfo($id)
     {
@@ -3039,8 +3065,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function inactivatePaymentMethodV2Async($id)
     {
@@ -3059,8 +3085,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function inactivatePaymentMethodV2AsyncWithHttpInfo($id)
     {
@@ -3109,8 +3135,8 @@ class PaymentMethodApi
      *
      * @param string $id Payment method id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function inactivatePaymentMethodV2Request($id)
     {
@@ -3214,9 +3240,9 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\MoveCard $body body (optional)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function moveCardPaymentMethodV2($id, $body = null)
     {
@@ -3232,9 +3258,9 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\MoveCard $body (optional)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function moveCardPaymentMethodV2WithHttpInfo($id, $body = null)
     {
@@ -3355,8 +3381,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\MoveCard $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function moveCardPaymentMethodV2Async($id, $body = null)
     {
@@ -3376,8 +3402,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\MoveCard $body (optional)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function moveCardPaymentMethodV2AsyncWithHttpInfo($id, $body = null)
     {
@@ -3427,8 +3453,8 @@ class PaymentMethodApi
      * @param string $id Card id (required)
      * @param \Reepay\Model\MoveCard $body (optional)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function moveCardPaymentMethodV2Request($id, $body = null)
     {
@@ -3534,9 +3560,9 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \Reepay\Model\PaymentMethodV2
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Reepay\Model\PaymentMethodV2
      */
     public function reactivateCardV2($id)
     {
@@ -3551,9 +3577,9 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
-     * @throws \InvalidArgumentException
      * @throws \Reepay\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Reepay\Model\PaymentMethodV2, HTTP status code, HTTP response headers (array of strings)
      */
     public function reactivateCardV2WithHttpInfo($id)
     {
@@ -3673,8 +3699,8 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function reactivateCardV2Async($id)
     {
@@ -3693,8 +3719,8 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function reactivateCardV2AsyncWithHttpInfo($id)
     {
@@ -3743,8 +3769,8 @@ class PaymentMethodApi
      *
      * @param string $id Card id (required)
      *
-     * @return \GuzzleHttp\Psr7\Request
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function reactivateCardV2Request($id)
     {
@@ -3843,8 +3869,8 @@ class PaymentMethodApi
     /**
      * Create http client option
      *
-     * @return array of http client options
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {

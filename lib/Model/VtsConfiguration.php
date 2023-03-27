@@ -56,8 +56,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'emvTokenizationStatus' => 'string',
-        'tokenRequestorId' => 'string'
+        'emv_tokenization_status' => 'string',
+        'token_requestor_id' => 'string'
     ];
 
     /**
@@ -66,8 +66,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'emvTokenizationStatus' => null,
-        'tokenRequestorId' => null
+        'emv_tokenization_status' => null,
+        'token_requestor_id' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emvTokenizationStatus' => 'emvTokenizationStatus',
-        'tokenRequestorId' => 'tokenRequestorId'
+        'emv_tokenization_status' => 'emvTokenizationStatus',
+        'token_requestor_id' => 'tokenRequestorId'
     ];
 
     /**
@@ -107,8 +107,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emvTokenizationStatus' => 'setEmvTokenizationStatus',
-        'tokenRequestorId' => 'setTokenRequestorId'
+        'emv_tokenization_status' => 'setEmvTokenizationStatus',
+        'token_requestor_id' => 'setTokenRequestorId'
     ];
 
     /**
@@ -117,8 +117,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emvTokenizationStatus' => 'getEmvTokenizationStatus',
-        'tokenRequestorId' => 'getTokenRequestorId'
+        'emv_tokenization_status' => 'getEmvTokenizationStatus',
+        'token_requestor_id' => 'getTokenRequestorId'
     ];
 
     /**
@@ -178,8 +178,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['emvTokenizationStatus'] = isset($data['emvTokenizationStatus']) ? $data['emvTokenizationStatus'] : null;
-        $this->container['tokenRequestorId'] = isset($data['tokenRequestorId']) ? $data['tokenRequestorId'] : null;
+        $this->container['emv_tokenization_status'] = isset($data['emv_tokenization_status']) ? $data['emv_tokenization_status'] : null;
+        $this->container['token_requestor_id'] = isset($data['token_requestor_id']) ? $data['token_requestor_id'] : null;
     }
 
     /**
@@ -191,8 +191,8 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['emvTokenizationStatus'] === null) {
-            $invalidProperties[] = "'emvTokenizationStatus' can't be null";
+        if ($this->container['emv_tokenization_status'] === null) {
+            $invalidProperties[] = "'emv_tokenization_status' can't be null";
         }
         return $invalidProperties;
     }
@@ -210,53 +210,52 @@ class VtsConfiguration implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets emvTokenizationStatus
+     * Gets emv_tokenization_status
      *
      * @return string
      */
     public function getEmvTokenizationStatus()
     {
-        return $this->container['emvTokenizationStatus'];
+        return $this->container['emv_tokenization_status'];
     }
 
     /**
-     * Sets emvTokenizationStatus
+     * Sets emv_tokenization_status
      *
-     * @param string $emvTokenizationStatus emvTokenizationStatus
+     * @param string $emv_tokenization_status emv_tokenization_status
      *
      * @return $this
      */
-    public function setEmvTokenizationStatus($emvTokenizationStatus)
+    public function setEmvTokenizationStatus($emv_tokenization_status)
     {
-        $this->container['emvTokenizationStatus'] = $emvTokenizationStatus;
+        $this->container['emv_tokenization_status'] = $emv_tokenization_status;
 
         return $this;
     }
 
     /**
-     * Gets tokenRequestorId
+     * Gets token_requestor_id
      *
      * @return string
      */
     public function getTokenRequestorId()
     {
-        return $this->container['tokenRequestorId'];
+        return $this->container['token_requestor_id'];
     }
 
     /**
-     * Sets tokenRequestorId
+     * Sets token_requestor_id
      *
-     * @param string $tokenRequestorId tokenRequestorId
+     * @param string $token_requestor_id token_requestor_id
      *
      * @return $this
      */
-    public function setTokenRequestorId($tokenRequestorId)
+    public function setTokenRequestorId($token_requestor_id)
     {
-        $this->container['tokenRequestorId'] = $tokenRequestorId;
+        $this->container['token_requestor_id'] = $token_requestor_id;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *

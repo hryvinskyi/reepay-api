@@ -1,7 +1,6 @@
 # VippsRecurringSubscription
 
 ## Properties
-
  Name | Type | Description | Notes 
 ------|------|-------------|-------
 

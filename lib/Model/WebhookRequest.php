@@ -61,7 +61,7 @@ class WebhookRequest implements ModelInterface, ArrayAccess
         'duration' => 'int',
         'headers' => 'string',
         'content' => 'string',
-        'httpStatus' => 'int'
+        'http_status' => 'int'
     ];
 
     /**
@@ -75,7 +75,7 @@ class WebhookRequest implements ModelInterface, ArrayAccess
         'duration' => 'int64',
         'headers' => null,
         'content' => null,
-        'httpStatus' => 'int32'
+        'http_status' => 'int32'
     ];
 
     /**
@@ -110,7 +110,7 @@ class WebhookRequest implements ModelInterface, ArrayAccess
         'duration' => 'duration',
         'headers' => 'headers',
         'content' => 'content',
-        'httpStatus' => 'http_status'
+        'http_status' => 'http_status'
     ];
 
     /**
@@ -124,7 +124,7 @@ class WebhookRequest implements ModelInterface, ArrayAccess
         'duration' => 'setDuration',
         'headers' => 'setHeaders',
         'content' => 'setContent',
-        'httpStatus' => 'setHttpStatus'
+        'http_status' => 'setHttpStatus'
     ];
 
     /**
@@ -138,7 +138,7 @@ class WebhookRequest implements ModelInterface, ArrayAccess
         'duration' => 'getDuration',
         'headers' => 'getHeaders',
         'content' => 'getContent',
-        'httpStatus' => 'getHttpStatus'
+        'http_status' => 'getHttpStatus'
     ];
 
     /**
@@ -204,7 +204,7 @@ class WebhookRequest implements ModelInterface, ArrayAccess
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['httpStatus'] = isset($data['httpStatus']) ? $data['httpStatus'] : null;
+        $this->container['http_status'] = isset($data['http_status']) ? $data['http_status'] : null;
     }
 
     /**
@@ -361,25 +361,25 @@ class WebhookRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets httpStatus
+     * Gets http_status
      *
      * @return int
      */
     public function getHttpStatus()
     {
-        return $this->container['httpStatus'];
+        return $this->container['http_status'];
     }
 
     /**
-     * Sets httpStatus
+     * Sets http_status
      *
-     * @param int $httpStatus HTTP status code received, null if no response
+     * @param int $http_status HTTP status code received, null if no response
      *
      * @return $this
      */
-    public function setHttpStatus($httpStatus)
+    public function setHttpStatus($http_status)
     {
-        $this->container['httpStatus'] = $httpStatus;
+        $this->container['http_status'] = $http_status;
 
         return $this;
     }

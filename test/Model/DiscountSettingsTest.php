@@ -76,21 +76,21 @@ class DiscountSettingsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "discountApplyOrder"
+     * Test attribute "discount_apply_order"
      */
     public function testPropertyDiscountApplyOrder()
     {
     }
 
     /**
-     * Test attribute "discountPercentageApply"
+     * Test attribute "discount_percentage_apply"
      */
     public function testPropertyDiscountPercentageApply()
     {
     }
 
     /**
-     * Test attribute "multipleAllowed"
+     * Test attribute "multiple_allowed"
      */
     public function testPropertyMultipleAllowed()
     {

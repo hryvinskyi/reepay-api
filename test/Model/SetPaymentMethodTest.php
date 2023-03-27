@@ -83,7 +83,7 @@ class SetPaymentMethodTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentMethodReference"
+     * Test attribute "payment_method_reference"
      */
     public function testPropertyPaymentMethodReference()
     {

@@ -167,56 +167,56 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "orderLines"
+     * Test attribute "order_lines"
      */
     public function testPropertyOrderLines()
     {
     }
 
     /**
-     * Test attribute "refundedAmount"
+     * Test attribute "refunded_amount"
      */
     public function testPropertyRefundedAmount()
     {
     }
 
     /**
-     * Test attribute "authorizedAmount"
+     * Test attribute "authorized_amount"
      */
     public function testPropertyAuthorizedAmount()
     {
     }
 
     /**
-     * Test attribute "errorState"
+     * Test attribute "error_state"
      */
     public function testPropertyErrorState()
     {
     }
 
     /**
-     * Test attribute "recurringPaymentMethod"
+     * Test attribute "recurring_payment_method"
      */
     public function testPropertyRecurringPaymentMethod()
     {
     }
 
     /**
-     * Test attribute "billingAddress"
+     * Test attribute "billing_address"
      */
     public function testPropertyBillingAddress()
     {
     }
 
     /**
-     * Test attribute "shippingAddress"
+     * Test attribute "shipping_address"
      */
     public function testPropertyShippingAddress()
     {
     }
 
     /**
-     * Test attribute "paymentContext"
+     * Test attribute "payment_context"
      */
     public function testPropertyPaymentContext()
     {

@@ -97,70 +97,70 @@ class CreateCardGatewayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "cardTypes"
+     * Test attribute "card_types"
      */
     public function testPropertyCardTypes()
     {
     }
 
     /**
-     * Test attribute "paymentTypes"
+     * Test attribute "payment_types"
      */
     public function testPropertyPaymentTypes()
     {
     }
 
     /**
-     * Test attribute "providerSettings"
+     * Test attribute "provider_settings"
      */
     public function testPropertyProviderSettings()
     {
     }
 
     /**
-     * Test attribute "feeConfiguration"
+     * Test attribute "fee_configuration"
      */
     public function testPropertyFeeConfiguration()
     {
     }
 
     /**
-     * Test attribute "threedSecure"
+     * Test attribute "threed_secure"
      */
     public function testPropertyThreedSecure()
     {
     }
 
     /**
-     * Test attribute "threedSecureRecurring"
+     * Test attribute "threed_secure_recurring"
      */
     public function testPropertyThreedSecureRecurring()
     {
     }
 
     /**
-     * Test attribute "securedByNets"
+     * Test attribute "secured_by_nets"
      */
     public function testPropertySecuredByNets()
     {
     }
 
     /**
-     * Test attribute "securedByNetsRecurring"
+     * Test attribute "secured_by_nets_recurring"
      */
     public function testPropertySecuredByNetsRecurring()
     {
     }
 
     /**
-     * Test attribute "defaultRequireSca"
+     * Test attribute "default_require_sca"
      */
     public function testPropertyDefaultRequireSca()
     {
     }
 
     /**
-     * Test attribute "disallowThreedSecureAttempted"
+     * Test attribute "disallow_threed_secure_attempted"
      */
     public function testPropertyDisallowThreedSecureAttempted()
     {
@@ -174,7 +174,7 @@ class CreateCardGatewayAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "vtsConfiguration"
+     * Test attribute "vts_configuration"
      */
     public function testPropertyVtsConfiguration()
     {

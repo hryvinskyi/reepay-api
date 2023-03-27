@@ -57,7 +57,7 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'state' => 'string',
-        'acquirerMessage' => 'string'
+        'acquirer_message' => 'string'
     ];
 
     /**
@@ -67,7 +67,7 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'state' => null,
-        'acquirerMessage' => null
+        'acquirer_message' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'state' => 'state',
-        'acquirerMessage' => 'acquirer_message'
+        'acquirer_message' => 'acquirer_message'
     ];
 
     /**
@@ -108,7 +108,7 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'state' => 'setState',
-        'acquirerMessage' => 'setAcquirerMessage'
+        'acquirer_message' => 'setAcquirerMessage'
     ];
 
     /**
@@ -118,7 +118,7 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'state' => 'getState',
-        'acquirerMessage' => 'getAcquirerMessage'
+        'acquirer_message' => 'getAcquirerMessage'
     ];
 
     /**
@@ -194,7 +194,7 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['acquirerMessage'] = isset($data['acquirerMessage']) ? $data['acquirerMessage'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
     }
 
     /**
@@ -266,25 +266,25 @@ class ExtendKlarnaAuthResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets acquirerMessage
+     * Gets acquirer_message
      *
      * @return string
      */
     public function getAcquirerMessage()
     {
-        return $this->container['acquirerMessage'];
+        return $this->container['acquirer_message'];
     }
 
     /**
-     * Sets acquirerMessage
+     * Sets acquirer_message
      *
-     * @param string $acquirerMessage Details if extend klarna operation was not successful
+     * @param string $acquirer_message Details if extend klarna operation was not successful
      *
      * @return $this
      */
-    public function setAcquirerMessage($acquirerMessage)
+    public function setAcquirerMessage($acquirer_message)
     {
-        $this->container['acquirerMessage'] = $acquirerMessage;
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }

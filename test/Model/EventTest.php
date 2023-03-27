@@ -118,14 +118,14 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "eventType"
+     * Test attribute "event_type"
      */
     public function testPropertyEventType()
     {
     }
 
     /**
-     * Test attribute "principalType"
+     * Test attribute "principal_type"
      */
     public function testPropertyPrincipalType()
     {
