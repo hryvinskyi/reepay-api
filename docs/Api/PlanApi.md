@@ -1,20 +1,20 @@
 # Reepay\PlanApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                | HTTP request                          | Description               
--------------------------------------------------------|---------------------------------------|---------------------------
- [**createPlanJson**](PlanApi.md#createplanjson)       | **POST** /v1/plan                     | Create plan               
- [**deleteMetadata3**](PlanApi.md#deletemetadata3)     | **DELETE** /v1/plan/{handle}/metadata | Delete metadata           
- [**deletePlan**](PlanApi.md#deleteplan)               | **DELETE** /v1/plan/{handle}          | Delete plan               
- [**getCurrentPlan**](PlanApi.md#getcurrentplan)       | **GET** /v1/plan/{handle}/current     | Get plan                  
- [**getMetadata3**](PlanApi.md#getmetadata3)           | **GET** /v1/plan/{handle}/metadata    | Get metadata              
- [**getPlan**](PlanApi.md#getplan)                     | **GET** /v1/plan/{handle}/{version}   | Get plan version          
- [**getPlans**](PlanApi.md#getplans)                   | **GET** /v1/plan/{handle}             | Get list of plan versions 
- [**supersedePlanJson**](PlanApi.md#supersedeplanjson) | **POST** /v1/plan/{handle}            | Supersede plan            
- [**unDeletePlan**](PlanApi.md#undeleteplan)           | **POST** /v1/plan/{handle}/undelete   | Undelete plan             
- [**updateMetadata3**](PlanApi.md#updatemetadata3)     | **PUT** /v1/plan/{handle}/metadata    | Create or update metadata 
- [**updatePlanJson**](PlanApi.md#updateplanjson)       | **PUT** /v1/plan/{handle}             | Update plan               
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPlanJson**](PlanApi.md#createplanjson) | **POST** /v1/plan | Create plan
+[**deleteMetadata3**](PlanApi.md#deletemetadata3) | **DELETE** /v1/plan/{handle}/metadata | Delete metadata
+[**deletePlan**](PlanApi.md#deleteplan) | **DELETE** /v1/plan/{handle} | Delete plan
+[**getCurrentPlan**](PlanApi.md#getcurrentplan) | **GET** /v1/plan/{handle}/current | Get plan
+[**getMetadata3**](PlanApi.md#getmetadata3) | **GET** /v1/plan/{handle}/metadata | Get metadata
+[**getPlan**](PlanApi.md#getplan) | **GET** /v1/plan/{handle}/{version} | Get plan version
+[**getPlans**](PlanApi.md#getplans) | **GET** /v1/plan/{handle} | Get list of plan versions
+[**supersedePlanJson**](PlanApi.md#supersedeplanjson) | **POST** /v1/plan/{handle} | Supersede plan
+[**unDeletePlan**](PlanApi.md#undeleteplan) | **POST** /v1/plan/{handle}/undelete | Undelete plan
+[**updateMetadata3**](PlanApi.md#updatemetadata3) | **PUT** /v1/plan/{handle}/metadata | Create or update metadata
+[**updatePlanJson**](PlanApi.md#updateplanjson) | **PUT** /v1/plan/{handle} | Update plan
 
 # **createPlanJson**
 > \Reepay\Model\Plan createPlanJson($body)
@@ -52,7 +52,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateSubscriptionPlan**](../Model/CreateSubscriptionPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionPlan**](../Model/CreateSubscriptionPlan.md)|  |
 
 ### Return type
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentPlan**
-> \Reepay\Model\Plan getCurrentPlan($handle)
+> \Reepay\Model\Plan getCurrentPlan($handle, $tax_rate_for_country)
 
 Get plan
 
@@ -196,9 +196,10 @@ $apiInstance = new Reepay\Api\PlanApi(
     $config
 );
 $handle = "handle_example"; // string | Plan handle
+$tax_rate_for_country = "tax_rate_for_country_example"; // string | 
 
 try {
-    $result = $apiInstance->getCurrentPlan($handle);
+    $result = $apiInstance->getCurrentPlan($handle, $tax_rate_for_country);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getCurrentPlan: ', $e->getMessage(), PHP_EOL;
@@ -211,6 +212,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
+ **tax_rate_for_country** | **string**|  | [optional]
 
 ### Return type
 
@@ -281,7 +283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlan**
-> \Reepay\Model\Plan getPlan($handle, $version)
+> \Reepay\Model\Plan getPlan($handle, $version, $tax_rate_for_country)
 
 Get plan version
 
@@ -303,9 +305,10 @@ $apiInstance = new Reepay\Api\PlanApi(
 );
 $handle = "handle_example"; // string | Plan handle
 $version = 56; // int | Plan version
+$tax_rate_for_country = "tax_rate_for_country_example"; // string | 
 
 try {
-    $result = $apiInstance->getPlan($handle, $version);
+    $result = $apiInstance->getPlan($handle, $version, $tax_rate_for_country);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlan: ', $e->getMessage(), PHP_EOL;
@@ -319,6 +322,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
  **version** | **int**| Plan version |
+ **tax_rate_for_country** | **string**|  | [optional]
 
 ### Return type
 
@@ -336,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlans**
-> \Reepay\Model\Plan[] getPlans($handle)
+> \Reepay\Model\Plan[] getPlans($handle, $tax_rate_for_country)
 
 Get list of plan versions
 
@@ -357,9 +361,10 @@ $apiInstance = new Reepay\Api\PlanApi(
     $config
 );
 $handle = "handle_example"; // string | Plan handle
+$tax_rate_for_country = "tax_rate_for_country_example"; // string | 
 
 try {
-    $result = $apiInstance->getPlans($handle);
+    $result = $apiInstance->getPlans($handle, $tax_rate_for_country);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlans: ', $e->getMessage(), PHP_EOL;
@@ -372,6 +377,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
+ **tax_rate_for_country** | **string**|  | [optional]
 
 ### Return type
 
@@ -389,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **supersedePlanJson**
-> \Reepay\Model\Plan supersedePlanJson($handle, $body)
+> \Reepay\Model\Plan supersedePlanJson($body, $handle)
 
 Supersede plan
 
@@ -409,11 +415,11 @@ $apiInstance = new Reepay\Api\PlanApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Plan handle
 $body = new \Reepay\Model\SupersedeSubscriptionPlan(); // \Reepay\Model\SupersedeSubscriptionPlan | 
+$handle = "handle_example"; // string | Plan handle
 
 try {
-    $result = $apiInstance->supersedePlanJson($handle, $body);
+    $result = $apiInstance->supersedePlanJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->supersedePlanJson: ', $e->getMessage(), PHP_EOL;
@@ -425,8 +431,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\SupersedeSubscriptionPlan**](../Model/SupersedeSubscriptionPlan.md)|  |
  **handle** | **string**| Plan handle |
- **body** | [**\Reepay\Model\SupersedeSubscriptionPlan**](../Model/SupersedeSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 
@@ -497,7 +503,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMetadata3**
-> map[string,object] updateMetadata3($handle, $body)
+> map[string,object] updateMetadata3($body, $handle)
 
 Create or update metadata
 
@@ -517,11 +523,11 @@ $apiInstance = new Reepay\Api\PlanApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Resource handle
 $body = new \Reepay\Model\map(); // map[string,object] | 
+$handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $apiInstance->updateMetadata3($handle, $body);
+    $result = $apiInstance->updateMetadata3($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->updateMetadata3: ', $e->getMessage(), PHP_EOL;
@@ -531,10 +537,10 @@ try {
 
 ### Parameters
 
- Name       | Type                                      | Description     | Notes      
-------------|-------------------------------------------|-----------------|------------
- **handle** | **string**                                | Resource handle |
- **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**map[string,object]**](../Model/map.md)|  |
+ **handle** | **string**| Resource handle |
 
 ### Return type
 
@@ -546,13 +552,13 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePlanJson**
-> \Reepay\Model\Plan updatePlanJson($handle, $body)
+> \Reepay\Model\Plan updatePlanJson($body, $handle)
 
 Update plan
 
@@ -572,11 +578,11 @@ $apiInstance = new Reepay\Api\PlanApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\UpdateSubscriptionPlan(); // \Reepay\Model\UpdateSubscriptionPlan | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->updatePlanJson($handle, $body);
+    $result = $apiInstance->updatePlanJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->updatePlanJson: ', $e->getMessage(), PHP_EOL;
@@ -588,8 +594,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateSubscriptionPlan**](../Model/UpdateSubscriptionPlan.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\UpdateSubscriptionPlan**](../Model/UpdateSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 

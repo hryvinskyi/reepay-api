@@ -1,13 +1,13 @@
 # Reepay\MailTemplateApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                        | HTTP request                     | Description     
------------------------------------------------|----------------------------------|-----------------
- [**getSample**](MailTemplateApi.md#getsample) | **GET** /v1/mail_template/sample | Get sample data 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getSample**](MailTemplateApi.md#getsample) | **GET** /v1/mail_template/sample | Get sample data
 
 # **getSample**
-> map[string,object] getSample()
+> \Reepay\Model\InlineResponse200 getSample()
 
 Get sample data
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**map[string,object]**
+[**\Reepay\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 

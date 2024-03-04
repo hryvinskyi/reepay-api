@@ -1,28 +1,28 @@
 # Reepay\AccountApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                                   | HTTP request                                 | Description                 
---------------------------------------------------------------------------|----------------------------------------------|-----------------------------
- [**createPrivateKey**](AccountApi.md#createprivatekey)                   | **POST** /v1/account/privkey                 | Create private key          
- [**createPublicKey**](AccountApi.md#createpublickey)                     | **POST** /v1/account/pubkey                  | Create public key           
- [**expirePrivateKey**](AccountApi.md#expireprivatekey)                   | **POST** /v1/account/privkey/{key}/expire    | Expire private key          
- [**expirePublicKey**](AccountApi.md#expirepublickey)                     | **POST** /v1/account/pubkey/{key}/expire     | Expire public key           
- [**generateWebhookSecret**](AccountApi.md#generatewebhooksecret)         | **POST** /v1/account/webhook_settings/secret | Generate new webhook secret 
- [**getCurrentAccount**](AccountApi.md#getcurrentaccount)                 | **GET** /v1/account                          | Get account                 
- [**getDiscountSettings**](AccountApi.md#getdiscountsettings)             | **GET** /v1/account/discount_settings        | Get discount settings       
- [**getMailSettings**](AccountApi.md#getmailsettings)                     | **GET** /v1/account/mail_settings            | Get mail settings           
- [**getMfaSettings**](AccountApi.md#getmfasettings)                       | **GET** /v1/account/mfa_settings             | Get account MFA settings    
- [**getPrivateKeys**](AccountApi.md#getprivatekeys)                       | **GET** /v1/account/privkey                  | Get list of private keys    
- [**getPublicKeys**](AccountApi.md#getpublickeys)                         | **GET** /v1/account/pubkey                   | Get list of public keys     
- [**getTerms**](AccountApi.md#getterms)                                   | **GET** /v1/account/terms                    | Get terms                   
- [**getWebhookSettings**](AccountApi.md#getwebhooksettings)               | **GET** /v1/account/webhook_settings         | Get webhook settings        
- [**updateAccountJson**](AccountApi.md#updateaccountjson)                 | **PUT** /v1/account                          | Update account              
- [**updateDiscountSettings**](AccountApi.md#updatediscountsettings)       | **PUT** /v1/account/discount_settings        | Update discount settings    
- [**updateMailSettingsJson**](AccountApi.md#updatemailsettingsjson)       | **PUT** /v1/account/mail_settings            | Update mail settings        
- [**updateMfaSettings**](AccountApi.md#updatemfasettings)                 | **PUT** /v1/account/mfa_settings             | Update account MFA settings 
- [**updateTerms**](AccountApi.md#updateterms)                             | **POST** /v1/account/terms                   | Create or update terms      
- [**updateWebhookSettingsJson**](AccountApi.md#updatewebhooksettingsjson) | **PUT** /v1/account/webhook_settings         | Update webhook settings     
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPrivateKey**](AccountApi.md#createprivatekey) | **POST** /v1/account/privkey | Create private key
+[**createPublicKey**](AccountApi.md#createpublickey) | **POST** /v1/account/pubkey | Create public key
+[**expirePrivateKey**](AccountApi.md#expireprivatekey) | **POST** /v1/account/privkey/{key}/expire | Expire private key
+[**expirePublicKey**](AccountApi.md#expirepublickey) | **POST** /v1/account/pubkey/{key}/expire | Expire public key
+[**generateWebhookSecret**](AccountApi.md#generatewebhooksecret) | **POST** /v1/account/webhook_settings/secret | Generate new webhook secret
+[**getCurrentAccount**](AccountApi.md#getcurrentaccount) | **GET** /v1/account | Get account
+[**getDiscountSettings**](AccountApi.md#getdiscountsettings) | **GET** /v1/account/discount_settings | Get discount settings
+[**getMailSettings**](AccountApi.md#getmailsettings) | **GET** /v1/account/mail_settings | Get mail settings
+[**getMfaSettings**](AccountApi.md#getmfasettings) | **GET** /v1/account/mfa_settings | Get account MFA settings
+[**getPrivateKeys**](AccountApi.md#getprivatekeys) | **GET** /v1/account/privkey | Get list of private keys
+[**getPublicKeys**](AccountApi.md#getpublickeys) | **GET** /v1/account/pubkey | Get list of public keys
+[**getTerms**](AccountApi.md#getterms) | **GET** /v1/account/terms | Get terms
+[**getWebhookSettings**](AccountApi.md#getwebhooksettings) | **GET** /v1/account/webhook_settings | Get webhook settings
+[**updateAccountJson**](AccountApi.md#updateaccountjson) | **PUT** /v1/account | Update account
+[**updateDiscountSettings**](AccountApi.md#updatediscountsettings) | **PUT** /v1/account/discount_settings | Update discount settings
+[**updateMailSettingsJson**](AccountApi.md#updatemailsettingsjson) | **PUT** /v1/account/mail_settings | Update mail settings
+[**updateMfaSettings**](AccountApi.md#updatemfasettings) | **PUT** /v1/account/mfa_settings | Update account MFA settings
+[**updateTerms**](AccountApi.md#updateterms) | **POST** /v1/account/terms | Create or update terms
+[**updateWebhookSettingsJson**](AccountApi.md#updatewebhooksettingsjson) | **PUT** /v1/account/webhook_settings | Update webhook settings
 
 # **createPrivateKey**
 > \Reepay\Model\Key createPrivateKey()
@@ -703,7 +703,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\UpdateAccount**](../Model/UpdateAccount.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateAccount**](../Model/UpdateAccount.md)|  |
 
 ### Return type
 
@@ -756,7 +756,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\DiscountSettings**](../Model/DiscountSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\DiscountSettings**](../Model/DiscountSettings.md)|  |
 
 ### Return type
 
@@ -809,7 +809,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\MailSettings**](../Model/MailSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\MailSettings**](../Model/MailSettings.md)|  |
 
 ### Return type
 
@@ -862,7 +862,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\AccountMfaSettings**](../Model/AccountMfaSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\AccountMfaSettings**](../Model/AccountMfaSettings.md)|  |
 
 ### Return type
 
@@ -874,8 +874,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -915,7 +915,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\Terms**](../Model/Terms.md)|  | [optional]
+ **body** | [**\Reepay\Model\Terms**](../Model/Terms.md)|  |
 
 ### Return type
 
@@ -968,7 +968,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\UpdateWebhookSettings**](../Model/UpdateWebhookSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateWebhookSettings**](../Model/UpdateWebhookSettings.md)|  |
 
 ### Return type
 

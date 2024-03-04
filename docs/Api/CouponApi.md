@@ -1,15 +1,15 @@
 # Reepay\CouponApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                        | HTTP request                        | Description     
------------------------------------------------|-------------------------------------|-----------------
- [**createCoupon**](CouponApi.md#createcoupon) | **POST** /v1/coupon                 | Create coupon   
- [**deleteCoupon**](CouponApi.md#deletecoupon) | **DELETE** /v1/coupon/{handle}      | Delete coupon   
- [**expireCoupon**](CouponApi.md#expirecoupon) | **POST** /v1/coupon/{handle}/expire | Expire coupon   
- [**getCoupon**](CouponApi.md#getcoupon)       | **GET** /v1/coupon/{handle}         | Get coupon      
- [**updateCoupon**](CouponApi.md#updatecoupon) | **PUT** /v1/coupon/{handle}         | Update coupon   
- [**validateCode**](CouponApi.md#validatecode) | **GET** /v1/coupon/code/validate    | Validate coupon 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createCoupon**](CouponApi.md#createcoupon) | **POST** /v1/coupon | Create coupon
+[**deleteCoupon**](CouponApi.md#deletecoupon) | **DELETE** /v1/coupon/{handle} | Delete coupon
+[**expireCoupon**](CouponApi.md#expirecoupon) | **POST** /v1/coupon/{handle}/expire | Expire coupon
+[**getCoupon**](CouponApi.md#getcoupon) | **GET** /v1/coupon/{handle} | Get coupon
+[**updateCoupon**](CouponApi.md#updatecoupon) | **PUT** /v1/coupon/{handle} | Update coupon
+[**validateCode**](CouponApi.md#validatecode) | **GET** /v1/coupon/code/validate | Validate coupon
 
 # **createCoupon**
 > \Reepay\Model\Coupon createCoupon($body)
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCoupon**](../Model/CreateCoupon.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCoupon**](../Model/CreateCoupon.md)|  |
 
 ### Return type
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCoupon**
-> \Reepay\Model\Coupon updateCoupon($handle, $body)
+> \Reepay\Model\Coupon updateCoupon($body, $handle)
 
 Update coupon
 
@@ -244,11 +244,11 @@ $apiInstance = new Reepay\Api\CouponApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Coupon handle
 $body = new \Reepay\Model\UpdateCoupon(); // \Reepay\Model\UpdateCoupon | 
+$handle = "handle_example"; // string | Coupon handle
 
 try {
-    $result = $apiInstance->updateCoupon($handle, $body);
+    $result = $apiInstance->updateCoupon($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->updateCoupon: ', $e->getMessage(), PHP_EOL;
@@ -260,8 +260,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateCoupon**](../Model/UpdateCoupon.md)|  |
  **handle** | **string**| Coupon handle |
- **body** | [**\Reepay\Model\UpdateCoupon**](../Model/UpdateCoupon.md)|  | [optional]
 
 ### Return type
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **validateCode**
-> \Reepay\Model\Coupon validateCode($code, $plan, $customer)
+> \Reepay\Model\Coupon validateCode($code, $plan, $customer, $subscription)
 
 Validate coupon
 
@@ -302,9 +302,10 @@ $apiInstance = new Reepay\Api\CouponApi(
 $code = "code_example"; // string | Coupon code
 $plan = "plan_example"; // string | Optional plan to validate against
 $customer = "customer_example"; // string | Optional customer to validate against
+$subscription = "subscription_example"; // string | Optional subscription to validate against
 
 try {
-    $result = $apiInstance->validateCode($code, $plan, $customer);
+    $result = $apiInstance->validateCode($code, $plan, $customer, $subscription);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->validateCode: ', $e->getMessage(), PHP_EOL;
@@ -319,6 +320,7 @@ Name | Type | Description  | Notes
  **code** | **string**| Coupon code |
  **plan** | **string**| Optional plan to validate against | [optional]
  **customer** | **string**| Optional customer to validate against | [optional]
+ **subscription** | **string**| Optional subscription to validate against | [optional]
 
 ### Return type
 

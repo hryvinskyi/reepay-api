@@ -1,15 +1,15 @@
 # Reepay\WebhookApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                     | HTTP request                     | Description                
-------------------------------------------------------------|----------------------------------|----------------------------
- [**disableWebhooks**](WebhookApi.md#disablewebhooks)       | **POST** /v1/webhook/disable     | Disable webhooks           
- [**getWebhook**](WebhookApi.md#getwebhook)                 | **GET** /v1/webhook/{id}         | Get webhooks               
- [**getWebhookRequests**](WebhookApi.md#getwebhookrequests) | **GET** /v1/webhook/{id}/request | Get webhook requests       
- [**getWebhooks**](WebhookApi.md#getwebhooks)               | **GET** /v1/webhook              | Get list of webhooks       
- [**resendJson**](WebhookApi.md#resendjson)                 | **POST** /v1/webhook/resend      | Re-send webhooks           
- [**updateWebhooks**](WebhookApi.md#updatewebhooks)         | **POST** /v1/webhook/update      | Update and resend webhooks 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**disableWebhooks**](WebhookApi.md#disablewebhooks) | **POST** /v1/webhook/disable | Disable webhooks
+[**getWebhook**](WebhookApi.md#getwebhook) | **GET** /v1/webhook/{id} | Get webhooks
+[**getWebhookRequests**](WebhookApi.md#getwebhookrequests) | **GET** /v1/webhook/{id}/request | Get webhook requests
+[**getWebhooks**](WebhookApi.md#getwebhooks) | **GET** /v1/webhook | Get list of webhooks
+[**resendJson**](WebhookApi.md#resendjson) | **POST** /v1/webhook/resend | Re-send webhooks
+[**updateWebhooks**](WebhookApi.md#updatewebhooks) | **POST** /v1/webhook/update | Update and resend webhooks
 
 # **disableWebhooks**
 > \Reepay\Model\Webhook[] disableWebhooks($body)
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  |
 
 ### Return type
 
@@ -171,7 +171,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-
 > \Reepay\Model\Webhook[] getWebhooks($created_before, $size, $state, $created_after)
 
 Get list of webhooks
@@ -192,10 +191,10 @@ $apiInstance = new Reepay\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$created_before = "created_before_example"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
-$size = 100; // int | Page size. A maximum of 100 is allowed.
-$state = "state_example"; // string | Optional state to filter on, one of the following: `pending`, `retrying`, `disabled`, `failed`, `completed`
-$created_after = "created_after_example"; // string | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
+$created_before = "created_before_example"; // string | 
+$size = 100; // int | 
+$state = "state_example"; // string | 
+$created_after = "created_after_example"; // string | 
 
 try {
     $result = $apiInstance->getWebhooks($created_before, $size, $state, $created_after);
@@ -208,12 +207,12 @@ try {
 
 ### Parameters
 
- Name               | Type       | Description                                                                                                                                                                  | Notes                       
---------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------
- **created_before** | **string** | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
- **size**           | **int**    | Page size. A maximum of 100 is allowed.                                                                                                                                      | [optional] [default to 100] 
- **state**          | **string** | Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;retrying&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60;                | [optional]                  
- **created_after**  | **string** | Get webhooks created after this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.  | [optional]                  
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created_before** | **string**|  |
+ **size** | **int**|  | [optional] [default to 100]
+ **state** | **string**|  | [optional]
+ **created_after** | **string**|  | [optional]
 
 ### Return type
 
@@ -266,7 +265,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  |
 
 ### Return type
 
@@ -319,7 +318,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  |
 
 ### Return type
 

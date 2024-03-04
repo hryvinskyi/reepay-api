@@ -1,22 +1,22 @@
 # Reepay\CustomerApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                              | HTTP request                              | Description                 
----------------------------------------------------------------------|-------------------------------------------|-----------------------------
- [**createCustomerInvoice**](CustomerApi.md#createcustomerinvoice)   | **POST** /v1/customer/{handle}/invoice    | Create invoice for customer 
- [**createCustomerJson**](CustomerApi.md#createcustomerjson)         | **POST** /v1/customer                     | Create customer             
- [**createCustomerNoteJson**](CustomerApi.md#createcustomernotejson) | **POST** /v1/customer/{handle}/note       | Create customer note        
- [**deleteCustomer**](CustomerApi.md#deletecustomer)                 | **DELETE** /v1/customer/{handle}          | Delete customer             
- [**deleteMetadata1**](CustomerApi.md#deletemetadata1)               | **DELETE** /v1/customer/{handle}/metadata | Delete metadata             
- [**getCustomer**](CustomerApi.md#getcustomer)                       | **GET** /v1/customer/{handle}             | Get customer                
- [**getCustomerNotes**](CustomerApi.md#getcustomernotes)             | **GET** /v1/customer/{handle}/note        | Get customer notes          
- [**getMetadata1**](CustomerApi.md#getmetadata1)                     | **GET** /v1/customer/{handle}/metadata    | Get metadata                
- [**updateCustomerJson**](CustomerApi.md#updatecustomerjson)         | **PUT** /v1/customer/{handle}             | Update customer             
- [**updateMetadata1**](CustomerApi.md#updatemetadata1)               | **PUT** /v1/customer/{handle}/metadata    | Create or update metadata   
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createCustomerInvoice**](CustomerApi.md#createcustomerinvoice) | **POST** /v1/customer/{handle}/invoice | Create invoice for customer
+[**createCustomerJson**](CustomerApi.md#createcustomerjson) | **POST** /v1/customer | Create customer
+[**createCustomerNoteJson**](CustomerApi.md#createcustomernotejson) | **POST** /v1/customer/{handle}/note | Create customer note
+[**deleteCustomer**](CustomerApi.md#deletecustomer) | **DELETE** /v1/customer/{handle} | Delete customer
+[**deleteMetadata1**](CustomerApi.md#deletemetadata1) | **DELETE** /v1/customer/{handle}/metadata | Delete metadata
+[**getCustomer**](CustomerApi.md#getcustomer) | **GET** /v1/customer/{handle} | Get customer
+[**getCustomerNotes**](CustomerApi.md#getcustomernotes) | **GET** /v1/customer/{handle}/note | Get customer notes
+[**getMetadata1**](CustomerApi.md#getmetadata1) | **GET** /v1/customer/{handle}/metadata | Get metadata
+[**updateCustomerJson**](CustomerApi.md#updatecustomerjson) | **PUT** /v1/customer/{handle} | Update customer
+[**updateMetadata1**](CustomerApi.md#updatemetadata1) | **PUT** /v1/customer/{handle}/metadata | Create or update metadata
 
 # **createCustomerInvoice**
-> \Reepay\Model\Invoice createCustomerInvoice($handle, $body)
+> \Reepay\Model\Invoice createCustomerInvoice($body, $handle)
 
 Create invoice for customer
 
@@ -36,11 +36,11 @@ $apiInstance = new Reepay\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Customer handle
 $body = new \Reepay\Model\CreateCustomerInvoice(); // \Reepay\Model\CreateCustomerInvoice | 
+$handle = "handle_example"; // string | Customer handle
 
 try {
-    $result = $apiInstance->createCustomerInvoice($handle, $body);
+    $result = $apiInstance->createCustomerInvoice($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->createCustomerInvoice: ', $e->getMessage(), PHP_EOL;
@@ -52,8 +52,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateCustomerInvoice**](../Model/CreateCustomerInvoice.md)|  |
  **handle** | **string**| Customer handle |
- **body** | [**\Reepay\Model\CreateCustomerInvoice**](../Model/CreateCustomerInvoice.md)|  | [optional]
 
 ### Return type
 
@@ -106,7 +106,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCustomer**](../Model/CreateCustomer.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCustomer**](../Model/CreateCustomer.md)|  |
 
 ### Return type
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerNoteJson**
-> \Reepay\Model\CustomerNote createCustomerNoteJson($handle, $body)
+> \Reepay\Model\CustomerNote createCustomerNoteJson($body, $handle)
 
 Create customer note
 
@@ -144,11 +144,11 @@ $apiInstance = new Reepay\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | 
 $body = new \Reepay\Model\CreateCustomerNote(); // \Reepay\Model\CreateCustomerNote | 
+$handle = "handle_example"; // string | 
 
 try {
-    $result = $apiInstance->createCustomerNoteJson($handle, $body);
+    $result = $apiInstance->createCustomerNoteJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->createCustomerNoteJson: ', $e->getMessage(), PHP_EOL;
@@ -160,8 +160,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateCustomerNote**](../Model/CreateCustomerNote.md)|  |
  **handle** | **string**|  |
- **body** | [**\Reepay\Model\CreateCustomerNote**](../Model/CreateCustomerNote.md)|  | [optional]
 
 ### Return type
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomerJson**
-> \Reepay\Model\Customer updateCustomerJson($handle, $body)
+> \Reepay\Model\Customer updateCustomerJson($body, $handle)
 
 Update customer
 
@@ -463,11 +463,11 @@ $apiInstance = new Reepay\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Customer handle
 $body = new \Reepay\Model\UpdateCustomer(); // \Reepay\Model\UpdateCustomer | 
+$handle = "handle_example"; // string | Customer handle
 
 try {
-    $result = $apiInstance->updateCustomerJson($handle, $body);
+    $result = $apiInstance->updateCustomerJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->updateCustomerJson: ', $e->getMessage(), PHP_EOL;
@@ -479,8 +479,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateCustomer**](../Model/UpdateCustomer.md)|  |
  **handle** | **string**| Customer handle |
- **body** | [**\Reepay\Model\UpdateCustomer**](../Model/UpdateCustomer.md)|  | [optional]
 
 ### Return type
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMetadata1**
-> map[string,object] updateMetadata1($handle, $body)
+> map[string,object] updateMetadata1($body, $handle)
 
 Create or update metadata
 
@@ -518,11 +518,11 @@ $apiInstance = new Reepay\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Resource handle
 $body = new \Reepay\Model\map(); // map[string,object] | 
+$handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $apiInstance->updateMetadata1($handle, $body);
+    $result = $apiInstance->updateMetadata1($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->updateMetadata1: ', $e->getMessage(), PHP_EOL;
@@ -532,10 +532,10 @@ try {
 
 ### Parameters
 
- Name       | Type                                      | Description     | Notes      
-------------|-------------------------------------------|-----------------|------------
- **handle** | **string**                                | Resource handle |
- **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**map[string,object]**](../Model/map.md)|  |
+ **handle** | **string**| Resource handle |
 
 ### Return type
 
@@ -547,8 +547,8 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

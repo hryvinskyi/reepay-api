@@ -1,25 +1,26 @@
 # Reepay\ListApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                      | HTTP request                    | Description                 
--------------------------------------------------------------|---------------------------------|-----------------------------
- [**getAddOnList**](ListApi.md#getaddonlist)                 | **GET** /v1/list/add_on         | Get list of add-ons         
- [**getChargeList**](ListApi.md#getchargelist)               | **GET** /v1/list/charge         | Get list of charges         
- [**getCouponList**](ListApi.md#getcouponlist)               | **GET** /v1/list/coupon         | Get list of coupons         
- [**getCustomerList**](ListApi.md#getcustomerlist)           | **GET** /v1/list/customer       | Get list of customers       
- [**getDiscountList**](ListApi.md#getdiscountlist)           | **GET** /v1/list/discount       | Get list of discounts       
- [**getInvoiceList**](ListApi.md#getinvoicelist)             | **GET** /v1/list/invoice        | Get list of invoices        
- [**getPaymentMethodList**](ListApi.md#getpaymentmethodlist) | **GET** /v1/list/payment_method | Get list of payment methods 
- [**getPayoutList**](ListApi.md#getpayoutlist)               | **GET** /v1/list/payout         | Get list of payouts         
- [**getPlanList**](ListApi.md#getplanlist)                   | **GET** /v1/list/plan           | Get list of plans           
- [**getSubscriptionList**](ListApi.md#getsubscriptionlist)   | **GET** /v1/list/subscription   | Get list of subscriptions   
- [**getTransactionList**](ListApi.md#gettransactionlist)     | **GET** /v1/list/transaction    | Get list of transactions    
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getAddOnList**](ListApi.md#getaddonlist) | **GET** /v1/list/add_on | Get list of add-ons
+[**getChargeList**](ListApi.md#getchargelist) | **GET** /v1/list/charge | Get list of charges
+[**getCouponList**](ListApi.md#getcouponlist) | **GET** /v1/list/coupon | Get list of coupons
+[**getCustomerList**](ListApi.md#getcustomerlist) | **GET** /v1/list/customer | Get list of customers
+[**getDiscountList**](ListApi.md#getdiscountlist) | **GET** /v1/list/discount | Get list of discounts
+[**getInvoiceCreditNoteList**](ListApi.md#getinvoicecreditnotelist) | **GET** /v1/list/credit_note | 
+[**getInvoiceList**](ListApi.md#getinvoicelist) | **GET** /v1/list/invoice | Get list of invoices
+[**getPaymentMethodList**](ListApi.md#getpaymentmethodlist) | **GET** /v1/list/payment_method | Get list of payment methods
+[**getPayoutList**](ListApi.md#getpayoutlist) | **GET** /v1/list/payout | Get list of payouts
+[**getPlanList**](ListApi.md#getplanlist) | **GET** /v1/list/plan | Get list of plans
+[**getSubscriptionList**](ListApi.md#getsubscriptionlist) | **GET** /v1/list/subscription | Get list of subscriptions
+[**getTaxPolicyList**](ListApi.md#gettaxpolicylist) | **GET** /v1/list/tax_policy | Get list of tax policies
+[**getTransactionList**](ListApi.md#gettransactionlist) | **GET** /v1/list/transaction | Get list of transactions
+[**getWebhookList**](ListApi.md#getwebhooklist) | **GET** /v1/list/webhook | Get list of webhooks
 
 # **getAddOnList**
-
-> \Reepay\Model\AddOnList getAddOnList($from, $to, $interval, $size, $next_page_token, $range, $handle, $state, $type,
-> $name, $description, $amount, $amount_incl_vat, $all_plans)
+> \Reepay\Model\AddOnList getAddOnList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $state, $type, $name, $description, $amount, $amount_incl_vat, $all_plans, $currency)
 
 Get list of add-ons
 
@@ -39,23 +40,25 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Can be `created` or `deleted`
-$handle = "handle_example"; // string | Add-on handle prefix
-$state = "active"; // string | Add-on state. Accepted values `active` or `deleted`
-$type = "type_example"; // string | Type of add-on. Accepted values: `on_off` or `quantity`. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.`
-$name = "name_example"; // string | Name of add-on. Used as order line text.
-$description = "description_example"; // string | Optional description of add-on
-$amount = "amount_example"; // string | Add-on amount interval. See documentation of intervals.
-$amount_incl_vat = "amount_incl_vat_example"; // string | Amount incl vat flag. Values: `true` or `false`
-$all_plans = "all_plans_example"; // string | Amount incl vat test flag. Values: `true` or `false`
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$state = "active"; // string | 
+$type = "type_example"; // string | 
+$name = "name_example"; // string | 
+$description = "description_example"; // string | 
+$amount = "amount_example"; // string | 
+$amount_incl_vat = "amount_incl_vat_example"; // string | 
+$all_plans = "all_plans_example"; // string | 
+$currency = array("currency_example"); // string[] | 
 
 try {
-    $result = $apiInstance->getAddOnList($from, $to, $interval, $size, $next_page_token, $range, $handle, $state, $type, $name, $description, $amount, $amount_incl_vat, $all_plans);
+    $result = $apiInstance->getAddOnList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $state, $type, $name, $description, $amount, $amount_incl_vat, $all_plans, $currency);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getAddOnList: ', $e->getMessage(), PHP_EOL;
@@ -65,22 +68,24 @@ try {
 
 ### Parameters
 
- Name                | Type       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
----------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**            | **string** | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**              | **string** | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**        | **string** | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**            | **int**    | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token** | **string** | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**           | **string** | Time and date attribute to time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60;                                                                                                                                                                                                                                                                                                                                                                                        | [optional] [default to created] 
- **handle**          | **string** | Add-on handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **state**           | **string** | Add-on state. Accepted values &#x60;active&#x60; or &#x60;deleted&#x60;                                                                                                                                                                                                                                                                                                                                                                                                         | [optional] [default to active]  
- **type**            | **string** | Type of add-on. Accepted values: &#x60;on_off&#x60; or &#x60;quantity&#x60;. An on_off type cannot be given a quantity when attached to subscription. For quantity type it is possible.&#x60;                                                                                                                                                                                                                                                                                   | [optional]                      
- **name**            | **string** | Name of add-on. Used as order line text.                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **description**     | **string** | Optional description of add-on                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **amount**          | **string** | Add-on amount interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **amount_incl_vat** | **string** | Amount incl vat flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **all_plans**       | **string** | Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **state** | **string**|  | [optional] [default to active]
+ **type** | **string**|  | [optional]
+ **name** | **string**|  | [optional]
+ **description** | **string**|  | [optional]
+ **amount** | **string**|  | [optional]
+ **amount_incl_vat** | **string**|  | [optional]
+ **all_plans** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
 
 ### Return type
 
@@ -98,10 +103,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChargeList**
-
-> \Reepay\Model\ChargeList getChargeList($from, $to, $interval, $size, $next_page_token, $range, $handle,
-> $handle_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency,
-> $partial_settled)
+> \Reepay\Model\ChargeList getChargeList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $accounting_number, $accounting_number_prefix, $accounting_number_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency, $partial_settled, $settled_amount, $debtor_id)
 
 Get list of charges
 
@@ -121,25 +123,31 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Either `created` or `settled`. Default is `created`.
-$handle = "handle_example"; // string | Invoice handle prefix
-$handle_contains = "handle_contains_example"; // string | Invoice handle contains
-$state = array("state_example"); // string[] | Invoice state, multiple can be defined
-$exclude_state = array("exclude_state_example"); // string[] | Invoice state to exclude, multiple can be defined
-$customer = "customer_example"; // string | Invoices for customer by customer handle
-$amount = "amount_example"; // string | Amount in minor unit interval. See documentation of intervals.
-$refunded_amount = "refunded_amount_example"; // string | Refunded amount in minor unit interval. See documentation of intervals.
-$authorized_amount = "authorized_amount_example"; // string | Authorized amount in minor unit interval. See documentation of intervals.
-$currency = array("currency_example"); // string[] | Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.
-$partial_settled = true; // bool | Filter invoices based on partial settled. If `true` invoices where `authorized_amount < settled_amount` is returned. If `false` invoices where `settled_amount = authorized_amount` is returned.
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$handle_contains = "handle_contains_example"; // string | 
+$accounting_number = "accounting_number_example"; // string | 
+$accounting_number_prefix = "accounting_number_prefix_example"; // string | 
+$accounting_number_contains = "accounting_number_contains_example"; // string | 
+$state = array("state_example"); // string[] | 
+$exclude_state = array("exclude_state_example"); // string[] | 
+$customer = "customer_example"; // string | 
+$amount = "amount_example"; // string | 
+$refunded_amount = "refunded_amount_example"; // string | 
+$authorized_amount = "authorized_amount_example"; // string | 
+$currency = array("currency_example"); // string[] | 
+$partial_settled = true; // bool | 
+$settled_amount = "settled_amount_example"; // string | 
+$debtor_id = "debtor_id_example"; // string | 
 
 try {
-    $result = $apiInstance->getChargeList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency, $partial_settled);
+    $result = $apiInstance->getChargeList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $accounting_number, $accounting_number_prefix, $accounting_number_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency, $partial_settled, $settled_amount, $debtor_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getChargeList: ', $e->getMessage(), PHP_EOL;
@@ -149,24 +157,30 @@ try {
 
 ### Parameters
 
- Name                  | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**              | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**                | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**          | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**              | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token**   | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**             | **string**                         | Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;.                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to created] 
- **handle**            | **string**                         | Invoice handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **handle_contains**   | **string**                         | Invoice handle contains                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **state**             | [**string[]**](../Model/string.md) | Invoice state, multiple can be defined                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **exclude_state**     | [**string[]**](../Model/string.md) | Invoice state to exclude, multiple can be defined                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **customer**          | **string**                         | Invoices for customer by customer handle                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **amount**            | **string**                         | Amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **refunded_amount**   | **string**                         | Refunded amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **authorized_amount** | **string**                         | Authorized amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **currency**          | [**string[]**](../Model/string.md) | Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **partial_settled**   | **bool**                           | Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned.                                                                                                                                                                                                                                | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **handle_contains** | **string**|  | [optional]
+ **accounting_number** | **string**|  | [optional]
+ **accounting_number_prefix** | **string**|  | [optional]
+ **accounting_number_contains** | **string**|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **exclude_state** | [**string[]**](../Model/string.md)|  | [optional]
+ **customer** | **string**|  | [optional]
+ **amount** | **string**|  | [optional]
+ **refunded_amount** | **string**|  | [optional]
+ **authorized_amount** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
+ **partial_settled** | **bool**|  | [optional]
+ **settled_amount** | **string**|  | [optional]
+ **debtor_id** | **string**|  | [optional]
 
 ### Return type
 
@@ -184,9 +198,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCouponList**
-
-> \Reepay\Model\CouponList getCouponList($from, $to, $interval, $size, $next_page_token, $range, $handle, $type,
-> $expire_reason, $discount_handle, $code, $name, $all_plans, $max_redemptions, $redemptions, $valid_until)
+> \Reepay\Model\CouponList getCouponList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $state, $type, $expire_reason, $discount_handle, $discount_currency, $discount_percentage, $eligible_currency, $code, $name, $all_plans, $max_redemptions, $redemptions, $valid_until)
 
 Get list of coupons
 
@@ -206,25 +218,30 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Can be the `created` or `expired`
-$handle = "handle_example"; // string | Coupon handle prefix
-$type = "type_example"; // string | Type of coupon. Accepted values: `single` or `set`
-$expire_reason = array("expire_reason_example"); // string[] | The expire reason if expired, multiple can be defined. Possible values: `early`, `valid_until` or `max`
-$discount_handle = "discount_handle_example"; // string | Handle of discount to use for coupon
-$code = "code_example"; // string | The coupon code. Maximum 128 characters.
-$name = "name_example"; // string | Internal name for the coupon.
-$all_plans = "all_plans_example"; // string | Whether all plans are eligible for this coupon. Values: `true` or `false`
-$max_redemptions = "max_redemptions_example"; // string | Optional maximum number of times this coupon can be redeemed.
-$redemptions = "redemptions_example"; // string | Number of times the coupon has been redeemed.
-$valid_until = "valid_until_example"; // string | Valid-until period date interval
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$state = array("state_example"); // string[] | 
+$type = "type_example"; // string | 
+$expire_reason = array("expire_reason_example"); // string[] | 
+$discount_handle = "discount_handle_example"; // string | 
+$discount_currency = array("discount_currency_example"); // string[] | 
+$discount_percentage = "discount_percentage_example"; // string | 
+$eligible_currency = "eligible_currency_example"; // string | 
+$code = "code_example"; // string | 
+$name = "name_example"; // string | 
+$all_plans = "all_plans_example"; // string | 
+$max_redemptions = "max_redemptions_example"; // string | 
+$redemptions = "redemptions_example"; // string | 
+$valid_until = "valid_until_example"; // string | 
 
 try {
-    $result = $apiInstance->getCouponList($from, $to, $interval, $size, $next_page_token, $range, $handle, $type, $expire_reason, $discount_handle, $code, $name, $all_plans, $max_redemptions, $redemptions, $valid_until);
+    $result = $apiInstance->getCouponList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $state, $type, $expire_reason, $discount_handle, $discount_currency, $discount_percentage, $eligible_currency, $code, $name, $all_plans, $max_redemptions, $redemptions, $valid_until);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getCouponList: ', $e->getMessage(), PHP_EOL;
@@ -234,24 +251,29 @@ try {
 
 ### Parameters
 
- Name                | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
----------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**            | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**              | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**        | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**            | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token** | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**           | **string**                         | Time and date attribute to time limit. Can be the &#x60;created&#x60; or &#x60;expired&#x60;                                                                                                                                                                                                                                                                                                                                                                                    | [optional] [default to created] 
- **handle**          | **string**                         | Coupon handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **type**            | **string**                         | Type of coupon. Accepted values: &#x60;single&#x60; or &#x60;set&#x60;                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **expire_reason**   | [**string[]**](../Model/string.md) | The expire reason if expired, multiple can be defined. Possible values: &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60;                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **discount_handle** | **string**                         | Handle of discount to use for coupon                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **code**            | **string**                         | The coupon code. Maximum 128 characters.                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **name**            | **string**                         | Internal name for the coupon.                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **all_plans**       | **string**                         | Whether all plans are eligible for this coupon. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **max_redemptions** | **string**                         | Optional maximum number of times this coupon can be redeemed.                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **redemptions**     | **string**                         | Number of times the coupon has been redeemed.                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **valid_until**     | **string**                         | Valid-until period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **type** | **string**|  | [optional]
+ **expire_reason** | [**string[]**](../Model/string.md)|  | [optional]
+ **discount_handle** | **string**|  | [optional]
+ **discount_currency** | [**string[]**](../Model/string.md)|  | [optional]
+ **discount_percentage** | **string**|  | [optional]
+ **eligible_currency** | **string**|  | [optional]
+ **code** | **string**|  | [optional]
+ **name** | **string**|  | [optional]
+ **all_plans** | **string**|  | [optional]
+ **max_redemptions** | **string**|  | [optional]
+ **redemptions** | **string**|  | [optional]
+ **valid_until** | **string**|  | [optional]
 
 ### Return type
 
@@ -269,10 +291,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerList**
-
-> \Reepay\Model\CustomerList getCustomerList($from, $to, $interval, $size, $next_page_token, $range, $handle,
-> $handle_contains, $name, $email, $email_prefix, $first_name, $last_name, $address, $address2, $postal_code, $city,
-> $country, $phone, $company, $vat)
+> \Reepay\Model\CustomerList getCustomerList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $name, $email, $email_prefix, $first_name, $last_name, $address, $address2, $postal_code, $city, $country, $phone, $company, $vat, $debtor_id)
 
 Get list of customers
 
@@ -292,30 +311,32 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Can only be the default `created`
-$handle = "handle_example"; // string | Customer handle prefix
-$handle_contains = "handle_contains_example"; // string | Customer handle contains
-$name = "name_example"; // string | Search for name contained in first name concatenated with last name
-$email = "email_example"; // string | Customer email
-$email_prefix = "email_prefix_example"; // string | Customer email prefix
-$first_name = "first_name_example"; // string | Contained in customer first name
-$last_name = "last_name_example"; // string | Contained in customer last name
-$address = "address_example"; // string | Contained in customer address
-$address2 = "address2_example"; // string | Contained in customer address2
-$postal_code = "postal_code_example"; // string | Contained in customer postal code
-$city = "city_example"; // string | Contained in customer city
-$country = "country_example"; // string | Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-$phone = "phone_example"; // string | Contained in customer phone
-$company = "company_example"; // string | Contained in customer company
-$vat = "vat_example"; // string | Contained in customer vat code
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$handle_contains = "handle_contains_example"; // string | 
+$name = "name_example"; // string | 
+$email = "email_example"; // string | 
+$email_prefix = "email_prefix_example"; // string | 
+$first_name = "first_name_example"; // string | 
+$last_name = "last_name_example"; // string | 
+$address = "address_example"; // string | 
+$address2 = "address2_example"; // string | 
+$postal_code = "postal_code_example"; // string | 
+$city = "city_example"; // string | 
+$country = "country_example"; // string | 
+$phone = "phone_example"; // string | 
+$company = "company_example"; // string | 
+$vat = "vat_example"; // string | 
+$debtor_id = "debtor_id_example"; // string | 
 
 try {
-    $result = $apiInstance->getCustomerList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_contains, $name, $email, $email_prefix, $first_name, $last_name, $address, $address2, $postal_code, $city, $country, $phone, $company, $vat);
+    $result = $apiInstance->getCustomerList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $name, $email, $email_prefix, $first_name, $last_name, $address, $address2, $postal_code, $city, $country, $phone, $company, $vat, $debtor_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getCustomerList: ', $e->getMessage(), PHP_EOL;
@@ -325,29 +346,31 @@ try {
 
 ### Parameters
 
- Name                | Type       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
----------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**            | **string** | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**              | **string** | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**        | **string** | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**            | **int**    | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token** | **string** | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**           | **string** | Time and date attribute to time limit. Can only be the default &#x60;created&#x60;                                                                                                                                                                                                                                                                                                                                                                                              | [optional] [default to created] 
- **handle**          | **string** | Customer handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **handle_contains** | **string** | Customer handle contains                                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **name**            | **string** | Search for name contained in first name concatenated with last name                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **email**           | **string** | Customer email                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **email_prefix**    | **string** | Customer email prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **first_name**      | **string** | Contained in customer first name                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **last_name**       | **string** | Contained in customer last name                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **address**         | **string** | Contained in customer address                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **address2**        | **string** | Contained in customer address2                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **postal_code**     | **string** | Contained in customer postal code                                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **city**            | **string** | Contained in customer city                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **country**         | **string** | Customer country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **phone**           | **string** | Contained in customer phone                                                                                                                                                                                                                                                                                                                                                                                                                                                     | [optional]                      
- **company**         | **string** | Contained in customer company                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **vat**             | **string** | Contained in customer vat code                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **handle_contains** | **string**|  | [optional]
+ **name** | **string**|  | [optional]
+ **email** | **string**|  | [optional]
+ **email_prefix** | **string**|  | [optional]
+ **first_name** | **string**|  | [optional]
+ **last_name** | **string**|  | [optional]
+ **address** | **string**|  | [optional]
+ **address2** | **string**|  | [optional]
+ **postal_code** | **string**|  | [optional]
+ **city** | **string**|  | [optional]
+ **country** | **string**|  | [optional]
+ **phone** | **string**|  | [optional]
+ **company** | **string**|  | [optional]
+ **vat** | **string**|  | [optional]
+ **debtor_id** | **string**|  | [optional]
 
 ### Return type
 
@@ -365,9 +388,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDiscountList**
-
-> \Reepay\Model\DiscountList getDiscountList($from, $to, $interval, $size, $next_page_token, $range, $handle, $state,
-> $apply_to, $name, $description, $amount, $percentage, $fixed_count)
+> \Reepay\Model\DiscountList getDiscountList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $state, $apply_to, $name, $description, $amount, $percentage, $fixed_count, $currency)
 
 Get list of discounts
 
@@ -387,23 +408,25 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute for time limit. Can be `created` or `deleted`
-$handle = "handle_example"; // string | Discount handle prefix
-$state = "state_example"; // string | State of discount. States: `active` or `deleted`
-$apply_to = array("apply_to_example"); // string[] | Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`. Multiple can be defined.
-$name = "name_example"; // string | Name of discount. Used as order line text.
-$description = "description_example"; // string | Optional description of discount
-$amount = "amount_example"; // string | Fixed amount discount deducted from order line amounts including VAT.
-$percentage = "percentage_example"; // string | Percentage discount applied to each applicable order line.
-$fixed_count = "fixed_count_example"; // string | Apply discount to a fixed number of invoices
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$state = "state_example"; // string | 
+$apply_to = array("apply_to_example"); // string[] | 
+$name = "name_example"; // string | 
+$description = "description_example"; // string | 
+$amount = "amount_example"; // string | 
+$percentage = "percentage_example"; // string | 
+$fixed_count = "fixed_count_example"; // string | 
+$currency = array("currency_example"); // string[] | 
 
 try {
-    $result = $apiInstance->getDiscountList($from, $to, $interval, $size, $next_page_token, $range, $handle, $state, $apply_to, $name, $description, $amount, $percentage, $fixed_count);
+    $result = $apiInstance->getDiscountList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $state, $apply_to, $name, $description, $amount, $percentage, $fixed_count, $currency);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getDiscountList: ', $e->getMessage(), PHP_EOL;
@@ -413,22 +436,24 @@ try {
 
 ### Parameters
 
- Name                | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
----------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**            | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**              | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**        | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**            | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token** | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**           | **string**                         | Time and date attribute for time limit. Can be &#x60;created&#x60; or &#x60;deleted&#x60;                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to created] 
- **handle**          | **string**                         | Discount handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **state**           | **string**                         | State of discount. States: &#x60;active&#x60; or &#x60;deleted&#x60;                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **apply_to**        | [**string[]**](../Model/string.md) | Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                   | [optional]                      
- **name**            | **string**                         | Name of discount. Used as order line text.                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **description**     | **string**                         | Optional description of discount                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **amount**          | **string**                         | Fixed amount discount deducted from order line amounts including VAT.                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **percentage**      | **string**                         | Percentage discount applied to each applicable order line.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **fixed_count**     | **string**                         | Apply discount to a fixed number of invoices                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **state** | **string**|  | [optional]
+ **apply_to** | [**string[]**](../Model/string.md)|  | [optional]
+ **name** | **string**|  | [optional]
+ **description** | **string**|  | [optional]
+ **amount** | **string**|  | [optional]
+ **percentage** | **string**|  | [optional]
+ **fixed_count** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
 
 ### Return type
 
@@ -445,11 +470,89 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getInvoiceList**
+# **getInvoiceCreditNoteList**
+> \Reepay\Model\InvoiceCreditNoteListDto getInvoiceCreditNoteList($from, $to, $interval, $size, $next_page_token, $accounting_number, $accounting_number_prefix, $accounting_number_contains, $amount, $customer, $currency, $subscription, $invoice, $debtor_id)
 
-> \Reepay\Model\InvoiceList getInvoiceList($from, $to, $interval, $size, $next_page_token, $range, $handle,
-> $handle_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency,
-> $partial_settled, $type, $subscription, $plan, $dunning_start, $dunning_success, $number, $due)
+
+
+Get list of credit notes
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\ListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$accounting_number = "accounting_number_example"; // string | Credit note exact accounting number
+$accounting_number_prefix = "accounting_number_prefix_example"; // string | Credit note accounting number prefix
+$accounting_number_contains = "accounting_number_contains_example"; // string | Credit note accounting number contains
+$amount = "amount_example"; // string | Amount in minor unit interval. See documentation of intervals.
+$customer = "customer_example"; // string | Credit notes for customer by customer handle
+$currency = array("currency_example"); // string[] | Credit note currency in [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.
+$subscription = "subscription_example"; // string | Credit note for subscription by subscription handle
+$invoice = "invoice_example"; // string | Credit note for invoice by invoice handle
+$debtor_id = "debtor_id_example"; // string | 
+
+try {
+    $result = $apiInstance->getInvoiceCreditNoteList($from, $to, $interval, $size, $next_page_token, $accounting_number, $accounting_number_prefix, $accounting_number_contains, $amount, $customer, $currency, $subscription, $invoice, $debtor_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ListApi->getInvoiceCreditNoteList: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **accounting_number** | **string**| Credit note exact accounting number | [optional]
+ **accounting_number_prefix** | **string**| Credit note accounting number prefix | [optional]
+ **accounting_number_contains** | **string**| Credit note accounting number contains | [optional]
+ **amount** | **string**| Amount in minor unit interval. See documentation of intervals. | [optional]
+ **customer** | **string**| Credit notes for customer by customer handle | [optional]
+ **currency** | [**string[]**](../Model/string.md)| Credit note currency in [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined. | [optional]
+ **subscription** | **string**| Credit note for subscription by subscription handle | [optional]
+ **invoice** | **string**| Credit note for invoice by invoice handle | [optional]
+ **debtor_id** | **string**|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\InvoiceCreditNoteListDto**](../Model/InvoiceCreditNoteListDto.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getInvoiceList**
+> \Reepay\Model\InvoiceList getInvoiceList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $accounting_number, $accounting_number_prefix, $accounting_number_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency, $partial_settled, $settled_amount, $debtor_id, $type, $subscription, $plan, $dunning_start, $dunning_success, $number, $due)
 
 Get list of invoices
 
@@ -469,32 +572,38 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Either `created` or `settled`. Default is `created`.
-$handle = "handle_example"; // string | Invoice handle prefix
-$handle_contains = "handle_contains_example"; // string | Invoice handle contains
-$state = array("state_example"); // string[] | Invoice state, multiple can be defined
-$exclude_state = array("exclude_state_example"); // string[] | Invoice state to exclude, multiple can be defined
-$customer = "customer_example"; // string | Invoices for customer by customer handle
-$amount = "amount_example"; // string | Amount in minor unit interval. See documentation of intervals.
-$refunded_amount = "refunded_amount_example"; // string | Refunded amount in minor unit interval. See documentation of intervals.
-$authorized_amount = "authorized_amount_example"; // string | Authorized amount in minor unit interval. See documentation of intervals.
-$currency = array("currency_example"); // string[] | Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.
-$partial_settled = true; // bool | Filter invoices based on partial settled. If `true` invoices where `authorized_amount < settled_amount` is returned. If `false` invoices where `settled_amount = authorized_amount` is returned.
-$type = array("type_example"); // string[] | Invoice type, multiple can be defined. `s` - subscription recurring, `so` - subscription one-time, `soi` - subscription one-time instant, `co` - customer one-time, `ch` - charge
-$subscription = "subscription_example"; // string | Invoices for subscription by subscription handle
-$plan = "plan_example"; // string | Invoices for subscription plan by subscription plan handle
-$dunning_start = "dunning_start_example"; // string | Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals.
-$dunning_success = "dunning_success_example"; // string | Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals.
-$number = 56; // int | Invoice number if subscription invoice
-$due = "due_example"; // string | Due date if due date defined for subscription invoice
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$handle_contains = "handle_contains_example"; // string | 
+$accounting_number = "accounting_number_example"; // string | 
+$accounting_number_prefix = "accounting_number_prefix_example"; // string | 
+$accounting_number_contains = "accounting_number_contains_example"; // string | 
+$state = array("state_example"); // string[] | 
+$exclude_state = array("exclude_state_example"); // string[] | 
+$customer = "customer_example"; // string | 
+$amount = "amount_example"; // string | 
+$refunded_amount = "refunded_amount_example"; // string | 
+$authorized_amount = "authorized_amount_example"; // string | 
+$currency = array("currency_example"); // string[] | 
+$partial_settled = true; // bool | 
+$settled_amount = "settled_amount_example"; // string | 
+$debtor_id = "debtor_id_example"; // string | 
+$type = array("type_example"); // string[] | 
+$subscription = "subscription_example"; // string | 
+$plan = "plan_example"; // string | 
+$dunning_start = "dunning_start_example"; // string | 
+$dunning_success = "dunning_success_example"; // string | 
+$number = 56; // int | 
+$due = "due_example"; // string | 
 
 try {
-    $result = $apiInstance->getInvoiceList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency, $partial_settled, $type, $subscription, $plan, $dunning_start, $dunning_success, $number, $due);
+    $result = $apiInstance->getInvoiceList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $accounting_number, $accounting_number_prefix, $accounting_number_contains, $state, $exclude_state, $customer, $amount, $refunded_amount, $authorized_amount, $currency, $partial_settled, $settled_amount, $debtor_id, $type, $subscription, $plan, $dunning_start, $dunning_success, $number, $due);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getInvoiceList: ', $e->getMessage(), PHP_EOL;
@@ -504,31 +613,37 @@ try {
 
 ### Parameters
 
- Name                  | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**              | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**                | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**          | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**              | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token**   | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**             | **string**                         | Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;settled&#x60;. Default is &#x60;created&#x60;.                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to created] 
- **handle**            | **string**                         | Invoice handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **handle_contains**   | **string**                         | Invoice handle contains                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **state**             | [**string[]**](../Model/string.md) | Invoice state, multiple can be defined                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **exclude_state**     | [**string[]**](../Model/string.md) | Invoice state to exclude, multiple can be defined                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **customer**          | **string**                         | Invoices for customer by customer handle                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **amount**            | **string**                         | Amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **refunded_amount**   | **string**                         | Refunded amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **authorized_amount** | **string**                         | Authorized amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **currency**          | [**string[]**](../Model/string.md) | Invoice currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **partial_settled**   | **bool**                           | Filter invoices based on partial settled. If &#x60;true&#x60; invoices where &#x60;authorized_amount &lt; settled_amount&#x60; is returned. If &#x60;false&#x60; invoices where &#x60;settled_amount &#x3D; authorized_amount&#x60; is returned.                                                                                                                                                                                                                                | [optional]                      
- **type**              | [**string[]**](../Model/string.md) | Invoice type, multiple can be defined. &#x60;s&#x60; - subscription recurring, &#x60;so&#x60; - subscription one-time, &#x60;soi&#x60; - subscription one-time instant, &#x60;co&#x60; - customer one-time, &#x60;ch&#x60; - charge                                                                                                                                                                                                                                             | [optional]                      
- **subscription**      | **string**                         | Invoices for subscription by subscription handle                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **plan**              | **string**                         | Invoices for subscription plan by subscription plan handle                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **dunning_start**     | **string**                         | Dunning start date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals.                                                                                                                                                                                                                                                                                                        | [optional]                      
- **dunning_success**   | **string**                         | Dunning success date and time in local date time interval for account timezone. Date time given in ISO-8601 local date or local date time. See documentation of intervals.                                                                                                                                                                                                                                                                                                      | [optional]                      
- **number**            | **int**                            | Invoice number if subscription invoice                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **due**               | **string**                         | Due date if due date defined for subscription invoice                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **handle_contains** | **string**|  | [optional]
+ **accounting_number** | **string**|  | [optional]
+ **accounting_number_prefix** | **string**|  | [optional]
+ **accounting_number_contains** | **string**|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **exclude_state** | [**string[]**](../Model/string.md)|  | [optional]
+ **customer** | **string**|  | [optional]
+ **amount** | **string**|  | [optional]
+ **refunded_amount** | **string**|  | [optional]
+ **authorized_amount** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
+ **partial_settled** | **bool**|  | [optional]
+ **settled_amount** | **string**|  | [optional]
+ **debtor_id** | **string**|  | [optional]
+ **type** | [**string[]**](../Model/string.md)|  | [optional]
+ **subscription** | **string**|  | [optional]
+ **plan** | **string**|  | [optional]
+ **dunning_start** | **string**|  | [optional]
+ **dunning_success** | **string**|  | [optional]
+ **number** | **int**|  | [optional]
+ **due** | **string**|  | [optional]
 
 ### Return type
 
@@ -546,10 +661,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPaymentMethodList**
-
-> \Reepay\Model\PaymentMethodList getPaymentMethodList($from, $to, $interval, $size, $next_page_token, $range, $id,
-> $state, $payment_type, $customer, $subscription, $reference, $failed, $card_type, $transaction_card_type, $card_prefix,
-> $card_postfix, $card_fingerprint, $card_country, $card_gateway, $card_agreement, $mps_external_id)
+> \Reepay\Model\PaymentMethodList getPaymentMethodList($from, $to, $interval, $size, $next_page_token, $range, $id, $state, $payment_type, $customer, $subscription, $reference, $failed, $card_type, $transaction_card_type, $card_prefix, $card_postfix, $card_fingerprint, $card_country, $card_gateway, $card_agreement, $mps_external_id)
 
 Get list of payment methods
 
@@ -569,28 +681,28 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Can only be the default `created`
-$id = "id_example"; // string | Payment method id
-$state = array("state_example"); // string[] | Payment state, multiple can be defined. States: `pending`, `active`, `inactivated`, `failed` and `deleted`
-$payment_type = array("payment_type_example"); // string[] | Payment method payment type, multiple can be defined. `card`, `mobilepay`, `vipps`, `swish`, `viabill`, `manual`, `applepay`, `googlepay`, `paypal`, `klarna_pay_now`, `klarna_pay_later`, `klarna_slice_it`, `klarna_direct_bank_transfer`, `klarna_direct_debit`, `resurs`, `ideal`, `p24`, `blik`, `bancontact`, `giropay`, `sepa`, `verkkopankki` or `mobilepay_subscriptions`
-$customer = "customer_example"; // string | Customer owning payment method
-$subscription = "subscription_example"; // string | Payment methods for subscription
-$reference = "reference_example"; // string | Payment method reference
-$failed = "failed_example"; // string | Failed date interval
-$card_type = array("card_type_example"); // string[] | Card payment methods with card type. Multiple can be defined. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
-$transaction_card_type = array("transaction_card_type_example"); // string[] | Card payment methods with transaction card type. Multiple can be defined. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
-$card_prefix = "card_prefix_example"; // string | Card payment methods with card with prefix
-$card_postfix = "card_postfix_example"; // string | Card payment methods with card number postfix
-$card_fingerprint = "card_fingerprint_example"; // string | Card payment methods with card number postfix
-$card_country = array("card_country_example"); // string[] | Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-$card_gateway = "card_gateway_example"; // string | Card payment methods tied to card gateway
-$card_agreement = "card_agreement_example"; // string | Card payment methods tied to card agreement with id
-$mps_external_id = "mps_external_id_example"; // string | MobilePay Subscription external id
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$id = "id_example"; // string | 
+$state = array("state_example"); // string[] | 
+$payment_type = array("payment_type_example"); // string[] | 
+$customer = "customer_example"; // string | 
+$subscription = "subscription_example"; // string | 
+$reference = "reference_example"; // string | 
+$failed = "failed_example"; // string | 
+$card_type = array("card_type_example"); // string[] | 
+$transaction_card_type = array("transaction_card_type_example"); // string[] | 
+$card_prefix = "card_prefix_example"; // string | 
+$card_postfix = "card_postfix_example"; // string | 
+$card_fingerprint = "card_fingerprint_example"; // string | 
+$card_country = array("card_country_example"); // string[] | 
+$card_gateway = "card_gateway_example"; // string | 
+$card_agreement = "card_agreement_example"; // string | 
+$mps_external_id = "mps_external_id_example"; // string | 
 
 try {
     $result = $apiInstance->getPaymentMethodList($from, $to, $interval, $size, $next_page_token, $range, $id, $state, $payment_type, $customer, $subscription, $reference, $failed, $card_type, $transaction_card_type, $card_prefix, $card_postfix, $card_fingerprint, $card_country, $card_gateway, $card_agreement, $mps_external_id);
@@ -603,30 +715,30 @@ try {
 
 ### Parameters
 
- Name                      | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Notes                           
----------------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**                  | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60;                                                                                                                                          | [optional]                      
- **to**                    | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **interval**              | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **size**                  | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional] [default to 20]      
- **next_page_token**       | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **range**                 | **string**                         | Time and date attribute to time limit. Can only be the default &#x60;created&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to created] 
- **id**                    | **string**                         | Payment method id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **state**                 | [**string[]**](../Model/string.md) | Payment state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;active&#x60;, &#x60;inactivated&#x60;, &#x60;failed&#x60; and &#x60;deleted&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **payment_type**          | [**string[]**](../Model/string.md) | Payment method payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60; | [optional]                      
- **customer**              | **string**                         | Customer owning payment method                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **subscription**          | **string**                         | Payment methods for subscription                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **reference**             | **string**                         | Payment method reference                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **failed**                | **string**                         | Failed date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | [optional]                      
- **card_type**             | [**string[]**](../Model/string.md) | Card payment methods with card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60;                                                                                                                                                                                                                                                                                             | [optional]                      
- **transaction_card_type** | [**string[]**](../Model/string.md) | Card payment methods with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60;                                                                                                                                                                                                                                                                                 | [optional]                      
- **card_prefix**           | **string**                         | Card payment methods with card with prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **card_postfix**          | **string**                         | Card payment methods with card number postfix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **card_fingerprint**      | **string**                         | Card payment methods with card number postfix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **card_country**          | [**string[]**](../Model/string.md) | Card payment methods with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **card_gateway**          | **string**                         | Card payment methods tied to card gateway                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **card_agreement**        | **string**                         | Card payment methods tied to card agreement with id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **mps_external_id**       | **string**                         | MobilePay Subscription external id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **id** | **string**|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **payment_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **customer** | **string**|  | [optional]
+ **subscription** | **string**|  | [optional]
+ **reference** | **string**|  | [optional]
+ **failed** | **string**|  | [optional]
+ **card_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **transaction_card_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **card_prefix** | **string**|  | [optional]
+ **card_postfix** | **string**|  | [optional]
+ **card_fingerprint** | **string**|  | [optional]
+ **card_country** | [**string[]**](../Model/string.md)|  | [optional]
+ **card_gateway** | **string**|  | [optional]
+ **card_agreement** | **string**|  | [optional]
+ **mps_external_id** | **string**|  | [optional]
 
 ### Return type
 
@@ -644,10 +756,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPayoutList**
-
-> \Reepay\Model\PayoutList getPayoutList($from, $to, $interval, $size, $next_page_token, $range, $handle,
-> $handle_contains, $customer, $state, $amount, $currency, $card, $card_type, $card_prefix, $card_postfix,
-> $card_fingerprint)
+> \Reepay\Model\PayoutList getPayoutList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $customer, $state, $amount, $currency, $card, $card_type, $card_prefix, $card_postfix, $card_fingerprint)
 
 Get list of payouts
 
@@ -667,26 +776,27 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Either `created` or `paid`. Default is `created`.
-$handle = "handle_example"; // string | Payout handle prefix
-$handle_contains = "handle_contains_example"; // string | Payout handle contains
-$customer = "customer_example"; // string | Payouts for customer by customer handle
-$state = array("state_example"); // string[] | Payout transaction state, multiple can be defined
-$amount = "amount_example"; // string | Amount in minor unit interval. See documentation of intervals.
-$currency = array("currency_example"); // string[] | Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.
-$card = "card_example"; // string | Payouts for saved card
-$card_type = "card_type_example"; // string | Payouts for card type
-$card_prefix = "card_prefix_example"; // string | Payouts for card with prefix
-$card_postfix = "card_postfix_example"; // string | Payouts for card with postfix
-$card_fingerprint = "card_fingerprint_example"; // string | Payouts for card with postfix
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$handle_contains = "handle_contains_example"; // string | 
+$customer = "customer_example"; // string | 
+$state = array("state_example"); // string[] | 
+$amount = "amount_example"; // string | 
+$currency = array("currency_example"); // string[] | 
+$card = "card_example"; // string | 
+$card_type = "card_type_example"; // string | 
+$card_prefix = "card_prefix_example"; // string | 
+$card_postfix = "card_postfix_example"; // string | 
+$card_fingerprint = "card_fingerprint_example"; // string | 
 
 try {
-    $result = $apiInstance->getPayoutList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_contains, $customer, $state, $amount, $currency, $card, $card_type, $card_prefix, $card_postfix, $card_fingerprint);
+    $result = $apiInstance->getPayoutList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $customer, $state, $amount, $currency, $card, $card_type, $card_prefix, $card_postfix, $card_fingerprint);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getPayoutList: ', $e->getMessage(), PHP_EOL;
@@ -696,25 +806,26 @@ try {
 
 ### Parameters
 
- Name                 | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
-----------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**             | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**               | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**         | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**             | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token**  | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**            | **string**                         | Time and date attribute to time limit. Either &#x60;created&#x60; or &#x60;paid&#x60;. Default is &#x60;created&#x60;.                                                                                                                                                                                                                                                                                                                                                          | [optional] [default to created] 
- **handle**           | **string**                         | Payout handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **handle_contains**  | **string**                         | Payout handle contains                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **customer**         | **string**                         | Payouts for customer by customer handle                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **state**            | [**string[]**](../Model/string.md) | Payout transaction state, multiple can be defined                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **amount**           | **string**                         | Amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **currency**         | [**string[]**](../Model/string.md) | Payout currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **card**             | **string**                         | Payouts for saved card                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **card_type**        | **string**                         | Payouts for card type                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **card_prefix**      | **string**                         | Payouts for card with prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **card_postfix**     | **string**                         | Payouts for card with postfix                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **card_fingerprint** | **string**                         | Payouts for card with postfix                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **handle_contains** | **string**|  | [optional]
+ **customer** | **string**|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **amount** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
+ **card** | **string**|  | [optional]
+ **card_type** | **string**|  | [optional]
+ **card_prefix** | **string**|  | [optional]
+ **card_postfix** | **string**|  | [optional]
+ **card_fingerprint** | **string**|  | [optional]
 
 ### Return type
 
@@ -732,13 +843,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlanList**
-
-> \Reepay\Model\PlanList getPlanList($from, $to, $interval, $size, $next_page_token, $range, $handle, $state,
-> $schedule_type, $partial_period_handling, $setup_fee_handling, $fixed_life_time_unit, $trial_interval_unit,
-> $dunning_plan_handle, $name, $description, $setup_fee_text, $amount, $quantity, $fixed_count, $fixed_life_time_length,
-> $trial_interval_length, $interval_length, $schedule_fixed_day, $renewal_reminder_email_days, $trial_reminder_email_days,
-> $base_month, $notice_periods, $minimum_prorated_amount, $fixation_periods, $setup_fee, $amount_incl_vat,
-> $notice_periods_after_current, $fixation_periods_full, $include_zero_amount, $partial_proration_days, $fixed_trial_days)
+> \Reepay\Model\PlanList getPlanList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handles, $state, $schedule_type, $partial_period_handling, $setup_fee_handling, $fixed_life_time_unit, $trial_interval_unit, $dunning_plan_handle, $name, $description, $setup_fee_text, $amount, $quantity, $fixed_count, $fixed_life_time_length, $trial_interval_length, $interval_length, $schedule_fixed_day, $renewal_reminder_email_days, $trial_reminder_email_days, $base_month, $notice_periods, $minimum_prorated_amount, $fixation_periods, $setup_fee, $amount_incl_vat, $notice_periods_after_current, $fixation_periods_full, $include_zero_amount, $partial_proration_days, $fixed_trial_days, $currency)
 
 Get list of plans
 
@@ -758,46 +863,49 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute for time limit. Accepted value `created`
-$handle = "handle_example"; // string | Plan handle prefix
-$state = array("state_example"); // string[] | State of the subscription plan, one of the following: `active`, `superseded` or `deleted`. Multiple can be defined.
-$schedule_type = array("schedule_type_example"); // string[] | Scheduling type, one of the following: `manual`, `daily`, `weekly_fixedday`, `month_startdate`, `month_fixedday`, `month_lastday`. Multiple can be defined.
-$partial_period_handling = array("partial_period_handling_example"); // string[] | The way to bill initial (not full) period. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`. Multiple can be defined.
-$setup_fee_handling = array("setup_fee_handling_example"); // string[] | How the billing of the setup fee should be done. Accepted values: `first`, `separate`, `separate_conditional`. Multiple can be defined.
-$fixed_life_time_unit = array("fixed_life_time_unit_example"); // string[] | Time unit use for fixed life time. Accepted units: `days` or `months`
-$trial_interval_unit = array("trial_interval_unit_example"); // string[] | Time unit for free trial period. Accepted units: `days` or `months`
-$dunning_plan_handle = "dunning_plan_handle_example"; // string | Dunning plan handle
-$name = "name_example"; // string | Name of plan. Used as order line text.
-$description = "description_example"; // string | Optional description of plan
-$setup_fee_text = "setup_fee_text_example"; // string | Optional invoice order text for the setup fee
-$amount = "amount_example"; // string | Fixed amount plan deducted from order line amounts including VAT.
-$quantity = "quantity_example"; // string | Optional default quantity of the subscription plan product for new subscriptions. Default is 1.
-$fixed_count = "fixed_count_example"; // string | Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices.
-$fixed_life_time_length = "fixed_life_time_length_example"; // string | The number of days/months for which the subscription is live.
-$trial_interval_length = "trial_interval_length_example"; // string | The number of days/months for how long the free trial period lasts
-$interval_length = "interval_length_example"; // string | The length of subscription intervals. E.g. every second month or every 14 days.
-$schedule_fixed_day = "schedule_fixed_day_example"; // string | The number of day for `weekly_fixedday` and `month_fixedday` schedule types. For months the allowed values are 1-28 for weeks 1-7
-$renewal_reminder_email_days = "renewal_reminder_email_days_example"; // string | Number of days before next billing to send a reminder email.
-$trial_reminder_email_days = "trial_reminder_email_days_example"; // string | Number of days before end of trial to send a reminder email.
-$base_month = "base_month_example"; // string | Base month for fixed month schedule type
-$notice_periods = "notice_periods_example"; // string | Number of notice periods before a cancellation.
-$minimum_prorated_amount = "minimum_prorated_amount_example"; // string | Minimum amount for prorated invoice. If the amount is less, 0 is charged
-$fixation_periods = "fixation_periods_example"; // string | Number of paid periods before expiring after a cancellation.
-$setup_fee = "setup_fee_example"; // string | Optional one-time setup fee billed with the first invoice.
-$amount_incl_vat = "amount_incl_vat_example"; // string | Whether the amount is including VAT. Values: `true` or `false`
-$notice_periods_after_current = "notice_periods_after_current_example"; // string | Is cancelled flag. Values: `true` or `false`
-$fixation_periods_full = "fixation_periods_full_example"; // string | If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: `true` or `false`
-$include_zero_amount = "include_zero_amount_example"; // string | Whether to add a zero amount order line to subscription invoices. Values: `true` or `false`
-$partial_proration_days = "partial_proration_days_example"; // string | If proration should be day based (instead of minute). Values: `true` or `false`
-$fixed_trial_days = "fixed_trial_days_example"; // string | Controls if trial expires at midnight or it's down to the minute. Values: `true` or `false`
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$handles = array("handles_example"); // string[] | 
+$state = array("state_example"); // string[] | 
+$schedule_type = array("schedule_type_example"); // string[] | 
+$partial_period_handling = array("partial_period_handling_example"); // string[] | 
+$setup_fee_handling = array("setup_fee_handling_example"); // string[] | 
+$fixed_life_time_unit = array("fixed_life_time_unit_example"); // string[] | 
+$trial_interval_unit = array("trial_interval_unit_example"); // string[] | 
+$dunning_plan_handle = "dunning_plan_handle_example"; // string | 
+$name = "name_example"; // string | 
+$description = "description_example"; // string | 
+$setup_fee_text = "setup_fee_text_example"; // string | 
+$amount = "amount_example"; // string | 
+$quantity = "quantity_example"; // string | 
+$fixed_count = "fixed_count_example"; // string | 
+$fixed_life_time_length = "fixed_life_time_length_example"; // string | 
+$trial_interval_length = "trial_interval_length_example"; // string | 
+$interval_length = "interval_length_example"; // string | 
+$schedule_fixed_day = "schedule_fixed_day_example"; // string | 
+$renewal_reminder_email_days = "renewal_reminder_email_days_example"; // string | 
+$trial_reminder_email_days = "trial_reminder_email_days_example"; // string | 
+$base_month = "base_month_example"; // string | 
+$notice_periods = "notice_periods_example"; // string | 
+$minimum_prorated_amount = "minimum_prorated_amount_example"; // string | 
+$fixation_periods = "fixation_periods_example"; // string | 
+$setup_fee = "setup_fee_example"; // string | 
+$amount_incl_vat = "amount_incl_vat_example"; // string | 
+$notice_periods_after_current = "notice_periods_after_current_example"; // string | 
+$fixation_periods_full = "fixation_periods_full_example"; // string | 
+$include_zero_amount = "include_zero_amount_example"; // string | 
+$partial_proration_days = "partial_proration_days_example"; // string | 
+$fixed_trial_days = "fixed_trial_days_example"; // string | 
+$currency = array("currency_example"); // string[] | 
 
 try {
-    $result = $apiInstance->getPlanList($from, $to, $interval, $size, $next_page_token, $range, $handle, $state, $schedule_type, $partial_period_handling, $setup_fee_handling, $fixed_life_time_unit, $trial_interval_unit, $dunning_plan_handle, $name, $description, $setup_fee_text, $amount, $quantity, $fixed_count, $fixed_life_time_length, $trial_interval_length, $interval_length, $schedule_fixed_day, $renewal_reminder_email_days, $trial_reminder_email_days, $base_month, $notice_periods, $minimum_prorated_amount, $fixation_periods, $setup_fee, $amount_incl_vat, $notice_periods_after_current, $fixation_periods_full, $include_zero_amount, $partial_proration_days, $fixed_trial_days);
+    $result = $apiInstance->getPlanList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handles, $state, $schedule_type, $partial_period_handling, $setup_fee_handling, $fixed_life_time_unit, $trial_interval_unit, $dunning_plan_handle, $name, $description, $setup_fee_text, $amount, $quantity, $fixed_count, $fixed_life_time_length, $trial_interval_length, $interval_length, $schedule_fixed_day, $renewal_reminder_email_days, $trial_reminder_email_days, $base_month, $notice_periods, $minimum_prorated_amount, $fixation_periods, $setup_fee, $amount_incl_vat, $notice_periods_after_current, $fixation_periods_full, $include_zero_amount, $partial_proration_days, $fixed_trial_days, $currency);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getPlanList: ', $e->getMessage(), PHP_EOL;
@@ -807,45 +915,48 @@ try {
 
 ### Parameters
 
- Name                             | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
-----------------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**                         | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**                           | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**                     | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**                         | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token**              | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**                        | **string**                         | Time and date attribute for time limit. Accepted value &#x60;created&#x60;                                                                                                                                                                                                                                                                                                                                                                                                      | [optional] [default to created] 
- **handle**                       | **string**                         | Plan handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
- **state**                        | [**string[]**](../Model/string.md) | State of the subscription plan, one of the following: &#x60;active&#x60;, &#x60;superseded&#x60; or &#x60;deleted&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **schedule_type**                | [**string[]**](../Model/string.md) | Scheduling type, one of the following: &#x60;manual&#x60;, &#x60;daily&#x60;, &#x60;weekly_fixedday&#x60;, &#x60;month_startdate&#x60;, &#x60;month_fixedday&#x60;, &#x60;month_lastday&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                         | [optional]                      
- **partial_period_handling**      | [**string[]**](../Model/string.md) | The way to bill initial (not full) period. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                                               | [optional]                      
- **setup_fee_handling**           | [**string[]**](../Model/string.md) | How the billing of the setup fee should be done. Accepted values: &#x60;first&#x60;, &#x60;separate&#x60;, &#x60;separate_conditional&#x60;. Multiple can be defined.                                                                                                                                                                                                                                                                                                           | [optional]                      
- **fixed_life_time_unit**         | [**string[]**](../Model/string.md) | Time unit use for fixed life time. Accepted units: &#x60;days&#x60; or &#x60;months&#x60;                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **trial_interval_unit**          | [**string[]**](../Model/string.md) | Time unit for free trial period. Accepted units: &#x60;days&#x60; or &#x60;months&#x60;                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **dunning_plan_handle**          | **string**                         | Dunning plan handle                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **name**                         | **string**                         | Name of plan. Used as order line text.                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **description**                  | **string**                         | Optional description of plan                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **setup_fee_text**               | **string**                         | Optional invoice order text for the setup fee                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **amount**                       | **string**                         | Fixed amount plan deducted from order line amounts including VAT.                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **quantity**                     | **string**                         | Optional default quantity of the subscription plan product for new subscriptions. Default is 1.                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **fixed_count**                  | **string**                         | Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices.                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **fixed_life_time_length**       | **string**                         | The number of days/months for which the subscription is live.                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **trial_interval_length**        | **string**                         | The number of days/months for how long the free trial period lasts                                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
- **interval_length**              | **string**                         | The length of subscription intervals. E.g. every second month or every 14 days.                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **schedule_fixed_day**           | **string**                         | The number of day for &#x60;weekly_fixedday&#x60; and &#x60;month_fixedday&#x60; schedule types. For months the allowed values are 1-28 for weeks 1-7                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **renewal_reminder_email_days**  | **string**                         | Number of days before next billing to send a reminder email.                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **trial_reminder_email_days**    | **string**                         | Number of days before end of trial to send a reminder email.                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **base_month**                   | **string**                         | Base month for fixed month schedule type                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **notice_periods**               | **string**                         | Number of notice periods before a cancellation.                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **minimum_prorated_amount**      | **string**                         | Minimum amount for prorated invoice. If the amount is less, 0 is charged                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **fixation_periods**             | **string**                         | Number of paid periods before expiring after a cancellation.                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **setup_fee**                    | **string**                         | Optional one-time setup fee billed with the first invoice.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **amount_incl_vat**              | **string**                         | Whether the amount is including VAT. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
- **notice_periods_after_current** | **string**                         | Is cancelled flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **fixation_periods_full**        | **string**                         | If fixation periods are defined, and the subscription can have a partial prorated first period,this parameter controls if the the last period should be full, or partial. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                         | [optional]                      
- **include_zero_amount**          | **string**                         | Whether to add a zero amount order line to subscription invoices. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **partial_proration_days**       | **string**                         | If proration should be day based (instead of minute). Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **fixed_trial_days**             | **string**                         | Controls if trial expires at midnight or it&#x27;s down to the minute. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **handles** | [**string[]**](../Model/string.md)|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **schedule_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **partial_period_handling** | [**string[]**](../Model/string.md)|  | [optional]
+ **setup_fee_handling** | [**string[]**](../Model/string.md)|  | [optional]
+ **fixed_life_time_unit** | [**string[]**](../Model/string.md)|  | [optional]
+ **trial_interval_unit** | [**string[]**](../Model/string.md)|  | [optional]
+ **dunning_plan_handle** | **string**|  | [optional]
+ **name** | **string**|  | [optional]
+ **description** | **string**|  | [optional]
+ **setup_fee_text** | **string**|  | [optional]
+ **amount** | **string**|  | [optional]
+ **quantity** | **string**|  | [optional]
+ **fixed_count** | **string**|  | [optional]
+ **fixed_life_time_length** | **string**|  | [optional]
+ **trial_interval_length** | **string**|  | [optional]
+ **interval_length** | **string**|  | [optional]
+ **schedule_fixed_day** | **string**|  | [optional]
+ **renewal_reminder_email_days** | **string**|  | [optional]
+ **trial_reminder_email_days** | **string**|  | [optional]
+ **base_month** | **string**|  | [optional]
+ **notice_periods** | **string**|  | [optional]
+ **minimum_prorated_amount** | **string**|  | [optional]
+ **fixation_periods** | **string**|  | [optional]
+ **setup_fee** | **string**|  | [optional]
+ **amount_incl_vat** | **string**|  | [optional]
+ **notice_periods_after_current** | **string**|  | [optional]
+ **fixation_periods_full** | **string**|  | [optional]
+ **include_zero_amount** | **string**|  | [optional]
+ **partial_proration_days** | **string**|  | [optional]
+ **fixed_trial_days** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
 
 ### Return type
 
@@ -863,18 +974,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionList**
-
-> \Reepay\Model\SubscriptionList getSubscriptionList($from, $to, $interval, $size, $next_page_token, $range, $handle,
-> $handle_contains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelled_date, $reactivated, $created,
-> $renewing, $plan_version, $amount_incl_vat, $start_date, $end_date, $grace_duration, $current_period_start,
-> $next_period_start, $first_period_start, $last_period_start, $trial_start, $trial_end, $in_trial, $has_started,
-> $renewal_count, $expired_date, $expire_reason, $on_hold_date, $on_hold_reason, $payment_method_added,
-> $reminder_email_sent, $failed_invoices, $failed_amount, $cancelled_invoices, $cancelled_amount, $pending_invoices,
-> $pending_amount, $dunning_invoices, $dunning_amount, $settled_invoices, $settled_amount, $refunded_amount,
-> $pending_additional_costs, $pending_additional_cost_amount, $transferred_additional_costs,
-> $transferred_additional_cost_amount, $pending_credits, $pending_credit_amount, $transferred_credits,
-> $transferred_credit_amount, $subscription_add_on_handle, $add_on_handle, $subscription_discount_handle,
-> $discount_handle, $coupon_handle)
+> \Reepay\Model\SubscriptionList getSubscriptionList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelled_date, $reactivated, $created, $renewing, $plan_version, $amount_incl_vat, $start_date, $end_date, $grace_duration, $current_period_start, $next_period_start, $first_period_start, $last_period_start, $trial_start, $trial_end, $in_trial, $has_started, $renewal_count, $expired_date, $expire_reason, $on_hold_date, $on_hold_reason, $payment_method_added, $reminder_email_sent, $failed_invoices, $failed_amount, $cancelled_invoices, $cancelled_amount, $pending_invoices, $pending_amount, $dunning_invoices, $dunning_amount, $settled_invoices, $settled_amount, $refunded_amount, $pending_additional_costs, $pending_additional_cost_amount, $transferred_additional_costs, $transferred_additional_cost_amount, $pending_credits, $pending_credit_amount, $transferred_credits, $transferred_credit_amount, $subscription_add_on_handle, $add_on_handle, $subscription_discount_handle, $discount_handle, $coupon_handle, $payment_method)
 
 Get list of subscriptions
 
@@ -894,71 +994,73 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Can be the `created`, `activated`, `expired`, `cancelled`, `on_hold` or `reactivated`
-$handle = "handle_example"; // string | Subscription handle prefix
-$handle_contains = "handle_contains_example"; // string | Subscription handle contains
-$customer = "customer_example"; // string | Customer owning subscription
-$plan = "plan_example"; // string | Plan owning subscription
-$state = array("state_example"); // string[] | Subscription state, multiple can be defined. States: `active`, `expired`, `on_hold` or `pending`
-$amount = "amount_example"; // string | Custom amount in minor unit interval. See documentation of intervals.
-$quantity = "quantity_example"; // string | Quantity. See documentation of intervals.
-$activated = "activated_example"; // string | Activated date interval
-$cancelled_date = "cancelled_date_example"; // string | Cancelled date interval
-$reactivated = "reactivated_example"; // string | Reactivated date interval
-$created = "created_example"; // string | Created date interval
-$renewing = "renewing_example"; // string | Renewing flag. Values: `true` or `false`
-$plan_version = 56; // int | Plan version
-$amount_incl_vat = "amount_incl_vat_example"; // string | Amount incl vat test flag. Values: `true` or `false`
-$start_date = "start_date_example"; // string | Start date interval
-$end_date = "end_date_example"; // string | End date interval
-$grace_duration = "grace_duration_example"; // string | Grace duration in seconds. See documentation of intervals.
-$current_period_start = "current_period_start_example"; // string | Current period start date interval
-$next_period_start = "next_period_start_example"; // string | Next period start date interval
-$first_period_start = "first_period_start_example"; // string | First period start date interval
-$last_period_start = "last_period_start_example"; // string | Last period start date interval
-$trial_start = "trial_start_example"; // string | Trial period start date interval
-$trial_end = "trial_end_example"; // string | Trial period end date interval
-$in_trial = "in_trial_example"; // string | In trial flag. Values: `true` or `false`
-$has_started = "has_started_example"; // string | Has started flag. Values: `true` or `false`
-$renewal_count = "renewal_count_example"; // string | Renewal Count. See documentation of intervals.
-$expired_date = "expired_date_example"; // string | Expired period date interval
-$expire_reason = array("expire_reason_example"); // string[] | On hold reason, multiple can be defined. Types: `dunning`, `cancelled`,`ondemand`, and `fixed`
-$on_hold_date = "on_hold_date_example"; // string | On hold period date interval
-$on_hold_reason = array("on_hold_reason_example"); // string[] | On hold reason, multiple can be defined. Types: `ondemand`, and `dunning`
-$payment_method_added = "payment_method_added_example"; // string | Payment method added flag. Values: `true` or `false`
-$reminder_email_sent = "reminder_email_sent_example"; // string | Reminder email sent period date interval
-$failed_invoices = "failed_invoices_example"; // string | Failed invoices. See documentation of intervals.
-$failed_amount = "failed_amount_example"; // string | Failed amount. See documentation of intervals.
-$cancelled_invoices = "cancelled_invoices_example"; // string | Cancelled invoices. See documentation of intervals.
-$cancelled_amount = "cancelled_amount_example"; // string | Cancelled amount. See documentation of intervals.
-$pending_invoices = "pending_invoices_example"; // string | Pending invoices. See documentation of intervals.
-$pending_amount = "pending_amount_example"; // string | Pending amount invoices. See documentation of intervals.
-$dunning_invoices = "dunning_invoices_example"; // string | Dunning invoices. See documentation of intervals.
-$dunning_amount = "dunning_amount_example"; // string | Dunning amount. See documentation of intervals.
-$settled_invoices = "settled_invoices_example"; // string | Settled invoices. See documentation of intervals.
-$settled_amount = "settled_amount_example"; // string | Settled amount. See documentation of intervals.
-$refunded_amount = "refunded_amount_example"; // string | Refunded amount. See documentation of intervals.
-$pending_additional_costs = "pending_additional_costs_example"; // string | Pending additional costs. See documentation of intervals.
-$pending_additional_cost_amount = "pending_additional_cost_amount_example"; // string | Pending additional cost amount. See documentation of intervals.
-$transferred_additional_costs = "transferred_additional_costs_example"; // string | Transferred additional costs. See documentation of intervals.
-$transferred_additional_cost_amount = "transferred_additional_cost_amount_example"; // string | Transferred additional cost amount. See documentation of intervals.
-$pending_credits = "pending_credits_example"; // string | Pending credits. See documentation of intervals.
-$pending_credit_amount = "pending_credit_amount_example"; // string | Pending credit amount. See documentation of intervals.
-$transferred_credits = "transferred_credits_example"; // string | Transferred credits. See documentation of intervals.
-$transferred_credit_amount = "transferred_credit_amount_example"; // string | Transferred credit amount. See documentation of intervals.
-$subscription_add_on_handle = "subscription_add_on_handle_example"; // string | Subscription add-on handle
-$add_on_handle = "add_on_handle_example"; // string | Add-on handle
-$subscription_discount_handle = "subscription_discount_handle_example"; // string | Subscription discount handle
-$discount_handle = "discount_handle_example"; // string | Discount handle
-$coupon_handle = "coupon_handle_example"; // string | Coupon handle
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$handle = "handle_example"; // string | 
+$handle_prefix = "handle_prefix_example"; // string | 
+$handle_contains = "handle_contains_example"; // string | 
+$customer = "customer_example"; // string | 
+$plan = "plan_example"; // string | 
+$state = array("state_example"); // string[] | 
+$amount = "amount_example"; // string | 
+$quantity = "quantity_example"; // string | 
+$activated = "activated_example"; // string | 
+$cancelled_date = "cancelled_date_example"; // string | 
+$reactivated = "reactivated_example"; // string | 
+$created = "created_example"; // string | 
+$renewing = "renewing_example"; // string | 
+$plan_version = 56; // int | 
+$amount_incl_vat = "amount_incl_vat_example"; // string | 
+$start_date = "start_date_example"; // string | 
+$end_date = "end_date_example"; // string | 
+$grace_duration = "grace_duration_example"; // string | 
+$current_period_start = "current_period_start_example"; // string | 
+$next_period_start = "next_period_start_example"; // string | 
+$first_period_start = "first_period_start_example"; // string | 
+$last_period_start = "last_period_start_example"; // string | 
+$trial_start = "trial_start_example"; // string | 
+$trial_end = "trial_end_example"; // string | 
+$in_trial = "in_trial_example"; // string | 
+$has_started = "has_started_example"; // string | 
+$renewal_count = "renewal_count_example"; // string | 
+$expired_date = "expired_date_example"; // string | 
+$expire_reason = array("expire_reason_example"); // string[] | 
+$on_hold_date = "on_hold_date_example"; // string | 
+$on_hold_reason = array("on_hold_reason_example"); // string[] | 
+$payment_method_added = "payment_method_added_example"; // string | 
+$reminder_email_sent = "reminder_email_sent_example"; // string | 
+$failed_invoices = "failed_invoices_example"; // string | 
+$failed_amount = "failed_amount_example"; // string | 
+$cancelled_invoices = "cancelled_invoices_example"; // string | 
+$cancelled_amount = "cancelled_amount_example"; // string | 
+$pending_invoices = "pending_invoices_example"; // string | 
+$pending_amount = "pending_amount_example"; // string | 
+$dunning_invoices = "dunning_invoices_example"; // string | 
+$dunning_amount = "dunning_amount_example"; // string | 
+$settled_invoices = "settled_invoices_example"; // string | 
+$settled_amount = "settled_amount_example"; // string | 
+$refunded_amount = "refunded_amount_example"; // string | 
+$pending_additional_costs = "pending_additional_costs_example"; // string | 
+$pending_additional_cost_amount = "pending_additional_cost_amount_example"; // string | 
+$transferred_additional_costs = "transferred_additional_costs_example"; // string | 
+$transferred_additional_cost_amount = "transferred_additional_cost_amount_example"; // string | 
+$pending_credits = "pending_credits_example"; // string | 
+$pending_credit_amount = "pending_credit_amount_example"; // string | 
+$transferred_credits = "transferred_credits_example"; // string | 
+$transferred_credit_amount = "transferred_credit_amount_example"; // string | 
+$subscription_add_on_handle = "subscription_add_on_handle_example"; // string | 
+$add_on_handle = "add_on_handle_example"; // string | 
+$subscription_discount_handle = "subscription_discount_handle_example"; // string | 
+$discount_handle = "discount_handle_example"; // string | 
+$coupon_handle = "coupon_handle_example"; // string | 
+$payment_method = "payment_method_example"; // string | 
 
 try {
-    $result = $apiInstance->getSubscriptionList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_contains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelled_date, $reactivated, $created, $renewing, $plan_version, $amount_incl_vat, $start_date, $end_date, $grace_duration, $current_period_start, $next_period_start, $first_period_start, $last_period_start, $trial_start, $trial_end, $in_trial, $has_started, $renewal_count, $expired_date, $expire_reason, $on_hold_date, $on_hold_reason, $payment_method_added, $reminder_email_sent, $failed_invoices, $failed_amount, $cancelled_invoices, $cancelled_amount, $pending_invoices, $pending_amount, $dunning_invoices, $dunning_amount, $settled_invoices, $settled_amount, $refunded_amount, $pending_additional_costs, $pending_additional_cost_amount, $transferred_additional_costs, $transferred_additional_cost_amount, $pending_credits, $pending_credit_amount, $transferred_credits, $transferred_credit_amount, $subscription_add_on_handle, $add_on_handle, $subscription_discount_handle, $discount_handle, $coupon_handle);
+    $result = $apiInstance->getSubscriptionList($from, $to, $interval, $size, $next_page_token, $range, $handle, $handle_prefix, $handle_contains, $customer, $plan, $state, $amount, $quantity, $activated, $cancelled_date, $reactivated, $created, $renewing, $plan_version, $amount_incl_vat, $start_date, $end_date, $grace_duration, $current_period_start, $next_period_start, $first_period_start, $last_period_start, $trial_start, $trial_end, $in_trial, $has_started, $renewal_count, $expired_date, $expire_reason, $on_hold_date, $on_hold_reason, $payment_method_added, $reminder_email_sent, $failed_invoices, $failed_amount, $cancelled_invoices, $cancelled_amount, $pending_invoices, $pending_amount, $dunning_invoices, $dunning_amount, $settled_invoices, $settled_amount, $refunded_amount, $pending_additional_costs, $pending_additional_cost_amount, $transferred_additional_costs, $transferred_additional_cost_amount, $pending_credits, $pending_credit_amount, $transferred_credits, $transferred_credit_amount, $subscription_add_on_handle, $add_on_handle, $subscription_discount_handle, $discount_handle, $coupon_handle, $payment_method);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getSubscriptionList: ', $e->getMessage(), PHP_EOL;
@@ -968,70 +1070,72 @@ try {
 
 ### Parameters
 
- Name                                   | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                           
-----------------------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**                               | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60; | [optional]                      
- **to**                                 | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                 | [optional]                      
- **interval**                           | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                              | [optional]                      
- **size**                               | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional] [default to 20]      
- **next_page_token**                    | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **range**                              | **string**                         | Time and date attribute to time limit. Can be the &#x60;created&#x60;, &#x60;activated&#x60;, &#x60;expired&#x60;, &#x60;cancelled&#x60;, &#x60;on_hold&#x60; or &#x60;reactivated&#x60;                                                                                                                                                                                                                                                                                        | [optional] [default to created] 
- **handle**                             | **string**                         | Subscription handle prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **handle_contains**                    | **string**                         | Subscription handle contains                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **customer**                           | **string**                         | Customer owning subscription                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **plan**                               | **string**                         | Plan owning subscription                                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **state**                              | [**string[]**](../Model/string.md) | Subscription state, multiple can be defined. States: &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;on_hold&#x60; or &#x60;pending&#x60;                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **amount**                             | **string**                         | Custom amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **quantity**                           | **string**                         | Quantity. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **activated**                          | **string**                         | Activated date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **cancelled_date**                     | **string**                         | Cancelled date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **reactivated**                        | **string**                         | Reactivated date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **created**                            | **string**                         | Created date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **renewing**                           | **string**                         | Renewing flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **plan_version**                       | **int**                            | Plan version                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **amount_incl_vat**                    | **string**                         | Amount incl vat test flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **start_date**                         | **string**                         | Start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **end_date**                           | **string**                         | End date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **grace_duration**                     | **string**                         | Grace duration in seconds. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **current_period_start**               | **string**                         | Current period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                              | [optional]                      
- **next_period_start**                  | **string**                         | Next period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **first_period_start**                 | **string**                         | First period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **last_period_start**                  | **string**                         | Last period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **trial_start**                        | **string**                         | Trial period start date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **trial_end**                          | **string**                         | Trial period end date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **in_trial**                           | **string**                         | In trial flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **has_started**                        | **string**                         | Has started flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **renewal_count**                      | **string**                         | Renewal Count. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **expired_date**                       | **string**                         | Expired period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **expire_reason**                      | [**string[]**](../Model/string.md) | On hold reason, multiple can be defined. Types: &#x60;dunning&#x60;, &#x60;cancelled&#x60;,&#x60;ondemand&#x60;, and &#x60;fixed&#x60;                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **on_hold_date**                       | **string**                         | On hold period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **on_hold_reason**                     | [**string[]**](../Model/string.md) | On hold reason, multiple can be defined. Types: &#x60;ondemand&#x60;, and &#x60;dunning&#x60;                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **payment_method_added**               | **string**                         | Payment method added flag. Values: &#x60;true&#x60; or &#x60;false&#x60;                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **reminder_email_sent**                | **string**                         | Reminder email sent period date interval                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **failed_invoices**                    | **string**                         | Failed invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **failed_amount**                      | **string**                         | Failed amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional]                      
- **cancelled_invoices**                 | **string**                         | Cancelled invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **cancelled_amount**                   | **string**                         | Cancelled amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **pending_invoices**                   | **string**                         | Pending invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **pending_amount**                     | **string**                         | Pending amount invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **dunning_invoices**                   | **string**                         | Dunning invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **dunning_amount**                     | **string**                         | Dunning amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **settled_invoices**                   | **string**                         | Settled invoices. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                               | [optional]                      
- **settled_amount**                     | **string**                         | Settled amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **refunded_amount**                    | **string**                         | Refunded amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **pending_additional_costs**           | **string**                         | Pending additional costs. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **pending_additional_cost_amount**     | **string**                         | Pending additional cost amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **transferred_additional_costs**       | **string**                         | Transferred additional costs. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **transferred_additional_cost_amount** | **string**                         | Transferred additional cost amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **pending_credits**                    | **string**                         | Pending credits. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional]                      
- **pending_credit_amount**              | **string**                         | Pending credit amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **transferred_credits**                | **string**                         | Transferred credits. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **transferred_credit_amount**          | **string**                         | Transferred credit amount. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **subscription_add_on_handle**         | **string**                         | Subscription add-on handle                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [optional]                      
- **add_on_handle**                      | **string**                         | Add-on handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
- **subscription_discount_handle**       | **string**                         | Subscription discount handle                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **discount_handle**                    | **string**                         | Discount handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **coupon_handle**                      | **string**                         | Coupon handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **handle** | **string**|  | [optional]
+ **handle_prefix** | **string**|  | [optional]
+ **handle_contains** | **string**|  | [optional]
+ **customer** | **string**|  | [optional]
+ **plan** | **string**|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **amount** | **string**|  | [optional]
+ **quantity** | **string**|  | [optional]
+ **activated** | **string**|  | [optional]
+ **cancelled_date** | **string**|  | [optional]
+ **reactivated** | **string**|  | [optional]
+ **created** | **string**|  | [optional]
+ **renewing** | **string**|  | [optional]
+ **plan_version** | **int**|  | [optional]
+ **amount_incl_vat** | **string**|  | [optional]
+ **start_date** | **string**|  | [optional]
+ **end_date** | **string**|  | [optional]
+ **grace_duration** | **string**|  | [optional]
+ **current_period_start** | **string**|  | [optional]
+ **next_period_start** | **string**|  | [optional]
+ **first_period_start** | **string**|  | [optional]
+ **last_period_start** | **string**|  | [optional]
+ **trial_start** | **string**|  | [optional]
+ **trial_end** | **string**|  | [optional]
+ **in_trial** | **string**|  | [optional]
+ **has_started** | **string**|  | [optional]
+ **renewal_count** | **string**|  | [optional]
+ **expired_date** | **string**|  | [optional]
+ **expire_reason** | [**string[]**](../Model/string.md)|  | [optional]
+ **on_hold_date** | **string**|  | [optional]
+ **on_hold_reason** | [**string[]**](../Model/string.md)|  | [optional]
+ **payment_method_added** | **string**|  | [optional]
+ **reminder_email_sent** | **string**|  | [optional]
+ **failed_invoices** | **string**|  | [optional]
+ **failed_amount** | **string**|  | [optional]
+ **cancelled_invoices** | **string**|  | [optional]
+ **cancelled_amount** | **string**|  | [optional]
+ **pending_invoices** | **string**|  | [optional]
+ **pending_amount** | **string**|  | [optional]
+ **dunning_invoices** | **string**|  | [optional]
+ **dunning_amount** | **string**|  | [optional]
+ **settled_invoices** | **string**|  | [optional]
+ **settled_amount** | **string**|  | [optional]
+ **refunded_amount** | **string**|  | [optional]
+ **pending_additional_costs** | **string**|  | [optional]
+ **pending_additional_cost_amount** | **string**|  | [optional]
+ **transferred_additional_costs** | **string**|  | [optional]
+ **transferred_additional_cost_amount** | **string**|  | [optional]
+ **pending_credits** | **string**|  | [optional]
+ **pending_credit_amount** | **string**|  | [optional]
+ **transferred_credits** | **string**|  | [optional]
+ **transferred_credit_amount** | **string**|  | [optional]
+ **subscription_add_on_handle** | **string**|  | [optional]
+ **add_on_handle** | **string**|  | [optional]
+ **subscription_discount_handle** | **string**|  | [optional]
+ **discount_handle** | **string**|  | [optional]
+ **coupon_handle** | **string**|  | [optional]
+ **payment_method** | **string**|  | [optional]
 
 ### Return type
 
@@ -1048,12 +1152,69 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getTransactionList**
+# **getTaxPolicyList**
+> \Reepay\Model\TaxPolicyList getTaxPolicyList($from, $to, $interval, $size, $next_page_token)
 
-> \Reepay\Model\TransactionList getTransactionList($from, $to, $interval, $size, $next_page_token, $range, $type,
-> $state, $payment_type, $invoice, $currency, $amount, $card_type, $transaction_card_type, $card_prefix, $card_postfix,
-> $card_fingerprint, $card_country, $card_gateway, $payment_method, $card_acquirer_code, $card_error_state, $card_error,
-> $payment_context, $card_acquirer_reference)
+Get list of tax policies
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\ListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+
+try {
+    $result = $apiInstance->getTaxPolicyList($from, $to, $interval, $size, $next_page_token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ListApi->getTaxPolicyList: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\TaxPolicyList**](../Model/TaxPolicyList.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getTransactionList**
+> \Reepay\Model\TransactionList getTransactionList($from, $to, $interval, $size, $next_page_token, $range, $type, $state, $payment_type, $invoice, $currency, $amount, $card_type, $transaction_card_type, $card_prefix, $card_postfix, $card_fingerprint, $card_country, $card_gateway, $payment_method, $card_acquirer_code, $card_error_state, $card_error, $payment_context, $card_acquirer_reference, $frictionless)
 
 Get list of transactions
 
@@ -1073,34 +1234,35 @@ $apiInstance = new Reepay\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | Time range from (inclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Default from if no `interval` is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before `to`
-$to = "to_example"; // string | Time range to (exclusive). Local date and time (according to account timezone) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm`, `yyyy-MM-ddTHH:mm:ss` or `yyyy-MM-ddTHH:mm:ss.SSS`. Defaults to now.
-$interval = "interval_example"; // string | Limit from `to` and interval back in time. E.g. one week. Will take precedence over `from`. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations
-$size = 20; // int | Page size between 10 and 100 (default 20)
-$next_page_token = "next_page_token_example"; // string | Next page token from previous response to get next page
-$range = "created"; // string | Time and date attribute to time limit. Either `created`, `settled`, `authorized`, `refunded` or `failed`. Default is `created`.
-$type = array("type_example"); // string[] | Transaction type, multiple can be defined. Types: `settle`, `refund` and `authorization`
-$state = array("state_example"); // string[] | Transaction state, multiple can be defined. States: `pending`, `authorized`, `processing`, `settled`, `refunded`, `failed` and `cancelled`
-$payment_type = array("payment_type_example"); // string[] | Transaction payment type, multiple can be defined. `card`, `mobilepay`, `vipps`, `swish`, `viabill`, `manual`, `applepay`, `googlepay`, `paypal`, `klarna_pay_now`, `klarna_pay_later`, `klarna_slice_it`, `klarna_direct_bank_transfer`, `klarna_direct_debit`, `resurs`, `ideal`, `p24`, `blik`, `bancontact`, `giropay`, `sepa`, `verkkopankki` or `mobilepay_subscriptions`
-$invoice = "invoice_example"; // string | Transactions for invoice by invoice handle
-$currency = array("currency_example"); // string[] | Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.
-$amount = "amount_example"; // string | Amount in minor unit interval. See documentation of intervals.
-$card_type = array("card_type_example"); // string[] | Transactions for card type. Multiple can be defined. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
-$transaction_card_type = array("transaction_card_type_example"); // string[] | Transactions with transaction card type. Multiple can be defined. `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `ffk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
-$card_prefix = "card_prefix_example"; // string | Transactions for card with prefix
-$card_postfix = "card_postfix_example"; // string | Transactions for card with postfix
-$card_fingerprint = "card_fingerprint_example"; // string | Transactions for card with postfix
-$card_country = array("card_country_example"); // string[] | Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-$card_gateway = "card_gateway_example"; // string | Transactions with card gateway.
-$payment_method = "payment_method_example"; // string | Transactions using saved payment method
-$card_acquirer_code = "card_acquirer_code_example"; // string | Transaction using card acquirer code
-$card_error_state = "card_error_state_example"; // string | Transactions with card error state. `pending`, `accepted`, `soft_declined`, `hard_declined`, or `processing_error`
-$card_error = "card_error_example"; // string | Transactions with card error state. `credit_card_expired`, `insufficient_funds`, `declined_by_acquirer`, `acquirer_communication_error`, `acquirer_error`, `acquirer_integration_error`, `acquirer_authentication_error`, `acquirer_configuration_error`, `acquirer_rejected_error`, `card_identifier_not_found`, `refund_amount_too_high`, `credit_card_lost_or_stolen`, `credit_card_suspected_fraud`, `authorization_expired`, `authorization_amount_exceeded`, `authorization_voided`, `settle_blocked`, `sca_required`, `risk_filter_block`, or `fraud_block`
-$payment_context = "payment_context_example"; // string | Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated
-$card_acquirer_reference = "card_acquirer_reference_example"; // string | Transaction with card acquirer reference
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$type = array("type_example"); // string[] | 
+$state = array("state_example"); // string[] | 
+$payment_type = array("payment_type_example"); // string[] | 
+$invoice = "invoice_example"; // string | 
+$currency = array("currency_example"); // string[] | 
+$amount = "amount_example"; // string | 
+$card_type = array("card_type_example"); // string[] | 
+$transaction_card_type = array("transaction_card_type_example"); // string[] | 
+$card_prefix = "card_prefix_example"; // string | 
+$card_postfix = "card_postfix_example"; // string | 
+$card_fingerprint = "card_fingerprint_example"; // string | 
+$card_country = array("card_country_example"); // string[] | 
+$card_gateway = "card_gateway_example"; // string | 
+$payment_method = "payment_method_example"; // string | 
+$card_acquirer_code = "card_acquirer_code_example"; // string | 
+$card_error_state = "card_error_state_example"; // string | 
+$card_error = "card_error_example"; // string | 
+$payment_context = "payment_context_example"; // string | 
+$card_acquirer_reference = "card_acquirer_reference_example"; // string | 
+$frictionless = "frictionless_example"; // string | 
 
 try {
-    $result = $apiInstance->getTransactionList($from, $to, $interval, $size, $next_page_token, $range, $type, $state, $payment_type, $invoice, $currency, $amount, $card_type, $transaction_card_type, $card_prefix, $card_postfix, $card_fingerprint, $card_country, $card_gateway, $payment_method, $card_acquirer_code, $card_error_state, $card_error, $payment_context, $card_acquirer_reference);
+    $result = $apiInstance->getTransactionList($from, $to, $interval, $size, $next_page_token, $range, $type, $state, $payment_type, $invoice, $currency, $amount, $card_type, $transaction_card_type, $card_prefix, $card_postfix, $card_fingerprint, $card_country, $card_gateway, $payment_method, $card_acquirer_code, $card_error_state, $card_error, $payment_context, $card_acquirer_reference, $frictionless);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->getTransactionList: ', $e->getMessage(), PHP_EOL;
@@ -1110,37 +1272,105 @@ try {
 
 ### Parameters
 
- Name                        | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Notes                           
------------------------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------
- **from**                    | **string**                         | Time range from (inclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Default from if no &#x60;interval&#x60; is given depends on the query. If the query limits on relation e.g. customer and/or subscription, the default from will be epoch 1970-01-01, otherwise one month before &#x60;to&#x60;                                                                                                                                                                                                                                                                                            | [optional]                      
- **to**                      | **string**                         | Time range to (exclusive). Local date and time (according to account timezone) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60;, &#x60;yyyy-MM-ddTHH:mm:ss&#x60; or &#x60;yyyy-MM-ddTHH:mm:ss.SSS&#x60;. Defaults to now.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **interval**                | **string**                         | Limit from &#x60;to&#x60; and interval back in time. E.g. one week. Will take precedence over &#x60;from&#x60;. Defined in ISO 8601 duration. See https://en.wikipedia.org/wiki/ISO_8601#Durations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **size**                    | **int**                            | Page size between 10 and 100 (default 20)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | [optional] [default to 20]      
- **next_page_token**         | **string**                         | Next page token from previous response to get next page                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **range**                   | **string**                         | Time and date attribute to time limit. Either &#x60;created&#x60;, &#x60;settled&#x60;, &#x60;authorized&#x60;, &#x60;refunded&#x60; or &#x60;failed&#x60;. Default is &#x60;created&#x60;.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | [optional] [default to created] 
- **type**                    | [**string[]**](../Model/string.md) | Transaction type, multiple can be defined. Types: &#x60;settle&#x60;, &#x60;refund&#x60; and &#x60;authorization&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | [optional]                      
- **state**                   | [**string[]**](../Model/string.md) | Transaction state, multiple can be defined. States: &#x60;pending&#x60;, &#x60;authorized&#x60;, &#x60;processing&#x60;, &#x60;settled&#x60;, &#x60;refunded&#x60;, &#x60;failed&#x60; and &#x60;cancelled&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **payment_type**            | [**string[]**](../Model/string.md) | Transaction payment type, multiple can be defined. &#x60;card&#x60;, &#x60;mobilepay&#x60;, &#x60;vipps&#x60;, &#x60;swish&#x60;, &#x60;viabill&#x60;, &#x60;manual&#x60;, &#x60;applepay&#x60;, &#x60;googlepay&#x60;, &#x60;paypal&#x60;, &#x60;klarna_pay_now&#x60;, &#x60;klarna_pay_later&#x60;, &#x60;klarna_slice_it&#x60;, &#x60;klarna_direct_bank_transfer&#x60;, &#x60;klarna_direct_debit&#x60;, &#x60;resurs&#x60;, &#x60;ideal&#x60;, &#x60;p24&#x60;, &#x60;blik&#x60;, &#x60;bancontact&#x60;, &#x60;giropay&#x60;, &#x60;sepa&#x60;, &#x60;verkkopankki&#x60; or &#x60;mobilepay_subscriptions&#x60;                                                                                                                                                      | [optional]                      
- **invoice**                 | **string**                         | Transactions for invoice by invoice handle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [optional]                      
- **currency**                | [**string[]**](../Model/string.md) | Currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. Multiple can be defined.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **amount**                  | **string**                         | Amount in minor unit interval. See documentation of intervals.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [optional]                      
- **card_type**               | [**string[]**](../Model/string.md) | Transactions for card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                                        | [optional]                      
- **transaction_card_type**   | [**string[]**](../Model/string.md) | Transactions with transaction card type. Multiple can be defined. &#x60;unknown&#x60;, &#x60;visa&#x60;, &#x60;mc&#x60;, &#x60;dankort&#x60;, &#x60;visa_dk&#x60;, &#x60;ffk&#x60;, &#x60;visa_elec&#x60;, &#x60;maestro&#x60;, &#x60;laser&#x60;, &#x60;amex&#x60;, &#x60;diners&#x60;, &#x60;discover&#x60; or &#x60;jcb&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                           | [optional]                      
- **card_prefix**             | **string**                         | Transactions for card with prefix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [optional]                      
- **card_postfix**            | **string**                         | Transactions for card with postfix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **card_fingerprint**        | **string**                         | Transactions for card with postfix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | [optional]                      
- **card_country**            | [**string[]**](../Model/string.md) | Transactions with card country. Multiple can be defined. In  in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | [optional]                      
- **card_gateway**            | **string**                         | Transactions with card gateway.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | [optional]                      
- **payment_method**          | **string**                         | Transactions using saved payment method                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | [optional]                      
- **card_acquirer_code**      | **string**                         | Transaction using card acquirer code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **card_error_state**        | **string**                         | Transactions with card error state. &#x60;pending&#x60;, &#x60;accepted&#x60;, &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60;, or &#x60;processing_error&#x60;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [optional]                      
- **card_error**              | **string**                         | Transactions with card error state. &#x60;credit_card_expired&#x60;, &#x60;insufficient_funds&#x60;, &#x60;declined_by_acquirer&#x60;, &#x60;acquirer_communication_error&#x60;, &#x60;acquirer_error&#x60;, &#x60;acquirer_integration_error&#x60;, &#x60;acquirer_authentication_error&#x60;, &#x60;acquirer_configuration_error&#x60;, &#x60;acquirer_rejected_error&#x60;, &#x60;card_identifier_not_found&#x60;, &#x60;refund_amount_too_high&#x60;, &#x60;credit_card_lost_or_stolen&#x60;, &#x60;credit_card_suspected_fraud&#x60;, &#x60;authorization_expired&#x60;, &#x60;authorization_amount_exceeded&#x60;, &#x60;authorization_voided&#x60;, &#x60;settle_blocked&#x60;, &#x60;sca_required&#x60;, &#x60;risk_filter_block&#x60;, or &#x60;fraud_block&#x60; | [optional]                      
- **payment_context**         | **string**                         | Transaction payment context: cit - customer initiated, cit-cof customer initiated using stored information or mit - merchant initiated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | [optional]                      
- **card_acquirer_reference** | **string**                         | Transaction with card acquirer reference                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [optional]                      
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **type** | [**string[]**](../Model/string.md)|  | [optional]
+ **state** | [**string[]**](../Model/string.md)|  | [optional]
+ **payment_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **invoice** | **string**|  | [optional]
+ **currency** | [**string[]**](../Model/string.md)|  | [optional]
+ **amount** | **string**|  | [optional]
+ **card_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **transaction_card_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **card_prefix** | **string**|  | [optional]
+ **card_postfix** | **string**|  | [optional]
+ **card_fingerprint** | **string**|  | [optional]
+ **card_country** | [**string[]**](../Model/string.md)|  | [optional]
+ **card_gateway** | **string**|  | [optional]
+ **payment_method** | **string**|  | [optional]
+ **card_acquirer_code** | **string**|  | [optional]
+ **card_error_state** | **string**|  | [optional]
+ **card_error** | **string**|  | [optional]
+ **payment_context** | **string**|  | [optional]
+ **card_acquirer_reference** | **string**|  | [optional]
+ **frictionless** | **string**|  | [optional]
 
 ### Return type
 
 [**\Reepay\Model\TransactionList**](../Model/TransactionList.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getWebhookList**
+> \Reepay\Model\WebhookList getWebhookList($from, $to, $interval, $size, $next_page_token, $range, $state, $event)
+
+Get list of webhooks
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\ListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
+$interval = "interval_example"; // string | 
+$size = 20; // int | 
+$next_page_token = "next_page_token_example"; // string | 
+$range = "created"; // string | 
+$state = "state_example"; // string | 
+$event = "event_example"; // string | 
+
+try {
+    $result = $apiInstance->getWebhookList($from, $to, $interval, $size, $next_page_token, $range, $state, $event);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ListApi->getWebhookList: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
+ **interval** | **string**|  | [optional]
+ **size** | **int**|  | [optional] [default to 20]
+ **next_page_token** | **string**|  | [optional]
+ **range** | **string**|  | [optional] [default to created]
+ **state** | **string**|  | [optional]
+ **event** | **string**|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\WebhookList**](../Model/WebhookList.md)
 
 ### Authorization
 

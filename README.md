@@ -409,242 +409,277 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Class               | Method                                                                                                     | HTTP request                                                          | Description                                                                                                                                 
----------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------
- *AccountApi*        | [**createPrivateKey**](docs/Api/AccountApi.md#createprivatekey)                                            | **POST** /v1/account/privkey                                          | Create private key                                                                                                                          
- *AccountApi*        | [**createPublicKey**](docs/Api/AccountApi.md#createpublickey)                                              | **POST** /v1/account/pubkey                                           | Create public key                                                                                                                           
- *AccountApi*        | [**expirePrivateKey**](docs/Api/AccountApi.md#expireprivatekey)                                            | **POST** /v1/account/privkey/{key}/expire                             | Expire private key                                                                                                                          
- *AccountApi*        | [**expirePublicKey**](docs/Api/AccountApi.md#expirepublickey)                                              | **POST** /v1/account/pubkey/{key}/expire                              | Expire public key                                                                                                                           
- *AccountApi*        | [**generateWebhookSecret**](docs/Api/AccountApi.md#generatewebhooksecret)                                  | **POST** /v1/account/webhook_settings/secret                          | Generate new webhook secret                                                                                                                 
- *AccountApi*        | [**getCurrentAccount**](docs/Api/AccountApi.md#getcurrentaccount)                                          | **GET** /v1/account                                                   | Get account                                                                                                                                 
- *AccountApi*        | [**getDiscountSettings**](docs/Api/AccountApi.md#getdiscountsettings)                                      | **GET** /v1/account/discount_settings                                 | Get discount settings                                                                                                                       
- *AccountApi*        | [**getMailSettings**](docs/Api/AccountApi.md#getmailsettings)                                              | **GET** /v1/account/mail_settings                                     | Get mail settings                                                                                                                           
- *AccountApi*        | [**getMfaSettings**](docs/Api/AccountApi.md#getmfasettings)                                                | **GET** /v1/account/mfa_settings                                      | Get account MFA settings                                                                                                                    
- *AccountApi*        | [**getPrivateKeys**](docs/Api/AccountApi.md#getprivatekeys)                                                | **GET** /v1/account/privkey                                           | Get list of private keys                                                                                                                    
- *AccountApi*        | [**getPublicKeys**](docs/Api/AccountApi.md#getpublickeys)                                                  | **GET** /v1/account/pubkey                                            | Get list of public keys                                                                                                                     
- *AccountApi*        | [**getTerms**](docs/Api/AccountApi.md#getterms)                                                            | **GET** /v1/account/terms                                             | Get terms                                                                                                                                   
- *AccountApi*        | [**getWebhookSettings**](docs/Api/AccountApi.md#getwebhooksettings)                                        | **GET** /v1/account/webhook_settings                                  | Get webhook settings                                                                                                                        
- *AccountApi*        | [**updateAccountJson**](docs/Api/AccountApi.md#updateaccountjson)                                          | **PUT** /v1/account                                                   | Update account                                                                                                                              
- *AccountApi*        | [**updateDiscountSettings**](docs/Api/AccountApi.md#updatediscountsettings)                                | **PUT** /v1/account/discount_settings                                 | Update discount settings                                                                                                                    
- *AccountApi*        | [**updateMailSettingsJson**](docs/Api/AccountApi.md#updatemailsettingsjson)                                | **PUT** /v1/account/mail_settings                                     | Update mail settings                                                                                                                        
- *AccountApi*        | [**updateMfaSettings**](docs/Api/AccountApi.md#updatemfasettings)                                          | **PUT** /v1/account/mfa_settings                                      | Update account MFA settings                                                                                                                 
- *AccountApi*        | [**updateTerms**](docs/Api/AccountApi.md#updateterms)                                                      | **POST** /v1/account/terms                                            | Create or update terms                                                                                                                      
- *AccountApi*        | [**updateWebhookSettingsJson**](docs/Api/AccountApi.md#updatewebhooksettingsjson)                          | **PUT** /v1/account/webhook_settings                                  | Update webhook settings                                                                                                                     
- *AddOnApi*          | [**createAddOn**](docs/Api/AddOnApi.md#createaddon)                                                        | **POST** /v1/add_on                                                   | Create add-on                                                                                                                               
- *AddOnApi*          | [**deleteAddOn**](docs/Api/AddOnApi.md#deleteaddon)                                                        | **DELETE** /v1/add_on/{handle}                                        | Delete add-on                                                                                                                               
- *AddOnApi*          | [**deleteMetadata**](docs/Api/AddOnApi.md#deletemetadata)                                                  | **DELETE** /v1/add_on/{handle}/metadata                               | Delete metadata                                                                                                                             
- *AddOnApi*          | [**getAddOn**](docs/Api/AddOnApi.md#getaddon)                                                              | **GET** /v1/add_on/{handle}                                           | Get add-on                                                                                                                                  
- *AddOnApi*          | [**getMetadata**](docs/Api/AddOnApi.md#getmetadata)                                                        | **GET** /v1/add_on/{handle}/metadata                                  | Get metadata                                                                                                                                
- *AddOnApi*          | [**undeleteAddOn**](docs/Api/AddOnApi.md#undeleteaddon)                                                    | **POST** /v1/add_on/{handle}/undelete                                 | Un-delete add-on                                                                                                                            
- *AddOnApi*          | [**updateAddOn**](docs/Api/AddOnApi.md#updateaddon)                                                        | **PUT** /v1/add_on/{handle}                                           | Update add-on                                                                                                                               
- *AddOnApi*          | [**updateMetadata**](docs/Api/AddOnApi.md#updatemetadata)                                                  | **PUT** /v1/add_on/{handle}/metadata                                  | Create or update metadata                                                                                                                   
- *AdditionalCostApi* | [**cancelAdditionalCost**](docs/Api/AdditionalCostApi.md#canceladditionalcost)                             | **POST** /v1/additional_cost/{handle}/cancel                          | Cancel pending additional cost                                                                                                              
- *AdditionalCostApi* | [**createAdditionalCostJson**](docs/Api/AdditionalCostApi.md#createadditionalcostjson)                     | **POST** /v1/additional_cost                                          | Create additional cost                                                                                                                      
- *AdditionalCostApi* | [**getAdditionalCost**](docs/Api/AdditionalCostApi.md#getadditionalcost)                                   | **GET** /v1/additional_cost/{handle}                                  | Get additional cost                                                                                                                         
- *AdditionalCostApi* | [**getAdditionalCosts**](docs/Api/AdditionalCostApi.md#getadditionalcosts)                                 | **GET** /v1/additional_cost/subscription/{handle}                     | Get additional costs for subscription                                                                                                       
- *AgreementApi*      | [**activateMpsAgreement**](docs/Api/AgreementApi.md#activatempsagreement)                                  | **POST** /v1/agreement/{id}/mps_activate                              | Activate mps agreement by selecting provider                                                                                                
- *AgreementApi*      | [**createAnydayAgreement**](docs/Api/AgreementApi.md#createanydayagreement)                                | **POST** /v1/agreement/anyday                                         | Create Anyday agreement                                                                                                                     
- *AgreementApi*      | [**createApplepayAgreement**](docs/Api/AgreementApi.md#createapplepayagreement)                            | **POST** /v1/agreement/applepay                                       | Create ApplePay agreement                                                                                                                   
- *AgreementApi*      | [**createCardGatewayAgreement**](docs/Api/AgreementApi.md#createcardgatewayagreement)                      | **POST** /v1/agreement/card_gateway                                   | Create card gateway agreement                                                                                                               
- *AgreementApi*      | [**createGooglepayAgreement**](docs/Api/AgreementApi.md#creategooglepayagreement)                          | **POST** /v1/agreement/googlepay                                      | Create GooglePay agreement                                                                                                                  
- *AgreementApi*      | [**createKlarnaAgreement**](docs/Api/AgreementApi.md#createklarnaagreement)                                | **POST** /v1/agreement/klarna                                         | Create Klarna agreement                                                                                                                     
- *AgreementApi*      | [**createMpoAgreement**](docs/Api/AgreementApi.md#creatempoagreement)                                      | **POST** /v1/agreement/mpo                                            | Create MobilePay Online agreement                                                                                                           
- *AgreementApi*      | [**createMpsAgreement**](docs/Api/AgreementApi.md#creatempsagreement)                                      | **POST** /v1/agreement/mps                                            | Create pending MobilePay Subscriptions agreement                                                                                            
- *AgreementApi*      | [**createPaypalAgreement**](docs/Api/AgreementApi.md#createpaypalagreement)                                | **POST** /v1/agreement/paypal                                         | Create PayPal agreement                                                                                                                     
- *AgreementApi*      | [**createPproAgreement**](docs/Api/AgreementApi.md#createpproagreement)                                    | **POST** /v1/agreement/ppro                                           | Create ppro agreement                                                                                                                       
- *AgreementApi*      | [**createResursAgreement**](docs/Api/AgreementApi.md#createresursagreement)                                | **POST** /v1/agreement/resurs                                         | Create Resurs agreement                                                                                                                     
- *AgreementApi*      | [**createSwishAgreement**](docs/Api/AgreementApi.md#createswishagreement)                                  | **POST** /v1/agreement/swish                                          | Create Swish agreement                                                                                                                      
- *AgreementApi*      | [**createTokenRequestor**](docs/Api/AgreementApi.md#createtokenrequestor)                                  | **POST** /v1/agreement/token_requestor/onboard                        | Create token requestor                                                                                                                      
- *AgreementApi*      | [**createViabillAgreement**](docs/Api/AgreementApi.md#createviabillagreement)                              | **POST** /v1/agreement/viabill                                        | Create ViaBill agreement                                                                                                                    
- *AgreementApi*      | [**createVippsAgreement**](docs/Api/AgreementApi.md#createvippsagreement)                                  | **POST** /v1/agreement/vipps                                          | Create Vipps agreement                                                                                                                      
- *AgreementApi*      | [**createVippsRecurringAgreement**](docs/Api/AgreementApi.md#createvippsrecurringagreement)                | **POST** /v1/agreement/vipps_recurring                                | Create Vipps Recurring agreement                                                                                                            
- *AgreementApi*      | [**deleteGatewayAgreement**](docs/Api/AgreementApi.md#deletegatewayagreement)                              | **DELETE** /v1/agreement/{id}                                         | Delete gateway agreement                                                                                                                    
- *AgreementApi*      | [**deleteTokenRequestor**](docs/Api/AgreementApi.md#deletetokenrequestor)                                  | **DELETE** /v1/agreement/token_requestor                              | Delete token requestor by id for card type                                                                                                  
- *AgreementApi*      | [**disableGatewayAgreement**](docs/Api/AgreementApi.md#disablegatewayagreement)                            | **POST** /v1/agreement/{id}/disable                                   | Disable gateway agreement                                                                                                                   
- *AgreementApi*      | [**enableGatewayAgreement**](docs/Api/AgreementApi.md#enablegatewayagreement)                              | **POST** /v1/agreement/{id}/enable                                    | Enable gateway agreement                                                                                                                    
- *AgreementApi*      | [**getCardGatewayAgreements**](docs/Api/AgreementApi.md#getcardgatewayagreements)                          | **GET** /v1/agreement/card_gateway                                    | Get all card gateway agreements                                                                                                             
- *AgreementApi*      | [**getGatewayAgreement**](docs/Api/AgreementApi.md#getgatewayagreement)                                    | **GET** /v1/agreement/{id}                                            | Get gateway agreement                                                                                                                       
- *AgreementApi*      | [**getGatewayAgreements**](docs/Api/AgreementApi.md#getgatewayagreements)                                  | **GET** /v1/agreement                                                 | Get all agreements                                                                                                                          
- *AgreementApi*      | [**getTokenRequestor**](docs/Api/AgreementApi.md#gettokenrequestor)                                        | **GET** /v1/agreement/token_requestor                                 | Get token requestors for card type                                                                                                          
- *AgreementApi*      | [**updateAnydayAgreement**](docs/Api/AgreementApi.md#updateanydayagreement)                                | **PUT** /v1/agreement/anyday/{id}                                     | Update Anyday agreement                                                                                                                     
- *AgreementApi*      | [**updateApplepayAgreement**](docs/Api/AgreementApi.md#updateapplepayagreement)                            | **PUT** /v1/agreement/applepay/{id}                                   | Update ApplePay agreement                                                                                                                   
- *AgreementApi*      | [**updateCardGatewayAgreement**](docs/Api/AgreementApi.md#updatecardgatewayagreement)                      | **PUT** /v1/agreement/card_gateway/{id}                               | Update card gateway agreement                                                                                                               
- *AgreementApi*      | [**updateGooglepayAgreement**](docs/Api/AgreementApi.md#updategooglepayagreement)                          | **PUT** /v1/agreement/googlepay/{id}                                  | Update GooglePay agreement                                                                                                                  
- *AgreementApi*      | [**updateKlarnaAgreement**](docs/Api/AgreementApi.md#updateklarnaagreement)                                | **PUT** /v1/agreement/klarna/{id}                                     | Update Klarna agreement                                                                                                                     
- *AgreementApi*      | [**updateMpoAgreement**](docs/Api/AgreementApi.md#updatempoagreement)                                      | **PUT** /v1/agreement/mpo/{id}                                        | Update MobilePay Online agreement                                                                                                           
- *AgreementApi*      | [**updateMpsAgreement**](docs/Api/AgreementApi.md#updatempsagreement)                                      | **PUT** /v1/agreement/mps/{id}                                        | Update mps agreement                                                                                                                        
- *AgreementApi*      | [**updatePaypalAgreement**](docs/Api/AgreementApi.md#updatepaypalagreement)                                | **PUT** /v1/agreement/paypal/{id}                                     | Update PayPal agreement                                                                                                                     
- *AgreementApi*      | [**updatePproAgreement**](docs/Api/AgreementApi.md#updatepproagreement)                                    | **PUT** /v1/agreement/ppro/{id}                                       | Update ppro agreement                                                                                                                       
- *AgreementApi*      | [**updateResursAgreement**](docs/Api/AgreementApi.md#updateresursagreement)                                | **PUT** /v1/agreement/resurs/{id}                                     | Update Resurs agreement                                                                                                                     
- *AgreementApi*      | [**updateSwishAgreement**](docs/Api/AgreementApi.md#updateswishagreement)                                  | **PUT** /v1/agreement/swish/{id}                                      | Update Swish agreement                                                                                                                      
- *AgreementApi*      | [**updateViabillAgreement**](docs/Api/AgreementApi.md#updateviabillagreement)                              | **PUT** /v1/agreement/viabill/{id}                                    | Update ViaBill agreement                                                                                                                    
- *AgreementApi*      | [**updateVippsAgreement**](docs/Api/AgreementApi.md#updatevippsagreement)                                  | **PUT** /v1/agreement/vipps/{id}                                      | Update Vipps agreement                                                                                                                      
- *AgreementApi*      | [**updateVippsRecurringAgreement**](docs/Api/AgreementApi.md#updatevippsrecurringagreement)                | **PUT** /v1/agreement/vipps_recurring/{id}                            | Update Vipps Recurring agreement                                                                                                            
- *AuthenticateApi*   | [**login**](docs/Api/AuthenticateApi.md#login)                                                             | **POST** /v1/authenticate/login                                       | User login                                                                                                                                  
- *AuthenticateApi*   | [**renew**](docs/Api/AuthenticateApi.md#renew)                                                             | **POST** /v1/authenticate/renew                                       | Renew user login                                                                                                                            
- *AuthenticateApi*   | [**verifyAuthentication**](docs/Api/AuthenticateApi.md#verifyauthentication)                               | **GET** /v1/authenticate/verify                                       | Verify authentication                                                                                                                       
- *ChargeApi*         | [**cancelCharge**](docs/Api/ChargeApi.md#cancelcharge)                                                     | **POST** /v1/charge/{handle}/cancel                                   | Cancel charge                                                                                                                               
- *ChargeApi*         | [**createCharge**](docs/Api/ChargeApi.md#createcharge)                                                     | **POST** /v1/charge                                                   | Create charge                                                                                                                               
- *ChargeApi*         | [**deleteCreatedInvoice**](docs/Api/ChargeApi.md#deletecreatedinvoice)                                     | **DELETE** /v1/charge/{id}                                            | Delete created charge                                                                                                                       
- *ChargeApi*         | [**getCharge**](docs/Api/ChargeApi.md#getcharge)                                                           | **GET** /v1/charge/{handle}                                           | Get charge                                                                                                                                  
- *ChargeApi*         | [**prepareCharge**](docs/Api/ChargeApi.md#preparecharge)                                                   | **POST** /v1/charge/prepare                                           | Prepare charge                                                                                                                              
- *ChargeApi*         | [**settleCharge**](docs/Api/ChargeApi.md#settlecharge)                                                     | **POST** /v1/charge/{handle}/settle                                   | Settle charge                                                                                                                               
- *CouponApi*         | [**createCoupon**](docs/Api/CouponApi.md#createcoupon)                                                     | **POST** /v1/coupon                                                   | Create coupon                                                                                                                               
- *CouponApi*         | [**deleteCoupon**](docs/Api/CouponApi.md#deletecoupon)                                                     | **DELETE** /v1/coupon/{handle}                                        | Delete coupon                                                                                                                               
- *CouponApi*         | [**expireCoupon**](docs/Api/CouponApi.md#expirecoupon)                                                     | **POST** /v1/coupon/{handle}/expire                                   | Expire coupon                                                                                                                               
- *CouponApi*         | [**getCoupon**](docs/Api/CouponApi.md#getcoupon)                                                           | **GET** /v1/coupon/{handle}                                           | Get coupon                                                                                                                                  
- *CouponApi*         | [**updateCoupon**](docs/Api/CouponApi.md#updatecoupon)                                                     | **PUT** /v1/coupon/{handle}                                           | Update coupon                                                                                                                               
- *CouponApi*         | [**validateCode**](docs/Api/CouponApi.md#validatecode)                                                     | **GET** /v1/coupon/code/validate                                      | Validate coupon                                                                                                                             
- *CreditApi*         | [**cancelCredit**](docs/Api/CreditApi.md#cancelcredit)                                                     | **POST** /v1/credit/{handle}/cancel                                   | Cancel credit                                                                                                                               
- *CreditApi*         | [**createCreditJson**](docs/Api/CreditApi.md#createcreditjson)                                             | **POST** /v1/credit                                                   | Create credit                                                                                                                               
- *CreditApi*         | [**getCredit**](docs/Api/CreditApi.md#getcredit)                                                           | **GET** /v1/credit/{handle}                                           | Get credit                                                                                                                                  
- *CreditApi*         | [**getCredits**](docs/Api/CreditApi.md#getcredits)                                                         | **GET** /v1/credit/subscription/{handle}                              | Get credits for subscription                                                                                                                
- *CustomerApi*       | [**createCustomerInvoice**](docs/Api/CustomerApi.md#createcustomerinvoice)                                 | **POST** /v1/customer/{handle}/invoice                                | Create invoice for customer                                                                                                                 
- *CustomerApi*       | [**createCustomerJson**](docs/Api/CustomerApi.md#createcustomerjson)                                       | **POST** /v1/customer                                                 | Create customer                                                                                                                             
- *CustomerApi*       | [**createCustomerNoteJson**](docs/Api/CustomerApi.md#createcustomernotejson)                               | **POST** /v1/customer/{handle}/note                                   | Create customer note                                                                                                                        
- *CustomerApi*       | [**deleteCustomer**](docs/Api/CustomerApi.md#deletecustomer)                                               | **DELETE** /v1/customer/{handle}                                      | Delete customer                                                                                                                             
- *CustomerApi*       | [**deleteMetadata1**](docs/Api/CustomerApi.md#deletemetadata1)                                             | **DELETE** /v1/customer/{handle}/metadata                             | Delete metadata                                                                                                                             
- *CustomerApi*       | [**getCustomer**](docs/Api/CustomerApi.md#getcustomer)                                                     | **GET** /v1/customer/{handle}                                         | Get customer                                                                                                                                
- *CustomerApi*       | [**getCustomerNotes**](docs/Api/CustomerApi.md#getcustomernotes)                                           | **GET** /v1/customer/{handle}/note                                    | Get customer notes                                                                                                                          
- *CustomerApi*       | [**getMetadata1**](docs/Api/CustomerApi.md#getmetadata1)                                                   | **GET** /v1/customer/{handle}/metadata                                | Get metadata                                                                                                                                
- *CustomerApi*       | [**updateCustomerJson**](docs/Api/CustomerApi.md#updatecustomerjson)                                       | **PUT** /v1/customer/{handle}                                         | Update customer                                                                                                                             
- *CustomerApi*       | [**updateMetadata1**](docs/Api/CustomerApi.md#updatemetadata1)                                             | **PUT** /v1/customer/{handle}/metadata                                | Create or update metadata                                                                                                                   
- *DiscountApi*       | [**createDiscount**](docs/Api/DiscountApi.md#creatediscount)                                               | **POST** /v1/discount                                                 | Create discount                                                                                                                             
- *DiscountApi*       | [**deleteDiscount**](docs/Api/DiscountApi.md#deletediscount)                                               | **DELETE** /v1/discount/{handle}                                      | Delete discount                                                                                                                             
- *DiscountApi*       | [**getDiscount**](docs/Api/DiscountApi.md#getdiscount)                                                     | **GET** /v1/discount/{handle}                                         | Get discount                                                                                                                                
- *DiscountApi*       | [**undeleteDiscount**](docs/Api/DiscountApi.md#undeletediscount)                                           | **POST** /v1/discount/{handle}/undelete                               | Undelete discount                                                                                                                           
- *DiscountApi*       | [**updateDiscount**](docs/Api/DiscountApi.md#updatediscount)                                               | **PUT** /v1/discount/{handle}                                         | Update discount                                                                                                                             
- *DunningPlanApi*    | [**createDunningPlanJson**](docs/Api/DunningPlanApi.md#createdunningplanjson)                              | **POST** /v1/dunning_plan                                             | Create dunning plan                                                                                                                         
- *DunningPlanApi*    | [**deleteDunningPlan**](docs/Api/DunningPlanApi.md#deletedunningplan)                                      | **DELETE** /v1/dunning_plan/{handle}                                  | Delete dunning plan                                                                                                                         
- *DunningPlanApi*    | [**getDunningPlan**](docs/Api/DunningPlanApi.md#getdunningplan)                                            | **GET** /v1/dunning_plan/{handle}                                     | Get dunning plan                                                                                                                            
- *DunningPlanApi*    | [**getDunningPlans**](docs/Api/DunningPlanApi.md#getdunningplans)                                          | **GET** /v1/dunning_plan                                              | Get list of dunning plans                                                                                                                   
- *DunningPlanApi*    | [**updateJson**](docs/Api/DunningPlanApi.md#updatejson)                                                    | **PUT** /v1/dunning_plan/{handle}                                     | Update dunning plan                                                                                                                         
- *EventApi*          | [**getEvent**](docs/Api/EventApi.md#getevent)                                                              | **GET** /v1/event/{id}                                                | Get event                                                                                                                                   
- *EventApi*          | [**getEvents**](docs/Api/EventApi.md#getevents)                                                            | **GET** /v1/event                                                     | Get list of events                                                                                                                          
- *InvoiceApi*        | [**cancelAllDunningPending**](docs/Api/InvoiceApi.md#cancelalldunningpending)                              | **POST** /v1/invoice/cancel_all_dunning_pending/subscription/{handle} | Cancel all dunning and pending                                                                                                              
- *InvoiceApi*        | [**cancelInvoice**](docs/Api/InvoiceApi.md#cancelinvoice)                                                  | **POST** /v1/invoice/{id}/cancel                                      | Cancel invoice                                                                                                                              
- *InvoiceApi*        | [**cancelSettleLater**](docs/Api/InvoiceApi.md#cancelsettlelater)                                          | **POST** /v1/invoice/{id}/settle/cancel                               | Cancel settle later                                                                                                                         
- *InvoiceApi*        | [**cancelTransaction**](docs/Api/InvoiceApi.md#canceltransaction)                                          | **POST** /v1/invoice/{id}/transaction/{transaction}/cancel            | Cancel transaction                                                                                                                          
- *InvoiceApi*        | [**createOrUpdateBillingAddress**](docs/Api/InvoiceApi.md#createorupdatebillingaddress)                    | **PUT** /v1/invoice/{id}/billing_address                              | Create or update invoice billing address                                                                                                    
- *InvoiceApi*        | [**createOrUpdateShippingAddress**](docs/Api/InvoiceApi.md#createorupdateshippingaddress)                  | **PUT** /v1/invoice/{id}/shipping_address                             | Create or update invoice shipping address                                                                                                   
- *InvoiceApi*        | [**deleteBillingAddress**](docs/Api/InvoiceApi.md#deletebillingaddress)                                    | **DELETE** /v1/invoice/{id}/billing_address                           | Delete invoice billing address                                                                                                              
- *InvoiceApi*        | [**deleteMetadata2**](docs/Api/InvoiceApi.md#deletemetadata2)                                              | **DELETE** /v1/invoice/{handle}/metadata                              | Delete metadata                                                                                                                             
- *InvoiceApi*        | [**deleteShippingAddress**](docs/Api/InvoiceApi.md#deleteshippingaddress)                                  | **DELETE** /v1/invoice/{id}/shipping_address                          | Delete invoice shipping address                                                                                                             
- *InvoiceApi*        | [**detachFromSubscription**](docs/Api/InvoiceApi.md#detachfromsubscription)                                | **POST** /v1/invoice/{id}/detach                                      | Detach from subscription                                                                                                                    
- *InvoiceApi*        | [**extendKAuthTransaction**](docs/Api/InvoiceApi.md#extendkauthtransaction)                                | **POST** /v1/invoice/{id}/transaction/{transaction}/extend            | Extend authorization transaction                                                                                                            
- *InvoiceApi*        | [**extendKlarnaTransaction**](docs/Api/InvoiceApi.md#extendklarnatransaction)                              | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna     | Extend Klarna authorization transaction                                                                                                     
- *InvoiceApi*        | [**failInvoice**](docs/Api/InvoiceApi.md#failinvoice)                                                      | **POST** /v1/invoice/{id}/fail                                        | Fail invoice                                                                                                                                
- *InvoiceApi*        | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice)                                                        | **GET** /v1/invoice/{id}                                              | Get invoice                                                                                                                                 
- *InvoiceApi*        | [**getMetadata2**](docs/Api/InvoiceApi.md#getmetadata2)                                                    | **GET** /v1/invoice/{handle}/metadata                                 | Get metadata                                                                                                                                
- *InvoiceApi*        | [**manualSettle**](docs/Api/InvoiceApi.md#manualsettle)                                                    | **POST** /v1/invoice/{id}/manual_settle                               | Manual settle                                                                                                                               
- *InvoiceApi*        | [**reactivateInvoice**](docs/Api/InvoiceApi.md#reactivateinvoice)                                          | **POST** /v1/invoice/{id}/reactivate                                  | Reactivate invoice                                                                                                                          
- *InvoiceApi*        | [**settle**](docs/Api/InvoiceApi.md#settle)                                                                | **POST** /v1/invoice/{id}/settle                                      | Settle                                                                                                                                      
- *InvoiceApi*        | [**transaction**](docs/Api/InvoiceApi.md#transaction)                                                      | **GET** /v1/invoice/{id}/transaction/{transaction}                    | Get transaction                                                                                                                             
- *InvoiceApi*        | [**transactionDetails**](docs/Api/InvoiceApi.md#transactiondetails)                                        | **GET** /v1/invoice/{id}/transaction/{transaction}/details            | Get transaction details                                                                                                                     
- *InvoiceApi*        | [**updateMetadata2**](docs/Api/InvoiceApi.md#updatemetadata2)                                              | **PUT** /v1/invoice/{handle}/metadata                                 | Create or update metadata                                                                                                                   
- *ListApi*           | [**getAddOnList**](docs/Api/ListApi.md#getaddonlist)                                                       | **GET** /v1/list/add_on                                               | Get list of add-ons                                                                                                                         
- *ListApi*           | [**getChargeList**](docs/Api/ListApi.md#getchargelist)                                                     | **GET** /v1/list/charge                                               | Get list of charges                                                                                                                         
- *ListApi*           | [**getCouponList**](docs/Api/ListApi.md#getcouponlist)                                                     | **GET** /v1/list/coupon                                               | Get list of coupons                                                                                                                         
- *ListApi*           | [**getCustomerList**](docs/Api/ListApi.md#getcustomerlist)                                                 | **GET** /v1/list/customer                                             | Get list of customers                                                                                                                       
- *ListApi*           | [**getDiscountList**](docs/Api/ListApi.md#getdiscountlist)                                                 | **GET** /v1/list/discount                                             | Get list of discounts                                                                                                                       
- *ListApi*           | [**getInvoiceList**](docs/Api/ListApi.md#getinvoicelist)                                                   | **GET** /v1/list/invoice                                              | Get list of invoices                                                                                                                        
- *ListApi*           | [**getPaymentMethodList**](docs/Api/ListApi.md#getpaymentmethodlist)                                       | **GET** /v1/list/payment_method                                       | Get list of payment methods                                                                                                                 
- *ListApi*           | [**getPayoutList**](docs/Api/ListApi.md#getpayoutlist)                                                     | **GET** /v1/list/payout                                               | Get list of payouts                                                                                                                         
- *ListApi*           | [**getPlanList**](docs/Api/ListApi.md#getplanlist)                                                         | **GET** /v1/list/plan                                                 | Get list of plans                                                                                                                           
- *ListApi*           | [**getSubscriptionList**](docs/Api/ListApi.md#getsubscriptionlist)                                         | **GET** /v1/list/subscription                                         | Get list of subscriptions                                                                                                                   
- *ListApi*           | [**getTransactionList**](docs/Api/ListApi.md#gettransactionlist)                                           | **GET** /v1/list/transaction                                          | Get list of transactions                                                                                                                    
- *MailTemplateApi*   | [**getSample**](docs/Api/MailTemplateApi.md#getsample)                                                     | **GET** /v1/mail_template/sample                                      | Get sample data                                                                                                                             
- *OrganisationApi*   | [**getOrganisation**](docs/Api/OrganisationApi.md#getorganisation)                                         | **GET** /v1/organisation                                              | Get organisation                                                                                                                            
- *OrganisationApi*   | [**update**](docs/Api/OrganisationApi.md#update)                                                           | **PUT** /v1/organisation                                              | Update organisation                                                                                                                         
- *PaymentMethodApi*  | [**activatePaymentMethodV2**](docs/Api/PaymentMethodApi.md#activatepaymentmethodv2)                        | **POST** /v1/payment_method/{id}/activate                             | Activate payment method                                                                                                                     
- *PaymentMethodApi*  | [**addPaymentMethodV2**](docs/Api/PaymentMethodApi.md#addpaymentmethodv2)                                  | **POST** /v1/payment_method                                           | Add payment method                                                                                                                          
- *PaymentMethodApi*  | [**cardVerification**](docs/Api/PaymentMethodApi.md#cardverification)                                      | **POST** /v1/payment_method/{id}/card/verify                          | Verify card validity                                                                                                                        
- *PaymentMethodApi*  | [**copyCardPaymentMethodV2**](docs/Api/PaymentMethodApi.md#copycardpaymentmethodv2)                        | **POST** /v1/payment_method/{id}/card_copy                            | Copy card to customer                                                                                                                       
- *PaymentMethodApi*  | [**deletePaymentMethodV2**](docs/Api/PaymentMethodApi.md#deletepaymentmethodv2)                            | **DELETE** /v1/payment_method/{id}                                    | Delete payment method                                                                                                                       
- *PaymentMethodApi*  | [**enrollCardPaymentMethodV2**](docs/Api/PaymentMethodApi.md#enrollcardpaymentmethodv2)                    | **POST** /v1/payment_method/{id}/card_enroll                          | Enroll card to EMV Token                                                                                                                    
- *PaymentMethodApi*  | [**getPaymentMethodDetailsV2**](docs/Api/PaymentMethodApi.md#getpaymentmethoddetailsv2)                    | **GET** /v1/payment_method/{id}/details                               | Get payment method details                                                                                                                  
- *PaymentMethodApi*  | [**getPaymentMethodV2**](docs/Api/PaymentMethodApi.md#getpaymentmethodv2)                                  | **GET** /v1/payment_method/{id}                                       | Get payment method                                                                                                                          
- *PaymentMethodApi*  | [**importMpsPaymentMethod**](docs/Api/PaymentMethodApi.md#importmpspaymentmethod)                          | **POST** /v1/payment_method/import_mps                                | Import MobilePay Subscription payment method                                                                                                
- *PaymentMethodApi*  | [**inactivatePaymentMethodV2**](docs/Api/PaymentMethodApi.md#inactivatepaymentmethodv2)                    | **POST** /v1/payment_method/{id}/inactivate                           | Inactivate payment method                                                                                                                   
- *PaymentMethodApi*  | [**moveCardPaymentMethodV2**](docs/Api/PaymentMethodApi.md#movecardpaymentmethodv2)                        | **POST** /v1/payment_method/{id}/card_move                            | Move card to other agreement                                                                                                                
- *PaymentMethodApi*  | [**reactivateCardV2**](docs/Api/PaymentMethodApi.md#reactivatecardv2)                                      | **POST** /v1/payment_method/{id}/card_reactivate                      | Reactivate failed card                                                                                                                      
- *PayoutApi*         | [**createPayout**](docs/Api/PayoutApi.md#createpayout)                                                     | **POST** /v1/payout                                                   | Create payout                                                                                                                               
- *PayoutApi*         | [**getPayout**](docs/Api/PayoutApi.md#getpayout)                                                           | **GET** /v1/payout/{handle}                                           | Get payout                                                                                                                                  
- *PayoutApi*         | [**transactionDetails1**](docs/Api/PayoutApi.md#transactiondetails1)                                       | **GET** /v1/payout/{id}/transaction/{transaction}/details             | Get transaction details                                                                                                                     
- *PlanApi*           | [**createPlanJson**](docs/Api/PlanApi.md#createplanjson)                                                   | **POST** /v1/plan                                                     | Create plan                                                                                                                                 
- *PlanApi*           | [**deleteMetadata3**](docs/Api/PlanApi.md#deletemetadata3)                                                 | **DELETE** /v1/plan/{handle}/metadata                                 | Delete metadata                                                                                                                             
- *PlanApi*           | [**deletePlan**](docs/Api/PlanApi.md#deleteplan)                                                           | **DELETE** /v1/plan/{handle}                                          | Delete plan                                                                                                                                 
- *PlanApi*           | [**getCurrentPlan**](docs/Api/PlanApi.md#getcurrentplan)                                                   | **GET** /v1/plan/{handle}/current                                     | Get plan                                                                                                                                    
- *PlanApi*           | [**getMetadata3**](docs/Api/PlanApi.md#getmetadata3)                                                       | **GET** /v1/plan/{handle}/metadata                                    | Get metadata                                                                                                                                
- *PlanApi*           | [**getPlan**](docs/Api/PlanApi.md#getplan)                                                                 | **GET** /v1/plan/{handle}/{version}                                   | Get plan version                                                                                                                            
- *PlanApi*           | [**getPlans**](docs/Api/PlanApi.md#getplans)                                                               | **GET** /v1/plan/{handle}                                             | Get list of plan versions                                                                                                                   
- *PlanApi*           | [**supersedePlanJson**](docs/Api/PlanApi.md#supersedeplanjson)                                             | **POST** /v1/plan/{handle}                                            | Supersede plan                                                                                                                              
- *PlanApi*           | [**unDeletePlan**](docs/Api/PlanApi.md#undeleteplan)                                                       | **POST** /v1/plan/{handle}/undelete                                   | Undelete plan                                                                                                                               
- *PlanApi*           | [**updateMetadata3**](docs/Api/PlanApi.md#updatemetadata3)                                                 | **PUT** /v1/plan/{handle}/metadata                                    | Create or update metadata                                                                                                                   
- *PlanApi*           | [**updatePlanJson**](docs/Api/PlanApi.md#updateplanjson)                                                   | **PUT** /v1/plan/{handle}                                             | Update plan                                                                                                                                 
- *RefundApi*         | [**createRefund**](docs/Api/RefundApi.md#createrefund)                                                     | **POST** /v1/refund                                                   | Create refund                                                                                                                               
- *RefundApi*         | [**getRefund**](docs/Api/RefundApi.md#getrefund)                                                           | **GET** /v1/refund/{id}                                               | Get refund                                                                                                                                  
- *SubscriptionApi*   | [**activate**](docs/Api/SubscriptionApi.md#activate)                                                       | **POST** /v1/subscription/{handle}/activate                           | Activate pending subscription                                                                                                               
- *SubscriptionApi*   | [**cancelSubscription**](docs/Api/SubscriptionApi.md#cancelsubscription)                                   | **POST** /v1/subscription/{handle}/cancel                             | Cancel subscription                                                                                                                         
- *SubscriptionApi*   | [**changeNextPeriodStartJson**](docs/Api/SubscriptionApi.md#changenextperiodstartjson)                     | **POST** /v1/subscription/{handle}/change_next_period_start           | Change next renewal date                                                                                                                    
- *SubscriptionApi*   | [**changeSubscription**](docs/Api/SubscriptionApi.md#changesubscription)                                   | **PUT** /v1/subscription/{handle}                                     | Change subscription                                                                                                                         
- *SubscriptionApi*   | [**createSubscriptionDiscount**](docs/Api/SubscriptionApi.md#createsubscriptiondiscount)                   | **POST** /v1/subscription/{handle}/discount                           | Add subscription discount                                                                                                                   
- *SubscriptionApi*   | [**createSubscriptionInvoice**](docs/Api/SubscriptionApi.md#createsubscriptioninvoice)                     | **POST** /v1/subscription/{handle}/invoice                            | Create invoice ondemand for subscription                                                                                                    
- *SubscriptionApi*   | [**createSubscriptionJson**](docs/Api/SubscriptionApi.md#createsubscriptionjson)                           | **POST** /v1/subscription                                             | Create subscription                                                                                                                         
- *SubscriptionApi*   | [**deleteMetadata4**](docs/Api/SubscriptionApi.md#deletemetadata4)                                         | **DELETE** /v1/subscription/{handle}/metadata                         | Delete metadata                                                                                                                             
- *SubscriptionApi*   | [**deletePending**](docs/Api/SubscriptionApi.md#deletepending)                                             | **DELETE** /v1/subscription/{handle}                                  | Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice. 
- *SubscriptionApi*   | [**deleteSubscriptionDiscount**](docs/Api/SubscriptionApi.md#deletesubscriptiondiscount)                   | **DELETE** /v1/subscription/{handle}/discount/{sdHandle}              | Delete subscription discount                                                                                                                
- *SubscriptionApi*   | [**expire**](docs/Api/SubscriptionApi.md#expire)                                                           | **POST** /v1/subscription/{handle}/expire                             | Expire subscription                                                                                                                         
- *SubscriptionApi*   | [**getMetadata4**](docs/Api/SubscriptionApi.md#getmetadata4)                                               | **GET** /v1/subscription/{handle}/metadata                            | Get metadata                                                                                                                                
- *SubscriptionApi*   | [**getPayableInvoice**](docs/Api/SubscriptionApi.md#getpayableinvoice)                                     | **GET** /v1/subscription/{handle}/invoice                             | Get most relevant payable invoice for subscription                                                                                          
- *SubscriptionApi*   | [**getSubscription**](docs/Api/SubscriptionApi.md#getsubscription)                                         | **GET** /v1/subscription/{handle}                                     | Get subscription                                                                                                                            
- *SubscriptionApi*   | [**getSubscriptionAddOn**](docs/Api/SubscriptionApi.md#getsubscriptionaddon)                               | **GET** /v1/subscription/{handle}/add_on/{saHandle}                   | Get subscription add-on                                                                                                                     
- *SubscriptionApi*   | [**getSubscriptionAddOns**](docs/Api/SubscriptionApi.md#getsubscriptionaddons)                             | **GET** /v1/subscription/{handle}/add_on                              | Get subscription add-ons                                                                                                                    
- *SubscriptionApi*   | [**getSubscriptionDiscount**](docs/Api/SubscriptionApi.md#getsubscriptiondiscount)                         | **GET** /v1/subscription/{handle}/discount/{sdHandle}                 | Get subscription discount                                                                                                                   
- *SubscriptionApi*   | [**getSubscriptionDiscounts**](docs/Api/SubscriptionApi.md#getsubscriptiondiscounts)                       | **GET** /v1/subscription/{handle}/discount                            | Get subscription discounts                                                                                                                  
- *SubscriptionApi*   | [**getSubscriptionPaymentMethod**](docs/Api/SubscriptionApi.md#getsubscriptionpaymentmethod)               | **GET** /v1/subscription/{handle}/pm                                  | Get payment method                                                                                                                          
- *SubscriptionApi*   | [**getSubscriptionPeriodBalance**](docs/Api/SubscriptionApi.md#getsubscriptionperiodbalance)               | **GET** /v1/subscription/{handle}/period_balance                      | Get the period balance for subscription                                                                                                     
- *SubscriptionApi*   | [**intervalAmount**](docs/Api/SubscriptionApi.md#intervalamount)                                           | **GET** /v1/subscription/{handle}/interval_amount                     | Calculate interval amount                                                                                                                   
- *SubscriptionApi*   | [**onHold**](docs/Api/SubscriptionApi.md#onhold)                                                           | **POST** /v1/subscription/{handle}/on_hold                            | Subscription on hold                                                                                                                        
- *SubscriptionApi*   | [**prepareSubscription**](docs/Api/SubscriptionApi.md#preparesubscription)                                 | **POST** /v1/subscription/prepare                                     | Prepare pending subscription                                                                                                                
- *SubscriptionApi*   | [**previewChangeSubscription**](docs/Api/SubscriptionApi.md#previewchangesubscription)                     | **PUT** /v1/subscription/{handle}/preview                             | Preview change subscription                                                                                                                 
- *SubscriptionApi*   | [**previewSubscription**](docs/Api/SubscriptionApi.md#previewsubscription)                                 | **POST** /v1/subscription/preview                                     | Preview subscription                                                                                                                        
- *SubscriptionApi*   | [**reactivateSubscription**](docs/Api/SubscriptionApi.md#reactivatesubscription)                           | **POST** /v1/subscription/{handle}/reactivate                         | Reactivate subscription on hold                                                                                                             
- *SubscriptionApi*   | [**redeemCouponCode**](docs/Api/SubscriptionApi.md#redeemcouponcode)                                       | **POST** /v1/subscription/{handle}/coupon                             | Redeem coupon code for subscription                                                                                                         
- *SubscriptionApi*   | [**removeAllSubscriptionPaymentMethods**](docs/Api/SubscriptionApi.md#removeallsubscriptionpaymentmethods) | **DELETE** /v1/subscription/{handle}/pm                               | Remove all payment methods                                                                                                                  
- *SubscriptionApi*   | [**removeSubscriptionPaymentMethod**](docs/Api/SubscriptionApi.md#removesubscriptionpaymentmethod)         | **DELETE** /v1/subscription/{handle}/pm/{method_id}                   | Remove payment method                                                                                                                       
- *SubscriptionApi*   | [**setSubscriptionPaymentMethod**](docs/Api/SubscriptionApi.md#setsubscriptionpaymentmethod)               | **POST** /v1/subscription/{handle}/pm                                 | Set payment method                                                                                                                          
- *SubscriptionApi*   | [**uncancel**](docs/Api/SubscriptionApi.md#uncancel)                                                       | **POST** /v1/subscription/{handle}/uncancel                           | Uncancel subscription                                                                                                                       
- *SubscriptionApi*   | [**updateMetadata4**](docs/Api/SubscriptionApi.md#updatemetadata4)                                         | **PUT** /v1/subscription/{handle}/metadata                            | Create or update metadata                                                                                                                   
- *UserApi*           | [**cancelInvitation**](docs/Api/UserApi.md#cancelinvitation)                                               | **DELETE** /v1/user/invite/{id}                                       | Cancel invitation                                                                                                                           
- *UserApi*           | [**deleteUser**](docs/Api/UserApi.md#deleteuser)                                                           | **DELETE** /v1/user/{id}                                              | Delete user                                                                                                                                 
- *UserApi*           | [**getUser**](docs/Api/UserApi.md#getuser)                                                                 | **GET** /v1/user/{id}                                                 | Get user                                                                                                                                    
- *UserApi*           | [**getUserInfo**](docs/Api/UserApi.md#getuserinfo)                                                         | **GET** /v1/user/{id}/info                                            | Get user info                                                                                                                               
- *UserApi*           | [**getUserMfa**](docs/Api/UserApi.md#getusermfa)                                                           | **GET** /v1/user/{id}/mfa                                             | Get MFA setup details                                                                                                                       
- *UserApi*           | [**getUsers**](docs/Api/UserApi.md#getusers)                                                               | **GET** /v1/user                                                      | Get users                                                                                                                                   
- *UserApi*           | [**inviteUser**](docs/Api/UserApi.md#inviteuser)                                                           | **POST** /v1/user/invite                                              | Invite user                                                                                                                                 
- *UserApi*           | [**inviteUserAccept**](docs/Api/UserApi.md#inviteuseraccept)                                               | **POST** /v1/user/invite/{token}                                      | Accept invite                                                                                                                               
- *UserApi*           | [**inviteUserGet**](docs/Api/UserApi.md#inviteuserget)                                                     | **GET** /v1/user/invite/{token}                                       | Get invite                                                                                                                                  
- *UserApi*           | [**resetPassword**](docs/Api/UserApi.md#resetpassword)                                                     | **POST** /v1/user/reset_password                                      | Reset password request                                                                                                                      
- *UserApi*           | [**resetPasswordWithToken**](docs/Api/UserApi.md#resetpasswordwithtoken)                                   | **POST** /v1/user/reset_password/{token}                              | Reset password                                                                                                                              
- *UserApi*           | [**setMfa**](docs/Api/UserApi.md#setmfa)                                                                   | **PUT** /v1/user/{id}/mfa                                             | Set user MFA                                                                                                                                
- *UserApi*           | [**updateAuth**](docs/Api/UserApi.md#updateauth)                                                           | **PUT** /v1/user/{id}/groups                                          | Update user groups                                                                                                                          
- *UserApi*           | [**updatePassword**](docs/Api/UserApi.md#updatepassword)                                                   | **PUT** /v1/user/{id}/password                                        | Change password                                                                                                                             
- *UserApi*           | [**updateUser**](docs/Api/UserApi.md#updateuser)                                                           | **PUT** /v1/user/{id}                                                 | Update user                                                                                                                                 
- *UserApi*           | [**verifyEmail**](docs/Api/UserApi.md#verifyemail)                                                         | **POST** /v1/user/verify_email/{token}                                | Verify email                                                                                                                                
- *UserApi*           | [**verifyEmailRequest**](docs/Api/UserApi.md#verifyemailrequest)                                           | **POST** /v1/user/{id}/verify_email                                   | Send verification email                                                                                                                     
- *WebhookApi*        | [**disableWebhooks**](docs/Api/WebhookApi.md#disablewebhooks)                                              | **POST** /v1/webhook/disable                                          | Disable webhooks                                                                                                                            
- *WebhookApi*        | [**getWebhook**](docs/Api/WebhookApi.md#getwebhook)                                                        | **GET** /v1/webhook/{id}                                              | Get webhooks                                                                                                                                
- *WebhookApi*        | [**getWebhookRequests**](docs/Api/WebhookApi.md#getwebhookrequests)                                        | **GET** /v1/webhook/{id}/request                                      | Get webhook requests                                                                                                                        
- *WebhookApi*        | [**getWebhooks**](docs/Api/WebhookApi.md#getwebhooks)                                                      | **GET** /v1/webhook                                                   | Get list of webhooks                                                                                                                        
- *WebhookApi*        | [**resendJson**](docs/Api/WebhookApi.md#resendjson)                                                        | **POST** /v1/webhook/resend                                           | Re-send webhooks                                                                                                                            
- *WebhookApi*        | [**updateWebhooks**](docs/Api/WebhookApi.md#updatewebhooks)                                                | **POST** /v1/webhook/update                                           | Update and resend webhooks                                                                                                                  
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*AccountApi* | [**createPrivateKey**](docs/Api/AccountApi.md#createprivatekey) | **POST** /v1/account/privkey | Create private key
+*AccountApi* | [**createPublicKey**](docs/Api/AccountApi.md#createpublickey) | **POST** /v1/account/pubkey | Create public key
+*AccountApi* | [**expirePrivateKey**](docs/Api/AccountApi.md#expireprivatekey) | **POST** /v1/account/privkey/{key}/expire | Expire private key
+*AccountApi* | [**expirePublicKey**](docs/Api/AccountApi.md#expirepublickey) | **POST** /v1/account/pubkey/{key}/expire | Expire public key
+*AccountApi* | [**generateWebhookSecret**](docs/Api/AccountApi.md#generatewebhooksecret) | **POST** /v1/account/webhook_settings/secret | Generate new webhook secret
+*AccountApi* | [**getCurrentAccount**](docs/Api/AccountApi.md#getcurrentaccount) | **GET** /v1/account | Get account
+*AccountApi* | [**getDiscountSettings**](docs/Api/AccountApi.md#getdiscountsettings) | **GET** /v1/account/discount_settings | Get discount settings
+*AccountApi* | [**getMailSettings**](docs/Api/AccountApi.md#getmailsettings) | **GET** /v1/account/mail_settings | Get mail settings
+*AccountApi* | [**getMfaSettings**](docs/Api/AccountApi.md#getmfasettings) | **GET** /v1/account/mfa_settings | Get account MFA settings
+*AccountApi* | [**getPrivateKeys**](docs/Api/AccountApi.md#getprivatekeys) | **GET** /v1/account/privkey | Get list of private keys
+*AccountApi* | [**getPublicKeys**](docs/Api/AccountApi.md#getpublickeys) | **GET** /v1/account/pubkey | Get list of public keys
+*AccountApi* | [**getTerms**](docs/Api/AccountApi.md#getterms) | **GET** /v1/account/terms | Get terms
+*AccountApi* | [**getWebhookSettings**](docs/Api/AccountApi.md#getwebhooksettings) | **GET** /v1/account/webhook_settings | Get webhook settings
+*AccountApi* | [**updateAccountJson**](docs/Api/AccountApi.md#updateaccountjson) | **PUT** /v1/account | Update account
+*AccountApi* | [**updateDiscountSettings**](docs/Api/AccountApi.md#updatediscountsettings) | **PUT** /v1/account/discount_settings | Update discount settings
+*AccountApi* | [**updateMailSettingsJson**](docs/Api/AccountApi.md#updatemailsettingsjson) | **PUT** /v1/account/mail_settings | Update mail settings
+*AccountApi* | [**updateMfaSettings**](docs/Api/AccountApi.md#updatemfasettings) | **PUT** /v1/account/mfa_settings | Update account MFA settings
+*AccountApi* | [**updateTerms**](docs/Api/AccountApi.md#updateterms) | **POST** /v1/account/terms | Create or update terms
+*AccountApi* | [**updateWebhookSettingsJson**](docs/Api/AccountApi.md#updatewebhooksettingsjson) | **PUT** /v1/account/webhook_settings | Update webhook settings
+*AddOnApi* | [**createAddOn**](docs/Api/AddOnApi.md#createaddon) | **POST** /v1/add_on | Create add-on
+*AddOnApi* | [**deleteAddOn**](docs/Api/AddOnApi.md#deleteaddon) | **DELETE** /v1/add_on/{handle} | Delete add-on
+*AddOnApi* | [**deleteMetadata**](docs/Api/AddOnApi.md#deletemetadata) | **DELETE** /v1/add_on/{handle}/metadata | Delete metadata
+*AddOnApi* | [**getAddOn**](docs/Api/AddOnApi.md#getaddon) | **GET** /v1/add_on/{handle} | Get add-on
+*AddOnApi* | [**getMetadata**](docs/Api/AddOnApi.md#getmetadata) | **GET** /v1/add_on/{handle}/metadata | Get metadata
+*AddOnApi* | [**undeleteAddOn**](docs/Api/AddOnApi.md#undeleteaddon) | **POST** /v1/add_on/{handle}/undelete | Un-delete add-on
+*AddOnApi* | [**updateAddOn**](docs/Api/AddOnApi.md#updateaddon) | **PUT** /v1/add_on/{handle} | Update add-on
+*AddOnApi* | [**updateMetadata**](docs/Api/AddOnApi.md#updatemetadata) | **PUT** /v1/add_on/{handle}/metadata | Create or update metadata
+*AdditionalCostApi* | [**cancelAdditionalCost**](docs/Api/AdditionalCostApi.md#canceladditionalcost) | **POST** /v1/additional_cost/{handle}/cancel | Cancel pending additional cost
+*AdditionalCostApi* | [**createAdditionalCostJson**](docs/Api/AdditionalCostApi.md#createadditionalcostjson) | **POST** /v1/additional_cost | Create additional cost
+*AdditionalCostApi* | [**getAdditionalCost**](docs/Api/AdditionalCostApi.md#getadditionalcost) | **GET** /v1/additional_cost/{handle} | Get additional cost
+*AdditionalCostApi* | [**getAdditionalCosts**](docs/Api/AdditionalCostApi.md#getadditionalcosts) | **GET** /v1/additional_cost/subscription/{handle} | Get additional costs for subscription
+*AgreementApi* | [**activateMpsAgreement**](docs/Api/AgreementApi.md#activatempsagreement) | **POST** /v1/agreement/{id}/mps_activate | Activate mps agreement by selecting provider
+*AgreementApi* | [**createAnydayAgreement**](docs/Api/AgreementApi.md#createanydayagreement) | **POST** /v1/agreement/anyday | Create Anyday agreement
+*AgreementApi* | [**createApplepayAgreement**](docs/Api/AgreementApi.md#createapplepayagreement) | **POST** /v1/agreement/applepay | Create ApplePay agreement
+*AgreementApi* | [**createCardGatewayAgreement**](docs/Api/AgreementApi.md#createcardgatewayagreement) | **POST** /v1/agreement/card_gateway | Create card gateway agreement
+*AgreementApi* | [**createGooglepayAgreement**](docs/Api/AgreementApi.md#creategooglepayagreement) | **POST** /v1/agreement/googlepay | Create GooglePay agreement
+*AgreementApi* | [**createKlarnaAgreement**](docs/Api/AgreementApi.md#createklarnaagreement) | **POST** /v1/agreement/klarna | Create Klarna agreement
+*AgreementApi* | [**createMpoAgreement**](docs/Api/AgreementApi.md#creatempoagreement) | **POST** /v1/agreement/mpo | Create MobilePay Online agreement
+*AgreementApi* | [**createMpsAgreement**](docs/Api/AgreementApi.md#creatempsagreement) | **POST** /v1/agreement/mps | Create pending MobilePay Subscriptions agreement
+*AgreementApi* | [**createOfflineAgreement**](docs/Api/AgreementApi.md#createofflineagreement) | **POST** /v1/agreement/offline | Create offline agreement
+*AgreementApi* | [**createPayeverAgreement**](docs/Api/AgreementApi.md#createpayeveragreement) | **POST** /v1/agreement/payever | Create Payever agreement
+*AgreementApi* | [**createPaypalAgreement**](docs/Api/AgreementApi.md#createpaypalagreement) | **POST** /v1/agreement/paypal | Create PayPal agreement
+*AgreementApi* | [**createPproAgreement**](docs/Api/AgreementApi.md#createpproagreement) | **POST** /v1/agreement/ppro | Create ppro agreement
+*AgreementApi* | [**createResursAgreement**](docs/Api/AgreementApi.md#createresursagreement) | **POST** /v1/agreement/resurs | Create Resurs agreement
+*AgreementApi* | [**createSwishAgreement**](docs/Api/AgreementApi.md#createswishagreement) | **POST** /v1/agreement/swish | Create Swish agreement
+*AgreementApi* | [**createViabillAgreement**](docs/Api/AgreementApi.md#createviabillagreement) | **POST** /v1/agreement/viabill | Create ViaBill agreement
+*AgreementApi* | [**createVippsAgreement**](docs/Api/AgreementApi.md#createvippsagreement) | **POST** /v1/agreement/vipps | Create Vipps agreement
+*AgreementApi* | [**createVippsRecurringAgreement**](docs/Api/AgreementApi.md#createvippsrecurringagreement) | **POST** /v1/agreement/vipps_recurring | Create Vipps Recurring agreement
+*AgreementApi* | [**deleteGatewayAgreement**](docs/Api/AgreementApi.md#deletegatewayagreement) | **DELETE** /v1/agreement/{id} | Delete gateway agreement
+*AgreementApi* | [**disableGatewayAgreement**](docs/Api/AgreementApi.md#disablegatewayagreement) | **POST** /v1/agreement/{id}/disable | Disable gateway agreement
+*AgreementApi* | [**enableGatewayAgreement**](docs/Api/AgreementApi.md#enablegatewayagreement) | **POST** /v1/agreement/{id}/enable | Enable gateway agreement
+*AgreementApi* | [**getCardGatewayAgreements**](docs/Api/AgreementApi.md#getcardgatewayagreements) | **GET** /v1/agreement/card_gateway | Get all card gateway agreements
+*AgreementApi* | [**getGatewayAgreement**](docs/Api/AgreementApi.md#getgatewayagreement) | **GET** /v1/agreement/{id} | Get gateway agreement
+*AgreementApi* | [**getGatewayAgreements**](docs/Api/AgreementApi.md#getgatewayagreements) | **GET** /v1/agreement | Get all agreements
+*AgreementApi* | [**onboardMerchant**](docs/Api/AgreementApi.md#onboardmerchant) | **POST** /v1/agreement/vipps_recurring/onboard | Onboard Merchant
+*AgreementApi* | [**updateAnydayAgreement**](docs/Api/AgreementApi.md#updateanydayagreement) | **PUT** /v1/agreement/anyday/{id} | Update Anyday agreement
+*AgreementApi* | [**updateApplepayAgreement**](docs/Api/AgreementApi.md#updateapplepayagreement) | **PUT** /v1/agreement/applepay/{id} | Update ApplePay agreement
+*AgreementApi* | [**updateCardGatewayAgreement**](docs/Api/AgreementApi.md#updatecardgatewayagreement) | **PUT** /v1/agreement/card_gateway/{id} | Update card gateway agreement
+*AgreementApi* | [**updateEmvConfiguration**](docs/Api/AgreementApi.md#updateemvconfiguration) | **PUT** /v1/agreement/{id}/card_gateway/emv_configuration | Update card gateway EMV Configuration
+*AgreementApi* | [**updateFeeConfiguration**](docs/Api/AgreementApi.md#updatefeeconfiguration) | **PUT** /v1/agreement/{id}/card_gateway/fee_configuration | Update card gateway fee configuration
+*AgreementApi* | [**updateGooglepayAgreement**](docs/Api/AgreementApi.md#updategooglepayagreement) | **PUT** /v1/agreement/googlepay/{id} | Update GooglePay agreement
+*AgreementApi* | [**updateKlarnaAgreement**](docs/Api/AgreementApi.md#updateklarnaagreement) | **PUT** /v1/agreement/klarna/{id} | Update Klarna agreement
+*AgreementApi* | [**updateMpsAgreement**](docs/Api/AgreementApi.md#updatempsagreement) | **PUT** /v1/agreement/mps/{id} | Update mps agreement
+*AgreementApi* | [**updateOfflineAgreement**](docs/Api/AgreementApi.md#updateofflineagreement) | **PUT** /v1/agreement/offline/{id} | Update offline agreement
+*AgreementApi* | [**updatePayeverAgreement**](docs/Api/AgreementApi.md#updatepayeveragreement) | **PUT** /v1/agreement/payever/{id} | Update Payever agreement
+*AgreementApi* | [**updatePaypalAgreement**](docs/Api/AgreementApi.md#updatepaypalagreement) | **PUT** /v1/agreement/paypal/{id} | Update PayPal agreement
+*AgreementApi* | [**updatePproAgreement**](docs/Api/AgreementApi.md#updatepproagreement) | **PUT** /v1/agreement/ppro/{id} | Update ppro agreement
+*AgreementApi* | [**updateResursAgreement**](docs/Api/AgreementApi.md#updateresursagreement) | **PUT** /v1/agreement/resurs/{id} | Update Resurs agreement
+*AgreementApi* | [**updateSurcharge**](docs/Api/AgreementApi.md#updatesurcharge) | **PUT** /v1/agreement/{id}/card_gateway/surcharge | Update card gateway surcharge
+*AgreementApi* | [**updateSwishAgreement**](docs/Api/AgreementApi.md#updateswishagreement) | **PUT** /v1/agreement/swish/{id} | Update Swish agreement
+*AgreementApi* | [**updateViabillAgreement**](docs/Api/AgreementApi.md#updateviabillagreement) | **PUT** /v1/agreement/viabill/{id} | Update ViaBill agreement
+*AgreementApi* | [**updateVippsAgreement**](docs/Api/AgreementApi.md#updatevippsagreement) | **PUT** /v1/agreement/vipps/{id} | Update Vipps agreement
+*AgreementApi* | [**updateVippsRecurringAgreement**](docs/Api/AgreementApi.md#updatevippsrecurringagreement) | **PUT** /v1/agreement/vipps_recurring/{id} | Update Vipps Recurring agreement
+*AuthenticateApi* | [**login**](docs/Api/AuthenticateApi.md#login) | **POST** /v1/authenticate/login | User login
+*AuthenticateApi* | [**renew**](docs/Api/AuthenticateApi.md#renew) | **POST** /v1/authenticate/renew | Renew user login
+*AuthenticateApi* | [**verifyAuthentication**](docs/Api/AuthenticateApi.md#verifyauthentication) | **GET** /v1/authenticate/verify | Verify authentication
+*ChargeApi* | [**cancelCharge**](docs/Api/ChargeApi.md#cancelcharge) | **POST** /v1/charge/{handle}/cancel | Cancel charge
+*ChargeApi* | [**createCharge**](docs/Api/ChargeApi.md#createcharge) | **POST** /v1/charge | Create charge
+*ChargeApi* | [**deleteCreatedInvoice**](docs/Api/ChargeApi.md#deletecreatedinvoice) | **DELETE** /v1/charge/{id} | Delete created charge
+*ChargeApi* | [**getCharge**](docs/Api/ChargeApi.md#getcharge) | **GET** /v1/charge/{handle} | Get charge
+*ChargeApi* | [**offlineSettle**](docs/Api/ChargeApi.md#offlinesettle) | **POST** /v1/charge/{id}/transaction/{transaction}/offline_settle | Settle offline transaction
+*ChargeApi* | [**prepareCharge**](docs/Api/ChargeApi.md#preparecharge) | **POST** /v1/charge/prepare | Prepare charge
+*ChargeApi* | [**settleCharge**](docs/Api/ChargeApi.md#settlecharge) | **POST** /v1/charge/{handle}/settle | Settle charge
+*CouponApi* | [**createCoupon**](docs/Api/CouponApi.md#createcoupon) | **POST** /v1/coupon | Create coupon
+*CouponApi* | [**deleteCoupon**](docs/Api/CouponApi.md#deletecoupon) | **DELETE** /v1/coupon/{handle} | Delete coupon
+*CouponApi* | [**expireCoupon**](docs/Api/CouponApi.md#expirecoupon) | **POST** /v1/coupon/{handle}/expire | Expire coupon
+*CouponApi* | [**getCoupon**](docs/Api/CouponApi.md#getcoupon) | **GET** /v1/coupon/{handle} | Get coupon
+*CouponApi* | [**updateCoupon**](docs/Api/CouponApi.md#updatecoupon) | **PUT** /v1/coupon/{handle} | Update coupon
+*CouponApi* | [**validateCode**](docs/Api/CouponApi.md#validatecode) | **GET** /v1/coupon/code/validate | Validate coupon
+*CreditApi* | [**cancelCredit**](docs/Api/CreditApi.md#cancelcredit) | **POST** /v1/credit/{handle}/cancel | Cancel credit
+*CreditApi* | [**createCreditJson**](docs/Api/CreditApi.md#createcreditjson) | **POST** /v1/credit | Create credit
+*CreditApi* | [**getCredit**](docs/Api/CreditApi.md#getcredit) | **GET** /v1/credit/{handle} | Get credit
+*CreditApi* | [**getCredits**](docs/Api/CreditApi.md#getcredits) | **GET** /v1/credit/subscription/{handle} | Get credits for subscription
+*CreditNoteApi* | [**getCreditNote**](docs/Api/CreditNoteApi.md#getcreditnote) | **GET** /v1/credit_note/{id} | Get credit note
+*CustomerApi* | [**createCustomerInvoice**](docs/Api/CustomerApi.md#createcustomerinvoice) | **POST** /v1/customer/{handle}/invoice | Create invoice for customer
+*CustomerApi* | [**createCustomerJson**](docs/Api/CustomerApi.md#createcustomerjson) | **POST** /v1/customer | Create customer
+*CustomerApi* | [**createCustomerNoteJson**](docs/Api/CustomerApi.md#createcustomernotejson) | **POST** /v1/customer/{handle}/note | Create customer note
+*CustomerApi* | [**deleteCustomer**](docs/Api/CustomerApi.md#deletecustomer) | **DELETE** /v1/customer/{handle} | Delete customer
+*CustomerApi* | [**deleteMetadata1**](docs/Api/CustomerApi.md#deletemetadata1) | **DELETE** /v1/customer/{handle}/metadata | Delete metadata
+*CustomerApi* | [**getCustomer**](docs/Api/CustomerApi.md#getcustomer) | **GET** /v1/customer/{handle} | Get customer
+*CustomerApi* | [**getCustomerNotes**](docs/Api/CustomerApi.md#getcustomernotes) | **GET** /v1/customer/{handle}/note | Get customer notes
+*CustomerApi* | [**getMetadata1**](docs/Api/CustomerApi.md#getmetadata1) | **GET** /v1/customer/{handle}/metadata | Get metadata
+*CustomerApi* | [**updateCustomerJson**](docs/Api/CustomerApi.md#updatecustomerjson) | **PUT** /v1/customer/{handle} | Update customer
+*CustomerApi* | [**updateMetadata1**](docs/Api/CustomerApi.md#updatemetadata1) | **PUT** /v1/customer/{handle}/metadata | Create or update metadata
+*DefaultApi* | [**createOrUpdateConfiguration**](docs/Api/DefaultApi.md#createorupdateconfiguration) | **POST** /v1/risk/configuration | Create or update risk configuration
+*DefaultApi* | [**deleteConfiguration**](docs/Api/DefaultApi.md#deleteconfiguration) | **DELETE** /v1/risk/configuration | Delete risk configuration
+*DefaultApi* | [**getAccountData**](docs/Api/DefaultApi.md#getaccountdata) | **GET** /v1/checkout/account | 
+*DefaultApi* | [**getBlocklist**](docs/Api/DefaultApi.md#getblocklist) | **GET** /v1/blocklist | 
+*DefaultApi* | [**getConfiguration**](docs/Api/DefaultApi.md#getconfiguration) | **GET** /v1/risk/configuration | Get risk configuration
+*DefaultApi* | [**getErrorCodes**](docs/Api/DefaultApi.md#geterrorcodes) | **GET** /v1/error_codes | Get error codes
+*DefaultApi* | [**getSessionData**](docs/Api/DefaultApi.md#getsessiondata) | **GET** /v1/checkout/session | 
+*DefaultApi* | [**getSwaggerSpec**](docs/Api/DefaultApi.md#getswaggerspec) | **GET** /swagger.json | 
+*DiscountApi* | [**createDiscount**](docs/Api/DiscountApi.md#creatediscount) | **POST** /v1/discount | Create discount
+*DiscountApi* | [**deleteDiscount**](docs/Api/DiscountApi.md#deletediscount) | **DELETE** /v1/discount/{handle} | Delete discount
+*DiscountApi* | [**getDiscount**](docs/Api/DiscountApi.md#getdiscount) | **GET** /v1/discount/{handle} | Get discount
+*DiscountApi* | [**undeleteDiscount**](docs/Api/DiscountApi.md#undeletediscount) | **POST** /v1/discount/{handle}/undelete | Undelete discount
+*DiscountApi* | [**updateDiscount**](docs/Api/DiscountApi.md#updatediscount) | **PUT** /v1/discount/{handle} | Update discount
+*DunningPlanApi* | [**createDunningPlanJson**](docs/Api/DunningPlanApi.md#createdunningplanjson) | **POST** /v1/dunning_plan | Create dunning plan
+*DunningPlanApi* | [**deleteDunningPlan**](docs/Api/DunningPlanApi.md#deletedunningplan) | **DELETE** /v1/dunning_plan/{handle} | Delete dunning plan
+*DunningPlanApi* | [**getDunningPlan**](docs/Api/DunningPlanApi.md#getdunningplan) | **GET** /v1/dunning_plan/{handle} | Get dunning plan
+*DunningPlanApi* | [**getDunningPlans**](docs/Api/DunningPlanApi.md#getdunningplans) | **GET** /v1/dunning_plan | Get list of dunning plans
+*DunningPlanApi* | [**updateJson**](docs/Api/DunningPlanApi.md#updatejson) | **PUT** /v1/dunning_plan/{handle} | Update dunning plan
+*EntitlementApi* | [**createEntitlement**](docs/Api/EntitlementApi.md#createentitlement) | **POST** /v1/entitlement | Create entitlement
+*EntitlementApi* | [**getEntitlements**](docs/Api/EntitlementApi.md#getentitlements) | **GET** /v1/entitlement | Get entitlements
+*EventApi* | [**getEvent**](docs/Api/EventApi.md#getevent) | **GET** /v1/event/{id} | Get event
+*EventApi* | [**getEvents**](docs/Api/EventApi.md#getevents) | **GET** /v1/event | Get list of events
+*InvoiceApi* | [**cancelAllDunningPending**](docs/Api/InvoiceApi.md#cancelalldunningpending) | **POST** /v1/invoice/cancel_all_dunning_pending/subscription/{handle} | Cancel all dunning and pending
+*InvoiceApi* | [**cancelInvoice**](docs/Api/InvoiceApi.md#cancelinvoice) | **POST** /v1/invoice/{id}/cancel | Cancel invoice
+*InvoiceApi* | [**cancelSettleLater**](docs/Api/InvoiceApi.md#cancelsettlelater) | **POST** /v1/invoice/{id}/settle/cancel | Cancel settle later
+*InvoiceApi* | [**cancelTransaction**](docs/Api/InvoiceApi.md#canceltransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/cancel | Cancel transaction
+*InvoiceApi* | [**createOrUpdateBillingAddress**](docs/Api/InvoiceApi.md#createorupdatebillingaddress) | **PUT** /v1/invoice/{id}/billing_address | Create or update invoice billing address
+*InvoiceApi* | [**createOrUpdateShippingAddress**](docs/Api/InvoiceApi.md#createorupdateshippingaddress) | **PUT** /v1/invoice/{id}/shipping_address | Create or update invoice shipping address
+*InvoiceApi* | [**deleteBillingAddress**](docs/Api/InvoiceApi.md#deletebillingaddress) | **DELETE** /v1/invoice/{id}/billing_address | Delete invoice billing address
+*InvoiceApi* | [**deleteMetadata2**](docs/Api/InvoiceApi.md#deletemetadata2) | **DELETE** /v1/invoice/{handle}/metadata | Delete metadata
+*InvoiceApi* | [**deleteShippingAddress**](docs/Api/InvoiceApi.md#deleteshippingaddress) | **DELETE** /v1/invoice/{id}/shipping_address | Delete invoice shipping address
+*InvoiceApi* | [**detachFromSubscription**](docs/Api/InvoiceApi.md#detachfromsubscription) | **POST** /v1/invoice/{id}/detach | Detach from subscription
+*InvoiceApi* | [**extendKAuthTransaction**](docs/Api/InvoiceApi.md#extendkauthtransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend | Extend authorization transaction
+*InvoiceApi* | [**extendKlarnaTransaction**](docs/Api/InvoiceApi.md#extendklarnatransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna | Extend Klarna authorization transaction
+*InvoiceApi* | [**failInvoice**](docs/Api/InvoiceApi.md#failinvoice) | **POST** /v1/invoice/{id}/fail | Fail invoice
+*InvoiceApi* | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice) | **GET** /v1/invoice/{id} | Get invoice
+*InvoiceApi* | [**getMetadata2**](docs/Api/InvoiceApi.md#getmetadata2) | **GET** /v1/invoice/{handle}/metadata | Get metadata
+*InvoiceApi* | [**manualSettle**](docs/Api/InvoiceApi.md#manualsettle) | **POST** /v1/invoice/{id}/manual_settle | Manual settle
+*InvoiceApi* | [**reactivateInvoice**](docs/Api/InvoiceApi.md#reactivateinvoice) | **POST** /v1/invoice/{id}/reactivate | Reactivate invoice
+*InvoiceApi* | [**settle**](docs/Api/InvoiceApi.md#settle) | **POST** /v1/invoice/{id}/settle | Settle
+*InvoiceApi* | [**transaction**](docs/Api/InvoiceApi.md#transaction) | **GET** /v1/invoice/{id}/transaction/{transaction} | Get transaction
+*InvoiceApi* | [**transactionDetails**](docs/Api/InvoiceApi.md#transactiondetails) | **GET** /v1/invoice/{id}/transaction/{transaction}/details | Get transaction details
+*InvoiceApi* | [**updateMetadata2**](docs/Api/InvoiceApi.md#updatemetadata2) | **PUT** /v1/invoice/{handle}/metadata | Create or update metadata
+*InvoiceConfigurationApi* | [**createInvoiceSequenceConfiguration**](docs/Api/InvoiceConfigurationApi.md#createinvoicesequenceconfiguration) | **POST** /v1/invoice_configuration/sequence | Set invoice sequence configuration
+*InvoiceConfigurationApi* | [**getDebtorSettings**](docs/Api/InvoiceConfigurationApi.md#getdebtorsettings) | **GET** /v1/invoice_configuration/debtor_settings | Get customer debtor settings
+*InvoiceConfigurationApi* | [**getInvoiceConfiguration**](docs/Api/InvoiceConfigurationApi.md#getinvoiceconfiguration) | **GET** /v1/invoice_configuration | Get invoice configuration
+*InvoiceConfigurationApi* | [**getInvoiceSequenceConfiguration**](docs/Api/InvoiceConfigurationApi.md#getinvoicesequenceconfiguration) | **GET** /v1/invoice_configuration/sequence | Get invoice sequence configuration
+*InvoiceConfigurationApi* | [**updateDebtorSettings**](docs/Api/InvoiceConfigurationApi.md#updatedebtorsettings) | **POST** /v1/invoice_configuration/debtor_settings | Create or update customer debtor settings
+*InvoiceConfigurationApi* | [**updateInvoiceConfiguration**](docs/Api/InvoiceConfigurationApi.md#updateinvoiceconfiguration) | **POST** /v1/invoice_configuration | Create or update invoice configuration
+*ListApi* | [**getAddOnList**](docs/Api/ListApi.md#getaddonlist) | **GET** /v1/list/add_on | Get list of add-ons
+*ListApi* | [**getChargeList**](docs/Api/ListApi.md#getchargelist) | **GET** /v1/list/charge | Get list of charges
+*ListApi* | [**getCouponList**](docs/Api/ListApi.md#getcouponlist) | **GET** /v1/list/coupon | Get list of coupons
+*ListApi* | [**getCustomerList**](docs/Api/ListApi.md#getcustomerlist) | **GET** /v1/list/customer | Get list of customers
+*ListApi* | [**getDiscountList**](docs/Api/ListApi.md#getdiscountlist) | **GET** /v1/list/discount | Get list of discounts
+*ListApi* | [**getInvoiceCreditNoteList**](docs/Api/ListApi.md#getinvoicecreditnotelist) | **GET** /v1/list/credit_note | 
+*ListApi* | [**getInvoiceList**](docs/Api/ListApi.md#getinvoicelist) | **GET** /v1/list/invoice | Get list of invoices
+*ListApi* | [**getPaymentMethodList**](docs/Api/ListApi.md#getpaymentmethodlist) | **GET** /v1/list/payment_method | Get list of payment methods
+*ListApi* | [**getPayoutList**](docs/Api/ListApi.md#getpayoutlist) | **GET** /v1/list/payout | Get list of payouts
+*ListApi* | [**getPlanList**](docs/Api/ListApi.md#getplanlist) | **GET** /v1/list/plan | Get list of plans
+*ListApi* | [**getSubscriptionList**](docs/Api/ListApi.md#getsubscriptionlist) | **GET** /v1/list/subscription | Get list of subscriptions
+*ListApi* | [**getTaxPolicyList**](docs/Api/ListApi.md#gettaxpolicylist) | **GET** /v1/list/tax_policy | Get list of tax policies
+*ListApi* | [**getTransactionList**](docs/Api/ListApi.md#gettransactionlist) | **GET** /v1/list/transaction | Get list of transactions
+*ListApi* | [**getWebhookList**](docs/Api/ListApi.md#getwebhooklist) | **GET** /v1/list/webhook | Get list of webhooks
+*MailTemplateApi* | [**getSample**](docs/Api/MailTemplateApi.md#getsample) | **GET** /v1/mail_template/sample | Get sample data
+*OrganisationApi* | [**getOrganisation**](docs/Api/OrganisationApi.md#getorganisation) | **GET** /v1/organisation | Get organisation
+*OrganisationApi* | [**update**](docs/Api/OrganisationApi.md#update) | **PUT** /v1/organisation | Update organisation
+*PaymentMethodApi* | [**activatePaymentMethodV2**](docs/Api/PaymentMethodApi.md#activatepaymentmethodv2) | **POST** /v1/payment_method/{id}/activate | Activate payment method
+*PaymentMethodApi* | [**addPaymentMethodV2**](docs/Api/PaymentMethodApi.md#addpaymentmethodv2) | **POST** /v1/payment_method | Add payment method
+*PaymentMethodApi* | [**cardVerification**](docs/Api/PaymentMethodApi.md#cardverification) | **POST** /v1/payment_method/{id}/card/verify | Verify card validity
+*PaymentMethodApi* | [**copyCardPaymentMethodV2**](docs/Api/PaymentMethodApi.md#copycardpaymentmethodv2) | **POST** /v1/payment_method/{id}/card_copy | Copy card to customer
+*PaymentMethodApi* | [**deletePaymentMethodV2**](docs/Api/PaymentMethodApi.md#deletepaymentmethodv2) | **DELETE** /v1/payment_method/{id} | Delete payment method
+*PaymentMethodApi* | [**enrollCardPaymentMethodV2**](docs/Api/PaymentMethodApi.md#enrollcardpaymentmethodv2) | **POST** /v1/payment_method/{id}/card_enroll | Enroll card to EMV Token
+*PaymentMethodApi* | [**getCardTokenDetails**](docs/Api/PaymentMethodApi.md#getcardtokendetails) | **GET** /v1/payment_method/card_token/{tokenid}/details | Get card token details
+*PaymentMethodApi* | [**getPaymentMethodDetailsV2**](docs/Api/PaymentMethodApi.md#getpaymentmethoddetailsv2) | **GET** /v1/payment_method/{id}/details | Get payment method details
+*PaymentMethodApi* | [**getPaymentMethodV2**](docs/Api/PaymentMethodApi.md#getpaymentmethodv2) | **GET** /v1/payment_method/{id} | Get payment method
+*PaymentMethodApi* | [**importMpsPaymentMethod**](docs/Api/PaymentMethodApi.md#importmpspaymentmethod) | **POST** /v1/payment_method/import_mps | Import MobilePay Subscription payment method
+*PaymentMethodApi* | [**importVippsRecurringPaymentMethod**](docs/Api/PaymentMethodApi.md#importvippsrecurringpaymentmethod) | **POST** /v1/payment_method/import_vipps_recurring | Import Vipps Recurring payment method
+*PaymentMethodApi* | [**inactivatePaymentMethodV2**](docs/Api/PaymentMethodApi.md#inactivatepaymentmethodv2) | **POST** /v1/payment_method/{id}/inactivate | Inactivate payment method
+*PaymentMethodApi* | [**moveCardPaymentMethodV2**](docs/Api/PaymentMethodApi.md#movecardpaymentmethodv2) | **POST** /v1/payment_method/{id}/card_move | Move card to other agreement
+*PaymentMethodApi* | [**reactivateCardV2**](docs/Api/PaymentMethodApi.md#reactivatecardv2) | **POST** /v1/payment_method/{id}/card_reactivate | Reactivate failed card
+*PayoutApi* | [**createPayout**](docs/Api/PayoutApi.md#createpayout) | **POST** /v1/payout | Create payout
+*PayoutApi* | [**getPayout**](docs/Api/PayoutApi.md#getpayout) | **GET** /v1/payout/{handle} | Get payout
+*PayoutApi* | [**transactionDetails1**](docs/Api/PayoutApi.md#transactiondetails1) | **GET** /v1/payout/{id}/transaction/{transaction}/details | Get transaction details
+*PlanApi* | [**createPlanJson**](docs/Api/PlanApi.md#createplanjson) | **POST** /v1/plan | Create plan
+*PlanApi* | [**deleteMetadata3**](docs/Api/PlanApi.md#deletemetadata3) | **DELETE** /v1/plan/{handle}/metadata | Delete metadata
+*PlanApi* | [**deletePlan**](docs/Api/PlanApi.md#deleteplan) | **DELETE** /v1/plan/{handle} | Delete plan
+*PlanApi* | [**getCurrentPlan**](docs/Api/PlanApi.md#getcurrentplan) | **GET** /v1/plan/{handle}/current | Get plan
+*PlanApi* | [**getMetadata3**](docs/Api/PlanApi.md#getmetadata3) | **GET** /v1/plan/{handle}/metadata | Get metadata
+*PlanApi* | [**getPlan**](docs/Api/PlanApi.md#getplan) | **GET** /v1/plan/{handle}/{version} | Get plan version
+*PlanApi* | [**getPlans**](docs/Api/PlanApi.md#getplans) | **GET** /v1/plan/{handle} | Get list of plan versions
+*PlanApi* | [**supersedePlanJson**](docs/Api/PlanApi.md#supersedeplanjson) | **POST** /v1/plan/{handle} | Supersede plan
+*PlanApi* | [**unDeletePlan**](docs/Api/PlanApi.md#undeleteplan) | **POST** /v1/plan/{handle}/undelete | Undelete plan
+*PlanApi* | [**updateMetadata3**](docs/Api/PlanApi.md#updatemetadata3) | **PUT** /v1/plan/{handle}/metadata | Create or update metadata
+*PlanApi* | [**updatePlanJson**](docs/Api/PlanApi.md#updateplanjson) | **PUT** /v1/plan/{handle} | Update plan
+*RefundApi* | [**createRefund**](docs/Api/RefundApi.md#createrefund) | **POST** /v1/refund | Create refund
+*RefundApi* | [**getRefund**](docs/Api/RefundApi.md#getrefund) | **GET** /v1/refund/{id} | Get refund
+*SubscriptionApi* | [**activate**](docs/Api/SubscriptionApi.md#activate) | **POST** /v1/subscription/{handle}/activate | Activate pending subscription
+*SubscriptionApi* | [**cancelPreviewSubscription**](docs/Api/SubscriptionApi.md#cancelpreviewsubscription) | **POST** /v1/subscription/{handle}/cancel_preview | Preview subscription cancel
+*SubscriptionApi* | [**cancelSubscription**](docs/Api/SubscriptionApi.md#cancelsubscription) | **POST** /v1/subscription/{handle}/cancel | Cancel subscription
+*SubscriptionApi* | [**changeNextPeriodStartJson**](docs/Api/SubscriptionApi.md#changenextperiodstartjson) | **POST** /v1/subscription/{handle}/change_next_period_start | Change next renewal date
+*SubscriptionApi* | [**changeSubscription**](docs/Api/SubscriptionApi.md#changesubscription) | **PUT** /v1/subscription/{handle} | Change subscription
+*SubscriptionApi* | [**createSubscriptionDiscount**](docs/Api/SubscriptionApi.md#createsubscriptiondiscount) | **POST** /v1/subscription/{handle}/discount | Add subscription discount
+*SubscriptionApi* | [**createSubscriptionInvoice**](docs/Api/SubscriptionApi.md#createsubscriptioninvoice) | **POST** /v1/subscription/{handle}/invoice | Create invoice ondemand for subscription
+*SubscriptionApi* | [**createSubscriptionJson**](docs/Api/SubscriptionApi.md#createsubscriptionjson) | **POST** /v1/subscription | Create subscription
+*SubscriptionApi* | [**deleteMetadata4**](docs/Api/SubscriptionApi.md#deletemetadata4) | **DELETE** /v1/subscription/{handle}/metadata | Delete metadata
+*SubscriptionApi* | [**deletePending**](docs/Api/SubscriptionApi.md#deletepending) | **DELETE** /v1/subscription/{handle} | Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice.
+*SubscriptionApi* | [**deleteSubscriptionDiscount**](docs/Api/SubscriptionApi.md#deletesubscriptiondiscount) | **DELETE** /v1/subscription/{handle}/discount/{sdHandle} | Delete subscription discount
+*SubscriptionApi* | [**expire**](docs/Api/SubscriptionApi.md#expire) | **POST** /v1/subscription/{handle}/expire | Expire subscription
+*SubscriptionApi* | [**getMetadata4**](docs/Api/SubscriptionApi.md#getmetadata4) | **GET** /v1/subscription/{handle}/metadata | Get metadata
+*SubscriptionApi* | [**getPayableInvoice**](docs/Api/SubscriptionApi.md#getpayableinvoice) | **GET** /v1/subscription/{handle}/invoice | Get most relevant payable invoice for subscription
+*SubscriptionApi* | [**getSubscription**](docs/Api/SubscriptionApi.md#getsubscription) | **GET** /v1/subscription/{handle} | Get subscription
+*SubscriptionApi* | [**getSubscriptionAddOn**](docs/Api/SubscriptionApi.md#getsubscriptionaddon) | **GET** /v1/subscription/{handle}/add_on/{saHandle} | Get subscription add-on
+*SubscriptionApi* | [**getSubscriptionAddOns**](docs/Api/SubscriptionApi.md#getsubscriptionaddons) | **GET** /v1/subscription/{handle}/add_on | Get subscription add-ons
+*SubscriptionApi* | [**getSubscriptionDiscount**](docs/Api/SubscriptionApi.md#getsubscriptiondiscount) | **GET** /v1/subscription/{handle}/discount/{sdHandle} | Get subscription discount
+*SubscriptionApi* | [**getSubscriptionDiscounts**](docs/Api/SubscriptionApi.md#getsubscriptiondiscounts) | **GET** /v1/subscription/{handle}/discount | Get subscription discounts
+*SubscriptionApi* | [**getSubscriptionPaymentMethod**](docs/Api/SubscriptionApi.md#getsubscriptionpaymentmethod) | **GET** /v1/subscription/{handle}/pm | Get payment method
+*SubscriptionApi* | [**getSubscriptionPeriodBalance**](docs/Api/SubscriptionApi.md#getsubscriptionperiodbalance) | **GET** /v1/subscription/{handle}/period_balance | Get the period balance for subscription
+*SubscriptionApi* | [**intervalAmount**](docs/Api/SubscriptionApi.md#intervalamount) | **GET** /v1/subscription/{handle}/interval_amount | Calculate interval amount
+*SubscriptionApi* | [**onHold**](docs/Api/SubscriptionApi.md#onhold) | **POST** /v1/subscription/{handle}/on_hold | Subscription on hold
+*SubscriptionApi* | [**prepareSubscription**](docs/Api/SubscriptionApi.md#preparesubscription) | **POST** /v1/subscription/prepare | Prepare pending subscription
+*SubscriptionApi* | [**previewChangeSubscription**](docs/Api/SubscriptionApi.md#previewchangesubscription) | **PUT** /v1/subscription/{handle}/preview | Preview change subscription
+*SubscriptionApi* | [**previewSubscription**](docs/Api/SubscriptionApi.md#previewsubscription) | **POST** /v1/subscription/preview | Preview subscription
+*SubscriptionApi* | [**reactivateSubscription**](docs/Api/SubscriptionApi.md#reactivatesubscription) | **POST** /v1/subscription/{handle}/reactivate | Reactivate subscription on hold
+*SubscriptionApi* | [**redeemCouponCode**](docs/Api/SubscriptionApi.md#redeemcouponcode) | **POST** /v1/subscription/{handle}/coupon | Redeem coupon code for subscription
+*SubscriptionApi* | [**removeAllSubscriptionPaymentMethods**](docs/Api/SubscriptionApi.md#removeallsubscriptionpaymentmethods) | **DELETE** /v1/subscription/{handle}/pm | Remove all payment methods
+*SubscriptionApi* | [**removeSubscriptionPaymentMethod**](docs/Api/SubscriptionApi.md#removesubscriptionpaymentmethod) | **DELETE** /v1/subscription/{handle}/pm/{method_id} | Remove payment method
+*SubscriptionApi* | [**setSubscriptionPaymentMethod**](docs/Api/SubscriptionApi.md#setsubscriptionpaymentmethod) | **POST** /v1/subscription/{handle}/pm | Set payment method
+*SubscriptionApi* | [**uncancel**](docs/Api/SubscriptionApi.md#uncancel) | **POST** /v1/subscription/{handle}/uncancel | Uncancel subscription
+*SubscriptionApi* | [**updateMetadata4**](docs/Api/SubscriptionApi.md#updatemetadata4) | **PUT** /v1/subscription/{handle}/metadata | Create or update metadata
+*TaxPolicyApi* | [**createTaxPolicies**](docs/Api/TaxPolicyApi.md#createtaxpolicies) | **POST** /v1/tax_policy | Create tax policy
+*TaxPolicyApi* | [**deleteTaxPolicies**](docs/Api/TaxPolicyApi.md#deletetaxpolicies) | **DELETE** /v1/tax_policy/{handle} | Delete tax policy
+*TaxPolicyApi* | [**getStandardTaxRates**](docs/Api/TaxPolicyApi.md#getstandardtaxrates) | **GET** /v1/tax_policy/standard_tax_rates | List of predefined standard tax rates
+*TaxPolicyApi* | [**getTaxPolicies**](docs/Api/TaxPolicyApi.md#gettaxpolicies) | **GET** /v1/tax_policy/{handle} | Get tax policy
+*TaxPolicyApi* | [**getTaxRate**](docs/Api/TaxPolicyApi.md#gettaxrate) | **GET** /v1/tax_policy/{handle}/rates/{country} | Tax Rate for a country
+*TaxPolicyApi* | [**updateTaxPolicies**](docs/Api/TaxPolicyApi.md#updatetaxpolicies) | **PUT** /v1/tax_policy/{handle} | Update tax policy
+*UserApi* | [**cancelInvitation**](docs/Api/UserApi.md#cancelinvitation) | **DELETE** /v1/user/invite/{id} | Cancel invitation
+*UserApi* | [**deleteUser**](docs/Api/UserApi.md#deleteuser) | **DELETE** /v1/user/{id} | Delete user
+*UserApi* | [**getUser**](docs/Api/UserApi.md#getuser) | **GET** /v1/user/{id} | Get user
+*UserApi* | [**getUserInfo**](docs/Api/UserApi.md#getuserinfo) | **GET** /v1/user/{id}/info | Get user info
+*UserApi* | [**getUserMfa**](docs/Api/UserApi.md#getusermfa) | **GET** /v1/user/{id}/mfa | Get MFA setup details
+*UserApi* | [**getUsers**](docs/Api/UserApi.md#getusers) | **GET** /v1/user | Get users
+*UserApi* | [**inviteUser**](docs/Api/UserApi.md#inviteuser) | **POST** /v1/user/invite | Invite user
+*UserApi* | [**inviteUserAccept**](docs/Api/UserApi.md#inviteuseraccept) | **POST** /v1/user/invite/{token} | Accept invite
+*UserApi* | [**inviteUserGet**](docs/Api/UserApi.md#inviteuserget) | **GET** /v1/user/invite/{token} | Get invite
+*UserApi* | [**resetPassword**](docs/Api/UserApi.md#resetpassword) | **POST** /v1/user/reset_password | Reset password request
+*UserApi* | [**resetPasswordWithToken**](docs/Api/UserApi.md#resetpasswordwithtoken) | **POST** /v1/user/reset_password/{token} | Reset password
+*UserApi* | [**setMfa**](docs/Api/UserApi.md#setmfa) | **PUT** /v1/user/{id}/mfa | Set user MFA
+*UserApi* | [**updateAuth**](docs/Api/UserApi.md#updateauth) | **PUT** /v1/user/{id}/groups | Update user groups
+*UserApi* | [**updatePassword**](docs/Api/UserApi.md#updatepassword) | **PUT** /v1/user/{id}/password | Change password
+*UserApi* | [**updateUser**](docs/Api/UserApi.md#updateuser) | **PUT** /v1/user/{id} | Update user
+*UserApi* | [**verifyEmail**](docs/Api/UserApi.md#verifyemail) | **POST** /v1/user/verify_email/{token} | Verify email
+*UserApi* | [**verifyEmailRequest**](docs/Api/UserApi.md#verifyemailrequest) | **POST** /v1/user/{id}/verify_email | Send verification email
+*WebhookApi* | [**disableWebhooks**](docs/Api/WebhookApi.md#disablewebhooks) | **POST** /v1/webhook/disable | Disable webhooks
+*WebhookApi* | [**getWebhook**](docs/Api/WebhookApi.md#getwebhook) | **GET** /v1/webhook/{id} | Get webhooks
+*WebhookApi* | [**getWebhookRequests**](docs/Api/WebhookApi.md#getwebhookrequests) | **GET** /v1/webhook/{id}/request | Get webhook requests
+*WebhookApi* | [**getWebhooks**](docs/Api/WebhookApi.md#getwebhooks) | **GET** /v1/webhook | Get list of webhooks
+*WebhookApi* | [**resendJson**](docs/Api/WebhookApi.md#resendjson) | **POST** /v1/webhook/resend | Re-send webhooks
+*WebhookApi* | [**updateWebhooks**](docs/Api/WebhookApi.md#updatewebhooks) | **POST** /v1/webhook/update | Update and resend webhooks
 
 ## Documentation For Models
 
  - [Account](docs/Model/Account.md)
+ - [AccountFundingInformation](docs/Model/AccountFundingInformation.md)
  - [AccountMfaSettings](docs/Model/AccountMfaSettings.md)
  - [ActivateMpsAgreement](docs/Model/ActivateMpsAgreement.md)
  - [ActivateSubscription](docs/Model/ActivateSubscription.md)
@@ -652,6 +687,7 @@ All URIs are relative to *https://api.reepay.com/*
  - [AddOnList](docs/Model/AddOnList.md)
  - [AddPaymentMethod](docs/Model/AddPaymentMethod.md)
  - [AdditionalCost](docs/Model/AdditionalCost.md)
+ - [AmountRule](docs/Model/AmountRule.md)
  - [AnydayAgreement](docs/Model/AnydayAgreement.md)
  - [AnydayTransaction](docs/Model/AnydayTransaction.md)
  - [ApplepayAgreement](docs/Model/ApplepayAgreement.md)
@@ -660,8 +696,12 @@ All URIs are relative to *https://api.reepay.com/*
  - [BlikTransaction](docs/Model/BlikTransaction.md)
  - [CancelSubscription](docs/Model/CancelSubscription.md)
  - [Card](docs/Model/Card.md)
+ - [CardCountryRule](docs/Model/CardCountryRule.md)
  - [CardGatewayAgreement](docs/Model/CardGatewayAgreement.md)
+ - [CardPrefixRule](docs/Model/CardPrefixRule.md)
+ - [CardTokenDto](docs/Model/CardTokenDto.md)
  - [CardTransaction](docs/Model/CardTransaction.md)
+ - [CardTypeRule](docs/Model/CardTypeRule.md)
  - [CardV2](docs/Model/CardV2.md)
  - [CardVerification](docs/Model/CardVerification.md)
  - [CardVerificationRequest](docs/Model/CardVerificationRequest.md)
@@ -672,7 +712,10 @@ All URIs are relative to *https://api.reepay.com/*
  - [ChargeList](docs/Model/ChargeList.md)
  - [ChargeParameters](docs/Model/ChargeParameters.md)
  - [ChargeSource](docs/Model/ChargeSource.md)
+ - [CheckoutAccountDataDto](docs/Model/CheckoutAccountDataDto.md)
+ - [CheckoutSessionDataDto](docs/Model/CheckoutSessionDataDto.md)
  - [CopyCard](docs/Model/CopyCard.md)
+ - [CorporateCardRule](docs/Model/CorporateCardRule.md)
  - [Coupon](docs/Model/Coupon.md)
  - [CouponList](docs/Model/CouponList.md)
  - [CouponRedemption](docs/Model/CouponRedemption.md)
@@ -688,6 +731,7 @@ All URIs are relative to *https://api.reepay.com/*
  - [CreateCustomerNote](docs/Model/CreateCustomerNote.md)
  - [CreateDiscount](docs/Model/CreateDiscount.md)
  - [CreateDunningPlan](docs/Model/CreateDunningPlan.md)
+ - [CreateEntitlement](docs/Model/CreateEntitlement.md)
  - [CreateMpsAgreement](docs/Model/CreateMpsAgreement.md)
  - [CreateOrderLine](docs/Model/CreateOrderLine.md)
  - [CreatePayout](docs/Model/CreatePayout.md)
@@ -699,78 +743,117 @@ All URIs are relative to *https://api.reepay.com/*
  - [CreateSubscriptionDiscount](docs/Model/CreateSubscriptionDiscount.md)
  - [CreateSubscriptionInvoice](docs/Model/CreateSubscriptionInvoice.md)
  - [CreateSubscriptionPlan](docs/Model/CreateSubscriptionPlan.md)
+ - [CreateTaxPolicy](docs/Model/CreateTaxPolicy.md)
+ - [CreateVippsAgreement](docs/Model/CreateVippsAgreement.md)
  - [Credit](docs/Model/Credit.md)
  - [CreditInvoice](docs/Model/CreditInvoice.md)
  - [CreditNoteLine](docs/Model/CreditNoteLine.md)
+ - [CreditNoteSettings](docs/Model/CreditNoteSettings.md)
+ - [CurrencyRule](docs/Model/CurrencyRule.md)
  - [Customer](docs/Model/Customer.md)
+ - [CustomerDebtorSettings](docs/Model/CustomerDebtorSettings.md)
  - [CustomerList](docs/Model/CustomerList.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
  - [Discount](docs/Model/Discount.md)
  - [DiscountList](docs/Model/DiscountList.md)
  - [DiscountSettings](docs/Model/DiscountSettings.md)
  - [DunningPlan](docs/Model/DunningPlan.md)
+ - [EmvConfiguration](docs/Model/EmvConfiguration.md)
+ - [Entitlement](docs/Model/Entitlement.md)
+ - [EntitlementSearch](docs/Model/EntitlementSearch.md)
+ - [EpsTransaction](docs/Model/EpsTransaction.md)
+ - [ErrorCodeDto](docs/Model/ErrorCodeDto.md)
  - [ErrorResponse](docs/Model/ErrorResponse.md)
+ - [EstoniaBanksTransaction](docs/Model/EstoniaBanksTransaction.md)
  - [Event](docs/Model/Event.md)
  - [EventList](docs/Model/EventList.md)
  - [ExpireSubscription](docs/Model/ExpireSubscription.md)
  - [ExtendAuthResponse](docs/Model/ExtendAuthResponse.md)
  - [ExtendKlarnaAuthResponse](docs/Model/ExtendKlarnaAuthResponse.md)
  - [GatewayAgreement](docs/Model/GatewayAgreement.md)
- - [GiropayTransaction](docs/Model/GiropayTransaction.md)
  - [GooglepayAgreement](docs/Model/GooglepayAgreement.md)
  - [IdealTransaction](docs/Model/IdealTransaction.md)
  - [ImportMpsPaymentMethodRequest](docs/Model/ImportMpsPaymentMethodRequest.md)
+ - [ImportVippsRecurringPaymentMethodRequest](docs/Model/ImportVippsRecurringPaymentMethodRequest.md)
+ - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [IntervalAmount](docs/Model/IntervalAmount.md)
  - [InviteUser](docs/Model/InviteUser.md)
  - [InviteUserAccept](docs/Model/InviteUserAccept.md)
  - [Invoice](docs/Model/Invoice.md)
  - [InvoiceBillingAddress](docs/Model/InvoiceBillingAddress.md)
+ - [InvoiceConfiguration](docs/Model/InvoiceConfiguration.md)
  - [InvoiceCreditNote](docs/Model/InvoiceCreditNote.md)
+ - [InvoiceCreditNoteListDto](docs/Model/InvoiceCreditNoteListDto.md)
+ - [InvoiceCreditNoteV2](docs/Model/InvoiceCreditNoteV2.md)
  - [InvoiceList](docs/Model/InvoiceList.md)
+ - [InvoiceSequenceConfiguration](docs/Model/InvoiceSequenceConfiguration.md)
  - [InvoiceShippingAddress](docs/Model/InvoiceShippingAddress.md)
  - [Key](docs/Model/Key.md)
  - [KlarnaAgreement](docs/Model/KlarnaAgreement.md)
  - [KlarnaTransaction](docs/Model/KlarnaTransaction.md)
+ - [LatviaBanksTransaction](docs/Model/LatviaBanksTransaction.md)
+ - [LithuaniaBanksTransaction](docs/Model/LithuaniaBanksTransaction.md)
  - [MailSettings](docs/Model/MailSettings.md)
  - [ManualRefundTransfer](docs/Model/ManualRefundTransfer.md)
  - [ManualSettleTransfer](docs/Model/ManualSettleTransfer.md)
  - [ManualTransaction](docs/Model/ManualTransaction.md)
+ - [MbwayTransaction](docs/Model/MbwayTransaction.md)
  - [MoveCard](docs/Model/MoveCard.md)
  - [MpoAgreement](docs/Model/MpoAgreement.md)
  - [MpsAgreement](docs/Model/MpsAgreement.md)
  - [MpsSubscription](docs/Model/MpsSubscription.md)
  - [MpsSubscriptionV2](docs/Model/MpsSubscriptionV2.md)
  - [MpsTransaction](docs/Model/MpsTransaction.md)
+ - [MultibancoTransaction](docs/Model/MultibancoTransaction.md)
+ - [MybankTransaction](docs/Model/MybankTransaction.md)
+ - [NotSameCountryRule](docs/Model/NotSameCountryRule.md)
+ - [OfflineAgreement](docs/Model/OfflineAgreement.md)
  - [OnHoldSubscription](docs/Model/OnHoldSubscription.md)
  - [OrderLine](docs/Model/OrderLine.md)
  - [Organisation](docs/Model/Organisation.md)
  - [OrganisationLogin](docs/Model/OrganisationLogin.md)
  - [P24Transaction](docs/Model/P24Transaction.md)
+ - [PayconiqTransaction](docs/Model/PayconiqTransaction.md)
+ - [PayeverAgreement](docs/Model/PayeverAgreement.md)
  - [PaymentMethodList](docs/Model/PaymentMethodList.md)
  - [PaymentMethodV2](docs/Model/PaymentMethodV2.md)
+ - [PaymentTypeRule](docs/Model/PaymentTypeRule.md)
  - [Payout](docs/Model/Payout.md)
  - [PayoutList](docs/Model/PayoutList.md)
  - [PayoutTransaction](docs/Model/PayoutTransaction.md)
  - [PaypalAgreement](docs/Model/PaypalAgreement.md)
  - [PaypalTransaction](docs/Model/PaypalTransaction.md)
+ - [PaysafecardTransaction](docs/Model/PaysafecardTransaction.md)
+ - [PayseraTransaction](docs/Model/PayseraTransaction.md)
  - [Plan](docs/Model/Plan.md)
  - [PlanList](docs/Model/PlanList.md)
+ - [PostfinanceTransaction](docs/Model/PostfinanceTransaction.md)
  - [PproAgreement](docs/Model/PproAgreement.md)
  - [PrepareChargeDto](docs/Model/PrepareChargeDto.md)
  - [PreparedSubscription](docs/Model/PreparedSubscription.md)
+ - [ProviderRule](docs/Model/ProviderRule.md)
  - [ReactivateSubscription](docs/Model/ReactivateSubscription.md)
  - [RedeemCouponCode](docs/Model/RedeemCouponCode.md)
  - [Refund](docs/Model/Refund.md)
+ - [RequesterCountryRule](docs/Model/RequesterCountryRule.md)
  - [ResetUserPassword](docs/Model/ResetUserPassword.md)
  - [ResursAgreement](docs/Model/ResursAgreement.md)
  - [ResursTransaction](docs/Model/ResursTransaction.md)
+ - [RiskConfiguration](docs/Model/RiskConfiguration.md)
+ - [RiskRule](docs/Model/RiskRule.md)
+ - [RiskRuleSet](docs/Model/RiskRuleSet.md)
+ - [SantanderTransaction](docs/Model/SantanderTransaction.md)
+ - [SatispayTransaction](docs/Model/SatispayTransaction.md)
  - [SepaMandate](docs/Model/SepaMandate.md)
- - [SepaTransaction](docs/Model/SepaTransaction.md)
  - [SetPaymentMethod](docs/Model/SetPaymentMethod.md)
  - [Settle](docs/Model/Settle.md)
  - [SettleCharge](docs/Model/SettleCharge.md)
+ - [StandardTaxRatesResponseDto](docs/Model/StandardTaxRatesResponseDto.md)
+ - [StrongAuthenticationStatusRule](docs/Model/StrongAuthenticationStatusRule.md)
+ - [StronglyAuthenticatedRule](docs/Model/StronglyAuthenticatedRule.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionAddOn](docs/Model/SubscriptionAddOn.md)
+ - [SubscriptionCancelPreview](docs/Model/SubscriptionCancelPreview.md)
  - [SubscriptionChange](docs/Model/SubscriptionChange.md)
  - [SubscriptionChangeJournal](docs/Model/SubscriptionChangeJournal.md)
  - [SubscriptionDiscount](docs/Model/SubscriptionDiscount.md)
@@ -780,25 +863,39 @@ All URIs are relative to *https://api.reepay.com/*
  - [SupersedeSubscriptionPlan](docs/Model/SupersedeSubscriptionPlan.md)
  - [SwishAgreement](docs/Model/SwishAgreement.md)
  - [SwishTransaction](docs/Model/SwishTransaction.md)
+ - [TaxPolicy](docs/Model/TaxPolicy.md)
+ - [TaxPolicyFallbacks](docs/Model/TaxPolicyFallbacks.md)
+ - [TaxPolicyList](docs/Model/TaxPolicyList.md)
+ - [TaxRate](docs/Model/TaxRate.md)
+ - [TemplateModel](docs/Model/TemplateModel.md)
  - [Terms](docs/Model/Terms.md)
- - [TokenRequestorRequest](docs/Model/TokenRequestorRequest.md)
- - [TokenRequestorResponse](docs/Model/TokenRequestorResponse.md)
+ - [ThreeDSecureStatusRule](docs/Model/ThreeDSecureStatusRule.md)
  - [Transaction](docs/Model/Transaction.md)
+ - [TransactionContextRule](docs/Model/TransactionContextRule.md)
  - [TransactionList](docs/Model/TransactionList.md)
+ - [TrustlyTransaction](docs/Model/TrustlyTransaction.md)
  - [UpdateAccount](docs/Model/UpdateAccount.md)
  - [UpdateAddOn](docs/Model/UpdateAddOn.md)
+ - [UpdateAnydayAgreement](docs/Model/UpdateAnydayAgreement.md)
  - [UpdateCardGatewayAgreement](docs/Model/UpdateCardGatewayAgreement.md)
  - [UpdateCoupon](docs/Model/UpdateCoupon.md)
  - [UpdateCustomer](docs/Model/UpdateCustomer.md)
  - [UpdateDiscount](docs/Model/UpdateDiscount.md)
  - [UpdateDunningPlan](docs/Model/UpdateDunningPlan.md)
+ - [UpdateEmvConfiguration](docs/Model/UpdateEmvConfiguration.md)
+ - [UpdateFeeConfiguration](docs/Model/UpdateFeeConfiguration.md)
  - [UpdateGooglepayAgreement](docs/Model/UpdateGooglepayAgreement.md)
  - [UpdateKlarnaAgreement](docs/Model/UpdateKlarnaAgreement.md)
  - [UpdateMpsAgreement](docs/Model/UpdateMpsAgreement.md)
+ - [UpdateOfflineAgreement](docs/Model/UpdateOfflineAgreement.md)
  - [UpdateOrganisation](docs/Model/UpdateOrganisation.md)
+ - [UpdatePayeverAgreement](docs/Model/UpdatePayeverAgreement.md)
+ - [UpdatePaypalAgreement](docs/Model/UpdatePaypalAgreement.md)
  - [UpdatePproAgreement](docs/Model/UpdatePproAgreement.md)
  - [UpdateResursAgreement](docs/Model/UpdateResursAgreement.md)
  - [UpdateSubscriptionPlan](docs/Model/UpdateSubscriptionPlan.md)
+ - [UpdateSurcharge](docs/Model/UpdateSurcharge.md)
+ - [UpdateTaxPolicy](docs/Model/UpdateTaxPolicy.md)
  - [UpdateUser](docs/Model/UpdateUser.md)
  - [UpdateUserGroups](docs/Model/UpdateUserGroups.md)
  - [UpdateUserPassword](docs/Model/UpdateUserPassword.md)
@@ -812,16 +909,19 @@ All URIs are relative to *https://api.reepay.com/*
  - [UserRenew](docs/Model/UserRenew.md)
  - [UserResetRequestPassword](docs/Model/UserResetRequestPassword.md)
  - [UserSetMfa](docs/Model/UserSetMfa.md)
- - [VerkkopankkiTransaction](docs/Model/VerkkopankkiTransaction.md)
  - [ViabillAgreement](docs/Model/ViabillAgreement.md)
  - [ViabillTransaction](docs/Model/ViabillTransaction.md)
  - [VippsAgreement](docs/Model/VippsAgreement.md)
+ - [VippsMerchantOnboarding](docs/Model/VippsMerchantOnboarding.md)
  - [VippsRecurringAgreement](docs/Model/VippsRecurringAgreement.md)
- - [VippsRecurringSubscription](docs/Model/VippsRecurringSubscription.md)
+ - [VippsRecurringMandate](docs/Model/VippsRecurringMandate.md)
+ - [VippsRecurringMerchantOnboarding](docs/Model/VippsRecurringMerchantOnboarding.md)
+ - [VippsRecurringMerchantOnboardingResponse](docs/Model/VippsRecurringMerchantOnboardingResponse.md)
  - [VippsRecurringTransaction](docs/Model/VippsRecurringTransaction.md)
- - [VtsConfiguration](docs/Model/VtsConfiguration.md)
+ - [WeChatPayTransaction](docs/Model/WeChatPayTransaction.md)
  - [Webhook](docs/Model/Webhook.md)
  - [WebhookDisableRequest](docs/Model/WebhookDisableRequest.md)
+ - [WebhookList](docs/Model/WebhookList.md)
  - [WebhookRequest](docs/Model/WebhookRequest.md)
  - [WebhookResendRequest](docs/Model/WebhookResendRequest.md)
  - [WebhookSettings](docs/Model/WebhookSettings.md)
@@ -843,5 +943,5 @@ All URIs are relative to *https://api.reepay.com/*
 
 ## Author
 
-
+support@reepay.com
 

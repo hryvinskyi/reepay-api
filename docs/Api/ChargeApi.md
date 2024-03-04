@@ -1,15 +1,16 @@
 # Reepay\ChargeApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                        | HTTP request                        | Description           
----------------------------------------------------------------|-------------------------------------|-----------------------
- [**cancelCharge**](ChargeApi.md#cancelcharge)                 | **POST** /v1/charge/{handle}/cancel | Cancel charge         
- [**createCharge**](ChargeApi.md#createcharge)                 | **POST** /v1/charge                 | Create charge         
- [**deleteCreatedInvoice**](ChargeApi.md#deletecreatedinvoice) | **DELETE** /v1/charge/{id}          | Delete created charge 
- [**getCharge**](ChargeApi.md#getcharge)                       | **GET** /v1/charge/{handle}         | Get charge            
- [**prepareCharge**](ChargeApi.md#preparecharge)               | **POST** /v1/charge/prepare         | Prepare charge        
- [**settleCharge**](ChargeApi.md#settlecharge)                 | **POST** /v1/charge/{handle}/settle | Settle charge         
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**cancelCharge**](ChargeApi.md#cancelcharge) | **POST** /v1/charge/{handle}/cancel | Cancel charge
+[**createCharge**](ChargeApi.md#createcharge) | **POST** /v1/charge | Create charge
+[**deleteCreatedInvoice**](ChargeApi.md#deletecreatedinvoice) | **DELETE** /v1/charge/{id} | Delete created charge
+[**getCharge**](ChargeApi.md#getcharge) | **GET** /v1/charge/{handle} | Get charge
+[**offlineSettle**](ChargeApi.md#offlinesettle) | **POST** /v1/charge/{id}/transaction/{transaction}/offline_settle | Settle offline transaction
+[**prepareCharge**](ChargeApi.md#preparecharge) | **POST** /v1/charge/prepare | Prepare charge
+[**settleCharge**](ChargeApi.md#settlecharge) | **POST** /v1/charge/{handle}/settle | Settle charge
 
 # **cancelCharge**
 > \Reepay\Model\Charge cancelCharge($handle)
@@ -59,8 +60,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -100,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCharge**](../Model/CreateCharge.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCharge**](../Model/CreateCharge.md)|  |
 
 ### Return type
 
@@ -222,6 +223,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **offlineSettle**
+> \Reepay\Model\Charge offlineSettle($id, $transaction)
+
+Settle offline transaction
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Invoice id or handle
+$transaction = "transaction_example"; // string | Transaction id
+
+try {
+    $result = $apiInstance->offlineSettle($id, $transaction);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChargeApi->offlineSettle: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Invoice id or handle |
+ **transaction** | **string**| Transaction id |
+
+### Return type
+
+[**\Reepay\Model\Charge**](../Model/Charge.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **prepareCharge**
 > \Reepay\Model\Charge prepareCharge($body)
 
@@ -258,7 +314,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\PrepareChargeDto**](../Model/PrepareChargeDto.md)|  | [optional]
+ **body** | [**\Reepay\Model\PrepareChargeDto**](../Model/PrepareChargeDto.md)|  |
 
 ### Return type
 

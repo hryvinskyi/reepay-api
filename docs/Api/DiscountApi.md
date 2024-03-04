@@ -1,14 +1,14 @@
 # Reepay\DiscountApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                  | HTTP request                            | Description       
----------------------------------------------------------|-----------------------------------------|-------------------
- [**createDiscount**](DiscountApi.md#creatediscount)     | **POST** /v1/discount                   | Create discount   
- [**deleteDiscount**](DiscountApi.md#deletediscount)     | **DELETE** /v1/discount/{handle}        | Delete discount   
- [**getDiscount**](DiscountApi.md#getdiscount)           | **GET** /v1/discount/{handle}           | Get discount      
- [**undeleteDiscount**](DiscountApi.md#undeletediscount) | **POST** /v1/discount/{handle}/undelete | Undelete discount 
- [**updateDiscount**](DiscountApi.md#updatediscount)     | **PUT** /v1/discount/{handle}           | Update discount   
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createDiscount**](DiscountApi.md#creatediscount) | **POST** /v1/discount | Create discount
+[**deleteDiscount**](DiscountApi.md#deletediscount) | **DELETE** /v1/discount/{handle} | Delete discount
+[**getDiscount**](DiscountApi.md#getdiscount) | **GET** /v1/discount/{handle} | Get discount
+[**undeleteDiscount**](DiscountApi.md#undeletediscount) | **POST** /v1/discount/{handle}/undelete | Undelete discount
+[**updateDiscount**](DiscountApi.md#updatediscount) | **PUT** /v1/discount/{handle} | Update discount
 
 # **createDiscount**
 > \Reepay\Model\Discount createDiscount($body)
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateDiscount**](../Model/CreateDiscount.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateDiscount**](../Model/CreateDiscount.md)|  |
 
 ### Return type
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDiscount**
-> \Reepay\Model\Discount updateDiscount($handle, $body)
+> \Reepay\Model\Discount updateDiscount($body, $handle)
 
 Update discount
 
@@ -243,11 +243,11 @@ $apiInstance = new Reepay\Api\DiscountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Discount handle
 $body = new \Reepay\Model\UpdateDiscount(); // \Reepay\Model\UpdateDiscount | 
+$handle = "handle_example"; // string | Discount handle
 
 try {
-    $result = $apiInstance->updateDiscount($handle, $body);
+    $result = $apiInstance->updateDiscount($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountApi->updateDiscount: ', $e->getMessage(), PHP_EOL;
@@ -259,8 +259,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateDiscount**](../Model/UpdateDiscount.md)|  |
  **handle** | **string**| Discount handle |
- **body** | [**\Reepay\Model\UpdateDiscount**](../Model/UpdateDiscount.md)|  | [optional]
 
 ### Return type
 

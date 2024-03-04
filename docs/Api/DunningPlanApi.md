@@ -1,14 +1,14 @@
 # Reepay\DunningPlanApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                               | HTTP request                         | Description               
-----------------------------------------------------------------------|--------------------------------------|---------------------------
- [**createDunningPlanJson**](DunningPlanApi.md#createdunningplanjson) | **POST** /v1/dunning_plan            | Create dunning plan       
- [**deleteDunningPlan**](DunningPlanApi.md#deletedunningplan)         | **DELETE** /v1/dunning_plan/{handle} | Delete dunning plan       
- [**getDunningPlan**](DunningPlanApi.md#getdunningplan)               | **GET** /v1/dunning_plan/{handle}    | Get dunning plan          
- [**getDunningPlans**](DunningPlanApi.md#getdunningplans)             | **GET** /v1/dunning_plan             | Get list of dunning plans 
- [**updateJson**](DunningPlanApi.md#updatejson)                       | **PUT** /v1/dunning_plan/{handle}    | Update dunning plan       
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createDunningPlanJson**](DunningPlanApi.md#createdunningplanjson) | **POST** /v1/dunning_plan | Create dunning plan
+[**deleteDunningPlan**](DunningPlanApi.md#deletedunningplan) | **DELETE** /v1/dunning_plan/{handle} | Delete dunning plan
+[**getDunningPlan**](DunningPlanApi.md#getdunningplan) | **GET** /v1/dunning_plan/{handle} | Get dunning plan
+[**getDunningPlans**](DunningPlanApi.md#getdunningplans) | **GET** /v1/dunning_plan | Get list of dunning plans
+[**updateJson**](DunningPlanApi.md#updatejson) | **PUT** /v1/dunning_plan/{handle} | Update dunning plan
 
 # **createDunningPlanJson**
 > \Reepay\Model\DunningPlan createDunningPlanJson($body)
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateDunningPlan**](../Model/CreateDunningPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateDunningPlan**](../Model/CreateDunningPlan.md)|  |
 
 ### Return type
 
@@ -219,7 +219,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateJson**
-> \Reepay\Model\DunningPlan updateJson($handle, $body)
+> \Reepay\Model\DunningPlan updateJson($body, $handle)
 
 Update dunning plan
 
@@ -239,11 +239,11 @@ $apiInstance = new Reepay\Api\DunningPlanApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Dunning plan handle
 $body = new \Reepay\Model\UpdateDunningPlan(); // \Reepay\Model\UpdateDunningPlan | 
+$handle = "handle_example"; // string | Dunning plan handle
 
 try {
-    $result = $apiInstance->updateJson($handle, $body);
+    $result = $apiInstance->updateJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->updateJson: ', $e->getMessage(), PHP_EOL;
@@ -255,8 +255,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateDunningPlan**](../Model/UpdateDunningPlan.md)|  |
  **handle** | **string**| Dunning plan handle |
- **body** | [**\Reepay\Model\UpdateDunningPlan**](../Model/UpdateDunningPlan.md)|  | [optional]
 
 ### Return type
 

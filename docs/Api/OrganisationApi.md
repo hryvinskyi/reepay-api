@@ -1,11 +1,11 @@
 # Reepay\OrganisationApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                    | HTTP request             | Description         
------------------------------------------------------------|--------------------------|---------------------
- [**getOrganisation**](OrganisationApi.md#getorganisation) | **GET** /v1/organisation | Get organisation    
- [**update**](OrganisationApi.md#update)                   | **PUT** /v1/organisation | Update organisation 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getOrganisation**](OrganisationApi.md#getorganisation) | **GET** /v1/organisation | Get organisation
+[**update**](OrganisationApi.md#update) | **PUT** /v1/organisation | Update organisation
 
 # **getOrganisation**
 > \Reepay\Model\Organisation getOrganisation()
@@ -92,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\UpdateOrganisation**](../Model/UpdateOrganisation.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateOrganisation**](../Model/UpdateOrganisation.md)|  |
 
 ### Return type
 
@@ -104,8 +104,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

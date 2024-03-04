@@ -1,13 +1,13 @@
 # Reepay\CreditApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                | HTTP request                             | Description                  
--------------------------------------------------------|------------------------------------------|------------------------------
- [**cancelCredit**](CreditApi.md#cancelcredit)         | **POST** /v1/credit/{handle}/cancel      | Cancel credit                
- [**createCreditJson**](CreditApi.md#createcreditjson) | **POST** /v1/credit                      | Create credit                
- [**getCredit**](CreditApi.md#getcredit)               | **GET** /v1/credit/{handle}              | Get credit                   
- [**getCredits**](CreditApi.md#getcredits)             | **GET** /v1/credit/subscription/{handle} | Get credits for subscription 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**cancelCredit**](CreditApi.md#cancelcredit) | **POST** /v1/credit/{handle}/cancel | Cancel credit
+[**createCreditJson**](CreditApi.md#createcreditjson) | **POST** /v1/credit | Create credit
+[**getCredit**](CreditApi.md#getcredit) | **GET** /v1/credit/{handle} | Get credit
+[**getCredits**](CreditApi.md#getcredits) | **GET** /v1/credit/subscription/{handle} | Get credits for subscription
 
 # **cancelCredit**
 > \Reepay\Model\Credit cancelCredit($handle)
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCredit**](../Model/CreateCredit.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCredit**](../Model/CreateCredit.md)|  |
 
 ### Return type
 

@@ -1,30 +1,30 @@
 # Reepay\InvoiceApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                                           | HTTP request                                                          | Description                               
-----------------------------------------------------------------------------------|-----------------------------------------------------------------------|-------------------------------------------
- [**cancelAllDunningPending**](InvoiceApi.md#cancelalldunningpending)             | **POST** /v1/invoice/cancel_all_dunning_pending/subscription/{handle} | Cancel all dunning and pending            
- [**cancelInvoice**](InvoiceApi.md#cancelinvoice)                                 | **POST** /v1/invoice/{id}/cancel                                      | Cancel invoice                            
- [**cancelSettleLater**](InvoiceApi.md#cancelsettlelater)                         | **POST** /v1/invoice/{id}/settle/cancel                               | Cancel settle later                       
- [**cancelTransaction**](InvoiceApi.md#canceltransaction)                         | **POST** /v1/invoice/{id}/transaction/{transaction}/cancel            | Cancel transaction                        
- [**createOrUpdateBillingAddress**](InvoiceApi.md#createorupdatebillingaddress)   | **PUT** /v1/invoice/{id}/billing_address                              | Create or update invoice billing address  
- [**createOrUpdateShippingAddress**](InvoiceApi.md#createorupdateshippingaddress) | **PUT** /v1/invoice/{id}/shipping_address                             | Create or update invoice shipping address 
- [**deleteBillingAddress**](InvoiceApi.md#deletebillingaddress)                   | **DELETE** /v1/invoice/{id}/billing_address                           | Delete invoice billing address            
- [**deleteMetadata2**](InvoiceApi.md#deletemetadata2)                             | **DELETE** /v1/invoice/{handle}/metadata                              | Delete metadata                           
- [**deleteShippingAddress**](InvoiceApi.md#deleteshippingaddress)                 | **DELETE** /v1/invoice/{id}/shipping_address                          | Delete invoice shipping address           
- [**detachFromSubscription**](InvoiceApi.md#detachfromsubscription)               | **POST** /v1/invoice/{id}/detach                                      | Detach from subscription                  
- [**extendKAuthTransaction**](InvoiceApi.md#extendkauthtransaction)               | **POST** /v1/invoice/{id}/transaction/{transaction}/extend            | Extend authorization transaction          
- [**extendKlarnaTransaction**](InvoiceApi.md#extendklarnatransaction)             | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna     | Extend Klarna authorization transaction   
- [**failInvoice**](InvoiceApi.md#failinvoice)                                     | **POST** /v1/invoice/{id}/fail                                        | Fail invoice                              
- [**getInvoice**](InvoiceApi.md#getinvoice)                                       | **GET** /v1/invoice/{id}                                              | Get invoice                               
- [**getMetadata2**](InvoiceApi.md#getmetadata2)                                   | **GET** /v1/invoice/{handle}/metadata                                 | Get metadata                              
- [**manualSettle**](InvoiceApi.md#manualsettle)                                   | **POST** /v1/invoice/{id}/manual_settle                               | Manual settle                             
- [**reactivateInvoice**](InvoiceApi.md#reactivateinvoice)                         | **POST** /v1/invoice/{id}/reactivate                                  | Reactivate invoice                        
- [**settle**](InvoiceApi.md#settle)                                               | **POST** /v1/invoice/{id}/settle                                      | Settle                                    
- [**transaction**](InvoiceApi.md#transaction)                                     | **GET** /v1/invoice/{id}/transaction/{transaction}                    | Get transaction                           
- [**transactionDetails**](InvoiceApi.md#transactiondetails)                       | **GET** /v1/invoice/{id}/transaction/{transaction}/details            | Get transaction details                   
- [**updateMetadata2**](InvoiceApi.md#updatemetadata2)                             | **PUT** /v1/invoice/{handle}/metadata                                 | Create or update metadata                 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**cancelAllDunningPending**](InvoiceApi.md#cancelalldunningpending) | **POST** /v1/invoice/cancel_all_dunning_pending/subscription/{handle} | Cancel all dunning and pending
+[**cancelInvoice**](InvoiceApi.md#cancelinvoice) | **POST** /v1/invoice/{id}/cancel | Cancel invoice
+[**cancelSettleLater**](InvoiceApi.md#cancelsettlelater) | **POST** /v1/invoice/{id}/settle/cancel | Cancel settle later
+[**cancelTransaction**](InvoiceApi.md#canceltransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/cancel | Cancel transaction
+[**createOrUpdateBillingAddress**](InvoiceApi.md#createorupdatebillingaddress) | **PUT** /v1/invoice/{id}/billing_address | Create or update invoice billing address
+[**createOrUpdateShippingAddress**](InvoiceApi.md#createorupdateshippingaddress) | **PUT** /v1/invoice/{id}/shipping_address | Create or update invoice shipping address
+[**deleteBillingAddress**](InvoiceApi.md#deletebillingaddress) | **DELETE** /v1/invoice/{id}/billing_address | Delete invoice billing address
+[**deleteMetadata2**](InvoiceApi.md#deletemetadata2) | **DELETE** /v1/invoice/{handle}/metadata | Delete metadata
+[**deleteShippingAddress**](InvoiceApi.md#deleteshippingaddress) | **DELETE** /v1/invoice/{id}/shipping_address | Delete invoice shipping address
+[**detachFromSubscription**](InvoiceApi.md#detachfromsubscription) | **POST** /v1/invoice/{id}/detach | Detach from subscription
+[**extendKAuthTransaction**](InvoiceApi.md#extendkauthtransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend | Extend authorization transaction
+[**extendKlarnaTransaction**](InvoiceApi.md#extendklarnatransaction) | **POST** /v1/invoice/{id}/transaction/{transaction}/extend_klarna | Extend Klarna authorization transaction
+[**failInvoice**](InvoiceApi.md#failinvoice) | **POST** /v1/invoice/{id}/fail | Fail invoice
+[**getInvoice**](InvoiceApi.md#getinvoice) | **GET** /v1/invoice/{id} | Get invoice
+[**getMetadata2**](InvoiceApi.md#getmetadata2) | **GET** /v1/invoice/{handle}/metadata | Get metadata
+[**manualSettle**](InvoiceApi.md#manualsettle) | **POST** /v1/invoice/{id}/manual_settle | Manual settle
+[**reactivateInvoice**](InvoiceApi.md#reactivateinvoice) | **POST** /v1/invoice/{id}/reactivate | Reactivate invoice
+[**settle**](InvoiceApi.md#settle) | **POST** /v1/invoice/{id}/settle | Settle
+[**transaction**](InvoiceApi.md#transaction) | **GET** /v1/invoice/{id}/transaction/{transaction} | Get transaction
+[**transactionDetails**](InvoiceApi.md#transactiondetails) | **GET** /v1/invoice/{id}/transaction/{transaction}/details | Get transaction details
+[**updateMetadata2**](InvoiceApi.md#updatemetadata2) | **PUT** /v1/invoice/{handle}/metadata | Create or update metadata
 
 # **cancelAllDunningPending**
 > \Reepay\Model\Invoice[] cancelAllDunningPending($handle)
@@ -180,8 +180,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrUpdateBillingAddress**
-> \Reepay\Model\Invoice createOrUpdateBillingAddress($id, $body)
+> \Reepay\Model\Invoice createOrUpdateBillingAddress($body, $id)
 
 Create or update invoice billing address
 
@@ -261,11 +261,11 @@ $apiInstance = new Reepay\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\InvoiceBillingAddress(); // \Reepay\Model\InvoiceBillingAddress | 
+$id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $apiInstance->createOrUpdateBillingAddress($id, $body);
+    $result = $apiInstance->createOrUpdateBillingAddress($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->createOrUpdateBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -277,8 +277,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\InvoiceBillingAddress**](../Model/InvoiceBillingAddress.md)|  |
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\InvoiceBillingAddress**](../Model/InvoiceBillingAddress.md)|  | [optional]
 
 ### Return type
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrUpdateShippingAddress**
-> \Reepay\Model\Invoice createOrUpdateShippingAddress($id, $body)
+> \Reepay\Model\Invoice createOrUpdateShippingAddress($body, $id)
 
 Create or update invoice shipping address
 
@@ -316,11 +316,11 @@ $apiInstance = new Reepay\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\InvoiceShippingAddress(); // \Reepay\Model\InvoiceShippingAddress | 
+$id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $apiInstance->createOrUpdateShippingAddress($id, $body);
+    $result = $apiInstance->createOrUpdateShippingAddress($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->createOrUpdateShippingAddress: ', $e->getMessage(), PHP_EOL;
@@ -332,8 +332,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\InvoiceShippingAddress**](../Model/InvoiceShippingAddress.md)|  |
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\InvoiceShippingAddress**](../Model/InvoiceShippingAddress.md)|  | [optional]
 
 ### Return type
 
@@ -556,8 +556,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **manualSettle**
-> \Reepay\Model\Invoice manualSettle($id, $body)
+> \Reepay\Model\Invoice manualSettle($body, $id)
 
 Manual settle
 
@@ -851,11 +851,11 @@ $apiInstance = new Reepay\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\ManualSettleTransfer(); // \Reepay\Model\ManualSettleTransfer | 
+$id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $apiInstance->manualSettle($id, $body);
+    $result = $apiInstance->manualSettle($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->manualSettle: ', $e->getMessage(), PHP_EOL;
@@ -867,8 +867,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ManualSettleTransfer**](../Model/ManualSettleTransfer.md)|  |
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\ManualSettleTransfer**](../Model/ManualSettleTransfer.md)|  | [optional]
 
 ### Return type
 
@@ -933,13 +933,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **settle**
-> \Reepay\Model\Invoice settle($id, $body)
+> \Reepay\Model\Invoice settle($body, $id)
 
 Settle
 
@@ -959,11 +959,11 @@ $apiInstance = new Reepay\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Invoice id or handle
 $body = new \Reepay\Model\Settle(); // \Reepay\Model\Settle | 
+$id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $apiInstance->settle($id, $body);
+    $result = $apiInstance->settle($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->settle: ', $e->getMessage(), PHP_EOL;
@@ -975,8 +975,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\Settle**](../Model/Settle.md)|  |
  **id** | **string**| Invoice id or handle |
- **body** | [**\Reepay\Model\Settle**](../Model/Settle.md)|  | [optional]
 
 ### Return type
 
@@ -1104,7 +1104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMetadata2**
-> map[string,object] updateMetadata2($handle, $body)
+> map[string,object] updateMetadata2($body, $handle)
 
 Create or update metadata
 
@@ -1124,11 +1124,11 @@ $apiInstance = new Reepay\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Resource handle
 $body = new \Reepay\Model\map(); // map[string,object] | 
+$handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $apiInstance->updateMetadata2($handle, $body);
+    $result = $apiInstance->updateMetadata2($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->updateMetadata2: ', $e->getMessage(), PHP_EOL;
@@ -1138,10 +1138,10 @@ try {
 
 ### Parameters
 
- Name       | Type                                      | Description     | Notes      
-------------|-------------------------------------------|-----------------|------------
- **handle** | **string**                                | Resource handle |
- **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**map[string,object]**](../Model/map.md)|  |
+ **handle** | **string**| Resource handle |
 
 ### Return type
 
@@ -1153,8 +1153,8 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

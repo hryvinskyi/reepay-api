@@ -1,12 +1,12 @@
 # Reepay\PayoutApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                      | HTTP request                                              | Description             
--------------------------------------------------------------|-----------------------------------------------------------|-------------------------
- [**createPayout**](PayoutApi.md#createpayout)               | **POST** /v1/payout                                       | Create payout           
- [**getPayout**](PayoutApi.md#getpayout)                     | **GET** /v1/payout/{handle}                               | Get payout              
- [**transactionDetails1**](PayoutApi.md#transactiondetails1) | **GET** /v1/payout/{id}/transaction/{transaction}/details | Get transaction details 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPayout**](PayoutApi.md#createpayout) | **POST** /v1/payout | Create payout
+[**getPayout**](PayoutApi.md#getpayout) | **GET** /v1/payout/{handle} | Get payout
+[**transactionDetails1**](PayoutApi.md#transactiondetails1) | **GET** /v1/payout/{id}/transaction/{transaction}/details | Get transaction details
 
 # **createPayout**
 > \Reepay\Model\Payout createPayout($body)
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreatePayout**](../Model/CreatePayout.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreatePayout**](../Model/CreatePayout.md)|  |
 
 ### Return type
 

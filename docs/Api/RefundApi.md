@@ -1,11 +1,11 @@
 # Reepay\RefundApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                        | HTTP request            | Description   
------------------------------------------------|-------------------------|---------------
- [**createRefund**](RefundApi.md#createrefund) | **POST** /v1/refund     | Create refund 
- [**getRefund**](RefundApi.md#getrefund)       | **GET** /v1/refund/{id} | Get refund    
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createRefund**](RefundApi.md#createrefund) | **POST** /v1/refund | Create refund
+[**getRefund**](RefundApi.md#getrefund) | **GET** /v1/refund/{id} | Get refund
 
 # **createRefund**
 > \Reepay\Model\Refund createRefund($body)
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateRefund**](../Model/CreateRefund.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateRefund**](../Model/CreateRefund.md)|  |
 
 ### Return type
 

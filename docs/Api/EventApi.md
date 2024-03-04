@@ -1,11 +1,11 @@
 # Reepay\EventApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                 | HTTP request           | Description        
-----------------------------------------|------------------------|--------------------
- [**getEvent**](EventApi.md#getevent)   | **GET** /v1/event/{id} | Get event          
- [**getEvents**](EventApi.md#getevents) | **GET** /v1/event      | Get list of events 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getEvent**](EventApi.md#getevent) | **GET** /v1/event/{id} | Get event
+[**getEvents**](EventApi.md#getevents) | **GET** /v1/event | Get list of events
 
 # **getEvent**
 > \Reepay\Model\Event getEvent($id)
@@ -81,11 +81,11 @@ $apiInstance = new Reepay\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$page = 1; // int | Page number to get
-$size = 20; // int | Page size to use (default 20)
-$customer = "customer_example"; // string | Customer handle
-$subscription = "subscription_example"; // string | Subscription handle
-$invoice = "invoice_example"; // string | Invoice id
+$page = 1; // int | 
+$size = 20; // int | 
+$customer = "customer_example"; // string | 
+$subscription = "subscription_example"; // string | 
+$invoice = "invoice_example"; // string | 
 
 try {
     $result = $apiInstance->getEvents($page, $size, $customer, $subscription, $invoice);
@@ -100,11 +100,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number to get | [optional] [default to 1]
- **size** | **int**| Page size to use (default 20) | [optional] [default to 20]
- **customer** | **string**| Customer handle | [optional]
- **subscription** | **string**| Subscription handle | [optional]
- **invoice** | **string**| Invoice id | [optional]
+ **page** | **int**|  | [optional] [default to 1]
+ **size** | **int**|  | [optional] [default to 20]
+ **customer** | **string**|  | [optional]
+ **subscription** | **string**|  | [optional]
+ **invoice** | **string**|  | [optional]
 
 ### Return type
 

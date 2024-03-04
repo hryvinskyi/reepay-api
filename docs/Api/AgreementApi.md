@@ -1,50 +1,54 @@
 # Reepay\AgreementApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                                             | HTTP request                                   | Description                                      
-------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------------------------
- [**activateMpsAgreement**](AgreementApi.md#activatempsagreement)                   | **POST** /v1/agreement/{id}/mps_activate       | Activate mps agreement by selecting provider     
- [**createAnydayAgreement**](AgreementApi.md#createanydayagreement)                 | **POST** /v1/agreement/anyday                  | Create Anyday agreement                          
- [**createApplepayAgreement**](AgreementApi.md#createapplepayagreement)             | **POST** /v1/agreement/applepay                | Create ApplePay agreement                        
- [**createCardGatewayAgreement**](AgreementApi.md#createcardgatewayagreement)       | **POST** /v1/agreement/card_gateway            | Create card gateway agreement                    
- [**createGooglepayAgreement**](AgreementApi.md#creategooglepayagreement)           | **POST** /v1/agreement/googlepay               | Create GooglePay agreement                       
- [**createKlarnaAgreement**](AgreementApi.md#createklarnaagreement)                 | **POST** /v1/agreement/klarna                  | Create Klarna agreement                          
- [**createMpoAgreement**](AgreementApi.md#creatempoagreement)                       | **POST** /v1/agreement/mpo                     | Create MobilePay Online agreement                
- [**createMpsAgreement**](AgreementApi.md#creatempsagreement)                       | **POST** /v1/agreement/mps                     | Create pending MobilePay Subscriptions agreement 
- [**createPaypalAgreement**](AgreementApi.md#createpaypalagreement)                 | **POST** /v1/agreement/paypal                  | Create PayPal agreement                          
- [**createPproAgreement**](AgreementApi.md#createpproagreement)                     | **POST** /v1/agreement/ppro                    | Create ppro agreement                            
- [**createResursAgreement**](AgreementApi.md#createresursagreement)                 | **POST** /v1/agreement/resurs                  | Create Resurs agreement                          
- [**createSwishAgreement**](AgreementApi.md#createswishagreement)                   | **POST** /v1/agreement/swish                   | Create Swish agreement                           
- [**createTokenRequestor**](AgreementApi.md#createtokenrequestor)                   | **POST** /v1/agreement/token_requestor/onboard | Create token requestor                           
- [**createViabillAgreement**](AgreementApi.md#createviabillagreement)               | **POST** /v1/agreement/viabill                 | Create ViaBill agreement                         
- [**createVippsAgreement**](AgreementApi.md#createvippsagreement)                   | **POST** /v1/agreement/vipps                   | Create Vipps agreement                           
- [**createVippsRecurringAgreement**](AgreementApi.md#createvippsrecurringagreement) | **POST** /v1/agreement/vipps_recurring         | Create Vipps Recurring agreement                 
- [**deleteGatewayAgreement**](AgreementApi.md#deletegatewayagreement)               | **DELETE** /v1/agreement/{id}                  | Delete gateway agreement                         
- [**deleteTokenRequestor**](AgreementApi.md#deletetokenrequestor)                   | **DELETE** /v1/agreement/token_requestor       | Delete token requestor by id for card type       
- [**disableGatewayAgreement**](AgreementApi.md#disablegatewayagreement)             | **POST** /v1/agreement/{id}/disable            | Disable gateway agreement                        
- [**enableGatewayAgreement**](AgreementApi.md#enablegatewayagreement)               | **POST** /v1/agreement/{id}/enable             | Enable gateway agreement                         
- [**getCardGatewayAgreements**](AgreementApi.md#getcardgatewayagreements)           | **GET** /v1/agreement/card_gateway             | Get all card gateway agreements                  
- [**getGatewayAgreement**](AgreementApi.md#getgatewayagreement)                     | **GET** /v1/agreement/{id}                     | Get gateway agreement                            
- [**getGatewayAgreements**](AgreementApi.md#getgatewayagreements)                   | **GET** /v1/agreement                          | Get all agreements                               
- [**getTokenRequestor**](AgreementApi.md#gettokenrequestor)                         | **GET** /v1/agreement/token_requestor          | Get token requestors for card type               
- [**updateAnydayAgreement**](AgreementApi.md#updateanydayagreement)                 | **PUT** /v1/agreement/anyday/{id}              | Update Anyday agreement                          
- [**updateApplepayAgreement**](AgreementApi.md#updateapplepayagreement)             | **PUT** /v1/agreement/applepay/{id}            | Update ApplePay agreement                        
- [**updateCardGatewayAgreement**](AgreementApi.md#updatecardgatewayagreement)       | **PUT** /v1/agreement/card_gateway/{id}        | Update card gateway agreement                    
- [**updateGooglepayAgreement**](AgreementApi.md#updategooglepayagreement)           | **PUT** /v1/agreement/googlepay/{id}           | Update GooglePay agreement                       
- [**updateKlarnaAgreement**](AgreementApi.md#updateklarnaagreement)                 | **PUT** /v1/agreement/klarna/{id}              | Update Klarna agreement                          
- [**updateMpoAgreement**](AgreementApi.md#updatempoagreement)                       | **PUT** /v1/agreement/mpo/{id}                 | Update MobilePay Online agreement                
- [**updateMpsAgreement**](AgreementApi.md#updatempsagreement)                       | **PUT** /v1/agreement/mps/{id}                 | Update mps agreement                             
- [**updatePaypalAgreement**](AgreementApi.md#updatepaypalagreement)                 | **PUT** /v1/agreement/paypal/{id}              | Update PayPal agreement                          
- [**updatePproAgreement**](AgreementApi.md#updatepproagreement)                     | **PUT** /v1/agreement/ppro/{id}                | Update ppro agreement                            
- [**updateResursAgreement**](AgreementApi.md#updateresursagreement)                 | **PUT** /v1/agreement/resurs/{id}              | Update Resurs agreement                          
- [**updateSwishAgreement**](AgreementApi.md#updateswishagreement)                   | **PUT** /v1/agreement/swish/{id}               | Update Swish agreement                           
- [**updateViabillAgreement**](AgreementApi.md#updateviabillagreement)               | **PUT** /v1/agreement/viabill/{id}             | Update ViaBill agreement                         
- [**updateVippsAgreement**](AgreementApi.md#updatevippsagreement)                   | **PUT** /v1/agreement/vipps/{id}               | Update Vipps agreement                           
- [**updateVippsRecurringAgreement**](AgreementApi.md#updatevippsrecurringagreement) | **PUT** /v1/agreement/vipps_recurring/{id}     | Update Vipps Recurring agreement                 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**activateMpsAgreement**](AgreementApi.md#activatempsagreement) | **POST** /v1/agreement/{id}/mps_activate | Activate mps agreement by selecting provider
+[**createAnydayAgreement**](AgreementApi.md#createanydayagreement) | **POST** /v1/agreement/anyday | Create Anyday agreement
+[**createApplepayAgreement**](AgreementApi.md#createapplepayagreement) | **POST** /v1/agreement/applepay | Create ApplePay agreement
+[**createCardGatewayAgreement**](AgreementApi.md#createcardgatewayagreement) | **POST** /v1/agreement/card_gateway | Create card gateway agreement
+[**createGooglepayAgreement**](AgreementApi.md#creategooglepayagreement) | **POST** /v1/agreement/googlepay | Create GooglePay agreement
+[**createKlarnaAgreement**](AgreementApi.md#createklarnaagreement) | **POST** /v1/agreement/klarna | Create Klarna agreement
+[**createMpoAgreement**](AgreementApi.md#creatempoagreement) | **POST** /v1/agreement/mpo | Create MobilePay Online agreement
+[**createMpsAgreement**](AgreementApi.md#creatempsagreement) | **POST** /v1/agreement/mps | Create pending MobilePay Subscriptions agreement
+[**createOfflineAgreement**](AgreementApi.md#createofflineagreement) | **POST** /v1/agreement/offline | Create offline agreement
+[**createPayeverAgreement**](AgreementApi.md#createpayeveragreement) | **POST** /v1/agreement/payever | Create Payever agreement
+[**createPaypalAgreement**](AgreementApi.md#createpaypalagreement) | **POST** /v1/agreement/paypal | Create PayPal agreement
+[**createPproAgreement**](AgreementApi.md#createpproagreement) | **POST** /v1/agreement/ppro | Create ppro agreement
+[**createResursAgreement**](AgreementApi.md#createresursagreement) | **POST** /v1/agreement/resurs | Create Resurs agreement
+[**createSwishAgreement**](AgreementApi.md#createswishagreement) | **POST** /v1/agreement/swish | Create Swish agreement
+[**createViabillAgreement**](AgreementApi.md#createviabillagreement) | **POST** /v1/agreement/viabill | Create ViaBill agreement
+[**createVippsAgreement**](AgreementApi.md#createvippsagreement) | **POST** /v1/agreement/vipps | Create Vipps agreement
+[**createVippsRecurringAgreement**](AgreementApi.md#createvippsrecurringagreement) | **POST** /v1/agreement/vipps_recurring | Create Vipps Recurring agreement
+[**deleteGatewayAgreement**](AgreementApi.md#deletegatewayagreement) | **DELETE** /v1/agreement/{id} | Delete gateway agreement
+[**disableGatewayAgreement**](AgreementApi.md#disablegatewayagreement) | **POST** /v1/agreement/{id}/disable | Disable gateway agreement
+[**enableGatewayAgreement**](AgreementApi.md#enablegatewayagreement) | **POST** /v1/agreement/{id}/enable | Enable gateway agreement
+[**getCardGatewayAgreements**](AgreementApi.md#getcardgatewayagreements) | **GET** /v1/agreement/card_gateway | Get all card gateway agreements
+[**getGatewayAgreement**](AgreementApi.md#getgatewayagreement) | **GET** /v1/agreement/{id} | Get gateway agreement
+[**getGatewayAgreements**](AgreementApi.md#getgatewayagreements) | **GET** /v1/agreement | Get all agreements
+[**onboardMerchant**](AgreementApi.md#onboardmerchant) | **POST** /v1/agreement/vipps_recurring/onboard | Onboard Merchant
+[**updateAnydayAgreement**](AgreementApi.md#updateanydayagreement) | **PUT** /v1/agreement/anyday/{id} | Update Anyday agreement
+[**updateApplepayAgreement**](AgreementApi.md#updateapplepayagreement) | **PUT** /v1/agreement/applepay/{id} | Update ApplePay agreement
+[**updateCardGatewayAgreement**](AgreementApi.md#updatecardgatewayagreement) | **PUT** /v1/agreement/card_gateway/{id} | Update card gateway agreement
+[**updateEmvConfiguration**](AgreementApi.md#updateemvconfiguration) | **PUT** /v1/agreement/{id}/card_gateway/emv_configuration | Update card gateway EMV Configuration
+[**updateFeeConfiguration**](AgreementApi.md#updatefeeconfiguration) | **PUT** /v1/agreement/{id}/card_gateway/fee_configuration | Update card gateway fee configuration
+[**updateGooglepayAgreement**](AgreementApi.md#updategooglepayagreement) | **PUT** /v1/agreement/googlepay/{id} | Update GooglePay agreement
+[**updateKlarnaAgreement**](AgreementApi.md#updateklarnaagreement) | **PUT** /v1/agreement/klarna/{id} | Update Klarna agreement
+[**updateMpsAgreement**](AgreementApi.md#updatempsagreement) | **PUT** /v1/agreement/mps/{id} | Update mps agreement
+[**updateOfflineAgreement**](AgreementApi.md#updateofflineagreement) | **PUT** /v1/agreement/offline/{id} | Update offline agreement
+[**updatePayeverAgreement**](AgreementApi.md#updatepayeveragreement) | **PUT** /v1/agreement/payever/{id} | Update Payever agreement
+[**updatePaypalAgreement**](AgreementApi.md#updatepaypalagreement) | **PUT** /v1/agreement/paypal/{id} | Update PayPal agreement
+[**updatePproAgreement**](AgreementApi.md#updatepproagreement) | **PUT** /v1/agreement/ppro/{id} | Update ppro agreement
+[**updateResursAgreement**](AgreementApi.md#updateresursagreement) | **PUT** /v1/agreement/resurs/{id} | Update Resurs agreement
+[**updateSurcharge**](AgreementApi.md#updatesurcharge) | **PUT** /v1/agreement/{id}/card_gateway/surcharge | Update card gateway surcharge
+[**updateSwishAgreement**](AgreementApi.md#updateswishagreement) | **PUT** /v1/agreement/swish/{id} | Update Swish agreement
+[**updateViabillAgreement**](AgreementApi.md#updateviabillagreement) | **PUT** /v1/agreement/viabill/{id} | Update ViaBill agreement
+[**updateVippsAgreement**](AgreementApi.md#updatevippsagreement) | **PUT** /v1/agreement/vipps/{id} | Update Vipps agreement
+[**updateVippsRecurringAgreement**](AgreementApi.md#updatevippsrecurringagreement) | **PUT** /v1/agreement/vipps_recurring/{id} | Update Vipps Recurring agreement
 
 # **activateMpsAgreement**
-> \Reepay\Model\GatewayAgreement activateMpsAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement activateMpsAgreement($body, $id)
 
 Activate mps agreement by selecting provider
 
@@ -64,11 +68,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\ActivateMpsAgreement(); // \Reepay\Model\ActivateMpsAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->activateMpsAgreement($id, $body);
+    $result = $apiInstance->activateMpsAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->activateMpsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -80,8 +84,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ActivateMpsAgreement**](../Model/ActivateMpsAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\ActivateMpsAgreement**](../Model/ActivateMpsAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -93,8 +97,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -134,7 +138,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\AnydayAgreement**](../Model/AnydayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\AnydayAgreement**](../Model/AnydayAgreement.md)|  |
 
 ### Return type
 
@@ -146,8 +150,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -187,7 +191,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/ApplepayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/ApplepayAgreement.md)|  |
 
 ### Return type
 
@@ -199,8 +203,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -240,7 +244,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCardGatewayAgreement**](../Model/CreateCardGatewayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCardGatewayAgreement**](../Model/CreateCardGatewayAgreement.md)|  |
 
 ### Return type
 
@@ -252,8 +256,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -293,7 +297,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\GooglepayAgreement**](../Model/GooglepayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\GooglepayAgreement**](../Model/GooglepayAgreement.md)|  |
 
 ### Return type
 
@@ -305,8 +309,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -346,7 +350,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\KlarnaAgreement**](../Model/KlarnaAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\KlarnaAgreement**](../Model/KlarnaAgreement.md)|  |
 
 ### Return type
 
@@ -358,8 +362,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -399,7 +403,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\MpoAgreement**](../Model/MpoAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\MpoAgreement**](../Model/MpoAgreement.md)|  |
 
 ### Return type
 
@@ -411,8 +415,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -452,7 +456,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateMpsAgreement**](../Model/CreateMpsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateMpsAgreement**](../Model/CreateMpsAgreement.md)|  |
 
 ### Return type
 
@@ -464,8 +468,114 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createOfflineAgreement**
+> \Reepay\Model\GatewayAgreement createOfflineAgreement($body)
+
+Create offline agreement
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\OfflineAgreement(); // \Reepay\Model\OfflineAgreement | 
+
+try {
+    $result = $apiInstance->createOfflineAgreement($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->createOfflineAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\OfflineAgreement**](../Model/OfflineAgreement.md)|  |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createPayeverAgreement**
+> \Reepay\Model\GatewayAgreement createPayeverAgreement($body)
+
+Create Payever agreement
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\PayeverAgreement(); // \Reepay\Model\PayeverAgreement | 
+
+try {
+    $result = $apiInstance->createPayeverAgreement($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->createPayeverAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\PayeverAgreement**](../Model/PayeverAgreement.md)|  |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -505,7 +615,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\PaypalAgreement**](../Model/PaypalAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\PaypalAgreement**](../Model/PaypalAgreement.md)|  |
 
 ### Return type
 
@@ -517,8 +627,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -558,7 +668,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\PproAgreement**](../Model/PproAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\PproAgreement**](../Model/PproAgreement.md)|  |
 
 ### Return type
 
@@ -570,8 +680,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -611,7 +721,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\ResursAgreement**](../Model/ResursAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ResursAgreement**](../Model/ResursAgreement.md)|  |
 
 ### Return type
 
@@ -623,8 +733,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -664,7 +774,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\SwishAgreement**](../Model/SwishAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\SwishAgreement**](../Model/SwishAgreement.md)|  |
 
 ### Return type
 
@@ -676,61 +786,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **createTokenRequestor**
-> \Reepay\Model\TokenRequestorResponse createTokenRequestor($body)
-
-Create token requestor
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure HTTP basic authorization: basicAuth
-$config = Reepay\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
-$apiInstance = new Reepay\Api\AgreementApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \Reepay\Model\TokenRequestorRequest(); // \Reepay\Model\TokenRequestorRequest | 
-
-try {
-    $result = $apiInstance->createTokenRequestor($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AgreementApi->createTokenRequestor: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
- Name     | Type                                                                         | Description | Notes      
-----------|------------------------------------------------------------------------------|-------------|------------
- **body** | [**\Reepay\Model\TokenRequestorRequest**](../Model/TokenRequestorRequest.md) |             | [optional] 
-
-### Return type
-
-[**\Reepay\Model\TokenRequestorResponse**](../Model/TokenRequestorResponse.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -770,7 +827,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\ViabillAgreement**](../Model/ViabillAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\ViabillAgreement**](../Model/ViabillAgreement.md)|  |
 
 ### Return type
 
@@ -782,8 +839,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -808,7 +865,7 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Reepay\Model\VippsAgreement(); // \Reepay\Model\VippsAgreement | 
+$body = new \Reepay\Model\CreateVippsAgreement(); // \Reepay\Model\CreateVippsAgreement | 
 
 try {
     $result = $apiInstance->createVippsAgreement($body);
@@ -823,7 +880,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\VippsAgreement**](../Model/VippsAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateVippsAgreement**](../Model/CreateVippsAgreement.md)|  |
 
 ### Return type
 
@@ -835,8 +892,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -876,7 +933,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\VippsRecurringAgreement**](../Model/VippsRecurringAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\VippsRecurringAgreement**](../Model/VippsRecurringAgreement.md)|  |
 
 ### Return type
 
@@ -888,8 +945,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -941,63 +998,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **deleteTokenRequestor**
-
-> deleteTokenRequestor($card_scheme, $token_requestor_id)
-
-Delete token requestor by id for card type
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure HTTP basic authorization: basicAuth
-$config = Reepay\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
-$apiInstance = new Reepay\Api\AgreementApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$card_scheme = "card_scheme_example"; // string | Card Scheme
-$token_requestor_id = "token_requestor_id_example"; // string | Token Requestor Id
-
-try {
-    $apiInstance->deleteTokenRequestor($card_scheme, $token_requestor_id);
-} catch (Exception $e) {
-    echo 'Exception when calling AgreementApi->deleteTokenRequestor: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
- Name                   | Type       | Description        | Notes 
-------------------------|------------|--------------------|-------
- **card_scheme**        | **string** | Card Scheme        |
- **token_requestor_id** | **string** | Token Requestor Id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1108,7 +1110,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreements**
-
 > \Reepay\Model\GatewayAgreement[] getCardGatewayAgreements($only_active, $non_deleted)
 
 Get all card gateway agreements
@@ -1143,10 +1144,10 @@ try {
 
 ### Parameters
 
- Name            | Type     | Description          | Notes                         
------------------|----------|----------------------|-------------------------------
- **only_active** | **bool** | Get only active      | [optional] [default to false] 
- **non_deleted** | **bool** | Get only non-deleted | [optional] [default to false] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **only_active** | **bool**| Get only active | [optional] [default to false]
+ **non_deleted** | **bool**| Get only non-deleted | [optional] [default to false]
 
 ### Return type
 
@@ -1217,7 +1218,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGatewayAgreements**
-
 > \Reepay\Model\GatewayAgreement[] getGatewayAgreements($only_active, $non_deleted)
 
 Get all agreements
@@ -1252,10 +1252,10 @@ try {
 
 ### Parameters
 
- Name            | Type     | Description          | Notes                         
------------------|----------|----------------------|-------------------------------
- **only_active** | **bool** | Get only active      | [optional] [default to false] 
- **non_deleted** | **bool** | Get only non-deleted | [optional] [default to false] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **only_active** | **bool**| Get only active | [optional] [default to false]
+ **non_deleted** | **bool**| Get only non-deleted | [optional] [default to false]
 
 ### Return type
 
@@ -1267,16 +1267,15 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getTokenRequestor**
+# **onboardMerchant**
+> \Reepay\Model\VippsRecurringMerchantOnboardingResponse onboardMerchant($body)
 
-> \Reepay\Model\TokenRequestorResponse[] getTokenRequestor($card_scheme)
-
-Get token requestors for card type
+Onboard Merchant
 
 ### Example
 ```php
@@ -1294,26 +1293,26 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$card_scheme = "card_scheme_example"; // string | Card Scheme
+$body = new \Reepay\Model\VippsRecurringMerchantOnboarding(); // \Reepay\Model\VippsRecurringMerchantOnboarding | 
 
 try {
-    $result = $apiInstance->getTokenRequestor($card_scheme);
+    $result = $apiInstance->onboardMerchant($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AgreementApi->getTokenRequestor: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AgreementApi->onboardMerchant: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
 
- Name            | Type       | Description | Notes 
------------------|------------|-------------|-------
- **card_scheme** | **string** | Card Scheme |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\VippsRecurringMerchantOnboarding**](../Model/VippsRecurringMerchantOnboarding.md)|  |
 
 ### Return type
 
-[**\Reepay\Model\TokenRequestorResponse[]**](../Model/TokenRequestorResponse.md)
+[**\Reepay\Model\VippsRecurringMerchantOnboardingResponse**](../Model/VippsRecurringMerchantOnboardingResponse.md)
 
 ### Authorization
 
@@ -1321,13 +1320,13 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAnydayAgreement**
-> \Reepay\Model\GatewayAgreement updateAnydayAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateAnydayAgreement($body, $id)
 
 Update Anyday agreement
 
@@ -1347,11 +1346,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Reepay\Model\UpdateAnydayAgreement(); // \Reepay\Model\UpdateAnydayAgreement | 
 $id = "id_example"; // string | Agreement id
-$body = new \Reepay\Model\AnydayAgreement(); // \Reepay\Model\AnydayAgreement | 
 
 try {
-    $result = $apiInstance->updateAnydayAgreement($id, $body);
+    $result = $apiInstance->updateAnydayAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateAnydayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1363,8 +1362,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateAnydayAgreement**](../Model/UpdateAnydayAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\AnydayAgreement**](../Model/AnydayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1376,13 +1375,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateApplepayAgreement**
-> \Reepay\Model\GatewayAgreement updateApplepayAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateApplepayAgreement($body, $id)
 
 Update ApplePay agreement
 
@@ -1402,11 +1401,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\ApplepayAgreement(); // \Reepay\Model\ApplepayAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateApplepayAgreement($id, $body);
+    $result = $apiInstance->updateApplepayAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateApplepayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1418,8 +1417,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/ApplepayAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\ApplepayAgreement**](../Model/ApplepayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1431,13 +1430,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCardGatewayAgreement**
-> \Reepay\Model\GatewayAgreement updateCardGatewayAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateCardGatewayAgreement($body, $id)
 
 Update card gateway agreement
 
@@ -1457,11 +1456,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateCardGatewayAgreement(); // \Reepay\Model\UpdateCardGatewayAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateCardGatewayAgreement($id, $body);
+    $result = $apiInstance->updateCardGatewayAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1473,8 +1472,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateCardGatewayAgreement**](../Model/UpdateCardGatewayAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateCardGatewayAgreement**](../Model/UpdateCardGatewayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1486,13 +1485,123 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateEmvConfiguration**
+> \Reepay\Model\GatewayAgreement updateEmvConfiguration($body, $id)
+
+Update card gateway EMV Configuration
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateEmvConfiguration(); // \Reepay\Model\UpdateEmvConfiguration | 
+$id = "id_example"; // string | Agreement id
+
+try {
+    $result = $apiInstance->updateEmvConfiguration($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updateEmvConfiguration: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateEmvConfiguration**](../Model/UpdateEmvConfiguration.md)|  |
+ **id** | **string**| Agreement id |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateFeeConfiguration**
+> \Reepay\Model\GatewayAgreement updateFeeConfiguration($body, $id)
+
+Update card gateway fee configuration
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateFeeConfiguration(); // \Reepay\Model\UpdateFeeConfiguration | 
+$id = "id_example"; // string | Agreement id
+
+try {
+    $result = $apiInstance->updateFeeConfiguration($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updateFeeConfiguration: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateFeeConfiguration**](../Model/UpdateFeeConfiguration.md)|  |
+ **id** | **string**| Agreement id |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateGooglepayAgreement**
-> \Reepay\Model\GatewayAgreement updateGooglepayAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateGooglepayAgreement($body, $id)
 
 Update GooglePay agreement
 
@@ -1512,11 +1621,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateGooglepayAgreement(); // \Reepay\Model\UpdateGooglepayAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateGooglepayAgreement($id, $body);
+    $result = $apiInstance->updateGooglepayAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateGooglepayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1528,8 +1637,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateGooglepayAgreement**](../Model/UpdateGooglepayAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateGooglepayAgreement**](../Model/UpdateGooglepayAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1541,13 +1650,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateKlarnaAgreement**
-> \Reepay\Model\GatewayAgreement updateKlarnaAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateKlarnaAgreement($body, $id)
 
 Update Klarna agreement
 
@@ -1567,11 +1676,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateKlarnaAgreement(); // \Reepay\Model\UpdateKlarnaAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateKlarnaAgreement($id, $body);
+    $result = $apiInstance->updateKlarnaAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateKlarnaAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1583,8 +1692,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateKlarnaAgreement**](../Model/UpdateKlarnaAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateKlarnaAgreement**](../Model/UpdateKlarnaAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1596,68 +1705,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateMpoAgreement**
-> \Reepay\Model\GatewayAgreement updateMpoAgreement($id, $body)
-
-Update MobilePay Online agreement
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure HTTP basic authorization: basicAuth
-$config = Reepay\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
-$apiInstance = new Reepay\Api\AgreementApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "id_example"; // string | Agreement id
-$body = new \Reepay\Model\MpoAgreement(); // \Reepay\Model\MpoAgreement | 
-
-try {
-    $result = $apiInstance->updateMpoAgreement($id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AgreementApi->updateMpoAgreement: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\MpoAgreement**](../Model/MpoAgreement.md)|  | [optional]
-
-### Return type
-
-[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMpsAgreement**
-> \Reepay\Model\GatewayAgreement updateMpsAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateMpsAgreement($body, $id)
 
 Update mps agreement
 
@@ -1677,11 +1731,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateMpsAgreement(); // \Reepay\Model\UpdateMpsAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateMpsAgreement($id, $body);
+    $result = $apiInstance->updateMpsAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateMpsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1693,8 +1747,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateMpsAgreement**](../Model/UpdateMpsAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateMpsAgreement**](../Model/UpdateMpsAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1706,13 +1760,123 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateOfflineAgreement**
+> \Reepay\Model\GatewayAgreement updateOfflineAgreement($body, $id)
+
+Update offline agreement
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateOfflineAgreement(); // \Reepay\Model\UpdateOfflineAgreement | 
+$id = "id_example"; // string | Agreement id
+
+try {
+    $result = $apiInstance->updateOfflineAgreement($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updateOfflineAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateOfflineAgreement**](../Model/UpdateOfflineAgreement.md)|  |
+ **id** | **string**| Agreement id |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updatePayeverAgreement**
+> \Reepay\Model\GatewayAgreement updatePayeverAgreement($body, $id)
+
+Update Payever agreement
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdatePayeverAgreement(); // \Reepay\Model\UpdatePayeverAgreement | 
+$id = "id_example"; // string | Agreement id
+
+try {
+    $result = $apiInstance->updatePayeverAgreement($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updatePayeverAgreement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdatePayeverAgreement**](../Model/UpdatePayeverAgreement.md)|  |
+ **id** | **string**| Agreement id |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePaypalAgreement**
-> \Reepay\Model\GatewayAgreement updatePaypalAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updatePaypalAgreement($body, $id)
 
 Update PayPal agreement
 
@@ -1732,11 +1896,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Reepay\Model\UpdatePaypalAgreement(); // \Reepay\Model\UpdatePaypalAgreement | 
 $id = "id_example"; // string | Agreement id
-$body = new \Reepay\Model\PaypalAgreement(); // \Reepay\Model\PaypalAgreement | 
 
 try {
-    $result = $apiInstance->updatePaypalAgreement($id, $body);
+    $result = $apiInstance->updatePaypalAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updatePaypalAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1748,8 +1912,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdatePaypalAgreement**](../Model/UpdatePaypalAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\PaypalAgreement**](../Model/PaypalAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1761,13 +1925,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePproAgreement**
-> \Reepay\Model\GatewayAgreement updatePproAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updatePproAgreement($body, $id)
 
 Update ppro agreement
 
@@ -1787,11 +1951,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdatePproAgreement(); // \Reepay\Model\UpdatePproAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updatePproAgreement($id, $body);
+    $result = $apiInstance->updatePproAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updatePproAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1803,8 +1967,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdatePproAgreement**](../Model/UpdatePproAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdatePproAgreement**](../Model/UpdatePproAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1816,13 +1980,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateResursAgreement**
-> \Reepay\Model\GatewayAgreement updateResursAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateResursAgreement($body, $id)
 
 Update Resurs agreement
 
@@ -1842,11 +2006,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateResursAgreement(); // \Reepay\Model\UpdateResursAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateResursAgreement($id, $body);
+    $result = $apiInstance->updateResursAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateResursAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1858,8 +2022,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateResursAgreement**](../Model/UpdateResursAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateResursAgreement**](../Model/UpdateResursAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1871,13 +2035,68 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateSurcharge**
+> \Reepay\Model\GatewayAgreement updateSurcharge($body, $id)
+
+Update card gateway surcharge
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\AgreementApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateSurcharge(); // \Reepay\Model\UpdateSurcharge | 
+$id = "id_example"; // string | Agreement id
+
+try {
+    $result = $apiInstance->updateSurcharge($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AgreementApi->updateSurcharge: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateSurcharge**](../Model/UpdateSurcharge.md)|  |
+ **id** | **string**| Agreement id |
+
+### Return type
+
+[**\Reepay\Model\GatewayAgreement**](../Model/GatewayAgreement.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSwishAgreement**
-> \Reepay\Model\GatewayAgreement updateSwishAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateSwishAgreement($body, $id)
 
 Update Swish agreement
 
@@ -1897,11 +2116,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\SwishAgreement(); // \Reepay\Model\SwishAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateSwishAgreement($id, $body);
+    $result = $apiInstance->updateSwishAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateSwishAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1913,8 +2132,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\SwishAgreement**](../Model/SwishAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\SwishAgreement**](../Model/SwishAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1926,13 +2145,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateViabillAgreement**
-> \Reepay\Model\GatewayAgreement updateViabillAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateViabillAgreement($body, $id)
 
 Update ViaBill agreement
 
@@ -1952,11 +2171,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\UpdateViabillAgreement(); // \Reepay\Model\UpdateViabillAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateViabillAgreement($id, $body);
+    $result = $apiInstance->updateViabillAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateViabillAgreement: ', $e->getMessage(), PHP_EOL;
@@ -1968,8 +2187,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateViabillAgreement**](../Model/UpdateViabillAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\UpdateViabillAgreement**](../Model/UpdateViabillAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -1981,13 +2200,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateVippsAgreement**
-> \Reepay\Model\GatewayAgreement updateVippsAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateVippsAgreement($body, $id)
 
 Update Vipps agreement
 
@@ -2007,11 +2226,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\VippsAgreement(); // \Reepay\Model\VippsAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateVippsAgreement($id, $body);
+    $result = $apiInstance->updateVippsAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateVippsAgreement: ', $e->getMessage(), PHP_EOL;
@@ -2023,8 +2242,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\VippsAgreement**](../Model/VippsAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\VippsAgreement**](../Model/VippsAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -2036,13 +2255,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateVippsRecurringAgreement**
-> \Reepay\Model\GatewayAgreement updateVippsRecurringAgreement($id, $body)
+> \Reepay\Model\GatewayAgreement updateVippsRecurringAgreement($body, $id)
 
 Update Vipps Recurring agreement
 
@@ -2062,11 +2281,11 @@ $apiInstance = new Reepay\Api\AgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Agreement id
 $body = new \Reepay\Model\VippsRecurringAgreement(); // \Reepay\Model\VippsRecurringAgreement | 
+$id = "id_example"; // string | Agreement id
 
 try {
-    $result = $apiInstance->updateVippsRecurringAgreement($id, $body);
+    $result = $apiInstance->updateVippsRecurringAgreement($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateVippsRecurringAgreement: ', $e->getMessage(), PHP_EOL;
@@ -2078,8 +2297,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\VippsRecurringAgreement**](../Model/VippsRecurringAgreement.md)|  |
  **id** | **string**| Agreement id |
- **body** | [**\Reepay\Model\VippsRecurringAgreement**](../Model/VippsRecurringAgreement.md)|  | [optional]
 
 ### Return type
 
@@ -2091,8 +2310,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

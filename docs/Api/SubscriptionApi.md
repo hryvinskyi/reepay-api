@@ -1,44 +1,45 @@
 # Reepay\SubscriptionApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                                                            | HTTP request                                                | Description                                                                                                                                 
----------------------------------------------------------------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------
- [**activate**](SubscriptionApi.md#activate)                                                       | **POST** /v1/subscription/{handle}/activate                 | Activate pending subscription                                                                                                               
- [**cancelSubscription**](SubscriptionApi.md#cancelsubscription)                                   | **POST** /v1/subscription/{handle}/cancel                   | Cancel subscription                                                                                                                         
- [**changeNextPeriodStartJson**](SubscriptionApi.md#changenextperiodstartjson)                     | **POST** /v1/subscription/{handle}/change_next_period_start | Change next renewal date                                                                                                                    
- [**changeSubscription**](SubscriptionApi.md#changesubscription)                                   | **PUT** /v1/subscription/{handle}                           | Change subscription                                                                                                                         
- [**createSubscriptionDiscount**](SubscriptionApi.md#createsubscriptiondiscount)                   | **POST** /v1/subscription/{handle}/discount                 | Add subscription discount                                                                                                                   
- [**createSubscriptionInvoice**](SubscriptionApi.md#createsubscriptioninvoice)                     | **POST** /v1/subscription/{handle}/invoice                  | Create invoice ondemand for subscription                                                                                                    
- [**createSubscriptionJson**](SubscriptionApi.md#createsubscriptionjson)                           | **POST** /v1/subscription                                   | Create subscription                                                                                                                         
- [**deleteMetadata4**](SubscriptionApi.md#deletemetadata4)                                         | **DELETE** /v1/subscription/{handle}/metadata               | Delete metadata                                                                                                                             
- [**deletePending**](SubscriptionApi.md#deletepending)                                             | **DELETE** /v1/subscription/{handle}                        | Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice. 
- [**deleteSubscriptionDiscount**](SubscriptionApi.md#deletesubscriptiondiscount)                   | **DELETE** /v1/subscription/{handle}/discount/{sdHandle}    | Delete subscription discount                                                                                                                
- [**expire**](SubscriptionApi.md#expire)                                                           | **POST** /v1/subscription/{handle}/expire                   | Expire subscription                                                                                                                         
- [**getMetadata4**](SubscriptionApi.md#getmetadata4)                                               | **GET** /v1/subscription/{handle}/metadata                  | Get metadata                                                                                                                                
- [**getPayableInvoice**](SubscriptionApi.md#getpayableinvoice)                                     | **GET** /v1/subscription/{handle}/invoice                   | Get most relevant payable invoice for subscription                                                                                          
- [**getSubscription**](SubscriptionApi.md#getsubscription)                                         | **GET** /v1/subscription/{handle}                           | Get subscription                                                                                                                            
- [**getSubscriptionAddOn**](SubscriptionApi.md#getsubscriptionaddon)                               | **GET** /v1/subscription/{handle}/add_on/{saHandle}         | Get subscription add-on                                                                                                                     
- [**getSubscriptionAddOns**](SubscriptionApi.md#getsubscriptionaddons)                             | **GET** /v1/subscription/{handle}/add_on                    | Get subscription add-ons                                                                                                                    
- [**getSubscriptionDiscount**](SubscriptionApi.md#getsubscriptiondiscount)                         | **GET** /v1/subscription/{handle}/discount/{sdHandle}       | Get subscription discount                                                                                                                   
- [**getSubscriptionDiscounts**](SubscriptionApi.md#getsubscriptiondiscounts)                       | **GET** /v1/subscription/{handle}/discount                  | Get subscription discounts                                                                                                                  
- [**getSubscriptionPaymentMethod**](SubscriptionApi.md#getsubscriptionpaymentmethod)               | **GET** /v1/subscription/{handle}/pm                        | Get payment method                                                                                                                          
- [**getSubscriptionPeriodBalance**](SubscriptionApi.md#getsubscriptionperiodbalance)               | **GET** /v1/subscription/{handle}/period_balance            | Get the period balance for subscription                                                                                                     
- [**intervalAmount**](SubscriptionApi.md#intervalamount)                                           | **GET** /v1/subscription/{handle}/interval_amount           | Calculate interval amount                                                                                                                   
- [**onHold**](SubscriptionApi.md#onhold)                                                           | **POST** /v1/subscription/{handle}/on_hold                  | Subscription on hold                                                                                                                        
- [**prepareSubscription**](SubscriptionApi.md#preparesubscription)                                 | **POST** /v1/subscription/prepare                           | Prepare pending subscription                                                                                                                
- [**previewChangeSubscription**](SubscriptionApi.md#previewchangesubscription)                     | **PUT** /v1/subscription/{handle}/preview                   | Preview change subscription                                                                                                                 
- [**previewSubscription**](SubscriptionApi.md#previewsubscription)                                 | **POST** /v1/subscription/preview                           | Preview subscription                                                                                                                        
- [**reactivateSubscription**](SubscriptionApi.md#reactivatesubscription)                           | **POST** /v1/subscription/{handle}/reactivate               | Reactivate subscription on hold                                                                                                             
- [**redeemCouponCode**](SubscriptionApi.md#redeemcouponcode)                                       | **POST** /v1/subscription/{handle}/coupon                   | Redeem coupon code for subscription                                                                                                         
- [**removeAllSubscriptionPaymentMethods**](SubscriptionApi.md#removeallsubscriptionpaymentmethods) | **DELETE** /v1/subscription/{handle}/pm                     | Remove all payment methods                                                                                                                  
- [**removeSubscriptionPaymentMethod**](SubscriptionApi.md#removesubscriptionpaymentmethod)         | **DELETE** /v1/subscription/{handle}/pm/{method_id}         | Remove payment method                                                                                                                       
- [**setSubscriptionPaymentMethod**](SubscriptionApi.md#setsubscriptionpaymentmethod)               | **POST** /v1/subscription/{handle}/pm                       | Set payment method                                                                                                                          
- [**uncancel**](SubscriptionApi.md#uncancel)                                                       | **POST** /v1/subscription/{handle}/uncancel                 | Uncancel subscription                                                                                                                       
- [**updateMetadata4**](SubscriptionApi.md#updatemetadata4)                                         | **PUT** /v1/subscription/{handle}/metadata                  | Create or update metadata                                                                                                                   
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**activate**](SubscriptionApi.md#activate) | **POST** /v1/subscription/{handle}/activate | Activate pending subscription
+[**cancelPreviewSubscription**](SubscriptionApi.md#cancelpreviewsubscription) | **POST** /v1/subscription/{handle}/cancel_preview | Preview subscription cancel
+[**cancelSubscription**](SubscriptionApi.md#cancelsubscription) | **POST** /v1/subscription/{handle}/cancel | Cancel subscription
+[**changeNextPeriodStartJson**](SubscriptionApi.md#changenextperiodstartjson) | **POST** /v1/subscription/{handle}/change_next_period_start | Change next renewal date
+[**changeSubscription**](SubscriptionApi.md#changesubscription) | **PUT** /v1/subscription/{handle} | Change subscription
+[**createSubscriptionDiscount**](SubscriptionApi.md#createsubscriptiondiscount) | **POST** /v1/subscription/{handle}/discount | Add subscription discount
+[**createSubscriptionInvoice**](SubscriptionApi.md#createsubscriptioninvoice) | **POST** /v1/subscription/{handle}/invoice | Create invoice ondemand for subscription
+[**createSubscriptionJson**](SubscriptionApi.md#createsubscriptionjson) | **POST** /v1/subscription | Create subscription
+[**deleteMetadata4**](SubscriptionApi.md#deletemetadata4) | **DELETE** /v1/subscription/{handle}/metadata | Delete metadata
+[**deletePending**](SubscriptionApi.md#deletepending) | **DELETE** /v1/subscription/{handle} | Delete pending subscription. A pending subscription can only be deleted if no transactions has been made for the potential initial invoice.
+[**deleteSubscriptionDiscount**](SubscriptionApi.md#deletesubscriptiondiscount) | **DELETE** /v1/subscription/{handle}/discount/{sdHandle} | Delete subscription discount
+[**expire**](SubscriptionApi.md#expire) | **POST** /v1/subscription/{handle}/expire | Expire subscription
+[**getMetadata4**](SubscriptionApi.md#getmetadata4) | **GET** /v1/subscription/{handle}/metadata | Get metadata
+[**getPayableInvoice**](SubscriptionApi.md#getpayableinvoice) | **GET** /v1/subscription/{handle}/invoice | Get most relevant payable invoice for subscription
+[**getSubscription**](SubscriptionApi.md#getsubscription) | **GET** /v1/subscription/{handle} | Get subscription
+[**getSubscriptionAddOn**](SubscriptionApi.md#getsubscriptionaddon) | **GET** /v1/subscription/{handle}/add_on/{saHandle} | Get subscription add-on
+[**getSubscriptionAddOns**](SubscriptionApi.md#getsubscriptionaddons) | **GET** /v1/subscription/{handle}/add_on | Get subscription add-ons
+[**getSubscriptionDiscount**](SubscriptionApi.md#getsubscriptiondiscount) | **GET** /v1/subscription/{handle}/discount/{sdHandle} | Get subscription discount
+[**getSubscriptionDiscounts**](SubscriptionApi.md#getsubscriptiondiscounts) | **GET** /v1/subscription/{handle}/discount | Get subscription discounts
+[**getSubscriptionPaymentMethod**](SubscriptionApi.md#getsubscriptionpaymentmethod) | **GET** /v1/subscription/{handle}/pm | Get payment method
+[**getSubscriptionPeriodBalance**](SubscriptionApi.md#getsubscriptionperiodbalance) | **GET** /v1/subscription/{handle}/period_balance | Get the period balance for subscription
+[**intervalAmount**](SubscriptionApi.md#intervalamount) | **GET** /v1/subscription/{handle}/interval_amount | Calculate interval amount
+[**onHold**](SubscriptionApi.md#onhold) | **POST** /v1/subscription/{handle}/on_hold | Subscription on hold
+[**prepareSubscription**](SubscriptionApi.md#preparesubscription) | **POST** /v1/subscription/prepare | Prepare pending subscription
+[**previewChangeSubscription**](SubscriptionApi.md#previewchangesubscription) | **PUT** /v1/subscription/{handle}/preview | Preview change subscription
+[**previewSubscription**](SubscriptionApi.md#previewsubscription) | **POST** /v1/subscription/preview | Preview subscription
+[**reactivateSubscription**](SubscriptionApi.md#reactivatesubscription) | **POST** /v1/subscription/{handle}/reactivate | Reactivate subscription on hold
+[**redeemCouponCode**](SubscriptionApi.md#redeemcouponcode) | **POST** /v1/subscription/{handle}/coupon | Redeem coupon code for subscription
+[**removeAllSubscriptionPaymentMethods**](SubscriptionApi.md#removeallsubscriptionpaymentmethods) | **DELETE** /v1/subscription/{handle}/pm | Remove all payment methods
+[**removeSubscriptionPaymentMethod**](SubscriptionApi.md#removesubscriptionpaymentmethod) | **DELETE** /v1/subscription/{handle}/pm/{method_id} | Remove payment method
+[**setSubscriptionPaymentMethod**](SubscriptionApi.md#setsubscriptionpaymentmethod) | **POST** /v1/subscription/{handle}/pm | Set payment method
+[**uncancel**](SubscriptionApi.md#uncancel) | **POST** /v1/subscription/{handle}/uncancel | Uncancel subscription
+[**updateMetadata4**](SubscriptionApi.md#updatemetadata4) | **PUT** /v1/subscription/{handle}/metadata | Create or update metadata
 
 # **activate**
-> \Reepay\Model\Subscription activate($handle, $body)
+> \Reepay\Model\Subscription activate($body, $handle)
 
 Activate pending subscription
 
@@ -58,11 +59,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ActivateSubscription(); // \Reepay\Model\ActivateSubscription | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->activate($handle, $body);
+    $result = $apiInstance->activate($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->activate: ', $e->getMessage(), PHP_EOL;
@@ -74,8 +75,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ActivateSubscription**](../Model/ActivateSubscription.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ActivateSubscription**](../Model/ActivateSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -88,6 +89,61 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cancelPreviewSubscription**
+> \Reepay\Model\SubscriptionCancelPreview cancelPreviewSubscription($handle, $body)
+
+Preview subscription cancel
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$handle = "handle_example"; // string | Subscription handle
+$body = new \Reepay\Model\CancelSubscription(); // \Reepay\Model\CancelSubscription | 
+
+try {
+    $result = $apiInstance->cancelPreviewSubscription($handle, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->cancelPreviewSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Subscription handle |
+ **body** | [**\Reepay\Model\CancelSubscription**](../Model/CancelSubscription.md)|  | [optional]
+
+### Return type
+
+[**\Reepay\Model\SubscriptionCancelPreview**](../Model/SubscriptionCancelPreview.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -142,13 +198,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeNextPeriodStartJson**
-> \Reepay\Model\Subscription changeNextPeriodStartJson($handle, $body)
+> \Reepay\Model\Subscription changeNextPeriodStartJson($body, $handle)
 
 Change next renewal date
 
@@ -168,11 +224,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ChangeNextPeriodStart(); // \Reepay\Model\ChangeNextPeriodStart | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->changeNextPeriodStartJson($handle, $body);
+    $result = $apiInstance->changeNextPeriodStartJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->changeNextPeriodStartJson: ', $e->getMessage(), PHP_EOL;
@@ -184,8 +240,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ChangeNextPeriodStart**](../Model/ChangeNextPeriodStart.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ChangeNextPeriodStart**](../Model/ChangeNextPeriodStart.md)|  | [optional]
 
 ### Return type
 
@@ -203,7 +259,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeSubscription**
-> \Reepay\Model\Subscription changeSubscription($handle, $body)
+> \Reepay\Model\Subscription changeSubscription($body, $handle)
 
 Change subscription
 
@@ -223,11 +279,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ChangeSubscription(); // \Reepay\Model\ChangeSubscription | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->changeSubscription($handle, $body);
+    $result = $apiInstance->changeSubscription($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->changeSubscription: ', $e->getMessage(), PHP_EOL;
@@ -239,8 +295,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -258,7 +314,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionDiscount**
-> \Reepay\Model\SubscriptionDiscount createSubscriptionDiscount($handle, $body)
+> \Reepay\Model\SubscriptionDiscount createSubscriptionDiscount($body, $handle)
 
 Add subscription discount
 
@@ -278,11 +334,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\CreateSubscriptionDiscount(); // \Reepay\Model\CreateSubscriptionDiscount | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->createSubscriptionDiscount($handle, $body);
+    $result = $apiInstance->createSubscriptionDiscount($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -294,8 +350,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateSubscriptionDiscount**](../Model/CreateSubscriptionDiscount.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\CreateSubscriptionDiscount**](../Model/CreateSubscriptionDiscount.md)|  | [optional]
 
 ### Return type
 
@@ -307,13 +363,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionInvoice**
-> \Reepay\Model\Invoice createSubscriptionInvoice($handle, $body)
+> \Reepay\Model\Invoice createSubscriptionInvoice($body, $handle)
 
 Create invoice ondemand for subscription
 
@@ -333,11 +389,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\CreateSubscriptionInvoice(); // \Reepay\Model\CreateSubscriptionInvoice | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->createSubscriptionInvoice($handle, $body);
+    $result = $apiInstance->createSubscriptionInvoice($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionInvoice: ', $e->getMessage(), PHP_EOL;
@@ -349,8 +405,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateSubscriptionInvoice**](../Model/CreateSubscriptionInvoice.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\CreateSubscriptionInvoice**](../Model/CreateSubscriptionInvoice.md)|  | [optional]
 
 ### Return type
 
@@ -403,7 +459,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateSubscription**](../Model/CreateSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscription**](../Model/CreateSubscription.md)|  |
 
 ### Return type
 
@@ -525,7 +581,6 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscriptionDiscount**
-
 > \Reepay\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sd_handle)
 
 Delete subscription discount
@@ -560,10 +615,10 @@ try {
 
 ### Parameters
 
- Name          | Type       | Description                  | Notes 
----------------|------------|------------------------------|-------
- **handle**    | **string** | Subscription handle          |
- **sd_handle** | **string** | Subscription discount handle |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Subscription handle |
+ **sd_handle** | **string**| Subscription discount handle |
 
 ### Return type
 
@@ -630,8 +685,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -795,7 +850,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOn**
-
 > \Reepay\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $sa_handle)
 
 Get subscription add-on
@@ -830,10 +884,10 @@ try {
 
 ### Parameters
 
- Name          | Type       | Description                | Notes 
----------------|------------|----------------------------|-------
- **handle**    | **string** | Subscription handle        |
- **sa_handle** | **string** | Subscription add-on handle |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Subscription handle |
+ **sa_handle** | **string**| Subscription add-on handle |
 
 ### Return type
 
@@ -904,7 +958,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscount**
-
 > \Reepay\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sd_handle)
 
 Get subscription discount
@@ -939,10 +992,10 @@ try {
 
 ### Parameters
 
- Name          | Type       | Description                  | Notes 
----------------|------------|------------------------------|-------
- **handle**    | **string** | Subscription handle          |
- **sd_handle** | **string** | Subscription discount handle |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Subscription handle |
+ **sd_handle** | **string**| Subscription discount handle |
 
 ### Return type
 
@@ -1142,8 +1195,8 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     $config
 );
 $handle = "handle_example"; // string | Subscription handle
-$from = "from_example"; // string | From date on the form yyyy-MM-dd
-$to = "to_example"; // string | To date on the form yyyy-MM-dd
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
 
 try {
     $result = $apiInstance->intervalAmount($handle, $from, $to);
@@ -1159,8 +1212,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **from** | **string**| From date on the form yyyy-MM-dd |
- **to** | **string**| To date on the form yyyy-MM-dd |
+ **from** | **string**|  |
+ **to** | **string**|  |
 
 ### Return type
 
@@ -1227,8 +1280,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1268,7 +1321,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/CreatePreparedSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/CreatePreparedSubscription.md)|  |
 
 ### Return type
 
@@ -1286,7 +1339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **previewChangeSubscription**
-> \Reepay\Model\ChangedSubscription previewChangeSubscription($handle, $body)
+> \Reepay\Model\ChangedSubscription previewChangeSubscription($body, $handle)
 
 Preview change subscription
 
@@ -1306,11 +1359,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\ChangeSubscription(); // \Reepay\Model\ChangeSubscription | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->previewChangeSubscription($handle, $body);
+    $result = $apiInstance->previewChangeSubscription($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->previewChangeSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1322,8 +1375,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
 
 ### Return type
 
@@ -1376,7 +1429,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/CreatePreparedSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreatePreparedSubscription**](../Model/CreatePreparedSubscription.md)|  |
 
 ### Return type
 
@@ -1443,13 +1496,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **redeemCouponCode**
-> \Reepay\Model\CouponRedemption redeemCouponCode($handle, $body)
+> \Reepay\Model\CouponRedemption redeemCouponCode($body, $handle)
 
 Redeem coupon code for subscription
 
@@ -1469,11 +1522,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\RedeemCouponCode(); // \Reepay\Model\RedeemCouponCode | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->redeemCouponCode($handle, $body);
+    $result = $apiInstance->redeemCouponCode($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->redeemCouponCode: ', $e->getMessage(), PHP_EOL;
@@ -1485,8 +1538,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\RedeemCouponCode**](../Model/RedeemCouponCode.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\RedeemCouponCode**](../Model/RedeemCouponCode.md)|  | [optional]
 
 ### Return type
 
@@ -1498,8 +1551,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1557,7 +1610,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeSubscriptionPaymentMethod**
-
 > \Reepay\Model\PaymentMethodV2[] removeSubscriptionPaymentMethod($handle, $method_id)
 
 Remove payment method
@@ -1592,10 +1644,10 @@ try {
 
 ### Parameters
 
- Name          | Type       | Description         | Notes 
----------------|------------|---------------------|-------
- **handle**    | **string** | Subscription handle |
- **method_id** | **string** | Payment method id   |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Subscription handle |
+ **method_id** | **string**| Payment method id |
 
 ### Return type
 
@@ -1613,7 +1665,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **setSubscriptionPaymentMethod**
-> \Reepay\Model\PaymentMethodV2[] setSubscriptionPaymentMethod($handle, $body)
+> \Reepay\Model\PaymentMethodV2[] setSubscriptionPaymentMethod($body, $handle)
 
 Set payment method
 
@@ -1633,11 +1685,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Subscription handle
 $body = new \Reepay\Model\SetPaymentMethod(); // \Reepay\Model\SetPaymentMethod | 
+$handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $apiInstance->setSubscriptionPaymentMethod($handle, $body);
+    $result = $apiInstance->setSubscriptionPaymentMethod($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->setSubscriptionPaymentMethod: ', $e->getMessage(), PHP_EOL;
@@ -1649,8 +1701,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\SetPaymentMethod**](../Model/SetPaymentMethod.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\SetPaymentMethod**](../Model/SetPaymentMethod.md)|  | [optional]
 
 ### Return type
 
@@ -1721,7 +1773,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMetadata4**
-> map[string,object] updateMetadata4($handle, $body)
+> map[string,object] updateMetadata4($body, $handle)
 
 Create or update metadata
 
@@ -1741,11 +1793,11 @@ $apiInstance = new Reepay\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$handle = "handle_example"; // string | Resource handle
 $body = new \Reepay\Model\map(); // map[string,object] | 
+$handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $apiInstance->updateMetadata4($handle, $body);
+    $result = $apiInstance->updateMetadata4($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->updateMetadata4: ', $e->getMessage(), PHP_EOL;
@@ -1755,10 +1807,10 @@ try {
 
 ### Parameters
 
- Name       | Type                                      | Description     | Notes      
-------------|-------------------------------------------|-----------------|------------
- **handle** | **string**                                | Resource handle |
- **body**   | [**map[string,object]**](../Model/map.md) |                 | [optional] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**map[string,object]**](../Model/map.md)|  |
+ **handle** | **string**| Resource handle |
 
 ### Return type
 
@@ -1770,8 +1822,8 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: */*
-- **Accept**: application/json
+ - **Content-Type**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

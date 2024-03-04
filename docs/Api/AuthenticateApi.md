@@ -1,15 +1,14 @@
 # Reepay\AuthenticateApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                              | HTTP request                    | Description           
----------------------------------------------------------------------|---------------------------------|-----------------------
- [**login**](AuthenticateApi.md#login)                               | **POST** /v1/authenticate/login | User login            
- [**renew**](AuthenticateApi.md#renew)                               | **POST** /v1/authenticate/renew | Renew user login      
- [**verifyAuthentication**](AuthenticateApi.md#verifyauthentication) | **GET** /v1/authenticate/verify | Verify authentication 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**login**](AuthenticateApi.md#login) | **POST** /v1/authenticate/login | User login
+[**renew**](AuthenticateApi.md#renew) | **POST** /v1/authenticate/renew | Renew user login
+[**verifyAuthentication**](AuthenticateApi.md#verifyauthentication) | **GET** /v1/authenticate/verify | Verify authentication
 
 # **login**
-
 > \Reepay\Model\UserLogin login($email, $password, $organisation, $account, $mfa_code)
 
 User login
@@ -41,13 +40,13 @@ try {
 
 ### Parameters
 
- Name             | Type       | Description | Notes      
-------------------|------------|-------------|------------
- **email**        | **string** |             | [optional] 
- **password**     | **string** |             | [optional] 
- **organisation** | **string** |             | [optional] 
- **account**      | **string** |             | [optional] 
- **mfa_code**     | **string** |             | [optional] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**|  | [optional]
+ **password** | **string**|  | [optional]
+ **organisation** | **string**|  | [optional]
+ **account** | **string**|  | [optional]
+ **mfa_code** | **string**|  | [optional]
 
 ### Return type
 

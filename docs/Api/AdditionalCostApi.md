@@ -1,13 +1,13 @@
 # Reepay\AdditionalCostApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com/api.reepay.com*
 
- Method                                                                        | HTTP request                                      | Description                           
--------------------------------------------------------------------------------|---------------------------------------------------|---------------------------------------
- [**cancelAdditionalCost**](AdditionalCostApi.md#canceladditionalcost)         | **POST** /v1/additional_cost/{handle}/cancel      | Cancel pending additional cost        
- [**createAdditionalCostJson**](AdditionalCostApi.md#createadditionalcostjson) | **POST** /v1/additional_cost                      | Create additional cost                
- [**getAdditionalCost**](AdditionalCostApi.md#getadditionalcost)               | **GET** /v1/additional_cost/{handle}              | Get additional cost                   
- [**getAdditionalCosts**](AdditionalCostApi.md#getadditionalcosts)             | **GET** /v1/additional_cost/subscription/{handle} | Get additional costs for subscription 
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**cancelAdditionalCost**](AdditionalCostApi.md#canceladditionalcost) | **POST** /v1/additional_cost/{handle}/cancel | Cancel pending additional cost
+[**createAdditionalCostJson**](AdditionalCostApi.md#createadditionalcostjson) | **POST** /v1/additional_cost | Create additional cost
+[**getAdditionalCost**](AdditionalCostApi.md#getadditionalcost) | **GET** /v1/additional_cost/{handle} | Get additional cost
+[**getAdditionalCosts**](AdditionalCostApi.md#getadditionalcosts) | **GET** /v1/additional_cost/subscription/{handle} | Get additional costs for subscription
 
 # **cancelAdditionalCost**
 > \Reepay\Model\AdditionalCost cancelAdditionalCost($handle)
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateAdditionalCost**](../Model/CreateAdditionalCost.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateAdditionalCost**](../Model/CreateAdditionalCost.md)|  |
 
 ### Return type
 
