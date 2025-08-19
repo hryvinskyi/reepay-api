@@ -80,7 +80,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.reepay.com/api.reepay.com';
+    protected $host = 'https://api.frisbii.com';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
